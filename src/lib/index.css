@@ -1,0 +1,12 @@
+.CodeMirror {
+  font-family: 'source-code-pro', Menlo, 'Courier New', Consolas, monospace;
+  font-size: 13px;
+  line-height: 20px;
+  color: #484848;
+  border-right: 1px solid #eaeefb;
+  z-index: 0;
+  border-radius: 5px;
+  min-height: 300px;
+  height: auto;
+  background: transparent;
+}
