@@ -1,7 +1,7 @@
 react-codemirror
 ===
 
-CodeMirror component for React.
+CodeMirror component for React. demo @[uiw-react.github.io/react-codemirror/](https://uiw-react.github.io/react-codemirror/)
 
 <img src="./react-codemirror.png">
 
