@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import 'codemirror/lib/codemirror.css';
 import CodeMirror from './CodeMirror';
 import loadMode from './loadMode';
