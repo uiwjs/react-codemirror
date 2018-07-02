@@ -1,0 +1,34 @@
+{
+  "name": "@uiw/react-codemirror",
+  "version": "1.0.4",
+  "description": "CodeMirror component for React.",
+  "main": "lib/index.js",
+  "scripts": {
+    "release" : "babel --plugins transform-runtime src/lib --out-dir lib --copy-files",
+    "start": "kkt start",
+    "build": "kkt build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaywcjlove/react-codemirror.git"
+  },
+  "keywords": [
+    "react",
+    "codemirror",
+    "react-codemirror",
+    "editor",
+    "syntax",
+    "ide",
+    "code"
+  ],
+  "author": "kenny wong <wowohoo@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "codemirror": "^5.39.0",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0"
+  },
+  "devDependencies": {
+    "kkt": "1.9.x"
+  }
+}

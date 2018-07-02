@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  :global {
+    .CodeMirror {
+      font-family: 'source-code-pro', Menlo, 'Courier New', Consolas, monospace;
+      font-size: 13px;
+      line-height: 20px;
+      color: #484848;
+      border-right: 1px solid #eaeefb;
+      z-index: 0;
+      border-radius: 5px;
+      min-height: 300px;
+      height: auto;
+      background: transparent;
+      .CodeMirror-gutters {
+        background: transparent;
+        border-right: 0px;
+        z-index: 0;
+      }
+      .CodeMirror-selected {
+        background: #E6EFFB;
+      }
+      span.cm-keyword { color: #1990B8; }
+      span.cm-atom { color: #C92C2C; }
+      span.cm-number { color: #C92C2C; }
+      span.cm-variable { color: black; }
+      span.cm-variable-2 { color: #0000C0; }
+      span.cm-variable-3 { color: #0000C0; }
+      span.cm-property { color: black; }
+      span.cm-operator { color: black; }
+      span.cm-comment { color: #7D8B99; }
+      span.cm-string { color: #2F9C0A; }
+      span.cm-string-2 { color: #2F9C0A; }
+      span.cm-link { color: #C92C2C; }
+    }
+    .CodeMirror-linenumber {
+      background-color: #f1f1f1;
+    }
+    .CodeMirror-scroll {
+      min-height: 300px;
+    }
+  }
+}
+
+.AppLogo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.AppHeader {
+  background-color: #222;
+  padding: 20px;
+  color: white;
+}
+
+.AppTitle {
+  font-size: 1.5em;
+}
+
+.AppIntro {
+  font-size: large;
+  code {
+    color: #0800c7;
+  }
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
