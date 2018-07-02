@@ -1,6 +1,6 @@
 {
   "name": "@uiw/react-codemirror",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "CodeMirror component for React.",
   "main": "lib/index.js",
   "scripts": {
