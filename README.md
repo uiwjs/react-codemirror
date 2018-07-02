@@ -3,7 +3,7 @@ react-codemirror
 
 CodeMirror component for React. demo @[uiw-react.github.io/react-codemirror/](https://uiw-react.github.io/react-codemirror/)
 
-<img src="./react-codemirror.png">
+<a href="https://uiw-react.github.io/react-codemirror/"><img src="https://raw.githubusercontent.com/uiw-react/react-codemirror/master/react-codemirror.png" /></a>
 
 ## Install
 
