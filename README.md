@@ -3,16 +3,20 @@ react-codemirror
 
 CodeMirror component for React.
 
+<img src="./react-codemirror.png">
+
 ## Install
 
 ```bash
 npm install @uiw/react-codemirror --save
 ```
 
-## usage
+## Usage
 
 ```jsx
 import CodeMirror from '@uiw/react-codemirror';
+import 'codemirror/keymap/sublime';
+import 'codemirror/theme/eclipse.css';
 
 <CodeMirror
   value={code}
