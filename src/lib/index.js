@@ -53,3 +53,13 @@ export default class ReactCodeMirror extends Component {
     );
   }
 }
+
+ReactCodeMirror.defaultProps = {
+  value: '',
+  options: {},
+};
+
+ReactCodeMirror.propTypes = {
+  value: PropTypes.string,
+  options: PropTypes.object,
+};
