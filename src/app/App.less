@@ -5,6 +5,14 @@ body {
 
 .App {
   border-bottom: 1px solid #ddd;
+  :global {
+    .CodeMirror {
+      min-height: 500px;
+    }
+    .CodeMirror-scroll {
+      min-height: 500px;
+    }
+  }
 }
 
 .AppLogo {
