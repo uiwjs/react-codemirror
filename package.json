@@ -1,6 +1,6 @@
 {
   "name": "@uiw/react-codemirror",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "CodeMirror component for React.",
   "main": "lib/index.js",
   "scripts": {
@@ -26,6 +26,7 @@
   "license": "MIT",
   "dependencies": {
     "codemirror": "^5.39.0",
+    "prop-types": "^15.6.2",
     "react": "^16.4.0",
     "react-dom": "^16.4.0"
   },
