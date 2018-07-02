@@ -1,10 +1,11 @@
 {
   "name": "@uiw/react-codemirror",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "CodeMirror component for React.",
   "main": "lib/index.js",
   "scripts": {
-    "release" : "babel --plugins transform-runtime src/lib --out-dir lib --copy-files",
+    "deploy": "npm run build && gh-pages -d dist",
+    "release": "babel --plugins transform-runtime src/lib --out-dir lib --copy-files",
     "start": "kkt start",
     "build": "kkt build"
   },
@@ -29,6 +30,7 @@
     "react-dom": "^16.4.0"
   },
   "devDependencies": {
+    "gh-pages": "^1.2.0",
     "kkt": "1.9.x"
   }
 }
