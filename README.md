@@ -29,7 +29,7 @@ import 'codemirror/theme/eclipse.css';
 
 requiring codemirror resources, This is often the case when specifying certain language modes and themes. Just set the mode, the language resources will automatically lazy loading.
 
-```js
+```jsx
 import CodeMirror from '@uiw/react-codemirror';
 import 'codemirror/addon/display/autorefresh';
 import 'codemirror/addon/comment/comment';
