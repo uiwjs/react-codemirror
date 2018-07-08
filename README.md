@@ -7,7 +7,7 @@ CodeMirror component for React. demo @[uiw-react.github.io/react-codemirror/](ht
 
 **Features:**
 
-🌱 Load `mode` based on configuration.  
+🌱 Automatically load `mode` files based on configuration.  
 🚀 Quickly and easily configure the API.  
 
 ## Install
