@@ -21,13 +21,61 @@ body {
 }
 
 .AppHeader {
-  background-color: #222;
-  padding: 20px;
-  color: white;
+  background-color: #fff;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1), 0 1px rgba(0, 0, 0, 0.1);
+  padding: 120px 20px 20px 20px;
+  color: #333;
+  position: relative;
+  z-index: 9;
+  text-align: center;
+  .select {
+    padding: 20px 0 0 0;
+    select + select {
+      margin-left: 10px;
+    }
+    select{
+      border: none;
+      outline: none;
+      height: 32px;
+      line-height: 32px;
+      padding-left: 15px;
+      background: #f1f1f1;
+    }
+  }
+  .content {
+    font-size: 18px;
+    color: #a5a5a5;
+    font-weight: 200;
+  }
+  .button {
+    a {
+      color: #333;
+      outline: none;
+      min-width: 88px;
+      min-height: 36px;
+      margin: 6px 8px;
+      padding: 0 16px;
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      user-select: none;
+      border-radius: 3px;
+      cursor: pointer;
+      background: #f1f1f1;
+      line-height: 36px;
+      text-transform: uppercase;
+      text-decoration: none;
+      &:hover {
+        background-color: #929292;
+        color: #fff;
+        transition: background-color .25s linear,color .05s linear,opacity .25s linear,filter .25s linear,visibility .25s linear,transform .25s linear;
+      }
+    }
+  }
 }
 
 .AppTitle {
-  font-size: 1.5em;
+  font-size: 30px;
 }
 
 .AppIntro {
