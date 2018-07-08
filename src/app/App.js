@@ -164,7 +164,7 @@ export default class App extends PureComponent {
           <div className={styles.button}>
             {hyperlink.map((item, idx) => {
               return (
-                <a key={idx} href={item.href}>{item.label}</a>
+                <a key={idx} target="_blank" rel="noopener noreferrer" href={item.href}>{item.label}</a>
               );
             })}
           </div>
