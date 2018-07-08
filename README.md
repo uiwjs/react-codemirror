@@ -5,6 +5,11 @@ CodeMirror component for React. demo @[uiw-react.github.io/react-codemirror/](ht
 
 <a href="https://uiw-react.github.io/react-codemirror/"><img src="https://raw.githubusercontent.com/uiw-react/react-codemirror/master/react-codemirror.png" /></a>
 
+**Features:**
+
+🌱 Load `mode` based on configuration.  
+🚀 Quickly and easily configure the API.  
+
 ## Install
 
 ```bash
@@ -17,6 +22,8 @@ npm install @uiw/react-codemirror --save
 import CodeMirror from '@uiw/react-codemirror';
 import 'codemirror/keymap/sublime';
 import 'codemirror/theme/eclipse.css';
+
+const code = 'const a = 0;';
 
 <CodeMirror
   value={code}
@@ -37,6 +44,8 @@ import 'codemirror/addon/edit/matchbrackets';
 import 'codemirror/keymap/sublime';
 import 'codemirror/theme/eclipse.css';
 
+const code = 'const a = 0;';
+
 <CodeMirror
   value={code}
   options={{
@@ -46,6 +55,28 @@ import 'codemirror/theme/eclipse.css';
     mode: 'jsx',
   }}
 />
+```
+
+## Change Theme
+
+```diff
+import CodeMirror from '@uiw/react-codemirror';
+import 'codemirror/addon/display/autorefresh';
+import 'codemirror/addon/comment/comment';
+import 'codemirror/addon/edit/matchbrackets';
+import 'codemirror/keymap/sublime';
++ import 'codemirror/theme/monokai.css';
+
+const code = 'const a = 0;';
+
+  <CodeMirror
+    value={code}
+    options={{
++    theme: 'monokai',
+      keyMap: 'sublime',
+      mode: 'jsx',
+    }}
+  />
 ```
 
 ## Options
