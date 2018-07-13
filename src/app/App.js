@@ -60,6 +60,8 @@ import 'codemirror/theme/xq-light.css';
 import 'codemirror/theme/yeti.css';
 import 'codemirror/theme/zenburn.css';
 
+import Markdown from '../components/Markdown';
+import DocumentStr from './doc.md';
 import logo from './logo.png';
 import styles from './App.less';
 import CodeMirror from '../lib/';
@@ -183,6 +185,7 @@ export default class App extends PureComponent {
             mode,
           }}
         />
+        <Markdown source={DocumentStr} className={styles.markdown} />
       </div>
     );
   }
