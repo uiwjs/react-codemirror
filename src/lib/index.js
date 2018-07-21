@@ -32,7 +32,7 @@ export default class ReactCodeMirror extends Component {
     if (nextPros.options && nextPros.options.mode !== this.props.options.mode) {
       await loadMode(nextPros.options.mode);
     }
-    this.setState({
+    await this.setState({
       codeMirrorOptions: { ...this.state.codeMirrorOptions, ...nextPros.options },
     });
   }

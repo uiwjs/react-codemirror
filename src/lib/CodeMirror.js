@@ -10,6 +10,9 @@ export default class ReactCodeMirror extends Component {
   }
 
   componentDidMount() {
+    this.renderCodeMirror();
+  }
+  renderCodeMirror() {
     // 生成codemirror实例
     this.editor = CodeMirror.fromTextArea(this.textarea, this.props.options);
     // 获取CodeMirror用于获取其中的一些常量
@@ -30,7 +33,6 @@ export default class ReactCodeMirror extends Component {
       this.editor.setSize(width, height);
     }
   }
-
   componentWillReceiveProps(nextProps) {
     const val = this.editor.getValue();
     const next = nextProps.value;
@@ -48,7 +50,7 @@ export default class ReactCodeMirror extends Component {
   setOptions(options) {
     if (typeof options === 'object') {
       Object.keys(options).forEach((name) => {
-        if (JSON.stringify(this.props.options[name]) !== JSON.stringify(options[name])) {
+        if (options[name] && JSON.stringify(options[name])) {
           this.editor.setOption(name, options[name]);
         }
       });
