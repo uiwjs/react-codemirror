@@ -7,8 +7,8 @@ module.exports = function (webpackConf, ServerConf) {
     webpackConf.module.rules.map((item) => {
       if (item.oneOf) {
         item = item.oneOf.map((childItem) => {
-          // 修改配置 css|less 
-          if (String(/\.(css|less)$/) === String(childItem.test)) {
+          // 修改配置 less 
+          if (String(/\.(less)$/) === String(childItem.test)) {
             childItem.use = childItem.use.map((_childItem) => {
               if (/node_modules\/css-loader/.test(_childItem.loader)) {
                 _childItem = {

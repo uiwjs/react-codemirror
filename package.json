@@ -34,7 +34,7 @@
     "classnames": "^2.2.6",
     "gh-pages": "^1.2.0",
     "highlight.js": "^9.12.0",
-    "kkt": "1.9.x",
+    "kkt": "^1.9.24",
     "react-markdown": "^3.3.4"
   }
 }
