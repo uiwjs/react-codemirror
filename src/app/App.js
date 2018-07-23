@@ -129,6 +129,10 @@ export default class App extends PureComponent {
           label: 'View on GitHub',
         },
         {
+          href: 'https://www.npmjs.com/package/@uiw/react-codemirror',
+          label: 'View on NPM',
+        },
+        {
           href: 'http://codemirror.net/doc/manual.html#config',
           label: 'CM CONFIG',
         },
@@ -157,11 +161,12 @@ export default class App extends PureComponent {
   }
   render() {
     const { mode, theme, hyperlink } = this.state;
+    const version = VERSION; // eslint-disable-line
     return (
       <div className={styles.App}>
         <header className={styles.AppHeader}>
           <img src={logo} className={styles.AppLogo} alt="logo" />
-          <h1 className={styles.AppTitle}>React-CodeMirror</h1>
+          <h1 className={styles.AppTitle}>React-CodeMirror <sup>v{version}</sup></h1>
           <p className={styles.content}>CodeMirror component for React. </p>
           <div className={styles.button}>
             {hyperlink.map((item, idx) => {

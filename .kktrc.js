@@ -1,5 +1,7 @@
 const loaderUtils = require('loader-utils');
 const path = require('path');
+const webpack = require('webpack');
+const pkg = require('./package.json');
 
 module.exports = function (webpackConf, ServerConf) {
   if (webpackConf) {
@@ -41,6 +43,14 @@ module.exports = function (webpackConf, ServerConf) {
       }
       return item;
     });
+    // 获取 React CodeMirror 版本
+    webpackConf.plugins.push(
+      new webpack.DefinePlugin({
+        VERSION: JSON.stringify(pkg.version),
+      })
+    );
+
+
     if (webpackConf.mode === 'development') { }
     if (webpackConf.mode === 'production') {
       // 生产模式下更改的 webpack 配置
