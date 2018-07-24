@@ -147,6 +147,9 @@ export default class App extends PureComponent {
       ],
     };
   }
+  componentDidMount() {
+    this.editor.focus();
+  }
   onChange(e) {
     this.setState({ mode: e.target.value });
   }
