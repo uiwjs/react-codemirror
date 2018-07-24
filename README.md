@@ -21,13 +21,14 @@ npm install @uiw/react-codemirror --save
 ```jsx
 import CodeMirror from '@uiw/react-codemirror';
 import 'codemirror/keymap/sublime';
-import 'codemirror/theme/eclipse.css';
+import 'codemirror/theme/monokai.css';
 
 const code = 'const a = 0;';
 
 <CodeMirror
   value={code}
   options={{
+    theme: 'monokai',
     keyMap: 'sublime',
     mode: 'jsx',
   }}
@@ -42,14 +43,14 @@ import 'codemirror/addon/display/autorefresh';
 import 'codemirror/addon/comment/comment';
 import 'codemirror/addon/edit/matchbrackets';
 import 'codemirror/keymap/sublime';
-import 'codemirror/theme/eclipse.css';
+import 'codemirror/theme/monokai.css';
 
 const code = 'const a = 0;';
 
 <CodeMirror
   value={code}
   options={{
-    theme: 'eclipse',
+    theme: 'monokai',
     tabSize: 2,
     keyMap: 'sublime',
     mode: 'jsx',
@@ -78,6 +79,13 @@ const code = 'const a = 0;';
     }}
   />
 ```
+
+## Properties
+
+- `width` width of editor. Defaults to `100%`.
+- `height` height of editor. Defaults to `100%`.
+- `value` value of the auto created model in the editor.
+- `options` refer to [codemirror options](https://codemirror.net/doc/manual.html#config).
 
 ## Options
 
