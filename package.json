@@ -1,7 +1,8 @@
 {
   "name": "@uiw/react-codemirror",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "CodeMirror component for React.",
+  "homepage": "https://uiw-react.github.io/react-codemirror/",
   "main": "lib/index.js",
   "scripts": {
     "deploy": "npm run build && gh-pages -d dist",
