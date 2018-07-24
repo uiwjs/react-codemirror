@@ -88,25 +88,13 @@ export default class ReactCodeMirror extends Component {
 ReactCodeMirror.defaultProps = {
   value: '',
   options: {},
-  width: null,
-  height: null,
+  width: '100%',
+  height: '100%',
 };
 
 ReactCodeMirror.propTypes = {
   value: PropTypes.string,
   options: PropTypes.object,
-  width(props, propName, componentName) {
-    const width = props[propName];
-    if (!(width === null || typeof width === 'number' || typeof width === 'string')) {
-      return new Error(`Invalid prop \`${propName}\` supplied to` +
-        ` \`${componentName}\`. Validation failed.`);
-    }
-  },
-  height(props, propName, componentName) {
-    const height = props[propName];
-    if (!(height === null || typeof height === 'number' || typeof height === 'string')) {
-      return new Error(`Invalid prop \`${propName}\` supplied to` +
-        ` \`${componentName}\`. Validation failed.`);
-    }
-  },
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };

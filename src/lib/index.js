@@ -15,7 +15,6 @@ export default class ReactCodeMirror extends Component {
   async componentDidMount() {
     const { options } = this.props;
     const codeMirrorOptions = {
-      theme: 'eclipse',
       tabSize: 2,
       autoCloseBrackets: true,
       matchBrackets: true,
