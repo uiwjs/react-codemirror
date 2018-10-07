@@ -51,9 +51,14 @@ module.exports = function (webpackConf, ServerConf) {
     );
 
 
-    if (webpackConf.mode === 'development') { }
+    if (webpackConf.mode === 'development') {
+      webpackConf.entry[1] = path.resolve(process.cwd(), 'website');
+    }
     if (webpackConf.mode === 'production') {
       // 生产模式下更改的 webpack 配置
+      // entry
+      console.log('~~:', process.cwd())
+      webpackConf.entry = [path.resolve(process.cwd(), 'website')];
       webpackConf.output.publicPath = '';
     }
     return webpackConf;

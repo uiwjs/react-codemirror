@@ -1,4 +1,5 @@
 import CodeMirror from 'codemirror';
+import 'codemirror/mode/meta';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -47,8 +48,13 @@ export default class ReactCodeMirror extends Component {
     }
   }
   // http://codemirror.net/doc/manual.html#config
-  setOptions(options) {
+  async setOptions(options) {
     if (typeof options === 'object') {
+      const mode = CodeMirror.findModeByName(options.mode);
+      console.log('mode:', mode);
+      if (mode && mode.mode) {
+        await import(`codemirror/mode/${mode.mode}/${mode.mode}.js`);
+      }
       Object.keys(options).forEach((name) => {
         if (options[name] && JSON.stringify(options[name])) {
           this.editor.setOption(name, options[name]);
