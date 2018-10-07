@@ -42,7 +42,6 @@ export default class ReactCodeMirror extends Component {
     }
     const { options, width, height } = nextProps;
     this.setOptions(options);
-
     if (width !== this.props.width || height !== this.props.height) {
       this.editor.setSize(width, height);
     }
@@ -51,9 +50,11 @@ export default class ReactCodeMirror extends Component {
   async setOptions(options) {
     if (typeof options === 'object') {
       const mode = CodeMirror.findModeByName(options.mode);
-      console.log('mode:', mode);
       if (mode && mode.mode) {
         await import(`codemirror/mode/${mode.mode}/${mode.mode}.js`);
+      }
+      if (mode.alias && options.mode !== mode.mode) {
+        options.mode = mode.mode;
       }
       Object.keys(options).forEach((name) => {
         if (options[name] && JSON.stringify(options[name])) {
