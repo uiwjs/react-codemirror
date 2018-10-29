@@ -1,26 +1,26 @@
 {
   "presets": [
     [
-      "env", {
+      "@babel/preset-env", {
         "targets": {
           "browsers": ["last 2 versions", "ie >= 10"]
         }
       }
     ],
-    "react"
+    "@babel/preset-react"
   ],
   "plugins": [
-    "transform-object-rest-spread",
-    "syntax-dynamic-import",
-    "transform-async-to-generator",
-    "transform-class-properties",
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-transform-async-to-generator",
+    ["@babel/plugin-proposal-object-rest-spread", { "loose": true, "useBuiltIns": true }],
     [
-      "transform-runtime",
+      "@babel/plugin-transform-runtime",
       {
-        "helpers": false,
-        "polyfill": false,
+        "corejs": false,
+        "helpers": true,
         "regenerator": true,
-        "moduleName": "babel-runtime"
+        "useESModules": false
       }
     ]
   ],

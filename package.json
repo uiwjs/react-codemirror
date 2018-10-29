@@ -25,17 +25,21 @@
   ],
   "author": "kenny wong <wowohoo@qq.com>",
   "license": "MIT",
+  "peerDependencies": {
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0"
+  },
   "dependencies": {
-    "codemirror": "^5.40.2",
+    "codemirror": "^5.41.0",
     "prop-types": "^15.6.2",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
   },
   "devDependencies": {
     "classnames": "^2.2.6",
-    "code-example": "^1.0.6",
+    "code-example": "^1.0.7",
     "highlight.js": "^9.12.0",
-    "kkt": "^1.9.29",
+    "kkt": "^2.1.2",
     "react-markdown": "^3.3.4"
   }
 }
