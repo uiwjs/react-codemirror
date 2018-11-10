@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "classnames": "^2.2.6",
-    "code-example": "^1.0.7",
+    "code-example": "^1.0.8",
     "highlight.js": "^9.12.0",
     "kkt": "^2.1.2",
     "react-markdown": "^3.3.4"
