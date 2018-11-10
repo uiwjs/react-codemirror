@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import modeInfo from './modes';
 import 'codemirror/addon/display/autorefresh';
 import 'codemirror/addon/comment/comment';
 import 'codemirror/addon/edit/matchbrackets';
@@ -96,7 +97,6 @@ import CodeMirror from '../src';
 //   }
 // }
 // `;
-const modes = ['json', 'apl', 'asciiarmor', 'asn.1', 'asterisk', 'brainfuck', 'clike', 'clojure', 'cmake', 'cobol', 'coffeescript', 'commonlisp', 'crystal', 'css', 'cypher', 'd', 'dart', 'diff', 'django', 'dockerfile', 'dtd', 'dylan', 'ebnf', 'ecl', 'eiffel', 'elm', 'erlang', 'factor', 'fcl', 'forth', 'fortran', 'gas', 'gfm', 'gherkin', 'go', 'groovy', 'haml', 'handlebars', 'haskell', 'haskell-literate', 'haxe', 'htmlembedded', 'htmlmixed', 'http', 'ini', 'idl', 'javascript', 'jinja2', 'jsx', 'julia', 'livescript', 'lua', 'markdown', 'mathematica', 'mbox', 'meta', 'mirc', 'mllike', 'modelica', 'mscgen', 'mumps', 'nginx', 'nsis', 'ntriples', 'octave', 'oz', 'pascal', 'pegjs', 'perl', 'php', 'pig', 'powershell', 'properties', 'protobuf', 'pug', 'puppet', 'python', 'q', 'r', 'rpm', 'rst', 'ruby', 'rust', 'sas', 'sass', 'scheme', 'shell', 'sieve', 'slim', 'smalltalk', 'smarty', 'solr', 'soy', 'sparql', 'spreadsheet', 'sql', 'stex', 'stylus', 'swift', 'tcl', 'textile', 'tiddlywiki', 'tiki', 'toml', 'tornado', 'troff', 'ttcn', 'ttcn-cfg', 'turtle', 'twig', 'vb', 'vbscript', 'velocity', 'verilog', 'vhdl', 'vue', 'webidl', 'xml', 'xquery', 'yacas', 'yaml', 'yaml-frontmatter', 'z80'];
 
 const themes = ['3024-day', '3024-night', 'abcdef', 'ambiance-mobile', 'ambiance', 'base16-dark', 'base16-light', 'bespin', 'blackboard', 'cobalt', 'colorforth', 'darcula', 'dracula', 'duotone-dark', 'duotone-light', 'eclipse', 'elegant', 'erlang-dark', 'gruvbox-dark', 'hopscotch', 'icecoder', 'idea', 'isotope', 'lesser-dark', 'liquibyte', 'lucario', 'material', 'mbo', 'mdn-like', 'midnight', 'monokai', 'neat', 'neo', 'night', 'oceanic-next', 'panda-syntax', 'paraiso-dark', 'paraiso-light', 'pastel-on-dark', 'railscasts', 'rubyblue', 'seti', 'shadowfox', 'solarized', 'ssms', 'the-matrix', 'tomorrow-night-bright', 'tomorrow-night-eighties', 'ttcn', 'twilight', 'vibrant-ink', 'xq-dark', 'xq-light', 'yeti', 'zenburn'];
 
@@ -117,6 +117,23 @@ const Select = ({ value, options, onChange }) => {
 };
 
 
+const SelectModes = ({ value, options, onChange }) => {
+  const index = modeInfo.findIndex((item) => {
+    if (item.ext) return item.ext.indexOf(value) > -1;
+    else return item.mode === value;
+  });
+  return (
+    <select value={index} onChange={onChange}>
+      {options.map((item, key) => {
+        const optionProps = { key };
+        optionProps.value = key;
+        return (
+          <option {...optionProps}> {item.name} </option>
+        );
+      })}
+    </select>
+  );
+};
 export default class App extends PureComponent {
   constructor() {
     super();
@@ -163,8 +180,12 @@ export default class App extends PureComponent {
     });
   }
   onChange(e) {
-    this.loadCode(e.target.value);
-    this.setState({ mode: e.target.value });
+    const mode = modeInfo[e.target.value];
+    const ext = mode.ext;
+    if (ext) {
+      this.loadCode(ext[0]);
+      this.setState({ mode: ext[0] });
+    }
   }
   onChangeTheme(e) {
     this.setState({ theme: e.target.value });
@@ -192,7 +213,7 @@ export default class App extends PureComponent {
             })}
           </div>
           <div className={styles.select}>
-            <Select value={mode} options={modes} onChange={this.onChange.bind(this)} />
+            <SelectModes value={mode} options={modeInfo} onChange={this.onChange.bind(this)} />
             <Select value={theme} options={themes} onChange={this.onChangeTheme.bind(this)} />
           </div>
         </header>
