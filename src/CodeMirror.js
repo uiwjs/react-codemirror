@@ -53,8 +53,8 @@ export default class ReactCodeMirror extends Component {
       if (mode && mode.mode) {
         await import(`codemirror/mode/${mode.mode}/${mode.mode}.js`);
       }
-      if (mode && mode.alias && options.mode !== mode.mode) {
-        options.mode = mode.mode;
+      if (mode) {
+        options.mode = mode.mime;
       }
       Object.keys(options).forEach((name) => {
         if (options[name] && JSON.stringify(options[name])) {
