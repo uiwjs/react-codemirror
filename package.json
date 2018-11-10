@@ -8,7 +8,7 @@
     "deploy": "npm run build && kkt deploy -u git@github.com:uiw-react/react-codemirror.git",
     "build:lib": "babel src --out-dir lib --copy-files --verbose",
     "start": "kkt start",
-    "build": "kkt build"
+    "build": "npm run build:lib && kkt build"
   },
   "repository": {
     "type": "git",
