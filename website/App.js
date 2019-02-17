@@ -143,7 +143,7 @@ export default class App extends PureComponent {
       theme: 'monokai',
       hyperlink: [
         {
-          href: 'https://github.com/uiw-react/react-codemirror',
+          href: 'https://github.com/uiwjs/react-codemirror',
           label: 'View on GitHub',
         },
         {

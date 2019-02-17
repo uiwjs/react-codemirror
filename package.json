@@ -2,10 +2,10 @@
   "name": "@uiw/react-codemirror",
   "version": "1.0.19",
   "description": "CodeMirror component for React.",
-  "homepage": "https://uiw-react.github.io/react-codemirror/",
+  "homepage": "https://uiwjs.github.io/react-codemirror/",
   "main": "lib/index.js",
   "scripts": {
-    "deploy": "npm run build && kkt deploy -u git@github.com:uiw-react/react-codemirror.git",
+    "deploy": "npm run build && kkt deploy -u git@github.com:uiwjs/react-codemirror.git",
     "build:lib": "babel src --out-dir lib --copy-files --verbose",
     "start": "kkt start",
     "build": "npm run build:lib && kkt build"
