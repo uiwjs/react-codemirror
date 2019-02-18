@@ -5,7 +5,7 @@
   "homepage": "https://uiwjs.github.io/react-codemirror/",
   "main": "lib/index.js",
   "scripts": {
-    "deploy": "npm run build && kkt deploy -u git@github.com:uiwjs/react-codemirror.git",
+    "deploy": "gh-pages -d dist -r git@github.com:uiwjs/react-codemirror.git",
     "build:lib": "babel src --out-dir lib --copy-files --verbose",
     "start": "kkt start",
     "build": "npm run build:lib && kkt build"
