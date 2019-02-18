@@ -64,7 +64,7 @@ import 'codemirror/theme/zenburn.css';
 import Markdown from './components/Markdown';
 import DocumentStr from './doc.md';
 import logo from './logo.png';
-import styles from './App.less';
+import styles from './App.module.less';
 import CodeMirror from '../src';
 
 // const code = `import React, { PureComponent } from 'react';

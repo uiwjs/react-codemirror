@@ -36,10 +36,12 @@
     "react-dom": "^16.6.0"
   },
   "devDependencies": {
+    "@kkt/plugin-less": "^1.2.0",
     "classnames": "^2.2.6",
     "code-example": "^1.0.8",
     "highlight.js": "^9.12.0",
-    "kkt": "^2.1.2",
+    "kkt": "^3.4.3",
+    "raw-loader": "^1.0.0",
     "react-markdown": "^3.3.4"
   }
 }
