@@ -51,7 +51,7 @@ export default class ReactCodeMirror extends Component {
     if (typeof options === 'object') {
       const mode = CodeMirror.findModeByName(options.mode);
       if (mode && mode.mode) {
-        await import(`codemirror/mode/${mode.mode}/${mode.mode}.js`);
+        await require(`codemirror/mode/${mode.mode}/${mode.mode}.js`);
       }
       if (mode) {
         options.mode = mode.mime;
