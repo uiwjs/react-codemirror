@@ -25,6 +25,33 @@
     ]
   ],
   "env": {
-    "production": { }
+    "esm": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "modules": false
+          }
+        ]
+      ],
+      "plugins": [
+        [
+          "@babel/plugin-transform-runtime",
+          {
+            "useESModules": true
+          }
+        ],
+      ]
+    },
+    "cjs": {
+      "plugins": [
+        [
+          "babel-plugin-transform-remove-imports",
+          {
+            "test": "(less|css)$"
+          }
+        ],
+      ]
+    }
   }
 }
