@@ -1,8 +1,0 @@
-dist
-public
-src
-package-lock.json
-react-codemirror.png
-.gitignore
-.babelrc
-.kkt*
