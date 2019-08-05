@@ -27,7 +27,7 @@
     "code"
   ],
   "files": [
-    "typing",
+    "typings",
     "lib",
     "esm",
     "src"
