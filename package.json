@@ -1,10 +1,11 @@
 {
   "name": "@uiw/react-codemirror",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "description": "CodeMirror component for React.",
   "homepage": "https://uiwjs.github.io/react-codemirror/",
   "main": "lib/index.js",
   "module": "esm/index.js",
+  "typings": "typings/index.d.ts",
   "scripts": {
     "deploy": "gh-pages -d dist -r git@github.com:uiwjs/react-codemirror.git",
     "build:cjs": "BABEL_ENV=cjs babel src --out-dir cjs --source-maps true --delete-dir-on-start --verbose",
@@ -44,6 +45,7 @@
   },
   "devDependencies": {
     "@kkt/plugin-less": "^1.2.0",
+    "@types/codemirror": "0.0.76",
     "babel-plugin-transform-remove-imports": "^1.0.8",
     "classnames": "^2.2.6",
     "code-example": "^1.0.8",
