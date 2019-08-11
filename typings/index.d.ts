@@ -2,12 +2,14 @@ import React from 'react';
 import CodeMirror from 'codemirror';
 import { string } from 'prop-types';
 
-type DOMEvent = 'onMouseDown' | 'onDblClick' | 'onTouchStart' | 'onContextMenu' | 'onKeyDown' | 'onKeyPress'
+export type DOMEvent = 'onMouseDown' | 'onDblClick' | 'onTouchStart' | 'onContextMenu' | 'onKeyDown' | 'onKeyPress'
   | 'onKeyUp' | 'onCut' | 'onCopy' | 'onPaste' | 'onDragStart' | 'onDragEnter' | 'onDragOver' | 'onDragLeave' | 'onDrop';
 
-type IDOMEvent = {
+export type IDOMEvent = {
   [P in DOMEvent]?: (instance: CodeMirror.Editor, event: Event) => void;
 }
+
+export type Editor = CodeMirror.Editor;
 
 export interface IReactCodemirror extends IDOMEvent {
   /**
@@ -84,9 +86,10 @@ export interface IReactCodemirror extends IDOMEvent {
    */
   onRenderLine?: (instance: CodeMirror.Editor, line: CodeMirror.LineHandle, element: HTMLElement) => void;
   /** Fires when the overwrite flag is flipped. */
-  onOverwriteToggle: (instance: CodeMirror.Editor, overwrite: boolean) => void;
+  onOverwriteToggle?: (instance: CodeMirror.Editor, overwrite: boolean) => void;
 }
 export default class ReactCodemirror extends React.Component<IReactCodemirror> {
+  editor: Editor;
   static defaultProps: IReactCodemirror;
   render(): JSX.Element;
 }
