@@ -79,7 +79,7 @@ export default class ReactCodeMirror extends Component {
 
     const eventDict = {};
     eventHandle.forEach((ele) => {
-      eventDict[ele] = ele.replace(/^on[A-Z]/g, s => s.slice(2).toLowerCase());
+      eventDict[ele] = ele.slice(2).toLowerCase();
     });
 
     return eventDict;
