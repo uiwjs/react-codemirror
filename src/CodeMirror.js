@@ -34,7 +34,7 @@ export default class ReactCodeMirror extends Component {
       this.editor.setSize(width, height);
     }
   }
-  async componentWillReceiveProps(nextProps) {
+  async UNSAFE_componentWillReceiveProps(nextProps) {
     const val = this.editor.getValue();
     const next = nextProps.value;
     if (next !== undefined && next !== this.props.value && next !== val) {

@@ -25,7 +25,7 @@ export default class ReactCodeMirror extends Component {
     };
     this.setState({ codeMirrorOptions });
   }
-  async componentWillReceiveProps(nextPros) {
+  async UNSAFE_componentWillReceiveProps(nextPros) {
     await this.setState({
       codeMirrorOptions: { ...this.state.codeMirrorOptions, ...nextPros.options },
     });
