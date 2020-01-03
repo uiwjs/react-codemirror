@@ -27,9 +27,7 @@
   ],
   "files": [
     "typings",
-    "lib",
-    "esm",
-    "src"
+    "lib"
   ],
   "author": "kenny wong <wowohoo@qq.com>",
   "license": "MIT",
