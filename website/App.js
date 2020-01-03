@@ -65,7 +65,7 @@ import Markdown from './components/Markdown';
 import DocumentStr from './doc.md';
 import logo from './logo.png';
 import styles from './App.module.less';
-import CodeMirror from '../src';
+import CodeMirror from '../';
 
 // const code = `import React, { PureComponent } from 'react';
 // import 'codemirror/addon/display/autorefresh';

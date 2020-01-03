@@ -1,8 +1,6 @@
 node_modules
-dist
+build
 lib
-cjs
-esm
 !src/lib
 npm-debug.log*
 .DS_Store

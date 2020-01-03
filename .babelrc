@@ -1,56 +1,36 @@
 {
-  "presets": [
-    [
-      "@babel/preset-env", {
-        "targets": {
-          "browsers": ["last 2 versions", "ie >= 10"]
-        }
-      }
-    ],
-    "@babel/preset-react"
-  ],
-  "plugins": [
-    "@babel/plugin-syntax-dynamic-import",
-    "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-transform-async-to-generator",
-    ["@babel/plugin-proposal-object-rest-spread", { "loose": true, "useBuiltIns": true }],
-    [
-      "@babel/plugin-transform-runtime",
-      {
-        "corejs": false,
-        "helpers": true,
-        "regenerator": true,
-        "useESModules": false
-      }
-    ]
-  ],
   "env": {
-    "esm": {
-      "presets": [
-        [
-          "@babel/preset-env",
-          {
-            "modules": false
-          }
-        ]
-      ],
-      "plugins": [
-        [
-          "@babel/plugin-transform-runtime",
-          {
-            "useESModules": true
-          }
-        ],
-      ]
-    },
     "cjs": {
       "plugins": [
         [
           "babel-plugin-transform-remove-imports",
+          { "test": "(less|css)$" }
+        ]
+      ]
+    },
+    "esm": {
+      "plugins": [
+        [
+          "babel-plugin-transform-rename-import",
+          { "original": "^(.+?)\\.less$", "replacement": "$1.css" }
+        ]
+      ]
+    },
+    "esm:dev": {
+      "presets": [
+        "@babel/preset-react",
+        [
+          "@tsbb/babel-preset-tsbb",
           {
-            "test": "(less|css)$"
+            "modules": false,
+            "targets": {
+              "browsers": [ "last 2 versions" ]
+            },
+            "transformRuntime": {
+              "useESModules": true
+            }
           }
-        ],
+        ]
       ]
     }
   }
