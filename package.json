@@ -31,9 +31,6 @@
     "esm",
     "src"
   ],
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "author": "kenny wong <wowohoo@qq.com>",
   "license": "MIT",
   "peerDependencies": {
