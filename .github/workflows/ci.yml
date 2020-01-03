@@ -1,4 +1,4 @@
-name: GitHub Actions Build and Deploy react-baidu-map
+name: GitHub Actions Build and Deploy @uiw/react-codemirror
 on:
   push:
     # branches:
