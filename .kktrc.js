@@ -15,7 +15,14 @@ export default (conf, opts, webpack) => {
     if (item.oneOf) {
       item.oneOf.unshift({
         test: /\.md$/,
-        use: require.resolve('raw-loader'),
+        use: [
+          {
+            loader: require.resolve('raw-loader'),
+            options: {
+              esModule: true,
+            },
+          },
+        ],
       });
     }
     return item;
@@ -27,14 +34,6 @@ export default (conf, opts, webpack) => {
       VERSION: JSON.stringify(pkg.version),
     })
   );
-  // 解析 Markdown 文件
-  conf.module.rules = [
-    ...conf.module.rules,
-    {
-      test: /\.md$/,
-      loader: 'raw-loader',
-    },
-  ];
   conf.output = { ...conf.output, publicPath: './' }
   return conf;
 }
