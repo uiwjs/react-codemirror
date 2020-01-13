@@ -1,6 +1,5 @@
 import React from 'react';
 import CodeMirror from 'codemirror';
-import { string } from 'prop-types';
 
 export type DOMEvent = 'onMouseDown' | 'onDblClick' | 'onTouchStart' | 'onContextMenu' | 'onKeyDown' | 'onKeyPress'
   | 'onKeyUp' | 'onCut' | 'onCopy' | 'onPaste' | 'onDragStart' | 'onDragEnter' | 'onDragOver' | 'onDragLeave' | 'onDrop';
@@ -85,8 +84,46 @@ export interface IReactCodemirror extends IDOMEvent {
    * The handler may mess with the style of the resulting element, or add event handlers, but should not try to change the state of the editor.
    */
   onRenderLine?: (instance: CodeMirror.Editor, line: CodeMirror.LineHandle, element: HTMLElement) => void;
-  /** Fires when the overwrite flag is flipped. */
+  /**
+   * Fires when the overwrite flag is flipped.
+   * */
   onOverwriteToggle?: (instance: CodeMirror.Editor, overwrite: boolean) => void;
+  /**
+   * Fired whenever the cursor or selection in this document changes.
+   * */
+  onCursorActivity?(instance: CodeMirror.Editor): void;
+  /**
+   * Will be fired when the line object is deleted. A line object is associated with the start of the line.
+   * Mostly useful when you need to find out when your gutter markers on a given line are removed.
+   * */
+  onDelete?(): void;
+  /**
+   * Fired when the cursor enters the marked range.
+   * From this event handler, the editor state may be inspected but not modified,
+   * with the exception that the range on which the event fires may be cleared.
+   * */
+  onBeforeCursorEnter?(): void;
+  /**
+   * Fired when the cursor enters the marked range.
+   * From this event handler, the editor state may be inspected but not modified,
+   * with the exception that the range on which the event fires may be cleared.
+   * */
+  onClear?(): void;
+  /**
+   * Fired when the last part of the marker is removed from the document by editing operations.
+   * */
+  onHide?(): void;
+  /**
+   * Fired when, after the marker was removed by editing, a undo operation brought the marker back.
+   * */
+  onUnhide?(): void;
+  /**
+   * Fired whenever the editor re-adds the widget to the DOM.
+   * This will happen once right after the widget is added (if it is scrolled into view),
+   * and then again whenever it is scrolled out of view and back in again, or when changes to the editor options
+   * or the line the widget is on require the widget to be redrawn.
+   * */
+  onRedraw?(): void;
 }
 export default class ReactCodemirror extends React.Component<IReactCodemirror> {
   editor: Editor;
