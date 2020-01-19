@@ -90,6 +90,8 @@ const code = 'const a = 0;';
 
 ## Props Events
 
+[codemirror events](https://codemirror.net/doc/manual.html#events)
+
 ```tsx
 import React from 'react';
 import CodeMirror from 'codemirror';
@@ -683,10 +685,6 @@ off(eventName: DOMEvent, handler: (instance: CodeMirror.Editor, event: Event) =>
 /** Expose the state object, so that the Editor.state.completionActive property is reachable*/
 state: any;
 ```
-
-## Events
-
-[codemirror events](https://codemirror.net/doc/manual.html#events)
 
 ## License
 
