@@ -173,7 +173,7 @@ export default class App extends PureComponent {
     const version = VERSION; // eslint-disable-line
     return (
       <div className={styles.App}>
-        <GitHubCorners fixed target="__blank" zIndex={10} href="https://github.com/uiwjs/react-markdown-preview" />
+        <GitHubCorners fixed target="__blank" zIndex={10} href="https://github.com/uiwjs/react-codemirror" />
         <header className={styles.AppHeader}>
           <img src={logo} className={styles.AppLogo} alt="logo" />
           <h1 className={styles.AppTitle}>React-CodeMirror <sup>v{version}</sup></h1>
@@ -202,12 +202,12 @@ export default class App extends PureComponent {
         />
         <MarkdownPreview className={styles.markdown} source={DocumentStr.replace(/([\s\S]*)<!--dividing-->/, '')} />
         <div className={styles.footer}>
-          <Github user="uiwjs" repo="react-markdown-preview">
-            <Github.Social type="forks" href="https://github.com/uiwjs/react-markdown-preview" />
-            <Github.Social type="stars" href="https://github.com/uiwjs/react-markdown-preview/stargazers" />
-            <Github.Social type="watchers" href="https://github.com/uiwjs/react-markdown-preview/watchers" />
+          <Github user="uiwjs" repo="react-codemirror">
+            <Github.Social type="forks" href="https://github.com/uiwjs/react-codemirror" />
+            <Github.Social type="stars" href="https://github.com/uiwjs/react-codemirror/stargazers" />
+            <Github.Social type="watchers" href="https://github.com/uiwjs/react-codemirror/watchers" />
           </Github>
-          <Npm.Version scope="@uiw" packageName="react-shields" href="https://www.npmjs.com/package/@uiw/react-markdown-preview" />
+          <Npm.Version scope="@uiw" packageName="react-shields" href="https://www.npmjs.com/package/@uiw/react-codemirror" />
         </div>
       </div>
     );
