@@ -48,13 +48,8 @@
     "@kkt/loader-less": "5.7.1",
     "@types/codemirror": "0.0.91",
     "@uiw/react-github-corners": "1.1.3",
-<<<<<<< HEAD
     "@uiw/react-markdown-preview": "^1.0.2",
     "@uiw/react-shields": "^1.1.0",
-=======
-    "@uiw/react-markdown-preview": "1.0.1",
-    "@uiw/react-shields": "1.1.0",
->>>>>>> f22b2a475f986882a1e1669b8e92ced3531ab69b
     "@uiw/reset.css": "1.0.3",
     "babel-plugin-transform-remove-imports": "1.3.2",
     "code-example": "2.0.0",
