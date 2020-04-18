@@ -45,7 +45,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "@kkt/loader-less": "5.7.1",
+    "@kkt/loader-less": "5.8.0",
     "@types/codemirror": "0.0.91",
     "@uiw/react-github-corners": "1.1.3",
     "@uiw/react-markdown-preview": "1.0.3",
