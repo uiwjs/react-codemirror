@@ -1,9 +1,10 @@
 react-codemirror
 ===
-
 CodeMirror component for React. demo @[uiwjs.github.io/react-codemirror/](https://uiwjs.github.io/react-codemirror/)
 
 <a href="https://uiwjs.github.io/react-codemirror/"><img src="https://raw.githubusercontent.com/uiwjs/react-codemirror/master/react-codemirror.png" /></a>
+
+<!--dividing-->
 
 **Features:**
 

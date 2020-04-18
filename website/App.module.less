@@ -4,11 +4,18 @@ body {
 }
 
 .markdown {
-  padding: 30px 0 0 0;
+  margin: 0 auto;
+  text-align: left;
+  max-width: 995px;
+  overflow: auto;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 5px;
 }
 
 .App {
   border-bottom: 1px solid #ddd;
+  padding-bottom: 68px;
   :global {
     .CodeMirror {
       min-height: 500px;
@@ -99,6 +106,11 @@ body {
   code {
     color: #0800c7;
   }
+}
+
+.footer {
+  text-align: center;
+  padding-top: 30px;
 }
 
 @keyframes App-logo-spin {

@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
-import modeInfo from './modes';
+import GitHubCorners from '@uiw/react-github-corners';
+import Github from '@uiw/react-shields/lib/esm/github';
+import Npm from '@uiw/react-shields/lib/esm/npm';
 import 'codemirror/addon/display/autorefresh';
 import 'codemirror/addon/comment/comment';
 import 'codemirror/addon/edit/matchbrackets';
@@ -61,42 +63,12 @@ import 'codemirror/theme/xq-light.css';
 import 'codemirror/theme/yeti.css';
 import 'codemirror/theme/zenburn.css';
 
-import Markdown from './components/Markdown';
-import DocumentStr from './doc.md';
+import MarkdownPreview from '@uiw/react-markdown-preview';
+import modeInfo from './modes';
+import DocumentStr from '../README.md';
 import logo from './logo.png';
 import styles from './App.module.less';
 import CodeMirror from '../';
-
-// const code = `import React, { PureComponent } from 'react';
-// import 'codemirror/addon/display/autorefresh';
-// import 'codemirror/addon/comment/comment';
-// import 'codemirror/addon/edit/matchbrackets';
-// import 'codemirror/keymap/sublime';
-// import 'codemirror/theme/eclipse.css';
-// import logo from './logo.png';
-// import styles from './App.less';
-// import CodeMirror from '../../lib/';
-
-// export default class App extends PureComponent {
-//   render() {
-//     return (
-//       <div className={styles.App}>
-//         <header className={styles.AppHeader}>
-//           <img src={logo} className={styles.AppLogo} alt="logo" />
-//           <h1 className={styles.AppTitle}>Welcome to React-CodeMirror</h1>
-//         </header>
-//         <CodeMirror
-//           value="<h1>I ♥ react-codemirror2</h1>"
-//           options={{
-//             keyMap: 'sublime',
-//             mode: 'jsx',
-//           }}
-//         />
-//       </div>
-//     );
-//   }
-// }
-// `;
 
 const themes = ['3024-day', '3024-night', 'abcdef', 'ambiance-mobile', 'ambiance', 'base16-dark', 'base16-light', 'bespin', 'blackboard', 'cobalt', 'colorforth', 'darcula', 'dracula', 'duotone-dark', 'duotone-light', 'eclipse', 'elegant', 'erlang-dark', 'gruvbox-dark', 'hopscotch', 'icecoder', 'idea', 'isotope', 'lesser-dark', 'liquibyte', 'lucario', 'material', 'mbo', 'mdn-like', 'midnight', 'monokai', 'neat', 'neo', 'night', 'oceanic-next', 'panda-syntax', 'paraiso-dark', 'paraiso-light', 'pastel-on-dark', 'railscasts', 'rubyblue', 'seti', 'shadowfox', 'solarized', 'ssms', 'the-matrix', 'tomorrow-night-bright', 'tomorrow-night-eighties', 'ttcn', 'twilight', 'vibrant-ink', 'xq-dark', 'xq-light', 'yeti', 'zenburn'];
 
@@ -201,6 +173,7 @@ export default class App extends PureComponent {
     const version = VERSION; // eslint-disable-line
     return (
       <div className={styles.App}>
+        <GitHubCorners fixed target="__blank" zIndex={10} href="https://github.com/uiwjs/react-markdown-preview" />
         <header className={styles.AppHeader}>
           <img src={logo} className={styles.AppLogo} alt="logo" />
           <h1 className={styles.AppTitle}>React-CodeMirror <sup>v{version}</sup></h1>
@@ -227,7 +200,15 @@ export default class App extends PureComponent {
             mode,
           }}
         />
-        <Markdown source={DocumentStr} className={styles.markdown} />
+        <MarkdownPreview className={styles.markdown} source={DocumentStr.replace(/([\s\S]*)<!--dividing-->/, '')} />
+        <div className={styles.footer}>
+          <Github user="uiwjs" repo="react-markdown-preview">
+            <Github.Social type="forks" href="https://github.com/uiwjs/react-markdown-preview" />
+            <Github.Social type="stars" href="https://github.com/uiwjs/react-markdown-preview/stargazers" />
+            <Github.Social type="watchers" href="https://github.com/uiwjs/react-markdown-preview/watchers" />
+          </Github>
+          <Npm.Version scope="@uiw" packageName="react-shields" href="https://www.npmjs.com/package/@uiw/react-markdown-preview" />
+        </div>
       </div>
     );
   }
