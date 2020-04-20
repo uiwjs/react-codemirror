@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "@kkt/loader-less": "5.8.0",
+    "@kkt/loader-raw": "^5.8.0",
     "@types/codemirror": "0.0.91",
     "@uiw/react-github-corners": "1.1.3",
     "@uiw/react-markdown-preview": "1.0.3",
@@ -54,7 +55,6 @@
     "babel-plugin-transform-remove-imports": "1.3.2",
     "code-example": "2.0.0",
     "kkt": "5.8.0",
-    "raw-loader": "4.0.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "tsbb": "1.7.1"
