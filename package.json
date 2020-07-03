@@ -54,7 +54,7 @@
     "@uiw/reset.css": "1.0.3",
     "babel-plugin-transform-remove-imports": "1.4.1",
     "code-example": "2.0.0",
-    "kkt": "5.8.0",
+    "kkt": "5.9.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "tsbb": "1.7.1"
