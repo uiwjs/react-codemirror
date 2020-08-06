@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import 'codemirror/lib/codemirror.css';
 import CodeMirror from './CodeMirror';
+import './codemirror.css';
 import './index.css';
 
 export default class ReactCodeMirror extends Component {
