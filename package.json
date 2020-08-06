@@ -57,7 +57,7 @@
     "kkt": "5.9.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "tsbb": "1.7.1"
+    "tsbb": "1.7.6"
   },
   "browserslist": {
     "production": [
