@@ -33,13 +33,15 @@
   "author": "kenny wong <wowohoo@qq.com>",
   "license": "MIT",
   "peerDependencies": {
+    "@babel/runtime": ">=7.11.0",
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0",
     "codemirror": ">=5.49.2"
   },
   "dependencies": {
-    "codemirror": "^5.50.2",
-    "prop-types": "^15.7.2"
+    "@babel/runtime": "7.11.2",
+    "codemirror": "5.50.2",
+    "prop-types": "15.7.2"
   },
   "eslintConfig": {
     "extends": "react-app"
