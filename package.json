@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "@babel/runtime": "7.11.2",
-    "codemirror": "5.50.2",
+    "codemirror": "5.56.0",
     "prop-types": "15.7.2"
   },
   "eslintConfig": {
