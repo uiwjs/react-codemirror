@@ -34,16 +34,16 @@ export default class ReactCodeMirror extends Component {
       this.editor.setSize(width, height);
     }
   }
-  async UNSAFE_componentWillReceiveProps(nextProps) {
+  async componentDidUpdate(prevProps) {
     const val = this.editor.getValue();
-    const next = nextProps.value;
-    if (next !== undefined && next !== this.props.value && next !== val) {
-      this.editor.setValue(nextProps.value);
+    const value = this.props.value;
+    if (value !== undefined && value !== prevProps.value && value !== val) {
+      this.editor.setValue(value);
     }
-    const { options, width, height } = nextProps;
-    await this.setOptions(options);
+    const { width, height } = prevProps;
+    await this.setOptions(this.props.options);
     if (width !== this.props.width || height !== this.props.height) {
-      this.editor.setSize(width, height);
+      this.editor.setSize(this.props.width, this.props.height);
     }
   }
   // http://codemirror.net/doc/manual.html#config

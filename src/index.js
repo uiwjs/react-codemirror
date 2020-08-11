@@ -4,32 +4,17 @@ import CodeMirror from './CodeMirror';
 import './codemirror.css';
 import './index.css';
 
+const defaultOptions = {
+  tabSize: 2,
+  autoCloseBrackets: true,
+  matchBrackets: true,
+  showCursorWhenSelecting: true,
+  // 显示行号
+  lineNumbers: true,
+  fullScreen: true,
+}
+
 export default class ReactCodeMirror extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      codeMirrorOptions: {},
-    };
-  }
-  async componentDidMount() {
-    const { options } = this.props;
-    const codeMirrorOptions = {
-      tabSize: 2,
-      autoCloseBrackets: true,
-      matchBrackets: true,
-      showCursorWhenSelecting: true,
-      // 显示行号
-      lineNumbers: true,
-      fullScreen: true,
-      ...options,
-    };
-    this.setState({ codeMirrorOptions });
-  }
-  async UNSAFE_componentWillReceiveProps(nextPros) {
-    await this.setState({
-      codeMirrorOptions: { ...this.state.codeMirrorOptions, ...nextPros.options },
-    });
-  }
   getInstance = (instance) => {
     if (instance) {
       this.codemirror = instance.codemirror;
@@ -38,12 +23,11 @@ export default class ReactCodeMirror extends Component {
   }
   render() {
     const { options, ...otherProps } = this.props;
-    const { codeMirrorOptions } = this.state;
     return (
       <CodeMirror
         {...otherProps}
         ref={this.getInstance}
-        options={{ ...codeMirrorOptions }}
+        options={{ ...defaultOptions, ...options }}
       />
     );
   }
