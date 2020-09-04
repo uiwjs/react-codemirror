@@ -47,8 +47,8 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "@kkt/loader-less": "5.9.0",
-    "@kkt/loader-raw": "5.9.0",
+    "@kkt/loader-less": "5.10.3",
+    "@kkt/loader-raw": "5.10.3",
     "@types/codemirror": "0.0.97",
     "@uiw/react-github-corners": "1.2.0",
     "@uiw/react-markdown-preview": "1.0.9",
@@ -56,7 +56,7 @@
     "@uiw/reset.css": "1.0.4",
     "babel-plugin-transform-remove-imports": "1.4.1",
     "code-example": "2.0.0",
-    "kkt": "5.9.0",
+    "kkt": "5.10.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "tsbb": "1.7.6"
