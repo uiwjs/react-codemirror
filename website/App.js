@@ -138,7 +138,11 @@ export default class App extends PureComponent {
     };
   }
   componentDidMount() {
+    this.load();
+  }
+  load() {
     const { mode } = this.state;
+    if (!this.editor || !mode) return;
     this.editor.focus();
     this.loadCode(mode);
   }
@@ -163,9 +167,9 @@ export default class App extends PureComponent {
     this.setState({ theme: e.target.value });
   }
   getInstance = (instance) => {
-    if (instance) {
-      this.codemirror = instance.codemirror;
-      this.editor = instance.editor;
+    if (instance && instance.current) {
+      this.codemirror = instance.current.codemirror;
+      this.editor = instance.current.editor;
     }
   }
   render() {

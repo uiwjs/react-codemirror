@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { useRef, useImperativeHandle } from 'react';
 import CodeMirror from './CodeMirror';
 import './codemirror.css';
 import './index.css';
@@ -14,31 +13,17 @@ const defaultOptions = {
   fullScreen: true,
 }
 
-export default class ReactCodeMirror extends Component {
-  getInstance = (instance) => {
-    if (instance) {
-      this.codemirror = instance.codemirror;
-      this.editor = instance.editor;
-    }
-  }
-  render() {
-    const { options, ...otherProps } = this.props;
-    return (
-      <CodeMirror
-        {...otherProps}
-        ref={this.getInstance}
-        options={{ ...defaultOptions, ...options }}
-      />
-    );
-  }
+function ReactCodeMirror(props = {}, ref) {
+  const { options, ...otherProps } = props;
+  const codeMirrorRef = useRef();
+  useImperativeHandle(ref, () => codeMirrorRef);
+  return (
+    <CodeMirror
+      {...otherProps}
+      ref={codeMirrorRef}
+      options={{ ...defaultOptions, ...options }}
+    />
+  );
 }
 
-ReactCodeMirror.defaultProps = {
-  value: '',
-  options: {},
-};
-
-ReactCodeMirror.propTypes = {
-  value: PropTypes.string,
-  options: PropTypes.object,
-};
+export default React.forwardRef(ReactCodeMirror);
