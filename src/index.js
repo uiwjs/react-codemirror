@@ -16,7 +16,7 @@ const defaultOptions = {
 function ReactCodeMirror(props = {}, ref) {
   const { options, ...otherProps } = props;
   const codeMirrorRef = useRef();
-  useImperativeHandle(ref, () => codeMirrorRef);
+  useImperativeHandle(ref, () => ({ ...codeMirrorRef.current }));
   return (
     <CodeMirror
       {...otherProps}

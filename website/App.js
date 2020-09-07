@@ -167,9 +167,9 @@ export default class App extends PureComponent {
     this.setState({ theme: e.target.value });
   }
   getInstance = (instance) => {
-    if (instance && instance.current) {
-      this.codemirror = instance.current.codemirror;
-      this.editor = instance.current.editor;
+    if (instance) {
+      this.codemirror = instance.codemirror;
+      this.editor = instance.editor;
     }
   }
   render() {
