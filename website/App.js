@@ -137,15 +137,6 @@ export default class App extends PureComponent {
       ],
     };
   }
-  componentDidMount() {
-    this.load();
-  }
-  load() {
-    const { mode } = this.state;
-    if (!this.editor || !mode) return;
-    this.editor.focus();
-    this.loadCode(mode);
-  }
   loadCode(lang) {
     import(`code-example/lib/${lang}.js`).then((data) => {
       this.setState({
@@ -157,19 +148,19 @@ export default class App extends PureComponent {
   }
   onChange(e) {
     const mode = modeInfo[e.target.value];
-    const ext = mode.ext;
-    if (ext) {
-      this.loadCode(ext[0]);
-      this.setState({ mode: ext[0] });
+    if (mode.mode) {
+      this.loadCode(mode.mode);
+      this.setState({ mode: mode.mode });
     }
   }
   onChangeTheme(e) {
     this.setState({ theme: e.target.value });
   }
   getInstance = (instance) => {
-    if (instance) {
-      this.codemirror = instance.codemirror;
+    if (instance && instance.editor) {
       this.editor = instance.editor;
+      instance.editor.focus();
+      this.loadCode(this.state.mode);
     }
   }
   render() {
