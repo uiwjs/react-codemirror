@@ -35,6 +35,24 @@ function ReactCodeMirror(props = {}, ref) {
     return eventDict;
   }
 
+  // http://codemirror.net/doc/manual.html#config
+  async function setOptions(instance, opt = {}) {
+    if (typeof opt === 'object') {
+      const mode = CodeMirror.findModeByName(opt.mode);
+      if (mode && mode.mode) {
+        await import(`codemirror/mode/${mode.mode}/${mode.mode}.js`);
+      }
+      if (mode) {
+        opt.mode = mode.mime;
+      }
+      Object.keys(opt).forEach((name) => {
+        if (opt[name] && JSON.stringify(opt[name])) {
+          instance.setOption(name, opt[name]);
+        }
+      });
+    }
+  }
+
   useEffect(() => {
     if (!editor) {
       // 生成codemirror实例
@@ -48,13 +66,14 @@ function ReactCodeMirror(props = {}, ref) {
       if (width || height) {
         // 设置尺寸
         instance.setSize(width, height);
-        setEditor(undefined);
       }
       setEditor(instance);
+      setOptions(instance, {...defaultOptions, ...options});
     }
     return () => {
       if (editor) {
         editor.toTextArea();
+        setEditor(undefined);
       }
     }
   }, []);
@@ -73,27 +92,9 @@ function ReactCodeMirror(props = {}, ref) {
   }, [width, height]);
 
 
-  // http://codemirror.net/doc/manual.html#config
-  async function setOptions(opt = {}) {
-    if (typeof opt === 'object') {
-      const mode = CodeMirror.findModeByName(opt.mode);
-      if (mode && mode.mode) {
-        await import(`codemirror/mode/${mode.mode}/${mode.mode}.js`);
-      }
-      if (mode) {
-        opt.mode = mode.mime;
-      }
-      Object.keys(opt).forEach((name) => {
-        if (opt[name] && JSON.stringify(opt[name])) {
-          editor.setOption(name, opt[name]);
-        }
-      });
-    }
-  }
-
   useMemo(() => {
     if (!editor) return;
-    setOptions({...defaultOptions, ...options});
+    setOptions(editor, {...defaultOptions, ...options});
   }, [options]);
   
   return (
