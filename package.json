@@ -9,9 +9,9 @@
   "scripts": {
     "prepare": "npm run build",
     "watch": "tsbb watch --target react",
-    "build": "tsbb build --target react && npm run doc:build",
-    "doc": "ENTRYDIR=website kkt start",
-    "doc:build": "ENTRYDIR=website kkt build"
+    "build": "tsbb build --target react && npm run doc",
+    "doc": "kkt build --app-src ./website",
+    "start": "kkt start --app-src ./website"
   },
   "repository": {
     "type": "git",
@@ -43,11 +43,15 @@
     "codemirror": "5.57.0"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "devDependencies": {
-    "@kkt/loader-less": "5.10.3",
-    "@kkt/loader-raw": "5.10.3",
+    "@kkt/less-modules": "6.0.11",
+    "@kkt/raw-modules": "6.0.11",
+    "@kkt/scope-plugin-options": "6.0.11",
     "@types/codemirror": "0.0.97",
     "@uiw/react-github-corners": "1.2.0",
     "@uiw/react-markdown-preview": "1.0.9",
@@ -55,7 +59,7 @@
     "@uiw/reset.css": "1.0.4",
     "babel-plugin-transform-remove-imports": "1.4.1",
     "code-example": "2.0.0",
-    "kkt": "5.10.3",
+    "kkt": "6.0.11",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "tsbb": "1.7.6"
