@@ -57,7 +57,7 @@
     "@uiw/react-markdown-preview": "1.0.9",
     "@uiw/react-shields": "1.1.0",
     "@uiw/reset.css": "1.0.4",
-    "babel-plugin-transform-remove-imports": "1.4.1",
+    "babel-plugin-transform-remove-imports": "1.5.2",
     "code-example": "2.0.0",
     "kkt": "6.0.11",
     "react": "16.13.1",
