@@ -4,6 +4,7 @@ lib
 !src/lib
 npm-debug.log*
 package-lock.json
+.eslintcache
 .DS_Store
 .cache
 .rdoc-dist
