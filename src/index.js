@@ -37,8 +37,8 @@ function ReactCodeMirror(props = {}, ref) {
 
   // http://codemirror.net/doc/manual.html#config
   async function setOptions(instance, opt = {}) {
-    if (typeof opt === 'object') {
-      const mode = CodeMirror.findModeByName(opt.mode);
+    if (typeof opt === 'object' && window) {
+      const mode = CodeMirror.findModeByName(opt.mode || '');
       if (mode && mode.mode) {
         await import(`codemirror/mode/${mode.mode}/${mode.mode}.js`);
       }
@@ -54,7 +54,7 @@ function ReactCodeMirror(props = {}, ref) {
   }
 
   useEffect(() => {
-    if (!editor) {
+    if (!editor && window) {
       // 生成codemirror实例
       const instance = CodeMirror.fromTextArea(textareaRef.current, {...defaultOptions, ...options});
       const eventDict = getEventHandleFromProps();
@@ -71,7 +71,7 @@ function ReactCodeMirror(props = {}, ref) {
       setOptions(instance, {...defaultOptions, ...options});
     }
     return () => {
-      if (editor) {
+      if (editor && window) {
         editor.toTextArea();
         setEditor(undefined);
       }
@@ -79,7 +79,7 @@ function ReactCodeMirror(props = {}, ref) {
   }, []);
 
   useMemo(() => {
-    if (!editor) return;
+    if (!editor || !window) return;
     const val = editor.getValue();
     if (value !== undefined && value !== val) {
       editor.setValue(value);
@@ -87,13 +87,13 @@ function ReactCodeMirror(props = {}, ref) {
   }, [value]);
 
   useMemo(() => {
-    if (!editor) return;
+    if (!editor || !window) return;
     editor.setSize(width, height);
   }, [width, height]);
 
 
   useMemo(() => {
-    if (!editor) return;
+    if (!editor || !window) return;
     setOptions(editor, {...defaultOptions, ...options});
   }, [options]);
   
