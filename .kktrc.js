@@ -1,23 +1,23 @@
 import path from 'path';
+import webpack from 'webpack';
+import lessModules from '@kkt/less-modules';
+import rawModules from '@kkt/raw-modules';
+import scopePluginOptions from '@kkt/scope-plugin-options';
+import pkg from './package.json';
 
-export const loaderOneOf = [
-  require.resolve('@kkt/loader-less'),
-  require.resolve('@kkt/loader-raw')
-];
-
-export const moduleScopePluginOpts = [
-  path.resolve(process.cwd(), 'README.md')
-];
-
-export default (conf, opts, webpack) => {
-  const pkg = require(path.resolve(process.cwd(), 'package.json'));
-
+export default (conf, env, options) => {
+  conf = rawModules(conf, env, { ...options });
+  conf = scopePluginOptions(conf, env, {
+    ...options,
+    allowedFiles: [
+      path.resolve(process.cwd(), 'README.md')
+    ]
+  });
+  conf = lessModules(conf, env, options);
   // Get the project version.
-  conf.plugins.push(
-    new webpack.DefinePlugin({
-      VERSION: JSON.stringify(pkg.version),
-    })
-  );
+  conf.plugins.push(new webpack.DefinePlugin({
+    VERSION: JSON.stringify(pkg.version),
+  }));
   conf.output = { ...conf.output, publicPath: './' }
   return conf;
 }

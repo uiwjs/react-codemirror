@@ -1,5 +1,8 @@
 react-codemirror
 ===
+
+![Build & Deploy](https://github.com/uiwjs/react-codemirror/workflows/Build%20&%20Deploy/badge.svg)
+
 CodeMirror component for React. demo @[uiwjs.github.io/react-codemirror/](https://uiwjs.github.io/react-codemirror/)
 
 <a href="https://uiwjs.github.io/react-codemirror/"><img src="https://raw.githubusercontent.com/uiwjs/react-codemirror/master/react-codemirror.png" /></a>
