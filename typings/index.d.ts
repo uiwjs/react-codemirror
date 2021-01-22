@@ -1,5 +1,5 @@
 import React from 'react';
-import CodeMirror from 'codemirror';
+import CodeMirror, { Position } from 'codemirror';
 
 export type DOMEvent = 'onMouseDown' | 'onDblClick' | 'onTouchStart' | 'onContextMenu' | 'onKeyDown' | 'onKeyPress'
   | 'onKeyUp' | 'onCut' | 'onCopy' | 'onPaste' | 'onDragStart' | 'onDragEnter' | 'onDragOver' | 'onDragLeave' | 'onDrop';
@@ -59,7 +59,7 @@ export interface IReactCodemirror extends IDOMEvent {
   onBeforeSelectionChange?: (instance: CodeMirror.Editor, selection: { head: Position; anchor: Position; }) => void;
   /**
    * Fires whenever the view port of the editor changes (due to scrolling, editing, or any other factor).
-   * The from and to arguments give the new start and end of the viewport. 
+   * The from and to arguments give the new start and end of the viewport.
    */
   onViewportChange?: (instance: CodeMirror.Editor, from: number, to: number) => void;
   /** Fires when the editor gutter (the line-number area) is clicked. Will pass the editor instance as first argument,
