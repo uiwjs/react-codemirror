@@ -7,9 +7,10 @@
   "module": "lib/esm/index.js",
   "typings": "typings/index.d.ts",
   "scripts": {
-    "prepare": "npm run build",
+    "prepare": "npm run build:lib",
     "watch": "tsbb watch --target react",
     "build": "tsbb build --target react && npm run doc",
+    "build:lib": "tsbb build --target react",
     "doc": "kkt build --app-src ./website",
     "start": "kkt start --app-src ./website"
   },
