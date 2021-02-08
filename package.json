@@ -55,7 +55,7 @@
     "@kkt/scope-plugin-options": "6.8.1",
     "@types/codemirror": "0.0.108",
     "@uiw/react-github-corners": "1.2.0",
-    "@uiw/react-markdown-preview": "1.0.9",
+    "@uiw/react-markdown-preview": "2.1.1",
     "@uiw/react-shields": "1.1.1",
     "@uiw/reset.css": "1.0.4",
     "babel-plugin-transform-remove-imports": "1.5.2",
