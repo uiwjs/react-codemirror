@@ -61,8 +61,8 @@
     "babel-plugin-transform-remove-imports": "1.5.2",
     "code-example": "2.0.0",
     "kkt": "6.5.1",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
     "tsbb": "1.7.9"
   },
   "browserslist": {
