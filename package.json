@@ -59,7 +59,7 @@
     "@uiw/react-shields": "1.1.1",
     "@uiw/reset.css": "1.0.4",
     "babel-plugin-transform-remove-imports": "1.5.2",
-    "code-example": "2.0.0",
+    "code-example": "3.0.1",
     "kkt": "6.8.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
