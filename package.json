@@ -50,9 +50,9 @@
     ]
   },
   "devDependencies": {
-    "@kkt/less-modules": "6.5.1",
-    "@kkt/raw-modules": "6.5.1",
-    "@kkt/scope-plugin-options": "6.5.1",
+    "@kkt/less-modules": "6.8.1",
+    "@kkt/raw-modules": "6.8.1",
+    "@kkt/scope-plugin-options": "6.8.1",
     "@types/codemirror": "0.0.106",
     "@uiw/react-github-corners": "1.2.0",
     "@uiw/react-markdown-preview": "1.0.9",
@@ -60,7 +60,7 @@
     "@uiw/reset.css": "1.0.4",
     "babel-plugin-transform-remove-imports": "1.5.2",
     "code-example": "2.0.0",
-    "kkt": "6.5.1",
+    "kkt": "6.8.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "tsbb": "1.7.9"
