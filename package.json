@@ -60,7 +60,7 @@
     "@uiw/reset.css": "1.0.4",
     "babel-plugin-transform-remove-imports": "1.5.2",
     "code-example": "3.0.1",
-    "kkt": "6.8.2",
+    "kkt": "6.9.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "tsbb": "2.1.2"
