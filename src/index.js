@@ -29,7 +29,9 @@ function ReactCodeMirror(props = {}, ref) {
     const eventDict = {};
     eventHandle.forEach((ele) => {
       const name = ele.slice(2);
-      eventDict[ele] = name.replace(name[0],name[0].toLowerCase());
+      if (name && name[0]) {
+        eventDict[ele] = name.replace(name[0], name[0].toLowerCase());
+      }
     });
 
     return eventDict;
