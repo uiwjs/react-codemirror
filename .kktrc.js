@@ -33,6 +33,11 @@ export default (conf, env, options) => {
           name: 'codemirror-vendor',
           chunks: 'async',
         },
+        prismjs: {
+          test: /[\\/]node_modules[\\/](code-example)[\\/]/,
+          name: 'code-example-vendor',
+          chunks: 'async',
+        },
       },
     },
   };
