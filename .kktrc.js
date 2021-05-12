@@ -18,6 +18,25 @@ export default (conf, env, options) => {
   conf.plugins.push(new webpack.DefinePlugin({
     VERSION: JSON.stringify(pkg.version),
   }));
+
+  conf.optimization = {
+    ...conf.optimization,
+    splitChunks: {
+      cacheGroups: {
+        reactvendor: {
+          test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+          name: 'react-vendor',
+          chunks: 'all',
+        },
+        prismjs: {
+          test: /[\\/]node_modules[\\/](codemirror)[\\/]/,
+          name: 'codemirror-vendor',
+          chunks: 'async',
+        },
+      },
+    },
+  };
+
   conf.output = { ...conf.output, publicPath: './' }
   return conf;
 }
