@@ -41,7 +41,8 @@ export default (conf, env, options) => {
       },
     },
   };
-
-  conf.output = { ...conf.output, publicPath: './' }
+  if (env === 'production') {
+    conf.output = { ...conf.output, publicPath: './' }
+  }
   return conf;
 }
