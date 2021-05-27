@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useImperativeHandle, useState, useMemo } from
 import CodeMirror from 'codemirror';
 import 'codemirror/mode/meta';
 import './codemirror.css';
-import './index.css';
 
 const defaultOptions = {
   tabSize: 2,
@@ -97,7 +96,7 @@ function ReactCodeMirror(props = {}, ref) {
   useMemo(() => {
     if (!editor || !window) return;
     setOptions(editor, {...defaultOptions, ...options});
-  }, [options]);
+  }, [editor, options]);
   
   return (
     <textarea ref={textareaRef} />

@@ -2,10 +2,14 @@
 
 .CodeMirror {
   /* Set height, width, borders, and global font properties here */
-  font-family: monospace;
-  height: 300px;
+  font-family: 'source-code-pro', Menlo, 'Courier New', Consolas, monospace;
   color: black;
   direction: ltr;
+  font-size: 14px;
+  z-index: 0;
+  border-radius: 5px;
+  height: auto;
+  background: transparent;
 }
 
 /* PADDING */
