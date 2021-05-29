@@ -32,7 +32,7 @@ export interface IReactCodemirror extends IDOMEvent {
    * changeObj has a similar type as the object passed to the editor's "change" event,
    * but it never has a next property, because document change events are not batched (whereas editor change events are).
    */
-  onChange?: (instance: CodeMirror.Editor, change: CodeMirror.EditorChangeLinkedList[]) => void;
+  onChange?: (instance: CodeMirror.Editor, change: CodeMirror.EditorChangeLinkedList) => void;
   /**
    * Like the "change" event, but batched per operation, passing an
    * array containing all the changes that happened in the operation.
