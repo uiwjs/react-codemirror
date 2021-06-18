@@ -214,7 +214,11 @@ export interface IReactCodemirror extends IDOMEvent {
 
 ## Options
 
-[codemirror options](https://codemirror.net/doc/manual.html#config)
+These are the supported [codemirror options](https://codemirror.net/doc/manual.html#config):
+
+```jsx
+<CodeMirror value="..." options={{ ... }} />
+```
 
 ```ts
 interface EditorConfiguration {
