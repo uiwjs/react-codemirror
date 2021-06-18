@@ -216,7 +216,9 @@ export interface IReactCodemirror extends IDOMEvent {
 
 [codemirror options](https://codemirror.net/doc/manual.html#config)
 
-```js
+```ts
+interface EditorConfiguration {
+
 /** string| The starting value of the editor. Can be a string, or a document object. */
 value?: any;
 
@@ -373,6 +375,7 @@ lint?: boolean | LintOptions;
 
 /** Optional value to be used in conjunction with CodeMirror’s placeholder add-on. */
 placeholder?: string;
+}
 ```
 
 ## Editor
