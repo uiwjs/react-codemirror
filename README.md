@@ -98,7 +98,11 @@ const code = 'const a = 0;';
 
 ## Props Events
 
-[codemirror events](https://codemirror.net/doc/manual.html#events)
+An editor instance fires the following [codemirror events](https://codemirror.net/doc/manual.html#events). The instance argument always refers to the editor itself.
+
+```jsx
+<CodeMirror value="..." onChange={() => { }} />
+```
 
 ```tsx
 import React from 'react';
