@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@babel/runtime": "7.14.6",
-    "codemirror": "5.61.1"
+    "codemirror": "5.62.0"
   },
   "eslintConfig": {
     "extends": [
@@ -53,7 +53,7 @@
     "@kkt/less-modules": "6.10.3",
     "@kkt/raw-modules": "6.10.3",
     "@kkt/scope-plugin-options": "6.10.3",
-    "@types/codemirror": "5.60.0",
+    "@types/codemirror": "5.60.1",
     "@uiw/react-github-corners": "1.4.0",
     "@uiw/react-markdown-preview": "3.1.1",
     "@uiw/react-shields": "1.1.1",
