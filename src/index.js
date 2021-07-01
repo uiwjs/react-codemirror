@@ -47,7 +47,7 @@ function ReactCodeMirror(props = {}, ref) {
         opt.mode = mode.mime;
       }
       Object.keys(opt).forEach((name) => {
-        if (opt[name] && JSON.stringify(opt[name])) {
+        if ((opt[name] || opt[name] === false) && JSON.stringify(opt[name])) {
           instance.setOption(name, opt[name]);
         }
       });
