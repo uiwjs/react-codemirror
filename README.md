@@ -9,7 +9,7 @@ react-codemirror
 
 CodeMirror component for React. demo @[uiwjs.github.io/react-codemirror/](https://uiwjs.github.io/react-codemirror/)
 
-<a href="https://uiwjs.github.io/react-codemirror/"><img src="https://raw.githubusercontent.com/uiwjs/react-codemirror/master/react-codemirror.png" /></a>
+<a href="https://uiwjs.github.io/react-codemirror/"><img src="https://user-images.githubusercontent.com/1680273/124169278-a458b480-dad8-11eb-8d9c-e51ff26a6db0.png" /></a>
 
 <!--dividing-->
 
