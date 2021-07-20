@@ -52,7 +52,7 @@
   "devDependencies": {
     "@kkt/less-modules": "6.10.3",
     "@kkt/raw-modules": "6.10.3",
-    "@kkt/scope-plugin-options": "6.10.3",
+    "@kkt/scope-plugin-options": "6.11.0",
     "@types/codemirror": "5.60.1",
     "@uiw/react-github-corners": "1.4.0",
     "@uiw/react-markdown-preview": "3.1.3",
