@@ -17,7 +17,11 @@ function ReactCodeMirror(props = {}, ref) {
   const { options = {}, value = '', width = '100%', height = '100%'  } = props;
   const [editor, setEditor] = useState();
   const textareaRef = useRef();
+  const lastestProps = useRef(props);
+
   useImperativeHandle(ref, () => ({ editor }), [editor]);
+  lastestProps.current = props;
+  
   // 将props中所有的事件处理函数映射并保存
   function getEventHandleFromProps() {
     const propNames = Object.keys(props);
@@ -60,7 +64,7 @@ function ReactCodeMirror(props = {}, ref) {
       const instance = CodeMirror.fromTextArea(textareaRef.current, {...defaultOptions, ...options});
       const eventDict = getEventHandleFromProps();
       Object.keys(eventDict).forEach((event) => {
-        instance.on(eventDict[event], props[event]);
+        instance.on(eventDict[event], (...params) => lastestProps.current[event](...params));
       });
       instance.setValue(value || '');
 
