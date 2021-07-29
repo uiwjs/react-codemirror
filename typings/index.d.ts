@@ -32,14 +32,14 @@ export interface IReactCodemirror extends IDOMEvent {
    * changeObj has a similar type as the object passed to the editor's "change" event,
    * but it never has a next property, because document change events are not batched (whereas editor change events are).
    */
-  onChange?: (instance: CodeMirror.Editor, change: CodeMirror.EditorChangeLinkedList) => void;
+  onChange?: (instance: CodeMirror.Editor, change: CodeMirror.EditorChange) => void;
   /**
    * Like the "change" event, but batched per operation, passing an
    * array containing all the changes that happened in the operation.
    * This event is fired after the operation finished, and display
    * changes it makes will trigger a new operation.
    * */
-  onChanges?: (instance: CodeMirror.Editor, change: CodeMirror.EditorChangeLinkedList[]) => void;
+  onChanges?: (instance: CodeMirror.Editor, change: CodeMirror.EditorChange[]) => void;
   /**
    * This event is fired before a change is applied, and its handler may choose to modify or cancel the change.
    * The changeObj never has a next property, since this is fired for each individual change, and not batched per operation.
@@ -121,8 +121,11 @@ export interface IReactCodemirror extends IDOMEvent {
    * */
   onRedraw?(): void;
 }
-export default class ReactCodemirror extends React.Component<IReactCodemirror> {
+
+export interface IEditorInstance {
   editor: Editor;
-  static defaultProps: IReactCodemirror;
-  render(): JSX.Element;
 }
+
+declare const ReactCodemirror: (props: IReactCodemirror & React.RefAttributes<IEditorInstance | undefined>) => JSX.Element;
+
+export default ReactCodemirror;
