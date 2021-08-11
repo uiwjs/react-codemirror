@@ -24,6 +24,10 @@ export interface IReactCodemirror extends IDOMEvent {
    */
   height?: any;
   /**
+   * should modes be loaded dynamically.  Defaults to true.
+   */
+  lazyLoadMode?: boolean;
+  /**
    * refer to codemirror options.
    */
   options?: CodeMirror.EditorConfiguration;
