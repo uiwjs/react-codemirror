@@ -14,7 +14,7 @@ const defaultOptions = {
 }
 
 function ReactCodeMirror(props = {}, ref) {
-  const { options = {}, value = '', width = '100%', height = '100%'  } = props;
+  const { options = {}, value = '', width = '100%', height = '100%', lazyLoadMode = true } = props;
   const [editor, setEditor] = useState();
   const textareaRef = useRef();
   const lastestProps = useRef(props);
@@ -44,7 +44,7 @@ function ReactCodeMirror(props = {}, ref) {
   async function setOptions(instance, opt = {}) {
     if (typeof opt === 'object' && window) {
       const mode = CodeMirror.findModeByName(opt.mode || '');
-      if (mode && mode.mode) {
+      if (lazyLoadMode && mode && mode.mode) {
         await import(`codemirror/mode/${mode.mode}/${mode.mode}.js`);
       }
       if (mode) {

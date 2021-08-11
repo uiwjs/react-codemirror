@@ -44,7 +44,7 @@ const code = 'const a = 0;';
 />
 ```
 
-requiring codemirror resources, This is often the case when specifying certain language modes and themes. Just set the mode, the language resources will automatically lazy loading.
+requiring codemirror resources. This is often done when specifying certain language modes and themes. Language resources do not need to be imported, just set the mode and they will be automatically lazy loaded.
 
 ```jsx
 import CodeMirror from '@uiw/react-codemirror';
@@ -63,6 +63,29 @@ const code = 'const a = 0;';
     tabSize: 2,
     keyMap: 'sublime',
     mode: 'jsx',
+  }}
+/>
+```
+
+If you do not want to lazy load the language resources, you can set the prop `lazyLoadMode` to `false`. You will need to load the language resources yourself in this case.
+
+```jsx
+import CodeMirror from '@uiw/react-codemirror';
+import 'codemirror/keymap/sublime';
+import 'codemirror/theme/monokai.css';
+// Manually loading the language resources here
+import 'codemirror/mode/javascript/javascript';
+
+const code = 'console.log("hello world!");';
+
+<CodeMirror
+  value={code}
+  lazyLoadMode={false}
+  options={{
+    theme: 'monokai',
+    tabSize: 2,
+    keyMap: 'sublime',
+    mode: 'js',
   }}
 />
 ```
@@ -94,6 +117,7 @@ const code = 'const a = 0;';
 - `width` width of editor. Defaults to `100%`.
 - `height` height of editor. Defaults to `100%`.
 - `value` value of the auto created model in the editor.
+- `lazyLoadMode` should the mode by automatically lazy loaded. If this is set to false you will need to load the mode yourself. Defaults to true.
 - `options` refer to [codemirror options](https://codemirror.net/doc/manual.html#config).
 
 ## Props Events
