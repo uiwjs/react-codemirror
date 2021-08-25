@@ -28,6 +28,7 @@
   ],
   "files": [
     "typings",
+    "src",
     "esm",
     "lib"
   ],
