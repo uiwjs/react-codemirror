@@ -27,6 +27,8 @@ npm install @uiw/react-codemirror --save
 
 ## Usage
 
+[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?logo=codesandbox)](https://codesandbox.io/s/suspicious-wave-vgr4n?file=/src/App.js)
+
 ```jsx
 import CodeMirror from '@uiw/react-codemirror';
 import 'codemirror/keymap/sublime';
