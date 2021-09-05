@@ -18,6 +18,13 @@ jobs:
     - run: npm run build
     - run: npm run doc
 
+    - name: Create README.md of Build
+      working-directory: build
+      run: |
+        cat > README.md << EOF
+        Preview the document: https://raw.githack.com/uiwjs/react-codemirror/doc3/index.html
+        EOF
+
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
