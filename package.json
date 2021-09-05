@@ -41,7 +41,7 @@
     "codemirror": ">=5.49.2"
   },
   "dependencies": {
-    "@babel/runtime": "7.15.3",
+    "@babel/runtime": "7.15.4",
     "codemirror": "5.62.3"
   },
   "eslintConfig": {
