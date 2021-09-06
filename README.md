@@ -17,6 +17,8 @@ CodeMirror component for React. demo @[uiwjs.github.io/react-codemirror/](https:
 
 🌱 Automatically load `mode` files based on configuration.  
 🚀 Quickly and easily configure the API.  
+🌎 There are better sample previews.  
+📚 Use Typescript to write and integrate [@type](/typings) declaration file.  
 
 ## Install
 
