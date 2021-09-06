@@ -201,6 +201,9 @@ export default class App extends PureComponent {
             <Github.Social type="forks" href="https://github.com/uiwjs/react-codemirror" />
             <Github.Social type="stars" href="https://github.com/uiwjs/react-codemirror/stargazers" />
             <Github.Social type="watchers" href="https://github.com/uiwjs/react-codemirror/watchers" />
+            <a href="https://www.npmjs.com/package/@uiw/react-codemirror" target="__blank">
+              <img src="https://img.shields.io/npm/dm/@uiw/react-codemirror.svg?style=flat" alt="Download React-Codemirror" />
+            </a>
           </Github>
           <Npm.Version scope="@uiw" packageName="react-shields" href="https://www.npmjs.com/package/@uiw/react-codemirror" />
         </div>
