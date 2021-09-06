@@ -1,11 +1,14 @@
 {
   "name": "@uiw/react-codemirror",
-  "version": "3.2.1",
+  "version": "4.0.0-rc.4",
   "description": "CodeMirror component for React.",
   "homepage": "https://uiwjs.github.io/react-codemirror",
-  "main": "lib/index.js",
+  "main": "cjs/index.js",
   "module": "esm/index.js",
-  "typings": "typings/index.d.ts",
+  "exports": {
+    "import": "./esm/index.js",
+    "require": "./cjs/index.js"
+  },
   "scripts": {
     "prepare": "npm run build",
     "watch": "tsbb watch",
@@ -20,6 +23,7 @@
   "keywords": [
     "react",
     "codemirror",
+    "codemirror6",
     "react-codemirror",
     "editor",
     "syntax",
@@ -27,10 +31,9 @@
     "code"
   ],
   "files": [
-    "typings",
     "src",
     "esm",
-    "lib"
+    "cjs"
   ],
   "author": "kenny wong <wowohoo@qq.com>",
   "license": "MIT",
@@ -41,8 +44,16 @@
     "codemirror": ">=5.49.2"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@babel/runtime": "7.15.4",
     "codemirror": "5.62.3"
+=======
+    "@babel/runtime": "7.15.3",
+    "@codemirror/basic-setup": "0.19.0",
+    "@codemirror/state": "0.19.1",
+    "@codemirror/theme-one-dark": "0.19.0",
+    "@codemirror/view": "0.19.4"
+>>>>>>> fc5bf4d5 (feat: Use codemirror 6. #88)
   },
   "eslintConfig": {
     "extends": [
@@ -51,10 +62,23 @@
     ]
   },
   "devDependencies": {
+    "@codemirror/lang-javascript": "0.19.1",
+    "@codemirror/lang-html": "0.19.1",
+    "@codemirror/lang-json": "0.19.1",
+    "@codemirror/lang-python": "0.19.2",
+    "@codemirror/lang-markdown": "0.19.1",
+    "@codemirror/lang-xml": "0.19.1",
+    "@codemirror/lang-java": "0.19.1",
+    "@codemirror/lang-rust": "0.19.1",
+    "@codemirror/lang-cpp": "0.19.1",
+    "@codemirror/lang-sql": "0.19.3",
+    "@codemirror/lang-lezer": "0.19.1",
+    "@codemirror/lang-php": "0.19.1",
     "@kkt/less-modules": "6.11.0",
     "@kkt/raw-modules": "6.11.0",
     "@kkt/scope-plugin-options": "6.11.0",
-    "@types/codemirror": "5.60.2",
+    "@types/react": "17.0.19",
+    "@types/react-dom": "17.0.9",
     "@uiw/react-github-corners": "1.5.1",
     "@uiw/react-markdown-preview": "3.3.0",
     "@uiw/react-shields": "1.1.1",

@@ -65,5 +65,5 @@ jobs:
           ${{ steps.changelog.outputs.compareurl }}
           ${{ steps.changelog.outputs.changelog }}
 
-    - run: npm install @jsdevtools/npm-publish -g
-    - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" ./package.json
+    # - run: npm install @jsdevtools/npm-publish -g
+    # - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" --tag="next" ./package.json
