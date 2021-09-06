@@ -44,16 +44,11 @@
     "codemirror": ">=5.49.2"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@babel/runtime": "7.15.4",
-    "codemirror": "5.62.3"
-=======
-    "@babel/runtime": "7.15.3",
     "@codemirror/basic-setup": "0.19.0",
     "@codemirror/state": "0.19.1",
     "@codemirror/theme-one-dark": "0.19.0",
     "@codemirror/view": "0.19.4"
->>>>>>> fc5bf4d5 (feat: Use codemirror 6. #88)
   },
   "eslintConfig": {
     "extends": [
