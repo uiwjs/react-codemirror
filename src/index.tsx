@@ -9,9 +9,7 @@ export * from "@codemirror/basic-setup";
 export * from "@codemirror/state";
 
 export interface ReactCodeMirrorProps extends Omit<EditorStateConfig, 'doc' | 'extensions'>, Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
-  /**
-   * value of the auto created model in the editor.
-   */
+  /** value of the auto created model in the editor. */
   value?: string;
   height?: string;
   minHeight?: string;
@@ -22,10 +20,10 @@ export interface ReactCodeMirrorProps extends Omit<EditorStateConfig, 'doc' | 'e
   /** focus on the editor. */
   autoFocus?: boolean;
   theme?: 'light' | 'dark';
-  /**
-   * Fired whenever a change occurs to the document.
-   */
-  onChange?(value: string, viewUpdate: ViewUpdate): void;
+  /** Fired whenever a change occurs to the document. */
+  onChange? (value: string, viewUpdate: ViewUpdate): void;
+  /** Fired whenever a change occurs to the document. There is a certain difference with `onChange`. */
+  onUpdate? (viewUpdate: ViewUpdate): void
   /**
    * Extension values can be [provided](https://codemirror.net/6/docs/ref/#state.EditorStateConfig.extensions) when creating a state to attach various kinds of configuration and behavior information.
    * They can either be built-in extension-providing objects,
@@ -41,14 +39,14 @@ export interface ReactCodeMirrorRef {
   view?: EditorView;
 }
 
-export default React.forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProps>((props, ref) => {
-  const { className, value, selection, extensions = [], onChange, autoFocus, theme, height, minHeight, maxHeight, width, minWidth, maxWidth, ...other } = props;
+const ReactCodeMirror = React.forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProps>((props, ref) => {
+  const { className, value, selection, extensions = [], onChange, onUpdate, autoFocus, theme, height, minHeight, maxHeight, width, minWidth, maxWidth, ...other } = props;
   const editor = useRef<HTMLDivElement>(null);
   const { state, view, container, setContainer } = useCodeMirror({
     container: editor.current,
     value, autoFocus, theme, height, minHeight, maxHeight, width, minWidth, maxWidth,
     selection,
-    onChange,
+    onChange, onUpdate,
     extensions,
   });
   useImperativeHandle(ref, () => ({ editor: container, state, view }));
@@ -67,3 +65,7 @@ export default React.forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProps>((props
     <div ref={editor} className={`cm-theme-${theme} ${className || ''}`} {...other}></div>
   );
 });
+
+ReactCodeMirror.displayName = 'CodeMirror';
+
+export default ReactCodeMirror;

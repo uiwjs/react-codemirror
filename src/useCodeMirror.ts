@@ -12,7 +12,7 @@ export interface UseCodeMirror extends ReactCodeMirrorProps {
 }
 
 export function useCodeMirror(props: UseCodeMirror) {
-  const { value, selection, onChange, extensions = [], autoFocus, theme = 'light', height = '', minHeight = '', maxHeight ='', width = '', minWidth = '', maxWidth = '' } = props;
+  const { value, selection, onChange, onUpdate, extensions = [], autoFocus, theme = 'light', height = '', minHeight = '', maxHeight ='', width = '', minWidth = '', maxWidth = '' } = props;
   const [container, setContainer] = useState(props.container);
   const [view, setView] = useState<EditorView>();
   const [state, setState] = useState<EditorState>();
@@ -32,6 +32,9 @@ export function useCodeMirror(props: UseCodeMirror) {
   });
   let getExtensions = [basicSetup, keymap.of([indentWithTab]), updateListener, defaultThemeOption];
   theme === 'light' ? getExtensions.push(defaultLightThemeOption) : getExtensions.push(oneDarkTheme);
+  if (onUpdate && typeof onUpdate === 'function') {
+    getExtensions.push(EditorView.updateListener.of(onUpdate));
+  }
   getExtensions = getExtensions.concat(extensions);
 
   useEffect(() => {
