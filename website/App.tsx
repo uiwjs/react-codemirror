@@ -52,6 +52,7 @@ let count = 0
 
 export default function App() {
   const [mode, setMode] = useState('javascript');
+  const [autofocus, setAutofocus] = useState(false);
   const [theme, setTheme] = useState<ReactCodeMirrorProps['theme']>('light');
   const [code, setCode] = useState('');
   const [extensions, setExtensions] = useState<Extension[]>();
@@ -104,6 +105,7 @@ export default function App() {
         height={height}
         theme={theme}
         extensions={extensions}
+        autoFocus={autofocus}
         className={styles.codemirror}
         onChange={(value) => {
           // console.log('value:', value);
@@ -124,6 +126,10 @@ export default function App() {
         }}>
           change code
         </button>
+        <label>
+          <input type="checkbox" checked={autofocus} onChange={(evn) => setAutofocus(evn.target.checked)} />
+          autoFocus
+        </label>
       </div>
       <MarkdownPreview className={styles.markdown} source={DocumentStr.replace(/([\s\S]*)<!--dividing-->/, '')} />
       <div className={styles.footer}>

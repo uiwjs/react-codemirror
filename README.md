@@ -105,6 +105,8 @@ export interface ReactCodeMirrorProps extends Omit<EditorStateConfig, 'doc' | 'e
   width?: string;
   minWidth?: string;
   maxWidth?: string;
+  /** focus on the editor. */
+  autoFocus?: boolean;
   theme?: 'light' | 'dark';
   /**
    * Fired whenever a change occurs to the document.

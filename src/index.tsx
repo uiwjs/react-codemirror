@@ -19,6 +19,8 @@ export interface ReactCodeMirrorProps extends Omit<EditorStateConfig, 'doc' | 'e
   width?: string;
   minWidth?: string;
   maxWidth?: string;
+  /** focus on the editor. */
+  autoFocus?: boolean;
   theme?: 'light' | 'dark';
   /**
    * Fired whenever a change occurs to the document.
@@ -40,11 +42,11 @@ export interface ReactCodeMirrorRef {
 }
 
 export default React.forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProps>((props, ref) => {
-  const { className, value, selection, extensions = [], onChange, theme, height, minHeight, maxHeight, width, minWidth, maxWidth, ...other } = props;
+  const { className, value, selection, extensions = [], onChange, autoFocus, theme, height, minHeight, maxHeight, width, minWidth, maxWidth, ...other } = props;
   const editor = useRef<HTMLDivElement>(null);
   const { state, view, container, setContainer } = useCodeMirror({
     container: editor.current,
-    value, theme, height, minHeight, maxHeight, width, minWidth, maxWidth,
+    value, autoFocus, theme, height, minHeight, maxHeight, width, minWidth, maxWidth,
     selection,
     onChange,
     extensions,

@@ -12,7 +12,7 @@ export interface UseCodeMirror extends ReactCodeMirrorProps {
 }
 
 export function useCodeMirror(props: UseCodeMirror) {
-  const { value, selection, onChange, extensions = [], theme = 'light', height = '', minHeight = '', maxHeight ='', width = '', minWidth = '', maxWidth = '' } = props;
+  const { value, selection, onChange, extensions = [], autoFocus, theme = 'light', height = '', minHeight = '', maxHeight ='', width = '', minWidth = '', maxWidth = '' } = props;
   const [container, setContainer] = useState(props.container);
   const [view, setView] = useState<EditorView>();
   const [state, setState] = useState<EditorState>();
@@ -72,6 +72,12 @@ export function useCodeMirror(props: UseCodeMirror) {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [theme, extensions, height, minHeight, maxHeight, width, minWidth, maxWidth]);
+
+  useEffect(() => {
+    if (autoFocus && view) {
+      view.focus()
+    }
+  }, [autoFocus, view])
 
   return { state, setState, view, setView, container, setContainer }
 }
