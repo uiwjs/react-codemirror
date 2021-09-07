@@ -113,6 +113,8 @@ export interface ReactCodeMirrorProps extends Omit<EditorStateConfig, 'doc' | 'e
    * Fired whenever a change occurs to the document.
    */
   onChange?(value: string, viewUpdate: ViewUpdate): void;
+  /** Fired whenever a change occurs to the document. There is a certain difference with `onChange`. */
+  onUpdate?(viewUpdate: ViewUpdate): void;
   /**
    * Extension values can be [provided](https://codemirror.net/6/docs/ref/#state.EditorStateConfig.extensions) when creating a state to attach various kinds of configuration and behavior information.
    * They can either be built-in extension-providing objects,
