@@ -30,7 +30,6 @@ export function useCodeMirror(props: UseCodeMirror) {
   const [container, setContainer] = useState(props.container);
   const [view, setView] = useState<EditorView>();
   const [state, setState] = useState<EditorState>();
-
   const defaultThemeOption = EditorView.theme({
     '&': {
       height,

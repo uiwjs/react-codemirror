@@ -50,7 +50,7 @@ const ReactCodeMirror = React.forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProp
     onChange,
     onUpdate,
     autoFocus,
-    theme,
+    theme = 'light',
     height,
     minHeight,
     maxHeight,
@@ -87,7 +87,7 @@ const ReactCodeMirror = React.forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProp
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <div ref={editor} className={`cm-theme-${theme} ${className || ''}`} {...other}></div>;
+  return <div ref={editor} className={`cm-theme-${theme}${className ? ` ${className}` : ''}`} {...other}></div>;
 });
 
 ReactCodeMirror.displayName = 'CodeMirror';
