@@ -5,6 +5,9 @@ on:
       - master
     tags:
       - v2.*
+env:
+  SKIP_PREFLIGHT_CHECK: true
+
 jobs:
   build-deploy:
     runs-on: ubuntu-18.04
@@ -24,6 +27,7 @@ jobs:
 
     - run: npm install
     - run: npm run build
+    - run: npm run coverage
     - run: npm run doc
 
     - name: Deploy
