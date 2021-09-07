@@ -10,11 +10,12 @@
     "require": "./cjs/index.js"
   },
   "scripts": {
-    "prepare": "npm run build",
+    "prepare": "husky install && npm run build",
     "watch": "tsbb watch",
     "build": "tsbb build",
     "doc": "kkt build --app-src ./website",
-    "start": "kkt start --app-src ./website"
+    "start": "kkt start --app-src ./website",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,html,less,md,json}'"
   },
   "repository": {
     "type": "git",
@@ -56,6 +57,11 @@
       "react-app/jest"
     ]
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,html,less,md,json}": [
+      "prettier --write"
+    ]
+  },
   "devDependencies": {
     "@codemirror/lang-cpp": "0.19.1",
     "@codemirror/lang-html": "0.19.1",
@@ -79,7 +85,10 @@
     "@uiw/react-shields": "1.1.1",
     "@uiw/reset.css": "1.0.5",
     "code-example": "3.0.6",
+    "husky": "7.0.2",
     "kkt": "6.11.0",
+    "lint-staged": "11.1.2",
+    "prettier": "2.3.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "tsbb": "3.0.4"
