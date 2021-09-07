@@ -26,10 +26,6 @@ const langs: Record<string, any> = { javascript, html, css, json, python, markdo
 
 const hyperlink: { href: string; label: string; style?: React.CSSProperties; }[] = [
   {
-    href: 'https://github.com/uiwjs/react-codemirror',
-    label: 'View on GitHub',
-  },
-  {
     href: 'https://www.npmjs.com/package/@uiw/react-codemirror',
     label: 'View on NPM',
   },
@@ -50,6 +46,9 @@ const hyperlink: { href: string; label: string; style?: React.CSSProperties; }[]
 
 const themeOptions = [ 'dark', 'light' ];
 const heightOptions = [ 'auto', '200px', '300px', '500px' ];
+
+
+let count = 0
 
 export default function App() {
   const [mode, setMode] = useState('javascript');
@@ -120,7 +119,9 @@ export default function App() {
         <Select label="Lang" options={Object.keys(langs)} value={mode} onChange={(evn) => handleLangChange(evn.target.value)} />
         <Select label="Theme" options={themeOptions} value={theme} onChange={(evn) => setTheme(evn.target.value as ReactCodeMirrorProps['theme'])} />
         <Select label="Height" options={heightOptions} value={height} onChange={(evn) => setHeight(evn.target.value)} />
-        <button onClick={() => setCode('console.log("Hello World!")')}>
+        <button onClick={() => {
+          count++; setCode(`console.log("Hello World! ${count}")`);
+        }}>
           change code
         </button>
       </div>
