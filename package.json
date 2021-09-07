@@ -13,6 +13,8 @@
     "prepare": "husky install && npm run build",
     "watch": "tsbb watch",
     "build": "tsbb build",
+    "test": "tsbb test --env=jsdom",
+    "coverage": "tsbb test --coverage",
     "doc": "kkt build --app-src ./website",
     "start": "kkt start --app-src ./website",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,html,less,md,json}'"
@@ -51,6 +53,7 @@
     "@codemirror/theme-one-dark": "0.19.0",
     "@codemirror/view": "0.19.4"
   },
+  "jest": {},
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -80,18 +83,21 @@
     "@kkt/scope-plugin-options": "6.11.0",
     "@types/react": "17.0.20",
     "@types/react-dom": "17.0.9",
+    "@types/react-test-renderer": "17.0.1",
     "@uiw/react-github-corners": "1.5.1",
     "@uiw/react-markdown-preview": "3.3.0",
     "@uiw/react-shields": "1.1.1",
     "@uiw/reset.css": "1.0.5",
     "code-example": "3.0.6",
     "husky": "7.0.2",
+    "jest": "27.1.0",
     "kkt": "6.11.0",
     "lint-staged": "11.1.2",
     "prettier": "2.3.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "tsbb": "3.0.4"
+    "react-test-renderer": "17.0.2",
+    "tsbb": "3.1.0"
   },
   "browserslist": {
     "production": [

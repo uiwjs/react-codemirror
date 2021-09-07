@@ -18,5 +18,5 @@
     "moduleResolution": "node",
     "noEmit": true
   },
-  "include": ["src/**/*", "website/**/*", ".kktrc.ts"]
+  "include": ["src/**/*", "website/**/*", "test/*", ".kktrc.ts"]
 }
