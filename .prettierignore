@@ -1,5 +1,6 @@
 package.json
+coverage
 dist
 build
-lib
+cjs
 esm
