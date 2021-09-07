@@ -16,10 +16,7 @@
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
     "moduleResolution": "node",
-    "noEmit": true,
+    "noEmit": true
   },
-  "include": [
-    "src/**/*",
-    "website/**/*",
-    ".kktrc.ts"]
+  "include": ["src/**/*", "website/**/*", ".kktrc.ts"]
 }

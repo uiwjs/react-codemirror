@@ -1,5 +1,4 @@
-react-codemirror
-===
+# react-codemirror
 
 [![NPM Downloads](https://img.shields.io/npm/dm/@uiw/react-codemirror.svg?style=flat)](https://www.npmjs.com/package/@uiw/react-codemirror)
 [![Build & Deploy](https://github.com/uiwjs/react-codemirror/workflows/Build%20&%20Deploy/badge.svg)](https://github.com/uiwjs/react-codemirror/actions)
@@ -32,19 +31,17 @@ npm install @uiw/react-codemirror --save
 [![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?logo=codesandbox)](https://codesandbox.io/embed/react-codemirror-example-codemirror-6-slvju?fontsize=14&hidenavigation=1&theme=dark)
 
 ```jsx
-import CodeMirror from "@uiw/react-codemirror";
-import { javascript } from "@codemirror/lang-javascript";
+import CodeMirror from '@uiw/react-codemirror';
+import { javascript } from '@codemirror/lang-javascript';
 
 export default function App() {
   return (
     <CodeMirror
       value="console.log('hello world!');"
       height="200px"
-      extensions={[
-        javascript({ jsx: true })
-      ]}
+      extensions={[javascript({ jsx: true })]}
       onChange={(value, viewUpdate) => {
-        console.log("value:", value);
+        console.log('value:', value);
       }}
     />
   );
@@ -56,9 +53,9 @@ export default function App() {
 [![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?logo=codesandbox)](https://codesandbox.io/embed/react-codemirror-example-codemirror-6-hook-yr4vg?fontsize=14&hidenavigation=1&theme=dark)
 
 ```jsx
-import { useEffect, useRef } from "react";
-import { useCodeMirror } from "@uiw/react-codemirror";
-import { javascript } from "@codemirror/lang-javascript";
+import { useEffect, useRef } from 'react';
+import { useCodeMirror } from '@uiw/react-codemirror';
+import { javascript } from '@codemirror/lang-javascript';
 
 const code = "console.log('hello world!');\n\n\n";
 
@@ -67,7 +64,7 @@ export default function App() {
   const { setContainer } = useCodeMirror({
     container: editor.current,
     extensions: [javascript()],
-    value: code
+    value: code,
   });
 
   useEffect(() => {
@@ -88,14 +85,16 @@ export default function App() {
 - `theme?`: `light` / `dark` Defaults to `light`.
 
 ```ts
-import React from "react";
-import { EditorState, EditorStateConfig, Extension } from "@codemirror/state";
-import { EditorView } from "@codemirror/view";
+import React from 'react';
+import { EditorState, EditorStateConfig, Extension } from '@codemirror/state';
+import { EditorView } from '@codemirror/view';
 export * from './useCodeMirror';
-export * from "@codemirror/view";
-export * from "@codemirror/basic-setup";
-export * from "@codemirror/state";
-export interface ReactCodeMirrorProps extends Omit<EditorStateConfig, 'doc' | 'extensions'>, Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
+export * from '@codemirror/view';
+export * from '@codemirror/basic-setup';
+export * from '@codemirror/state';
+export interface ReactCodeMirrorProps
+  extends Omit<EditorStateConfig, 'doc' | 'extensions'>,
+    Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
   /**
    * value of the auto created model in the editor.
    */
@@ -135,7 +134,7 @@ export interface ReactCodeMirrorRef {
 - [@uiw/react-md-editor](https://github.com/uiwjs/react-md-editor): A simple markdown editor with preview, implemented with React.js and TypeScript.
 - [@uiw/react-monacoeditor](https://github.com/jaywcjlove/react-monacoeditor): Monaco Editor component for React.
 - [@uiw/react-markdown-editor](https://github.com/uiwjs/react-markdown-editor): A markdown editor with preview, implemented with React.js and TypeScript.
-- [@uiw/react-markdown-preview](https://github.com/jaywcjlove/react-monacoeditor): React component preview markdown text in web browser. 
+- [@uiw/react-markdown-preview](https://github.com/jaywcjlove/react-monacoeditor): React component preview markdown text in web browser.
 
 ## License
 

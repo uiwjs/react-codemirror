@@ -22,9 +22,27 @@ import DocumentStr from '../README.md';
 import CodeMirror, { ReactCodeMirrorProps, Extension } from '..';
 import { Select } from './Select';
 
-const langs: Record<string, any> = { javascript, html, css, json, python, markdown, xml, sql, java, rust, cpp, lezer, php };
+const langs: Record<string, any> = {
+  javascript,
+  html,
+  css,
+  json,
+  python,
+  markdown,
+  xml,
+  sql,
+  java,
+  rust,
+  cpp,
+  lezer,
+  php,
+};
 
-const hyperlink: { href: string; label: string; style?: React.CSSProperties; }[] = [
+const hyperlink: {
+  href: string;
+  label: string;
+  style?: React.CSSProperties;
+}[] = [
   {
     href: 'https://www.npmjs.com/package/@uiw/react-codemirror',
     label: 'View on NPM',
@@ -40,15 +58,14 @@ const hyperlink: { href: string; label: string; style?: React.CSSProperties; }[]
   {
     href: 'https://raw.githack.com/uiwjs/react-codemirror/doc3/index.html',
     label: 'V3 Doc',
-    style: { color: 'red' }
+    style: { color: 'red' },
   },
 ];
 
-const themeOptions = [ 'dark', 'light' ];
-const heightOptions = [ 'auto', '200px', '300px', '500px' ];
+const themeOptions = ['dark', 'light'];
+const heightOptions = ['auto', '200px', '300px', '500px'];
 
-
-let count = 0
+let count = 0;
 
 export default function App() {
   const [mode, setMode] = useState('javascript');
@@ -60,22 +77,22 @@ export default function App() {
 
   function handleLangChange(lang: string) {
     try {
-      import(`code-example/txt/sample.${lang}.txt`).then((data) => {
-        if (langs[lang]) {
-          setExtensions([langs[lang]()])
-        }
-        setCode(data.default);
-        setMode(lang);
-      }).catch(() => {
-        setExtensions([]);
-        setMode(lang);
-        setCode('');
-      });
+      import(`code-example/txt/sample.${lang}.txt`)
+        .then((data) => {
+          if (langs[lang]) {
+            setExtensions([langs[lang]()]);
+          }
+          setCode(data.default);
+          setMode(lang);
+        })
+        .catch(() => {
+          setExtensions([]);
+          setMode(lang);
+          setCode('');
+        });
       if (lang === 'html') {
       }
-    } catch (error) {
-      
-    }
+    } catch (error) {}
   }
   useEffect(() => {
     handleLangChange('javascript');
@@ -88,17 +105,20 @@ export default function App() {
       <GitHubCorners fixed target="__blank" zIndex={10} href="https://github.com/uiwjs/react-codemirror" />
       <header className={styles.AppHeader}>
         <img src={logo} className={styles.AppLogo} alt="logo" />
-        <h1 className={styles.AppTitle}>React-CodeMirror <sup>v{version}</sup></h1>
+        <h1 className={styles.AppTitle}>
+          React-CodeMirror <sup>v{version}</sup>
+        </h1>
         <p className={styles.content}>CodeMirror component for React. </p>
         <div className={styles.button}>
           {hyperlink.map(({ href, label, style }, idx) => {
             return (
-              <a key={idx} target="_blank" rel="noopener noreferrer" href={href} style={style}>{label}</a>
+              <a key={idx} target="_blank" rel="noopener noreferrer" href={href} style={style}>
+                {label}
+              </a>
             );
           })}
         </div>
-        <div className={styles.select}>
-        </div>
+        <div className={styles.select}></div>
       </header>
       <CodeMirror
         value={code}
@@ -118,12 +138,25 @@ export default function App() {
         }}
       />
       <div className={styles.select}>
-        <Select label="Lang" options={Object.keys(langs)} value={mode} onChange={(evn) => handleLangChange(evn.target.value)} />
-        <Select label="Theme" options={themeOptions} value={theme} onChange={(evn) => setTheme(evn.target.value as ReactCodeMirrorProps['theme'])} />
+        <Select
+          label="Lang"
+          options={Object.keys(langs)}
+          value={mode}
+          onChange={(evn) => handleLangChange(evn.target.value)}
+        />
+        <Select
+          label="Theme"
+          options={themeOptions}
+          value={theme}
+          onChange={(evn) => setTheme(evn.target.value as ReactCodeMirrorProps['theme'])}
+        />
         <Select label="Height" options={heightOptions} value={height} onChange={(evn) => setHeight(evn.target.value)} />
-        <button onClick={() => {
-          count++; setCode(`console.log("Hello World! ${count}")`);
-        }}>
+        <button
+          onClick={() => {
+            count++;
+            setCode(`console.log("Hello World! ${count}")`);
+          }}
+        >
           change code
         </button>
         <label>
@@ -141,8 +174,12 @@ export default function App() {
             <img src="https://img.shields.io/npm/dm/@uiw/react-codemirror.svg?style=flat" alt="NPM Downloads" />
           </a>
         </Github>
-        <Npm.Version scope="@uiw" packageName="react-shields" href="https://www.npmjs.com/package/@uiw/react-codemirror" />
+        <Npm.Version
+          scope="@uiw"
+          packageName="react-shields"
+          href="https://www.npmjs.com/package/@uiw/react-codemirror"
+        />
       </div>
     </div>
-  )
+  );
 }

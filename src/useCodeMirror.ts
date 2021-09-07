@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { basicSetup } from "@codemirror/basic-setup";
-import { EditorState, StateEffect } from "@codemirror/state";
-import { indentWithTab } from "@codemirror/commands";
-import { EditorView, keymap, ViewUpdate } from "@codemirror/view";
+import { basicSetup } from '@codemirror/basic-setup';
+import { EditorState, StateEffect } from '@codemirror/state';
+import { indentWithTab } from '@codemirror/commands';
+import { EditorView, keymap, ViewUpdate } from '@codemirror/view';
 import { ReactCodeMirrorProps } from './';
-import { oneDarkTheme } from "@codemirror/theme-one-dark";
+import { oneDarkTheme } from '@codemirror/theme-one-dark';
 import { defaultLightThemeOption } from './theme/light';
 
 export interface UseCodeMirror extends ReactCodeMirrorProps {
@@ -12,15 +12,33 @@ export interface UseCodeMirror extends ReactCodeMirrorProps {
 }
 
 export function useCodeMirror(props: UseCodeMirror) {
-  const { value, selection, onChange, onUpdate, extensions = [], autoFocus, theme = 'light', height = '', minHeight = '', maxHeight ='', width = '', minWidth = '', maxWidth = '' } = props;
+  const {
+    value,
+    selection,
+    onChange,
+    onUpdate,
+    extensions = [],
+    autoFocus,
+    theme = 'light',
+    height = '',
+    minHeight = '',
+    maxHeight = '',
+    width = '',
+    minWidth = '',
+    maxWidth = '',
+  } = props;
   const [container, setContainer] = useState(props.container);
   const [view, setView] = useState<EditorView>();
   const [state, setState] = useState<EditorState>();
 
   const defaultThemeOption = EditorView.theme({
-    "&": {
-      height, minHeight, maxHeight,
-      width, minWidth, maxWidth,
+    '&': {
+      height,
+      minHeight,
+      maxHeight,
+      width,
+      minWidth,
+      maxWidth,
     },
   });
   const updateListener = EditorView.updateListener.of((vu: ViewUpdate) => {
@@ -40,12 +58,16 @@ export function useCodeMirror(props: UseCodeMirror) {
   useEffect(() => {
     if (container && !state) {
       const stateCurrent = EditorState.create({
-        doc: value, selection,
+        doc: value,
+        selection,
         extensions: getExtensions,
       });
       setState(stateCurrent);
       if (!view) {
-        const viewCurrent = new EditorView({ state: stateCurrent, parent: container as any });
+        const viewCurrent = new EditorView({
+          state: stateCurrent,
+          parent: container as any,
+        });
         setView(viewCurrent);
       }
     }
@@ -57,14 +79,14 @@ export function useCodeMirror(props: UseCodeMirror) {
       if (view) {
         view.destroy();
       }
-    }
+    };
   }, [view]);
 
   useEffect(() => {
     if (view) {
       const currentValue = view.state.doc.toString();
       view.dispatch({
-        changes: { from: 0, to: currentValue.length, insert: value || '' }
+        changes: { from: 0, to: currentValue.length, insert: value || '' },
       });
     }
   }, [value, view]);
@@ -78,9 +100,9 @@ export function useCodeMirror(props: UseCodeMirror) {
 
   useEffect(() => {
     if (autoFocus && view) {
-      view.focus()
+      view.focus();
     }
-  }, [autoFocus, view])
+  }, [autoFocus, view]);
 
-  return { state, setState, view, setView, container, setContainer }
+  return { state, setState, view, setView, container, setContainer };
 }

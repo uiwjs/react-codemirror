@@ -14,16 +14,15 @@ export default (conf: Configuration, env: 'development' | 'production', options:
   });
   conf = scopePluginOptions(conf, env, {
     ...options,
-    allowedFiles: [
-      path.resolve(process.cwd(), 'src'),
-      path.resolve(process.cwd(), 'README.md')
-    ]
+    allowedFiles: [path.resolve(process.cwd(), 'src'), path.resolve(process.cwd(), 'README.md')],
   });
   conf = lessModules(conf, env, options);
   // Get the project version.
-  conf.plugins!.push(new webpack.DefinePlugin({
-    VERSION: JSON.stringify(pkg.version),
-  }));
+  conf.plugins!.push(
+    new webpack.DefinePlugin({
+      VERSION: JSON.stringify(pkg.version),
+    }),
+  );
 
   conf.optimization = {
     ...conf.optimization,
@@ -43,7 +42,7 @@ export default (conf: Configuration, env: 'development' | 'production', options:
     },
   };
   if (env === 'production') {
-    conf.output = { ...conf.output, publicPath: './' }
+    conf.output = { ...conf.output, publicPath: './' };
   }
   return conf;
-}
+};

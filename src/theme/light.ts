@@ -1,9 +1,12 @@
-import { EditorView } from "@codemirror/view";
+import { EditorView } from '@codemirror/view';
 
-export const defaultLightThemeOption = EditorView.theme({
-  "&": {
-    backgroundColor: '#fff',
+export const defaultLightThemeOption = EditorView.theme(
+  {
+    '&': {
+      backgroundColor: '#fff',
+    },
   },
-}, {
-  dark: false
-});
+  {
+    dark: false,
+  },
+);

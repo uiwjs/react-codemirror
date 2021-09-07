@@ -16,7 +16,9 @@ export const Select = ({ label = '', value, options = [], onChange }: SelectProp
             optionProps.value = item;
           }
           return (
-            <option key={key} {...optionProps}> {item} </option>
+            <option key={key} {...optionProps}>
+              {item}
+            </option>
           );
         })}
       </select>
