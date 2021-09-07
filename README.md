@@ -1,7 +1,6 @@
 react-codemirror
 ===
 
-
 [![NPM Downloads](https://img.shields.io/npm/dm/@uiw/react-codemirror.svg?style=flat)](https://www.npmjs.com/package/@uiw/react-codemirror)
 [![Build & Deploy](https://github.com/uiwjs/react-codemirror/workflows/Build%20&%20Deploy/badge.svg)](https://github.com/uiwjs/react-codemirror/actions)
 [![Open in unpkg](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/@uiw/react-codemirror/file/README.md)
@@ -9,12 +8,14 @@ react-codemirror
 
 CodeMirror component for React. Demo Preview: [@uiwjs.github.io/react-codemirror](https://uiwjs.github.io/react-codemirror/)
 
+> ⚠️ The v3 version document preview is [here](https://raw.githack.com/uiwjs/react-codemirror/doc3/index.html).
+
 <!--dividing-->
 
 **Features:**
 
 🚀 Quickly and easily configure the API.  
-🌱 Use [codemirror 6](https://codemirror.net/6/). [#88](https://github.com/uiwjs/react-codemirror/issues/88).  
+🌱 Versions after `@uiw/react-codemirror@v4` use [codemirror 6](https://codemirror.net/6/). [#88](https://github.com/uiwjs/react-codemirror/issues/88).  
 ⚛️ Support the features of React Hook(requires React 16.8+).  
 📚 Use Typescript to write, better code hints.  
 🌎 There are better [sample previews](https://uiwjs.github.io/react-codemirror).
