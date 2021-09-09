@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import GitHubCorners from '@uiw/react-github-corners';
-import Github from '@uiw/react-shields/lib/esm/github';
-import Npm from '@uiw/react-shields/lib/esm/npm';
+import Github from '@uiw/react-shields/esm/github';
+import Npm from '@uiw/react-shields/esm/npm';
 import MarkdownPreview from '@uiw/react-markdown-preview';
 import { javascript } from '@codemirror/lang-javascript';
 import { html } from '@codemirror/lang-html';
