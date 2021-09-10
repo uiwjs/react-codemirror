@@ -1,6 +1,6 @@
 {
   "name": "@uiw/react-codemirror",
-  "version": "4.0.0-rc.9",
+  "version": "4.0.0-rc.10",
   "description": "CodeMirror component for React.",
   "homepage": "https://uiwjs.github.io/react-codemirror",
   "main": "cjs/index.js",
@@ -43,8 +43,7 @@
   "peerDependencies": {
     "@babel/runtime": ">=7.11.0",
     "react": ">=16.8.0",
-    "react-dom": ">=16.8.0",
-    "codemirror": ">=5.49.2"
+    "react-dom": ">=16.8.0"
   },
   "dependencies": {
     "@babel/runtime": "7.15.4",
