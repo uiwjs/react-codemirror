@@ -22,7 +22,7 @@ jobs:
       working-directory: build
       run: |
         cat > README.md << EOF
-        Preview the document(\[`@uiw/react-codemirror@v3`](https://raw.githack.com/uiwjs/react-codemirror/doc3/index.html)): https://raw.githack.com/uiwjs/react-codemirror/doc3/index.html
+        Preview the document `@uiw/react-codemirror@v3`: https://raw.githack.com/uiwjs/react-codemirror/doc3/index.html
         EOF
 
     - name: Deploy
