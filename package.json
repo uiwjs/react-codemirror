@@ -77,6 +77,8 @@
     "@codemirror/lang-rust": "0.19.1",
     "@codemirror/lang-sql": "0.19.3",
     "@codemirror/lang-xml": "0.19.1",
+    "@codemirror/legacy-modes": "0.19.0",
+    "@codemirror/stream-parser": "0.19.2",
     "@kkt/less-modules": "6.11.0",
     "@kkt/raw-modules": "6.11.0",
     "@kkt/scope-plugin-options": "6.11.0",

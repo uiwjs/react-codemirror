@@ -10,12 +10,22 @@ import { json } from '@codemirror/lang-json';
 import { python } from '@codemirror/lang-python';
 import { markdown } from '@codemirror/lang-markdown';
 import { xml } from '@codemirror/lang-xml';
-import { sql } from '@codemirror/lang-sql';
+import { sql, MySQL, PostgreSQL } from '@codemirror/lang-sql';
 import { java } from '@codemirror/lang-java';
 import { rust } from '@codemirror/lang-rust';
 import { cpp } from '@codemirror/lang-cpp';
 import { lezer } from '@codemirror/lang-lezer';
 import { php } from '@codemirror/lang-php';
+import { StreamLanguage } from '@codemirror/stream-parser';
+import { go } from '@codemirror/legacy-modes/mode/go';
+import { ruby } from '@codemirror/legacy-modes/mode/ruby';
+import { shell } from '@codemirror/legacy-modes/mode/shell';
+import { lua } from '@codemirror/legacy-modes/mode/lua';
+import { swift } from '@codemirror/legacy-modes/mode/swift';
+import { tcl } from '@codemirror/legacy-modes/mode/tcl';
+import { yaml } from '@codemirror/legacy-modes/mode/yaml';
+import { vb } from '@codemirror/legacy-modes/mode/vb';
+import { powerShell } from '@codemirror/legacy-modes/mode/powershell';
 import logo from './logo.png';
 import styles from './App.module.less';
 import DocumentStr from '../README.md';
@@ -24,18 +34,32 @@ import { Select } from './Select';
 
 const langs: Record<string, any> = {
   javascript,
+  jsx: () => javascript({ jsx: true }),
+  typescript: () => javascript({ typescript: true }),
+  tsx: () => javascript({ jsx: true, typescript: true }),
+  json,
   html,
   css,
-  json,
   python,
   markdown,
   xml,
   sql,
+  mysql: () => sql({ dialect: MySQL }),
+  pgsql: () => sql({ dialect: PostgreSQL }),
   java,
   rust,
   cpp,
   lezer,
   php,
+  go: () => StreamLanguage.define(go),
+  ruby: () => StreamLanguage.define(ruby),
+  shell: () => StreamLanguage.define(shell),
+  lua: () => StreamLanguage.define(lua),
+  swift: () => StreamLanguage.define(swift),
+  tcl: () => StreamLanguage.define(tcl),
+  yaml: () => StreamLanguage.define(yaml),
+  vb: () => StreamLanguage.define(vb),
+  powershell: () => StreamLanguage.define(powerShell),
 };
 
 const hyperlink: {
@@ -77,15 +101,15 @@ export default function App() {
 
   function handleLangChange(lang: string) {
     try {
-      import(`code-example/txt/sample.${lang}.txt`)
+      import(`code-example/txt/sample.${lang.toLocaleLowerCase()}.txt`)
         .then((data) => {
+          setCode(data.default);
           if (langs[lang]) {
             setExtensions([langs[lang]()]);
           }
-          setCode(data.default);
           setMode(lang);
         })
-        .catch(() => {
+        .catch((err) => {
           setExtensions([]);
           setMode(lang);
           setCode('');
