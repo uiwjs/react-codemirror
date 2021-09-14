@@ -153,6 +153,15 @@ export interface ReactCodeMirrorProps
   autoFocus?: boolean;
   theme?: 'light' | 'dark';
   /**
+   * Whether to optional basicSetup by default
+   * @default true
+   */
+  basicSetup?: boolean;
+  /**
+   * Whether to optional basicSetup by default
+   * @default true
+   */
+  /**
    * Fired whenever a change occurs to the document.
    */
   onChange?(value: string, viewUpdate: ViewUpdate): void;
