@@ -22,6 +22,16 @@ export interface ReactCodeMirrorProps
   /** focus on the editor. */
   autoFocus?: boolean;
   theme?: 'light' | 'dark';
+  /**
+   * Whether to optional basicSetup by default
+   * @default true
+   */
+  basicSetup?: boolean;
+  /**
+   * Whether to optional basicSetup by default
+   * @default true
+   */
+  indentWithTab?: boolean;
   /** Fired whenever a change occurs to the document. */
   onChange?(value: string, viewUpdate: ViewUpdate): void;
   /** Fired whenever a change occurs to the document. There is a certain difference with `onChange`. */
@@ -57,6 +67,8 @@ const ReactCodeMirror = React.forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProp
     width,
     minWidth,
     maxWidth,
+    basicSetup,
+    indentWithTab,
     ...other
   } = props;
   const editor = useRef<HTMLDivElement>(null);
@@ -71,6 +83,8 @@ const ReactCodeMirror = React.forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProp
     width,
     minWidth,
     maxWidth,
+    basicSetup,
+    indentWithTab,
     selection,
     onChange,
     onUpdate,

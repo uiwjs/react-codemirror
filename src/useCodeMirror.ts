@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { basicSetup } from '@codemirror/basic-setup';
+import { basicSetup as defaultBasicSetup } from '@codemirror/basic-setup';
 import { EditorState, StateEffect } from '@codemirror/state';
-import { indentWithTab } from '@codemirror/commands';
+import { indentWithTab as defaultIndentWithTab } from '@codemirror/commands';
 import { EditorView, keymap, ViewUpdate } from '@codemirror/view';
 import { ReactCodeMirrorProps } from './';
 import { oneDarkTheme } from '@codemirror/theme-one-dark';
@@ -26,6 +26,8 @@ export function useCodeMirror(props: UseCodeMirror) {
     width = '',
     minWidth = '',
     maxWidth = '',
+    indentWithTab = true,
+    basicSetup = true,
   } = props;
   const [container, setContainer] = useState(props.container);
   const [view, setView] = useState<EditorView>();
@@ -47,7 +49,13 @@ export function useCodeMirror(props: UseCodeMirror) {
       onChange(value, vu);
     }
   });
-  let getExtensions = [basicSetup, keymap.of([indentWithTab]), updateListener, defaultThemeOption];
+  let getExtensions = [updateListener, defaultThemeOption];
+  if (indentWithTab) {
+    getExtensions.unshift(keymap.of([defaultIndentWithTab]));
+  }
+  if (basicSetup) {
+    getExtensions.unshift(defaultBasicSetup);
+  }
   theme === 'light' ? getExtensions.push(defaultLightThemeOption) : getExtensions.push(oneDarkTheme);
   if (onUpdate && typeof onUpdate === 'function') {
     getExtensions.push(EditorView.updateListener.of(onUpdate));
