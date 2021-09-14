@@ -26,6 +26,15 @@ import { tcl } from '@codemirror/legacy-modes/mode/tcl';
 import { yaml } from '@codemirror/legacy-modes/mode/yaml';
 import { vb } from '@codemirror/legacy-modes/mode/vb';
 import { powerShell } from '@codemirror/legacy-modes/mode/powershell';
+import { brainfuck } from '@codemirror/legacy-modes/mode/brainfuck';
+import { clike } from '@codemirror/legacy-modes/mode/clike';
+import { stylus } from '@codemirror/legacy-modes/mode/stylus';
+import { erlang } from '@codemirror/legacy-modes/mode/erlang';
+import { nginx } from '@codemirror/legacy-modes/mode/nginx';
+import { perl } from '@codemirror/legacy-modes/mode/perl';
+import { pascal } from '@codemirror/legacy-modes/mode/pascal';
+import { liveScript } from '@codemirror/legacy-modes/mode/livescript';
+import { r } from '@codemirror/legacy-modes/mode/r';
 import logo from './logo.png';
 import styles from './App.module.less';
 import DocumentStr from '../README.md';
@@ -52,7 +61,6 @@ const langs: Record<string, any> = {
   lezer,
   php,
   go: () => StreamLanguage.define(go),
-  ruby: () => StreamLanguage.define(ruby),
   shell: () => StreamLanguage.define(shell),
   lua: () => StreamLanguage.define(lua),
   swift: () => StreamLanguage.define(swift),
@@ -60,6 +68,16 @@ const langs: Record<string, any> = {
   yaml: () => StreamLanguage.define(yaml),
   vb: () => StreamLanguage.define(vb),
   powershell: () => StreamLanguage.define(powerShell),
+  brainfuck: () => StreamLanguage.define(brainfuck),
+  stylus: () => StreamLanguage.define(stylus),
+  erlang: () => StreamLanguage.define(erlang),
+  nginx: () => StreamLanguage.define(nginx),
+  perl: () => StreamLanguage.define(perl),
+  ruby: () => StreamLanguage.define(ruby),
+  pascal: () => StreamLanguage.define(pascal),
+  livescript: () => StreamLanguage.define(liveScript),
+  r: () => StreamLanguage.define(r),
+  clike: () => clike({}),
 };
 
 const hyperlink: {

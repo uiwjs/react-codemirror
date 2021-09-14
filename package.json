@@ -89,7 +89,7 @@
     "@uiw/react-markdown-preview": "3.3.2",
     "@uiw/react-shields": "1.1.2",
     "@uiw/reset.css": "1.0.5",
-    "code-example": "3.0.6",
+    "code-example": "3.1.0",
     "husky": "7.0.2",
     "jest": "27.2.0",
     "kkt": "6.11.0",
