@@ -34,6 +34,13 @@ import { nginx } from '@codemirror/legacy-modes/mode/nginx';
 import { perl } from '@codemirror/legacy-modes/mode/perl';
 import { pascal } from '@codemirror/legacy-modes/mode/pascal';
 import { liveScript } from '@codemirror/legacy-modes/mode/livescript';
+import { scheme } from '@codemirror/legacy-modes/mode/scheme';
+import { toml } from '@codemirror/legacy-modes/mode/toml';
+import { vbScript } from '@codemirror/legacy-modes/mode/vbscript';
+import { clojure } from '@codemirror/legacy-modes/mode/clojure';
+import { coffeeScript } from '@codemirror/legacy-modes/mode/coffeescript';
+import { dockerFile } from '@codemirror/legacy-modes/mode/dockerfile';
+import { julia } from '@codemirror/legacy-modes/mode/julia';
 import { r } from '@codemirror/legacy-modes/mode/r';
 import logo from './logo.png';
 import styles from './App.module.less';
@@ -76,6 +83,13 @@ const langs: Record<string, any> = {
   ruby: () => StreamLanguage.define(ruby),
   pascal: () => StreamLanguage.define(pascal),
   livescript: () => StreamLanguage.define(liveScript),
+  scheme: () => StreamLanguage.define(scheme),
+  toml: () => StreamLanguage.define(toml),
+  vbscript: () => StreamLanguage.define(vbScript),
+  clojure: () => StreamLanguage.define(clojure),
+  coffeescript: () => StreamLanguage.define(coffeeScript),
+  julia: () => StreamLanguage.define(julia),
+  dockerfile: () => StreamLanguage.define(dockerFile),
   r: () => StreamLanguage.define(r),
   clike: () => clike({}),
 };
