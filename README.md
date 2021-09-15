@@ -139,9 +139,7 @@ export * from '@codemirror/state';
 export interface ReactCodeMirrorProps
   extends Omit<EditorStateConfig, 'doc' | 'extensions'>,
     Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
-  /**
-   * value of the auto created model in the editor.
-   */
+  /** value of the auto created model in the editor. */
   value?: string;
   height?: string;
   minHeight?: string;
@@ -158,12 +156,16 @@ export interface ReactCodeMirrorProps
    */
   basicSetup?: boolean;
   /**
+   * This disables editing of the editor content by the user.
+   * @default true
+   */
+  editable?: boolean;
+  /**
    * Whether to optional basicSetup by default
    * @default true
    */
-  /**
-   * Fired whenever a change occurs to the document.
-   */
+  indentWithTab?: boolean;
+  /** Fired whenever a change occurs to the document. */
   onChange?(value: string, viewUpdate: ViewUpdate): void;
   /** Fired whenever a change occurs to the document. There is a certain difference with `onChange`. */
   onUpdate?(viewUpdate: ViewUpdate): void;
