@@ -28,6 +28,11 @@ export interface ReactCodeMirrorProps
    */
   basicSetup?: boolean;
   /**
+   * This disables editing of the editor content by the user.
+   * @default true
+   */
+  editable?: boolean;
+  /**
    * Whether to optional basicSetup by default
    * @default true
    */
@@ -69,6 +74,7 @@ const ReactCodeMirror = React.forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProp
     maxWidth,
     basicSetup,
     indentWithTab,
+    editable,
     ...other
   } = props;
   const editor = useRef<HTMLDivElement>(null);
@@ -85,6 +91,7 @@ const ReactCodeMirror = React.forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProp
     maxWidth,
     basicSetup,
     indentWithTab,
+    editable,
     selection,
     onChange,
     onUpdate,

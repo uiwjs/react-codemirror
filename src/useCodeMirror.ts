@@ -3,8 +3,8 @@ import { basicSetup as defaultBasicSetup } from '@codemirror/basic-setup';
 import { EditorState, StateEffect } from '@codemirror/state';
 import { indentWithTab as defaultIndentWithTab } from '@codemirror/commands';
 import { EditorView, keymap, ViewUpdate } from '@codemirror/view';
-import { ReactCodeMirrorProps } from './';
 import { oneDarkTheme } from '@codemirror/theme-one-dark';
+import { ReactCodeMirrorProps } from './';
 import { defaultLightThemeOption } from './theme/light';
 
 export interface UseCodeMirror extends ReactCodeMirrorProps {
@@ -26,6 +26,7 @@ export function useCodeMirror(props: UseCodeMirror) {
     width = '',
     minWidth = '',
     maxWidth = '',
+    editable = true,
     indentWithTab = true,
     basicSetup = true,
   } = props;
@@ -56,7 +57,13 @@ export function useCodeMirror(props: UseCodeMirror) {
   if (basicSetup) {
     getExtensions.unshift(defaultBasicSetup);
   }
+
   theme === 'light' ? getExtensions.push(defaultLightThemeOption) : getExtensions.push(oneDarkTheme);
+
+  if (editable === false) {
+    getExtensions.push(EditorView.editable.of(false));
+  }
+
   if (onUpdate && typeof onUpdate === 'function') {
     getExtensions.push(EditorView.updateListener.of(onUpdate));
   }
@@ -103,7 +110,7 @@ export function useCodeMirror(props: UseCodeMirror) {
       view.dispatch({ effects: StateEffect.reconfigure.of(getExtensions) });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [theme, extensions, height, minHeight, maxHeight, width, minWidth, maxWidth]);
+  }, [theme, extensions, height, minHeight, maxHeight, width, minWidth, maxWidth, editable, indentWithTab, basicSetup]);
 
   useEffect(() => {
     if (autoFocus && view) {

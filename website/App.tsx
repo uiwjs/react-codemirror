@@ -127,6 +127,7 @@ let count = 0;
 export default function App() {
   const [mode, setMode] = useState('javascript');
   const [autofocus, setAutofocus] = useState(false);
+  const [editable, setEditable] = useState(true);
   const [theme, setTheme] = useState<ReactCodeMirrorProps['theme']>('light');
   const [code, setCode] = useState('');
   const [extensions, setExtensions] = useState<Extension[]>();
@@ -185,6 +186,7 @@ export default function App() {
         value={code}
         height={height}
         theme={theme}
+        editable={editable}
         extensions={extensions}
         autoFocus={autofocus}
         className={styles.codemirror}
@@ -223,6 +225,10 @@ export default function App() {
         <label>
           <input type="checkbox" checked={autofocus} onChange={(evn) => setAutofocus(evn.target.checked)} />
           autoFocus
+        </label>
+        <label>
+          <input type="checkbox" checked={editable} onChange={(evn) => setEditable(evn.target.checked)} />
+          editable
         </label>
       </div>
       <MarkdownPreview className={styles.markdown} source={DocumentStr.replace(/([\s\S]*)<!--dividing-->/, '')} />
