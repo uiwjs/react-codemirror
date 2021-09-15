@@ -27,7 +27,7 @@ import { yaml } from '@codemirror/legacy-modes/mode/yaml';
 import { vb } from '@codemirror/legacy-modes/mode/vb';
 import { powerShell } from '@codemirror/legacy-modes/mode/powershell';
 import { brainfuck } from '@codemirror/legacy-modes/mode/brainfuck';
-import { clike } from '@codemirror/legacy-modes/mode/clike';
+// import { clike } from '@codemirror/legacy-modes/mode/clike';
 import { stylus } from '@codemirror/legacy-modes/mode/stylus';
 import { erlang } from '@codemirror/legacy-modes/mode/erlang';
 import { nginx } from '@codemirror/legacy-modes/mode/nginx';
@@ -91,7 +91,8 @@ const langs: Record<string, any> = {
   julia: () => StreamLanguage.define(julia),
   dockerfile: () => StreamLanguage.define(dockerFile),
   r: () => StreamLanguage.define(r),
-  clike: () => clike({}),
+  // clike: () => StreamLanguage.define(clike),
+  // clike: () => clike({ }),
 };
 
 const hyperlink: {
@@ -142,7 +143,11 @@ export default function App() {
           setMode(lang);
         })
         .catch((err) => {
-          setExtensions([]);
+          if (langs[lang]) {
+            setExtensions([langs[lang]()]);
+          } else {
+            setExtensions([]);
+          }
           setMode(lang);
           setCode('');
         });
