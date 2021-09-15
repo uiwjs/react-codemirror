@@ -8,9 +8,11 @@
 
 CodeMirror component for React. Demo Preview: [@uiwjs.github.io/react-codemirror](https://uiwjs.github.io/react-codemirror/)
 
-> ⚠️ The v3 version document preview is [here](https://raw.githack.com/uiwjs/react-codemirror/doc3/index.html).
-
 <!--dividing-->
+
+> ⚠️ The [`v3`](https://raw.githack.com/uiwjs/react-codemirror/doc3/index.html) version document preview is [here](https://raw.githack.com/uiwjs/react-codemirror/doc3/index.html).
+
+<!--rehype:style=border-left: 8px solid #ffe564;background-color: #ffe56440;padding: 12px 16px;-->
 
 **Features:**
 
@@ -122,6 +124,8 @@ export default function App() {
 ```
 
 ## Props
+
+<!--rehype:style=background-color: #ffe564; display: inline-block; border-bottom: 0; padding: 3px 12px;-->
 
 - `value?: string` value of the auto created model in the editor.
 - `width?: string` width of editor. Defaults to `auto`.
