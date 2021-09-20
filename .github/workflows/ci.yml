@@ -29,6 +29,10 @@ jobs:
     - run: npm run coverage
     - run: npm run doc
 
+    - run: npm i coverage-badges-cli -g
+    - run: coverage-badges
+    - run: cp -rp coverage build
+
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
@@ -72,8 +76,3 @@ jobs:
     - run: npm install @jsdevtools/npm-publish -g
     - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" ./package.json
     # - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" --tag="next" ./package.json
-
-    - name: Coveralls
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
