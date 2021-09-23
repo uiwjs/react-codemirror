@@ -91,7 +91,7 @@
     "@types/react-dom": "17.0.9",
     "@types/react-test-renderer": "17.0.1",
     "@uiw/react-github-corners": "1.5.3",
-    "@uiw/react-markdown-preview": "3.3.2",
+    "@uiw/react-markdown-preview": "3.3.3",
     "@uiw/react-shields": "1.1.2",
     "@uiw/reset.css": "1.0.5",
     "rehype-attr": "2.0.3",
