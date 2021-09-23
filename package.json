@@ -71,7 +71,7 @@
   },
   "devDependencies": {
     "@codemirror/lang-cpp": "0.19.1",
-    "@codemirror/lang-html": "0.19.1",
+    "@codemirror/lang-html": "0.19.2",
     "@codemirror/lang-java": "0.19.1",
     "@codemirror/lang-javascript": "0.19.1",
     "@codemirror/lang-json": "0.19.1",
