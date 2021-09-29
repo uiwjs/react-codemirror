@@ -190,6 +190,7 @@ export default class App extends PureComponent {
           value={this.state.code}
           ref={this.getInstance}
           options={{
+            placeholder: 'Please enter a sample code.',
             theme,
             keyMap: 'sublime',
             fullScreen: true,
