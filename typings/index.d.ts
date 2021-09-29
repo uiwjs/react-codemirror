@@ -28,6 +28,13 @@ export interface IReactCodemirror extends IDOMEvent {
    */
   lazyLoadMode?: boolean;
   /**
+   * Adds a placeholder option that can be used to make content appear in the editor when it is empty and not focused. 
+   * ```js
+   * import "codemirror/addon/display/placeholder";
+   * ```
+   */
+  placeholder?: string;
+  /**
    * refer to codemirror options.
    */
   options?: CodeMirror.EditorConfiguration;
