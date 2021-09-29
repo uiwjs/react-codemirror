@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { basicSetup as defaultBasicSetup } from '@codemirror/basic-setup';
 import { EditorState, StateEffect } from '@codemirror/state';
 import { indentWithTab as defaultIndentWithTab } from '@codemirror/commands';
-import { EditorView, keymap, ViewUpdate } from '@codemirror/view';
+import { EditorView, keymap, ViewUpdate, placeholder as extendPlaceholder } from '@codemirror/view';
 import { oneDarkTheme } from '@codemirror/theme-one-dark';
 import { ReactCodeMirrorProps } from './';
 import { defaultLightThemeOption } from './theme/light';
@@ -23,6 +23,7 @@ export function useCodeMirror(props: UseCodeMirror) {
     height = '',
     minHeight = '',
     maxHeight = '',
+    placeholder = '',
     width = '',
     minWidth = '',
     maxWidth = '',
@@ -56,6 +57,10 @@ export function useCodeMirror(props: UseCodeMirror) {
   }
   if (basicSetup) {
     getExtensions.unshift(defaultBasicSetup);
+  }
+
+  if (placeholder) {
+    getExtensions.unshift(extendPlaceholder(placeholder));
   }
 
   theme === 'light' ? getExtensions.push(defaultLightThemeOption) : getExtensions.push(oneDarkTheme);

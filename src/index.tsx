@@ -3,14 +3,14 @@ import { EditorState, EditorStateConfig, Extension } from '@codemirror/state';
 import { EditorView, ViewUpdate } from '@codemirror/view';
 import { useCodeMirror } from './useCodeMirror';
 
-export * from './useCodeMirror';
 export * from '@codemirror/view';
 export * from '@codemirror/basic-setup';
 export * from '@codemirror/state';
+export * from './useCodeMirror';
 
 export interface ReactCodeMirrorProps
   extends Omit<EditorStateConfig, 'doc' | 'extensions'>,
-    Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
+    Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange' | 'placeholder'> {
   /** value of the auto created model in the editor. */
   value?: string;
   height?: string;
@@ -21,6 +21,12 @@ export interface ReactCodeMirrorProps
   maxWidth?: string;
   /** focus on the editor. */
   autoFocus?: boolean;
+  /** Enables a placeholder—a piece of example content to show when the editor is empty. */
+  placeholder?: string | HTMLElement;
+  /**
+   * `light` / `dark` Defaults to `light`.
+   * @default light
+   */
   theme?: 'light' | 'dark';
   /**
    * Whether to optional basicSetup by default
@@ -73,6 +79,7 @@ const ReactCodeMirror = React.forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProp
     minWidth,
     maxWidth,
     basicSetup,
+    placeholder,
     indentWithTab,
     editable,
     ...other
@@ -90,6 +97,7 @@ const ReactCodeMirror = React.forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProp
     minWidth,
     maxWidth,
     basicSetup,
+    placeholder,
     indentWithTab,
     editable,
     selection,

@@ -191,6 +191,7 @@ export default function App() {
         extensions={extensions}
         autoFocus={autofocus}
         className={styles.codemirror}
+        placeholder="Please enter the code."
         onChange={(value) => {
           // console.log('value:', value);
         }}
