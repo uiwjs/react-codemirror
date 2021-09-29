@@ -129,8 +129,8 @@ const code = 'console.log("hello world!");';
 <CodeMirror
   value={code}
   lazyLoadMode={false}
-  placeholder="Please enter the JavaScript code."
   options={{
+    placeholder: 'Please enter the JavaScript code.',
     theme: 'monokai',
     tabSize: 2,
     keyMap: 'sublime',
