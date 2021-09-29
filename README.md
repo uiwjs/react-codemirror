@@ -116,6 +116,29 @@ const code = 'const a = 0;';
   />
 ```
 
+## Setting Placeholder
+
+```jsx
+import CodeMirror from '@uiw/react-codemirror';
+import 'codemirror/theme/monokai.css';
+import 'codemirror/mode/javascript/javascript';
+import "codemirror/addon/display/placeholder";
+
+const code = 'console.log("hello world!");';
+
+<CodeMirror
+  value={code}
+  lazyLoadMode={false}
+  placeholder="Please enter the JavaScript code."
+  options={{
+    theme: 'monokai',
+    tabSize: 2,
+    keyMap: 'sublime',
+    mode: 'js',
+  }}
+/>
+```
+
 ## Properties
 
 - `width` width of editor. Defaults to `100%`.
