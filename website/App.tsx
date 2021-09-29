@@ -127,6 +127,7 @@ let count = 0;
 
 export default function App() {
   const [mode, setMode] = useState('javascript');
+  const [placeholder, setPlaceholder] = useState('Please enter the code.');
   const [autofocus, setAutofocus] = useState(false);
   const [editable, setEditable] = useState(true);
   const [theme, setTheme] = useState<ReactCodeMirrorProps['theme']>('light');
@@ -191,7 +192,7 @@ export default function App() {
         extensions={extensions}
         autoFocus={autofocus}
         className={styles.codemirror}
-        placeholder="Please enter the code."
+        placeholder={placeholder}
         onChange={(value) => {
           // console.log('value:', value);
         }}
@@ -231,6 +232,10 @@ export default function App() {
         <label>
           <input type="checkbox" checked={editable} onChange={(evn) => setEditable(evn.target.checked)} />
           editable
+        </label>
+        <label>
+          placeholder:
+          <input type="text" value={placeholder} onChange={(evn) => setPlaceholder(evn.target.value)} />
         </label>
       </div>
       <MarkdownPreview

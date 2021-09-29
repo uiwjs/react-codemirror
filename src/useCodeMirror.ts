@@ -115,7 +115,20 @@ export function useCodeMirror(props: UseCodeMirror) {
       view.dispatch({ effects: StateEffect.reconfigure.of(getExtensions) });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [theme, extensions, height, minHeight, maxHeight, width, minWidth, maxWidth, editable, indentWithTab, basicSetup]);
+  }, [
+    theme,
+    extensions,
+    placeholder,
+    height,
+    minHeight,
+    maxHeight,
+    width,
+    minWidth,
+    maxWidth,
+    editable,
+    indentWithTab,
+    basicSetup,
+  ]);
 
   useEffect(() => {
     if (autoFocus && view) {
