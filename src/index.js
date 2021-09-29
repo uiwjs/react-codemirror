@@ -19,7 +19,7 @@ function ReactCodeMirror(props = {}, ref) {
   const textareaRef = useRef();
   const lastestProps = useRef(props);
 
-  useImperativeHandle(ref, () => ({ editor }), [editor]);
+  useImperativeHandle(ref, () => ({ editor, textarea: textareaRef.current }), [editor, textareaRef]);
   lastestProps.current = props;
   
   // 将props中所有的事件处理函数映射并保存
