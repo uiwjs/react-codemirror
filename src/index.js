@@ -14,7 +14,7 @@ const defaultOptions = {
 }
 
 function ReactCodeMirror(props = {}, ref) {
-  const { options = {}, value = '', width = '100%', height = '100%', lazyLoadMode = true } = props;
+  const { options = {}, value = '', width = '100%', height = '100%', lazyLoadMode = true, placeholder = 'Please enter the code.' } = props;
   const [editor, setEditor] = useState();
   const textareaRef = useRef();
   const lastestProps = useRef(props);
@@ -103,7 +103,7 @@ function ReactCodeMirror(props = {}, ref) {
   }, [editor, options]);
   
   return (
-    <textarea ref={textareaRef} />
+    <textarea ref={textareaRef} placeholder={placeholder} />
   );
 }
 

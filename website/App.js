@@ -6,6 +6,7 @@ import 'codemirror/addon/display/autorefresh';
 import 'codemirror/addon/comment/comment';
 import 'codemirror/addon/edit/matchbrackets';
 import 'codemirror/keymap/sublime';
+import "codemirror/addon/display/placeholder";
 
 import 'codemirror/theme/3024-day.css';
 import 'codemirror/theme/3024-night.css';
