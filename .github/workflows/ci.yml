@@ -1,23 +1,14 @@
-name: Build & Deploy
+name: Build v3
 on:
   push:
     branches:
-      - master
-    tags:
-      - v2.*
+      - v3
+
 jobs:
   build-deploy:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
-    - name: Look Changelog
-      uses: jaywcjlove/changelog-generator@v1.4.3
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        head-ref: ${{steps.create_tag.outputs.version}}
-        filter-author: (jaywcjlove|小弟调调™|dependabot\[bot\]|Renovate Bot)
-        filter: '[R|r]elease[d]\s+[v|V]\d(\.\d+){0,2}'
-
     - uses: actions/setup-node@v2
       with:
         node-version: 14
@@ -26,10 +17,18 @@ jobs:
     - run: npm run build
     - run: npm run doc
 
+    - name: Create README.md of Build
+      working-directory: build
+      run: |
+        cat > README.md << EOF
+        Preview the document `@uiw/react-codemirror@v3`: https://raw.githack.com/uiwjs/react-codemirror/doc3/index.html
+        EOF
+
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: doc3
         publish_dir: ./build
 
     - name: Create Tag
@@ -65,6 +64,3 @@ jobs:
           ${{ steps.changelog.outputs.compareurl }}
           
           ${{ steps.changelog.outputs.changelog }}
-
-    - run: npm install @jsdevtools/npm-publish -g
-    - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" ./package.json
