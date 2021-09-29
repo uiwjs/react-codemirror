@@ -8,8 +8,8 @@
   "typings": "typings/index.d.ts",
   "scripts": {
     "prepare": "npm run build",
-    "watch": "tsbb watch",
-    "build": "tsbb build",
+    "watch": "tsbb watch --entry src/index.js",
+    "build": "tsbb build --entry src/index.js",
     "doc": "kkt build --app-src ./website",
     "start": "kkt start --app-src ./website"
   },
@@ -63,7 +63,7 @@
     "kkt": "6.11.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "tsbb": "3.0.0"
+    "tsbb": "3.3.7"
   },
   "browserslist": {
     "production": [
