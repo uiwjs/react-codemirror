@@ -69,3 +69,17 @@ it('CodeMirror className', async () => {
     expect(tree.props.className).toEqual('cm-theme-light test');
   }
 });
+
+it('CodeMirror placeholder', async () => {
+  const { findByText } = render(<CodeMirror placeholder="Hello World" className="test" />);
+  const text = await findByText('Hello World');
+  expect(text.className).toEqual('cm-placeholder');
+  expect(text.contentEditable).toEqual('false');
+});
+
+it('CodeMirror editable', async () => {
+  const { getByRole } = render(<CodeMirror editable={false} className="test" />);
+  const text = getByRole('textbox');
+  expect(text.className).toEqual('cm-content');
+  expect(text.tagName).toEqual('DIV');
+});
