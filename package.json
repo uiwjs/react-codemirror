@@ -40,18 +40,6 @@
   ],
   "author": "kenny wong <wowohoo@qq.com>",
   "license": "MIT",
-  "peerDependencies": {
-    "@babel/runtime": ">=7.11.0",
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
-  },
-  "dependencies": {
-    "@babel/runtime": "7.15.4",
-    "@codemirror/basic-setup": "0.19.0",
-    "@codemirror/state": "0.19.2",
-    "@codemirror/theme-one-dark": "0.19.0",
-    "@codemirror/view": "0.19.9"
-  },
   "jest": {
     "coverageReporters": [
       "lcov",
@@ -68,6 +56,18 @@
     "*.{js,jsx,ts,tsx,html,less,md,json}": [
       "prettier --write"
     ]
+  },
+  "peerDependencies": {
+    "@babel/runtime": ">=7.11.0",
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "7.15.4",
+    "@codemirror/basic-setup": "0.19.0",
+    "@codemirror/state": "0.19.2",
+    "@codemirror/theme-one-dark": "0.19.0",
+    "@codemirror/view": "0.19.9"
   },
   "devDependencies": {
     "@codemirror/lang-cpp": "0.19.1",
@@ -94,7 +94,6 @@
     "@uiw/react-markdown-preview": "3.4.0",
     "@uiw/react-shields": "1.1.2",
     "@uiw/reset.css": "1.0.5",
-    "rehype-attr": "2.0.6",
     "code-example": "3.3.1",
     "husky": "7.0.2",
     "jest": "27.2.5",

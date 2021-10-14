@@ -3,7 +3,6 @@ import GitHubCorners from '@uiw/react-github-corners';
 import Github from '@uiw/react-shields/esm/github';
 import Npm from '@uiw/react-shields/esm/npm';
 import MarkdownPreview from '@uiw/react-markdown-preview';
-import rehypeAttrs from 'rehype-attr';
 import { javascript } from '@codemirror/lang-javascript';
 import { html } from '@codemirror/lang-html';
 import { css } from '@codemirror/lang-css';
@@ -236,11 +235,7 @@ export default function App() {
           <input type="text" value={placeholder} onChange={(evn) => setPlaceholder(evn.target.value)} />
         </label>
       </div>
-      <MarkdownPreview
-        className={styles.markdown}
-        rehypePlugins={[[rehypeAttrs, { properties: 'attr' }]]}
-        source={DocumentStr.replace(/([\s\S]*)<!--dividing-->/, '')}
-      />
+      <MarkdownPreview className={styles.markdown} source={DocumentStr.replace(/([\s\S]*)<!--dividing-->/, '')} />
       <div className={styles.footer}>
         <Github user="uiwjs" repo="react-codemirror">
           <Github.Social type="forks" href="https://github.com/uiwjs/react-codemirror" />
