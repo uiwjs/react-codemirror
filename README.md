@@ -94,6 +94,47 @@ export default function App() {
 > - ~~`@codemirror/legacy-modes/mode/sql`~~ => [`@codemirror/lang-sql`](https://www.npmjs.com/package/@codemirror/lang-sql)
 > - ~~`@codemirror/legacy-modes/mode/xml`~~ => [`@codemirror/lang-xml`](https://www.npmjs.com/package/@codemirror/lang-xml)
 
+### Markdown Example
+
+Markdown code is automatically highlighted.
+
+[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?logo=codesandbox)](https://codesandbox.io/embed/react-codemirror-example-codemirror-6-markdown-auto-languages-iudnj?fontsize=14&hidenavigation=1&theme=dark)
+
+```jsx
+import CodeMirror from '@uiw/react-codemirror';
+import { markdown, markdownLanguage } from '@codemirror/lang-markdown';
+import { languages } from '@codemirror/language-data';
+
+const code = `## Title
+
+\`\`\`jsx
+function Demo() {
+  return <div>demo</div>
+}
+\`\`\`
+
+\`\`\`bash
+# Not dependent on uiw.
+npm install @codemirror/lang-markdown --save
+npm install @codemirror/language-data --save
+\`\`\`
+
+[weisit ulr](https://uiwjs.github.io/react-codemirror/)
+
+\`\`\`go
+package main
+import "fmt"
+func main() {
+  fmt.Println("Hello, 世界")
+}
+\`\`\`
+`;
+
+export default function App() {
+  return <CodeMirror value={code} extensions={[markdown({ base: markdownLanguage, codeLanguages: languages })]} />;
+}
+```
+
 ## Support Hook
 
 [![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?logo=codesandbox)](https://codesandbox.io/embed/react-codemirror-example-codemirror-6-hook-yr4vg?fontsize=14&hidenavigation=1&theme=dark)
