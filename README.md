@@ -96,7 +96,7 @@ export default function App() {
 
 ### Markdown Example
 
-Markdown code is automatically highlighted.
+Markdown language code is automatically highlighted.
 
 [![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?logo=codesandbox)](https://codesandbox.io/embed/react-codemirror-example-codemirror-6-markdown-auto-languages-iudnj?fontsize=14&hidenavigation=1&theme=dark)
 
