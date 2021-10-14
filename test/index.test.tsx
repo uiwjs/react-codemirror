@@ -1,7 +1,8 @@
 /* eslint-disable jest/no-conditional-expect */
 import React, { useEffect, useRef } from 'react';
 import renderer from 'react-test-renderer';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 // import '@testing-library/jest-dom';
 // import userEvent from '@testing-library/user-event';
 import CodeMirror, { ReactCodeMirrorRef } from '../src';
@@ -16,16 +17,17 @@ it('CodeMirror', async () => {
 });
 
 it('CodeMirror onChange', async () => {
-  render(
-    <CodeMirror
-      autoFocus
-      value="console.log('Hello world!')"
-      onChange={(value) => {
-        expect(value).toEqual(`console.log('Hello world!')`);
-      }}
-    />,
+  const handleChange = jest.fn((value) => {
+    expect(value).toEqual('# title');
+    return Array.isArray(value) ? value.join() : value;
+  });
+  const { findByRole, queryByText } = render(
+    <CodeMirror autoFocus value="console.log('Hello world!')" onChange={handleChange} />,
   );
-  // const cont = document.querySelector('.cm-content');
+  const input = await findByRole('textbox');
+  fireEvent.change(input, { target: { textContent: '# title' } });
+  const elm = queryByText('# title');
+  expect((elm as any).cmView.dom.innerHTML).toEqual('# title');
 });
 
 it('CodeMirror onUpdate', async () => {
