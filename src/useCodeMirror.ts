@@ -104,9 +104,11 @@ export function useCodeMirror(props: UseCodeMirror) {
   useEffect(() => {
     if (view) {
       const currentValue = view.state.doc.toString();
-      view.dispatch({
-        changes: { from: 0, to: currentValue.length, insert: value || '' },
-      });
+      if (value !== currentValue) {
+        view.dispatch({
+          changes: { from: 0, to: currentValue.length, insert: value || '' },
+        });
+      }
     }
   }, [value, view]);
 

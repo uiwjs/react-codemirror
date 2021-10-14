@@ -193,9 +193,7 @@ export default function App() {
         autoFocus={autofocus}
         className={styles.codemirror}
         placeholder={placeholder}
-        onChange={(value) => {
-          // console.log('value:', value);
-        }}
+        onChange={(value) => setCode(value)}
         style={{
           maxWidth: '995px',
           margin: '-18px auto 0 auto',
