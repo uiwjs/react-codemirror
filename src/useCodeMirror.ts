@@ -30,6 +30,7 @@ export function useCodeMirror(props: UseCodeMirror) {
     editable = true,
     indentWithTab = true,
     basicSetup = true,
+    root,
   } = props;
   const [container, setContainer] = useState(props.container);
   const [view, setView] = useState<EditorView>();
@@ -86,6 +87,7 @@ export function useCodeMirror(props: UseCodeMirror) {
         const viewCurrent = new EditorView({
           state: stateCurrent,
           parent: container as any,
+          root,
         });
         setView(viewCurrent);
       }
