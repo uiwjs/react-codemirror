@@ -54,6 +54,11 @@ export interface ReactCodeMirrorProps
    * or objects with an extension in its `extension` property. Extensions can be nested in arrays arbitrarily deep—they will be flattened when processed.
    */
   extensions?: Extension[];
+  /**
+   * If the view is going to be mounted in a shadow root or document other than the one held by the global variable document (the default), you should pass it here.
+   * Originally from the [config of EditorView](https://codemirror.net/6/docs/ref/#view.EditorView.constructor%5Econfig.root)
+   */
+  root?: ShadowRoot | Document;
 }
 
 export interface ReactCodeMirrorRef {
@@ -82,11 +87,13 @@ const ReactCodeMirror = React.forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProp
     placeholder,
     indentWithTab,
     editable,
+    root,
     ...other
   } = props;
   const editor = useRef<HTMLDivElement>(null);
   const { state, view, container, setContainer } = useCodeMirror({
     container: editor.current,
+    root,
     value,
     autoFocus,
     theme,
