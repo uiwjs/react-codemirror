@@ -180,7 +180,17 @@ import { EditorView, ViewUpdate } from '@codemirror/view';
 export * from '@codemirror/view';
 export * from '@codemirror/basic-setup';
 export * from '@codemirror/state';
-export * from './useCodeMirror';
+export interface UseCodeMirror extends ReactCodeMirrorProps {
+  container?: HTMLDivElement | null;
+}
+export declare function useCodeMirror(props: UseCodeMirror): {
+  state: EditorState | undefined;
+  setState: import('react').Dispatch<import('react').SetStateAction<EditorState | undefined>>;
+  view: EditorView | undefined;
+  setView: import('react').Dispatch<import('react').SetStateAction<EditorView | undefined>>;
+  container: HTMLDivElement | null | undefined;
+  setContainer: import('react').Dispatch<import('react').SetStateAction<HTMLDivElement | null | undefined>>;
+};
 export interface ReactCodeMirrorProps
   extends Omit<EditorStateConfig, 'doc' | 'extensions'>,
     Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange' | 'placeholder'> {
@@ -227,6 +237,11 @@ export interface ReactCodeMirrorProps
    * or objects with an extension in its `extension` property. Extensions can be nested in arrays arbitrarily deep—they will be flattened when processed.
    */
   extensions?: Extension[];
+  /**
+   * If the view is going to be mounted in a shadow root or document other than the one held by the global variable document (the default), you should pass it here.
+   * Originally from the [config of EditorView](https://codemirror.net/6/docs/ref/#view.EditorView.constructor%5Econfig.root)
+   */
+  root?: ShadowRoot | Document;
 }
 export interface ReactCodeMirrorRef {
   editor?: HTMLDivElement | null;
