@@ -76,7 +76,7 @@
     "@codemirror/lang-javascript": "0.19.2",
     "@codemirror/lang-json": "0.19.1",
     "@codemirror/lang-lezer": "0.19.1",
-    "@codemirror/lang-markdown": "0.19.1",
+    "@codemirror/lang-markdown": "0.19.2",
     "@codemirror/lang-php": "0.19.1",
     "@codemirror/lang-python": "0.19.2",
     "@codemirror/lang-rust": "0.19.1",
