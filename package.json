@@ -63,7 +63,7 @@
     "react-dom": ">=16.8.0"
   },
   "dependencies": {
-    "@babel/runtime": "7.15.4",
+    "@babel/runtime": "7.16.0",
     "@codemirror/basic-setup": "0.19.0",
     "@codemirror/state": "0.19.2",
     "@codemirror/theme-one-dark": "0.19.0",
