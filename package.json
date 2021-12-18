@@ -103,7 +103,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-test-renderer": "17.0.2",
-    "tsbb": "3.4.4"
+    "tsbb": "3.5.4"
   },
   "browserslist": {
     "production": [
