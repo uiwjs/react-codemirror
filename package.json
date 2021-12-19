@@ -96,7 +96,7 @@
     "@uiw/reset.css": "1.0.5",
     "code-example": "3.3.1",
     "husky": "7.0.4",
-    "jest": "27.3.1",
+    "jest": "27.4.5",
     "kkt": "6.11.0",
     "lint-staged": "11.2.6",
     "prettier": "2.5.1",
