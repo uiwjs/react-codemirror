@@ -64,7 +64,17 @@ export function useCodeMirror(props: UseCodeMirror) {
     getExtensions.unshift(extendPlaceholder(placeholder));
   }
 
-  theme === 'light' ? getExtensions.push(defaultLightThemeOption) : getExtensions.push(oneDarkTheme);
+  switch (theme) {
+    case 'light':
+      getExtensions.push(defaultLightThemeOption);
+      break;
+    case 'dark':
+      getExtensions.push(oneDarkTheme);
+      break;
+    default:
+      getExtensions.push(theme);
+      break;
+  }
 
   if (editable === false) {
     getExtensions.push(EditorView.editable.of(false));
