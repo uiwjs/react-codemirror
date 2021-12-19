@@ -164,6 +164,28 @@ export default function App() {
 }
 ```
 
+## Using custom theme
+
+```jsx
+import { oneDarkTheme } from '@codemirror/theme-one-dark';
+import CodeMirror from '@uiw/react-codemirror';
+import { javascript } from '@codemirror/lang-javascript';
+
+export default function App() {
+  return (
+    <CodeMirror
+      value="console.log('hello world!');"
+      height="100%"
+      theme={oneDarkTheme}
+      extensions={[javascript({ jsx: true })]}
+      onChange={(value, viewUpdate) => {
+        console.log('value:', value);
+      }}
+    />
+  );
+}
+```
+
 ## Props
 
 <!--rehype:style=background-color: #ffe564; display: inline-block; border-bottom: 0; padding: 3px 12px;-->
@@ -171,7 +193,7 @@ export default function App() {
 - `value?: string` value of the auto created model in the editor.
 - `width?: string` width of editor. Defaults to `auto`.
 - `height?: string` height of editor. Defaults to `auto`.
-- `theme?`: `light` / `dark` Defaults to `light`.
+- `theme?`: `'light'` / `'dark'` / `Extension` Defaults to `'light'`.
 
 ```ts
 import React from 'react';
