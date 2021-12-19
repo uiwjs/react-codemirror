@@ -123,8 +123,8 @@ const ReactCodeMirror = React.forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProp
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const cmThemeClassName = typeof theme === 'string' ? `cm-theme-${theme}` : 'cm-theme';
-  return <div ref={editor} className={`${cmThemeClassName}${className ? ` ${className}` : ''}`} {...other}></div>;
+  const defaultClassNames = typeof theme === 'string' ? `cm-theme-${theme}` : 'cm-theme';
+  return <div ref={editor} className={`${defaultClassNames}${className ? ` ${className}` : ''}`} {...other}></div>;
 });
 
 ReactCodeMirror.displayName = 'CodeMirror';
