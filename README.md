@@ -207,10 +207,10 @@ export interface ReactCodeMirrorProps
   /** Enables a placeholder—a piece of example content to show when the editor is empty. */
   placeholder?: string | HTMLElement;
   /**
-   * `light` / `dark` Defaults to `light`.
+   * `light` / `dark` / `Extension` Defaults to `light`.
    * @default light
    */
-  theme?: 'light' | 'dark';
+  theme?: 'light' | 'dark' | Extension;
   /**
    * Whether to optional basicSetup by default
    * @default true
@@ -260,7 +260,7 @@ export default ReactCodeMirror;
 - [@uiw/react-md-editor](https://github.com/uiwjs/react-md-editor): A simple markdown editor with preview, implemented with React.js and TypeScript.
 - [@uiw/react-monacoeditor](https://github.com/jaywcjlove/react-monacoeditor): Monaco Editor component for React.
 - [@uiw/react-markdown-editor](https://github.com/uiwjs/react-markdown-editor): A markdown editor with preview, implemented with React.js and TypeScript.
-- [@uiw/react-markdown-preview](https://github.com/jaywcjlove/react-monacoeditor): React component preview markdown text in web browser.
+- [@uiw/react-markdown-preview](https://github.com/uiwjs/react-markdown-preview): React component preview markdown text in web browser.
 
 ## License
 
