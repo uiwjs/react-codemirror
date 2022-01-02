@@ -123,6 +123,11 @@ const ReactCodeMirror = React.forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProp
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // check type of value
+  if (typeof value !== 'string') {
+    throw new Error(`value must be typeof string but got ${typeof value}`);
+  }
+
   const defaultClassNames = typeof theme === 'string' ? `cm-theme-${theme}` : 'cm-theme';
   return <div ref={editor} className={`${defaultClassNames}${className ? ` ${className}` : ''}`} {...other}></div>;
 });
