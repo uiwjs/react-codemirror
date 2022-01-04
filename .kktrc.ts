@@ -23,25 +23,29 @@ export default (conf: Configuration, env: 'development' | 'production', options:
       VERSION: JSON.stringify(pkg.version),
     }),
   );
-
-  conf.optimization = {
-    ...conf.optimization,
-    splitChunks: {
-      cacheGroups: {
-        reactvendor: {
-          test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
-          name: 'react-vendor',
-          chunks: 'all',
-        },
-        // prismjs: {
-        //   test: /[\\/]node_modules[\\/](codemirror)[\\/]/,
-        //   name: 'codemirror-vendor',
-        //   chunks: 'async',
-        // },
-      },
-    },
-  };
   if (env === 'production') {
+    conf.optimization = {
+      ...conf.optimization,
+      splitChunks: {
+        cacheGroups: {
+          reactvendor: {
+            test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+            name: 'react-vendor',
+            chunks: 'all',
+          },
+          refractor: {
+            test: /[\\/]node_modules[\\/](refractor)[\\/]/,
+            name: 'refractor-vendor',
+            chunks: 'all',
+          },
+          codemirror: {
+            test: /[\\/]node_modules[\\/](@codemirror)[\\/]/,
+            name: 'codemirror-vendor',
+            chunks: 'all',
+          },
+        },
+      },
+    };
     conf.output = { ...conf.output, publicPath: './' };
   }
   return conf;
