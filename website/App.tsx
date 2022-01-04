@@ -210,7 +210,7 @@ export default function App() {
         <Select
           label="Theme"
           options={themeOptions}
-          value={theme}
+          value={theme as string}
           onChange={(evn) => setTheme(evn.target.value as ReactCodeMirrorProps['theme'])}
         />
         <Select label="Height" options={heightOptions} value={height} onChange={(evn) => setHeight(evn.target.value)} />
