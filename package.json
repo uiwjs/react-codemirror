@@ -97,7 +97,7 @@
     "code-example": "3.3.1",
     "husky": "7.0.4",
     "kkt": "7.0.4",
-    "lint-staged": "12.1.4",
+    "lint-staged": "12.1.7",
     "prettier": "2.5.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
