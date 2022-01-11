@@ -112,7 +112,7 @@ const ReactCodeMirror = React.forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProp
     onUpdate,
     extensions,
   });
-  useImperativeHandle(ref, () => ({ editor: container, state, view }));
+  useImperativeHandle(ref, () => ({ editor: container, state, view }), [container, state, view]);
   useEffect(() => {
     setContainer(editor.current);
     return () => {
