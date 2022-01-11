@@ -70,7 +70,7 @@ export interface ReactCodeMirrorRef {
 const ReactCodeMirror = React.forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProps>((props, ref) => {
   const {
     className,
-    value,
+    value = '',
     selection,
     extensions = [],
     onChange,

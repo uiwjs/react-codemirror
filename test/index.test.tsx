@@ -1,10 +1,12 @@
+/**
+ * @jest-environment jsdom
+ */
 /* eslint-disable jest/no-conditional-expect */
 import React, { useEffect, useRef } from 'react';
 import renderer from 'react-test-renderer';
-import { render, fireEvent } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-// import '@testing-library/jest-dom';
+import { render, fireEvent, screen } from '@testing-library/react';
 // import userEvent from '@testing-library/user-event';
+// import '@testing-library/jest-dom';
 import CodeMirror, { ReactCodeMirrorRef } from '../src';
 
 it('CodeMirror', async () => {
@@ -21,12 +23,10 @@ it('CodeMirror onChange', async () => {
     expect(value).toEqual('# title');
     return Array.isArray(value) ? value.join() : value;
   });
-  const { findByRole, queryByText } = render(
-    <CodeMirror autoFocus value="console.log('Hello world!')" onChange={handleChange} />,
-  );
-  const input = await findByRole('textbox');
+  render(<CodeMirror autoFocus value="console.log('Hello world!')" onChange={handleChange} />);
+  const input = await screen.findByRole<HTMLInputElement>('textbox'); // findByRole('textbox');
   fireEvent.change(input, { target: { textContent: '# title' } });
-  const elm = queryByText('# title');
+  const elm = screen.queryByText('# title');
   expect((elm as any).cmView.dom.innerHTML).toEqual('# title');
 });
 
@@ -73,15 +73,15 @@ it('CodeMirror className', async () => {
 });
 
 it('CodeMirror placeholder', async () => {
-  const { findByText } = render(<CodeMirror placeholder="Hello World" className="test" />);
-  const text = await findByText('Hello World');
-  expect(text.className).toEqual('cm-placeholder');
-  expect(text.contentEditable).toEqual('false');
+  render(<CodeMirror placeholder="Hello World" className="test" />);
+  const elm = screen.queryByText('Hello World');
+  expect(elm!.style['pointerEvents']).toEqual('none');
+  expect(elm!.className).toEqual('cm-placeholder');
 });
 
 it('CodeMirror editable', async () => {
-  const { getByRole } = render(<CodeMirror editable={false} className="test" />);
-  const text = getByRole('textbox');
+  render(<CodeMirror editable={false} className="test" />);
+  const text = screen.getByRole('textbox');
   expect(text.className).toEqual('cm-content');
   expect(text.tagName).toEqual('DIV');
 });
