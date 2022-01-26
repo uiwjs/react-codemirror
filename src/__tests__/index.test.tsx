@@ -7,7 +7,7 @@ import renderer from 'react-test-renderer';
 import { render, fireEvent, screen } from '@testing-library/react';
 // import userEvent from '@testing-library/user-event';
 // import '@testing-library/jest-dom';
-import CodeMirror, { ReactCodeMirrorRef } from '../src';
+import CodeMirror, { ReactCodeMirrorRef } from '..';
 
 it('CodeMirror', async () => {
   const component = renderer.create(<CodeMirror />);
