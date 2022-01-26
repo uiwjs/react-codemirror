@@ -52,11 +52,6 @@
       "react-app/jest"
     ]
   },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,html,less,md,json}": [
-      "prettier --write"
-    ]
-  },
   "peerDependencies": {
     "@babel/runtime": ">=7.11.0",
     "react": ">=16.8.0",
