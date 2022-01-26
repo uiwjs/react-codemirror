@@ -285,6 +285,12 @@ export default ReactCodeMirror;
 - [@uiw/react-markdown-preview](https://github.com/uiwjs/react-markdown-preview): React component preview markdown text in web browser.
 - [Online JSON Viewer](https://github.com/uiwjs/json-viewer) Online JSON Viewer, JSON Beautifier to beautify and tree view of JSON data - It works as JSON Pretty Print to pretty print JSON data.
 
+## Contributors
+
+<a href="https://github.com/uiwjs/react-codemirror/graphs/contributors">
+  <img src="https://uiwjs.github.io/react-codemirror/CONTRIBUTORS.svg" />
+</a>
+
 ## License
 
 Licensed under the MIT License.
