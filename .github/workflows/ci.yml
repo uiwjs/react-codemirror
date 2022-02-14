@@ -26,6 +26,8 @@ jobs:
     - run: npm install
     - run: npm run build
     - run: npm run coverage
+    - run: npm run bundle
+    - run: npm run bundle:min
     - run: npm run doc
 
     - run: npm i coverage-badges-cli -g
