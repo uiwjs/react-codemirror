@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { basicSetup as defaultBasicSetup } from '@codemirror/basic-setup';
+import { basicSetup } from '@codemirror/basic-setup';
 import { EditorState, StateEffect } from '@codemirror/state';
-import { indentWithTab as defaultIndentWithTab } from '@codemirror/commands';
-import { EditorView, keymap, ViewUpdate, placeholder as extendPlaceholder } from '@codemirror/view';
+import { indentWithTab } from '@codemirror/commands';
+import { EditorView, keymap, ViewUpdate, placeholder } from '@codemirror/view';
 import { oneDark } from '@codemirror/theme-one-dark';
 import { ReactCodeMirrorProps } from './';
 import { defaultLightThemeOption } from './theme/light';
@@ -23,13 +23,13 @@ export function useCodeMirror(props: UseCodeMirror) {
     height = '',
     minHeight = '',
     maxHeight = '',
-    placeholder = '',
+    placeholder: placeholderStr = '',
     width = '',
     minWidth = '',
     maxWidth = '',
     editable = true,
-    indentWithTab = true,
-    basicSetup = true,
+    indentWithTab: defaultIndentWithTab = true,
+    basicSetup: defaultBasicSetup = true,
     root,
   } = props;
   const [container, setContainer] = useState(props.container);
@@ -53,15 +53,15 @@ export function useCodeMirror(props: UseCodeMirror) {
     }
   });
   let getExtensions = [updateListener, defaultThemeOption];
-  if (indentWithTab) {
-    getExtensions.unshift(keymap.of([defaultIndentWithTab]));
+  if (defaultIndentWithTab) {
+    getExtensions.unshift(keymap.of([indentWithTab]));
   }
-  if (basicSetup) {
-    getExtensions.unshift(defaultBasicSetup);
+  if (defaultBasicSetup) {
+    getExtensions.unshift(basicSetup);
   }
 
-  if (placeholder) {
-    getExtensions.unshift(extendPlaceholder(placeholder));
+  if (placeholderStr) {
+    getExtensions.unshift(placeholder(placeholderStr));
   }
 
   switch (theme) {
