@@ -96,7 +96,7 @@ export function useCodeMirror(props: UseCodeMirror) {
       if (!view) {
         const viewCurrent = new EditorView({
           state: stateCurrent,
-          parent: container as any,
+          parent: container,
           root,
         });
         setView(viewCurrent);
@@ -105,22 +105,24 @@ export function useCodeMirror(props: UseCodeMirror) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [container, state]);
 
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       if (view) {
         view.destroy();
+        setView(undefined);
       }
-    };
-  }, [view]);
+    },
+    [view],
+  );
+
+  useEffect(() => autoFocus && view && (view.focus() as any), [autoFocus, view]);
 
   useEffect(() => {
-    if (view) {
-      const currentValue = view.state.doc.toString();
-      if (value !== currentValue) {
-        view.dispatch({
-          changes: { from: 0, to: currentValue.length, insert: value || '' },
-        });
-      }
+    const currentValue = view ? view.state.doc.toString() : '';
+    if (view && value !== currentValue) {
+      view.dispatch({
+        changes: { from: 0, to: currentValue.length, insert: value || '' },
+      });
     }
   }, [value, view]);
 
@@ -132,23 +134,17 @@ export function useCodeMirror(props: UseCodeMirror) {
   }, [
     theme,
     extensions,
-    placeholder,
     height,
     minHeight,
     maxHeight,
     width,
+    placeholderStr,
     minWidth,
     maxWidth,
     editable,
-    indentWithTab,
-    basicSetup,
+    defaultIndentWithTab,
+    defaultBasicSetup,
   ]);
-
-  useEffect(() => {
-    if (autoFocus && view) {
-      view.focus();
-    }
-  }, [autoFocus, view]);
 
   return { state, setState, view, setView, container, setContainer };
 }

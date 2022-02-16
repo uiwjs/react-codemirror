@@ -115,11 +115,6 @@ const ReactCodeMirror = React.forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProp
   useImperativeHandle(ref, () => ({ editor: container, state, view }), [container, state, view]);
   useEffect(() => {
     setContainer(editor.current);
-    return () => {
-      if (view) {
-        view.destroy();
-      }
-    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
