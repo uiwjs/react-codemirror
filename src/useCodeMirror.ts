@@ -115,7 +115,11 @@ export function useCodeMirror(props: UseCodeMirror) {
     [view],
   );
 
-  useEffect(() => autoFocus && view && (view.focus() as any), [autoFocus, view]);
+  useEffect(() => {
+    if (autoFocus && view) {
+      view.focus();
+    }
+  }, [autoFocus, view]);
 
   useEffect(() => {
     const currentValue = view ? view.state.doc.toString() : '';
