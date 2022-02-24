@@ -30,8 +30,9 @@ jobs:
     - run: npm run bundle:min
     - run: npm run doc
 
-    - run: npm i coverage-badges-cli -g
-    - run: coverage-badges
+    - name: Create Coverage Badges
+      uses: jaywcjlove/coverage-badges-cli@main
+
     - run: cp -rp coverage build
 
     - name: Generate Contributors Images
