@@ -3,6 +3,7 @@ import GitHubCorners from '@uiw/react-github-corners';
 import Github from '@uiw/react-shields/esm/github';
 import Npm from '@uiw/react-shields/esm/npm';
 import MarkdownPreview from '@uiw/react-markdown-preview';
+import '@wcj/dark-mode';
 import { javascript } from '@codemirror/lang-javascript';
 import { html } from '@codemirror/lang-html';
 import { css } from '@codemirror/lang-css';
@@ -125,11 +126,13 @@ const heightOptions = ['auto', '200px', '300px', '500px'];
 let count = 0;
 
 export default function App() {
+  const dark = document.documentElement.getAttribute('data-color-mode');
+  console.log('>>', document.documentElement.getAttribute('data-color-mode'));
   const [mode, setMode] = useState('javascript');
   const [placeholder, setPlaceholder] = useState('Please enter the code.');
   const [autofocus, setAutofocus] = useState(false);
   const [editable, setEditable] = useState(true);
-  const [theme, setTheme] = useState<ReactCodeMirrorProps['theme']>('light');
+  const [theme, setTheme] = useState<ReactCodeMirrorProps['theme']>(dark === 'dark' ? 'dark' : 'light');
   const [code, setCode] = useState('');
   const [extensions, setExtensions] = useState<Extension[]>();
   const [height, setHeight] = useState('500px');
@@ -159,12 +162,22 @@ export default function App() {
   }
   useEffect(() => {
     handleLangChange('javascript');
+    setTheme(document.documentElement.getAttribute('data-color-mode') === 'dark' ? 'dark' : 'light');
+    document.addEventListener('colorschemechange', (e) => {
+      setTheme(e.detail.colorScheme as ReactCodeMirrorProps['theme']);
+    });
   }, []);
 
   // @ts-ignore
   const version = VERSION;
   return (
-    <div className={styles.App}>
+    <div className={`${styles.App} wmde-markdown-var`}>
+      <dark-mode
+        permanent
+        dark="Dark"
+        light="Light"
+        style={{ position: 'fixed', top: 8, left: 8, zIndex: 99 }}
+      ></dark-mode>
       <GitHubCorners fixed target="__blank" zIndex={10} href="https://github.com/uiwjs/react-codemirror" />
       <header className={styles.AppHeader}>
         <img src={logo} className={styles.AppLogo} alt="logo" />
@@ -211,7 +224,10 @@ export default function App() {
           label="Theme"
           options={themeOptions}
           value={theme as string}
-          onChange={(evn) => setTheme(evn.target.value as ReactCodeMirrorProps['theme'])}
+          onChange={(evn) => {
+            document.documentElement.setAttribute('data-color-mode', evn.target.value);
+            setTheme(evn.target.value as ReactCodeMirrorProps['theme']);
+          }}
         />
         <Select label="Height" options={heightOptions} value={height} onChange={(evn) => setHeight(evn.target.value)} />
         <button

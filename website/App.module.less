@@ -10,7 +10,6 @@ body {
   text-align: left;
   max-width: 995px;
   overflow: auto;
-  background-color: #fff;
   padding: 16px;
   border-radius: 5px;
 }
@@ -25,7 +24,6 @@ body {
 }
 
 .App {
-  border-bottom: 1px solid #ddd;
   padding-bottom: 68px;
   :global {
     .CodeMirror {
@@ -47,10 +45,10 @@ body {
 }
 
 .AppHeader {
-  background-color: #fff;
+  background-color: var(--color-canvas-subtle);
   box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1), 0 1px rgba(0, 0, 0, 0.1);
   padding: 120px 20px 40px 20px;
-  color: #333;
+  border-bottom: 1px solid var(--color-canvas-default);
   position: relative;
   z-index: 9;
   text-align: center;
@@ -75,7 +73,6 @@ body {
   }
   .button {
     a {
-      color: #333;
       outline: none;
       min-height: 30px;
       margin: 6px 5px;
@@ -87,15 +84,19 @@ body {
       user-select: none;
       border-radius: 3px;
       cursor: pointer;
-      background: #f1f1f1;
+      background: var(--color-neutral-muted);
+      color: var(--color-thme-text);
       line-height: 30px;
       text-transform: uppercase;
       text-decoration: none;
       &:hover {
-        background-color: #929292;
-        color: #fff;
+        background-color: var(--color-fg-muted);
+        color: var(--color-thme-bg);
         transition: background-color 0.25s linear, color 0.05s linear, opacity 0.25s linear, filter 0.25s linear,
           visibility 0.25s linear, transform 0.25s linear;
+      }
+      &:last-child {
+        color: var(--color-prettylights-syntax-keyword);
       }
     }
   }
@@ -104,8 +105,7 @@ body {
 .AppTitle {
   font-size: 30px;
   sup {
-    background-color: #e6e6e6;
-    color: #555;
+    background: var(--color-neutral-muted);
     padding: 1px 5px;
     font-size: 12px;
     border-radius: 3px;
