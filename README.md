@@ -29,7 +29,7 @@ npm install @uiw/react-codemirror --save
 
 ## Usage
 
-[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?logo=codesandbox)](https://codesandbox.io/embed/react-codemirror-example-vgr4n?fontsize=14&hidenavigation=1&theme=dark)
+[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?logo=codesandbox)](https://codesandbox.io/embed/react-codemirror-v3-vgr4n?fontsize=14&hidenavigation=1&theme=dark)
 
 ```jsx
 import CodeMirror from '@uiw/react-codemirror';
@@ -762,6 +762,15 @@ state: any;
 - [@uiw/react-monacoeditor](https://github.com/jaywcjlove/react-monacoeditor): Monaco Editor component for React.
 - [@uiw/react-markdown-editor](https://github.com/uiwjs/react-markdown-editor): A markdown editor with preview, implemented with React.js and TypeScript.
 - [@uiw/react-markdown-preview](https://github.com/jaywcjlove/react-monacoeditor): React component preview markdown text in web browser. 
+
+
+## Contributors
+
+As always, thanks to our amazing contributors!
+
+<a href="https://github.com/uiwjs/react-codemirror/graphs/contributors">
+  <img src="https://uiwjs.github.io/react-codemirror/CONTRIBUTORS.svg" />
+</a>
 
 ## License
 
