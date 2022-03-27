@@ -127,7 +127,6 @@ let count = 0;
 
 export default function App() {
   const dark = document.documentElement.getAttribute('data-color-mode');
-  console.log('>>', document.documentElement.getAttribute('data-color-mode'));
   const [mode, setMode] = useState('javascript');
   const [placeholder, setPlaceholder] = useState('Please enter the code.');
   const [autofocus, setAutofocus] = useState(false);
