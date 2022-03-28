@@ -57,26 +57,6 @@ export function useCodeMirror(props: UseCodeMirror) {
     getExtensions.unshift(keymap.of([indentWithTab]));
   }
   if (defaultBasicSetup) {
-    if (Array.isArray(basicSetup)) {
-      /**
-       * 🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
-       * This is not a solution.
-       * https://github.com/uiwjs/react-codemirror/issues/280
-       */
-      basicSetup.map((item) => {
-        if (item.value && Array.isArray(item.value)) {
-          item.value = item.value
-            .map((keymap: any) => {
-              if ('Mod-f' === keymap.key) {
-                return undefined;
-              }
-              return keymap;
-            })
-            .filter(Boolean);
-        }
-        return item;
-      });
-    }
     getExtensions.unshift(basicSetup);
   }
 
