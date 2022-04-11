@@ -61,7 +61,7 @@
     "react-dom": ">=16.8.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.17.2",
+    "@babel/runtime": ">=7.11.0",
     "@codemirror/basic-setup": "^0.19.1",
     "@codemirror/state": "^0.19.9",
     "@codemirror/theme-one-dark": "^0.19.1",
@@ -86,6 +86,7 @@
     "@kkt/ncc": "~1.0.8",
     "@kkt/raw-modules": "~7.1.1",
     "@kkt/scope-plugin-options": "~7.1.1",
+    "@testing-library/react": "^13.0.0",
     "@types/react": "~18.0.1",
     "@types/react-dom": "~18.0.0",
     "@types/react-test-renderer": "~17.0.1",
