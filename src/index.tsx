@@ -38,6 +38,7 @@ export interface ReactCodeMirrorProps
    * @default true
    */
   editable?: boolean;
+  readOnly?: boolean;
   /**
    * Whether to optional basicSetup by default
    * @default true
@@ -87,6 +88,7 @@ const ReactCodeMirror = React.forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProp
     placeholder,
     indentWithTab,
     editable,
+    readOnly,
     root,
     ...other
   } = props;
@@ -107,6 +109,7 @@ const ReactCodeMirror = React.forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProp
     placeholder,
     indentWithTab,
     editable,
+    readOnly,
     selection,
     onChange,
     onUpdate,

@@ -28,6 +28,7 @@ export function useCodeMirror(props: UseCodeMirror) {
     minWidth = '',
     maxWidth = '',
     editable = true,
+    readOnly = false,
     indentWithTab: defaultIndentWithTab = true,
     basicSetup: defaultBasicSetup = true,
     root,
@@ -78,6 +79,9 @@ export function useCodeMirror(props: UseCodeMirror) {
 
   if (editable === false) {
     getExtensions.push(EditorView.editable.of(false));
+  }
+  if (readOnly) {
+    getExtensions.push(EditorState.readOnly.of(true));
   }
 
   if (onUpdate && typeof onUpdate === 'function') {
