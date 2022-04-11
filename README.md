@@ -247,6 +247,11 @@ export interface ReactCodeMirrorProps
    */
   editable?: boolean;
   /**
+   * This disables editing of the editor content by the user.
+   * @default false
+   */
+  readOnly?: boolean;
+  /**
    * Whether to optional basicSetup by default
    * @default true
    */
