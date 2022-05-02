@@ -27,8 +27,9 @@ CodeMirror component for React. Demo Preview: [@uiwjs.github.io/react-codemirror
 
 ## Install
 
+**Not dependent on uiw.**
+
 ```bash
-# Not dependent on uiw.
 npm install @uiw/react-codemirror --save
 ```
 
