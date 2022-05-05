@@ -61,7 +61,7 @@ export default function App() {
 
 ```jsx
 import CodeMirror from '@uiw/react-codemirror';
-import { StreamLanguage } from '@codemirror/stream-parser';
+import { StreamLanguage } from '@codemirror/language';
 import { go } from '@codemirror/legacy-modes/mode/go';
 
 const goLang = `package main
