@@ -5,7 +5,6 @@ import { indentWithTab } from '@codemirror/commands';
 import { EditorView, keymap, ViewUpdate, placeholder } from '@codemirror/view';
 import { oneDark } from '@codemirror/theme-one-dark';
 import { ReactCodeMirrorProps } from './';
-import { defaultLightThemeOption } from './theme/light';
 
 export interface UseCodeMirror extends ReactCodeMirrorProps {
   container?: HTMLDivElement | null;
@@ -36,6 +35,16 @@ export function useCodeMirror(props: UseCodeMirror) {
   const [container, setContainer] = useState(props.container);
   const [view, setView] = useState<EditorView>();
   const [state, setState] = useState<EditorState>();
+  const defaultLightThemeOption = EditorView.theme(
+    {
+      '&': {
+        backgroundColor: '#fff',
+      },
+    },
+    {
+      dark: false,
+    },
+  );
   const defaultThemeOption = EditorView.theme({
     '&': {
       height,
