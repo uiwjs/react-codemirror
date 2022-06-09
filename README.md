@@ -47,7 +47,7 @@ function App() {
     <CodeMirror
       value="console.log('hello world!');"
       height="200px"
-      extensions={[lang.javascript({ jsx: true })]}
+      extensions={[javascript({ jsx: true })]}
       onChange={(value, viewUpdate) => {
         console.log('value:', value);
       }}
