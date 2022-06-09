@@ -167,7 +167,6 @@ export default function App() {
       setTheme(e.detail.colorScheme as ReactCodeMirrorProps['theme']);
     });
   }, []);
-  console.log('DocumentStr:', DocumentStr);
   // @ts-ignore
   const version = VERSION;
   return (
