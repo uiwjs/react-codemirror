@@ -5,12 +5,13 @@ declare module '*.module.less' {
   export default classes;
 }
 
-declare module '*.md' {
+declare module '*.txt' {
   const src: string;
   export default src;
 }
 
-declare module '*.txt' {
-  const src: string;
+declare module '*.md' {
+  import { CodeBlockData } from 'markdown-react-code-preview-loader';
+  const src: CodeBlockData;
   export default src;
 }

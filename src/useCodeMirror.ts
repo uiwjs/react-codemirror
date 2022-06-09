@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { basicSetup } from '@codemirror/basic-setup';
+import { basicSetup } from 'codemirror';
 import { EditorState, StateEffect } from '@codemirror/state';
 import { indentWithTab } from '@codemirror/commands';
 import { EditorView, keymap, ViewUpdate, placeholder } from '@codemirror/view';

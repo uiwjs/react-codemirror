@@ -4,6 +4,7 @@ import { LoaderConfOptions } from 'kkt';
 import lessModules from '@kkt/less-modules';
 import rawModules from '@kkt/raw-modules';
 import scopePluginOptions from '@kkt/scope-plugin-options';
+import { mdCodeModulesLoader } from 'markdown-react-code-preview-loader';
 import pkg from './package.json';
 
 export default (conf: Configuration, env: 'development' | 'production', options: LoaderConfOptions) => {
@@ -74,9 +75,10 @@ export default (conf: Configuration, env: 'development' | 'production', options:
   } else {
     conf = rawModules(conf, env, {
       ...options,
-      test: /\.(txt|md)$/i,
+      test: /\.(txt)$/i,
       esModule: true,
     });
+    conf = mdCodeModulesLoader(conf);
     conf = scopePluginOptions(conf, env, {
       ...options,
       allowedFiles: [path.resolve(process.cwd(), 'src'), path.resolve(process.cwd(), 'README.md')],

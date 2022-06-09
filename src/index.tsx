@@ -3,9 +3,6 @@ import { EditorState, EditorStateConfig, Extension } from '@codemirror/state';
 import { EditorView, ViewUpdate } from '@codemirror/view';
 import { useCodeMirror } from './useCodeMirror';
 
-export * from '@codemirror/view';
-export * from '@codemirror/basic-setup';
-export * from '@codemirror/state';
 export * from './useCodeMirror';
 
 export interface ReactCodeMirrorProps

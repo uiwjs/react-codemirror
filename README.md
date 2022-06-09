@@ -37,22 +37,24 @@ npm install @uiw/react-codemirror --save
 
 [![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?logo=codesandbox)](https://codesandbox.io/embed/react-codemirror-example-codemirror-6-slvju?fontsize=14&hidenavigation=1&theme=dark)
 
-```jsx
+```jsx mdx:preview
+import React from 'react';
 import CodeMirror from '@uiw/react-codemirror';
-import { javascript } from '@codemirror/lang-javascript';
+import * as lang from '@codemirror/lang-javascript';
 
-export default function App() {
+function App() {
   return (
     <CodeMirror
       value="console.log('hello world!');"
       height="200px"
-      extensions={[javascript({ jsx: true })]}
+      // extensions={[lang.javascript({ jsx: true })]}
       onChange={(value, viewUpdate) => {
         console.log('value:', value);
       }}
     />
   );
 }
+export default App;
 ```
 
 ## Support Language

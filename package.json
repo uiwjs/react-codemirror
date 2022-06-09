@@ -62,10 +62,8 @@
   },
   "dependencies": {
     "@babel/runtime": ">=7.11.0",
-    "@codemirror/basic-setup": "^0.20.0",
-    "@codemirror/state": "^6.0.0",
     "@codemirror/theme-one-dark": "^6.0.0",
-    "@codemirror/view": "^6.0.0"
+    "codemirror": "^6.0.0"
   },
   "devDependencies": {
     "@codemirror/lang-cpp": "~6.0.0",
@@ -80,7 +78,6 @@
     "@codemirror/lang-rust": "~6.0.0",
     "@codemirror/lang-sql": "~6.0.0",
     "@codemirror/lang-xml": "~6.0.0",
-    "@codemirror/language": "6.0.0",
     "@codemirror/legacy-modes": "~6.0.0",
     "@kkt/less-modules": "~7.1.1",
     "@kkt/ncc": "~1.0.8",
@@ -99,8 +96,10 @@
     "husky": "~8.0.0",
     "kkt": "~7.1.5",
     "lint-staged": "~13.0.0",
+    "markdown-react-code-preview-loader": "^2.1.2",
     "prettier": "~2.6.0",
     "react": "~18.1.0",
+    "react-code-preview-layout": "^2.0.2",
     "react-dom": "~18.1.0",
     "react-test-renderer": "~18.1.0",
     "tsbb": "~3.7.0"

@@ -46,7 +46,8 @@ import { r } from '@codemirror/legacy-modes/mode/r';
 import logo from './logo.png';
 import styles from './App.module.less';
 import DocumentStr from '../README.md';
-import CodeMirror, { ReactCodeMirrorProps, Extension } from '..';
+import { Extension } from '@codemirror/state';
+import CodeMirror, { ReactCodeMirrorProps } from '..';
 import { Select } from './Select';
 
 const langs: Record<string, any> = {
@@ -166,7 +167,7 @@ export default function App() {
       setTheme(e.detail.colorScheme as ReactCodeMirrorProps['theme']);
     });
   }, []);
-
+  console.log('DocumentStr:', DocumentStr);
   // @ts-ignore
   const version = VERSION;
   return (
@@ -250,7 +251,7 @@ export default function App() {
           <input type="text" value={placeholder} onChange={(evn) => setPlaceholder(evn.target.value)} />
         </label>
       </div>
-      <MarkdownPreview className={styles.markdown} source={DocumentStr.replace(/([\s\S]*)<!--dividing-->/, '')} />
+      <MarkdownPreview className={styles.markdown} source={DocumentStr.source} />
       <div className={styles.footer}>
         <Github user="uiwjs" repo="react-codemirror">
           <Github.Social type="forks" href="https://github.com/uiwjs/react-codemirror" />
