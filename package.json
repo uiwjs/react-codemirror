@@ -80,7 +80,7 @@
     "@codemirror/lang-rust": "~0.20.0",
     "@codemirror/lang-sql": "~0.20.0",
     "@codemirror/lang-xml": "~0.20.0",
-    "@codemirror/language": "0.20.0",
+    "@codemirror/language": "0.20.2",
     "@codemirror/legacy-modes": "~0.20.0",
     "@kkt/less-modules": "~7.1.1",
     "@kkt/ncc": "~1.0.8",
