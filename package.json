@@ -98,10 +98,10 @@
     "lint-staged": "~13.0.0",
     "markdown-react-code-preview-loader": "^2.1.2",
     "prettier": "~2.6.0",
-    "react": "~18.1.0",
+    "react": "~18.2.0",
     "react-code-preview-layout": "^2.0.2",
-    "react-dom": "~18.1.0",
-    "react-test-renderer": "~18.1.0",
+    "react-dom": "~18.2.0",
+    "react-test-renderer": "~18.2.0",
     "tsbb": "~3.7.0"
   },
   "browserslist": {
