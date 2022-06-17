@@ -24,7 +24,7 @@ jobs:
     - run: npm run doc
 
     - run: cp -rp www/build ./
-    - run: cp -rp coverage build
+    - run: cp -rp core/coverage build
 
     - name: Create Coverage Badges
       uses: jaywcjlove/coverage-badges-cli@main
