@@ -54,7 +54,7 @@ export default function Example() {
   const [extensions, setExtensions] = useState<Extension[]>();
   const [height, setHeight] = useState('500px');
 
-  function handleLangChange(lang: string) {
+  function handleLangChange(lang: keyof typeof langs) {
     try {
       import(`code-example/txt/sample.${lang.toLocaleLowerCase()}.txt`)
         .then((data) => {
@@ -108,7 +108,7 @@ export default function Example() {
             label="Lang"
             options={Object.keys(langs)}
             value={mode}
-            onChange={(evn) => handleLangChange(evn.target.value)}
+            onChange={(evn) => handleLangChange(evn.target.value as keyof typeof langs)}
           />
           <Select
             label="Theme"

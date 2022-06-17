@@ -37,6 +37,7 @@
     "@codemirror/lang-xml": "~6.0.0",
     "@codemirror/legacy-modes": "~6.1.0",
     "@uiw/codemirror-themes": "4.8.1",
+    "@uiw/codemirror-theme-okaidia": "4.8.1",
     "@uiw/react-codemirror": "4.8.1",
     "@uiw/react-github-corners": "~1.5.14",
     "@uiw/react-markdown-preview": "~4.0.5",

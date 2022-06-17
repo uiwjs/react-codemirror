@@ -38,7 +38,7 @@ import { dockerFile } from '@codemirror/legacy-modes/mode/dockerfile';
 import { julia } from '@codemirror/legacy-modes/mode/julia';
 import { r } from '@codemirror/legacy-modes/mode/r';
 
-export const langs: Record<string, any> = {
+export const langs = {
   javascript,
   jsx: () => javascript({ jsx: true }),
   typescript: () => javascript({ typescript: true }),

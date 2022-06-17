@@ -8,7 +8,7 @@ import { javascript } from '@codemirror/lang-javascript';
 import { thmeCode } from './themeCode';
 import { ColorMenu } from './ColorMenu';
 
-const Sider = styled.div`
+export const Sider = styled.div`
   width: 230px;
   overflow: auto;
   height: calc(100vh - 42px);

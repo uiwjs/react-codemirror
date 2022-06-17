@@ -55,6 +55,10 @@ const Buttons = styled.div`
     line-height: 30px;
     text-transform: uppercase;
     text-decoration: none;
+    &.special {
+      background: var(--color-prettylights-syntax-markup-ignored-bg);
+      color: var(--color-prettylights-syntax-carriage-return-text);
+    }
     &:hover {
       background-color: var(--color-fg-muted);
       color: var(--color-theme-bg);
@@ -123,7 +127,9 @@ export default function App() {
         </AppTitle>
         <Describe>CodeMirror component for React. </Describe>
         <Buttons>
-          <Link to="/theme/editor">Theme Editor</Link>
+          <Link to="/theme/editor" className="special">
+            Theme Editor
+          </Link>
           {hyperlink.map(({ href, label, style }, idx) => {
             return (
               <a key={idx} target="_blank" rel="noopener noreferrer" href={href} style={style}>

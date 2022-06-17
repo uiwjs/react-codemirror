@@ -6,6 +6,7 @@ import { createGlobalStyle } from 'styled-components';
 import { ThemeEditor } from './pages/theme/editor';
 import { ThemeLayout } from './pages/theme';
 import { ThemeDoc } from './pages/theme/docs';
+import { ThemeOkaidia } from './pages/theme/themes';
 
 export const GlobalStyle = createGlobalStyle`
   [data-color-mode*='dark'], [data-color-mode*='dark'] body {
@@ -45,7 +46,6 @@ export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
-
 `;
 
 const container = document.getElementById('root');
@@ -54,8 +54,10 @@ root.render(
   <HashRouter>
     <GlobalStyle />
     <Routes>
+      <Route index element={<App />} />
       <Route path="/" element={<App />} />
       <Route path="/theme/" element={<ThemeLayout />}>
+        <Route path="list" element={<ThemeOkaidia />} />
         <Route path="editor" element={<ThemeEditor />} />
         <Route path="doc" element={<ThemeDoc />} />
       </Route>

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import '@wcj/dark-mode';
 
 const Warpper = styled.div`
@@ -15,7 +15,8 @@ const Title = styled.div`
 const Tools = styled.div`
   display: flex;
   justify-content: center;
-  gap: 10px;
+  align-items: center;
+  gap: 2px;
   & a {
     display: flex;
     align-items: center;
@@ -37,13 +38,24 @@ const Header = styled.div`
   border-bottom: 1px solid var(--color-border-default);
 `;
 
+const Link = styled(NavLink)`
+  padding: 2px 5px;
+  border-radius: 3px;
+  text-decoration: none;
+  &.active {
+    background-color: var(--color-fg-subtle);
+    color: var(--color-canvas-subtle);
+  }
+`;
+
 export function ThemeLayout() {
   return (
     <Warpper>
       <Header>
-        <Title>CodeMirror Theme Editor</Title>
+        <Title>CodeMirror Theme</Title>
         <Tools>
           <Link to="/">Home</Link>
+          <Link to="/theme/list">Themes</Link>
           <Link to="/theme/editor">Editor</Link>
           <Link to="/theme/doc">Theme Doc</Link>
           <dark-mode permanent />
