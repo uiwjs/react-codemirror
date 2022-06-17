@@ -2,8 +2,8 @@
   "extends": "../tsconfig",
   "include": ["src", ".kktrc.ts"],
   "compilerOptions": {
+    "outDir": "./cjs",
     "baseUrl": ".",
-    "emitDeclarationOnly": true,
     "noEmit": false
   }
 }
