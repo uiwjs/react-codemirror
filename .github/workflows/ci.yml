@@ -85,10 +85,25 @@ jobs:
           ${{ steps.changelog.outputs.changelog }}
 
 
-    - uses: JS-DevTools/npm-publish@v1
+    - name: 📦 @uiw/react-codemirror publish to NPM
+      uses: JS-DevTools/npm-publish@v1
       with:
         token: ${{ secrets.NPM_TOKEN }}
         package: ./core/package.json
+
+
+    - name: 📦 @uiw/codemirror-themes publish to NPM
+      uses: JS-DevTools/npm-publish@v1
+      with:
+        token: ${{ secrets.NPM_TOKEN }}
+        package: ./themes/theme/package.json
+
+
+    - name: 📦 @uiw/codemirror-theme-okaidia publish to NPM
+      uses: JS-DevTools/npm-publish@v1
+      with:
+        token: ${{ secrets.NPM_TOKEN }}
+        package: ./themes/okaidia/package.json
 
     # - run: npm install @jsdevtools/npm-publish -g
     # - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" ./package.json
