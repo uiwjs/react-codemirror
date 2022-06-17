@@ -1,9 +1,9 @@
 {
   "private": true,
   "scripts": {
+    "build": "lerna exec --scope @uiw/* --ignore www -- npm run build",
     "⬇️⬇️⬇️⬇️⬇️ package ⬇️⬇️⬇️⬇️⬇️": "▼▼▼▼▼ package ▼▼▼▼▼",
     "watch": "npm run-script watch --workspace @uiw/react-codemirror",
-    "build": "npm run-script build --workspace @uiw/react-codemirror",
     "bundle": "npm run-script bundle --workspace @uiw/react-codemirror",
     "doc": "npm run-script build --workspace www",
     "start": "npm run-script start --workspace www",

@@ -14,9 +14,9 @@ jobs:
         node-version: 16
 
     - run: npm install
+    - run: npm run build
     - working-directory: core
       run: |
-        npm run build
         npm run bundle
         npm run bundle:min
         npm run coverage
