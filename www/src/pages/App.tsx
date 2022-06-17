@@ -1,11 +1,90 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styled, { keyframes } from 'styled-components';
 import GitHubCorners from '@uiw/react-github-corners';
 import Github from '@uiw/react-shields/esm/github';
 import Npm from '@uiw/react-shields/esm/npm';
 import logo from '../logo.png';
-import styles from './App.module.less';
 import Example from './Example';
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+const AppLogo = styled.img`
+  animation: ${rotate} infinite 20s linear;
+  height: 80px;
+`;
+
+const AppTitle = styled.h1`
+  font-size: 30px;
+  sup {
+    background: var(--color-neutral-muted);
+    padding: 1px 5px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+`;
+
+const Describe = styled.p`
+  font-size: 18px;
+  color: #a5a5a5;
+  font-weight: 200;
+`;
+
+const Buttons = styled.div`
+  a {
+    outline: none;
+    min-height: 30px;
+    margin: 6px 5px;
+    padding: 0 10px;
+    font-size: 14px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background: var(--color-neutral-muted);
+    color: var(--color-theme-text);
+    line-height: 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    &:hover {
+      background-color: var(--color-fg-muted);
+      color: var(--color-theme-bg);
+      transition: background-color 0.25s linear, color 0.05s linear, opacity 0.25s linear, filter 0.25s linear,
+        visibility 0.25s linear, transform 0.25s linear;
+    }
+    &:last-child {
+      color: var(--color-prettylights-syntax-keyword);
+    }
+  }
+`;
+
+const Footer = styled.div`
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 160px;
+  a {
+    text-decoration: none;
+  }
+`;
+
+const AppHeader = styled.div`
+  background-color: var(--color-canvas-subtle);
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1), 0 1px rgba(0, 0, 0, 0.1);
+  padding: 120px 20px 40px 20px;
+  border-bottom: 1px solid var(--color-canvas-default);
+  position: relative;
+  z-index: 9;
+  text-align: center;
+`;
 
 const hyperlink: {
   href: string;
@@ -34,16 +113,16 @@ const hyperlink: {
 export default function App() {
   const version = VERSION;
   return (
-    <div className={`${styles.App} wmde-markdown-var`}>
+    <div className="wmde-markdown-var">
       <dark-mode permanent dark="Dark" light="Light" style={{ position: 'fixed', top: 8, left: 8, zIndex: 99 }} />
       <GitHubCorners fixed target="__blank" zIndex={10} href="https://github.com/uiwjs/react-codemirror" />
-      <header className={styles.AppHeader}>
-        <img src={logo} className={styles.AppLogo} alt="logo" />
-        <h1 className={styles.AppTitle}>
+      <AppHeader>
+        <AppLogo src={logo} alt="logo" />
+        <AppTitle>
           React-CodeMirror <sup>v{version}</sup>
-        </h1>
-        <p className={styles.content}>CodeMirror component for React. </p>
-        <div className={styles.button}>
+        </AppTitle>
+        <Describe>CodeMirror component for React. </Describe>
+        <Buttons>
           <Link to="/theme/editor">Theme Editor</Link>
           {hyperlink.map(({ href, label, style }, idx) => {
             return (
@@ -52,11 +131,10 @@ export default function App() {
               </a>
             );
           })}
-        </div>
-        <div className={styles.select}></div>
-      </header>
+        </Buttons>
+      </AppHeader>
       <Example />
-      <div className={styles.footer}>
+      <Footer>
         <Github user="uiwjs" repo="react-codemirror">
           <Github.Social type="forks" href="https://github.com/uiwjs/react-codemirror" />
           <Github.Social type="stars" href="https://github.com/uiwjs/react-codemirror/stargazers" />
@@ -70,7 +148,7 @@ export default function App() {
           packageName="react-shields"
           href="https://www.npmjs.com/package/@uiw/react-codemirror"
         />
-      </div>
+      </Footer>
     </div>
   );
 }

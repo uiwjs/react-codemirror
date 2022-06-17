@@ -1,9 +1,11 @@
 import App from './pages/App';
 import { createRoot } from 'react-dom/client';
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import { createGlobalStyle } from 'styled-components';
-import { ThemeEditor } from './pages/editor';
 import '@wcj/dark-mode';
+import { createGlobalStyle } from 'styled-components';
+import { ThemeEditor } from './pages/theme/editor';
+import { ThemeLayout } from './pages/theme';
+import { ThemeDoc } from './pages/theme/docs';
 
 export const GlobalStyle = createGlobalStyle`
   [data-color-mode*='dark'], [data-color-mode*='dark'] body {
@@ -37,10 +39,13 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-size: 14px;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
   }
   * {
     box-sizing: border-box;
   }
+
 `;
 
 const container = document.getElementById('root');
@@ -50,7 +55,10 @@ root.render(
     <GlobalStyle />
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="/theme/editor" element={<ThemeEditor />} />
+      <Route path="/theme/" element={<ThemeLayout />}>
+        <Route path="editor" element={<ThemeEditor />} />
+        <Route path="doc" element={<ThemeDoc />} />
+      </Route>
     </Routes>
   </HashRouter>,
 );

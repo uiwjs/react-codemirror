@@ -3,7 +3,7 @@ import MarkdownPreview from '@uiw/react-markdown-preview';
 import DocumentStr from '@uiw/react-codemirror/README.md';
 import { Extension } from '@codemirror/state';
 import CodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
-import styles from './App.module.less';
+import styled from 'styled-components';
 import { Select } from '../Select';
 import { langs } from '../langs';
 
@@ -11,6 +11,37 @@ const themeOptions = ['dark', 'light'];
 const heightOptions = ['auto', '200px', '300px', '500px'];
 
 let count = 0;
+
+const MarkdownDocument = styled.div`
+  margin: 0 auto;
+  text-align: left;
+  max-width: 995px;
+  overflow: auto;
+  padding: 16px;
+  border-radius: 5px;
+`;
+
+const Tools = styled.div`
+  margin: 0 auto;
+  max-width: 995px;
+  padding: 15px 0 0 0;
+  > label {
+    margin-right: 15px;
+  }
+`;
+
+const CodemirrorWarpper = styled(CodeMirror)`
+  box-shadow: 0 0 0 1px rgb(16 22 26 / 10%), 0 0 0 rgb(16 22 26 / 0%), 0 1px 1px rgb(16 22 26 / 20%);
+  margin: 0 auto;
+  text-align: left;
+  max-width: 995px;
+  overflow: auto;
+  border-radius: 5px;
+`;
+
+const Warpper = styled.div`
+  padding-bottom: 18px;
+`;
 
 export default function Example() {
   const dark = document.documentElement.getAttribute('data-color-mode');
@@ -54,15 +85,14 @@ export default function Example() {
     });
   }, []);
   return (
-    <div className={`${styles.App} wmde-markdown-var`}>
-      <CodeMirror
+    <Warpper className="wmde-markdown-var">
+      <CodemirrorWarpper
         value={code}
         height={height}
         theme={theme}
         editable={editable}
         extensions={extensions}
         autoFocus={autofocus}
-        className={styles.codemirror}
         placeholder={placeholder}
         onChange={(value) => setCode(value)}
         style={{
@@ -72,45 +102,52 @@ export default function Example() {
           zIndex: 999,
         }}
       />
-      <div className={styles.select}>
-        <Select
-          label="Lang"
-          options={Object.keys(langs)}
-          value={mode}
-          onChange={(evn) => handleLangChange(evn.target.value)}
-        />
-        <Select
-          label="Theme"
-          options={themeOptions}
-          value={theme as string}
-          onChange={(evn) => {
-            document.documentElement.setAttribute('data-color-mode', evn.target.value);
-            setTheme(evn.target.value as ReactCodeMirrorProps['theme']);
-          }}
-        />
-        <Select label="Height" options={heightOptions} value={height} onChange={(evn) => setHeight(evn.target.value)} />
-        <button
-          onClick={() => {
-            count++;
-            setCode(`console.log("Hello World! ${count}")`);
-          }}
-        >
-          change code
-        </button>
-        <label>
-          <input type="checkbox" checked={autofocus} onChange={(evn) => setAutofocus(evn.target.checked)} />
-          autoFocus
-        </label>
-        <label>
-          <input type="checkbox" checked={editable} onChange={(evn) => setEditable(evn.target.checked)} />
-          editable
-        </label>
-        <label>
-          placeholder:
-          <input type="text" value={placeholder} onChange={(evn) => setPlaceholder(evn.target.value)} />
-        </label>
-      </div>
-      <MarkdownPreview className={styles.markdown} source={DocumentStr.source} />
-    </div>
+      <MarkdownDocument>
+        <Tools>
+          <Select
+            label="Lang"
+            options={Object.keys(langs)}
+            value={mode}
+            onChange={(evn) => handleLangChange(evn.target.value)}
+          />
+          <Select
+            label="Theme"
+            options={themeOptions}
+            value={theme as string}
+            onChange={(evn) => {
+              document.documentElement.setAttribute('data-color-mode', evn.target.value);
+              setTheme(evn.target.value as ReactCodeMirrorProps['theme']);
+            }}
+          />
+          <Select
+            label="Height"
+            options={heightOptions}
+            value={height}
+            onChange={(evn) => setHeight(evn.target.value)}
+          />
+          <button
+            onClick={() => {
+              count++;
+              setCode(`console.log("Hello World! ${count}")`);
+            }}
+          >
+            change code
+          </button>
+          <label>
+            <input type="checkbox" checked={autofocus} onChange={(evn) => setAutofocus(evn.target.checked)} />
+            autoFocus
+          </label>
+          <label>
+            <input type="checkbox" checked={editable} onChange={(evn) => setEditable(evn.target.checked)} />
+            editable
+          </label>
+          <label>
+            placeholder:
+            <input type="text" value={placeholder} onChange={(evn) => setPlaceholder(evn.target.value)} />
+          </label>
+        </Tools>
+        <MarkdownPreview source={DocumentStr.source} />
+      </MarkdownDocument>
+    </Warpper>
   );
 }

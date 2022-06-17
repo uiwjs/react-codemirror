@@ -1,0 +1,45 @@
+{
+  "name": "@uiw/codemirror-themes",
+  "version": "4.8.1",
+  "description": "Themes for CodeMirror.",
+  "homepage": "https://uiwjs.github.io/react-codemirror",
+  "author": "kenny wong <wowohoo@qq.com>",
+  "license": "MIT",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "scripts": {
+    "watch": "tsbb watch",
+    "build": "tsbb build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uiwjs/react-codemirror.git"
+  },
+  "files": [
+    "src",
+    "esm",
+    "cjs"
+  ],
+  "peerDependencies": {
+    "@babel/runtime": ">=7.11.0"
+  },
+  "dependencies": {
+    "@codemirror/language": "^6.0.0",
+    "@codemirror/view": "^6.0.0",
+    "@codemirror/state": "^6.0.0"
+  },
+  "keywords": [
+    "codemirror",
+    "codemirror6",
+    "theme",
+    "syntax",
+    "ide",
+    "code"
+  ],
+  "jest": {
+    "coverageReporters": [
+      "lcov",
+      "json-summary"
+    ]
+  }
+}
