@@ -34,7 +34,7 @@ export interface Settings {
   gutterForeground: string;
 }
 
-const createTheme = ({ dark, settings, styles }: CreateThemeOptions): Extension => {
+export const createTheme = ({ dark, settings, styles }: CreateThemeOptions): Extension => {
   const theme = EditorView.theme(
     {
       '&': {

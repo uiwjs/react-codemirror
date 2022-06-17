@@ -1,4 +1,6 @@
-# Codemirror Themes
+# Custom Codemirror Themes
+
+[![npm version](https://img.shields.io/npm/v/@uiw/codemirror-themes.svg)](https://www.npmjs.com/package/@uiw/codemirror-themes)
 
 Themes for CodeMirror.
 
