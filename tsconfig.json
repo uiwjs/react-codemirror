@@ -9,14 +9,14 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
     "isolatedModules": true,
     "declaration": true,
     "baseUrl": ".",
     "jsx": "react-jsx",
     "noFallthroughCasesInSwitch": true,
-    "resolveJsonModule": true,
-    "moduleResolution": "node",
-    "noEmit": true
-  },
-  "include": ["src/**/*", "website/**/*", "test/*", ".kktrc.ts"]
+    "noEmit": true,
+    "types": ["jest", "node"]
+  }
 }

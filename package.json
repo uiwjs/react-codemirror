@@ -1,119 +1,36 @@
 {
-  "name": "@uiw/react-codemirror",
-  "version": "4.8.1",
-  "description": "CodeMirror component for React.",
-  "homepage": "https://uiwjs.github.io/react-codemirror",
-  "main": "cjs/index.js",
-  "module": "esm/index.js",
-  "exports": {
-    "import": "./esm/index.js",
-    "require": "./cjs/index.js"
-  },
+  "private": true,
   "scripts": {
-    "prepare": "husky install && npm run build",
-    "watch": "tsbb watch",
-    "build": "tsbb build",
-    "bundle": "ncc build src/index.tsx --target web --filename codemirror",
-    "bundle:min": "ncc build src/index.tsx --target web --filename codemirror --minify",
-    "test": "tsbb test --env=jsdom",
-    "coverage": "tsbb test --coverage --bail",
-    "doc": "kkt build --app-src ./website",
-    "start": "kkt start --app-src ./website",
-    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,html,less,md,json}'"
+    "⬇️⬇️⬇️⬇️⬇️ package ⬇️⬇️⬇️⬇️⬇️": "▼▼▼▼▼ package ▼▼▼▼▼",
+    "watch": "npm run-script watch --workspace @uiw/react-codemirror",
+    "build": "npm run-script build --workspace @uiw/react-codemirror",
+    "bundle": "npm run-script bundle --workspace @uiw/react-codemirror",
+    "doc": "npm run-script build --workspace www",
+    "start": "npm run-script start --workspace www",
+    "⬆️⬆️⬆️⬆️⬆️ package ⬆️⬆️⬆️⬆️⬆️": "▲▲▲▲▲ package ▲▲▲▲▲",
+    "prepare": "husky install",
+    "version": "lerna version --exact --force-publish --no-push --no-git-tag-version",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "remove": "npm run clean && lerna exec \"rm -rf package-lock.json\" --scope react-code-preview-layout --scope website",
+    "clean": "lerna clean --yes"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/uiwjs/react-codemirror.git"
-  },
-  "keywords": [
-    "react",
-    "codemirror",
-    "codemirror6",
-    "react-codemirror",
-    "editor",
-    "syntax",
-    "ide",
-    "code"
+  "workspaces": [
+    "core",
+    "www"
   ],
-  "files": [
-    "dist",
-    "src",
-    "esm",
-    "cjs"
-  ],
-  "author": "kenny wong <wowohoo@qq.com>",
-  "license": "MIT",
-  "jest": {
-    "coverageReporters": [
-      "lcov",
-      "json-summary"
-    ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "peerDependencies": {
-    "@babel/runtime": ">=7.11.0",
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
-  },
-  "dependencies": {
-    "@babel/runtime": ">=7.11.0",
-    "@codemirror/theme-one-dark": "^6.0.0",
-    "codemirror": "^6.0.0"
+  "engines": {
+    "node": ">=16.0.0"
   },
   "devDependencies": {
-    "@codemirror/lang-cpp": "~6.0.0",
-    "@codemirror/lang-html": "~6.0.0",
-    "@codemirror/lang-java": "~6.0.0",
-    "@codemirror/lang-javascript": "~6.0.0",
-    "@codemirror/lang-json": "~6.0.0",
-    "@codemirror/lang-lezer": "~6.0.0",
-    "@codemirror/lang-markdown": "~6.0.0",
-    "@codemirror/lang-php": "~6.0.0",
-    "@codemirror/lang-python": "~6.0.0",
-    "@codemirror/lang-rust": "~6.0.0",
-    "@codemirror/lang-sql": "~6.0.0",
-    "@codemirror/lang-xml": "~6.0.0",
-    "@codemirror/legacy-modes": "~6.0.0",
-    "@kkt/less-modules": "~7.1.1",
-    "@kkt/ncc": "~1.0.8",
-    "@kkt/raw-modules": "~7.1.1",
-    "@kkt/scope-plugin-options": "~7.1.1",
-    "@testing-library/react": "^13.0.0",
-    "@types/react": "~18.0.1",
-    "@types/react-dom": "~18.0.0",
+    "@kkt/ncc": "^1.0.13",
+    "@kkt/less-modules": "^7.2.0",
     "@types/react-test-renderer": "~18.0.0",
-    "@uiw/react-github-corners": "~1.5.14",
-    "@uiw/react-markdown-preview": "~4.0.5",
-    "@uiw/react-shields": "~1.1.3",
-    "@uiw/reset.css": "~1.0.5",
-    "@wcj/dark-mode": "~1.0.12",
-    "code-example": "~3.3.1",
     "husky": "~8.0.0",
-    "kkt": "~7.1.5",
+    "kkt": "^7.2.0",
+    "lerna": "^5.1.2",
     "lint-staged": "~13.0.0",
-    "markdown-react-code-preview-loader": "^2.1.2",
     "prettier": "~2.6.0",
-    "react": "~18.1.0",
-    "react-code-preview-layout": "^2.0.2",
-    "react-dom": "~18.1.0",
-    "react-test-renderer": "~18.1.0",
+    "react-test-renderer": "~18.2.0",
     "tsbb": "~3.7.0"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }

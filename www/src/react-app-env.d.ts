@@ -5,6 +5,8 @@ declare module '*.module.less' {
   export default classes;
 }
 
+declare var VERSION: string;
+
 declare module '*.txt' {
   const src: string;
   export default src;

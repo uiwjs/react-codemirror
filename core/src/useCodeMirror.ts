@@ -4,7 +4,7 @@ import { EditorState, StateEffect } from '@codemirror/state';
 import { indentWithTab } from '@codemirror/commands';
 import { EditorView, keymap, ViewUpdate, placeholder } from '@codemirror/view';
 import { oneDark } from '@codemirror/theme-one-dark';
-import { ReactCodeMirrorProps } from './';
+import { ReactCodeMirrorProps } from '.';
 
 export interface UseCodeMirror extends ReactCodeMirrorProps {
   container?: HTMLDivElement | null;

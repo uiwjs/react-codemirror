@@ -1,0 +1,55 @@
+{
+  "name": "@uiw/react-codemirror",
+  "version": "4.8.1",
+  "description": "CodeMirror component for React.",
+  "homepage": "https://uiwjs.github.io/react-codemirror",
+  "author": "kenny wong <wowohoo@qq.com>",
+  "license": "MIT",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "scripts": {
+    "bundle": "ncc build src/index.tsx --target web --filename mdeditor && npm run bundle:min",
+    "bundle:watch": "ncc watch src/index.tsx --target web --filename mdeditor",
+    "bundle:min": "ncc build src/index.tsx --target web --filename mdeditor --minify",
+    "watch": "tsbb watch",
+    "build": "tsbb build",
+    "test": "tsbb test --env=jsdom",
+    "coverage": "tsbb test --env=jsdom --coverage --bail"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uiwjs/react-codemirror.git"
+  },
+  "files": [
+    "dist",
+    "src",
+    "esm",
+    "cjs"
+  ],
+  "peerDependencies": {
+    "@babel/runtime": ">=7.11.0",
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "dependencies": {
+    "@babel/runtime": ">=7.11.0",
+    "@codemirror/theme-one-dark": "^6.0.0",
+    "codemirror": "^6.0.0"
+  },
+  "keywords": [
+    "react",
+    "codemirror",
+    "codemirror6",
+    "react-codemirror",
+    "editor",
+    "syntax",
+    "ide",
+    "code"
+  ],
+  "jest": {
+    "coverageReporters": [
+      "lcov",
+      "json-summary"
+    ]
+  }
+}
