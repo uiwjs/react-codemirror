@@ -105,6 +105,14 @@ jobs:
         token: ${{ secrets.NPM_TOKEN }}
         package: ./themes/okaidia/package.json
 
-    # - run: npm install @jsdevtools/npm-publish -g
-    # - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" ./package.json
-    # - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" --tag="next" ./package.json
+    - name: 📦 @uiw/codemirror-theme-dracula publish to NPM
+      uses: JS-DevTools/npm-publish@v1
+      with:
+        token: ${{ secrets.NPM_TOKEN }}
+        package: ./themes/dracula/package.json
+
+    - name: 📦 @uiw/codemirror-theme-duotone publish to NPM
+      uses: JS-DevTools/npm-publish@v1
+      with:
+        token: ${{ secrets.NPM_TOKEN }}
+        package: ./themes/duotone/package.json

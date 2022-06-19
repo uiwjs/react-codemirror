@@ -65,7 +65,7 @@ export function ThemeLayout() {
         </Title>
         <Tools>
           <Link to="/">Home</Link>
-          <Link to="/theme/list">Themes</Link>
+          <Link to="/theme/data">Themes</Link>
           <Link to="/theme/editor">Editor</Link>
           <Link to="/theme/doc">Theme Doc</Link>
           <dark-mode permanent />

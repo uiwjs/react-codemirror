@@ -1,22 +1,12 @@
-import { Fragment, useState } from 'react';
-import styled, { css } from 'styled-components';
-import CodeMirror from '@uiw/react-codemirror';
+import { Fragment } from 'react';
+import styled from 'styled-components';
+import { useParams, NavLink } from 'react-router-dom';
 import { okaidia } from '@uiw/codemirror-theme-okaidia';
 import { dracula } from '@uiw/codemirror-theme-dracula';
-import jsStr from 'code-example/txt/sample.javascript.txt';
-import jsxStr from 'code-example/txt/sample.jsx.txt';
-import typescriptStr from 'code-example/txt/sample.typescript.txt';
-import tsxStr from 'code-example/txt/sample.tsx.txt';
-import htmlStr from 'code-example/txt/sample.html.txt';
-import cssStr from 'code-example/txt/sample.css.txt';
-import phpStr from 'code-example/txt/sample.php.txt';
-import rustStr from 'code-example/txt/sample.rust.txt';
-import goStr from 'code-example/txt/sample.go.txt';
-import mysqlStr from 'code-example/txt/sample.mysql.txt';
-import pythonStr from 'code-example/txt/sample.python.txt';
-import { Sider } from '../editor';
-import { langs } from '../../../langs';
+import { duotoneLight, duotoneDark } from '@uiw/codemirror-theme-duotone';
 import { Document } from './Document';
+import { Sample } from './Sample';
+import { Sider } from '../editor';
 
 const Content = styled.div`
   width: 100%;
@@ -27,72 +17,43 @@ const Content = styled.div`
   padding: 30px 38px 120px 38px;
 `;
 
-const Title = styled.div`
-  font-weight: bold;
+const MenuItem = styled(NavLink)`
+  cursor: pointer;
+  padding: 6px 8px;
   font-size: 16px;
-  padding: 5px 0;
+  text-decoration: none;
+  text-transform: capitalize;
+  &.active {
+    background-color: var(--color-border-default);
+    border-radius: 2px;
+  }
 `;
 
-const ThemeMenuItem = styled.div<{ active?: boolean }>`
-  cursor: pointer;
-  padding: 3px 8px;
-  ${(props) =>
-    props.active &&
-    css`
-      background-color: var(--color-border-default);
-      border-radius: 2px;
-    `}
-`;
+const themeData = {
+  okaidia,
+  dracula,
+  duotoneLight,
+  duotoneDark,
+};
 
 export const ThemeOkaidia = () => {
-  const [theme, setTheme] = useState(okaidia);
-  const [themeName, setThemeName] = useState('okaidia');
+  const { name } = useParams();
+  const theme = themeData[name as keyof typeof themeData];
+  const themeName = name;
   return (
     <Fragment>
       <Sider>
-        <ThemeMenuItem
-          active={okaidia === theme}
-          onClick={() => {
-            setTheme(okaidia);
-            setThemeName('okaidia');
-          }}
-        >
-          Okaidia
-        </ThemeMenuItem>
-        <ThemeMenuItem
-          active={dracula === theme}
-          onClick={() => {
-            setTheme(dracula);
-            setThemeName('dracula');
-          }}
-        >
-          Dracula
-        </ThemeMenuItem>
+        {Object.keys(themeData).map((name, key) => {
+          return (
+            <MenuItem key={key} to={`/theme/data/${name}`}>
+              {name}
+            </MenuItem>
+          );
+        })}
       </Sider>
       <Content>
         <Document themeName={themeName}>
-          <Title>JavaScript</Title>
-          <CodeMirror value={jsStr} height="300px" theme={theme} extensions={[langs.javascript()]} />
-          <Title>JSX</Title>
-          <CodeMirror value={jsxStr} height="300px" theme={theme} extensions={[langs.jsx()]} />
-          <Title>TypeScript</Title>
-          <CodeMirror value={typescriptStr} height="300px" theme={theme} extensions={[langs.typescript()]} />
-          <Title>TSX</Title>
-          <CodeMirror value={tsxStr} height="300px" theme={theme} extensions={[langs.tsx()]} />
-          <Title>HTML</Title>
-          <CodeMirror value={htmlStr} height="300px" theme={theme} extensions={[langs.html()]} />
-          <Title>CSS</Title>
-          <CodeMirror value={cssStr} height="300px" theme={theme} extensions={[langs.css()]} />
-          <Title>PHP</Title>
-          <CodeMirror value={phpStr} height="300px" theme={theme} extensions={[langs.php()]} />
-          <Title>Rust</Title>
-          <CodeMirror value={rustStr} height="300px" theme={theme} extensions={[langs.rust()]} />
-          <Title>Go</Title>
-          <CodeMirror value={goStr} height="300px" theme={theme} extensions={[langs.go()]} />
-          <Title>MySQL</Title>
-          <CodeMirror value={mysqlStr} height="300px" theme={theme} extensions={[langs.mysql()]} />
-          <Title>Python</Title>
-          <CodeMirror value={pythonStr} height="300px" theme={theme} extensions={[langs.python()]} />
+          <Sample theme={theme} />
         </Document>
       </Content>
     </Fragment>

@@ -2,11 +2,14 @@ import { FC, Fragment, PropsWithChildren, useEffect, useState } from 'react';
 import MarkdownPreview from '@uiw/react-markdown-preview';
 import okaidia from '@uiw/codemirror-theme-okaidia/README.md';
 import dracula from '@uiw/codemirror-theme-dracula/README.md';
+import duotone from '@uiw/codemirror-theme-duotone/README.md';
 import styled from 'styled-components';
 
 const mdSource = {
   okaidia: okaidia.source,
   dracula: dracula.source,
+  duotoneLight: duotone.source,
+  duotoneDark: duotone.source,
 };
 
 const Button = styled.button``;
@@ -14,6 +17,8 @@ const Button = styled.button``;
 const Title = styled.div`
   font-size: 21px;
   padding-bottom: 15px;
+  text-transform: capitalize;
+  font-weight: bold;
 `;
 
 interface DocumentProps {
@@ -30,7 +35,7 @@ export const Document: FC<PropsWithChildren<DocumentProps>> = ({ children, theme
   }, [themeName]);
   return (
     <Fragment>
-      <Title>{themeName}</Title>
+      <Title>{themeName} Theme</Title>
       <div>
         <Button onClick={() => setPreviewDoc(!previewDoc)}>{previewDoc ? 'Preview Theme' : 'Preview Document'}</Button>
       </div>
