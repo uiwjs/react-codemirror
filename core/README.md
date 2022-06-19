@@ -343,6 +343,18 @@ export interface BasicSetupOptions {
 }
 ```
 
+## Packages
+
+| Name                            | NPM Version                                                                                                                                   | Website                                                                              |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `@uiw/react-codemirror`         | [![npm version](https://img.shields.io/npm/v/@uiw/react-codemirror.svg)](https://www.npmjs.com/package/@uiw/react-codemirror)                 | [Preview Website](https://uiwjs.github.io/react-codemirror/)                         |
+| `@uiw/codemirror-themes`        | [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-themes.svg)](https://www.npmjs.com/package/@uiw/codemirror-themes)               | [Preview Website](https://uiwjs.github.io/react-codemirror/#/theme/doc)              |
+| `@uiw/codemirror-theme-okaidia` | [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-okaidia.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-okaidia) | [Preview Website](https://uiwjs.github.io/react-codemirror/#/theme/data/okaidia)     |
+| `@uiw/codemirror-theme-duotone` | [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-duotone.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-duotone) | [Preview Website](https://uiwjs.github.io/react-codemirror/#/theme/data/duotoneDark) |
+| `@uiw/codemirror-theme-dracula` | [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-dracula.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-dracula) | [Preview Website](https://uiwjs.github.io/react-codemirror/#/theme/data/dracula)     |
+
+<!--rehype:style=width: 100%; display: inline-table;-->
+
 ### Related
 
 - [@uiw/react-textarea-code-editor](https://github.com/uiwjs/react-textarea-code-editor): A simple code editor with syntax highlighting.
