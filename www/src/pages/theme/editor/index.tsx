@@ -58,7 +58,7 @@ export function ThemeEditor() {
   const [lang, setLang] = useState('jsx');
   const [theme, setTheme] = useState<CreateThemeOptions['dark']>('light');
   const [settings, setSettings] = useState<CreateThemeOptions['settings']>({
-    background: '',
+    background: '#fff',
     foreground: '#4D4D4C',
     caret: '#AEAFAD',
     selection: '#D6D6D6',

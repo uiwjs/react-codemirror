@@ -100,11 +100,11 @@ const hyperlink: {
     label: 'View on NPM',
   },
   {
-    href: 'https://codemirror.net/6/docs/',
+    href: 'https://codemirror.net/docs/',
     label: 'CM Documentation',
   },
   {
-    href: 'https://github.com/codemirror/codemirror.next/',
+    href: 'https://github.com/codemirror/dev',
     label: 'CodeMirror GitHub',
   },
   {
