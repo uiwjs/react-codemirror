@@ -47,9 +47,10 @@ export const createTheme = ({ dark, settings, styles }: CreateThemeOptions): Ext
       '.cm-cursor, .cm-dropCursor': {
         borderLeftColor: settings.caret,
       },
-      '&.cm-focused .cm-selectionBackgroundm .cm-selectionBackground, .cm-content ::selection': {
-        backgroundColor: settings.selection,
-      },
+      '&.cm-focused .cm-selectionBackground .cm-selectionBackground, & .cm-selectionLayer .cm-selectionBackground, ::selection':
+        {
+          backgroundColor: settings.selection,
+        },
       '.cm-activeLine': {
         backgroundColor: settings.lineHighlight,
       },
