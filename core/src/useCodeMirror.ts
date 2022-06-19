@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { basicSetup } from 'codemirror';
 import { EditorState, StateEffect } from '@codemirror/state';
 import { indentWithTab } from '@codemirror/commands';
 import { EditorView, keymap, ViewUpdate, placeholder } from '@codemirror/view';
 import { oneDark } from '@codemirror/theme-one-dark';
+import { basicSetup } from './basicSetup';
 import { ReactCodeMirrorProps } from '.';
 
 export interface UseCodeMirror extends ReactCodeMirrorProps {
@@ -62,12 +62,17 @@ export function useCodeMirror(props: UseCodeMirror) {
       onChange(value, vu);
     }
   });
+
   let getExtensions = [updateListener, defaultThemeOption];
   if (defaultIndentWithTab) {
     getExtensions.unshift(keymap.of([indentWithTab]));
   }
   if (defaultBasicSetup) {
-    getExtensions.unshift(basicSetup);
+    if (typeof defaultBasicSetup === 'boolean') {
+      getExtensions.unshift(basicSetup());
+    } else {
+      getExtensions.unshift(basicSetup(defaultBasicSetup));
+    }
   }
 
   if (placeholderStr) {

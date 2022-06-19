@@ -2,7 +2,9 @@ import React, { useEffect, useRef, useImperativeHandle } from 'react';
 import { EditorState, EditorStateConfig, Extension } from '@codemirror/state';
 import { EditorView, ViewUpdate } from '@codemirror/view';
 import { useCodeMirror } from './useCodeMirror';
+import { BasicSetupOptions } from './basicSetup';
 
+export * from './basicSetup';
 export * from './useCodeMirror';
 
 export interface ReactCodeMirrorProps
@@ -29,12 +31,16 @@ export interface ReactCodeMirrorProps
    * Whether to optional basicSetup by default
    * @default true
    */
-  basicSetup?: boolean;
+  basicSetup?: boolean | BasicSetupOptions;
   /**
    * This disables editing of the editor content by the user.
    * @default true
    */
   editable?: boolean;
+  /**
+   * This disables editing of the editor content by the user.
+   * @default false
+   */
   readOnly?: boolean;
   /**
    * Whether to optional basicSetup by default

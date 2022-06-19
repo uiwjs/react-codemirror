@@ -273,7 +273,7 @@ export interface ReactCodeMirrorProps
    * Whether to optional basicSetup by default
    * @default true
    */
-  basicSetup?: boolean;
+  basicSetup?: boolean | BasicSetupOptions;
   /**
    * This disables editing of the editor content by the user.
    * @default true
@@ -315,6 +315,32 @@ declare const ReactCodeMirror: React.ForwardRefExoticComponent<
   ReactCodeMirrorProps & React.RefAttributes<ReactCodeMirrorRef>
 >;
 export default ReactCodeMirror;
+export interface BasicSetupOptions {
+  lineNumbers?: boolean;
+  highlightActiveLineGutter?: boolean;
+  highlightSpecialChars?: boolean;
+  history?: boolean;
+  foldGutter?: boolean;
+  drawSelection?: boolean;
+  dropCursor?: boolean;
+  allowMultipleSelections?: boolean;
+  indentOnInput?: boolean;
+  syntaxHighlighting?: boolean;
+  bracketMatching?: boolean;
+  closeBrackets?: boolean;
+  autocompletion?: boolean;
+  rectangularSelection?: boolean;
+  crosshairCursor?: boolean;
+  highlightActiveLine?: boolean;
+  highlightSelectionMatches?: boolean;
+  closeBracketsKeymap?: boolean;
+  defaultKeymap?: boolean;
+  searchKeymap?: boolean;
+  historyKeymap?: boolean;
+  foldKeymap?: boolean;
+  completionKeymap?: boolean;
+  lintKeymap?: boolean;
+}
 ```
 
 ### Related
