@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { NavLink, Outlet } from 'react-router-dom';
 import '@wcj/dark-mode';
+import logo from '../../logo.png';
 
 const Warpper = styled.div`
   display: flex;
@@ -10,6 +11,12 @@ const Warpper = styled.div`
 const Title = styled.div`
   font-size: 14px;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  > img {
+    height: 21px;
+  }
 `;
 
 const Tools = styled.div`
@@ -52,7 +59,10 @@ export function ThemeLayout() {
   return (
     <Warpper>
       <Header>
-        <Title>CodeMirror Theme</Title>
+        <Title>
+          <img src={logo} alt="Logo" />
+          <span>CodeMirror Theme</span>
+        </Title>
         <Tools>
           <Link to="/">Home</Link>
           <Link to="/theme/list">Themes</Link>
