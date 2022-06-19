@@ -1,6 +1,6 @@
 {
   "name": "@uiw/react-codemirror",
-  "version": "4.8.1",
+  "version": "4.9.0",
   "description": "CodeMirror component for React.",
   "homepage": "https://uiwjs.github.io/react-codemirror",
   "author": "kenny wong <wowohoo@qq.com>",

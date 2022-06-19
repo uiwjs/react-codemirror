@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-themes",
-  "version": "4.8.1",
+  "version": "4.9.0",
   "description": "Themes for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror",
   "author": "kenny wong <wowohoo@qq.com>",
@@ -22,8 +22,8 @@
   ],
   "dependencies": {
     "@codemirror/language": "^6.0.0",
-    "@codemirror/view": "^6.0.0",
-    "@codemirror/state": "^6.0.0"
+    "@codemirror/state": "^6.0.0",
+    "@codemirror/view": "^6.0.0"
   },
   "keywords": [
     "codemirror",
