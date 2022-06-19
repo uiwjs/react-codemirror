@@ -42,7 +42,7 @@ export const duotoneDark = createTheme({
   styles: [
     { tag: [t.comment, t.bracket], color: '#6c6783' },
     { tag: [t.atom, t.number, t.keyword, t.link, t.attributeName, t.quote], color: '#ffcc99' },
-    { tag: [t.emphasis, t.heading, t.tagName, t.propertyName, t.variableName], color: '#eeebff' },
+    { tag: [t.emphasis, t.heading, t.tagName, t.propertyName, t.className, t.variableName], color: '#eeebff' },
     { tag: [t.typeName, t.url], color: '#7a63ee' },
     { tag: t.operator, color: '#ffad5c' },
     { tag: t.string, color: '#ffb870' },

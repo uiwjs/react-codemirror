@@ -19,7 +19,7 @@ export const Sider = styled.div`
   border-right: 1px solid var(--color-border-default);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
 `;
 
 const EditorView = styled.div`
