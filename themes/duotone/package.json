@@ -2,7 +2,7 @@
   "name": "@uiw/codemirror-theme-duotone",
   "version": "4.9.1",
   "description": "Theme duotone for CodeMirror.",
-  "homepage": "https://uiwjs.github.io/react-codemirror",
+  "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/duotone",
   "author": "kenny wong <wowohoo@qq.com>",
   "license": "MIT",
   "main": "./cjs/index.js",
