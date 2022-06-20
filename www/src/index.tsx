@@ -1,8 +1,8 @@
-import App from './pages/App';
 import { createRoot } from 'react-dom/client';
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import '@wcj/dark-mode';
 import { createGlobalStyle } from 'styled-components';
+import Home from './pages/home';
 import { ThemeEditor } from './pages/theme/editor';
 import { ThemeLayout } from './pages/theme';
 import { ThemeDoc } from './pages/theme/docs';
@@ -54,8 +54,8 @@ root.render(
   <HashRouter>
     <GlobalStyle />
     <Routes>
-      <Route index element={<App />} />
-      <Route path="/" element={<App />} />
+      <Route index element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="/theme/" element={<ThemeLayout />}>
         <Route path="data" element={<Navigate to="okaidia" replace />} />
         <Route path="data/:name" element={<ThemeOkaidia />} />

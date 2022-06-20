@@ -4,8 +4,8 @@ import DocumentStr from '@uiw/react-codemirror/README.md';
 import { Extension } from '@codemirror/state';
 import CodeMirror, { ReactCodeMirrorProps, BasicSetupOptions } from '@uiw/react-codemirror';
 import styled from 'styled-components';
-import { Select } from '../Select';
-import { langs } from '../langs';
+import { Select } from '../../Select';
+import { langs } from '../../langs';
 
 const Label = styled.label`
   user-select: none;

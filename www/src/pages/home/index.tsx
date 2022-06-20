@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components';
 import GitHubCorners from '@uiw/react-github-corners';
 import Github from '@uiw/react-shields/esm/github';
 import Npm from '@uiw/react-shields/esm/npm';
-import logo from '../logo.png';
+import logo from '../../logo.png';
 import Example from './Example';
 
 const rotate = keyframes`
