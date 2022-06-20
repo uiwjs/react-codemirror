@@ -43,14 +43,15 @@ import CodeMirror from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
 
 function App() {
+  const onChange = React.useCallback((value, viewUpdate) => {
+    console.log('value:', value);
+  }, []);
   return (
     <CodeMirror
       value="console.log('hello world!');"
       height="200px"
       extensions={[javascript({ jsx: true })]}
-      onChange={(value, viewUpdate) => {
-        console.log('value:', value);
-      }}
+      onChange={onChange}
     />
   );
 }
@@ -79,9 +80,6 @@ export default function App() {
       value={goLang}
       height="200px"
       extensions={[StreamLanguage.define(go)]}
-      onChange={(value, viewUpdate) => {
-        console.log('value:', value);
-      }}
     />
   );
 }
@@ -208,15 +206,16 @@ const myTheme = createTheme({
 });
 
 export default function App() {
+  const onChange = React.useCallback((value, viewUpdate) => {
+    console.log('value:', value);
+  }, []);
   return (
     <CodeMirror
       value="console.log('hello world!');"
       height="200px"
       theme={myTheme}
       extensions={[javascript({ jsx: true })]}
-      onChange={(value, viewUpdate) => {
-        console.log('value:', value);
-      }}
+      onChange={onChange}
     />
   );
 }

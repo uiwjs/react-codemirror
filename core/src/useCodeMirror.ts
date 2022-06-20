@@ -145,15 +145,6 @@ export function useCodeMirror(props: UseCodeMirror) {
   }, [autoFocus, view]);
 
   useEffect(() => {
-    const currentValue = view ? view.state.doc.toString() : '';
-    if (view && value !== currentValue) {
-      view.dispatch({
-        changes: { from: 0, to: currentValue.length, insert: value || '' },
-      });
-    }
-  }, [value, view]);
-
-  useEffect(() => {
     if (view) {
       view.dispatch({ effects: StateEffect.reconfigure.of(getExtensions) });
     }
@@ -165,13 +156,25 @@ export function useCodeMirror(props: UseCodeMirror) {
     minHeight,
     maxHeight,
     width,
-    placeholderStr,
     minWidth,
     maxWidth,
+    placeholderStr,
     editable,
+    readOnly,
     defaultIndentWithTab,
     defaultBasicSetup,
+    onChange,
+    onUpdate,
   ]);
+
+  useEffect(() => {
+    const currentValue = view ? view.state.doc.toString() : '';
+    if (view && value !== currentValue) {
+      view.dispatch({
+        changes: { from: 0, to: currentValue.length, insert: value || '' },
+      });
+    }
+  }, [value, view]);
 
   return { state, setState, view, setView, container, setContainer };
 }
