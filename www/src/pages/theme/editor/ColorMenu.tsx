@@ -73,12 +73,12 @@ export const ColorMenu: React.FC<PropsWithChildren<ColorMenuProps>> = ({ color, 
 };
 
 interface SwitchThemeProps {
-  theme?: CreateThemeOptions['dark'];
-  onChange?: (theme: CreateThemeOptions['dark']) => void;
+  theme?: CreateThemeOptions['theme'];
+  onChange?: (theme: CreateThemeOptions['theme']) => void;
 }
 
 export const SwitchTheme = ({ theme, onChange }: SwitchThemeProps) => {
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>, theme: CreateThemeOptions['dark']) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>, theme: CreateThemeOptions['theme']) => {
     onChange && onChange(theme);
   };
   return (

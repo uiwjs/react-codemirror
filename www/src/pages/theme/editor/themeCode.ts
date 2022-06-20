@@ -88,7 +88,7 @@ export const defalutStyle: Style = {
   processingInstruction: '',
 };
 
-export type ThmeCodeStyle = Style & CreateThemeOptions['settings'] & { dark: CreateThemeOptions['dark'] };
+export type ThmeCodeStyle = Style & CreateThemeOptions['settings'] & { dark: CreateThemeOptions['theme'] };
 
 export const themeCode = (styles: Partial<ThmeCodeStyle> = {}) => {
   const data: string[] = [];

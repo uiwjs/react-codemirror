@@ -60,7 +60,7 @@ export function ThemeEditor() {
   const [extension, setExtension] = useState<Extension>(javascript({ jsx: true }));
   const [code, setCode] = useState('');
   const [lang, setLang] = useState('jsx');
-  const [theme, setTheme] = useState<CreateThemeOptions['dark']>('light');
+  const [theme, setTheme] = useState<CreateThemeOptions['theme']>('light');
   const [settings, setSettings] = useState<CreateThemeOptions['settings']>({
     background: '#fff',
     foreground: '#4D4D4C',
@@ -74,7 +74,7 @@ export function ThemeEditor() {
   const [styles, setStyles] = useState<Style>(defalutStyle);
 
   const myTheme = createTheme({
-    dark: theme,
+    theme: theme,
     settings: { ...settings },
     styles: [
       getStyle(styles.comment, { tag: t.comment }),
