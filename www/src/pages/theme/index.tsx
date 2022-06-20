@@ -8,12 +8,14 @@ const Warpper = styled.div`
   flex-direction: column;
 `;
 
-const Title = styled.div`
+const Title = styled(NavLink)`
   font-size: 14px;
   font-weight: bold;
   display: flex;
   align-items: center;
   gap: 10px;
+  text-decoration: none;
+  color: var(--color-fg-muted);
   > img {
     height: 21px;
   }
@@ -59,7 +61,7 @@ export function ThemeLayout() {
   return (
     <Warpper>
       <Header>
-        <Title>
+        <Title to="/">
           <img src={logo} alt="Logo" />
           <span>CodeMirror Theme</span>
         </Title>

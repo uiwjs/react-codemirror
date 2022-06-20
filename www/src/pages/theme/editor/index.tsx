@@ -10,6 +10,7 @@ import { javascript } from '@codemirror/lang-javascript';
 import { defalutStyle } from './themeCode';
 import { ColorMenu, SwitchTheme } from './ColorMenu';
 import { SampleCode } from './SampleCode';
+import { themeCode } from './themeCode';
 
 export const Sider = styled.div`
   width: 230px;
@@ -50,6 +51,9 @@ export type Style = Partial<
   Record<Exclude<keyof typeof t, 'definition' | 'constant' | 'function' | 'standard' | 'local' | 'special'>, string>
 > & {
   typeDefinition?: string;
+  variableNameDefinition: string;
+  variableNameFunction: string;
+  propertyNameDefinition: string;
 };
 
 export function ThemeEditor() {
@@ -82,31 +86,31 @@ export function ThemeEditor() {
       { tag: t.typeName, color: styles.typeName },
       { tag: t.tagName, color: styles.tagName },
       { tag: t.variableName, color: styles.variableName },
+      getStyle(styles.variableNameDefinition, { tag: t.definition(t.variableName) }),
+      getStyle(styles.variableNameFunction, { tag: t.function(t.variableName) }),
       getStyle(styles.propertyName, { tag: t.propertyName }),
-      { tag: t.attributeName, color: styles.attributeName },
-      { tag: t.className, color: styles.className },
+      getStyle(styles.propertyNameDefinition, { tag: t.definition(t.propertyName) }),
+      getStyle(styles.attributeName, { tag: t.attributeName }),
+      getStyle(styles.className, { tag: t.className }),
       getStyle(styles.labelName, { tag: t.labelName }),
       getStyle(styles.namespace, { tag: t.namespace }),
       getStyle(styles.macroName, { tag: t.macroName }),
       getStyle(styles.literal, { tag: t.literal }),
-      { tag: t.string, color: styles.string },
+      getStyle(styles.string, { tag: t.string }),
       getStyle(styles.docString, { tag: t.docString }),
       getStyle(styles.character, { tag: t.character }),
       getStyle(styles.attributeValue, { tag: t.attributeValue }),
-      { tag: t.attributeValue, color: styles.attributeValue },
       getStyle(styles.number, { tag: t.number }),
       getStyle(styles.integer, { tag: t.integer }),
       getStyle(styles.float, { tag: t.float }),
-      { tag: t.bool, color: styles.bool },
+      getStyle(styles.bool, { tag: t.bool }),
       getStyle(styles.regexp, { tag: t.regexp }),
       getStyle(styles.escape, { tag: t.escape }),
       getStyle(styles.color, { tag: t.color }),
       getStyle(styles.url, { tag: t.url }),
-      { tag: t.keyword, color: styles.keyword },
+      getStyle(styles.keyword, { tag: t.keyword }),
       getStyle(styles.self, { tag: t.self }),
-      { tag: t.null, color: styles.null },
-      getStyle(styles.atom, { tag: t.atom }),
-
+      getStyle(styles.null, { tag: t.null }),
       getStyle(styles.atom, { tag: t.atom }),
 
       getStyle(styles.unit, { tag: t.unit }),
@@ -121,7 +125,6 @@ export function ThemeEditor() {
       getStyle(styles.logicOperator, { tag: t.logicOperator }),
       getStyle(styles.bitwiseOperator, { tag: t.bitwiseOperator }),
 
-      { tag: t.special(t.brace), color: styles.brace },
       getStyle(styles.compareOperator, { tag: t.compareOperator }),
       getStyle(styles.updateOperator, { tag: t.updateOperator }),
       getStyle(styles.definitionOperator, { tag: t.definitionOperator }),
@@ -194,14 +197,13 @@ export function ThemeEditor() {
           readOnly={lang === 'code'}
           theme={myTheme}
           extensions={[extension]}
-          value={code}
+          value={lang === 'code' ? themeCode({ ...settings, ...styles, dark: theme }) : code}
           height="100%"
           style={{ minHeight: '100%' }}
         />
         <SampleCode
           styles={{ ...settings, ...styles, dark: theme }}
           onChange={(str, langName, exten) => {
-            console.log(langName);
             setLang(langName);
             setCode(str || '');
             setExtension(exten || []);

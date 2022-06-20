@@ -53,7 +53,7 @@ const Buttons = styled.div`
     background: var(--color-neutral-muted);
     color: var(--color-theme-text);
     line-height: 30px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     text-decoration: none;
     &.special {
       background: var(--color-prettylights-syntax-markup-ignored-bg);
@@ -97,16 +97,20 @@ const hyperlink: {
 }[] = [
   {
     href: 'https://www.npmjs.com/package/@uiw/react-codemirror',
-    label: 'View on NPM',
+    label: 'View On NPM',
   },
   {
     href: 'https://codemirror.net/docs/',
     label: 'CM Documentation',
   },
   {
-    href: 'https://github.com/codemirror/dev',
-    label: 'CodeMirror GitHub',
+    href: 'https://github.com/uiwjs/react-codemirror',
+    label: 'Github',
   },
+  // {
+  //   href: 'https://github.com/codemirror/dev',
+  //   label: 'CodeMirror GitHub',
+  // },
   {
     href: 'https://raw.githack.com/uiwjs/react-codemirror/doc3/index.html',
     label: 'V3 Doc',

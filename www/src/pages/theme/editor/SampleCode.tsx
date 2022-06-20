@@ -3,12 +3,15 @@ import { Extension } from '@codemirror/state';
 import { ThmeCodeStyle } from './themeCode';
 import { langs } from '../../../langs';
 import { useEffect, useState } from 'react';
-import { thmeCode } from './themeCode';
+import { themeCode } from './themeCode';
 
 const Warpper = styled.div`
   position: absolute;
-  left: 10px;
+  right: 10px;
   top: 10px;
+  > select {
+    padding: 3px 6px;
+  }
 `;
 
 interface SampleCodeProps {
@@ -23,6 +26,10 @@ export const SampleCode = ({ onChange, styles }: SampleCodeProps) => {
   const handleChange = (evn: React.ChangeEvent<HTMLSelectElement>) => {
     const langStr = evn.target.value;
     setLang(langStr);
+    if (langStr === 'code') {
+      onChange && onChange(themeCode(styles), 'code', langs['jsx']());
+      return;
+    }
     try {
       import(`code-example/txt/sample.${langStr.toLocaleLowerCase()}.txt`)
         .then((data) => {
@@ -38,7 +45,7 @@ export const SampleCode = ({ onChange, styles }: SampleCodeProps) => {
   };
   useEffect(() => {
     if (lang === 'code') {
-      onChange && onChange(thmeCode(styles), 'code', langs['jsx']());
+      onChange && onChange(themeCode(styles), 'code', langs['jsx']());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
