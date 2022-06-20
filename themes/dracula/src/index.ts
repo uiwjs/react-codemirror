@@ -7,7 +7,7 @@ import { tags as t } from '@lezer/highlight';
 import { createTheme } from '@uiw/codemirror-themes';
 
 export const dracula = createTheme({
-  dark: 'dark',
+  theme: 'dark',
   settings: {
     background: '#2B2B2B',
     foreground: '#f8f8f2',

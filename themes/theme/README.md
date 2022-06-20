@@ -20,7 +20,7 @@ import { javascript } from '@codemirror/lang-javascript';
 import { tags as t } from '@lezer/highlight';
 
 const myTheme = createTheme({
-  variant: 'light',
+  theme: 'light',
   settings: {
     background: '#ffffff',
     foreground: '#75baff',
@@ -66,7 +66,7 @@ import { javascript } from '@codemirror/lang-javascript';
 import { tags as t } from '@lezer/highlight';
 
 const myTheme = createTheme({
-  variant: 'light',
+  theme: 'light',
   settings: {
     background: '#ffffff',
     foreground: '#75baff',
@@ -119,7 +119,7 @@ export interface CreateThemeOptions {
   /**
    * Theme inheritance. Determines which styles CodeMirror will apply by default.
    */
-  dark: Theme;
+  theme: Theme;
   /**
    * Settings to customize the look of the editor, like background, gutter, selection and others.
    */

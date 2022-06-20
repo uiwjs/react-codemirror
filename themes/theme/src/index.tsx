@@ -6,7 +6,7 @@ export interface CreateThemeOptions {
   /**
    * Theme inheritance. Determines which styles CodeMirror will apply by default.
    */
-  dark: Theme;
+  theme: Theme;
   /**
    * Settings to customize the look of the editor, like background, gutter, selection and others.
    */
@@ -34,8 +34,8 @@ export interface Settings {
   gutterForeground: string;
 }
 
-export const createTheme = ({ dark, settings, styles }: CreateThemeOptions): Extension => {
-  const theme = EditorView.theme(
+export const createTheme = ({ theme, settings, styles }: CreateThemeOptions): Extension => {
+  const themeExtension = EditorView.theme(
     {
       '&': {
         backgroundColor: settings.background,
@@ -63,12 +63,12 @@ export const createTheme = ({ dark, settings, styles }: CreateThemeOptions): Ext
       },
     },
     {
-      dark: dark === 'dark',
+      dark: theme === 'dark',
     },
   );
 
   const highlightStyle = HighlightStyle.define(styles);
-  const extension = [theme, syntaxHighlighting(highlightStyle)];
+  const extension = [themeExtension, syntaxHighlighting(highlightStyle)];
 
   return extension;
 };

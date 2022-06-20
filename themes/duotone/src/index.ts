@@ -7,7 +7,7 @@ import { tags as t } from '@lezer/highlight';
 import { createTheme } from '@uiw/codemirror-themes';
 
 export const duotoneLight = createTheme({
-  dark: 'light',
+  theme: 'light',
   settings: {
     background: '#faf8f5',
     foreground: '#b29762',
@@ -29,7 +29,7 @@ export const duotoneLight = createTheme({
 });
 
 export const duotoneDark = createTheme({
-  dark: 'dark',
+  theme: 'dark',
   settings: {
     background: '#2a2734',
     foreground: '#6c6783',

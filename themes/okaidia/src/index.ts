@@ -2,7 +2,7 @@ import { tags as t } from '@lezer/highlight';
 import { createTheme } from '@uiw/codemirror-themes';
 
 export const okaidia = createTheme({
-  dark: 'dark',
+  theme: 'dark',
   settings: {
     background: '#272822',
     foreground: '#FFFFFF',
