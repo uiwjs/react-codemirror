@@ -26,6 +26,7 @@ const myTheme = createTheme({
     foreground: '#75baff',
     caret: '#5d00ff',
     selection: '#036dd626',
+    selectionMatch: '#036dd626',
     lineHighlight: '#8a91991a',
     gutterBackground: '#fff',
     gutterForeground: '#8a919966',
