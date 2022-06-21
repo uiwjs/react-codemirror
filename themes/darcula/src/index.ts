@@ -14,6 +14,7 @@ export const darcula = createTheme({
     foreground: '#f8f8f2',
     caret: '#FFFFFF',
     selection: 'rgba(255, 255, 255, 0.1)',
+    selectionMatch: 'rgba(255, 255, 255, 0.2)',
     gutterBackground: 'rgba(255, 255, 255, 0.1)',
     gutterForeground: '#999',
     lineHighlight: 'rgba(255, 255, 255, 0.1)',

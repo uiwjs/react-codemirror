@@ -13,6 +13,7 @@ export const duotoneLight = createTheme({
     foreground: '#b29762',
     caret: '#93abdc',
     selection: '#e3dcce',
+    selectionMatch: '#e3dcce',
     gutterBackground: '#faf8f5',
     gutterForeground: '#cdc4b1',
     lineHighlight: '#EFEFEF',

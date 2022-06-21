@@ -8,6 +8,7 @@ export const eclipse = createTheme({
     foreground: '#000',
     caret: '#FFFFFF',
     selection: '#d7d4f0',
+    selectionMatch: '#d7d4f0',
     gutterBackground: '#f7f7f7',
     gutterForeground: '#999',
     lineHighlight: '#e8f2ff',
