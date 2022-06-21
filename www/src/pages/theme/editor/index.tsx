@@ -9,8 +9,9 @@ import { TagStyle } from '@codemirror/language';
 import { javascript } from '@codemirror/lang-javascript';
 import { defalutStyle } from './themeCode';
 import { ColorMenu, SwitchTheme } from './ColorMenu';
-import { SampleCode } from './SampleCode';
+import { SampleCode, Select } from './SampleCode';
 import { themeCode } from './themeCode';
+import { Sample } from '../themes/Sample';
 
 export const Sider = styled.div`
   width: 230px;
@@ -51,14 +52,18 @@ export type Style = Partial<
   Record<Exclude<keyof typeof t, 'definition' | 'constant' | 'function' | 'standard' | 'local' | 'special'>, string>
 > & {
   typeDefinition?: string;
+  typeStandard?: string;
   variableNameDefinition: string;
   variableNameFunction: string;
   propertyNameDefinition: string;
+  propertyNameFunction: string;
+  classNameConstant: string;
 };
 
 export function ThemeEditor() {
   const [extension, setExtension] = useState<Extension>(javascript({ jsx: true }));
   const [code, setCode] = useState('');
+  const [dispaly, setDispaly] = useState<'multiple' | 'single'>('single');
   const [lang, setLang] = useState('jsx');
   const [theme, setTheme] = useState<CreateThemeOptions['theme']>('light');
   const [settings, setSettings] = useState<CreateThemeOptions['settings']>({
@@ -82,16 +87,19 @@ export function ThemeEditor() {
       getStyle(styles.blockComment, { tag: t.blockComment }),
       getStyle(styles.docComment, { tag: t.docComment }),
       getStyle(styles.name, { tag: t.name }),
-      { tag: t.definition(t.typeName), color: styles.typeDefinition },
-      { tag: t.typeName, color: styles.typeName },
-      { tag: t.tagName, color: styles.tagName },
-      { tag: t.variableName, color: styles.variableName },
+      getStyle(styles.typeDefinition, { tag: t.definition(t.typeName) }),
+      getStyle(styles.typeStandard, { tag: t.standard(t.typeName) }),
+      getStyle(styles.typeName, { tag: t.typeName }),
+      getStyle(styles.tagName, { tag: t.tagName }),
+      getStyle(styles.variableName, { tag: t.variableName }),
       getStyle(styles.variableNameDefinition, { tag: t.definition(t.variableName) }),
       getStyle(styles.variableNameFunction, { tag: t.function(t.variableName) }),
       getStyle(styles.propertyName, { tag: t.propertyName }),
       getStyle(styles.propertyNameDefinition, { tag: t.definition(t.propertyName) }),
+      getStyle(styles.propertyNameFunction, { tag: t.function(t.propertyName) }),
       getStyle(styles.attributeName, { tag: t.attributeName }),
       getStyle(styles.className, { tag: t.className }),
+      getStyle(styles.classNameConstant, { tag: t.constant(t.className) }),
       getStyle(styles.labelName, { tag: t.labelName }),
       getStyle(styles.namespace, { tag: t.namespace }),
       getStyle(styles.macroName, { tag: t.macroName }),
@@ -193,22 +201,32 @@ export function ThemeEditor() {
         })}
       </Sider>
       <EditorView>
-        <CodeMirror
-          readOnly={lang === 'code'}
-          theme={myTheme}
-          extensions={[extension]}
-          value={lang === 'code' ? themeCode({ ...settings, ...styles, dark: theme }) : code}
-          height="100%"
-          style={{ minHeight: '100%' }}
-        />
-        <SampleCode
-          styles={{ ...settings, ...styles, dark: theme }}
-          onChange={(str, langName, exten) => {
-            setLang(langName);
-            setCode(str || '');
-            setExtension(exten || []);
-          }}
-        />
+        {dispaly === 'single' && (
+          <CodeMirror
+            readOnly={lang === 'code'}
+            theme={myTheme}
+            extensions={[extension]}
+            value={lang === 'code' ? themeCode({ ...settings, ...styles, dark: theme }) : code}
+            height="100%"
+            style={{ minHeight: '100%' }}
+          />
+        )}
+        <Select value={dispaly} onChange={(evn) => setDispaly(evn.target.value as any)}>
+          <option value="single">Single language</option>
+          <option value="multiple">Multiple languages</option>
+        </Select>
+        {dispaly === 'single' && (
+          <SampleCode
+            style={{ top: 40 }}
+            styles={{ ...settings, ...styles, dark: theme }}
+            onChange={(str, langName, exten) => {
+              setLang(langName);
+              setCode(str || '');
+              setExtension(exten || []);
+            }}
+          />
+        )}
+        {dispaly === 'multiple' && <Sample theme={myTheme} style={{ padding: '30px 30px', maxWidth: 860 }} />}
       </EditorView>
     </Fragment>
   );

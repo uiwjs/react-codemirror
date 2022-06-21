@@ -9,6 +9,7 @@ import { langs } from '../../langs';
 
 const Label = styled.label`
   user-select: none;
+  white-space: nowrap;
 `;
 
 const Options: FC<

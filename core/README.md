@@ -23,7 +23,8 @@ CodeMirror component for React. Demo Preview: [@uiwjs.github.io/react-codemirror
 ⚛️ Support the features of React Hook(requires React 16.8+).  
 📚 Use Typescript to write, better code hints.  
 🌐 The bundled version supports use directly in the browser [#267](https://github.com/uiwjs/react-codemirror/issues/267#issuecomment-1041227592).  
-🌎 There are better [sample previews](https://uiwjs.github.io/react-codemirror).
+🌎 There are better [sample previews](https://uiwjs.github.io/react-codemirror).  
+🎨 Support [theme](https://uiwjs.github.io/react-codemirror/#/theme/data/dracula) customization, provide theme [editor](https://uiwjs.github.io/react-codemirror/#/theme/editor).
 
 ## Install
 

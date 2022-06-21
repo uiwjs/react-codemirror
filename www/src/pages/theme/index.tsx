@@ -52,8 +52,8 @@ const Link = styled(NavLink)`
   border-radius: 3px;
   text-decoration: none;
   &.active {
-    background-color: var(--color-fg-subtle);
-    color: var(--color-canvas-subtle);
+    background-color: var(--color-border-default);
+    color: var(--color-fg-default);
   }
 `;
 

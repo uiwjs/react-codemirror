@@ -9,14 +9,17 @@ export const defalutStyle: Style = {
   name: '',
   typeDefinition: '#194a7b',
   typeName: '#194a7b',
+  typeStandard: '',
   tagName: '#008a02',
   variableName: '',
-  variableNameDefinition: '#c99797',
-  variableNameFunction: '#004cff',
+  variableNameDefinition: '',
+  variableNameFunction: '',
   propertyName: '',
   propertyNameDefinition: '',
+  propertyNameFunction: '',
   attributeName: '',
   className: '',
+  classNameConstant: '',
   labelName: '',
   namespace: '',
   macroName: '',
@@ -100,6 +103,7 @@ export const themeCode = (styles: Partial<ThmeCodeStyle> = {}) => {
   if (styles.name) data.push(`{ tag: t.name, color: '${styles.name}' },`);
   if (styles.typeDefinition) data.push(`{ tag: t.definition(t.typeName), color: '${styles.typeDefinition}' },`);
   if (styles.typeName) data.push(`{ tag: t.typeName, color: '${styles.typeName}' },`);
+  if (styles.typeStandard) data.push(`{ tag:  t.standard(t.typeName), color: '${styles.typeName}' },`);
   if (styles.tagName) data.push(`{ tag: t.tagName, color: '${styles.tagName}' },`);
   if (styles.variableName) data.push(`{ tag: t.variableName, color: '${styles.variableName}' },`);
   if (styles.variableNameDefinition)
@@ -107,10 +111,13 @@ export const themeCode = (styles: Partial<ThmeCodeStyle> = {}) => {
   if (styles.variableNameFunction)
     data.push(`{ tag: t.function(t.variableName), color: '${styles.variableNameFunction}' },`);
   if (styles.propertyName) data.push(`{ tag: t.propertyName, color: '${styles.propertyName}' },`);
+  if (styles.propertyNameFunction)
+    data.push(`{ tag: t.function(t.propertyName), color: '${styles.propertyNameFunction}' },`);
   if (styles.propertyNameDefinition)
     data.push(`{ tag: t.definition(t.propertyName), color: '${styles.propertyNameDefinition}' },`);
   if (styles.attributeName) data.push(`{ tag: t.attributeName, color: '${styles.attributeName}' },`);
   if (styles.className) data.push(`{ tag: t.className, color: '${styles.className}' },`);
+  if (styles.classNameConstant) data.push(`{ tag: t.constant(t.className), color: '${styles.className}' },`);
   if (styles.labelName) data.push(`{ tag: t.labelName, color: '${styles.labelName}' },`);
   if (styles.namespace) data.push(`{ tag: t.namespace, color: '${styles.namespace}' },`);
   if (styles.macroName) data.push(`{ tag: t.macroName, color: '${styles.macroName}' },`);

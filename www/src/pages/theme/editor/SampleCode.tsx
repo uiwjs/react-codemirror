@@ -1,27 +1,27 @@
+import { FC, PropsWithoutRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Extension } from '@codemirror/state';
 import { ThmeCodeStyle } from './themeCode';
-import { langs } from '../../../langs';
-import { useEffect, useState } from 'react';
 import { themeCode } from './themeCode';
+import { langs } from '../../../langs';
 
-const Warpper = styled.div`
+export const Select = styled.select`
   position: absolute;
   right: 10px;
   top: 10px;
-  > select {
-    padding: 3px 6px;
-  }
+  padding: 3px 6px;
+  z-index: 9;
 `;
 
-interface SampleCodeProps {
+interface SampleCodeProps
+  extends Omit<React.DetailedHTMLProps<React.SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>, 'onChange'> {
   styles?: ThmeCodeStyle;
   onChange?: (code: string, lang: string, extension?: Extension) => void;
 }
 
 const data = Object.keys(langs);
 
-export const SampleCode = ({ onChange, styles }: SampleCodeProps) => {
+export const SampleCode: FC<PropsWithoutRef<SampleCodeProps>> = ({ onChange, styles, ...props }) => {
   const [lang, setLang] = useState('code');
   const handleChange = (evn: React.ChangeEvent<HTMLSelectElement>) => {
     const langStr = evn.target.value;
@@ -50,17 +50,15 @@ export const SampleCode = ({ onChange, styles }: SampleCodeProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <Warpper>
-      <select value={lang} onChange={handleChange}>
-        <option value="code">Sample Code</option>
-        {data.map((val, key) => {
-          return (
-            <option key={key} value={val}>
-              {val}
-            </option>
-          );
-        })}
-      </select>
-    </Warpper>
+    <Select value={lang} onChange={handleChange} {...props}>
+      <option value="code">Sample Code</option>
+      {data.map((val, key) => {
+        return (
+          <option key={key} value={val}>
+            {val}
+          </option>
+        );
+      })}
+    </Select>
   );
 };
