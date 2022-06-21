@@ -72,6 +72,7 @@ const myTheme = createTheme({
     foreground: '#75baff',
     caret: '#5d00ff',
     selection: '#036dd626',
+    selectionMatch: '#036dd626',
     lineHighlight: '#8a91991a',
     gutterBackground: '#fff',
     gutterForeground: '#8a919966',
@@ -130,34 +131,22 @@ export interface CreateThemeOptions {
   styles: TagStyle[];
 }
 declare type Theme = 'light' | 'dark';
-interface Settings {
-  /**
-   * Editor background.
-   */
+export interface Settings {
+  /** Editor background. */
   background: string;
-  /**
-   * Default text color.
-   */
+  /** Default text color. */
   foreground: string;
-  /**
-   * Caret color.
-   */
+  /** Caret color. */
   caret: string;
-  /**
-   * Selection background.
-   */
+  /** Selection background. */
   selection: string;
-  /**
-   * Background of highlighted lines.
-   */
+  /** Selection match background. */
+  selectionMatch?: string;
+  /** Background of highlighted lines. */
   lineHighlight: string;
-  /**
-   * Gutter background.
-   */
+  /** Gutter background. */
   gutterBackground: string;
-  /**
-   * Text color inside gutter.
-   */
+  /** Text color inside gutter. */
   gutterForeground: string;
 }
 declare const createTheme: ({ dark, settings, styles }: CreateThemeOptions) => Extension;
