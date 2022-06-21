@@ -365,8 +365,11 @@ export interface BasicSetupOptions {
 | `@uiw/react-codemirror`         | [![npm version](https://img.shields.io/npm/v/@uiw/react-codemirror.svg)](https://www.npmjs.com/package/@uiw/react-codemirror)                 | [Preview Website](https://uiwjs.github.io/react-codemirror/)                         |
 | `@uiw/codemirror-themes`        | [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-themes.svg)](https://www.npmjs.com/package/@uiw/codemirror-themes)               | [Preview Website](https://uiwjs.github.io/react-codemirror/#/theme/doc)              |
 | `@uiw/codemirror-theme-okaidia` | [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-okaidia.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-okaidia) | [Preview Website](https://uiwjs.github.io/react-codemirror/#/theme/data/okaidia)     |
+| `@uiw/codemirror-theme-bespin`  | [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-bespin.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-bespin)   | [Preview Website](https://uiwjs.github.io/react-codemirror/#/theme/data/bespin)      |
 | `@uiw/codemirror-theme-duotone` | [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-duotone.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-duotone) | [Preview Website](https://uiwjs.github.io/react-codemirror/#/theme/data/duotoneDark) |
 | `@uiw/codemirror-theme-dracula` | [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-dracula.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-dracula) | [Preview Website](https://uiwjs.github.io/react-codemirror/#/theme/data/dracula)     |
+| `@uiw/codemirror-theme-darcula` | [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-darcula.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-darcula) | [Preview Website](https://uiwjs.github.io/react-codemirror/#/theme/data/darcula)     |
+| `@uiw/codemirror-theme-eclipse` | [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-eclipse.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-eclipse) | [Preview Website](https://uiwjs.github.io/react-codemirror/#/theme/data/eclipse)     |
 
 <!--rehype:style=width: 100%; display: inline-table;-->
 
