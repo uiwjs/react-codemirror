@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useParams, NavLink } from 'react-router-dom';
 import { okaidia } from '@uiw/codemirror-theme-okaidia';
 import { dracula } from '@uiw/codemirror-theme-dracula';
+import { darcula } from '@uiw/codemirror-theme-darcula';
 import { eclipse } from '@uiw/codemirror-theme-eclipse';
 import { bespin } from '@uiw/codemirror-theme-bespin';
 import { duotoneLight, duotoneDark } from '@uiw/codemirror-theme-duotone';
@@ -30,6 +31,7 @@ const MenuItem = styled(NavLink)`
 
 const themeData = {
   bespin,
+  darcula,
   dracula,
   duotoneLight,
   duotoneDark,

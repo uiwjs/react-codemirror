@@ -2,6 +2,7 @@ import { FC, PropsWithChildren, useEffect, useState } from 'react';
 import MarkdownPreview from '@uiw/react-markdown-preview';
 import okaidia from '@uiw/codemirror-theme-okaidia/README.md';
 import dracula from '@uiw/codemirror-theme-dracula/README.md';
+import darcula from '@uiw/codemirror-theme-darcula/README.md';
 import duotone from '@uiw/codemirror-theme-duotone/README.md';
 import eclipse from '@uiw/codemirror-theme-eclipse/README.md';
 import bespin from '@uiw/codemirror-theme-bespin/README.md';
@@ -18,6 +19,7 @@ const mdSource = {
   bespin: bespin.source,
   eclipse: eclipse.source,
   dracula: dracula.source,
+  darcula: darcula.source,
   duotoneLight: duotone.source,
   duotoneDark: duotone.source,
   okaidia: okaidia.source,
