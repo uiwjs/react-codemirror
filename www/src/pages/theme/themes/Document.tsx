@@ -7,6 +7,7 @@ import duotone from '@uiw/codemirror-theme-duotone/README.md';
 import eclipse from '@uiw/codemirror-theme-eclipse/README.md';
 import bespin from '@uiw/codemirror-theme-bespin/README.md';
 import styled from 'styled-components';
+import { PreCode } from './PreCode';
 
 export const toSnakeCase = (str: string = '') =>
   str
@@ -52,14 +53,6 @@ const Header = styled.div`
   }
 `;
 
-const Pre = styled.pre`
-  border: 1px solid var(--color-border-default);
-  background-color: var(--color-canvas-subtle);
-  display: inline-block;
-  padding: 10px 13px;
-  border-radius: 5px;
-`;
-
 const Content = styled.div`
   padding: 30px 38px 120px 38px;
 `;
@@ -82,12 +75,12 @@ export const Document: FC<PropsWithChildren<DocumentProps>> = ({ children, theme
     <Warpper>
       <Header>
         <Title>{themeName} Theme</Title>
+        <PreCode value={`npm install @uiw/codemirror-theme-${_name} --save`} />
         <div>
           <Button onClick={() => setPreviewDoc(!previewDoc)}>
             {previewDoc ? 'Preview Theme' : 'Preview Document'}
           </Button>
         </div>
-        <Pre>npm install @uiw/codemirror-theme-{_name} --save</Pre>
       </Header>
       <Content>
         {previewDoc && <MarkdownPreview source={source} style={{ width: 980, padding: '10px 20px 150px 0' }} />}
