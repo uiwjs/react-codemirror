@@ -116,3 +116,9 @@ jobs:
       with:
         token: ${{ secrets.NPM_TOKEN }}
         package: ./themes/duotone/package.json
+
+    - name: 📦 @uiw/codemirror-theme-eclipse publish to NPM
+      uses: JS-DevTools/npm-publish@v1
+      with:
+        token: ${{ secrets.NPM_TOKEN }}
+        package: ./themes/eclipse/package.json
