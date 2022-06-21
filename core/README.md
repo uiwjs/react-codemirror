@@ -75,13 +75,7 @@ func main() {
 }`;
 
 export default function App() {
-  return (
-    <CodeMirror
-      value={goLang}
-      height="200px"
-      extensions={[StreamLanguage.define(go)]}
-    />
-  );
+  return <CodeMirror value={goLang} height="200px" extensions={[StreamLanguage.define(go)]} />;
 }
 ```
 
@@ -168,6 +162,27 @@ export default function App() {
 }
 ```
 
+## Using Theme
+
+We have created a [`theme editor`](https://uiwjs.github.io/react-codemirror/#/theme/editor) where you can define your own theme. We have also defined [some themes](https://uiwjs.github.io/react-codemirror/#/theme/data/okaidia) ourselves, which can be installed and used directly. Below is a usage example:
+
+```jsx
+import CodeMirror from '@uiw/react-codemirror';
+import { javascript } from '@codemirror/lang-javascript';
+import { okaidia } from '@uiw/codemirror-theme-okaidia';
+
+export default function App() {
+  return (
+    <CodeMirror
+      value="console.log('hello world!');"
+      height="200px"
+      theme={okaidia}
+      extensions={[javascript({ jsx: true })]}
+    />
+  );
+}
+```
+
 ## Using custom theme
 
 ```jsx
@@ -177,7 +192,7 @@ import { javascript } from '@codemirror/lang-javascript';
 import { tags as t } from '@lezer/highlight';
 
 const myTheme = createTheme({
-  variant: 'light',
+  theme: 'light',
   settings: {
     background: '#ffffff',
     foreground: '#75baff',

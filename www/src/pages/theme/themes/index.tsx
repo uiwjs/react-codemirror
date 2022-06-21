@@ -3,19 +3,11 @@ import styled from 'styled-components';
 import { useParams, NavLink } from 'react-router-dom';
 import { okaidia } from '@uiw/codemirror-theme-okaidia';
 import { dracula } from '@uiw/codemirror-theme-dracula';
+import { eclipse } from '@uiw/codemirror-theme-eclipse';
 import { duotoneLight, duotoneDark } from '@uiw/codemirror-theme-duotone';
-import { Document } from './Document';
+import { Document, toSnakeCase } from './Document';
 import { Sample } from './Sample';
 import { Sider } from '../editor';
-
-const Content = styled.div`
-  width: 100%;
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 42px);
-  padding: 30px 38px 120px 38px;
-`;
 
 const MenuItem = styled(NavLink)`
   cursor: pointer;
@@ -30,32 +22,32 @@ const MenuItem = styled(NavLink)`
 `;
 
 const themeData = {
-  okaidia,
   dracula,
   duotoneLight,
   duotoneDark,
+  eclipse,
+  okaidia,
 };
 
 export const ThemeOkaidia = () => {
-  const { name } = useParams();
-  const theme = themeData[name as keyof typeof themeData];
-  const themeName = name;
+  const { name = '', lightOrDark = '' } = useParams();
+  const text = name + lightOrDark.replace(lightOrDark[0], (lightOrDark[0] || '').toLocaleUpperCase());
+  const theme = themeData[text as keyof typeof themeData];
   return (
     <Fragment>
       <Sider>
         {Object.keys(themeData).map((name, key) => {
+          const [_name, _theme] = toSnakeCase(name) || [];
           return (
-            <MenuItem key={key} to={`/theme/data/${name}`}>
-              {name}
+            <MenuItem key={key} to={`/theme/data/${_name}${_theme ? `/${_theme}` : ''}`}>
+              {_name} {_theme}
             </MenuItem>
           );
         })}
       </Sider>
-      <Content>
-        <Document themeName={themeName}>
-          <Sample theme={theme} />
-        </Document>
-      </Content>
+      <Document themeName={text}>
+        <Sample theme={theme} />
+      </Document>
     </Fragment>
   );
 };

@@ -1,22 +1,22 @@
 <!--rehype:ignore:start-->
 
-# Dracula Theme
+# Eclipse Theme
 
 <!--rehype:ignore:end-->
 
-[![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-dracula.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-dracula)
+[![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-eclipse.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-eclipse)
 
 ## Install
 
 ```bash
-npm install @uiw/codemirror-theme-dracula --save
+npm install @uiw/codemirror-theme-eclipse --save
 ```
 
 ## Usage
 
 ```jsx
 import CodeMirror from '@uiw/react-codemirror';
-import { dracula } from '@uiw/codemirror-theme-dracula';
+import { eclipse } from '@uiw/codemirror-theme-eclipse';
 import { javascript } from '@codemirror/lang-javascript';
 
 function App() {
@@ -24,11 +24,8 @@ function App() {
     <CodeMirror
       value="console.log('hello world!');"
       height="200px"
-      theme={dracula}
+      theme={eclipse}
       extensions={[javascript({ jsx: true })]}
-      onChange={(value, viewUpdate) => {
-        console.log('value:', value);
-      }}
     />
   );
 }
@@ -39,11 +36,11 @@ export default App;
 import { EditorView } from '@codemirror/view';
 import { EditorState } from '@codemirror/state';
 import { javascript } from '@codemirror/lang-javascript';
-import { dracula } from '@uiw/codemirror-theme-dracula';
+import { eclipse } from '@uiw/codemirror-theme-eclipse';
 
 const state = EditorState.create({
   doc: 'my source code',
-  extensions: [dracula, javascript({ jsx: true })],
+  extensions: [eclipse, javascript({ jsx: true })],
 });
 
 const view = new EditorView({

@@ -14,6 +14,7 @@ import rustStr from 'code-example/txt/sample.rust.txt';
 import goStr from 'code-example/txt/sample.go.txt';
 import mysqlStr from 'code-example/txt/sample.mysql.txt';
 import pythonStr from 'code-example/txt/sample.python.txt';
+import shellStr from 'code-example/txt/sample.shell.txt';
 import { langs } from '../../../langs';
 
 const Title = styled.div`
@@ -49,6 +50,8 @@ export const Sample = ({ theme }: { theme?: Extension }) => {
       <CodeMirror value={mysqlStr} height="300px" theme={theme} extensions={[langs.mysql()]} />
       <Title>Python</Title>
       <CodeMirror value={pythonStr} height="300px" theme={theme} extensions={[langs.python()]} />
+      <Title>Shell</Title>
+      <CodeMirror value={shellStr} height="300px" theme={theme} extensions={[langs.shell()]} />
     </Fragment>
   );
 };

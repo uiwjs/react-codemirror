@@ -1,4 +1,8 @@
+<!--rehype:ignore:start-->
+
 # Okaidia Theme
+
+<!--rehype:ignore:end-->
 
 [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-okaidia.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-okaidia)
 

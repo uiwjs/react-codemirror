@@ -1,8 +1,8 @@
 {
-  "name": "@uiw/codemirror-theme-duotone",
+  "name": "@uiw/codemirror-theme-eclipse",
   "version": "4.9.3",
-  "description": "Theme duotone for CodeMirror.",
-  "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/duotone/light",
+  "description": "Theme eclipse for CodeMirror.",
+  "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/eclipse",
   "author": "kenny wong <wowohoo@qq.com>",
   "license": "MIT",
   "main": "./cjs/index.js",
@@ -27,7 +27,7 @@
     "codemirror",
     "codemirror6",
     "theme",
-    "duotone",
+    "eclipse",
     "syntax",
     "ide",
     "code"

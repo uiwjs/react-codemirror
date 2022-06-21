@@ -24,6 +24,7 @@ const AppLogo = styled.img`
 const AppTitle = styled.h1`
   font-size: 30px;
   sup {
+    position: absolute;
     background: var(--color-neutral-muted);
     padding: 1px 5px;
     font-size: 12px;
@@ -53,8 +54,11 @@ const Buttons = styled.div`
     background: var(--color-neutral-muted);
     color: var(--color-theme-text);
     line-height: 30px;
-    /* text-transform: uppercase; */
     text-decoration: none;
+    &.themes {
+      background-color: var(--color-prettylights-syntax-keyword);
+      color: var(--color-prettylights-syntax-carriage-return-text);
+    }
     &.special {
       background: var(--color-prettylights-syntax-markup-ignored-bg);
       color: var(--color-prettylights-syntax-carriage-return-text);
@@ -127,12 +131,15 @@ export default function App() {
       <AppHeader>
         <AppLogo src={logo} alt="logo" />
         <AppTitle>
-          React-CodeMirror <sup>v{version}</sup>
+          React CodeMirror <sup>v{version}</sup>
         </AppTitle>
         <Describe>CodeMirror component for React. </Describe>
         <Buttons>
           <Link to="/theme/editor" className="special">
             Theme Editor
+          </Link>
+          <Link to="/theme/data" className="themes">
+            Themes
           </Link>
           {hyperlink.map(({ href, label, style }, idx) => {
             return (

@@ -1,4 +1,8 @@
+<!--rehype:ignore:start-->
+
 # Duotone Theme
+
+<!--rehype:ignore:end-->
 
 [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-duotone.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-duotone)
 
