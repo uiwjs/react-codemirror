@@ -1,6 +1,7 @@
 import { EditorView } from '@codemirror/view';
 import { Extension } from '@codemirror/state';
 import { HighlightStyle, TagStyle, syntaxHighlighting } from '@codemirror/language';
+import { StyleSpec } from 'style-mod';
 
 export interface CreateThemeOptions {
   /**
@@ -26,6 +27,8 @@ export interface Settings {
   caret: string;
   /** Selection background. */
   selection: string;
+  /** Selection match background. */
+  selectionMatch?: string;
   /** Background of highlighted lines. */
   lineHighlight: string;
   /** Gutter background. */
@@ -35,37 +38,43 @@ export interface Settings {
 }
 
 export const createTheme = ({ theme, settings, styles }: CreateThemeOptions): Extension => {
-  const themeExtension = EditorView.theme(
-    {
-      '&': {
-        backgroundColor: settings.background,
-        color: settings.foreground,
-      },
-      '.cm-content': {
-        caretColor: settings.caret,
-      },
-      '.cm-cursor, .cm-dropCursor': {
-        borderLeftColor: settings.caret,
-      },
-      '&.cm-focused .cm-selectionBackground .cm-selectionBackground, & .cm-selectionLayer .cm-selectionBackground, ::selection':
-        {
-          backgroundColor: settings.selection,
-        },
-      '.cm-activeLine': {
-        backgroundColor: settings.lineHighlight,
-      },
-      '.cm-gutters': {
-        backgroundColor: settings.gutterBackground,
-        color: settings.gutterForeground,
-      },
-      '.cm-activeLineGutter': {
-        backgroundColor: settings.lineHighlight,
-      },
+  const themeOptions: Record<string, StyleSpec> = {
+    '&': {
+      backgroundColor: settings.background,
+      color: settings.foreground,
     },
-    {
-      dark: theme === 'dark',
+    '.cm-content': {
+      caretColor: settings.caret,
     },
-  );
+    '.cm-cursor, .cm-dropCursor': {
+      borderLeftColor: settings.caret,
+    },
+    '.cm-activeLine': {
+      backgroundColor: settings.lineHighlight,
+    },
+    '.cm-gutters': {
+      backgroundColor: settings.gutterBackground,
+      color: settings.gutterForeground,
+    },
+    '.cm-activeLineGutter': {
+      backgroundColor: settings.lineHighlight,
+    },
+  };
+  if (settings.selection) {
+    themeOptions[
+      '&.cm-focused .cm-selectionBackground .cm-selectionBackground, & .cm-selectionLayer .cm-selectionBackground, ::selection'
+    ] = {
+      backgroundColor: settings.selection,
+    };
+  }
+  if (settings.selectionMatch) {
+    themeOptions['& .cm-selectionMatch'] = {
+      backgroundColor: settings.selectionMatch,
+    };
+  }
+  const themeExtension = EditorView.theme(themeOptions, {
+    dark: theme === 'dark',
+  });
 
   const highlightStyle = HighlightStyle.define(styles);
   const extension = [themeExtension, syntaxHighlighting(highlightStyle)];
