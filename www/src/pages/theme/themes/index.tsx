@@ -4,6 +4,7 @@ import { useParams, NavLink } from 'react-router-dom';
 import { okaidia } from '@uiw/codemirror-theme-okaidia';
 import { dracula } from '@uiw/codemirror-theme-dracula';
 import { eclipse } from '@uiw/codemirror-theme-eclipse';
+import { bespin } from '@uiw/codemirror-theme-bespin';
 import { duotoneLight, duotoneDark } from '@uiw/codemirror-theme-duotone';
 import { Document, toSnakeCase } from './Document';
 import { Sample } from './Sample';
@@ -15,13 +16,20 @@ const MenuItem = styled(NavLink)`
   font-size: 16px;
   text-decoration: none;
   text-transform: capitalize;
+  border-radius: 2px;
+  transition: background-color 0.3s;
+  color: var(--color-accent-emphasis);
   &.active {
-    background-color: var(--color-border-default);
-    border-radius: 2px;
+    background-color: var(--color-neutral-muted);
+    color: var(--color-theme-text);
+  }
+  &:hover {
+    background-color: var(--color-neutral-muted);
   }
 `;
 
 const themeData = {
+  bespin,
   dracula,
   duotoneLight,
   duotoneDark,

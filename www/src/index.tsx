@@ -60,7 +60,8 @@ root.render(
         <Route path="data" element={<Navigate to="okaidia" replace />} />
         <Route path="data/:name" element={<ThemeOkaidia />} />
         <Route path="data/:name/:lightOrDark" element={<ThemeOkaidia />} />
-        <Route path="editor" element={<ThemeEditor />} />
+        <Route path="editor" element={<Navigate to="single" replace />} />
+        <Route path="editor/:type" element={<ThemeEditor />} />
         <Route path="doc" element={<ThemeDoc />} />
       </Route>
     </Routes>

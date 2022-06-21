@@ -1,7 +1,8 @@
 import { Fragment, useState } from 'react';
-import CodeMirror from '@uiw/react-codemirror';
 import { Extension } from '@codemirror/state';
+import CodeMirror from '@uiw/react-codemirror';
 import styled from 'styled-components';
+import { useParams, useNavigate } from 'react-router-dom';
 import '@wcj/dark-mode';
 import createTheme, { CreateThemeOptions } from '@uiw/codemirror-themes';
 import { tags as t } from '@lezer/highlight';
@@ -57,22 +58,24 @@ export type Style = Partial<
   variableNameFunction: string;
   propertyNameDefinition: string;
   propertyNameFunction: string;
+  propertyNameSpecial: string;
   classNameConstant: string;
 };
 
 export function ThemeEditor() {
+  const navigate = useNavigate();
+  const { type = 'light' } = useParams();
   const [extension, setExtension] = useState<Extension>(javascript({ jsx: true }));
   const [code, setCode] = useState('');
-  const [dispaly, setDispaly] = useState<'multiple' | 'single'>('single');
   const [lang, setLang] = useState('jsx');
   const [theme, setTheme] = useState<CreateThemeOptions['theme']>('light');
   const [settings, setSettings] = useState<CreateThemeOptions['settings']>({
-    background: '#fff',
+    background: '#ffffff',
     foreground: '#4D4D4C',
     caret: '#AEAFAD',
     selection: '#D6D6D6',
     gutterBackground: '#FFFFFF',
-    gutterForeground: '#4D4D4C80',
+    gutterForeground: '#4D4D4C',
     lineHighlight: '#EFEFEF',
   });
 
@@ -96,6 +99,7 @@ export function ThemeEditor() {
       getStyle(styles.variableNameFunction, { tag: t.function(t.variableName) }),
       getStyle(styles.propertyName, { tag: t.propertyName }),
       getStyle(styles.propertyNameDefinition, { tag: t.definition(t.propertyName) }),
+      getStyle(styles.propertyNameSpecial, { tag: t.special(t.propertyName) }),
       getStyle(styles.propertyNameFunction, { tag: t.function(t.propertyName) }),
       getStyle(styles.attributeName, { tag: t.attributeName }),
       getStyle(styles.className, { tag: t.className }),
@@ -201,7 +205,7 @@ export function ThemeEditor() {
         })}
       </Sider>
       <EditorView>
-        {dispaly === 'single' && (
+        {type === 'single' && (
           <CodeMirror
             readOnly={lang === 'code'}
             theme={myTheme}
@@ -211,11 +215,11 @@ export function ThemeEditor() {
             style={{ minHeight: '100%' }}
           />
         )}
-        <Select value={dispaly} onChange={(evn) => setDispaly(evn.target.value as any)}>
+        <Select value={type} onChange={(evn) => navigate(`/theme/editor/${evn.target.value}`)}>
           <option value="single">Single language</option>
           <option value="multiple">Multiple languages</option>
         </Select>
-        {dispaly === 'single' && (
+        {type === 'single' && (
           <SampleCode
             style={{ top: 40 }}
             styles={{ ...settings, ...styles, dark: theme }}
@@ -226,7 +230,7 @@ export function ThemeEditor() {
             }}
           />
         )}
-        {dispaly === 'multiple' && <Sample theme={myTheme} style={{ padding: '30px 30px', maxWidth: 860 }} />}
+        {type === 'multiple' && <Sample theme={myTheme} style={{ padding: '30px 30px', maxWidth: 860 }} />}
       </EditorView>
     </Fragment>
   );

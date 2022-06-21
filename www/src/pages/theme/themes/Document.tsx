@@ -4,6 +4,7 @@ import okaidia from '@uiw/codemirror-theme-okaidia/README.md';
 import dracula from '@uiw/codemirror-theme-dracula/README.md';
 import duotone from '@uiw/codemirror-theme-duotone/README.md';
 import eclipse from '@uiw/codemirror-theme-eclipse/README.md';
+import bespin from '@uiw/codemirror-theme-bespin/README.md';
 import styled from 'styled-components';
 
 export const toSnakeCase = (str: string = '') =>
@@ -14,11 +15,12 @@ export const toSnakeCase = (str: string = '') =>
     .split(',');
 
 const mdSource = {
-  okaidia: okaidia.source,
+  bespin: bespin.source,
   eclipse: eclipse.source,
   dracula: dracula.source,
   duotoneLight: duotone.source,
   duotoneDark: duotone.source,
+  okaidia: okaidia.source,
 };
 
 const Button = styled.button``;

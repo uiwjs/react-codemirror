@@ -2,7 +2,7 @@ import { CreateThemeOptions } from '@uiw/codemirror-themes';
 import { Style } from './';
 
 export const defalutStyle: Style = {
-  comment: '#787b8099',
+  comment: '#787b80',
   lineComment: '',
   blockComment: '',
   docComment: '',
@@ -11,12 +11,13 @@ export const defalutStyle: Style = {
   typeName: '#194a7b',
   typeStandard: '',
   tagName: '#008a02',
-  variableName: '',
+  variableName: '#1a00db',
   variableNameDefinition: '',
   variableNameFunction: '',
   propertyName: '',
   propertyNameDefinition: '',
   propertyNameFunction: '',
+  propertyNameSpecial: '',
   attributeName: '',
   className: '',
   classNameConstant: '',
@@ -115,6 +116,8 @@ export const themeCode = (styles: Partial<ThmeCodeStyle> = {}) => {
     data.push(`{ tag: t.function(t.propertyName), color: '${styles.propertyNameFunction}' },`);
   if (styles.propertyNameDefinition)
     data.push(`{ tag: t.definition(t.propertyName), color: '${styles.propertyNameDefinition}' },`);
+  if (styles.propertyNameSpecial)
+    data.push(`{ tag: t.special(t.propertyName), color: '${styles.propertyNameSpecial}' },`);
   if (styles.attributeName) data.push(`{ tag: t.attributeName, color: '${styles.attributeName}' },`);
   if (styles.className) data.push(`{ tag: t.className, color: '${styles.className}' },`);
   if (styles.classNameConstant) data.push(`{ tag: t.constant(t.className), color: '${styles.className}' },`);

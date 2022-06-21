@@ -51,8 +51,9 @@ const Link = styled(NavLink)`
   padding: 2px 5px;
   border-radius: 3px;
   text-decoration: none;
+  color: var(--color-accent-emphasis);
   &.active {
-    background-color: var(--color-border-default);
+    background-color: var(--color-neutral-muted);
     color: var(--color-fg-default);
   }
 `;
