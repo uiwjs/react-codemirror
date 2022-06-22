@@ -74,6 +74,7 @@ export function ThemeEditor() {
     foreground: '#4D4D4C',
     caret: '#AEAFAD',
     selection: '#D6D6D6',
+    selectionMatch: '#D6D6D6',
     gutterBackground: '#FFFFFF',
     gutterForeground: '#4D4D4C',
     lineHighlight: '#EFEFEF',

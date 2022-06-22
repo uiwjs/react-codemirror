@@ -96,7 +96,6 @@ export type ThmeCodeStyle = Style & CreateThemeOptions['settings'] & { dark: Cre
 
 export const themeCode = (styles: Partial<ThmeCodeStyle> = {}) => {
   const data: string[] = [];
-  if (styles.background) data.push(`{ tag: t.comment, color: '${styles.comment}' },`);
   if (styles.comment) data.push(`{ tag: t.comment, color: '${styles.comment}' },`);
   if (styles.lineComment) data.push(`{ tag: t.lineComment, color: '${styles.lineComment}' },`);
   if (styles.blockComment) data.push(`{ tag: t.blockComment, color: '${styles.blockComment}' },`);

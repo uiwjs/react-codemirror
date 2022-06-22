@@ -134,3 +134,9 @@ jobs:
       with:
         token: ${{ secrets.NPM_TOKEN }}
         package: ./themes/bespin/package.json
+
+    - name: 📦 @uiw/codemirror-theme-sublime publish to NPM
+      uses: JS-DevTools/npm-publish@v1
+      with:
+        token: ${{ secrets.NPM_TOKEN }}
+        package: ./themes/sublime/package.json

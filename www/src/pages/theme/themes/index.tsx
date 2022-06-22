@@ -1,15 +1,10 @@
 import { Fragment } from 'react';
 import styled from 'styled-components';
 import { useParams, NavLink } from 'react-router-dom';
-import { okaidia } from '@uiw/codemirror-theme-okaidia';
-import { dracula } from '@uiw/codemirror-theme-dracula';
-import { darcula } from '@uiw/codemirror-theme-darcula';
-import { eclipse } from '@uiw/codemirror-theme-eclipse';
-import { bespin } from '@uiw/codemirror-theme-bespin';
-import { duotoneLight, duotoneDark } from '@uiw/codemirror-theme-duotone';
 import { Document, toSnakeCase } from './Document';
 import { Sample } from './Sample';
 import { Sider } from '../editor';
+import { themeData } from './Datas';
 
 const MenuItem = styled(NavLink)`
   cursor: pointer;
@@ -28,16 +23,6 @@ const MenuItem = styled(NavLink)`
     background-color: var(--color-neutral-muted);
   }
 `;
-
-const themeData = {
-  bespin,
-  darcula,
-  dracula,
-  duotoneLight,
-  duotoneDark,
-  eclipse,
-  okaidia,
-};
 
 export const ThemeOkaidia = () => {
   const { name = '', lightOrDark = '' } = useParams();
