@@ -16,6 +16,7 @@ import goStr from 'code-example/txt/sample.go.txt';
 import mysqlStr from 'code-example/txt/sample.mysql.txt';
 import pythonStr from 'code-example/txt/sample.python.txt';
 import shellStr from 'code-example/txt/sample.shell.txt';
+import markdownStr from 'code-example/txt/sample.markdown.txt';
 import { langs } from '../../../langs';
 
 const Title = styled.div`
@@ -47,6 +48,8 @@ export const Sample: FC<PropsWithoutRef<SampleProps>> = ({ theme, ...props }) =>
       <CodeMirror value={jsonStr} height="300px" theme={theme} extensions={[langs.json()]} />
       <Title>HTML</Title>
       <CodeMirror value={htmlStr} height="300px" theme={theme} extensions={[langs.html()]} />
+      <Title>Markdown</Title>
+      <CodeMirror value={markdownStr} height="300px" theme={theme} extensions={[langs.markdown()]} />
       <Title>CSS</Title>
       <CodeMirror value={cssStr} height="300px" theme={theme} extensions={[langs.css()]} />
       <Title>PHP</Title>

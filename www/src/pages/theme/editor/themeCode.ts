@@ -27,6 +27,7 @@ export const defalutStyle: Style = {
   macroName: '',
   literal: '',
   string: '',
+  stringSpecial: '',
   docString: '',
   character: '',
   number: '',
@@ -125,6 +126,7 @@ export const themeCode = (styles: Partial<ThmeCodeStyle> = {}) => {
   if (styles.macroName) data.push(`{ tag: t.macroName, color: '${styles.macroName}' },`);
   if (styles.literal) data.push(`{ tag: t.literal, color: '${styles.literal}' },`);
   if (styles.string) data.push(`{ tag: t.string, color: '${styles.string}' },`);
+  if (styles.stringSpecial) data.push(`{ tag: t.special(t.string), color: '${styles.stringSpecial}' },`);
   if (styles.docString) data.push(`{ tag: t.docString, color: '${styles.docString}' },`);
   if (styles.character) data.push(`{ tag: t.character, color: '${styles.character}' },`);
   if (styles.attributeValue) data.push(`{ tag: t.attributeValue, color: '${styles.attributeValue}' },`);

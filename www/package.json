@@ -35,6 +35,7 @@
     "@codemirror/lang-rust": "~6.0.0",
     "@codemirror/lang-sql": "~6.0.0",
     "@codemirror/lang-xml": "~6.0.0",
+    "@codemirror/language-data": "^6.1.0",
     "@codemirror/legacy-modes": "~6.1.0",
     "@uiw/codemirror-theme-bespin": "4.9.4",
     "@uiw/codemirror-theme-darcula": "4.9.4",

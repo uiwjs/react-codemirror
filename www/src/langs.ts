@@ -1,9 +1,10 @@
+import { languages } from '@codemirror/language-data';
+import { markdown, markdownLanguage } from '@codemirror/lang-markdown';
 import { javascript } from '@codemirror/lang-javascript';
 import { html } from '@codemirror/lang-html';
 import { css } from '@codemirror/lang-css';
 import { json } from '@codemirror/lang-json';
 import { python } from '@codemirror/lang-python';
-import { markdown } from '@codemirror/lang-markdown';
 import { xml } from '@codemirror/lang-xml';
 import { sql, MySQL, PostgreSQL } from '@codemirror/lang-sql';
 import { java } from '@codemirror/lang-java';
@@ -47,7 +48,7 @@ export const langs = {
   html,
   css,
   python,
-  markdown,
+  markdown: () => markdown({ base: markdownLanguage, codeLanguages: languages }),
   xml,
   sql,
   mysql: () => sql({ dialect: MySQL }),
