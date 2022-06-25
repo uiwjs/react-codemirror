@@ -140,3 +140,9 @@ jobs:
       with:
         token: ${{ secrets.NPM_TOKEN }}
         package: ./themes/sublime/package.json
+
+    - name: 📦 @uiw/codemirror-extensions-events to NPM
+      uses: JS-DevTools/npm-publish@v1
+      with:
+        token: ${{ secrets.NPM_TOKEN }}
+        package: ./extensions/events/package.json
