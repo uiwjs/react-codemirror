@@ -16,6 +16,7 @@
   },
   "workspaces": [
     "themes/**",
+    "extensions/**",
     "core",
     "www"
   ],

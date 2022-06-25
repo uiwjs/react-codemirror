@@ -3,12 +3,12 @@ import { NavLink, Outlet } from 'react-router-dom';
 import '@wcj/dark-mode';
 import logo from '../../logo.png';
 
-const Warpper = styled.div`
+export const Warpper = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const Title = styled(NavLink)`
+export const Title = styled(NavLink)`
   font-size: 14px;
   font-weight: bold;
   display: flex;
@@ -21,7 +21,7 @@ const Title = styled(NavLink)`
   }
 `;
 
-const Tools = styled.div`
+export const Tools = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,12 +32,12 @@ const Tools = styled.div`
   }
 `;
 
-const Content = styled.div`
+export const Content = styled.div`
   display: flex;
   flex: 1;
 `;
 
-const Header = styled.div`
+export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,7 +47,7 @@ const Header = styled.div`
   border-bottom: 1px solid var(--color-border-default);
 `;
 
-const Link = styled(NavLink)`
+export const Link = styled(NavLink)`
   padding: 2px 5px;
   border-radius: 3px;
   text-decoration: none;

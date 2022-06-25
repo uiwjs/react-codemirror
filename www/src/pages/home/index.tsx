@@ -63,6 +63,10 @@ const Buttons = styled.div`
       background: var(--color-prettylights-syntax-markup-ignored-bg);
       color: var(--color-prettylights-syntax-carriage-return-text);
     }
+    &.extensions {
+      background: var(--color-prettylights-syntax-entity);
+      color: var(--color-prettylights-syntax-carriage-return-text);
+    }
     &:hover {
       background-color: var(--color-fg-muted);
       color: var(--color-theme-bg);
@@ -140,6 +144,9 @@ export default function App() {
           </Link>
           <Link to="/theme/data" className="themes">
             Themes
+          </Link>
+          <Link to="/extensions" className="extensions">
+            Extensions
           </Link>
           {hyperlink.map(({ href, label, style }, idx) => {
             return (

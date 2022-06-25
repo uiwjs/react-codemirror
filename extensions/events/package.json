@@ -1,0 +1,40 @@
+{
+  "name": "@uiw/codemirror-extensions-events",
+  "version": "4.9.4",
+  "description": "Events Extensions for CodeMirror6.",
+  "homepage": "https://uiwjs.github.io/react-codemirror/#/extensions/events",
+  "author": "kenny wong <wowohoo@qq.com>",
+  "license": "MIT",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "scripts": {
+    "watch": "tsbb watch",
+    "build": "tsbb build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uiwjs/react-codemirror.git"
+  },
+  "files": [
+    "src",
+    "esm",
+    "cjs"
+  ],
+  "dependencies": {
+    "@codemirror/view": "^6.0.0"
+  },
+  "keywords": [
+    "codemirror",
+    "codemirror6",
+    "events",
+    "extensions",
+    "ide",
+    "code"
+  ],
+  "jest": {
+    "coverageReporters": [
+      "lcov",
+      "json-summary"
+    ]
+  }
+}

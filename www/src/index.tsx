@@ -7,6 +7,8 @@ import { ThemeEditor } from './pages/theme/editor';
 import { ThemeLayout } from './pages/theme';
 import { ThemeDoc } from './pages/theme/docs';
 import { ThemeOkaidia } from './pages/theme/themes';
+import { ExtensionsLayout } from './pages/extensions';
+import { EventsDoc } from './pages/extensions/events';
 
 export const GlobalStyle = createGlobalStyle`
   [data-color-mode*='dark'], [data-color-mode*='dark'] body {
@@ -63,6 +65,10 @@ root.render(
         <Route path="editor" element={<Navigate to="single" replace />} />
         <Route path="editor/:type" element={<ThemeEditor />} />
         <Route path="doc" element={<ThemeDoc />} />
+      </Route>
+      <Route path="/extensions/" element={<ExtensionsLayout />}>
+        <Route index element={<Navigate to="events" replace />} />
+        <Route path="events" element={<EventsDoc />} />
       </Route>
     </Routes>
   </HashRouter>,
