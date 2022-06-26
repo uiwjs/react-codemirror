@@ -6,7 +6,7 @@ import { Sample } from './Sample';
 import { Sider } from '../editor';
 import { themeData } from './Datas';
 
-const MenuItem = styled(NavLink)`
+export const MenuItem = styled(NavLink)`
   cursor: pointer;
   padding: 6px 8px;
   font-size: 16px;

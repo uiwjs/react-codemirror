@@ -9,8 +9,7 @@ import { langs } from '../../../langs';
 const Warpper = styled.div`
   flex: 1;
   max-width: 980px;
-  margin: 0 auto;
-  padding: 50px 20px 150px 20px;
+  padding: 20px 20px 120px 20px;
 `;
 
 const Info = styled.div`

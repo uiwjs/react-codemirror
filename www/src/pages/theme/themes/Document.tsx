@@ -11,16 +11,16 @@ export const toSnakeCase = (str: string = '') =>
     .join(',')
     .split(',');
 
-const Button = styled.button``;
+export const Button = styled.button``;
 
-const Title = styled.div`
+export const Title = styled.div`
   font-size: 24px;
   padding-bottom: 15px;
   text-transform: capitalize;
   font-weight: bold;
 `;
 
-const Warpper = styled.div`
+export const Warpper = styled.div`
   width: 100%;
   overflow: auto;
   display: flex;
@@ -28,7 +28,7 @@ const Warpper = styled.div`
   height: calc(100vh - 42px);
 `;
 
-const Header = styled.div`
+export const Header = styled.div`
   padding: 26px 23px 22px 23px;
   border-bottom: 1px solid var(--color-border-default);
   ${Title} {
@@ -38,7 +38,7 @@ const Header = styled.div`
   }
 `;
 
-const Content = styled.div`
+export const Content = styled.div`
   padding: 30px 38px 120px 38px;
 `;
 

@@ -68,6 +68,7 @@ export function ThemeLayout() {
         </Title>
         <Tools>
           <Link to="/">Home</Link>
+          <Link to="/extensions">Extensions</Link>
           <Link to="/theme/data">Themes</Link>
           <Link to="/theme/editor">Editor</Link>
           <Link to="/theme/doc">Theme Doc</Link>

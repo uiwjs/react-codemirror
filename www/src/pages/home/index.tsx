@@ -56,7 +56,7 @@ const Buttons = styled.div`
     line-height: 30px;
     text-decoration: none;
     &.themes {
-      background-color: var(--color-prettylights-syntax-keyword);
+      background-color: var(--color-prettylights-syntax-variable);
       color: var(--color-prettylights-syntax-carriage-return-text);
     }
     &.special {
@@ -64,7 +64,7 @@ const Buttons = styled.div`
       color: var(--color-prettylights-syntax-carriage-return-text);
     }
     &.extensions {
-      background: var(--color-prettylights-syntax-entity);
+      background: var(--color-prettylights-syntax-brackethighlighter-unmatched);
       color: var(--color-prettylights-syntax-carriage-return-text);
     }
     &:hover {
