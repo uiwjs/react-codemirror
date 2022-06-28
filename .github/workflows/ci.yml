@@ -153,6 +153,7 @@ jobs:
   github-package:
     runs-on: ubuntu-18.04
     needs: build-deploy
+    if: needs.build-deploy.outputs.successful
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
