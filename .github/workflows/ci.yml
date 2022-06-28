@@ -164,10 +164,10 @@ jobs:
       - run: npm install
       - run: npm run build
 
-      - name: Modify @uiw/react-codemirror => @uiwjs/react-codemirror
-        working-directory: core
+      - name: "Modify @uiw/react-codemirror => @uiwjs/react-codemirror"
         uses: jaywcjlove/github-action-package@main
         with:
+          path: core/package.json
           data: |
             { "name": "@uiwjs/react-codemirror" }
 
@@ -177,9 +177,9 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-themes => @uiwjs/codemirror-themes
-        working-directory: themes/theme
         uses: jaywcjlove/github-action-package@main
         with:
+          path: themes/theme/package.json
           data: |
             { "name": "@uiwjs/codemirror-themes" }
 
@@ -189,9 +189,9 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-theme-okaidia => @uiwjs/codemirror-theme-okaidia
-        working-directory: themes/okaidia
         uses: jaywcjlove/github-action-package@main
         with:
+          path: themes/okaidia/package.json
           data: |
             { "name": "@uiwjs/codemirror-theme-okaidia" }
 
@@ -201,9 +201,9 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-theme-dracula => @uiwjs/codemirror-theme-dracula
-        working-directory: themes/dracula
         uses: jaywcjlove/github-action-package@main
         with:
+          path: themes/dracula/package.json
           data: |
             { "name": "@uiwjs/codemirror-theme-dracula" }
 
@@ -212,22 +212,11 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-      - name: Modify @uiw/codemirror-theme-dracula => @uiwjs/codemirror-theme-dracula
-        working-directory: themes/dracula
-        uses: jaywcjlove/github-action-package@main
-        with:
-          data: |
-            { "name": "@uiwjs/codemirror-theme-dracula" }
-
-      - run: npm publish
-        working-directory: themes/dracula
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-theme-duotone => @uiwjs/codemirror-theme-duotone
-        working-directory: themes/duotone
         uses: jaywcjlove/github-action-package@main
         with:
+          path: themes/duotone/package.json
           data: |
             { "name": "@uiwjs/codemirror-theme-duotone" }
 
@@ -237,9 +226,9 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-theme-eclipse => @uiwjs/codemirror-theme-eclipse
-        working-directory: themes/eclipse
         uses: jaywcjlove/github-action-package@main
         with:
+          path: themes/eclipse/package.json
           data: |
             { "name": "@uiwjs/codemirror-theme-eclipse" }
 
@@ -249,9 +238,9 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-theme-darcula => @uiwjs/codemirror-theme-darcula
-        working-directory: themes/darcula
         uses: jaywcjlove/github-action-package@main
         with:
+          path: themes/darcula/package.json
           data: |
             { "name": "@uiwjs/codemirror-theme-darcula" }
 
@@ -261,9 +250,9 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-theme-bespin => @uiwjs/codemirror-theme-bespin
-        working-directory: themes/bespin
         uses: jaywcjlove/github-action-package@main
         with:
+          path: themes/bespin/package.json
           data: |
             { "name": "@uiwjs/codemirror-theme-bespin" }
 
@@ -273,9 +262,9 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-theme-sublime => @uiwjs/codemirror-theme-sublime
-        working-directory: themes/sublime
         uses: jaywcjlove/github-action-package@main
         with:
+          path: themes/sublime/package.json
           data: |
             { "name": "@uiwjs/codemirror-theme-sublime" }
 
@@ -285,9 +274,9 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-extensions-events => @uiwjs/codemirror-extensions-events
-        working-directory: extensions/events
         uses: jaywcjlove/github-action-package@main
         with:
+          path: extensions/events/package.json
           data: |
             { "name": "@uiwjs/codemirror-extensions-events" }
 
