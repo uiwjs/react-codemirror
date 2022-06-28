@@ -8,141 +8,290 @@ jobs:
   build-deploy:
     runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 16
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
-    - run: npm install
-    - run: npm run build
-    - working-directory: core
-      run: |
-        npm run bundle
-        npm run bundle:min
-        npm run coverage
+      - run: npm install
+      - run: npm run build
+      - working-directory: core
+        run: |
+          npm run bundle
+          npm run bundle:min
+          npm run coverage
 
-    - run: npm run doc
+      - run: npm run doc
 
-    - run: cp -rp www/build ./
-    - run: cp -rp core/coverage build
+      - run: cp -rp www/build ./
+      - run: cp -rp core/coverage build
 
-    - name: Create Coverage Badges
-      uses: jaywcjlove/coverage-badges-cli@main
-      with:
-        style: flat
-        source: core/coverage/coverage-summary.json
-        output: build/coverage/badges.svg
+      - name: Create Coverage Badges
+        uses: jaywcjlove/coverage-badges-cli@main
+        with:
+          style: flat
+          source: core/coverage/coverage-summary.json
+          output: build/coverage/badges.svg
 
-    - name: Generate Contributors Images
-      uses: jaywcjlove/github-action-contributors@main
-      with:
-        filter-author: (renovate\[bot\]|renovate-bot|dependabot\[bot\])
-        output: build/CONTRIBUTORS.svg
-        avatarSize: 42
+      - name: Generate Contributors Images
+        uses: jaywcjlove/github-action-contributors@main
+        with:
+          filter-author: (renovate\[bot\]|renovate-bot|dependabot\[bot\])
+          output: build/CONTRIBUTORS.svg
+          avatarSize: 42
 
-    - name: Create Tag
-      id: create_tag
-      uses: jaywcjlove/create-tag-action@v1.3.6
-      with:
-        package-path: ./core/package.json
+      - name: Create Tag
+        id: create_tag
+        uses: jaywcjlove/create-tag-action@v1.3.6
+        with:
+          package-path: ./core/package.json
 
-    - name: get tag version
-      id: tag_version
-      uses: jaywcjlove/changelog-generator@v1.5.0
+      - name: get tag version
+        id: tag_version
+        uses: jaywcjlove/changelog-generator@v1.5.0
 
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        commit_message: ${{steps.tag_version.outputs.tag}} ${{ github.event.head_commit.message }}
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          commit_message: ${{steps.tag_version.outputs.tag}} ${{ github.event.head_commit.message }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
 
-    - name: Generate Changelog
-      id: changelog
-      uses: jaywcjlove/changelog-generator@v1.5.0
-      with:
-        head-ref: ${{steps.create_tag.outputs.version}}
-        filter-author: (renovate-bot|Renovate Bot)
-        filter: '[R|r]elease[d]\s+[v|V]\d(\.\d+){0,2}'
+      - name: Generate Changelog
+        id: changelog
+        uses: jaywcjlove/changelog-generator@v1.5.0
+        with:
+          head-ref: ${{steps.create_tag.outputs.version}}
+          filter-author: (renovate-bot|Renovate Bot)
+          filter: '[R|r]elease[d]\s+[v|V]\d(\.\d+){0,2}'
 
-    - name: Create Release
-      uses: ncipollo/release-action@v1
-      if: steps.create_tag.outputs.successful
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        name: ${{ steps.create_tag.outputs.version }}
-        tag: ${{ steps.create_tag.outputs.version }}
-        body: |
-          [![](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/@uiw/react-codemirror@${{steps.changelog.outputs.version}}/file/README.md)
-          
-          Documentation ${{ steps.changelog.outputs.tag }}: https://raw.githack.com/uiwjs/react-codemirror/${{ steps.changelog.outputs.gh-pages-short-hash }}/index.html  
-          Comparing Changes: ${{ steps.changelog.outputs.compareurl }}  
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        if: steps.create_tag.outputs.successful
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: ${{ steps.create_tag.outputs.version }}
+          tag: ${{ steps.create_tag.outputs.version }}
+          body: |
+            [![](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/@uiw/react-codemirror@${{steps.changelog.outputs.version}}/file/README.md)
+            
+            Documentation ${{ steps.changelog.outputs.tag }}: https://raw.githack.com/uiwjs/react-codemirror/${{ steps.changelog.outputs.gh-pages-short-hash }}/index.html  
+            Comparing Changes: ${{ steps.changelog.outputs.compareurl }}  
 
-          ```shell
-          npm i @uiw/react-codemirror@${{steps.create_tag.outputs.versionNumber}}
-          ```
+            ```shell
+            npm i @uiw/react-codemirror@${{steps.create_tag.outputs.versionNumber}}
+            ```
 
-          ${{ steps.changelog.outputs.changelog }}
-
-
-    - name: 📦 @uiw/react-codemirror publish to NPM
-      uses: JS-DevTools/npm-publish@v1
-      with:
-        token: ${{ secrets.NPM_TOKEN }}
-        package: ./core/package.json
+            ${{ steps.changelog.outputs.changelog }}
 
 
-    - name: 📦 @uiw/codemirror-themes publish to NPM
-      uses: JS-DevTools/npm-publish@v1
-      with:
-        token: ${{ secrets.NPM_TOKEN }}
-        package: ./themes/theme/package.json
+      - name: 📦 @uiw/react-codemirror publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./core/package.json
 
 
-    - name: 📦 @uiw/codemirror-theme-okaidia publish to NPM
-      uses: JS-DevTools/npm-publish@v1
-      with:
-        token: ${{ secrets.NPM_TOKEN }}
-        package: ./themes/okaidia/package.json
+      - name: 📦 @uiw/codemirror-themes publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./themes/theme/package.json
 
-    - name: 📦 @uiw/codemirror-theme-dracula publish to NPM
-      uses: JS-DevTools/npm-publish@v1
-      with:
-        token: ${{ secrets.NPM_TOKEN }}
-        package: ./themes/dracula/package.json
 
-    - name: 📦 @uiw/codemirror-theme-duotone publish to NPM
-      uses: JS-DevTools/npm-publish@v1
-      with:
-        token: ${{ secrets.NPM_TOKEN }}
-        package: ./themes/duotone/package.json
+      - name: 📦 @uiw/codemirror-theme-okaidia publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./themes/okaidia/package.json
 
-    - name: 📦 @uiw/codemirror-theme-eclipse publish to NPM
-      uses: JS-DevTools/npm-publish@v1
-      with:
-        token: ${{ secrets.NPM_TOKEN }}
-        package: ./themes/eclipse/package.json
+      - name: 📦 @uiw/codemirror-theme-dracula publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./themes/dracula/package.json
 
-    - name: 📦 @uiw/codemirror-theme-darcula publish to NPM
-      uses: JS-DevTools/npm-publish@v1
-      with:
-        token: ${{ secrets.NPM_TOKEN }}
-        package: ./themes/darcula/package.json
+      - name: 📦 @uiw/codemirror-theme-duotone publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./themes/duotone/package.json
 
-    - name: 📦 @uiw/codemirror-theme-bespin publish to NPM
-      uses: JS-DevTools/npm-publish@v1
-      with:
-        token: ${{ secrets.NPM_TOKEN }}
-        package: ./themes/bespin/package.json
+      - name: 📦 @uiw/codemirror-theme-eclipse publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./themes/eclipse/package.json
 
-    - name: 📦 @uiw/codemirror-theme-sublime publish to NPM
-      uses: JS-DevTools/npm-publish@v1
-      with:
-        token: ${{ secrets.NPM_TOKEN }}
-        package: ./themes/sublime/package.json
+      - name: 📦 @uiw/codemirror-theme-darcula publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./themes/darcula/package.json
 
-    - name: 📦 @uiw/codemirror-extensions-events to NPM
-      uses: JS-DevTools/npm-publish@v1
-      with:
-        token: ${{ secrets.NPM_TOKEN }}
-        package: ./extensions/events/package.json
+      - name: 📦 @uiw/codemirror-theme-bespin publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./themes/bespin/package.json
+
+      - name: 📦 @uiw/codemirror-theme-sublime publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./themes/sublime/package.json
+
+      - name: 📦 @uiw/codemirror-extensions-events to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./extensions/events/package.json
+
+    outputs:
+      successful: ${{steps.create_tag.outputs.successful }}
+
+  github-package:
+    runs-on: ubuntu-18.04
+    needs: build-deploy
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://npm.pkg.github.com
+          scope: '@uiwjs'
+
+      - run: npm install
+      - run: npm run build
+
+      - name: Modify @uiw/react-codemirror => @uiwjs/react-codemirror
+        working-directory: core
+        uses: jaywcjlove/github-action-package@main
+        with:
+          data: |
+            { "name": "@uiwjs/react-codemirror" }
+
+      - run: npm publish
+        working-directory: core
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Modify @uiw/codemirror-themes => @uiwjs/codemirror-themes
+        working-directory: themes/theme
+        uses: jaywcjlove/github-action-package@main
+        with:
+          data: |
+            { "name": "@uiwjs/codemirror-themes" }
+
+      - run: npm publish
+        working-directory: themes/theme
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Modify @uiw/codemirror-theme-okaidia => @uiwjs/codemirror-theme-okaidia
+        working-directory: themes/okaidia
+        uses: jaywcjlove/github-action-package@main
+        with:
+          data: |
+            { "name": "@uiwjs/codemirror-theme-okaidia" }
+
+      - run: npm publish
+        working-directory: themes/okaidia
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Modify @uiw/codemirror-theme-dracula => @uiwjs/codemirror-theme-dracula
+        working-directory: themes/dracula
+        uses: jaywcjlove/github-action-package@main
+        with:
+          data: |
+            { "name": "@uiwjs/codemirror-theme-dracula" }
+
+      - run: npm publish
+        working-directory: themes/dracula
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Modify @uiw/codemirror-theme-dracula => @uiwjs/codemirror-theme-dracula
+        working-directory: themes/dracula
+        uses: jaywcjlove/github-action-package@main
+        with:
+          data: |
+            { "name": "@uiwjs/codemirror-theme-dracula" }
+
+      - run: npm publish
+        working-directory: themes/dracula
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Modify @uiw/codemirror-theme-duotone => @uiwjs/codemirror-theme-duotone
+        working-directory: themes/duotone
+        uses: jaywcjlove/github-action-package@main
+        with:
+          data: |
+            { "name": "@uiwjs/codemirror-theme-duotone" }
+
+      - run: npm publish
+        working-directory: themes/duotone
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Modify @uiw/codemirror-theme-eclipse => @uiwjs/codemirror-theme-eclipse
+        working-directory: themes/eclipse
+        uses: jaywcjlove/github-action-package@main
+        with:
+          data: |
+            { "name": "@uiwjs/codemirror-theme-eclipse" }
+
+      - run: npm publish
+        working-directory: themes/eclipse
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Modify @uiw/codemirror-theme-darcula => @uiwjs/codemirror-theme-darcula
+        working-directory: themes/darcula
+        uses: jaywcjlove/github-action-package@main
+        with:
+          data: |
+            { "name": "@uiwjs/codemirror-theme-darcula" }
+
+      - run: npm publish
+        working-directory: themes/darcula
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Modify @uiw/codemirror-theme-bespin => @uiwjs/codemirror-theme-bespin
+        working-directory: themes/bespin
+        uses: jaywcjlove/github-action-package@main
+        with:
+          data: |
+            { "name": "@uiwjs/codemirror-theme-bespin" }
+
+      - run: npm publish
+        working-directory: themes/bespin
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Modify @uiw/codemirror-theme-sublime => @uiwjs/codemirror-theme-sublime
+        working-directory: themes/sublime
+        uses: jaywcjlove/github-action-package@main
+        with:
+          data: |
+            { "name": "@uiwjs/codemirror-theme-sublime" }
+
+      - run: npm publish
+        working-directory: themes/sublime
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Modify @uiw/codemirror-extensions-events => @uiwjs/codemirror-extensions-events
+        working-directory: extensions/events
+        uses: jaywcjlove/github-action-package@main
+        with:
+          data: |
+            { "name": "@uiwjs/codemirror-extensions-events" }
+
+      - run: npm publish
+        working-directory: extensions/events
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
