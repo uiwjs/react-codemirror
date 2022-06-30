@@ -105,6 +105,12 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./themes/okaidia/package.json
 
+      - name: 📦 @uiw/codemirror-theme-abcdef publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./themes/abcdef/package.json
+
       - name: 📦 @uiw/codemirror-theme-dracula publish to NPM
         uses: JS-DevTools/npm-publish@v1
         with:
@@ -188,6 +194,19 @@ jobs:
         working-directory: themes/theme
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Modify @uiw/codemirror-theme-abcdef => @uiwjs/codemirror-theme-abcdef
+        uses: jaywcjlove/github-action-package@main
+        with:
+          path: themes/abcdef/package.json
+          data: |
+            { "name": "@uiwjs/codemirror-theme-abcdef" }
+
+      - run: npm publish
+        working-directory: themes/abcdef
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
 
       - name: Modify @uiw/codemirror-theme-okaidia => @uiwjs/codemirror-theme-okaidia
         uses: jaywcjlove/github-action-package@main
