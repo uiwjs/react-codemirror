@@ -45,6 +45,7 @@
     "@uiw/codemirror-theme-eclipse": "4.9.4",
     "@uiw/codemirror-theme-okaidia": "4.9.4",
     "@uiw/codemirror-theme-sublime": "4.9.4",
+    "@uiw/codemirror-theme-abcdef": "4.9.4",
     "@uiw/codemirror-themes": "4.9.4",
     "@uiw/react-codemirror": "4.9.4",
     "@uiw/react-github-corners": "~1.5.14",
