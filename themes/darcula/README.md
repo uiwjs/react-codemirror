@@ -6,6 +6,10 @@
 
 [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-darcula.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-darcula)
 
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/darcula">
+  <img width="436" alt="codemirror-theme-darcula" src="https://user-images.githubusercontent.com/1680273/176573321-3015b1b4-3455-497f-ad16-dd2090d7848d.png">
+</a>
+
 ## Install
 
 ```bash

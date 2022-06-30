@@ -6,6 +6,10 @@
 
 [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-abcdef.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-abcdef)
 
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/abcdef">
+  <img width="436" alt="codemirror-theme-abcdef" src="https://user-images.githubusercontent.com/1680273/176573508-705562ad-16ec-4b16-994e-f235a9331a3f.png">
+</a>
+
 ## Install
 
 ```bash

@@ -112,6 +112,60 @@ function App() {
 export default App;
 ```
 
+## Themes
+
+**abcdef**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/abcdef">
+  <img width="436" alt="codemirror-theme-abcdef" src="https://user-images.githubusercontent.com/1680273/176573508-705562ad-16ec-4b16-994e-f235a9331a3f.png">
+</a>
+
+**bespin**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/bespin">
+  <img width="436" alt="codemirror-theme-bespin" src="https://user-images.githubusercontent.com/1680273/176573408-0fd54981-471a-4ef8-91d4-8ad4b159c1e0.png">
+</a>
+
+**darcula**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/darcula">
+  <img width="436" alt="codemirror-theme-darcula" src="https://user-images.githubusercontent.com/1680273/176573321-3015b1b4-3455-497f-ad16-dd2090d7848d.png">
+</a>
+
+**dracula**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/dracula">
+  <img width="436" alt="codemirror-theme-dracula" src="https://user-images.githubusercontent.com/1680273/176573236-43928ba2-0eb1-4b59-9495-d39b6e3df81c.png">
+</a>
+
+**duotone**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/duotone/dark">
+  <img width="436" alt="codemirror-theme-duotone" src="https://user-images.githubusercontent.com/1680273/176572959-adfc1284-4c70-48df-8aeb-9a47ff76b2f2.png">
+</a>
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/duotone/light">
+  <img width="436" alt="codemirror-theme-duotone" src="https://user-images.githubusercontent.com/1680273/176573139-5c22ed62-6000-40da-b080-59c83e6181e2.png">
+</a>
+
+**eclipse**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/eclipse">
+  <img width="436" alt="codemirror-theme-eclipse" src="https://user-images.githubusercontent.com/1680273/176572785-4f56f11a-018b-4f86-9088-e6f71f745cfb.png">
+</a>
+
+**okaidia**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/okaidia">
+  <img width="436" alt="codemirror-theme-okaidia" src="https://user-images.githubusercontent.com/1680273/176572694-b9aface9-9646-4e0e-a211-a8aa92dabc31.png">
+</a>
+
+**sublime**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/sublime">
+  <img width="436" alt="codemirror-theme-sublime" src="https://user-images.githubusercontent.com/1680273/176572314-cc296f81-0763-485c-8fa2-7d61b24ad09b.png">
+</a>
+
 ## Props
 
 ```ts

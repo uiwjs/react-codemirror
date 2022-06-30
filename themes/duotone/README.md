@@ -6,6 +6,14 @@
 
 [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-duotone.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-duotone)
 
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/duotone/dark">
+  <img width="436" alt="codemirror-theme-duotone" src="https://user-images.githubusercontent.com/1680273/176572959-adfc1284-4c70-48df-8aeb-9a47ff76b2f2.png">
+</a>
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/duotone/light">
+  <img width="436" alt="codemirror-theme-duotone" src="https://user-images.githubusercontent.com/1680273/176573139-5c22ed62-6000-40da-b080-59c83e6181e2.png">
+</a>
+
 ## Install
 
 ```bash

@@ -6,6 +6,10 @@
 
 [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-okaidia.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-okaidia)
 
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/okaidia">
+  <img width="436" alt="codemirror-theme-okaidia" src="https://user-images.githubusercontent.com/1680273/176572694-b9aface9-9646-4e0e-a211-a8aa92dabc31.png">
+</a>
+
 ## Install
 
 ```bash

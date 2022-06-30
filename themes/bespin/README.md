@@ -6,6 +6,10 @@
 
 [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-bespin.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-bespin)
 
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/bespin">
+  <img width="436" alt="codemirror-theme-bespin" src="https://user-images.githubusercontent.com/1680273/176573408-0fd54981-471a-4ef8-91d4-8ad4b159c1e0.png">
+</a>
+
 ## Install
 
 ```bash

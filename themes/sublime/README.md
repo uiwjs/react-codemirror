@@ -6,6 +6,10 @@
 
 [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-sublime.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-sublime)
 
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/sublime">
+  <img width="436" alt="codemirror-theme-sublime" src="https://user-images.githubusercontent.com/1680273/176572314-cc296f81-0763-485c-8fa2-7d61b24ad09b.png">
+</a>
+
 ## Install
 
 ```bash

@@ -6,6 +6,10 @@
 
 [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-eclipse.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-eclipse)
 
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/eclipse">
+  <img width="436" alt="codemirror-theme-eclipse" src="https://user-images.githubusercontent.com/1680273/176572785-4f56f11a-018b-4f86-9088-e6f71f745cfb.png">
+</a>
+
 ## Install
 
 ```bash
