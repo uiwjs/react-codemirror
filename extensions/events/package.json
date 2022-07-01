@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-extensions-events",
-  "version": "4.9.6",
+  "version": "4.10.0",
   "description": "Events Extensions for CodeMirror6.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/extensions/events",
   "author": "kenny wong <wowohoo@qq.com>",
