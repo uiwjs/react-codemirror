@@ -169,7 +169,7 @@ export default function App() {
         </Github>
         <Npm.Version
           scope="@uiw"
-          packageName="react-shields"
+          packageName="react-codemirror"
           href="https://www.npmjs.com/package/@uiw/react-codemirror"
         />
       </Footer>

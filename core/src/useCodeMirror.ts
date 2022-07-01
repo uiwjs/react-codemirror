@@ -4,6 +4,7 @@ import { indentWithTab } from '@codemirror/commands';
 import { EditorView, keymap, ViewUpdate, placeholder } from '@codemirror/view';
 import { oneDark } from '@codemirror/theme-one-dark';
 import { basicSetup } from './basicSetup';
+import { getStatistics } from './utils';
 import { ReactCodeMirrorProps } from '.';
 
 export interface UseCodeMirror extends ReactCodeMirrorProps {
@@ -15,6 +16,7 @@ export function useCodeMirror(props: UseCodeMirror) {
     value,
     selection,
     onChange,
+    onStatistics,
     onUpdate,
     extensions = [],
     autoFocus,
@@ -61,6 +63,7 @@ export function useCodeMirror(props: UseCodeMirror) {
       const value = doc.toString();
       onChange(value, vu);
     }
+    onStatistics && onStatistics(getStatistics(vu));
   });
 
   let getExtensions = [updateListener, defaultThemeOption];

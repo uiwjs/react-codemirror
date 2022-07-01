@@ -2,10 +2,12 @@ import React, { useRef, forwardRef, useImperativeHandle } from 'react';
 import { EditorState, EditorStateConfig, Extension } from '@codemirror/state';
 import { EditorView, ViewUpdate } from '@codemirror/view';
 import { useCodeMirror } from './useCodeMirror';
+import { Statistics } from './utils';
 import { BasicSetupOptions } from './basicSetup';
 
 export * from './basicSetup';
 export * from './useCodeMirror';
+export * from './utils';
 
 export interface ReactCodeMirrorProps
   extends Omit<EditorStateConfig, 'doc' | 'extensions'>,
@@ -49,6 +51,8 @@ export interface ReactCodeMirrorProps
   indentWithTab?: boolean;
   /** Fired whenever a change occurs to the document. */
   onChange?(value: string, viewUpdate: ViewUpdate): void;
+  /** Some data on the statistics editor. */
+  onStatistics?(data: Statistics): void;
   /** Fired whenever any state change occurs within the editor, including non-document changes like lint results. */
   onUpdate?(viewUpdate: ViewUpdate): void;
   /**
@@ -78,6 +82,7 @@ const ReactCodeMirror = forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProps>((pr
     selection,
     extensions = [],
     onChange,
+    onStatistics,
     onUpdate,
     autoFocus,
     theme = 'light',
@@ -115,6 +120,7 @@ const ReactCodeMirror = forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProps>((pr
     readOnly,
     selection,
     onChange,
+    onStatistics,
     onUpdate,
     extensions,
   });

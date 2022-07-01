@@ -307,6 +307,8 @@ export interface ReactCodeMirrorProps
   indentWithTab?: boolean;
   /** Fired whenever a change occurs to the document. */
   onChange?(value: string, viewUpdate: ViewUpdate): void;
+  /** Some data on the statistics editor. */
+  onStatistics?(data: Statistics): void;
   /** Fired whenever any state change occurs within the editor, including non-document changes like lint results. */
   onUpdate?(viewUpdate: ViewUpdate): void;
   /**
@@ -357,6 +359,29 @@ export interface BasicSetupOptions {
   completionKeymap?: boolean;
   lintKeymap?: boolean;
 }
+```
+
+```ts
+import { EditorSelection, SelectionRange } from '@codemirror/state';
+import { ViewUpdate } from '@codemirror/view';
+export interface Statistics {
+  /** Get the number of lines in the editor. */
+  lineCount: number;
+  /** Cursor Position */
+  selection: EditorSelection;
+  /** Retrieves a list of all current selections. */
+  ranges: readonly SelectionRange[];
+  /** Get the currently selected code. */
+  selectionCode: string;
+  /**
+   * The length of the given array should be the same as the number of active selections.
+   * Replaces the content of the selections with the strings in the array.
+   */
+  selections: string[];
+  /** Return true if any text is selected. */
+  selectedText: boolean;
+}
+export declare const getStatistics: (view: ViewUpdate) => Statistics;
 ```
 
 ## Packages
