@@ -32,7 +32,7 @@ export function useCodeMirror(props: UseCodeMirror) {
     basicSetup: defaultBasicSetup = true,
     root,
   } = props;
-  const [container, setContainer] = useState(props.container);
+  const [container, setContainer] = useState<HTMLDivElement>();
   const [view, setView] = useState<EditorView>();
   const [state, setState] = useState<EditorState>();
   const defaultLightThemeOption = EditorView.theme(
@@ -122,11 +122,13 @@ export function useCodeMirror(props: UseCodeMirror) {
     }
     return () => {
       if (view) {
+        setState(undefined);
         setView(undefined);
       }
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [container, state]);
+
+  useEffect(() => setContainer(props.container!), [props.container]);
 
   useEffect(
     () => () => {

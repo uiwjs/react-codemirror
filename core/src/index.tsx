@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useImperativeHandle } from 'react';
+import React, { useRef, forwardRef, useImperativeHandle } from 'react';
 import { EditorState, EditorStateConfig, Extension } from '@codemirror/state';
 import { EditorView, ViewUpdate } from '@codemirror/view';
 import { useCodeMirror } from './useCodeMirror';
@@ -71,7 +71,7 @@ export interface ReactCodeMirrorRef {
   view?: EditorView;
 }
 
-const ReactCodeMirror = React.forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProps>((props, ref) => {
+const ReactCodeMirror = forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProps>((props, ref) => {
   const {
     className,
     value = '',
@@ -118,11 +118,13 @@ const ReactCodeMirror = React.forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProp
     onUpdate,
     extensions,
   });
-  useImperativeHandle(ref, () => ({ editor: container, state, view }), [container, state, view]);
-  useEffect(() => {
-    setContainer(editor.current);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+
+  useImperativeHandle(ref, () => ({ editor: editor.current, state: state, view: view }), [
+    editor,
+    container,
+    state,
+    view,
+  ]);
 
   // check type of value
   if (typeof value !== 'string') {
