@@ -14,6 +14,8 @@ export interface Statistics {
   tabSize: number;
   /** Cursor Position */
   selection: EditorSelection;
+  /** Make sure the selection only has one range. */
+  selectionAsSingle: SelectionRange;
   /** Retrieves a list of all current selections. */
   ranges: readonly SelectionRange[];
   /** Get the currently selected code. */
@@ -34,6 +36,7 @@ export const getStatistics = (view: ViewUpdate): Statistics => ({
   readOnly: view.state.readOnly,
   tabSize: view.state.tabSize,
   selection: view.state.selection,
+  selectionAsSingle: view.state.selection.asSingle().main,
   ranges: view.state.selection.ranges,
   selectionCode: view.state.sliceDoc(view.state.selection.main.from, view.state.selection.main.to),
   selections: view.state.selection.ranges.map((r) => view.state.sliceDoc(r.from, r.to)),

@@ -377,6 +377,8 @@ export interface Statistics {
   tabSize: number;
   /** Cursor Position */
   selection: EditorSelection;
+  /** Make sure the selection only has one range. */
+  selectionAsSingle: SelectionRange;
   /** Retrieves a list of all current selections. */
   ranges: readonly SelectionRange[];
   /** Get the currently selected code. */
