@@ -203,9 +203,11 @@ const myTheme = createTheme({
     foreground: '${styles.foreground}',
     caret: '${styles.caret}',
     selection: '${styles.selection}',
-    lineHighlight: '${styles.lineHighlight}',
+    selectionMatch: '${styles.selectionMatch}',
     gutterBackground: '${styles.gutterBackground}',
     gutterForeground: '${styles.gutterForeground}',
+    gutterBorder: '${styles.gutterBorder}',
+    lineHighlight: '${styles.lineHighlight}',
   },
   styles: [
     ${data.join('\n    ')}

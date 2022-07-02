@@ -203,6 +203,8 @@ export interface Settings {
   gutterBackground: string;
   /** Text color inside gutter. */
   gutterForeground: string;
+  /** Gutter right border color. */
+  gutterBorder: string;
 }
 declare const createTheme: ({ dark, settings, styles }: CreateThemeOptions) => Extension;
 export default createTheme;

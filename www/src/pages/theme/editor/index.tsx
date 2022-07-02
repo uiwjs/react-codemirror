@@ -78,6 +78,7 @@ export function ThemeEditor() {
     selectionMatch: '#D6D6D6',
     gutterBackground: '#FFFFFF',
     gutterForeground: '#4D4D4C',
+    gutterBorder: '#ddd',
     lineHighlight: '#EFEFEF',
   });
 

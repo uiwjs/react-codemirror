@@ -35,6 +35,8 @@ export interface Settings {
   gutterBackground: string;
   /** Text color inside gutter. */
   gutterForeground: string;
+  /** Gutter right border color. */
+  gutterBorder: string;
 }
 
 export const createTheme = ({ theme, settings, styles }: CreateThemeOptions): Extension => {
@@ -55,6 +57,7 @@ export const createTheme = ({ theme, settings, styles }: CreateThemeOptions): Ex
     '.cm-gutters': {
       backgroundColor: settings.gutterBackground,
       color: settings.gutterForeground,
+      borderRightColor: settings.gutterBorder,
     },
     '.cm-activeLineGutter': {
       backgroundColor: settings.lineHighlight,
