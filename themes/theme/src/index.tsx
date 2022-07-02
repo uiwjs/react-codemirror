@@ -24,19 +24,19 @@ export interface Settings {
   /** Default text color. */
   foreground: string;
   /** Caret color. */
-  caret: string;
+  caret?: string;
   /** Selection background. */
-  selection: string;
+  selection?: string;
   /** Selection match background. */
   selectionMatch?: string;
   /** Background of highlighted lines. */
-  lineHighlight: string;
+  lineHighlight?: string;
   /** Gutter background. */
-  gutterBackground: string;
+  gutterBackground?: string;
   /** Text color inside gutter. */
-  gutterForeground: string;
+  gutterForeground?: string;
   /** Gutter right border color. */
-  gutterBorder: string;
+  gutterBorder?: string;
 }
 
 export const createTheme = ({ theme, settings, styles }: CreateThemeOptions): Extension => {
@@ -45,24 +45,37 @@ export const createTheme = ({ theme, settings, styles }: CreateThemeOptions): Ex
       backgroundColor: settings.background,
       color: settings.foreground,
     },
-    '.cm-content': {
-      caretColor: settings.caret,
-    },
-    '.cm-cursor, .cm-dropCursor': {
-      borderLeftColor: settings.caret,
-    },
-    '.cm-activeLine': {
-      backgroundColor: settings.lineHighlight,
-    },
-    '.cm-gutters': {
-      backgroundColor: settings.gutterBackground,
-      color: settings.gutterForeground,
-      borderRightColor: settings.gutterBorder,
-    },
-    '.cm-activeLineGutter': {
-      backgroundColor: settings.lineHighlight,
-    },
+    '.cm-gutters': {},
   };
+
+  if (settings.gutterBackground) {
+    themeOptions['.cm-gutters'].backgroundColor = settings.gutterBackground;
+  }
+  if (settings.gutterForeground) {
+    themeOptions['.cm-gutters'].color = settings.gutterForeground;
+  }
+  if (settings.gutterBorder) {
+    themeOptions['.cm-gutters'].borderRightColor = settings.gutterBorder;
+  }
+
+  if (settings.caret) {
+    themeOptions['.cm-content'] = {
+      caretColor: settings.caret,
+    };
+    themeOptions['.cm-cursor, .cm-dropCursor'] = {
+      borderLeftColor: settings.caret,
+    };
+  }
+
+  if (settings.lineHighlight) {
+    themeOptions['.cm-activeLine'] = {
+      backgroundColor: settings.lineHighlight,
+    };
+    themeOptions['.cm-activeLineGutter'] = {
+      backgroundColor: settings.lineHighlight,
+    };
+  }
+
   if (settings.selection) {
     themeOptions[
       '&.cm-focused .cm-selectionBackground .cm-selectionBackground, & .cm-selectionLayer .cm-selectionBackground, ::selection'
