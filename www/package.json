@@ -44,6 +44,7 @@
     "@uiw/codemirror-theme-dracula": "4.10.4",
     "@uiw/codemirror-theme-duotone": "4.10.4",
     "@uiw/codemirror-theme-eclipse": "4.10.4",
+    "@uiw/codemirror-theme-github": "4.10.4",
     "@uiw/codemirror-theme-okaidia": "4.10.4",
     "@uiw/codemirror-theme-sublime": "4.10.4",
     "@uiw/codemirror-themes": "4.10.4",

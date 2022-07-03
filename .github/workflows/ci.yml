@@ -129,6 +129,12 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./themes/eclipse/package.json
 
+      - name: 📦 @uiw/codemirror-theme-github publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./themes/github/package.json
+
       - name: 📦 @uiw/codemirror-theme-darcula publish to NPM
         uses: JS-DevTools/npm-publish@v1
         with:
@@ -254,6 +260,18 @@ jobs:
 
       - run: npm publish
         working-directory: themes/eclipse
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Modify @uiw/codemirror-theme-github => @uiwjs/codemirror-theme-github
+        uses: jaywcjlove/github-action-package@main
+        with:
+          path: themes/github/package.json
+          data: |
+            { "name": "@uiwjs/codemirror-theme-github" }
+
+      - run: npm publish
+        working-directory: themes/github
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
