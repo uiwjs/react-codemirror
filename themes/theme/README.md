@@ -141,17 +141,27 @@ export default App;
 **duotone**
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/duotone/dark">
-  <img width="436" alt="codemirror-theme-duotone" src="https://user-images.githubusercontent.com/1680273/176572959-adfc1284-4c70-48df-8aeb-9a47ff76b2f2.png">
+  <img width="436" alt="codemirror-theme-duotone dark" src="https://user-images.githubusercontent.com/1680273/176572959-adfc1284-4c70-48df-8aeb-9a47ff76b2f2.png">
 </a>
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/duotone/light">
-  <img width="436" alt="codemirror-theme-duotone" src="https://user-images.githubusercontent.com/1680273/176573139-5c22ed62-6000-40da-b080-59c83e6181e2.png">
+  <img width="436" alt="codemirror-theme-duotone light" src="https://user-images.githubusercontent.com/1680273/176573139-5c22ed62-6000-40da-b080-59c83e6181e2.png">
 </a>
 
 **eclipse**
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/eclipse">
   <img width="436" alt="codemirror-theme-eclipse" src="https://user-images.githubusercontent.com/1680273/176572785-4f56f11a-018b-4f86-9088-e6f71f745cfb.png">
+</a>
+
+**eclipse**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/github/dark">
+  <img width="436" alt="codemirror-theme-github dark" src="https://user-images.githubusercontent.com/1680273/177048035-644af599-aaf1-41d8-86ea-9ea8c3a1a0c5.png">
+</a>
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/github/light">
+  <img width="436" alt="codemirror-theme-github light" src="https://user-images.githubusercontent.com/1680273/177048005-32794f23-8bff-4059-babf-21316d886e65.png">
 </a>
 
 **okaidia**
