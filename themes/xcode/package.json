@@ -1,0 +1,35 @@
+{
+  "name": "@uiw/codemirror-theme-xcode",
+  "version": "4.10.4",
+  "description": "Theme xcode for CodeMirror.",
+  "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/xcode/light",
+  "author": "kenny wong <wowohoo@qq.com>",
+  "license": "MIT",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "scripts": {
+    "watch": "tsbb watch",
+    "build": "tsbb build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://xcode.com/uiwjs/react-codemirror.git"
+  },
+  "files": [
+    "src",
+    "esm",
+    "cjs"
+  ],
+  "dependencies": {
+    "@uiw/codemirror-themes": "4.10.4"
+  },
+  "keywords": [
+    "codemirror",
+    "codemirror6",
+    "theme",
+    "xcode",
+    "syntax",
+    "ide",
+    "code"
+  ]
+}

@@ -16,6 +16,7 @@ import goStr from 'code-example/txt/sample.go.txt';
 import mysqlStr from 'code-example/txt/sample.mysql.txt';
 import pythonStr from 'code-example/txt/sample.python.txt';
 import shellStr from 'code-example/txt/sample.shell.txt';
+import swiftStr from 'code-example/txt/sample.swift.txt';
 import markdownStr from 'code-example/txt/sample.markdown.txt';
 import { langs } from '../../../langs';
 
@@ -66,6 +67,8 @@ export const Sample: FC<PropsWithoutRef<SampleProps>> = ({ theme, ...props }) =>
       <CodeMirror value={pythonStr} height="300px" theme={theme} extensions={[langs.python()]} />
       <Title>Shell</Title>
       <CodeMirror value={shellStr} height="300px" theme={theme} extensions={[langs.shell()]} />
+      <Title>Swift</Title>
+      <CodeMirror value={swiftStr} height="300px" theme={theme} extensions={[langs.swift()]} />
     </Warpper>
   );
 };

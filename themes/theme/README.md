@@ -154,7 +154,7 @@ export default App;
   <img width="436" alt="codemirror-theme-eclipse" src="https://user-images.githubusercontent.com/1680273/176572785-4f56f11a-018b-4f86-9088-e6f71f745cfb.png">
 </a>
 
-**eclipse**
+**github**
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/github/dark">
   <img width="436" alt="codemirror-theme-github dark" src="https://user-images.githubusercontent.com/1680273/177048035-644af599-aaf1-41d8-86ea-9ea8c3a1a0c5.png">
@@ -174,6 +174,16 @@ export default App;
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/sublime">
   <img width="436" alt="codemirror-theme-sublime" src="https://user-images.githubusercontent.com/1680273/176572314-cc296f81-0763-485c-8fa2-7d61b24ad09b.png">
+</a>
+
+**xcode**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/xcode/dark">
+  <img width="436" alt="codemirror-theme-xcode dark" src="https://user-images.githubusercontent.com/1680273/177074703-4c5c6be0-e287-45ac-b6cc-db1568276e73.png">
+</a>
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/xcode/light">
+  <img width="436" alt="codemirror-theme-xcode light" src="https://user-images.githubusercontent.com/1680273/177074770-691c92ff-d7b6-4701-80e9-f4836e442185.png">
 </a>
 
 ## Props

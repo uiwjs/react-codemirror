@@ -7,6 +7,7 @@ import githubMd from '@uiw/codemirror-theme-github/README.md';
 import eclipseMd from '@uiw/codemirror-theme-eclipse/README.md';
 import bespinMd from '@uiw/codemirror-theme-bespin/README.md';
 import sublimeMd from '@uiw/codemirror-theme-sublime/README.md';
+import xcodeMd from '@uiw/codemirror-theme-xcode/README.md';
 
 import { abcdef } from '@uiw/codemirror-theme-abcdef';
 import { okaidia } from '@uiw/codemirror-theme-okaidia';
@@ -17,6 +18,7 @@ import { bespin } from '@uiw/codemirror-theme-bespin';
 import { duotoneLight, duotoneDark } from '@uiw/codemirror-theme-duotone';
 import { githubLight, githubDark } from '@uiw/codemirror-theme-github';
 import { sublime } from '@uiw/codemirror-theme-sublime';
+import { xcodeLight, xcodeDark } from '@uiw/codemirror-theme-xcode';
 
 export const mdSource = {
   abcdef: abcdefMd.source,
@@ -30,6 +32,7 @@ export const mdSource = {
   githubDark: githubMd.source,
   okaidia: okaidiaMd.source,
   sublime: sublimeMd.source,
+  xcode: xcodeMd.source,
 };
 
 export const themeData = {
@@ -44,4 +47,6 @@ export const themeData = {
   githubDark,
   okaidia,
   sublime,
+  xcodeLight,
+  xcodeDark,
 };

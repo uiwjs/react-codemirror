@@ -1,0 +1,75 @@
+<!--rehype:ignore:start-->
+
+# Github Theme
+
+<!--rehype:ignore:end-->
+
+[![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-xcode.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-xcode)
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/xcode/dark">
+  <img width="436" alt="codemirror-theme-xcode dark" src="https://user-images.githubusercontent.com/1680273/177074703-4c5c6be0-e287-45ac-b6cc-db1568276e73.png">
+</a>
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/xcode/light">
+  <img width="436" alt="codemirror-theme-xcode light" src="https://user-images.githubusercontent.com/1680273/177074770-691c92ff-d7b6-4701-80e9-f4836e442185.png">
+</a>
+
+## Install
+
+```bash
+npm install @uiw/codemirror-theme-xcode --save
+```
+
+## Usage
+
+```jsx
+import CodeMirror from '@uiw/react-codemirror';
+import { xcodeLight, xcodeDark } from '@uiw/codemirror-theme-xcode';
+import { javascript } from '@codemirror/lang-javascript';
+
+function App() {
+  return (
+    <CodeMirror
+      value="console.log('hello world!');"
+      height="200px"
+      theme={xcodeLight}
+      extensions={[javascript({ jsx: true })]}
+      onChange={(value, viewUpdate) => {
+        console.log('value:', value);
+      }}
+    />
+  );
+}
+export default App;
+```
+
+```js
+import { EditorView } from '@codemirror/view';
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { xcodeLight, xcodeDark } from '@uiw/codemirror-theme-xcode';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [xcodeDark, javascript({ jsx: true })],
+});
+
+const view = new EditorView({
+  parent: document.querySelector('#editor'),
+  state,
+});
+```
+
+## Contributors
+
+As always, thanks to our amazing contributors!
+
+<a href="https://github.com/uiwjs/react-codemirror/graphs/contributors">
+  <img src="https://uiwjs.github.io/react-codemirror/CONTRIBUTORS.svg" />
+</a>
+
+Made with [action-contributors](https://github.com/jaywcjlove/github-action-contributors).
+
+## License
+
+Licensed under the MIT License.
