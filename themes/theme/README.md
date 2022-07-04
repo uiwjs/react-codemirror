@@ -183,7 +183,7 @@ export default App;
 </a>
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/xcode/light">
-  <img width="436" alt="codemirror-theme-xcode light" src="https://user-images.githubusercontent.com/1680273/177074770-691c92ff-d7b6-4701-80e9-f4836e442185.png">
+  <img width="436" alt="codemirror-theme-xcode light" src="https://user-images.githubusercontent.com/1680273/177077462-2046096f-a31c-4dee-b9bb-2fcaaa87a844.png">
 </a>
 
 ## Props

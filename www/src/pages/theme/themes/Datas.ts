@@ -32,7 +32,8 @@ export const mdSource = {
   githubDark: githubMd.source,
   okaidia: okaidiaMd.source,
   sublime: sublimeMd.source,
-  xcode: xcodeMd.source,
+  xcodeLight: xcodeMd.source,
+  xcodeDark: xcodeMd.source,
 };
 
 export const themeData = {
