@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://uiwjs.github.io/react-codemirror/">
+    <img alt="react-codemirror logo" src="https://user-images.githubusercontent.com/1680273/177489690-d587ec69-348c-4c8f-8f86-c1d0d2063a81.svg">
+  </a>
+</p>
+
 # react-codemirror
 
 [![jsdelivr CDN](https://data.jsdelivr.com/v1/package/npm/@uiw/react-codemirror/badge)](https://www.jsdelivr.com/package/npm/@uiw/react-codemirror)
@@ -9,8 +15,6 @@
 [![Open in Gitpod](https://shields.io/badge/Open%20in-Gitpod-green?logo=Gitpod)](https://gitpod.io/#https://github.com/uiwjs/react-codemirror)
 
 CodeMirror component for React. Demo Preview: [@uiwjs.github.io/react-codemirror](https://uiwjs.github.io/react-codemirror/)
-
-<!--dividing-->
 
 > ⚠️ The [`v3`](https://raw.githack.com/uiwjs/react-codemirror/doc3/index.html) version document preview is [here](https://raw.githack.com/uiwjs/react-codemirror/doc3/index.html).
 
