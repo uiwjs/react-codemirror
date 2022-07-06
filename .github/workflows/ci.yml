@@ -111,6 +111,12 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./themes/abcdef/package.json
 
+      - name: 📦 @uiw/codemirror-theme-androidstudio publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./themes/androidstudio/package.json
+
       - name: 📦 @uiw/codemirror-theme-dracula publish to NPM
         uses: JS-DevTools/npm-publish@v1
         with:
@@ -216,6 +222,19 @@ jobs:
 
       - run: npm publish
         working-directory: themes/abcdef
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+
+      - name: Modify @uiw/codemirror-theme-androidstudio => @uiwjs/codemirror-theme-androidstudio
+        uses: jaywcjlove/github-action-package@main
+        with:
+          path: themes/androidstudio/package.json
+          data: |
+            { "name": "@uiwjs/codemirror-theme-androidstudio" }
+
+      - run: npm publish
+        working-directory: themes/androidstudio
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
