@@ -7,7 +7,7 @@
 [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-androidstudio.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-androidstudio)
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/androidstudio">
-  <img width="436" alt="codemirror-theme-androidstudio" src="https://user-images.githubusercontent.com/1680273/176573508-705562ad-16ec-4b16-994e-f235a9331a3f.png">
+  <img width="436" alt="codemirror-theme-androidstudio" src="https://user-images.githubusercontent.com/1680273/177484354-0a4fa43e-de96-409f-83e2-61808f2347e6.png">
 </a>
 
 ## Install

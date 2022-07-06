@@ -186,6 +186,12 @@ export default App;
   <img width="436" alt="codemirror-theme-xcode light" src="https://user-images.githubusercontent.com/1680273/177077462-2046096f-a31c-4dee-b9bb-2fcaaa87a844.png">
 </a>
 
+**android studio**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/xcode/light">
+  <img width="436" alt="codemirror-theme-androidstudio" src="https://user-images.githubusercontent.com/1680273/177484354-0a4fa43e-de96-409f-83e2-61808f2347e6.png">
+</a>
+
 ## Props
 
 ```ts
