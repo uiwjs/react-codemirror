@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://uiwjs.github.io/react-codemirror/">
-    <img alt="react-codemirror logo" src="https://user-images.githubusercontent.com/1680273/177489690-d587ec69-348c-4c8f-8f86-c1d0d2063a81.svg">
+    <img alt="react-codemirror logo" src="https://user-images.githubusercontent.com/1680273/177491470-c31a6d7e-f676-4914-a027-2fbeebfeb5b4.svg">
   </a>
 </p>
 
