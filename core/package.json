@@ -28,6 +28,9 @@
   ],
   "peerDependencies": {
     "@babel/runtime": ">=7.11.0",
+    "@codemirror/view": ">=6.0.0",
+    "@codemirror/theme-one-dark": ">=6.0.0",
+    "codemirror": ">=6.0.0",
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
   },

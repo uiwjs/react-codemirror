@@ -20,7 +20,10 @@
     "esm",
     "cjs"
   ],
-  "dependencies": {
+  "peerDependencies": {
+    "@codemirror/view": ">=6.0.0"
+  },
+  "devDependencies": {
     "@codemirror/view": "^6.0.0"
   },
   "keywords": [
