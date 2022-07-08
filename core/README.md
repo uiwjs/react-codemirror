@@ -313,6 +313,8 @@ export interface ReactCodeMirrorProps
   onChange?(value: string, viewUpdate: ViewUpdate): void;
   /** Some data on the statistics editor. */
   onStatistics?(data: Statistics): void;
+  /** The first time the editor executes the event. */
+  onCreateEditor?(view: EditorView, state: EditorState): void;
   /** Fired whenever any state change occurs within the editor, including non-document changes like lint results. */
   onUpdate?(viewUpdate: ViewUpdate): void;
   /**

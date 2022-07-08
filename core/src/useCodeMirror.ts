@@ -17,6 +17,7 @@ export function useCodeMirror(props: UseCodeMirror) {
     selection,
     onChange,
     onStatistics,
+    onCreateEditor,
     onUpdate,
     extensions = [],
     autoFocus,
@@ -121,6 +122,7 @@ export function useCodeMirror(props: UseCodeMirror) {
           root,
         });
         setView(viewCurrent);
+        onCreateEditor && onCreateEditor(viewCurrent, stateCurrent);
       }
     }
     return () => {

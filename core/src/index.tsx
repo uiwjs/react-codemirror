@@ -55,6 +55,8 @@ export interface ReactCodeMirrorProps
   onStatistics?(data: Statistics): void;
   /** Fired whenever any state change occurs within the editor, including non-document changes like lint results. */
   onUpdate?(viewUpdate: ViewUpdate): void;
+  /** The first time the editor executes the event. */
+  onCreateEditor?(view: EditorView, state: EditorState): void;
   /**
    * Extension values can be [provided](https://codemirror.net/6/docs/ref/#state.EditorStateConfig.extensions) when creating a state to attach various kinds of configuration and behavior information.
    * They can either be built-in extension-providing objects,
@@ -83,6 +85,7 @@ const ReactCodeMirror = forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProps>((pr
     extensions = [],
     onChange,
     onStatistics,
+    onCreateEditor,
     onUpdate,
     autoFocus,
     theme = 'light',
@@ -121,6 +124,7 @@ const ReactCodeMirror = forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProps>((pr
     selection,
     onChange,
     onStatistics,
+    onCreateEditor,
     onUpdate,
     extensions,
   });
