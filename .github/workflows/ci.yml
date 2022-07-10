@@ -170,6 +170,12 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./extensions/events/package.json
 
+      - name: 📦 @uiw/codemirror-extensions-color to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./extensions/color/package.json
+
     outputs:
       successful: ${{steps.create_tag.outputs.successful }}
 
@@ -356,5 +362,17 @@ jobs:
 
       - run: npm publish
         working-directory: extensions/events
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Modify @uiw/codemirror-extensions-color => @uiwjs/codemirror-extensions-color
+        uses: jaywcjlove/github-action-package@main
+        with:
+          path: extensions/color/package.json
+          data: |
+            { "name": "@uiwjs/codemirror-extensions-color" }
+
+      - run: npm publish
+        working-directory: extensions/color
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
