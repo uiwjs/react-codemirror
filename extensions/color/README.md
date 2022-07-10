@@ -4,7 +4,7 @@
 
 <!--rehype:ignore:end-->
 
-[![npm version](https://img.shields.io/npm/v/@uiw/codemirror-extensions-events.svg)](https://www.npmjs.com/package/@uiw/codemirror-extensions-events)
+[![npm version](https://img.shields.io/npm/v/@uiw/codemirror-extensions-color.svg)](https://www.npmjs.com/package/@uiw/codemirror-extensions-color)
 
 Color Extensions for CodeMirror6.
 
