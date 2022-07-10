@@ -19,7 +19,7 @@ export const ExtensionsLayout = () => {
         </Title>
         <Tools>
           <Link to="/">Home</Link>
-          <Link to="/extensions/events">Events</Link>
+          <Link to="/extensions">Extensions</Link>
           <Link to="/theme/data">Themes</Link>
           <dark-mode permanent />
         </Tools>

@@ -1,5 +1,6 @@
 import { FC, PropsWithChildren, useEffect, useState } from 'react';
 import MarkdownPreview from '@uiw/react-markdown-preview';
+import { color } from '@uiw/codemirror-extensions-color';
 import DocumentStr from '@uiw/react-codemirror/README.md';
 import { Extension } from '@codemirror/state';
 import CodeMirror, { ReactCodeMirrorProps, BasicSetupOptions } from '@uiw/react-codemirror';
@@ -77,15 +78,15 @@ export default function Example() {
         .then((data) => {
           setCode(data.default);
           if (langs[lang]) {
-            setExtensions([langs[lang]()]);
+            setExtensions([color, langs[lang]()]);
           }
           setMode(lang);
         })
         .catch((err) => {
           if (langs[lang]) {
-            setExtensions([langs[lang]()]);
+            setExtensions([color, langs[lang]()]);
           } else {
-            setExtensions([]);
+            setExtensions([color]);
           }
           setMode(lang);
           setCode('');

@@ -1,6 +1,7 @@
 import { Fragment, useState } from 'react';
 import { Extension } from '@codemirror/state';
 import CodeMirror from '@uiw/react-codemirror';
+import { color } from '@uiw/codemirror-extensions-color';
 import styled from 'styled-components';
 import { useParams, useNavigate } from 'react-router-dom';
 import '@wcj/dark-mode';
@@ -213,7 +214,7 @@ export function ThemeEditor() {
           <CodeMirror
             readOnly={lang === 'code'}
             theme={myTheme}
-            extensions={[extension]}
+            extensions={[extension, color]}
             value={lang === 'code' ? themeCode({ ...settings, ...styles, dark: theme }) : code}
             height="100%"
             style={{ minHeight: '100%' }}
