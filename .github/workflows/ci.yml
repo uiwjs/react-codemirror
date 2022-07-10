@@ -203,7 +203,7 @@ jobs:
 
       - run: npm publish
         working-directory: core
-        if: always()
+        if: ${{ always() }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
@@ -216,7 +216,7 @@ jobs:
 
       - run: npm publish
         working-directory: themes/theme
-        if: always()
+        if: ${{ always() }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
@@ -229,7 +229,7 @@ jobs:
 
       - run: npm publish
         working-directory: themes/abcdef
-        if: always()
+        if: ${{ always() }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
@@ -243,7 +243,7 @@ jobs:
 
       - run: npm publish
         working-directory: themes/androidstudio
-        if: always()
+        if: ${{ always() }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
@@ -257,7 +257,7 @@ jobs:
 
       - run: npm publish
         working-directory: themes/okaidia
-        if: always()
+        if: ${{ always() }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
@@ -270,7 +270,7 @@ jobs:
 
       - run: npm publish
         working-directory: themes/dracula
-        if: always()
+        if: ${{ always() }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
@@ -284,7 +284,7 @@ jobs:
 
       - run: npm publish
         working-directory: themes/duotone
-        if: always()
+        if: ${{ always() }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
@@ -297,7 +297,7 @@ jobs:
 
       - run: npm publish
         working-directory: themes/eclipse
-        if: always()
+        if: ${{ always() }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
@@ -310,7 +310,7 @@ jobs:
 
       - run: npm publish
         working-directory: themes/github
-        if: always()
+        if: ${{ always() }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
@@ -323,7 +323,7 @@ jobs:
 
       - run: npm publish
         working-directory: themes/darcula
-        if: always()
+        if: ${{ always() }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
@@ -336,7 +336,7 @@ jobs:
 
       - run: npm publish
         working-directory: themes/bespin
-        if: always()
+        if: ${{ always() }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
@@ -349,7 +349,7 @@ jobs:
 
       - run: npm publish
         working-directory: themes/sublime
-        if: always()
+        if: ${{ always() }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
@@ -362,7 +362,7 @@ jobs:
 
       - run: npm publish
         working-directory: themes/xcode
-        if: always()
+        if: ${{ always() }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
@@ -375,7 +375,7 @@ jobs:
 
       - run: npm publish
         working-directory: extensions/events
-        if: always()
+        if: ${{ always() }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
@@ -388,6 +388,6 @@ jobs:
 
       - run: npm publish
         working-directory: extensions/color
-        if: always()
+        if: ${{ always() }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
