@@ -69,7 +69,7 @@ root.render(
         <Route path="doc" element={<ThemeDoc />} />
       </Route>
       <Route path="/extensions/" element={<ExtensionsLayout />}>
-        <Route index element={<Navigate to="events" replace />} />
+        <Route index element={<Navigate to="color" replace />} />
         <Route path="color" element={<ColorDoc />} />
         <Route path="events" element={<EventsDoc />} />
         <Route path="line-numbers-relative" element={<LineNumbersRelativeDoc />} />
