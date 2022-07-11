@@ -16,7 +16,8 @@ import { themeCode } from './themeCode';
 import { Sample } from '../themes/Sample';
 
 export const Sider = styled.div`
-  width: 245px;
+  width: 220px;
+  min-width: 220px;
   overflow: auto;
   height: calc(100vh - 42px);
   padding: 18px 16px 120px 16px;

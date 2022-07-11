@@ -8,7 +8,7 @@
 
 Relative line numbers Extensions for CodeMirror6.
 
-[![Relative line numbers Extensions](https://user-images.githubusercontent.com/1680273/178179301-bbb70117-8d16-453e-b723-12efc132a3d1.png)](https://uiwjs.github.io/react-codemirror/#/extensions/line-numbers-relative)
+[![Relative line numbers Extensions](https://user-images.githubusercontent.com/1680273/178180348-c53b4b91-527c-4a90-9e60-20269ef9a598.png)](https://uiwjs.github.io/react-codemirror/#/extensions/line-numbers-relative)
 
 ## Install
 
