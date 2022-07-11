@@ -196,6 +196,7 @@ jobs:
 
       - name: "Modify @uiw/react-codemirror => @uiwjs/react-codemirror"
         uses: jaywcjlove/github-action-package@main
+        if: success() || failure()
         with:
           path: core/package.json
           data: |
@@ -209,6 +210,7 @@ jobs:
 
       - name: Modify @uiw/codemirror-themes => @uiwjs/codemirror-themes
         uses: jaywcjlove/github-action-package@main
+        if: success() || failure()
         with:
           path: themes/theme/package.json
           data: |
@@ -222,6 +224,7 @@ jobs:
 
       - name: Modify @uiw/codemirror-theme-abcdef => @uiwjs/codemirror-theme-abcdef
         uses: jaywcjlove/github-action-package@main
+        if: success() || failure()
         with:
           path: themes/abcdef/package.json
           data: |
@@ -236,6 +239,7 @@ jobs:
 
       - name: Modify @uiw/codemirror-theme-androidstudio => @uiwjs/codemirror-theme-androidstudio
         uses: jaywcjlove/github-action-package@main
+        if: success() || failure()
         with:
           path: themes/androidstudio/package.json
           data: |
@@ -250,6 +254,7 @@ jobs:
 
       - name: Modify @uiw/codemirror-theme-okaidia => @uiwjs/codemirror-theme-okaidia
         uses: jaywcjlove/github-action-package@main
+        if: success() || failure()
         with:
           path: themes/okaidia/package.json
           data: |
@@ -263,6 +268,7 @@ jobs:
 
       - name: Modify @uiw/codemirror-theme-dracula => @uiwjs/codemirror-theme-dracula
         uses: jaywcjlove/github-action-package@main
+        if: success() || failure()
         with:
           path: themes/dracula/package.json
           data: |
@@ -277,6 +283,7 @@ jobs:
 
       - name: Modify @uiw/codemirror-theme-duotone => @uiwjs/codemirror-theme-duotone
         uses: jaywcjlove/github-action-package@main
+        if: success() || failure()
         with:
           path: themes/duotone/package.json
           data: |
@@ -290,6 +297,7 @@ jobs:
 
       - name: Modify @uiw/codemirror-theme-eclipse => @uiwjs/codemirror-theme-eclipse
         uses: jaywcjlove/github-action-package@main
+        if: success() || failure()
         with:
           path: themes/eclipse/package.json
           data: |
@@ -303,6 +311,7 @@ jobs:
 
       - name: Modify @uiw/codemirror-theme-github => @uiwjs/codemirror-theme-github
         uses: jaywcjlove/github-action-package@main
+        if: success() || failure()
         with:
           path: themes/github/package.json
           data: |
@@ -316,6 +325,7 @@ jobs:
 
       - name: Modify @uiw/codemirror-theme-darcula => @uiwjs/codemirror-theme-darcula
         uses: jaywcjlove/github-action-package@main
+        if: success() || failure()
         with:
           path: themes/darcula/package.json
           data: |
@@ -329,6 +339,7 @@ jobs:
 
       - name: Modify @uiw/codemirror-theme-bespin => @uiwjs/codemirror-theme-bespin
         uses: jaywcjlove/github-action-package@main
+        if: success() || failure()
         with:
           path: themes/bespin/package.json
           data: |
@@ -342,6 +353,7 @@ jobs:
 
       - name: Modify @uiw/codemirror-theme-sublime => @uiwjs/codemirror-theme-sublime
         uses: jaywcjlove/github-action-package@main
+        if: success() || failure()
         with:
           path: themes/sublime/package.json
           data: |
@@ -355,6 +367,7 @@ jobs:
 
       - name: Modify @uiw/codemirror-theme-xcode => @uiwjs/codemirror-theme-xcode
         uses: jaywcjlove/github-action-package@main
+        if: success() || failure()
         with:
           path: themes/xcode/package.json
           data: |
@@ -368,6 +381,7 @@ jobs:
 
       - name: Modify @uiw/codemirror-extensions-events => @uiwjs/codemirror-extensions-events
         uses: jaywcjlove/github-action-package@main
+        if: success() || failure()
         with:
           path: extensions/events/package.json
           data: |
@@ -381,6 +395,7 @@ jobs:
 
       - name: Modify @uiw/codemirror-extensions-color => @uiwjs/codemirror-extensions-color
         uses: jaywcjlove/github-action-package@main
+        if: success() || failure()
         with:
           path: extensions/color/package.json
           data: |
