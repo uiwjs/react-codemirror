@@ -176,6 +176,12 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./extensions/color/package.json
 
+      - name: 📦 @uiw/codemirror-extensions-hyper-link to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./extensions/hyper-link/package.json
+
       - name: 📦 @uiw/codemirror-extensions-line-numbers-relative to NPM
         uses: JS-DevTools/npm-publish@v1
         with:
@@ -423,6 +429,20 @@ jobs:
 
       - run: npm publish
         working-directory: extensions/line-numbers-relative
+        if: success() || failure()
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Modify @uiw/codemirror-extensions-hyper-link => @uiwjs/codemirror-extensions-hyper-link
+        uses: jaywcjlove/github-action-package@main
+        if: success() || failure()
+        with:
+          path: extensions/hyper-link/package.json
+          data: |
+            { "name": "@uiwjs/codemirror-extensions-hyper-link" }
+
+      - run: npm publish
+        working-directory: extensions/hyper-link
         if: success() || failure()
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

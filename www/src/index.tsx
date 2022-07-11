@@ -10,6 +10,7 @@ import { ThemeOkaidia } from './pages/theme/themes';
 import { ExtensionsLayout } from './pages/extensions';
 import { EventsDoc } from './pages/extensions/events';
 import { LineNumbersRelativeDoc } from './pages/extensions/line-numbers-relative';
+import { HyperLinkDoc } from './pages/extensions/hyper-link';
 import { ColorDoc } from './pages/extensions/color';
 
 export const GlobalStyle = createGlobalStyle`
@@ -73,6 +74,7 @@ root.render(
         <Route path="color" element={<ColorDoc />} />
         <Route path="events" element={<EventsDoc />} />
         <Route path="line-numbers-relative" element={<LineNumbersRelativeDoc />} />
+        <Route path="hyper-link" element={<HyperLinkDoc />} />
       </Route>
     </Routes>
   </HashRouter>,

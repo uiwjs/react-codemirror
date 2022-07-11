@@ -66,7 +66,7 @@ function colorDecorations(view: EditorView) {
               to,
               alpha: a ? a.replace(/(\/|,)/g, '') : '',
             }),
-            side: 1,
+            side: 0,
           });
           widgets.push(widget.range(from));
         } else if (type.name === 'CallExpression' && hslMatcher(callExp)) {
@@ -108,7 +108,7 @@ function colorDecorations(view: EditorView) {
               to,
               alpha: match.a ? match.a.toString() : '',
             }),
-            side: 1,
+            side: 0,
           });
           widgets.push(widget.range(from));
         } else if (type.name === 'ColorLiteral') {
@@ -122,7 +122,7 @@ function colorDecorations(view: EditorView) {
               to,
               alpha,
             }),
-            side: 1,
+            side: 0,
           });
           widgets.push(widget.range(from));
         } else if (type.name === 'ValueName') {
@@ -137,7 +137,7 @@ function colorDecorations(view: EditorView) {
                 to,
                 alpha: '',
               }),
-              side: 1,
+              side: 0,
             });
             widgets.push(widget.range(from));
           }

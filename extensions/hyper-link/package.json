@@ -1,0 +1,47 @@
+{
+  "name": "@uiw/codemirror-extensions-hyper-link",
+  "version": "4.11.1",
+  "description": "Hyper link Extensions for CodeMirror6.",
+  "homepage": "https://uiwjs.github.io/react-codemirror/#/extensions/hyper-link",
+  "author": "kenny wong <wowohoo@qq.com>",
+  "license": "MIT",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "scripts": {
+    "watch": "tsbb watch",
+    "build": "tsbb build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uiwjs/react-codemirror.git"
+  },
+  "files": [
+    "src",
+    "esm",
+    "cjs"
+  ],
+  "peerDependencies": {
+    "@codemirror/state": ">=6.0.0",
+    "@codemirror/view": ">=6.0.0"
+  },
+  "devDependencies": {
+    "@codemirror/state": "^6.1.0",
+    "@codemirror/view": "^6.0.0"
+  },
+  "keywords": [
+    "codemirror",
+    "codemirror6",
+    "link",
+    "url",
+    "hyper-link",
+    "extensions",
+    "ide",
+    "code"
+  ],
+  "jest": {
+    "coverageReporters": [
+      "lcov",
+      "json-summary"
+    ]
+  }
+}

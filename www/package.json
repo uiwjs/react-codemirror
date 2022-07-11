@@ -39,6 +39,7 @@
     "@codemirror/legacy-modes": "~6.1.0",
     "@uiw/codemirror-extensions-color": "4.11.1",
     "@uiw/codemirror-extensions-events": "4.11.1",
+    "@uiw/codemirror-extensions-hyper-link": "4.11.1",
     "@uiw/codemirror-theme-abcdef": "4.11.1",
     "@uiw/codemirror-theme-androidstudio": "4.11.1",
     "@uiw/codemirror-theme-bespin": "4.11.1",
