@@ -29,7 +29,7 @@ export const ExtensionsLayout = () => {
           {Object.keys(mdSource).map((name, key) => {
             return (
               <MenuItem key={key} to={`/extensions/${name}`}>
-                {name}
+                {name.split('-').join(' ')}
               </MenuItem>
             );
           })}

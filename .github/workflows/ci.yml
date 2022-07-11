@@ -176,6 +176,12 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./extensions/color/package.json
 
+      - name: 📦 @uiw/codemirror-extensions-line-numbers-relative to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./extensions/line-numbers-relative/package.json
+
     outputs:
       successful: ${{steps.create_tag.outputs.successful }}
 
@@ -403,6 +409,20 @@ jobs:
 
       - run: npm publish
         working-directory: extensions/color
+        if: success() || failure()
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Modify @uiw/codemirror-extensions-line-numbers-relative => @uiwjs/codemirror-extensions-line-numbers-relative
+        uses: jaywcjlove/github-action-package@main
+        if: success() || failure()
+        with:
+          path: extensions/line-numbers-relative/package.json
+          data: |
+            { "name": "@uiwjs/codemirror-extensions-line-numbers-relative" }
+
+      - run: npm publish
+        working-directory: extensions/line-numbers-relative
         if: success() || failure()
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

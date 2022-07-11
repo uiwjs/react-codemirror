@@ -9,6 +9,7 @@ import { ThemeDoc } from './pages/theme/docs';
 import { ThemeOkaidia } from './pages/theme/themes';
 import { ExtensionsLayout } from './pages/extensions';
 import { EventsDoc } from './pages/extensions/events';
+import { LineNumbersRelativeDoc } from './pages/extensions/line-numbers-relative';
 import { ColorDoc } from './pages/extensions/color';
 
 export const GlobalStyle = createGlobalStyle`
@@ -69,8 +70,9 @@ root.render(
       </Route>
       <Route path="/extensions/" element={<ExtensionsLayout />}>
         <Route index element={<Navigate to="events" replace />} />
-        <Route path="events" element={<EventsDoc />} />
         <Route path="color" element={<ColorDoc />} />
+        <Route path="events" element={<EventsDoc />} />
+        <Route path="line-mumbers-relative" element={<LineNumbersRelativeDoc />} />
       </Route>
     </Routes>
   </HashRouter>,

@@ -8,7 +8,7 @@
 
 Color Extensions for CodeMirror6.
 
-![Codemirror Extensions Color](https://user-images.githubusercontent.com/1680273/178143104-26e0564b-bd3e-42cd-a8d4-b40edf9ec44d.png)
+[![Codemirror Extensions Color](https://user-images.githubusercontent.com/1680273/178143104-26e0564b-bd3e-42cd-a8d4-b40edf9ec44d.png)](https://uiwjs.github.io/react-codemirror/#/extensions/color)
 
 ## Install
 
