@@ -1,4 +1,5 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { Warpper, Header, Title, Tools, Link } from '../theme';
 import { Document } from './Document';
 import logo from '../../logo.png';
@@ -10,6 +11,12 @@ import { mdSource } from './datas';
 export const Extensions = () => {};
 
 export const ExtensionsLayout = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    document.title = `${location.pathname.split('/').join(' ')} for CodeMirror 6`;
+  }, [location]);
+
   return (
     <Warpper>
       <Header>

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { NavLink, Outlet } from 'react-router-dom';
+import { useEffect } from 'react';
+import { NavLink, Outlet, useParams } from 'react-router-dom';
 import '@wcj/dark-mode';
 import logo from '../../logo.png';
 
@@ -59,6 +60,16 @@ export const Link = styled(NavLink)`
 `;
 
 export function ThemeLayout() {
+  const { name = '', lightOrDark = '' } = useParams();
+
+  useEffect(() => {
+    let title = 'CodeMirror 6 themes';
+    if (name || lightOrDark) {
+      title = `CodeMirror 6 ${name} ${lightOrDark ? ` ${lightOrDark}` : ''} theme`;
+    }
+    document.title = title;
+  }, [name, lightOrDark]);
+
   return (
     <Warpper>
       <Header>
