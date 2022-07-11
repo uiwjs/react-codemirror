@@ -72,7 +72,7 @@ root.render(
         <Route index element={<Navigate to="events" replace />} />
         <Route path="color" element={<ColorDoc />} />
         <Route path="events" element={<EventsDoc />} />
-        <Route path="line-mumbers-relative" element={<LineNumbersRelativeDoc />} />
+        <Route path="line-numbers-relative" element={<LineNumbersRelativeDoc />} />
       </Route>
     </Routes>
   </HashRouter>,
