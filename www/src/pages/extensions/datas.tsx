@@ -5,5 +5,5 @@ import lineNumbersRelativeMd from '@uiw/codemirror-extensions-line-numbers-relat
 export const mdSource = {
   color: colorMd.source,
   events: eventsMd.source,
-  'line-mumbers-relative': lineNumbersRelativeMd.source,
+  'line-numbers-relative': lineNumbersRelativeMd.source,
 };
