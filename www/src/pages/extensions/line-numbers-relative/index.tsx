@@ -2,15 +2,9 @@ import MarkdownPreview from '@uiw/react-markdown-preview';
 import data from '@uiw/codemirror-extensions-line-numbers-relative/README.md';
 import { lineNumbersRelative } from '@uiw/codemirror-extensions-line-numbers-relative';
 import CodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
-import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 import { langs } from '../../../langs';
-
-const Warpper = styled.div`
-  flex: 1;
-  max-width: 980px;
-  padding: 20px 20px 120px 20px;
-`;
+import { PageWarpper } from '../';
 
 export const LineNumbersRelativeDoc = () => {
   const dark = document.documentElement.getAttribute('data-color-mode');
@@ -23,7 +17,7 @@ export const LineNumbersRelativeDoc = () => {
   }, []);
 
   return (
-    <Warpper>
+    <PageWarpper>
       <CodeMirror
         value={data.source}
         theme={theme}
@@ -32,6 +26,6 @@ export const LineNumbersRelativeDoc = () => {
         extensions={[langs.markdown(), lineNumbersRelative]}
       />
       <MarkdownPreview source={data.source} />
-    </Warpper>
+    </PageWarpper>
   );
 };

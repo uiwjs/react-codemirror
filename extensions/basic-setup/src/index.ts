@@ -22,19 +22,16 @@ import {
   bracketMatching,
   foldKeymap,
 } from '@codemirror/language';
+
 import { lintKeymap } from '@codemirror/lint';
 
-export interface BasicSetupOptions {
+export interface BasicSetupOptions extends MinimalSetupOptions {
   lineNumbers?: boolean;
   highlightActiveLineGutter?: boolean;
-  highlightSpecialChars?: boolean;
-  history?: boolean;
   foldGutter?: boolean;
-  drawSelection?: boolean;
   dropCursor?: boolean;
   allowMultipleSelections?: boolean;
   indentOnInput?: boolean;
-  syntaxHighlighting?: boolean;
   bracketMatching?: boolean;
   closeBrackets?: boolean;
   autocompletion?: boolean;
@@ -44,9 +41,7 @@ export interface BasicSetupOptions {
   highlightSelectionMatches?: boolean;
 
   closeBracketsKeymap?: boolean;
-  defaultKeymap?: boolean;
   searchKeymap?: boolean;
-  historyKeymap?: boolean;
   foldKeymap?: boolean;
   completionKeymap?: boolean;
   lintKeymap?: boolean;
@@ -90,27 +85,27 @@ and an array literal), copy it into your own code, and adjust it
 as desired.
 */
 export const basicSetup = (options: BasicSetupOptions = {}): Extension[] => {
-  const keymaps: KeyBinding[][] = [];
+  let keymaps: KeyBinding[] = [];
   if (options.closeBracketsKeymap !== false) {
-    keymaps.push([...closeBracketsKeymap]);
+    keymaps = keymaps.concat(closeBracketsKeymap);
   }
   if (options.defaultKeymap !== false) {
-    keymaps.push([...defaultKeymap]);
+    keymaps = keymaps.concat(defaultKeymap);
   }
   if (options.searchKeymap !== false) {
-    keymaps.push([...searchKeymap]);
+    keymaps = keymaps.concat(searchKeymap);
   }
   if (options.historyKeymap !== false) {
-    keymaps.push([...historyKeymap]);
+    keymaps = keymaps.concat(historyKeymap);
   }
   if (options.foldKeymap !== false) {
-    keymaps.push([...foldKeymap]);
+    keymaps = keymaps.concat(foldKeymap);
   }
   if (options.completionKeymap !== false) {
-    keymaps.push([...completionKeymap]);
+    keymaps = keymaps.concat(completionKeymap);
   }
   if (options.lintKeymap !== false) {
-    keymaps.push([...lintKeymap]);
+    keymaps = keymaps.concat(lintKeymap);
   }
   const extensions: Extension[] = [];
   if (options.lineNumbers !== false) extensions.push(lineNumbers());
@@ -132,5 +127,40 @@ export const basicSetup = (options: BasicSetupOptions = {}): Extension[] => {
   if (options.highlightActiveLine !== false) extensions.push(highlightActiveLine());
   if (options.highlightSelectionMatches !== false) extensions.push(highlightSelectionMatches());
 
-  return [...extensions, keymap.of(keymaps.flat())].filter(Boolean);
+  return extensions.concat([keymap.of(keymaps.flat())]).filter(Boolean);
+};
+
+export interface MinimalSetupOptions {
+  highlightSpecialChars?: boolean;
+  history?: boolean;
+  drawSelection?: boolean;
+  syntaxHighlighting?: boolean;
+
+  defaultKeymap?: boolean;
+  historyKeymap?: boolean;
+}
+
+/**
+A minimal set of extensions to create a functional editor. Only
+includes [the default keymap](https://codemirror.net/6/docs/ref/#commands.defaultKeymap), [undo
+history](https://codemirror.net/6/docs/ref/#commands.history), [special character
+highlighting](https://codemirror.net/6/docs/ref/#view.highlightSpecialChars), [custom selection
+drawing](https://codemirror.net/6/docs/ref/#view.drawSelection), and [default highlight
+style](https://codemirror.net/6/docs/ref/#language.defaultHighlightStyle).
+*/
+export const minimalSetup = (options: MinimalSetupOptions = {}) => {
+  let keymaps: KeyBinding[] = [];
+  if (options.defaultKeymap !== false) {
+    keymaps = keymaps.concat(defaultKeymap);
+  }
+  if (options.historyKeymap !== false) {
+    keymaps = keymaps.concat(historyKeymap);
+  }
+  const extensions: Extension[] = [];
+  if (options.highlightSpecialChars !== false) extensions.push(highlightSpecialChars());
+  if (options.history !== false) extensions.push(history());
+  if (options.drawSelection !== false) extensions.push(drawSelection());
+  if (options.syntaxHighlighting !== false)
+    extensions.push(syntaxHighlighting(defaultHighlightStyle, { fallback: true }));
+  return extensions.concat([keymap.of(keymaps.flat())]).filter(Boolean);
 };

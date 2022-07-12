@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { EditorState, StateEffect } from '@codemirror/state';
 import { indentWithTab } from '@codemirror/commands';
 import { EditorView, keymap, ViewUpdate, placeholder } from '@codemirror/view';
+import { basicSetup } from '@uiw/codemirror-extensions-basic-setup';
 import { oneDark } from '@codemirror/theme-one-dark';
-import { basicSetup } from './basicSetup';
 import { getStatistics } from './utils';
 import { ReactCodeMirrorProps } from '.';
 

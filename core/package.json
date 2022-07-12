@@ -35,8 +35,9 @@
     "react-dom": ">=16.8.0"
   },
   "dependencies": {
-    "@babel/runtime": ">=7.11.0",
+    "@babel/runtime": "^7.18.6",
     "@codemirror/theme-one-dark": "^6.0.0",
+    "@uiw/codemirror-extensions-basic-setup": "^4.11.1",
     "codemirror": "^6.0.0"
   },
   "keywords": [

@@ -2,16 +2,10 @@ import MarkdownPreview from '@uiw/react-markdown-preview';
 import data from '@uiw/codemirror-extensions-hyper-link/README.md';
 import { hyperLink } from '@uiw/codemirror-extensions-hyper-link';
 import CodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
-import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 import { langs } from '../../../langs';
 import { markdownString } from './codeSample';
-
-const Warpper = styled.div`
-  flex: 1;
-  max-width: 980px;
-  padding: 20px 20px 120px 20px;
-`;
+import { PageWarpper } from '../';
 
 export const HyperLinkDoc = () => {
   const dark = document.documentElement.getAttribute('data-color-mode');
@@ -24,7 +18,7 @@ export const HyperLinkDoc = () => {
   }, []);
 
   return (
-    <Warpper>
+    <PageWarpper>
       <CodeMirror
         value={markdownString}
         theme={theme}
@@ -33,6 +27,6 @@ export const HyperLinkDoc = () => {
         extensions={[langs.markdown(), hyperLink]}
       />
       <MarkdownPreview source={data.source} />
-    </Warpper>
+    </PageWarpper>
   );
 };

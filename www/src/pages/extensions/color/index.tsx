@@ -2,16 +2,10 @@ import MarkdownPreview from '@uiw/react-markdown-preview';
 import data from '@uiw/codemirror-extensions-color/README.md';
 import { color } from '@uiw/codemirror-extensions-color';
 import CodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
-import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 import { langs } from '../../../langs';
 import { codeSample } from './code';
-
-const Warpper = styled.div`
-  flex: 1;
-  max-width: 980px;
-  padding: 20px 20px 120px 20px;
-`;
+import { PageWarpper } from '../';
 
 export const ColorDoc = () => {
   const [modeType, setModeType] = useState<'readOnly' | 'editable'>('readOnly');
@@ -33,7 +27,7 @@ export const ColorDoc = () => {
   }
 
   return (
-    <Warpper>
+    <PageWarpper>
       <CodeMirror
         value={codeSample}
         theme={theme}
@@ -70,6 +64,6 @@ export const ColorDoc = () => {
         </label>
       </div>
       <MarkdownPreview source={data.source} />
-    </Warpper>
+    </PageWarpper>
   );
 };

@@ -11,6 +11,7 @@ import { ExtensionsLayout } from './pages/extensions';
 import { EventsDoc } from './pages/extensions/events';
 import { LineNumbersRelativeDoc } from './pages/extensions/line-numbers-relative';
 import { HyperLinkDoc } from './pages/extensions/hyper-link';
+import { BasicSetupDoc } from './pages/extensions/basic-setup';
 import { ColorDoc } from './pages/extensions/color';
 
 export const GlobalStyle = createGlobalStyle`
@@ -71,6 +72,7 @@ root.render(
       </Route>
       <Route path="/extensions/" element={<ExtensionsLayout />}>
         <Route index element={<Navigate to="color" replace />} />
+        <Route path="basic-setup" element={<BasicSetupDoc />} />
         <Route path="color" element={<ColorDoc />} />
         <Route path="events" element={<EventsDoc />} />
         <Route path="line-numbers-relative" element={<LineNumbersRelativeDoc />} />

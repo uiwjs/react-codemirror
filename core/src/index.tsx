@@ -1,11 +1,11 @@
 import React, { useRef, forwardRef, useImperativeHandle } from 'react';
 import { EditorState, EditorStateConfig, Extension } from '@codemirror/state';
 import { EditorView, ViewUpdate } from '@codemirror/view';
+import { BasicSetupOptions } from '@uiw/codemirror-extensions-basic-setup';
 import { useCodeMirror } from './useCodeMirror';
 import { Statistics } from './utils';
-import { BasicSetupOptions } from './basicSetup';
 
-export * from './basicSetup';
+export * from '@uiw/codemirror-extensions-basic-setup';
 export * from './useCodeMirror';
 export * from './utils';
 

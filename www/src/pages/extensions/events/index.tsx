@@ -5,12 +5,7 @@ import CodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 import { langs } from '../../../langs';
-
-const Warpper = styled.div`
-  flex: 1;
-  max-width: 980px;
-  padding: 20px 20px 120px 20px;
-`;
+import { PageWarpper } from '../';
 
 const Info = styled.div`
   padding-bottom: 30px;
@@ -29,7 +24,7 @@ export const EventsDoc = () => {
   }, []);
 
   return (
-    <Warpper>
+    <PageWarpper>
       <CodeMirror
         value={data.source}
         theme={theme}
@@ -58,6 +53,6 @@ export const EventsDoc = () => {
         {scrollTop} {eventType}
       </Info>
       <MarkdownPreview source={data.source} />
-    </Warpper>
+    </PageWarpper>
   );
 };

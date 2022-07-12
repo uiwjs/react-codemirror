@@ -1,5 +1,6 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import styled from 'styled-components';
 import { Warpper, Header, Title, Tools, Link } from '../theme';
 import { Document } from './Document';
 import logo from '../../logo.png';
@@ -7,6 +8,12 @@ import { Sider } from '../theme/editor';
 import { Content } from '../theme';
 import { MenuItem } from '../theme/themes';
 import { mdSource } from './datas';
+
+export const PageWarpper = styled.div`
+  flex: 1;
+  max-width: 980px;
+  padding: 20px 20px 120px 20px;
+`;
 
 export const Extensions = () => {};
 
