@@ -164,6 +164,12 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./themes/xcode/package.json
 
+      - name: 📦 @uiw/codemirror-extensions-basic-setup to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./extensions/basic-setup/package.json
+
       - name: 📦 @uiw/codemirror-extensions-events to NPM
         uses: JS-DevTools/npm-publish@v1
         with:
@@ -398,6 +404,20 @@ jobs:
           path: extensions/events/package.json
           data: |
             { "name": "@uiwjs/codemirror-extensions-events" }
+
+      - run: npm publish
+        working-directory: extensions/events
+        if: success() || failure()
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Modify @uiw/codemirror-extensions-basic-setup => @uiwjs/codemirror-extensions-basic-setup
+        uses: jaywcjlove/github-action-package@main
+        if: success() || failure()
+        with:
+          path: extensions/basic-setup/package.json
+          data: |
+            { "name": "@uiwjs/codemirror-extensions-basic-setup" }
 
       - run: npm publish
         working-directory: extensions/events
