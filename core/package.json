@@ -1,6 +1,6 @@
 {
   "name": "@uiw/react-codemirror",
-  "version": "4.11.3",
+  "version": "4.11.4",
   "description": "CodeMirror component for React.",
   "homepage": "https://uiwjs.github.io/react-codemirror",
   "author": "kenny wong <wowohoo@qq.com>",
@@ -37,7 +37,7 @@
   "dependencies": {
     "@babel/runtime": "^7.18.6",
     "@codemirror/theme-one-dark": "^6.0.0",
-    "@uiw/codemirror-extensions-basic-setup": "4.11.3",
+    "@uiw/codemirror-extensions-basic-setup": "4.11.4",
     "codemirror": "^6.0.0"
   },
   "keywords": [
