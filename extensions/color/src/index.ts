@@ -289,7 +289,12 @@ export const colorTheme = EditorView.baseTheme({
     display: 'block',
     border: 'none',
     outline: '0',
-    paddingTop: '24px',
+    paddingRight: '24px',
+    height: '12px',
+  },
+  'span[data-color] input[type="color"]::-webkit-color-swatch': {
+    border: 'none',
+    paddingLeft: '24px',
   },
 });
 
