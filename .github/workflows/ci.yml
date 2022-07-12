@@ -420,7 +420,7 @@ jobs:
             { "name": "@uiwjs/codemirror-extensions-basic-setup" }
 
       - run: npm publish
-        working-directory: extensions/events
+        working-directory: extensions/basic-setup
         if: success() || failure()
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
