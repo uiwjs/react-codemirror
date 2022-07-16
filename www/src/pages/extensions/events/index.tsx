@@ -4,7 +4,7 @@ import * as events from '@uiw/codemirror-extensions-events';
 import CodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
-import { langs } from '../../../langs';
+import { langs } from '@uiw/codemirror-extensions-langs';
 import { PageWarpper } from '../';
 
 const Info = styled.div`

@@ -3,7 +3,7 @@ import data from '@uiw/codemirror-extensions-line-numbers-relative/README.md';
 import { lineNumbersRelative } from '@uiw/codemirror-extensions-line-numbers-relative';
 import CodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
 import { useEffect, useState } from 'react';
-import { langs } from '../../../langs';
+import { langs } from '@uiw/codemirror-extensions-langs';
 import { PageWarpper } from '../';
 
 export const LineNumbersRelativeDoc = () => {

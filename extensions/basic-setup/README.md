@@ -16,7 +16,7 @@ npm install @uiw/codemirror-extensions-basic-setup --save
 
 ## Usage
 
-⚠️ Integrated into **@uiw/react-codemirror** package
+⚠️ Integrated into [**@uiw/react-codemirror**](https://npmjs.com/@uiw/react-codemirror) package
 
 ```jsx
 import CodeMirror from '@uiw/react-codemirror';

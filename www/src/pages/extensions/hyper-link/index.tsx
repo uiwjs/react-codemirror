@@ -3,7 +3,7 @@ import data from '@uiw/codemirror-extensions-hyper-link/README.md';
 import { hyperLink } from '@uiw/codemirror-extensions-hyper-link';
 import CodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
 import { useEffect, useState } from 'react';
-import { langs } from '../../../langs';
+import { langs } from '@uiw/codemirror-extensions-langs';
 import { markdownString } from './codeSample';
 import { PageWarpper } from '../';
 

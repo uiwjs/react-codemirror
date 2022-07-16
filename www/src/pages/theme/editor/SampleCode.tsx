@@ -1,9 +1,9 @@
 import { FC, PropsWithoutRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Extension } from '@codemirror/state';
+import { langs } from '@uiw/codemirror-extensions-langs';
 import { ThmeCodeStyle } from './themeCode';
 import { themeCode } from './themeCode';
-import { langs } from '../../../langs';
 
 export const Select = styled.select`
   position: absolute;

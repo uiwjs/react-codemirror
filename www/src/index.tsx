@@ -10,6 +10,7 @@ import { ThemeOkaidia } from './pages/theme/themes';
 import { ExtensionsLayout } from './pages/extensions';
 import { EventsDoc } from './pages/extensions/events';
 import { LineNumbersRelativeDoc } from './pages/extensions/line-numbers-relative';
+import { LangsDoc } from './pages/extensions/langs';
 import { HyperLinkDoc } from './pages/extensions/hyper-link';
 import { BasicSetupDoc } from './pages/extensions/basic-setup';
 import { ColorDoc } from './pages/extensions/color';
@@ -76,6 +77,7 @@ root.render(
         <Route path="color" element={<ColorDoc />} />
         <Route path="events" element={<EventsDoc />} />
         <Route path="line-numbers-relative" element={<LineNumbersRelativeDoc />} />
+        <Route path="languages" element={<LangsDoc />} />
         <Route path="hyper-link" element={<HyperLinkDoc />} />
       </Route>
     </Routes>

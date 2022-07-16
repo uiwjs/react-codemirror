@@ -19,7 +19,7 @@ import pythonStr from 'code-example/txt/sample.python.txt';
 import shellStr from 'code-example/txt/sample.shell.txt';
 import swiftStr from 'code-example/txt/sample.swift.txt';
 import markdownStr from 'code-example/txt/sample.markdown.txt';
-import { langs } from '../../../langs';
+import { langs } from '@uiw/codemirror-extensions-langs';
 
 const Title = styled.div`
   font-weight: bold;

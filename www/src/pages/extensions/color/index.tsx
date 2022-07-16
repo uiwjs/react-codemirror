@@ -3,7 +3,7 @@ import data from '@uiw/codemirror-extensions-color/README.md';
 import { color } from '@uiw/codemirror-extensions-color';
 import CodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
 import { useEffect, useState } from 'react';
-import { langs } from '../../../langs';
+import { langs } from '@uiw/codemirror-extensions-langs';
 import { codeSample } from './code';
 import { PageWarpper } from '../';
 

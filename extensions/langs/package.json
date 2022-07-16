@@ -1,0 +1,57 @@
+{
+  "name": "@uiw/codemirror-extensions-langs",
+  "version": "4.11.4",
+  "description": "Load languages Extensions for CodeMirror6.",
+  "homepage": "https://uiwjs.github.io/react-codemirror/#/extensions/langs",
+  "author": "kenny wong <wowohoo@qq.com>",
+  "license": "MIT",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "scripts": {
+    "watch": "tsbb watch",
+    "build": "tsbb build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uiwjs/react-codemirror.git"
+  },
+  "files": [
+    "src",
+    "esm",
+    "cjs"
+  ],
+  "peerDependencies": {
+    "@codemirror/legacy-modes": ">=6.0.0",
+    "@codemirror/language-data": ">=6.0.0"
+  },
+  "devDependencies": {
+    "@codemirror/lang-cpp": "~6.0.0",
+    "@codemirror/lang-html": "~6.1.0",
+    "@codemirror/lang-java": "~6.0.0",
+    "@codemirror/lang-javascript": "~6.0.0",
+    "@codemirror/lang-json": "~6.0.0",
+    "@codemirror/lang-lezer": "~6.0.0",
+    "@codemirror/lang-markdown": "~6.0.0",
+    "@codemirror/lang-php": "~6.0.0",
+    "@codemirror/lang-python": "~6.0.0",
+    "@codemirror/lang-rust": "~6.0.0",
+    "@codemirror/lang-sql": "~6.0.0",
+    "@codemirror/lang-xml": "~6.0.0",
+    "@codemirror/language-data": "^6.1.0",
+    "@codemirror/legacy-modes": "~6.1.0"
+  },
+  "keywords": [
+    "codemirror",
+    "codemirror6",
+    "langs",
+    "extensions",
+    "ide",
+    "code"
+  ],
+  "jest": {
+    "coverageReporters": [
+      "lcov",
+      "json-summary"
+    ]
+  }
+}
