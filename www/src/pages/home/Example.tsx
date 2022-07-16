@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import MarkdownPreview from '@uiw/react-markdown-preview';
 import { color } from '@uiw/codemirror-extensions-color';
 import DocumentStr from '@uiw/react-codemirror/README.md';
@@ -7,22 +7,7 @@ import CodeMirror, { ReactCodeMirrorProps, BasicSetupOptions } from '@uiw/react-
 import styled from 'styled-components';
 import { langs } from '@uiw/codemirror-extensions-langs';
 import { Select } from '../../Select';
-
-const Label = styled.label`
-  user-select: none;
-  white-space: nowrap;
-`;
-
-const Options: FC<
-  PropsWithChildren<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>>
-> = ({ children, ...props }) => {
-  return (
-    <Label>
-      <span>{children}</span>
-      <input type="checkbox" {...props} />
-    </Label>
-  );
-};
+import { Options } from '../extensions/basic-setup';
 
 const themeOptions = ['dark', 'light'];
 const heightOptions = ['auto', '200px', '300px', '500px'];
