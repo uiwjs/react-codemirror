@@ -2,7 +2,7 @@
   "name": "@uiw/codemirror-extensions-langs",
   "version": "4.11.4",
   "description": "Load languages Extensions for CodeMirror6.",
-  "homepage": "https://uiwjs.github.io/react-codemirror/#/extensions/langs",
+  "homepage": "https://uiwjs.github.io/react-codemirror/#/extensions/languages",
   "author": "kenny wong <wowohoo@qq.com>",
   "license": "MIT",
   "main": "./cjs/index.js",
