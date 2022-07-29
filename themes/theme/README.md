@@ -126,6 +126,12 @@ export default App;
   <img width="436" alt="codemirror-theme-androidstudio" src="https://user-images.githubusercontent.com/1680273/177484354-0a4fa43e-de96-409f-83e2-61808f2347e6.png">
 </a>
 
+**atom one**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/xcode/light">
+  <img width="436" alt="codemirror-theme-androidstudio" src="https://user-images.githubusercontent.com/1680273/181795374-7a25cb90-5d77-4f86-9cbc-b1e12dc939d3.png">
+</a>
+
 **bespin**
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/bespin">

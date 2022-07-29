@@ -116,6 +116,12 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./themes/androidstudio/package.json
 
+      - name: 📦 @uiw/codemirror-theme-atomone publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./themes/atomone/package.json
+
       - name: 📦 @uiw/codemirror-theme-dracula publish to NPM
         uses: JS-DevTools/npm-publish@v1
         with:
@@ -271,6 +277,21 @@ jobs:
 
       - run: npm publish
         working-directory: themes/androidstudio
+        if: success() || failure()
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+
+      - name: Modify @uiw/codemirror-theme-atomone => @uiwjs/codemirror-theme-atomone
+        uses: jaywcjlove/github-action-package@main
+        if: success() || failure()
+        with:
+          path: themes/atomone/package.json
+          data: |
+            { "name": "@uiwjs/codemirror-theme-atomone" }
+
+      - run: npm publish
+        working-directory: themes/atomone
         if: success() || failure()
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
