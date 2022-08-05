@@ -206,6 +206,12 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./extensions/langs/package.json
 
+      - name: 📦 @uiw/codemirror-extensions-mentions to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./extensions/mentions/package.json
+
     outputs:
       successful: ${{steps.create_tag.outputs.successful }}
 
@@ -504,6 +510,20 @@ jobs:
 
       - run: npm publish
         working-directory: extensions/langs
+        if: success() || failure()
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Modify @uiw/codemirror-extensions-mentions => @uiwjs/codemirror-extensions-mentions
+        uses: jaywcjlove/github-action-package@main
+        if: success() || failure()
+        with:
+          path: extensions/mentions/package.json
+          data: |
+            { "name": "@uiwjs/codemirror-extensions-mentions" }
+
+      - run: npm publish
+        working-directory: extensions/mentions
         if: success() || failure()
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

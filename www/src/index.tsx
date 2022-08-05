@@ -14,6 +14,7 @@ import { LangsDoc } from './pages/extensions/langs';
 import { HyperLinkDoc } from './pages/extensions/hyper-link';
 import { BasicSetupDoc } from './pages/extensions/basic-setup';
 import { ColorDoc } from './pages/extensions/color';
+import { MentionsDoc } from './pages/extensions/mentions';
 
 export const GlobalStyle = createGlobalStyle`
   [data-color-mode*='dark'], [data-color-mode*='dark'] body {
@@ -79,6 +80,7 @@ root.render(
         <Route path="line-numbers-relative" element={<LineNumbersRelativeDoc />} />
         <Route path="languages" element={<LangsDoc />} />
         <Route path="hyper-link" element={<HyperLinkDoc />} />
+        <Route path="mentions" element={<MentionsDoc />} />
       </Route>
     </Routes>
   </HashRouter>,
