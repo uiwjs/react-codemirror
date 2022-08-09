@@ -122,6 +122,12 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./themes/atomone/package.json
 
+      - name: 📦 @uiw/codemirror-theme-bbedit publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./themes/bbedit/package.json
+
       - name: 📦 @uiw/codemirror-theme-dracula publish to NPM
         uses: JS-DevTools/npm-publish@v1
         with:
@@ -298,6 +304,21 @@ jobs:
 
       - run: npm publish
         working-directory: themes/atomone
+        if: success() || failure()
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+
+      - name: Modify @uiw/codemirror-theme-bbedit => @uiwjs/codemirror-theme-bbedit
+        uses: jaywcjlove/github-action-package@main
+        if: success() || failure()
+        with:
+          path: themes/bbedit/package.json
+          data: |
+            { "name": "@uiwjs/codemirror-theme-bbedit" }
+
+      - run: npm publish
+        working-directory: themes/bbedit
         if: success() || failure()
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

@@ -1,6 +1,7 @@
 import abcdefMd from '@uiw/codemirror-theme-abcdef/README.md';
 import androidstudioMd from '@uiw/codemirror-theme-androidstudio/README.md';
 import atomoneMd from '@uiw/codemirror-theme-atomone/README.md';
+import bbeditMd from '@uiw/codemirror-theme-bbedit/README.md';
 import okaidiaMd from '@uiw/codemirror-theme-okaidia/README.md';
 import draculaMd from '@uiw/codemirror-theme-dracula/README.md';
 import darculaMd from '@uiw/codemirror-theme-darcula/README.md';
@@ -14,6 +15,7 @@ import xcodeMd from '@uiw/codemirror-theme-xcode/README.md';
 import { abcdef } from '@uiw/codemirror-theme-abcdef';
 import { androidstudio } from '@uiw/codemirror-theme-androidstudio';
 import { atomone } from '@uiw/codemirror-theme-atomone';
+import { bbedit } from '@uiw/codemirror-theme-bbedit';
 import { okaidia } from '@uiw/codemirror-theme-okaidia';
 import { dracula } from '@uiw/codemirror-theme-dracula';
 import { darcula } from '@uiw/codemirror-theme-darcula';
@@ -28,6 +30,7 @@ export const mdSource = {
   abcdef: abcdefMd.source,
   androidstudio: androidstudioMd.source,
   atomone: atomoneMd.source,
+  bbedit: bbeditMd.source,
   bespin: bespinMd.source,
   dracula: draculaMd.source,
   darcula: darculaMd.source,
@@ -46,6 +49,7 @@ export const themeData = {
   abcdef,
   androidstudio,
   atomone,
+  bbedit,
   bespin,
   darcula,
   dracula,
