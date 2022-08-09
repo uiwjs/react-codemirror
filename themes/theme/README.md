@@ -132,6 +132,12 @@ export default App;
   <img width="436" alt="codemirror-theme-androidstudio" src="https://user-images.githubusercontent.com/1680273/181795374-7a25cb90-5d77-4f86-9cbc-b1e12dc939d3.png">
 </a>
 
+**bbedit**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/bbedit">
+  <img width="436" alt="codemirror-theme-bbedit" src="https://user-images.githubusercontent.com/1680273/183550552-df398e5b-fab2-4ce5-bdd0-5e3612e3e5d9.png">
+</a>
+
 **bespin**
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/bespin">
