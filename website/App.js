@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import GitHubCorners from '@uiw/react-github-corners';
-import Github from '@uiw/react-shields/lib/esm/github';
-import Npm from '@uiw/react-shields/lib/esm/npm';
+import Github from '@uiw/react-shields/esm/github';
+import Npm from '@uiw/react-shields/esm/npm';
 import 'codemirror/addon/display/autorefresh';
 import 'codemirror/addon/comment/comment';
 import 'codemirror/addon/edit/matchbrackets';
