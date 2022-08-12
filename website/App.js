@@ -124,15 +124,15 @@ export default class App extends PureComponent {
           label: 'View on NPM',
         },
         {
-          href: 'http://codemirror.net/doc/manual.html#config',
+          href: 'https://codemirror.net/5/doc/manual.html#config',
           label: 'CM CONFIG',
         },
         {
-          href: 'http://codemirror.net/demo/theme.html',
+          href: 'https://codemirror.net/5/demo/theme.html',
           label: 'CM THEME',
         },
         {
-          href: 'http://codemirror.net/mode/',
+          href: 'https://codemirror.net/5/mode/',
           label: 'CM LANGUAGE MODE',
         },
       ],
