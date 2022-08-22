@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-extensions-langs",
-  "version": "4.11.4",
+  "version": "4.11.5",
   "description": "Load languages Extensions for CodeMirror6.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/extensions/languages",
   "author": "kenny wong <wowohoo@qq.com>",
@@ -21,8 +21,8 @@
     "cjs"
   ],
   "peerDependencies": {
-    "@codemirror/legacy-modes": ">=6.0.0",
-    "@codemirror/language-data": ">=6.0.0"
+    "@codemirror/language-data": ">=6.0.0",
+    "@codemirror/legacy-modes": ">=6.0.0"
   },
   "devDependencies": {
     "@codemirror/lang-cpp": "~6.0.0",

@@ -21,7 +21,7 @@
     "cjs"
   ],
   "dependencies": {
-    "@uiw/codemirror-themes": "4.11.4"
+    "@uiw/codemirror-themes": "4.11.5"
   },
   "keywords": [
     "codemirror",
