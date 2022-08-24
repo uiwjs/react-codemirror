@@ -171,17 +171,21 @@ export default function App() {
 [![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?logo=codesandbox)](https://codesandbox.io/embed/react-codemirror-example-codemirror-6-hook-yr4vg?fontsize=14&hidenavigation=1&theme=dark)
 
 ```jsx
-import { useEffect, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { useCodeMirror } from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
 
 const code = "console.log('hello world!');\n\n\n";
+// Define the extensions outside the component for the best performance.
+// If you need dynamic extensions, use React.useMemo to minimize reference changes
+// which cause costly re-renders.
+const extensions = [javascript()];
 
 export default function App() {
   const editor = useRef();
   const { setContainer } = useCodeMirror({
     container: editor.current,
-    extensions: [javascript()],
+    extensions,
     value: code,
   });
 
@@ -203,6 +207,8 @@ We have created a [`theme editor`](https://uiwjs.github.io/react-codemirror/#/th
 import CodeMirror from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
 import { okaidia } from '@uiw/codemirror-theme-okaidia';
+
+const extensions = [javascript({ jsx: true })];
 
 export default function App() {
   return (
@@ -253,6 +259,7 @@ const myTheme = createTheme({
     { tag: t.attributeName, color: '#5c6166' },
   ],
 });
+const extensions = [javascript({ jsx: true })];
 
 export default function App() {
   const onChange = React.useCallback((value, viewUpdate) => {
@@ -263,7 +270,7 @@ export default function App() {
       value="console.log('hello world!');"
       height="200px"
       theme={myTheme}
-      extensions={[javascript({ jsx: true })]}
+      extensions={extensions}
       onChange={onChange}
     />
   );
