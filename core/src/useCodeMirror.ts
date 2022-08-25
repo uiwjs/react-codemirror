@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { EditorState, StateEffect } from '@codemirror/state';
 import { indentWithTab } from '@codemirror/commands';
 import { EditorView, keymap, ViewUpdate, placeholder } from '@codemirror/view';
@@ -58,12 +58,11 @@ export function useCodeMirror(props: UseCodeMirror) {
       maxWidth,
     },
   });
-  const handleChange = useCallback((value: string, vu: ViewUpdate) => onChange && onChange(value, vu), []);
   const updateListener = EditorView.updateListener.of((vu: ViewUpdate) => {
     if (vu.docChanged && typeof onChange === 'function') {
       const doc = vu.state.doc;
       const value = doc.toString();
-      handleChange(value, vu);
+      onChange(value, vu);
     }
     onStatistics && onStatistics(getStatistics(vu));
   });
