@@ -3,6 +3,7 @@ import MarkdownPreview from '@uiw/react-markdown-preview';
 import styled from 'styled-components';
 import { PreCode } from './PreCode';
 import { mdSource } from './Datas';
+import { Warpper } from './Warpper';
 
 export const toSnakeCase = (str: string = '') =>
   str
@@ -18,14 +19,6 @@ export const Title = styled.div`
   padding-bottom: 15px;
   text-transform: capitalize;
   font-weight: bold;
-`;
-
-export const Warpper = styled.div`
-  width: 100%;
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 42px);
 `;
 
 export const Header = styled.div`

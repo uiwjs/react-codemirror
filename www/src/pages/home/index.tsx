@@ -4,6 +4,7 @@ import styled, { keyframes } from 'styled-components';
 import GitHubCorners from '@uiw/react-github-corners';
 import Github from '@uiw/react-shields/esm/github';
 import Npm from '@uiw/react-shields/esm/npm';
+import BackToUp from '@uiw/react-back-to-top';
 import logo from '../../logo.png';
 import Example from './Example';
 
@@ -130,6 +131,7 @@ export default function App() {
   const version = VERSION;
   return (
     <div className="wmde-markdown-var">
+      <BackToUp>Top</BackToUp>
       <dark-mode permanent dark="Dark" light="Light" style={{ position: 'fixed', top: 8, left: 8, zIndex: 99 }} />
       <GitHubCorners fixed target="__blank" zIndex={10} href="https://github.com/uiwjs/react-codemirror" />
       <AppHeader>
