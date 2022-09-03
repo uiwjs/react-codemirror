@@ -1,0 +1,22 @@
+name: CI
+on:
+  pull_request:
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - run: npm install
+      - run: npm run build
+      - working-directory: core
+        run: |
+          npm run bundle
+          npm run bundle:min
+          npm run coverage
+
+      - run: npm run doc
