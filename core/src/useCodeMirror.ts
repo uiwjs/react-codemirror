@@ -34,7 +34,6 @@ export function useCodeMirror(props: UseCodeMirror) {
     indentWithTab: defaultIndentWithTab = true,
     basicSetup: defaultBasicSetup = true,
     root,
-    initialState,
   } = props;
   const [container, setContainer] = useState<HTMLDivElement>();
   const [view, setView] = useState<EditorView>();
@@ -110,14 +109,11 @@ export function useCodeMirror(props: UseCodeMirror) {
 
   useEffect(() => {
     if (container && !state) {
-      const config = {
+      const stateCurrent = EditorState.create({
         doc: value,
         selection,
         extensions: getExtensions,
-      };
-      const stateCurrent = initialState
-        ? EditorState.fromJSON(initialState.json, config, initialState.fields)
-        : EditorState.create(config);
+      });
       setState(stateCurrent);
       if (!view) {
         const viewCurrent = new EditorView({
