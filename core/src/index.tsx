@@ -1,5 +1,5 @@
 import React, { useRef, forwardRef, useImperativeHandle } from 'react';
-import { EditorState, EditorStateConfig, Extension } from '@codemirror/state';
+import { EditorState, EditorStateConfig, Extension, StateField } from '@codemirror/state';
 import { EditorView, ViewUpdate } from '@codemirror/view';
 import { BasicSetupOptions } from '@uiw/codemirror-extensions-basic-setup';
 import { useCodeMirror } from './useCodeMirror';
@@ -69,6 +69,13 @@ export interface ReactCodeMirrorProps
    * Originally from the [config of EditorView](https://codemirror.net/6/docs/ref/#view.EditorView.constructor%5Econfig.root)
    */
   root?: ShadowRoot | Document;
+  /**
+   * Create a state from its JSON representation serialized with [toJSON](https://codemirror.net/docs/ref/#state.EditorState.toJSON) function
+   */
+  initialState?: {
+    json: any;
+    fields?: Record<'string', StateField<any>>;
+  };
 }
 
 export interface ReactCodeMirrorRef {
@@ -101,6 +108,7 @@ const ReactCodeMirror = forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProps>((pr
     editable,
     readOnly,
     root,
+    initialState,
     ...other
   } = props;
   const editor = useRef<HTMLDivElement>(null);
@@ -127,6 +135,7 @@ const ReactCodeMirror = forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProps>((pr
     onCreateEditor,
     onUpdate,
     extensions,
+    initialState,
   });
 
   useImperativeHandle(ref, () => ({ editor: editor.current, state: state, view: view }), [
