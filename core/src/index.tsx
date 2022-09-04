@@ -74,7 +74,7 @@ export interface ReactCodeMirrorProps
    */
   initialState?: {
     json: any;
-    fields?: Record<'string', StateField<any>>;
+    fields?: Record<string, StateField<any>>;
   };
 }
 

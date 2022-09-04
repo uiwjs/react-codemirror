@@ -283,17 +283,17 @@ CodeMirror allows to serialize editor state to JSON representation with [toJSON]
 
 For example, this is how undo history can be saved in the local storage, so that it remains after the page reloads
 
-```
-import CodeMirror from '@uiw/react-codemirror'
-import { historyField } from '@codemirror/commands'
+```jsx
+import CodeMirror from '@uiw/react-codemirror';
+import { historyField } from '@codemirror/commands';
 
 // When custom fields should be serialized, you can pass them in as an object mapping property names to fields.
 // See [toJSON](https://codemirror.net/docs/ref/#state.EditorState.toJSON) documentation for more details
-const stateFields = { history: historyField }
+const stateFields = { history: historyField };
 
 export function EditorWithInitialState() {
-  const serializedState = localStorage.getItem('myEditorState')
-  const value = localStorage.getItem('myValue') || ''
+  const serializedState = localStorage.getItem('myEditorState');
+  const value = localStorage.getItem('myValue') || '';
 
   return (
     <CodeMirror
@@ -307,13 +307,13 @@ export function EditorWithInitialState() {
           : undefined
       }
       onChange={(value, viewUpdate) => {
-        localStorage.setItem('myValue', value)
+        localStorage.setItem('myValue', value);
 
-        const state = viewUpdate.state.toJSON(stateFields)
-        localStorage.setItem('myEditorState', JSON.stringify(state))
+        const state = viewUpdate.state.toJSON(stateFields);
+        localStorage.setItem('myEditorState', JSON.stringify(state));
       }}
     />
-  )
+  );
 }
 ```
 
