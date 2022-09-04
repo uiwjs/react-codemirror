@@ -1,5 +1,5 @@
 import React, { useRef, forwardRef, useImperativeHandle } from 'react';
-import { EditorState, EditorStateConfig, Extension } from '@codemirror/state';
+import { EditorState, EditorStateConfig, Extension, StateField } from '@codemirror/state';
 import { EditorView, ViewUpdate } from '@codemirror/view';
 import { BasicSetupOptions } from '@uiw/codemirror-extensions-basic-setup';
 import { useCodeMirror } from './useCodeMirror';
@@ -74,7 +74,7 @@ export interface ReactCodeMirrorProps
    */
   initialState?: {
     json: any;
-    fields?: Object<StateField<any>>;
+    fields?: Record<'string', StateField<any>>;
   };
 }
 
