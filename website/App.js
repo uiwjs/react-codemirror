@@ -189,6 +189,7 @@ export default class App extends PureComponent {
         <CodeMirror
           value={this.state.code}
           ref={this.getInstance}
+          height="500px"
           options={{
             placeholder: 'Please enter a sample code.',
             theme,
