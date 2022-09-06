@@ -1,6 +1,6 @@
 {
   "name": "@uiw/react-codemirror",
-  "version": "3.2.8",
+  "version": "3.2.9",
   "description": "CodeMirror component for React.",
   "homepage": "https://uiwjs.github.io/react-codemirror",
   "main": "lib/index.js",
@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.18.9",
-    "codemirror": "^5.65.7"
+    "codemirror": "^5.65.8"
   },
   "eslintConfig": {
     "extends": [
@@ -63,7 +63,7 @@
     "kkt": "^7.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "tsbb": "3.3.7"
+    "tsbb": "^3.7.7"
   },
   "browserslist": {
     "production": [
