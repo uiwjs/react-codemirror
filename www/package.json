@@ -1,7 +1,7 @@
 {
   "name": "www",
   "private": true,
-  "version": "4.12.1",
+  "version": "4.12.2",
   "description": "CodeMirror component for React.",
   "homepage": "https://uiwjs.github.io/react-codemirror",
   "author": "kenny wong <wowohoo@qq.com>",
@@ -40,6 +40,7 @@
     "@uiw/codemirror-extensions-color": "4.12.1",
     "@uiw/codemirror-extensions-events": "4.12.1",
     "@uiw/codemirror-extensions-hyper-link": "4.12.1",
+    "@uiw/codemirror-extensions-langs": "4.12.2",
     "@uiw/codemirror-extensions-mentions": "4.12.1",
     "@uiw/codemirror-theme-abcdef": "4.12.1",
     "@uiw/codemirror-theme-androidstudio": "4.12.1",
