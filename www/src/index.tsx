@@ -15,6 +15,7 @@ import { HyperLinkDoc } from './pages/extensions/hyper-link';
 import { BasicSetupDoc } from './pages/extensions/basic-setup';
 import { ColorDoc } from './pages/extensions/color';
 import { MentionsDoc } from './pages/extensions/mentions';
+import { ThemesAllDoc } from './pages/extensions/themes';
 
 export const GlobalStyle = createGlobalStyle`
   [data-color-mode*='dark'], [data-color-mode*='dark'] body {
@@ -74,6 +75,7 @@ root.render(
       </Route>
       <Route path="/extensions/" element={<ExtensionsLayout />}>
         <Route index element={<Navigate to="color" replace />} />
+        <Route path="themes-all" element={<ThemesAllDoc />} />
         <Route path="basic-setup" element={<BasicSetupDoc />} />
         <Route path="color" element={<ColorDoc />} />
         <Route path="events" element={<EventsDoc />} />
