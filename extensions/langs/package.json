@@ -24,7 +24,7 @@
     "@codemirror/language-data": ">=6.0.0",
     "@codemirror/legacy-modes": ">=6.0.0"
   },
-  "devDependencies": {
+  "dependencies": {
     "@codemirror/lang-cpp": "~6.0.0",
     "@codemirror/lang-html": "~6.1.0",
     "@codemirror/lang-java": "~6.0.0",
