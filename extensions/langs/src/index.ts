@@ -13,6 +13,7 @@ import { rust } from '@codemirror/lang-rust';
 import { cpp } from '@codemirror/lang-cpp';
 import { lezer } from '@codemirror/lang-lezer';
 import { php } from '@codemirror/lang-php';
+import { wast } from '@codemirror/lang-wast';
 
 import { apl } from '@codemirror/legacy-modes/mode/apl';
 import { asciiArmor } from '@codemirror/legacy-modes/mode/asciiarmor';
@@ -34,6 +35,7 @@ import {
   dart,
 } from '@codemirror/legacy-modes/mode/clike';
 import { clojure } from '@codemirror/legacy-modes/mode/clojure';
+import { less } from '@codemirror/legacy-modes/mode/css';
 import { cmake } from '@codemirror/legacy-modes/mode/cmake';
 import { cobol } from '@codemirror/legacy-modes/mode/cobol';
 import { coffeeScript } from '@codemirror/legacy-modes/mode/coffeescript';
@@ -116,7 +118,6 @@ import { vbScript } from '@codemirror/legacy-modes/mode/vbscript';
 import { velocity } from '@codemirror/legacy-modes/mode/velocity';
 import { verilog } from '@codemirror/legacy-modes/mode/verilog';
 import { vhdl } from '@codemirror/legacy-modes/mode/vhdl';
-import { wast } from '@codemirror/legacy-modes/mode/wast';
 import { webIDL } from '@codemirror/legacy-modes/mode/webidl';
 import { xQuery } from '@codemirror/legacy-modes/mode/xquery';
 import { yacas } from '@codemirror/legacy-modes/mode/yacas';
@@ -197,12 +198,12 @@ export const langs = {
   velocity: () => StreamLanguage.define(velocity),
   verilog: () => StreamLanguage.define(verilog),
   vhdl: () => StreamLanguage.define(vhdl),
-  wast: () => StreamLanguage.define(wast),
   webIDL: () => StreamLanguage.define(webIDL),
   xQuery: () => StreamLanguage.define(xQuery),
   yacas: () => StreamLanguage.define(yacas),
   z80: () => StreamLanguage.define(z80),
 
+  wast,
   javascript,
   jsx: () => javascript({ jsx: true }),
   typescript: () => javascript({ typescript: true }),
@@ -239,6 +240,7 @@ export const langs = {
   ruby: () => StreamLanguage.define(ruby),
   pascal: () => StreamLanguage.define(pascal),
   livescript: () => StreamLanguage.define(liveScript),
+  less: () => StreamLanguage.define(less),
   scheme: () => StreamLanguage.define(scheme),
   toml: () => StreamLanguage.define(toml),
   vbscript: () => StreamLanguage.define(vbScript),
