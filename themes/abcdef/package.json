@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-theme-abcdef",
-  "version": "4.12.2",
+  "version": "4.12.3",
   "description": "Theme abcdef for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/abcdef",
   "author": "kenny wong <wowohoo@qq.com>",
@@ -21,7 +21,7 @@
     "cjs"
   ],
   "dependencies": {
-    "@uiw/codemirror-themes": "4.12.2"
+    "@uiw/codemirror-themes": "4.12.3"
   },
   "keywords": [
     "codemirror",
