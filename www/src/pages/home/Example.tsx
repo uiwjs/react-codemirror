@@ -110,7 +110,7 @@ export default function Example() {
         <Tools>
           <Select
             label="Lang"
-            options={Object.keys(langs)}
+            options={Object.keys(langs).sort()}
             value={mode}
             onChange={(evn) => handleLangChange(evn.target.value as keyof typeof langs)}
           />

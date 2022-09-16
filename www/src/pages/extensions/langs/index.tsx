@@ -47,7 +47,7 @@ export const LangsDoc = () => {
       <Toolbar>
         <select value={language} onChange={(evn) => setLanguage(evn.target.value as LanguageName)}>
           <option value="good">good</option>
-          {langNames.map((name, idx) => {
+          {langNames.sort().map((name, idx) => {
             return (
               <option key={idx} value={name}>
                 {name}
