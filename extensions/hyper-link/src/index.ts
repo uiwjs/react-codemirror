@@ -12,7 +12,7 @@ export interface HyperLinkState {
 
 class HyperLink extends WidgetType {
   private readonly state: HyperLinkState;
-  constructor({ ...state }: HyperLinkState) {
+  constructor(state: HyperLinkState) {
     super();
     this.state = state;
   }
@@ -40,7 +40,7 @@ function hyperLinkDecorations(view: EditorView) {
     syntaxTree(view.state).iterate({
       from: range.from,
       to: range.to,
-      enter: ({ type, node, from, to }) => {
+      enter: ({ type, from, to }) => {
         const callExp: string = view.state.doc.sliceString(from, to);
         if (type.name === 'URL') {
           const widget = Decoration.widget({
@@ -52,12 +52,6 @@ function hyperLinkDecorations(view: EditorView) {
             side: 1,
           });
           widgets.push(widget.range(to));
-        } else if (type.name === 'String') {
-          console.log('type.name:', type.name, callExp);
-        } else if (type.name === 'CodeText') {
-          console.log('type.name:', type.name, callExp);
-        } else {
-          console.log('type.name:', type.name, callExp);
         }
       },
     });
