@@ -12,7 +12,7 @@ export interface HyperLinkState {
 
 class HyperLink extends WidgetType {
   private readonly state: HyperLinkState;
-  constructor({ ...state }: HyperLinkState) {
+  constructor(state: HyperLinkState) {
     super();
     this.state = state;
   }
