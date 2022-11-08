@@ -37,7 +37,6 @@ export const BasicSetupDoc = () => {
   }, []);
 
   const [basicSetup, setBasicSetup] = useState<BasicSetupOptions>({});
-  console.log('basicSetup', basicSetup);
   return (
     <PageWarpper>
       <CodeMirror
@@ -53,10 +52,10 @@ export const BasicSetupDoc = () => {
           value={basicSetup.tabSize}
           onChange={(evn) => setBasicSetup({ ...basicSetup, tabSize: Number(evn.target.value || '2') })}
         >
-          <option value={2}>2</option>
-          <option value={4}>4</option>
-          <option value={6}>6</option>
-          <option value={8}>8</option>
+          <option value={2}>TabSize: 2</option>
+          <option value={4}>TabSize: 4</option>
+          <option value={6}>TabSize: 6</option>
+          <option value={8}>TabSize: 8</option>
         </select>
         <Options
           checked={basicSetup.lineNumbers !== false}
