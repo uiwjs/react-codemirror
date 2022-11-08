@@ -107,6 +107,12 @@ export interface BasicSetupOptions extends MinimalSetupOptions {
   foldKeymap?: boolean;
   completionKeymap?: boolean;
   lintKeymap?: boolean;
+  /**
+   * Facet for overriding the unit by which indentation happens. Should be a string consisting either entirely of spaces or entirely of tabs. When not set, this defaults to 2 spaces
+   * https://codemirror.net/docs/ref/#language.indentUnit
+   * @default 2
+   */
+  tabSize?: number;
 }
 /**
 This is an extension value that just pulls together a number of

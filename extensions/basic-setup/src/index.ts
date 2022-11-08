@@ -20,6 +20,7 @@ import {
   syntaxHighlighting,
   defaultHighlightStyle,
   bracketMatching,
+  indentUnit,
   foldKeymap,
 } from '@codemirror/language';
 
@@ -45,6 +46,12 @@ export interface BasicSetupOptions extends MinimalSetupOptions {
   foldKeymap?: boolean;
   completionKeymap?: boolean;
   lintKeymap?: boolean;
+  /**
+   * Facet for overriding the unit by which indentation happens. Should be a string consisting either entirely of spaces or entirely of tabs. When not set, this defaults to 2 spaces
+   * https://codemirror.net/docs/ref/#language.indentUnit
+   * @default 2
+   */
+  tabSize?: number;
 }
 
 /**
@@ -126,6 +133,8 @@ export const basicSetup = (options: BasicSetupOptions = {}): Extension[] => {
   if (options.crosshairCursor !== false) extensions.push(crosshairCursor());
   if (options.highlightActiveLine !== false) extensions.push(highlightActiveLine());
   if (options.highlightSelectionMatches !== false) extensions.push(highlightSelectionMatches());
+  if (options.tabSize && typeof options.tabSize === 'number')
+    extensions.push(indentUnit.of(' '.repeat(options.tabSize)));
 
   return extensions.concat([keymap.of(keymaps.flat())]).filter(Boolean);
 };
