@@ -7,6 +7,7 @@ import draculaMd from '@uiw/codemirror-theme-dracula/README.md';
 import darculaMd from '@uiw/codemirror-theme-darcula/README.md';
 import duotoneMd from '@uiw/codemirror-theme-duotone/README.md';
 import githubMd from '@uiw/codemirror-theme-github/README.md';
+import gruvboxDarkMd from '@uiw/codemirror-theme-gruvbox-dark/README.md';
 import eclipseMd from '@uiw/codemirror-theme-eclipse/README.md';
 import bespinMd from '@uiw/codemirror-theme-bespin/README.md';
 import sublimeMd from '@uiw/codemirror-theme-sublime/README.md';
@@ -23,6 +24,7 @@ import { eclipse } from '@uiw/codemirror-theme-eclipse';
 import { bespin } from '@uiw/codemirror-theme-bespin';
 import { duotoneLight, duotoneDark } from '@uiw/codemirror-theme-duotone';
 import { githubLight, githubDark } from '@uiw/codemirror-theme-github';
+import { gruvboxDark } from '@uiw/codemirror-theme-gruvbox-dark';
 import { sublime } from '@uiw/codemirror-theme-sublime';
 import { xcodeLight, xcodeDark } from '@uiw/codemirror-theme-xcode';
 
@@ -39,6 +41,7 @@ export const mdSource = {
   eclipse: eclipseMd.source,
   githubLight: githubMd.source,
   githubDark: githubMd.source,
+  gruvboxDark: gruvboxDarkMd.source,
   okaidia: okaidiaMd.source,
   sublime: sublimeMd.source,
   xcodeLight: xcodeMd.source,
@@ -58,6 +61,7 @@ export const themeData = {
   eclipse,
   githubLight,
   githubDark,
+  gruvboxDark,
   okaidia,
   sublime,
   xcodeLight,

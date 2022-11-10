@@ -52,6 +52,7 @@
     "@uiw/codemirror-theme-duotone": "4.13.0",
     "@uiw/codemirror-theme-eclipse": "4.13.0",
     "@uiw/codemirror-theme-github": "4.13.0",
+    "@uiw/codemirror-theme-gruvbox-dark": "4.13.0",
     "@uiw/codemirror-theme-okaidia": "4.13.0",
     "@uiw/codemirror-theme-sublime": "4.13.0",
     "@uiw/codemirror-theme-xcode": "4.13.0",

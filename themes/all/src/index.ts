@@ -8,6 +8,7 @@ export * from '@uiw/codemirror-theme-dracula';
 export * from '@uiw/codemirror-theme-duotone';
 export * from '@uiw/codemirror-theme-eclipse';
 export * from '@uiw/codemirror-theme-github';
+export * from '@uiw/codemirror-theme-gruvbox-dark';
 export * from '@uiw/codemirror-theme-okaidia';
 export * from '@uiw/codemirror-theme-sublime';
 export * from '@uiw/codemirror-theme-xcode';
