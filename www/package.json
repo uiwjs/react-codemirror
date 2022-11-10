@@ -36,7 +36,7 @@
     "@codemirror/lang-sql": "~6.3.0",
     "@codemirror/lang-xml": "~6.0.0",
     "@codemirror/language-data": "^6.1.0",
-    "@codemirror/legacy-modes": "~6.1.0",
+    "@codemirror/legacy-modes": "~6.2.0",
     "@uiw/codemirror-extensions-color": "4.13.1",
     "@uiw/codemirror-extensions-events": "4.13.1",
     "@uiw/codemirror-extensions-hyper-link": "4.13.1",
