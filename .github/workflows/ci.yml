@@ -159,6 +159,12 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./themes/github/package.json
 
+      - name: 📦 @uiw/codemirror-theme-gruvbox-dark publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./themes/gruvbox-dark/package.json
+
       - name: 📦 @uiw/codemirror-theme-darcula publish to NPM
         uses: JS-DevTools/npm-publish@v1
         with:
@@ -248,8 +254,7 @@ jobs:
         if: success() || failure()
         with:
           path: core/package.json
-          data: |
-            { "name": "@uiwjs/react-codemirror" }
+          rename: "@uiwjs/react-codemirror"
 
       - run: npm publish
         working-directory: core
@@ -262,8 +267,7 @@ jobs:
         if: success() || failure()
         with:
           path: themes/theme/package.json
-          data: |
-            { "name": "@uiwjs/codemirror-themes" }
+          rename: "@uiwjs/codemirror-themes"
 
       - run: npm publish
         working-directory: themes/theme
@@ -276,8 +280,7 @@ jobs:
         if: success() || failure()
         with:
           path: themes/abcdef/package.json
-          data: |
-            { "name": "@uiwjs/codemirror-theme-abcdef" }
+          rename: "@uiwjs/codemirror-theme-abcdef"
 
       - run: npm publish
         working-directory: themes/abcdef
@@ -291,8 +294,7 @@ jobs:
         if: success() || failure()
         with:
           path: themes/all/package.json
-          data: |
-            { "name": "@uiwjs/codemirror-themes-all" }
+          rename: "@uiwjs/codemirror-themes-all"
 
       - run: npm publish
         working-directory: themes/all
@@ -306,8 +308,7 @@ jobs:
         if: success() || failure()
         with:
           path: themes/androidstudio/package.json
-          data: |
-            { "name": "@uiwjs/codemirror-theme-androidstudio" }
+          rename: "@uiwjs/codemirror-theme-androidstudio"
 
       - run: npm publish
         working-directory: themes/androidstudio
@@ -321,8 +322,7 @@ jobs:
         if: success() || failure()
         with:
           path: themes/atomone/package.json
-          data: |
-            { "name": "@uiwjs/codemirror-theme-atomone" }
+          rename: "@uiwjs/codemirror-theme-atomone"
 
       - run: npm publish
         working-directory: themes/atomone
@@ -336,8 +336,7 @@ jobs:
         if: success() || failure()
         with:
           path: themes/bbedit/package.json
-          data: |
-            { "name": "@uiwjs/codemirror-theme-bbedit" }
+          rename: "@uiwjs/codemirror-theme-bbedit"
 
       - run: npm publish
         working-directory: themes/bbedit
@@ -351,8 +350,7 @@ jobs:
         if: success() || failure()
         with:
           path: themes/okaidia/package.json
-          data: |
-            { "name": "@uiwjs/codemirror-theme-okaidia" }
+          rename: "@uiwjs/codemirror-theme-okaidia"
 
       - run: npm publish
         working-directory: themes/okaidia
@@ -365,8 +363,7 @@ jobs:
         if: success() || failure()
         with:
           path: themes/dracula/package.json
-          data: |
-            { "name": "@uiwjs/codemirror-theme-dracula" }
+          rename: "@uiwjs/codemirror-theme-dracula"
 
       - run: npm publish
         working-directory: themes/dracula
@@ -380,8 +377,7 @@ jobs:
         if: success() || failure()
         with:
           path: themes/duotone/package.json
-          data: |
-            { "name": "@uiwjs/codemirror-theme-duotone" }
+          rename: "@uiwjs/codemirror-theme-duotone"
 
       - run: npm publish
         working-directory: themes/duotone
@@ -394,8 +390,7 @@ jobs:
         if: success() || failure()
         with:
           path: themes/eclipse/package.json
-          data: |
-            { "name": "@uiwjs/codemirror-theme-eclipse" }
+          rename: "@uiwjs/codemirror-theme-eclipse"
 
       - run: npm publish
         working-directory: themes/eclipse
@@ -408,8 +403,14 @@ jobs:
         if: success() || failure()
         with:
           path: themes/github/package.json
-          data: |
-            { "name": "@uiwjs/codemirror-theme-github" }
+          rename: "@uiwjs/codemirror-theme-github"
+
+      - name: Modify @uiw/codemirror-theme-gruvbox-dark => @uiwjs/codemirror-theme-gruvbox-dark
+        uses: jaywcjlove/github-action-package@main
+        if: success() || failure()
+        with:
+          path: themes/github/package.json
+          rename: '@uiwjs/codemirror-theme-gruvbox-dark'
 
       - run: npm publish
         working-directory: themes/github
@@ -422,8 +423,7 @@ jobs:
         if: success() || failure()
         with:
           path: themes/darcula/package.json
-          data: |
-            { "name": "@uiwjs/codemirror-theme-darcula" }
+          rename: "@uiwjs/codemirror-theme-darcula"
 
       - run: npm publish
         working-directory: themes/darcula
@@ -436,8 +436,7 @@ jobs:
         if: success() || failure()
         with:
           path: themes/bespin/package.json
-          data: |
-            { "name": "@uiwjs/codemirror-theme-bespin" }
+          rename: "@uiwjs/codemirror-theme-bespin"
 
       - run: npm publish
         working-directory: themes/bespin
@@ -450,8 +449,7 @@ jobs:
         if: success() || failure()
         with:
           path: themes/sublime/package.json
-          data: |
-            { "name": "@uiwjs/codemirror-theme-sublime" }
+          rename: "@uiwjs/codemirror-theme-sublime"
 
       - run: npm publish
         working-directory: themes/sublime
@@ -464,8 +462,7 @@ jobs:
         if: success() || failure()
         with:
           path: themes/xcode/package.json
-          data: |
-            { "name": "@uiwjs/codemirror-theme-xcode" }
+          rename: "@uiwjs/codemirror-theme-xcode"
 
       - run: npm publish
         working-directory: themes/xcode
@@ -478,8 +475,7 @@ jobs:
         if: success() || failure()
         with:
           path: extensions/events/package.json
-          data: |
-            { "name": "@uiwjs/codemirror-extensions-events" }
+          rename: "@uiwjs/codemirror-extensions-events"
 
       - run: npm publish
         working-directory: extensions/events
@@ -492,8 +488,7 @@ jobs:
         if: success() || failure()
         with:
           path: extensions/basic-setup/package.json
-          data: |
-            { "name": "@uiwjs/codemirror-extensions-basic-setup" }
+          rename: "@uiwjs/codemirror-extensions-basic-setup"
 
       - run: npm publish
         working-directory: extensions/basic-setup
@@ -506,8 +501,7 @@ jobs:
         if: success() || failure()
         with:
           path: extensions/color/package.json
-          data: |
-            { "name": "@uiwjs/codemirror-extensions-color" }
+          rename: "@uiwjs/codemirror-extensions-color"
 
       - run: npm publish
         working-directory: extensions/color
@@ -520,8 +514,7 @@ jobs:
         if: success() || failure()
         with:
           path: extensions/line-numbers-relative/package.json
-          data: |
-            { "name": "@uiwjs/codemirror-extensions-line-numbers-relative" }
+          rename: "@uiwjs/codemirror-extensions-line-numbers-relative"
 
       - run: npm publish
         working-directory: extensions/line-numbers-relative
@@ -534,8 +527,7 @@ jobs:
         if: success() || failure()
         with:
           path: extensions/hyper-link/package.json
-          data: |
-            { "name": "@uiwjs/codemirror-extensions-hyper-link" }
+          rename: "@uiwjs/codemirror-extensions-hyper-link"
 
       - run: npm publish
         working-directory: extensions/hyper-link
@@ -548,8 +540,7 @@ jobs:
         if: success() || failure()
         with:
           path: extensions/langs/package.json
-          data: |
-            { "name": "@uiwjs/codemirror-extensions-langs" }
+          rename: "@uiwjs/codemirror-extensions-langs"
 
       - run: npm publish
         working-directory: extensions/langs
@@ -562,8 +553,7 @@ jobs:
         if: success() || failure()
         with:
           path: extensions/mentions/package.json
-          data: |
-            { "name": "@uiwjs/codemirror-extensions-mentions" }
+          rename: "@uiwjs/codemirror-extensions-mentions"
 
       - run: npm publish
         working-directory: extensions/mentions
