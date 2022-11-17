@@ -183,6 +183,12 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./themes/sublime/package.json
 
+      - name: 📦 @uiw/codemirror-theme-vscode publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./themes/vscode/package.json
+
       - name: 📦 @uiw/codemirror-theme-xcode publish to NPM
         uses: JS-DevTools/npm-publish@v1
         with:
@@ -453,6 +459,19 @@ jobs:
 
       - run: npm publish
         working-directory: themes/sublime
+        if: success() || failure()
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Modify @uiw/codemirror-theme-vscode => @uiwjs/codemirror-theme-vscode
+        uses: jaywcjlove/github-action-package@main
+        if: success() || failure()
+        with:
+          path: themes/vscode/package.json
+          rename: "@uiwjs/codemirror-theme-vscode"
+
+      - run: npm publish
+        working-directory: themes/vscode
         if: success() || failure()
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

@@ -11,4 +11,5 @@ export * from '@uiw/codemirror-theme-github';
 export * from '@uiw/codemirror-theme-gruvbox-dark';
 export * from '@uiw/codemirror-theme-okaidia';
 export * from '@uiw/codemirror-theme-sublime';
+export * from '@uiw/codemirror-theme-vscode';
 export * from '@uiw/codemirror-theme-xcode';

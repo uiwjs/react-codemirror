@@ -1,0 +1,35 @@
+{
+  "name": "@uiw/codemirror-theme-vscode",
+  "version": "4.13.2",
+  "description": "Theme vscode for CodeMirror.",
+  "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/vscode",
+  "author": "kenny wong <wowohoo@qq.com>",
+  "license": "MIT",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "scripts": {
+    "watch": "tsbb watch",
+    "build": "tsbb build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uiwjs/react-codemirror.git"
+  },
+  "files": [
+    "src",
+    "esm",
+    "cjs"
+  ],
+  "dependencies": {
+    "@uiw/codemirror-themes": "4.13.2"
+  },
+  "keywords": [
+    "codemirror",
+    "codemirror6",
+    "theme",
+    "vscode",
+    "syntax",
+    "ide",
+    "code"
+  ]
+}

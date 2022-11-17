@@ -194,6 +194,12 @@ export default App;
   <img width="436" alt="codemirror-theme-sublime" src="https://user-images.githubusercontent.com/1680273/176572314-cc296f81-0763-485c-8fa2-7d61b24ad09b.png">
 </a>
 
+**vscode**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/vscode/dark">
+  <img width="436" alt="codemirror-theme-vscode dark" src="https://user-images.githubusercontent.com/1680273/202343079-7eca1c90-da69-4ef2-a18c-4c9f5ea4e396.png">
+</a>
+
 **xcode**
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/xcode/dark">

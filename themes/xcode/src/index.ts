@@ -49,4 +49,3 @@ export const xcodeDark = createTheme({
     { tag: [t.regexp, t.link], color: '#FF8170' },
   ],
 });
-const test = /^goode/;

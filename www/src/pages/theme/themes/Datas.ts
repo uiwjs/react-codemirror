@@ -11,6 +11,7 @@ import gruvboxDarkMd from '@uiw/codemirror-theme-gruvbox-dark/README.md';
 import eclipseMd from '@uiw/codemirror-theme-eclipse/README.md';
 import bespinMd from '@uiw/codemirror-theme-bespin/README.md';
 import sublimeMd from '@uiw/codemirror-theme-sublime/README.md';
+import vscodeMd from '@uiw/codemirror-theme-vscode/README.md';
 import xcodeMd from '@uiw/codemirror-theme-xcode/README.md';
 
 import { abcdef } from '@uiw/codemirror-theme-abcdef';
@@ -22,6 +23,7 @@ import { dracula } from '@uiw/codemirror-theme-dracula';
 import { darcula } from '@uiw/codemirror-theme-darcula';
 import { eclipse } from '@uiw/codemirror-theme-eclipse';
 import { bespin } from '@uiw/codemirror-theme-bespin';
+import { vscodeDark } from '@uiw/codemirror-theme-vscode';
 import { duotoneLight, duotoneDark } from '@uiw/codemirror-theme-duotone';
 import { githubLight, githubDark } from '@uiw/codemirror-theme-github';
 import { gruvboxDark } from '@uiw/codemirror-theme-gruvbox-dark';
@@ -44,6 +46,7 @@ export const mdSource = {
   gruvboxDark: gruvboxDarkMd.source,
   okaidia: okaidiaMd.source,
   sublime: sublimeMd.source,
+  vscodeDark: vscodeMd.source,
   xcodeLight: xcodeMd.source,
   xcodeDark: xcodeMd.source,
 };
@@ -64,6 +67,7 @@ export const themeData = {
   gruvboxDark,
   okaidia,
   sublime,
+  vscodeDark,
   xcodeLight,
   xcodeDark,
 };

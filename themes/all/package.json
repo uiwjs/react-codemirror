@@ -34,6 +34,7 @@
     "@uiw/codemirror-theme-gruvbox-dark": "4.13.2",
     "@uiw/codemirror-theme-okaidia": "4.13.2",
     "@uiw/codemirror-theme-sublime": "4.13.2",
+    "@uiw/codemirror-theme-vscode": "4.13.2",
     "@uiw/codemirror-theme-xcode": "4.13.2",
     "@uiw/codemirror-themes": "4.13.2"
   },
