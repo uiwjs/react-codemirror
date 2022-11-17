@@ -236,19 +236,21 @@ export interface Settings {
   /** Default text color. */
   foreground: string;
   /** Caret color. */
-  caret: string;
+  caret?: string;
   /** Selection background. */
-  selection: string;
+  selection?: string;
   /** Selection match background. */
   selectionMatch?: string;
   /** Background of highlighted lines. */
-  lineHighlight: string;
+  lineHighlight?: string;
   /** Gutter background. */
-  gutterBackground: string;
+  gutterBackground?: string;
   /** Text color inside gutter. */
-  gutterForeground: string;
+  gutterForeground?: string;
+  /** Text active color inside gutter. */
+  gutterActiveForeground?: string;
   /** Gutter right border color. */
-  gutterBorder: string;
+  gutterBorder?: string;
 }
 declare const createTheme: ({ dark, settings, styles }: CreateThemeOptions) => Extension;
 export default createTheme;
