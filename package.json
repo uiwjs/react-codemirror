@@ -11,7 +11,7 @@
     "prepare": "husky install",
     "version": "lerna version --exact --force-publish --no-push --no-git-tag-version",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,json}'",
-    "remove": "npm run clean && lerna exec \"rm -rf package-lock.json\" --scope react-code-preview-layout --scope website",
+    "remove": "npm run clean && lerna exec \"rm -rf package-lock.json\" --scope @uiw/* --scope website",
     "clean": "lerna clean --yes"
   },
   "workspaces": [

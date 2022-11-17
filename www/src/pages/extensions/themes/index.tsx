@@ -13,7 +13,8 @@ const ToolsWapper = styled.div`
 
 export const ThemesAllDoc = () => {
   const dark = document.documentElement.getAttribute('data-color-mode');
-  const [selectTheme, setSelectTheme] = useState<keyof typeof themes>();
+  const { vscodeDarkInit, ...themesAll } = themes;
+  const [selectTheme, setSelectTheme] = useState<keyof typeof themesAll>();
   const [theme, setTheme] = useState<ReactCodeMirrorProps['theme']>(dark === 'dark' ? 'dark' : 'light');
   useEffect(() => {
     setTheme(document.documentElement.getAttribute('data-color-mode') === 'dark' ? 'dark' : 'light');
@@ -21,10 +22,9 @@ export const ThemesAllDoc = () => {
       setTheme(e.detail.colorScheme as ReactCodeMirrorProps['theme']);
     });
   }, []);
-
-  const themeCurrent = themes[selectTheme!] ? themes[selectTheme!] : theme;
+  const themeCurrent = themesAll[selectTheme!] ? themesAll[selectTheme!] : theme;
   const changeHandle = (ev: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectTheme(ev.target.value as keyof typeof themes);
+    setSelectTheme(ev.target.value as keyof typeof themesAll);
   };
   return (
     <PageWarpper>
