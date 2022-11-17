@@ -7,7 +7,7 @@
 [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-vscode.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-vscode)
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/vscode/dark">
-  <img width="436" alt="codemirror-theme-vscode dark" src="https://user-images.githubusercontent.com/1680273/202441061-48b89163-04b9-47a1-9d2c-1608a2d21f51.png">
+  <img width="436" alt="codemirror-theme-vscode dark" src="https://user-images.githubusercontent.com/1935696/202500700-11643593-5385-4d5b-9f41-1414dc4ddba5.png">
 </a>
 
 ## Install
