@@ -207,6 +207,7 @@ const myTheme = createTheme({
     gutterBackground: '${styles.gutterBackground}',
     gutterForeground: '${styles.gutterForeground}',
     gutterBorder: '${styles.gutterBorder}',
+    gutterActiveForeground: '${styles.gutterActiveForeground}',
     lineHighlight: '${styles.lineHighlight}',
   },
   styles: [

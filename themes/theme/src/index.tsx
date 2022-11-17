@@ -35,6 +35,8 @@ export interface Settings {
   gutterBackground?: string;
   /** Text color inside gutter. */
   gutterForeground?: string;
+  /** Text active color inside gutter. */
+  gutterActiveForeground?: string;
   /** Gutter right border color. */
   gutterBorder?: string;
 }
@@ -66,15 +68,17 @@ export const createTheme = ({ theme, settings, styles }: CreateThemeOptions): Ex
       borderLeftColor: settings.caret,
     };
   }
-
+  let activeLineGutterStyle: StyleSpec = {};
+  if (settings.gutterActiveForeground) {
+    activeLineGutterStyle.color = settings.gutterActiveForeground;
+  }
   if (settings.lineHighlight) {
     themeOptions['.cm-activeLine'] = {
       backgroundColor: settings.lineHighlight,
     };
-    themeOptions['.cm-activeLineGutter'] = {
-      backgroundColor: settings.lineHighlight,
-    };
+    activeLineGutterStyle.backgroundColor = settings.lineHighlight;
   }
+  themeOptions['.cm-activeLineGutter'] = activeLineGutterStyle;
 
   if (settings.selection) {
     themeOptions[

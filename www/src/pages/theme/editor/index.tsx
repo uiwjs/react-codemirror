@@ -81,6 +81,7 @@ export function ThemeEditor() {
     gutterBackground: '#FFFFFF',
     gutterForeground: '#4D4D4C',
     gutterBorder: '#ddd',
+    gutterActiveForeground: '',
     lineHighlight: '#EFEFEF',
   });
 
