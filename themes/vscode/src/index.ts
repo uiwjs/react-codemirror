@@ -16,6 +16,7 @@ export const vscodeDark = createTheme({
     gutterBackground: '#1e1e1e',
     gutterForeground: '#838383',
     gutterActiveForeground: '#fff',
+    fontFamily: 'Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono", "Courier New", monospace',
   },
   styles: [
     { tag: t.keyword, color: '#569cd6' },
