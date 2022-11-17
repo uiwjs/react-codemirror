@@ -82,7 +82,7 @@ export const createTheme = ({ theme, settings, styles }: CreateThemeOptions): Ex
 
   if (settings.selection) {
     themeOptions[
-      '&.cm-focused .cm-selectionBackground .cm-selectionBackground, & .cm-selectionLayer .cm-selectionBackground, ::selection'
+      '&.cm-focused .cm-selectionBackground, & .cm-selectionLayer .cm-selectionBackground, .cm-content ::selection'
     ] = {
       backgroundColor: settings.selection,
     };
