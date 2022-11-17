@@ -16,6 +16,18 @@
 npm install @uiw/codemirror-theme-vscode --save
 ```
 
+```jsx
+import { vscodeDark, vscodeDarkInit } from '@uiw/codemirror-theme-vscode';
+
+<CodeMirror theme={vscodeDark} />
+
+<CodeMirror
+  theme={vscodeDarkInit({
+    fontFamily: 'monospace',
+  })}
+/>
+```
+
 ## Usage
 
 ```jsx
