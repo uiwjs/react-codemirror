@@ -39,6 +39,8 @@ export interface Settings {
   gutterActiveForeground?: string;
   /** Gutter right border color. */
   gutterBorder?: string;
+  /** set editor font */
+  fontFamily?: string;
 }
 
 export const createTheme = ({ theme, settings, styles }: CreateThemeOptions): Extension => {
@@ -50,6 +52,9 @@ export const createTheme = ({ theme, settings, styles }: CreateThemeOptions): Ex
     '.cm-gutters': {},
   };
 
+  if (settings.fontFamily) {
+    themeOptions['&.cm-editor .cm-scroller'].fontFamily = settings.fontFamily;
+  }
   if (settings.gutterBackground) {
     themeOptions['.cm-gutters'].backgroundColor = settings.gutterBackground;
   }

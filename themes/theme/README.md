@@ -251,6 +251,8 @@ export interface Settings {
   gutterActiveForeground?: string;
   /** Gutter right border color. */
   gutterBorder?: string;
+  /** set editor font */
+  fontFamily?: string;
 }
 declare const createTheme: ({ dark, settings, styles }: CreateThemeOptions) => Extension;
 export default createTheme;
