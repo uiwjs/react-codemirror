@@ -203,7 +203,7 @@ export default App;
 **xcode**
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/xcode/dark">
-  <img width="436" alt="codemirror-theme-xcode dark" src="https://user-images.githubusercontent.com/1680273/177074703-4c5c6be0-e287-45ac-b6cc-db1568276e73.png">
+  <img width="436" alt="codemirror-theme-xcode dark" src="https://user-images.githubusercontent.com/1680273/202441061-48b89163-04b9-47a1-9d2c-1608a2d21f51.png">
 </a>
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/xcode/light">
