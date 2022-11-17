@@ -53,7 +53,9 @@ export const createTheme = ({ theme, settings, styles }: CreateThemeOptions): Ex
   };
 
   if (settings.fontFamily) {
-    themeOptions['&.cm-editor .cm-scroller'].fontFamily = settings.fontFamily;
+    themeOptions['&.cm-editor .cm-scroller'] = {
+      fontFamily: settings.fontFamily,
+    };
   }
   if (settings.gutterBackground) {
     themeOptions['.cm-gutters'].backgroundColor = settings.gutterBackground;
