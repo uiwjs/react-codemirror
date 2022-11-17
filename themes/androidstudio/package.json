@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-theme-androidstudio",
-  "version": "4.13.2",
+  "version": "4.14.0",
   "description": "Theme androidstudio for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/androidstudio",
   "author": "kenny wong <wowohoo@qq.com>",
@@ -21,7 +21,7 @@
     "cjs"
   ],
   "dependencies": {
-    "@uiw/codemirror-themes": "4.13.2"
+    "@uiw/codemirror-themes": "4.14.0"
   },
   "keywords": [
     "codemirror",
