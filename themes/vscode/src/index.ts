@@ -7,13 +7,13 @@ import { createTheme } from '@uiw/codemirror-themes';
 export const vscodeDark = createTheme({
   theme: 'dark',
   settings: {
-    background: '#000000',
+    background: '#1e1e1e',
     foreground: '#CECFD0',
     caret: '#c6c6c6',
     selection: '#6199ff2f',
     selectionMatch: '#72a1ff59',
     lineHighlight: '#ffffff0f',
-    gutterBackground: '#000000',
+    gutterBackground: '#1e1e1e',
     gutterForeground: '#838383',
     gutterActiveForeground: '#fff',
   },
