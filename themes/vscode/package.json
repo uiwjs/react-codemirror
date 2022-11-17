@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-theme-vscode",
-  "version": "4.14.3",
+  "version": "4.15.0",
   "description": "Theme vscode for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/vscode",
   "author": "kenny wong <wowohoo@qq.com>",
@@ -21,7 +21,7 @@
     "cjs"
   ],
   "dependencies": {
-    "@uiw/codemirror-themes": "4.14.3"
+    "@uiw/codemirror-themes": "4.15.0"
   },
   "keywords": [
     "codemirror",
