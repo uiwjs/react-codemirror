@@ -8,7 +8,7 @@ export const vscodeDark = createTheme({
   theme: 'dark',
   settings: {
     background: '#1e1e1e',
-    foreground: '#CECFD0',
+    foreground: '#9cdcfe',
     caret: '#c6c6c6',
     selection: '#6199ff2f',
     selectionMatch: '#72a1ff59',
@@ -18,16 +18,6 @@ export const vscodeDark = createTheme({
     gutterActiveForeground: '#fff',
   },
   styles: [
-    { tag: [t.comment, t.quote], color: '#707F8D' },
-    { tag: [t.typeName, t.typeOperator], color: '#aa0d91' },
-    { tag: [t.keyword], color: '#569cd6', fontWeight: 'bold' },
-    { tag: [t.string, t.meta], color: '#D23423' },
-    { tag: [t.name], color: '#032f62' },
-    { tag: [t.typeName], color: '#522BB2' },
-    { tag: [t.variableName], color: '#23575C' },
-    { tag: [t.definition(t.variableName)], color: '#327A9E' },
-    { tag: [t.regexp, t.link], color: '#0e0eff' },
-
     { tag: t.keyword, color: '#569cd6' },
     {
       tag: [t.controlKeyword, t.moduleKeyword],
