@@ -22,38 +22,30 @@ export function vscodeDarkInit(options?: CreateThemeOptions) {
       ...settings,
     },
     styles: [
-      { tag: t.keyword, color: '#569cd6' },
+      {
+        tag: [t.keyword, t.operatorKeyword, t.modifier, t.color, t.constant(t.name), t.standard(t.name), t.tagName, t.special(t.brace), t.atom, t.bool, t.special(t.variableName)],
+        color: '#569cd6',
+      },
       {
         tag: [t.controlKeyword, t.moduleKeyword],
         color: '#c586c0',
       },
       {
-        tag: [t.name, t.deleted, t.character, t.macroName],
+        tag: [t.name, t.deleted, t.character, t.macroName, t.propertyName, t.variableName, t.labelName, t.definition(t.name)],
         color: '#9cdcfe',
       },
+      { tag: t.heading, fontWeight: 'bold', color: '#9cdcfe' },
       {
-        tag: [t.propertyName],
-        color: '#9cdcfe',
-      },
-
-      { tag: [t.variableName, t.labelName], color: '#9cdcfe' },
-      {
-        tag: [t.color, t.constant(t.name), t.standard(t.name)],
-        color: '#569cd6',
-      },
-      { tag: [t.definition(t.name)], color: '#9cdcfe' },
-      {
-        tag: [t.typeName, t.className, t.number, t.changed, t.annotation, t.modifier, t.self, t.namespace],
+        tag: [t.typeName, t.className, t.number, t.changed, t.annotation, t.self, t.namespace],
         color: '#4ec9b0',
       },
-      { tag: [t.tagName], color: '#569cd6' },
       {
         tag: [t.function(t.variableName), t.function(t.propertyName)],
         color: '#dcdcaa',
       },
       { tag: [t.number], color: '#b5cea8' },
       {
-        tag: [t.operator, t.operatorKeyword, t.url, t.escape, t.regexp, t.link, t.special(t.string)],
+        tag: [t.operator, t.punctuation, t.separator, t.url, t.escape, t.regexp],
         color: '#d4d4d4',
       },
       {
@@ -61,26 +53,15 @@ export function vscodeDarkInit(options?: CreateThemeOptions) {
         color: '#d16969',
       },
       {
-        tag: [t.special(t.string)],
+        tag: [t.special(t.string), t.processingInstruction, t.string, t.inserted],
         color: '#ce9178',
       },
-      { tag: [t.meta, t.comment], color: '#6a9955' },
-      { tag: [t.punctuation, t.separator], color: '#d4d4d4' },
       { tag: [t.angleBracket], color: '#808080' },
-      { tag: t.special(t.brace), color: '#569cd6' },
       { tag: t.strong, fontWeight: 'bold' },
       { tag: t.emphasis, fontStyle: 'italic' },
       { tag: t.strikethrough, textDecoration: 'line-through' },
+      { tag: [t.meta, t.comment], color: '#6a9955' },
       { tag: t.link, color: '#6a9955', textDecoration: 'underline' },
-      { tag: t.heading, fontWeight: 'bold', color: '#9cdcfe' },
-      {
-        tag: [t.atom, t.bool, t.special(t.variableName)],
-        color: '#569cd6',
-      },
-      {
-        tag: [t.processingInstruction, t.string, t.inserted],
-        color: '#ce9178',
-      },
       { tag: t.invalid, color: '#ff0000' },
       ...styles,
     ],
