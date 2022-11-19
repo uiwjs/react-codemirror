@@ -197,7 +197,7 @@ export default App;
 **vscode**
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/vscode/dark">
-  <img width="436" alt="codemirror-theme-vscode dark" src="https://user-images.githubusercontent.com/1680273/202343079-7eca1c90-da69-4ef2-a18c-4c9f5ea4e396.png">
+  <img width="436" alt="codemirror-theme-vscode dark" src="https://user-images.githubusercontent.com/1680273/202690670-385808e2-6346-4e36-a3d6-6d9fc1f216dc.png">
 </a>
 
 **xcode**
