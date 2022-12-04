@@ -32,6 +32,7 @@
     "@uiw/codemirror-theme-eclipse": "4.15.1",
     "@uiw/codemirror-theme-github": "4.15.1",
     "@uiw/codemirror-theme-gruvbox-dark": "4.15.1",
+    "@uiw/codemirror-theme-nord": "4.15.1",
     "@uiw/codemirror-theme-okaidia": "4.15.1",
     "@uiw/codemirror-theme-sublime": "4.15.1",
     "@uiw/codemirror-theme-vscode": "4.15.1",

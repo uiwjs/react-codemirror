@@ -182,6 +182,18 @@ export default App;
   <img width="436" alt="codemirror-theme-github light" src="https://user-images.githubusercontent.com/1680273/177048005-32794f23-8bff-4059-babf-21316d886e65.png">
 </a>
 
+**gruvbox**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/gruvbox/dark">
+  <img width="436" alt="codemirror-theme-gruvbox-dark" src="https://user-images.githubusercontent.com/1680273/201111051-c38a73ca-a449-4c01-a4ff-4a675886ca9d.png">
+</a>
+
+**nord**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/nord">
+  <img width="436" alt="codemirror-theme-nord" src="https://user-images.githubusercontent.com/1680273/205498304-956bc719-1472-40f0-9c3f-21ac5b9f97a6.png">
+</a>
+
 **okaidia**
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/okaidia">
