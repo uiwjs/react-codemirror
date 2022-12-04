@@ -165,6 +165,12 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./themes/gruvbox/package.json
 
+      - name: 📦 @uiw/codemirror-theme-nord publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./themes/nord/package.json
+
       - name: 📦 @uiw/codemirror-theme-darcula publish to NPM
         uses: JS-DevTools/npm-publish@v1
         with:
