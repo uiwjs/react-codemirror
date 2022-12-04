@@ -27,7 +27,7 @@ import { bespin } from '@uiw/codemirror-theme-bespin';
 import { vscodeDark } from '@uiw/codemirror-theme-vscode';
 import { duotoneLight, duotoneDark } from '@uiw/codemirror-theme-duotone';
 import { githubLight, githubDark } from '@uiw/codemirror-theme-github';
-import { gruvboxDark } from '@uiw/codemirror-theme-gruvbox-dark';
+import { gruvboxDark, gruvboxLight } from '@uiw/codemirror-theme-gruvbox-dark';
 import { nord } from '@uiw/codemirror-theme-nord';
 import { sublime } from '@uiw/codemirror-theme-sublime';
 import { xcodeLight, xcodeDark } from '@uiw/codemirror-theme-xcode';
@@ -46,6 +46,7 @@ export const mdSource = {
   githubLight: githubMd.source,
   githubDark: githubMd.source,
   gruvboxDark: gruvboxDarkMd.source,
+  gruvboxLight: gruvboxDarkMd.source,
   nord: nordMd.source,
   okaidia: okaidiaMd.source,
   sublime: sublimeMd.source,
@@ -68,6 +69,7 @@ export const themeData = {
   githubLight,
   githubDark,
   gruvboxDark,
+  gruvboxLight,
   nord,
   okaidia,
   sublime,

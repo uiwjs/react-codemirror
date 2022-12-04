@@ -188,6 +188,10 @@ export default App;
   <img width="436" alt="codemirror-theme-gruvbox-dark" src="https://user-images.githubusercontent.com/1680273/201111051-c38a73ca-a449-4c01-a4ff-4a675886ca9d.png">
 </a>
 
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/gruvbox/light">
+  <img width="436" alt="codemirror-theme-eclipse" src="https://user-images.githubusercontent.com/1680273/205499803-e1e2e214-dc3e-488a-9037-ba979e5ce199.png">
+</a>
+
 **nord**
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/nord">

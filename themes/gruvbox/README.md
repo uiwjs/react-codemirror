@@ -10,6 +10,10 @@
   <img width="436" alt="codemirror-theme-eclipse" src="https://user-images.githubusercontent.com/1680273/201111051-c38a73ca-a449-4c01-a4ff-4a675886ca9d.png">
 </a>
 
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/gruvbox/light">
+  <img width="436" alt="codemirror-theme-eclipse" src="https://user-images.githubusercontent.com/1680273/205499803-e1e2e214-dc3e-488a-9037-ba979e5ce199.png">
+</a>
+
 ## Install
 
 ```bash
@@ -20,7 +24,7 @@ npm install @uiw/codemirror-theme-gruvbox-dark --save
 
 ```jsx
 import CodeMirror from '@uiw/react-codemirror';
-import { gruvboxDark } from '@uiw/codemirror-theme-gruvbox-dark';
+import { gruvboxDark, gruvboxLight } from '@uiw/codemirror-theme-gruvbox-dark';
 import { javascript } from '@codemirror/lang-javascript';
 
 function App() {
