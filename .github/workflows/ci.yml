@@ -237,6 +237,12 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./extensions/mentions/package.json
 
+      - name: 📦 @uiw/codemirror-extensions-zebra-stripes to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./extensions/zebra-stripes/package.json
+
     outputs:
       successful: ${{steps.create_tag.outputs.successful }}
 
@@ -576,6 +582,20 @@ jobs:
 
       - run: npm publish
         working-directory: extensions/mentions
+        if: success() || failure()
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+
+      - name: Modify @uiw/codemirror-extensions-zebra-stripes => @uiwjs/codemirror-extensions-zebra-stripes
+        uses: jaywcjlove/github-action-package@main
+        if: success() || failure()
+        with:
+          path: extensions/zebra-stripes/package.json
+          rename: "@uiwjs/codemirror-extensions-zebra-stripes"
+
+      - run: npm publish
+        working-directory: extensions/zebra-stripes
         if: success() || failure()
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

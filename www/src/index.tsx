@@ -16,6 +16,7 @@ import { BasicSetupDoc } from './pages/extensions/basic-setup';
 import { ColorDoc } from './pages/extensions/color';
 import { MentionsDoc } from './pages/extensions/mentions';
 import { ThemesAllDoc } from './pages/extensions/themes';
+import { ZebraStripesDoc } from './pages/extensions/zebra-stripes';
 
 export const GlobalStyle = createGlobalStyle`
   [data-color-mode*='dark'], [data-color-mode*='dark'] body {
@@ -83,6 +84,7 @@ root.render(
         <Route path="languages" element={<LangsDoc />} />
         <Route path="hyper-link" element={<HyperLinkDoc />} />
         <Route path="mentions" element={<MentionsDoc />} />
+        <Route path="zebra-stripes" element={<ZebraStripesDoc />} />
       </Route>
     </Routes>
   </HashRouter>,

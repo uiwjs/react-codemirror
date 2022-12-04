@@ -6,6 +6,7 @@ import langsMd from '@uiw/codemirror-extensions-langs/README.md';
 import themesAllMd from '@uiw/codemirror-themes-all/README.md';
 import hyperLinkMd from '@uiw/codemirror-extensions-hyper-link/README.md';
 import mentionsMd from '@uiw/codemirror-extensions-mentions/README.md';
+import zebraStripesMd from '@uiw/codemirror-extensions-zebra-stripes/README.md';
 
 export const mdSource = {
   color: basicSetupMd.source,
@@ -16,4 +17,5 @@ export const mdSource = {
   languages: langsMd.source,
   'hyper-link': hyperLinkMd.source,
   mentions: mentionsMd.source,
+  'zebra-stripes': zebraStripesMd.source,
 };
