@@ -24,6 +24,11 @@ export const githubLight = createTheme({
     { tag: [t.heading], color: '#24292e', fontWeight: 'bold' },
     { tag: [t.emphasis], color: '#24292e', fontStyle: 'italic' },
     { tag: [t.deleted], color: '#b31d28', backgroundColor: 'ffeef0' },
+    { tag: [t.atom, t.bool, t.special(t.variableName)], color: '#e36209' },
+    { tag: [t.url, t.escape, t.regexp, t.link], color: '#032f62' },
+    { tag: t.link, textDecoration: 'underline' },
+    { tag: t.strikethrough, textDecoration: 'line-through' },
+    { tag: t.invalid, color: '#cb2431' },
   ],
 });
 
@@ -47,5 +52,9 @@ export const githubDark = createTheme({
     { tag: [t.heading], color: '#d2a8ff', fontWeight: 'bold' },
     { tag: [t.emphasis], color: '#d2a8ff', fontStyle: 'italic' },
     { tag: [t.deleted], color: '#ffdcd7', backgroundColor: 'ffeef0' },
+    { tag: [t.atom, t.bool, t.special(t.variableName)], color: '#ffab70' },
+    { tag: t.link, textDecoration: 'underline' },
+    { tag: t.strikethrough, textDecoration: 'line-through' },
+    { tag: t.invalid, color: '#f97583' },
   ],
 });
