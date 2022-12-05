@@ -255,7 +255,6 @@ jobs:
   github-package:
     runs-on: ubuntu-18.04
     needs: build-deploy
-    if: needs.build-deploy.outputs.successful
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -269,358 +268,332 @@ jobs:
 
       - name: "Modify @uiw/react-codemirror => @uiwjs/react-codemirror"
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: core/package.json
           rename: "@uiwjs/react-codemirror"
 
       - run: npm publish
+        name: 📦 @uiwjs/react-codemirror publish to NPM
         working-directory: core
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-themes => @uiwjs/codemirror-themes
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: themes/theme/package.json
           rename: "@uiwjs/codemirror-themes"
 
       - run: npm publish
         working-directory: themes/theme
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-theme-abcdef => @uiwjs/codemirror-theme-abcdef
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: themes/abcdef/package.json
           rename: "@uiwjs/codemirror-theme-abcdef"
 
       - run: npm publish
         working-directory: themes/abcdef
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
 
       - name: Modify @uiw/codemirror-themes-all => @uiwjs/codemirror-themes-all
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: themes/all/package.json
           rename: "@uiwjs/codemirror-themes-all"
 
       - run: npm publish
         working-directory: themes/all
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
 
       - name: Modify @uiw/codemirror-theme-androidstudio => @uiwjs/codemirror-theme-androidstudio
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: themes/androidstudio/package.json
           rename: "@uiwjs/codemirror-theme-androidstudio"
 
       - run: npm publish
         working-directory: themes/androidstudio
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
 
       - name: Modify @uiw/codemirror-theme-atomone => @uiwjs/codemirror-theme-atomone
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: themes/atomone/package.json
           rename: "@uiwjs/codemirror-theme-atomone"
 
       - run: npm publish
         working-directory: themes/atomone
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
 
       - name: Modify @uiw/codemirror-theme-bbedit => @uiwjs/codemirror-theme-bbedit
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: themes/bbedit/package.json
           rename: "@uiwjs/codemirror-theme-bbedit"
 
       - run: npm publish
         working-directory: themes/bbedit
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
 
       - name: Modify @uiw/codemirror-theme-okaidia => @uiwjs/codemirror-theme-okaidia
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: themes/okaidia/package.json
           rename: "@uiwjs/codemirror-theme-okaidia"
 
       - run: npm publish
         working-directory: themes/okaidia
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-theme-dracula => @uiwjs/codemirror-theme-dracula
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: themes/dracula/package.json
           rename: "@uiwjs/codemirror-theme-dracula"
 
       - run: npm publish
         working-directory: themes/dracula
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
 
       - name: Modify @uiw/codemirror-theme-duotone => @uiwjs/codemirror-theme-duotone
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: themes/duotone/package.json
           rename: "@uiwjs/codemirror-theme-duotone"
 
       - run: npm publish
         working-directory: themes/duotone
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-theme-eclipse => @uiwjs/codemirror-theme-eclipse
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: themes/eclipse/package.json
           rename: "@uiwjs/codemirror-theme-eclipse"
 
       - run: npm publish
         working-directory: themes/eclipse
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-theme-github => @uiwjs/codemirror-theme-github
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: themes/github/package.json
           rename: "@uiwjs/codemirror-theme-github"
 
       - run: npm publish
         working-directory: themes/github
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-theme-gruvbox-dark => @uiwjs/codemirror-theme-gruvbox-dark
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: themes/gruvbox/package.json
           rename: '@uiwjs/codemirror-theme-gruvbox-dark'
 
       - run: npm publish
         working-directory: themes/gruvbox
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-theme-nord => @uiwjs/codemirror-theme-nord
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: themes/nord/package.json
           rename: '@uiwjs/codemirror-theme-nord'
 
       - run: npm publish
         working-directory: themes/nord
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-theme-darcula => @uiwjs/codemirror-theme-darcula
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: themes/darcula/package.json
           rename: "@uiwjs/codemirror-theme-darcula"
 
       - run: npm publish
         working-directory: themes/darcula
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-theme-bespin => @uiwjs/codemirror-theme-bespin
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: themes/bespin/package.json
           rename: "@uiwjs/codemirror-theme-bespin"
 
       - run: npm publish
         working-directory: themes/bespin
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-theme-sublime => @uiwjs/codemirror-theme-sublime
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: themes/sublime/package.json
           rename: "@uiwjs/codemirror-theme-sublime"
 
       - run: npm publish
         working-directory: themes/sublime
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-theme-vscode => @uiwjs/codemirror-theme-vscode
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: themes/vscode/package.json
           rename: "@uiwjs/codemirror-theme-vscode"
 
       - run: npm publish
         working-directory: themes/vscode
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-theme-xcode => @uiwjs/codemirror-theme-xcode
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: themes/xcode/package.json
           rename: "@uiwjs/codemirror-theme-xcode"
 
       - run: npm publish
         working-directory: themes/xcode
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-extensions-events => @uiwjs/codemirror-extensions-events
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: extensions/events/package.json
           rename: "@uiwjs/codemirror-extensions-events"
 
       - run: npm publish
         working-directory: extensions/events
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-extensions-basic-setup => @uiwjs/codemirror-extensions-basic-setup
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: extensions/basic-setup/package.json
           rename: "@uiwjs/codemirror-extensions-basic-setup"
 
       - run: npm publish
         working-directory: extensions/basic-setup
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-extensions-color => @uiwjs/codemirror-extensions-color
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: extensions/color/package.json
           rename: "@uiwjs/codemirror-extensions-color"
 
       - run: npm publish
         working-directory: extensions/color
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-extensions-line-numbers-relative => @uiwjs/codemirror-extensions-line-numbers-relative
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: extensions/line-numbers-relative/package.json
           rename: "@uiwjs/codemirror-extensions-line-numbers-relative"
 
       - run: npm publish
         working-directory: extensions/line-numbers-relative
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-extensions-hyper-link => @uiwjs/codemirror-extensions-hyper-link
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: extensions/hyper-link/package.json
           rename: "@uiwjs/codemirror-extensions-hyper-link"
 
       - run: npm publish
         working-directory: extensions/hyper-link
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-extensions-langs => @uiwjs/codemirror-extensions-langs
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: extensions/langs/package.json
           rename: "@uiwjs/codemirror-extensions-langs"
 
       - run: npm publish
         working-directory: extensions/langs
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Modify @uiw/codemirror-extensions-mentions => @uiwjs/codemirror-extensions-mentions
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: extensions/mentions/package.json
           rename: "@uiwjs/codemirror-extensions-mentions"
 
       - run: npm publish
         working-directory: extensions/mentions
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
 
       - name: Modify @uiw/codemirror-extensions-zebra-stripes => @uiwjs/codemirror-extensions-zebra-stripes
         uses: jaywcjlove/github-action-package@main
-        if: success() || failure()
         with:
           path: extensions/zebra-stripes/package.json
           rename: "@uiwjs/codemirror-extensions-zebra-stripes"
 
       - run: npm publish
         working-directory: extensions/zebra-stripes
-        if: success() || failure()
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
