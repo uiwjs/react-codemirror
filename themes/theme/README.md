@@ -192,6 +192,12 @@ export default App;
   <img width="436" alt="codemirror-theme-eclipse" src="https://user-images.githubusercontent.com/1680273/205499803-e1e2e214-dc3e-488a-9037-ba979e5ce199.png">
 </a>
 
+**material**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/material">
+  <img width="436" alt="codemirror-theme-material" src="https://user-images.githubusercontent.com/1680273/205537793-79f9c99c-831a-4ce3-8189-78b42896656f.png">
+</a>
+
 **nord**
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/nord">

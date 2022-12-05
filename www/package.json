@@ -54,6 +54,7 @@
     "@uiw/codemirror-theme-eclipse": "4.16.0",
     "@uiw/codemirror-theme-github": "4.16.0",
     "@uiw/codemirror-theme-gruvbox-dark": "4.16.0",
+    "@uiw/codemirror-theme-material": "4.16.0",
     "@uiw/codemirror-theme-nord": "4.16.0",
     "@uiw/codemirror-theme-okaidia": "4.16.0",
     "@uiw/codemirror-theme-sublime": "4.16.0",

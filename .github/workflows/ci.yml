@@ -165,6 +165,12 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./themes/gruvbox/package.json
 
+      - name: 📦 @uiw/codemirror-theme-material publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./themes/material/package.json
+
       - name: 📦 @uiw/codemirror-theme-nord publish to NPM
         uses: JS-DevTools/npm-publish@v1
         with:
@@ -425,6 +431,18 @@ jobs:
 
       - run: npm publish
         working-directory: themes/gruvbox
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Modify @uiw/codemirror-theme-material => @uiwjs/codemirror-theme-material
+        uses: jaywcjlove/github-action-package@main
+        with:
+          path: themes/material/package.json
+          rename: '@uiwjs/codemirror-theme-material'
+
+      - run: npm publish
+        working-directory: themes/material
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

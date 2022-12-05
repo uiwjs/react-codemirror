@@ -8,6 +8,7 @@ import darculaMd from '@uiw/codemirror-theme-darcula/README.md';
 import duotoneMd from '@uiw/codemirror-theme-duotone/README.md';
 import githubMd from '@uiw/codemirror-theme-github/README.md';
 import gruvboxDarkMd from '@uiw/codemirror-theme-gruvbox-dark/README.md';
+import materialMd from '@uiw/codemirror-theme-material/README.md';
 import nordMd from '@uiw/codemirror-theme-nord/README.md';
 import eclipseMd from '@uiw/codemirror-theme-eclipse/README.md';
 import bespinMd from '@uiw/codemirror-theme-bespin/README.md';
@@ -24,6 +25,7 @@ import { dracula } from '@uiw/codemirror-theme-dracula';
 import { darcula } from '@uiw/codemirror-theme-darcula';
 import { eclipse } from '@uiw/codemirror-theme-eclipse';
 import { bespin } from '@uiw/codemirror-theme-bespin';
+import { material } from '@uiw/codemirror-theme-material';
 import { vscodeDark } from '@uiw/codemirror-theme-vscode';
 import { duotoneLight, duotoneDark } from '@uiw/codemirror-theme-duotone';
 import { githubLight, githubDark } from '@uiw/codemirror-theme-github';
@@ -47,6 +49,7 @@ export const mdSource = {
   githubDark: githubMd.source,
   gruvboxDark: gruvboxDarkMd.source,
   gruvboxLight: gruvboxDarkMd.source,
+  material: materialMd.source,
   nord: nordMd.source,
   okaidia: okaidiaMd.source,
   sublime: sublimeMd.source,
@@ -70,6 +73,7 @@ export const themeData = {
   githubDark,
   gruvboxDark,
   gruvboxLight,
+  material,
   nord,
   okaidia,
   sublime,
