@@ -6,6 +6,8 @@
 
 [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-gruvbox-dark.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-gruvbox-dark)
 
+This package implements the [gruvbox](https://github.com/morhetz/gruvbox) light theme for the CodeMirror code editor.
+
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/gruvbox/dark">
   <img width="436" alt="codemirror-theme-eclipse" src="https://user-images.githubusercontent.com/1680273/201111051-c38a73ca-a449-4c01-a4ff-4a675886ca9d.png">
 </a>
