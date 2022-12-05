@@ -111,6 +111,13 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./themes/okaidia/package.json
 
+
+      - name: 📦 @uiw/codemirror-theme-solarized publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./themes/solarized/package.json
+
       - name: 📦 @uiw/codemirror-theme-abcdef publish to NPM
         uses: JS-DevTools/npm-publish@v1
         with:
@@ -373,6 +380,20 @@ jobs:
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+
+      - name: Modify @uiw/codemirror-theme-solarized => @uiwjs/codemirror-theme-solarized
+        uses: jaywcjlove/github-action-package@main
+        with:
+          path: themes/solarized/package.json
+          rename: "@uiwjs/codemirror-theme-solarized"
+
+      - run: npm publish
+        working-directory: themes/solarized
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
 
       - name: Modify @uiw/codemirror-theme-dracula => @uiwjs/codemirror-theme-dracula
         uses: jaywcjlove/github-action-package@main
