@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-extensions-line-numbers-relative",
-  "version": "4.17.0",
+  "version": "4.17.1",
   "description": "Relative line numbers Extensions for CodeMirror6.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/extensions/line-numbers-relative",
   "author": "kenny wong <wowohoo@qq.com>",
