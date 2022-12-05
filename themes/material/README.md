@@ -6,6 +6,8 @@
 
 [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-material.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-material)
 
+This package implements the [Material](https://material.io/tools/color/) Dark theme for the CodeMirror code editor.
+
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/material">
   <img width="436" alt="codemirror-theme-material" src="https://user-images.githubusercontent.com/1680273/205537793-79f9c99c-831a-4ce3-8189-78b42896656f.png">
 </a>

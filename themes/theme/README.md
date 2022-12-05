@@ -210,6 +210,16 @@ export default App;
   <img width="436" alt="codemirror-theme-okaidia" src="https://user-images.githubusercontent.com/1680273/176572694-b9aface9-9646-4e0e-a211-a8aa92dabc31.png">
 </a>
 
+**solarized**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/solarized/light">
+  <img width="436" alt="codemirror-theme-solarized" src="https://user-images.githubusercontent.com/1680273/205544435-a080d1d4-6da9-4f1d-aa10-5f2207d31176.png">
+</a>
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/solarized/dark">
+  <img width="436" alt="codemirror-theme-solarized" src="https://user-images.githubusercontent.com/1680273/205547403-96db62c3-d061-4dee-88d0-c86ed17e7489.png">
+</a>
+
 **sublime**
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/sublime">

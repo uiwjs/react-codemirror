@@ -1,28 +1,32 @@
 <!--rehype:ignore:start-->
 
-# Nord Theme
+# Solarized Theme
 
 <!--rehype:ignore:end-->
 
-[![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-nord.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-nord)
+[![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-solarized.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-solarized)
 
-This package implements the [nord theme](https://www.nordtheme.com/) for the CodeMirror code editor.
+This package implements the [Solarized](https://ethanschoonover.com/solarized/) theme for the CodeMirror code editor.
 
-<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/nord">
-  <img width="436" alt="codemirror-theme-nord" src="https://user-images.githubusercontent.com/1680273/205498304-956bc719-1472-40f0-9c3f-21ac5b9f97a6.png">
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/solarized/light">
+  <img width="436" alt="codemirror-theme-solarized" src="https://user-images.githubusercontent.com/1680273/205544435-a080d1d4-6da9-4f1d-aa10-5f2207d31176.png">
+</a>
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/solarized/dark">
+  <img width="436" alt="codemirror-theme-solarized" src="https://user-images.githubusercontent.com/1680273/205547403-96db62c3-d061-4dee-88d0-c86ed17e7489.png">
 </a>
 
 ## Install
 
 ```bash
-npm install @uiw/codemirror-theme-nord --save
+npm install @uiw/codemirror-theme-solarized --save
 ```
 
 ## Usage
 
 ```jsx
 import CodeMirror from '@uiw/react-codemirror';
-import { nord } from '@uiw/codemirror-theme-nord';
+import { solarizedLight, solarizedDark } from '@uiw/codemirror-theme-solarized';
 import { javascript } from '@codemirror/lang-javascript';
 
 function App() {
@@ -30,11 +34,8 @@ function App() {
     <CodeMirror
       value="console.log('hello world!');"
       height="200px"
-      theme={nord}
+      theme={solarizedLight}
       extensions={[javascript({ jsx: true })]}
-      onChange={(value, viewUpdate) => {
-        console.log('value:', value);
-      }}
     />
   );
 }
@@ -45,11 +46,11 @@ export default App;
 import { EditorView } from '@codemirror/view';
 import { EditorState } from '@codemirror/state';
 import { javascript } from '@codemirror/lang-javascript';
-import { nord } from '@uiw/codemirror-theme-nord';
+import { solarizedLight, solarizedDark } from '@uiw/codemirror-theme-solarized';
 
 const state = EditorState.create({
   doc: 'my source code',
-  extensions: [nord, javascript({ jsx: true })],
+  extensions: [solarizedLight, javascript({ jsx: true })],
 });
 
 const view = new EditorView({
