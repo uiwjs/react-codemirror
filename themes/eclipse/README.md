@@ -16,6 +16,28 @@
 npm install @uiw/codemirror-theme-eclipse --save
 ```
 
+```jsx
+import { eclipse, eclipseInit } from '@uiw/codemirror-theme-github';
+
+<CodeMirror theme={eclipse} />
+<CodeMirror
+  theme={eclipseInit({
+    settings: {
+      caret: '#c6c6c6',
+      fontFamily: 'monospace',
+    }
+  })}
+/>
+```
+
+## API
+
+```tsx
+import { CreateThemeOptions } from '@uiw/codemirror-themes';
+export declare const eclipseInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const eclipse: import('@codemirror/state').Extension;
+```
+
 ## Usage
 
 ```jsx
