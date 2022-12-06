@@ -18,6 +18,28 @@ This package implements the [Material](https://material.io/tools/color/) Dark th
 npm install @uiw/codemirror-theme-material --save
 ```
 
+```jsx
+import { material, materialInit } from '@uiw/codemirror-theme-material';
+
+<CodeMirror theme={material} />
+<CodeMirror
+  theme={materialInit({
+    settings: {
+      caret: '#c6c6c6',
+      fontFamily: 'monospace',
+    }
+  })}
+/>
+```
+
+## API
+
+```tsx
+import { CreateThemeOptions } from '@uiw/codemirror-themes';
+export declare const materialInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const material: import('@codemirror/state').Extension;
+```
+
 ## Usage
 
 ```jsx
