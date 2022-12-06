@@ -20,10 +20,12 @@ npm install @uiw/codemirror-theme-vscode --save
 import { vscodeDark, vscodeDarkInit } from '@uiw/codemirror-theme-vscode';
 
 <CodeMirror theme={vscodeDark} />
-
 <CodeMirror
   theme={vscodeDarkInit({
-    fontFamily: 'monospace',
+    settings: {
+      caret: '#c6c6c6',
+      fontFamily: 'monospace',
+    }
   })}
 />
 ```

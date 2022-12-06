@@ -20,6 +20,30 @@
 npm install @uiw/codemirror-theme-xcode --save
 ```
 
+```jsx
+import { xcodeLight, xcodeLightInit, xcodeDark, xcodeDarkInit } from '@uiw/codemirror-theme-vscode';
+
+<CodeMirror theme={xcodeLight} />
+<CodeMirror
+  theme={xcodeLightInit({
+    settings: {
+      caret: '#c6c6c6',
+      fontFamily: 'monospace',
+    }
+  })}
+/>
+```
+
+## API
+
+```ts
+import { CreateThemeOptions } from '@uiw/codemirror-themes';
+export declare function xcodeLightInit(options?: CreateThemeOptions): import('@codemirror/state').Extension;
+export declare const xcodeLight: import('@codemirror/state').Extension;
+export declare const xcodeDarkInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const xcodeDark: import('@codemirror/state').Extension;
+```
+
 ## Usage
 
 ```jsx
