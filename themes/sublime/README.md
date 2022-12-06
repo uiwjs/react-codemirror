@@ -16,6 +16,28 @@
 npm install @uiw/codemirror-theme-sublime --save
 ```
 
+```jsx
+import { sublime, sublimeInit } from '@uiw/codemirror-theme-vscode';
+
+<CodeMirror theme={sublime} />
+<CodeMirror
+  theme={sublimeInit({
+    settings: {
+      caret: '#c6c6c6',
+      fontFamily: 'monospace',
+    }
+  })}
+/>
+```
+
+## API
+
+```tsx
+import { CreateThemeOptions } from '@uiw/codemirror-themes';
+export declare function sublimeInit(options?: CreateThemeOptions): import('@codemirror/state').Extension;
+export declare const sublime: import('@codemirror/state').Extension;
+```
+
 ## Usage
 
 ```jsx

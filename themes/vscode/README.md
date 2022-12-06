@@ -30,6 +30,14 @@ import { vscodeDark, vscodeDarkInit } from '@uiw/codemirror-theme-vscode';
 />
 ```
 
+## API
+
+```tsx
+import { CreateThemeOptions } from '@uiw/codemirror-themes';
+export declare function vscodeDarkInit(options?: CreateThemeOptions): import('@codemirror/state').Extension;
+export declare const vscodeDark: import('@codemirror/state').Extension;
+```
+
 ## Usage
 
 ```jsx
