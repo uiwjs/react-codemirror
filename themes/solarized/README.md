@@ -22,6 +22,30 @@ This package implements the [Solarized](https://ethanschoonover.com/solarized/) 
 npm install @uiw/codemirror-theme-solarized --save
 ```
 
+```jsx
+import { solarizedLight, solarizedLightInit, solarizedDark, solarizedDarkInit } from '@uiw/codemirror-theme-vscode';
+
+<CodeMirror theme={solarizedLight} />
+<CodeMirror
+  theme={solarizedLightInit({
+    settings: {
+      caret: '#c6c6c6',
+      fontFamily: 'monospace',
+    }
+  })}
+/>
+```
+
+## API
+
+```tsx
+import { CreateThemeOptions } from '@uiw/codemirror-themes';
+export declare const solarizedLightInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const solarizedLight: import('@codemirror/state').Extension;
+export declare const solarizedDarkInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const solarizedDark: import('@codemirror/state').Extension;
+```
+
 ## Usage
 
 ```jsx
