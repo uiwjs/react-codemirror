@@ -13,8 +13,13 @@ const ToolsWapper = styled.div`
 
 export const ThemesAllDoc = () => {
   const dark = document.documentElement.getAttribute('data-color-mode');
-  const { vscodeDarkInit, ...themesAll } = themes;
-  const [selectTheme, setSelectTheme] = useState<keyof typeof themesAll>();
+  const themesData: Record<string, Omit<ReactCodeMirrorProps['theme'], 'dark' | 'light'>> = {};
+  Object.keys(themes)
+    .filter((item) => typeof themes[item as keyof typeof themes] !== 'function')
+    .forEach((item) => {
+      themesData[item] = themes[item as keyof typeof themes];
+    });
+  const [selectTheme, setSelectTheme] = useState<keyof typeof themesData>();
   const [theme, setTheme] = useState<ReactCodeMirrorProps['theme']>(dark === 'dark' ? 'dark' : 'light');
   useEffect(() => {
     setTheme(document.documentElement.getAttribute('data-color-mode') === 'dark' ? 'dark' : 'light');
@@ -22,15 +27,15 @@ export const ThemesAllDoc = () => {
       setTheme(e.detail.colorScheme as ReactCodeMirrorProps['theme']);
     });
   }, []);
-  const themeCurrent = themesAll[selectTheme!] ? themesAll[selectTheme!] : theme;
+  const themeCurrent = themesData[selectTheme!] ? themesData[selectTheme!] : theme;
   const changeHandle = (ev: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectTheme(ev.target.value as keyof typeof themesAll);
+    setSelectTheme(ev.target.value as keyof typeof themesData);
   };
   return (
     <PageWarpper>
       <CodeMirror
         value={data.source}
-        theme={themeCurrent}
+        theme={themeCurrent as ReactCodeMirrorProps['theme']}
         height="300px"
         style={{ margin: '0 0 23px 0' }}
         extensions={[langs.markdown()]}
@@ -39,7 +44,7 @@ export const ThemesAllDoc = () => {
         Select Theme:
         <select value={selectTheme} onChange={changeHandle}>
           <option>Select Theme</option>
-          {Object.keys(themes).map((keyname, index) => {
+          {Object.keys(themesData).map((keyname, index) => {
             return <option key={index}>{keyname}</option>;
           })}
         </select>
