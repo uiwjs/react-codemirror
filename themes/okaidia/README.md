@@ -16,6 +16,28 @@
 npm install @uiw/codemirror-theme-okaidia --save
 ```
 
+```jsx
+import { okaidia, okaidiaInit } from '@uiw/codemirror-theme-vscode';
+
+<CodeMirror theme={okaidia} />
+<CodeMirror
+  theme={okaidiaInit({
+    settings: {
+      caret: '#c6c6c6',
+      fontFamily: 'monospace',
+    }
+  })}
+/>
+```
+
+## API
+
+```tsx
+import { CreateThemeOptions } from '@uiw/codemirror-themes';
+export declare const okaidiaInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const okaidia: import('@codemirror/state').Extension;
+```
+
 ## Usage
 
 ```jsx
