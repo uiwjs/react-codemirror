@@ -20,6 +20,30 @@
 npm install @uiw/codemirror-theme-github --save
 ```
 
+```jsx
+import { githubLight, githubLightInit, githubDark, githubDarkInit } from '@uiw/codemirror-theme-github';
+
+<CodeMirror theme={githubLight} />
+<CodeMirror
+  theme={githubLightInit({
+    settings: {
+      caret: '#c6c6c6',
+      fontFamily: 'monospace',
+    }
+  })}
+/>
+```
+
+## API
+
+```tsx
+import { CreateThemeOptions } from '@uiw/codemirror-themes';
+export declare const githubLightInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const githubLight: import('@codemirror/state').Extension;
+export declare const githubDarkInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const githubDark: import('@codemirror/state').Extension;
+```
+
 ## Usage
 
 ```jsx
