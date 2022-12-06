@@ -18,6 +18,28 @@ This package implements the [nord theme](https://www.nordtheme.com/) for the Cod
 npm install @uiw/codemirror-theme-nord --save
 ```
 
+```jsx
+import { nord, nordInit } from '@uiw/codemirror-theme-nord';
+
+<CodeMirror theme={nord} />
+<CodeMirror
+  theme={nordInit({
+    settings: {
+      caret: '#c6c6c6',
+      fontFamily: 'monospace',
+    }
+  })}
+/>
+```
+
+## API
+
+```tsx
+import { CreateThemeOptions } from '@uiw/codemirror-themes';
+export declare const nordInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const nord: import('@codemirror/state').Extension;
+```
+
 ## Usage
 
 ```jsx
