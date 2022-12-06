@@ -5,13 +5,15 @@ import DocumentStr from '@uiw/react-codemirror/README.md';
 import { Extension } from '@codemirror/state';
 import CodeMirror, { ReactCodeMirrorProps, BasicSetupOptions } from '@uiw/react-codemirror';
 import styled from 'styled-components';
+import * as alls from '@uiw/codemirror-themes-all';
 import { langs } from '@uiw/codemirror-extensions-langs';
 import { Select } from '../../Select';
 import { Options } from '../extensions/basic-setup';
 
-const themeOptions = ['dark', 'light'];
+const themeOptions = ['dark', 'light']
+  .concat(Object.keys(alls))
+  .filter((item) => typeof alls[item as keyof typeof alls] !== 'function');
 const heightOptions = ['auto', '200px', '300px', '500px'];
-
 let count = 0;
 
 const MarkdownDocument = styled.div`
@@ -92,7 +94,7 @@ export default function Example() {
       <CodemirrorWarpper
         value={code}
         height={height}
-        theme={theme}
+        theme={alls[theme as keyof typeof alls] || theme}
         editable={editable}
         extensions={extensions}
         autoFocus={autofocus}
@@ -115,14 +117,27 @@ export default function Example() {
             onChange={(evn) => handleLangChange(evn.target.value as keyof typeof langs)}
           />
           <Select
-            label="Theme"
-            options={themeOptions}
+            label="Website Theme"
+            options={['dark', 'light']}
             value={theme as string}
             onChange={(evn) => {
-              document.documentElement.setAttribute('data-color-mode', evn.target.value);
+              document.documentElement.setAttribute('data-color-mode', evn.target.value === 'dark' ? 'dark' : 'light');
               setTheme(evn.target.value as ReactCodeMirrorProps['theme']);
             }}
           />
+          <Select
+            label="Themes"
+            options={themeOptions}
+            value={theme as string}
+            onChange={(evn) => {
+              if (/^(dark|light)$/.test(evn.target.value)) {
+                document.documentElement.setAttribute('data-color-mode', evn.target.value);
+              }
+              setTheme(evn.target.value as ReactCodeMirrorProps['theme']);
+            }}
+          />
+        </Tools>
+        <Tools>
           <Select
             label="Height"
             options={heightOptions}
