@@ -22,6 +22,30 @@ This package implements the [gruvbox](https://github.com/morhetz/gruvbox) light 
 npm install @uiw/codemirror-theme-gruvbox-dark --save
 ```
 
+```jsx
+import { gruvboxDark, gruvboxDarkInit, gruvboxLight, gruvboxLightInit } from '@uiw/codemirror-theme-nord';
+
+<CodeMirror theme={gruvboxDark} />
+<CodeMirror
+  theme={gruvboxDarkInit({
+    settings: {
+      caret: '#c6c6c6',
+      fontFamily: 'monospace',
+    }
+  })}
+/>
+```
+
+## API
+
+```tsx
+import { CreateThemeOptions } from '@uiw/codemirror-themes';
+export declare const gruvboxDarkInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const gruvboxDark: import('@codemirror/state').Extension;
+export declare const gruvboxLightInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const gruvboxLight: import('@codemirror/state').Extension;
+```
+
 ## Usage
 
 ```jsx

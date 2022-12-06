@@ -23,7 +23,7 @@ npm install @uiw/codemirror-theme-solarized --save
 ```
 
 ```jsx
-import { solarizedLight, solarizedLightInit, solarizedDark, solarizedDarkInit } from '@uiw/codemirror-theme-vscode';
+import { solarizedLight, solarizedLightInit, solarizedDark, solarizedDarkInit } from '@uiw/codemirror-theme-solarized';
 
 <CodeMirror theme={solarizedLight} />
 <CodeMirror

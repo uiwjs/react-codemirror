@@ -21,7 +21,7 @@ npm install @uiw/codemirror-theme-xcode --save
 ```
 
 ```jsx
-import { xcodeLight, xcodeLightInit, xcodeDark, xcodeDarkInit } from '@uiw/codemirror-theme-vscode';
+import { xcodeLight, xcodeLightInit, xcodeDark, xcodeDarkInit } from '@uiw/codemirror-theme-xcode';
 
 <CodeMirror theme={xcodeLight} />
 <CodeMirror

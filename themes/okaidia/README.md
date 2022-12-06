@@ -17,7 +17,7 @@ npm install @uiw/codemirror-theme-okaidia --save
 ```
 
 ```jsx
-import { okaidia, okaidiaInit } from '@uiw/codemirror-theme-vscode';
+import { okaidia, okaidiaInit } from '@uiw/codemirror-theme-okaidia';
 
 <CodeMirror theme={okaidia} />
 <CodeMirror

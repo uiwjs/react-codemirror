@@ -17,7 +17,7 @@ npm install @uiw/codemirror-theme-sublime --save
 ```
 
 ```jsx
-import { sublime, sublimeInit } from '@uiw/codemirror-theme-vscode';
+import { sublime, sublimeInit } from '@uiw/codemirror-theme-sublime';
 
 <CodeMirror theme={sublime} />
 <CodeMirror
