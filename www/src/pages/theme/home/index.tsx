@@ -62,6 +62,11 @@ const Counter = () => {
   return <span>{value}</span>;
 };`;
 
+const CodeEditor = styled(CodeMirror)`
+  border-radius: 0.375rem;
+  overflow: hidden;
+`;
+
 export function ThemesHome() {
   return (
     <Fragment>
@@ -74,7 +79,7 @@ export function ThemesHome() {
               <Link key={idx} to={`/theme/data/${_name}${_theme ? `/${_theme}` : ''}`}>
                 <ThemeCard>
                   <Title>{toTitleCase(name)}</Title>
-                  <CodeMirror
+                  <CodeEditor
                     value={codeString}
                     height="165px"
                     theme={themeData[name as keyof typeof themeData]}

@@ -8,6 +8,7 @@ import duotoneMd from '@uiw/codemirror-theme-duotone/README.md';
 import githubMd from '@uiw/codemirror-theme-github/README.md';
 import gruvboxDarkMd from '@uiw/codemirror-theme-gruvbox-dark/README.md';
 import materialMd from '@uiw/codemirror-theme-material/README.md';
+import noctisLilacMd from '@uiw/codemirror-theme-noctis-lilac/README.md';
 import nordMd from '@uiw/codemirror-theme-nord/README.md';
 import okaidiaMd from '@uiw/codemirror-theme-okaidia/README.md';
 import solarizedMd from '@uiw/codemirror-theme-solarized/README.md';
@@ -26,6 +27,7 @@ import { darcula } from '@uiw/codemirror-theme-darcula';
 import { eclipse } from '@uiw/codemirror-theme-eclipse';
 import { bespin } from '@uiw/codemirror-theme-bespin';
 import { material } from '@uiw/codemirror-theme-material';
+import { noctisLilac } from '@uiw/codemirror-theme-noctis-lilac';
 import { vscodeDark } from '@uiw/codemirror-theme-vscode';
 import { duotoneLight, duotoneDark } from '@uiw/codemirror-theme-duotone';
 import { githubLight, githubDark } from '@uiw/codemirror-theme-github';
@@ -52,6 +54,7 @@ export const mdSource = {
   gruvboxDark: gruvboxDarkMd.source,
   gruvboxLight: gruvboxDarkMd.source,
   material: materialMd.source,
+  noctisLilac: noctisLilacMd.source,
   nord: nordMd.source,
   okaidia: okaidiaMd.source,
   solarizedLight: solarizedMd.source,
@@ -78,6 +81,7 @@ export const themeData = {
   gruvboxDark,
   gruvboxLight,
   material,
+  noctisLilac,
   nord,
   okaidia,
   solarizedLight,

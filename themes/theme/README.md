@@ -198,6 +198,12 @@ export default App;
   <img width="436" alt="codemirror-theme-material" src="https://user-images.githubusercontent.com/1680273/205537793-79f9c99c-831a-4ce3-8189-78b42896656f.png">
 </a>
 
+**noctis-lilac**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/noctis-lilac">
+  <img width="436" alt="codemirror-theme-material" src="https://user-images.githubusercontent.com/1680273/206086882-b3525159-d987-4d7f-bad3-fdf3d4dbd06f.png">
+</a>
+
 **nord**
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/nord">
