@@ -77,6 +77,7 @@ export * from '@uiw/codemirror-theme-nord';
 export * from '@uiw/codemirror-theme-okaidia';
 export * from '@uiw/codemirror-theme-solarized';
 export * from '@uiw/codemirror-theme-sublime';
+export * from '@uiw/codemirror-theme-tokyo-night';
 export * from '@uiw/codemirror-theme-vscode';
 export * from '@uiw/codemirror-theme-xcode';
 ```

@@ -16,6 +16,7 @@ import solarizedMd from '@uiw/codemirror-theme-solarized/README.md';
 import eclipseMd from '@uiw/codemirror-theme-eclipse/README.md';
 import bespinMd from '@uiw/codemirror-theme-bespin/README.md';
 import sublimeMd from '@uiw/codemirror-theme-sublime/README.md';
+import tokyoNightMd from '@uiw/codemirror-theme-tokyo-night/README.md';
 import vscodeMd from '@uiw/codemirror-theme-vscode/README.md';
 import xcodeMd from '@uiw/codemirror-theme-xcode/README.md';
 
@@ -38,6 +39,7 @@ import { nord } from '@uiw/codemirror-theme-nord';
 import { okaidia } from '@uiw/codemirror-theme-okaidia';
 import { solarizedLight, solarizedDark } from '@uiw/codemirror-theme-solarized';
 import { sublime } from '@uiw/codemirror-theme-sublime';
+import { tokyoNight } from '@uiw/codemirror-theme-tokyo-night';
 import { xcodeLight, xcodeDark } from '@uiw/codemirror-theme-xcode';
 
 export const mdSource = {
@@ -63,6 +65,7 @@ export const mdSource = {
   solarizedLight: solarizedMd.source,
   solarizedDark: solarizedMd.source,
   sublime: sublimeMd.source,
+  tokyoNight: tokyoNightMd.source,
   vscodeDark: vscodeMd.source,
   xcodeLight: xcodeMd.source,
   xcodeDark: xcodeMd.source,
@@ -91,6 +94,7 @@ export const themeData = {
   solarizedLight,
   solarizedDark,
   sublime,
+  tokyoNight,
   vscodeDark,
   xcodeLight,
   xcodeDark,
