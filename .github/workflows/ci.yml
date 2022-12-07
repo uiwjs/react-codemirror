@@ -226,6 +226,12 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./themes/tokyo-night-storm/package.json
 
+      - name: 📦 @uiw/codemirror-theme-tokyo-night-day publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./themes/tokyo-night-day/package.json
+
       - name: 📦 @uiw/codemirror-theme-vscode publish to NPM
         uses: JS-DevTools/npm-publish@v1
         with:
@@ -585,6 +591,18 @@ jobs:
 
       - run: npm publish
         working-directory: themes/tokyo-night-storm
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Modify @uiw/codemirror-theme-tokyo-night-day => @uiwjs/codemirror-theme-tokyo-night-day
+        uses: jaywcjlove/github-action-package@main
+        with:
+          path: themes/tokyo-night-day/package.json
+          rename: "@uiwjs/codemirror-theme-tokyo-night-day"
+
+      - run: npm publish
+        working-directory: themes/tokyo-night-day
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
