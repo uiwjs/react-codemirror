@@ -136,6 +136,12 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./themes/atomone/package.json
 
+      - name: 📦 @uiw/codemirror-theme-aura publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./themes/aura/package.json
+
       - name: 📦 @uiw/codemirror-theme-bbedit publish to NPM
         uses: JS-DevTools/npm-publish@v1
         with:
@@ -178,6 +184,12 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./themes/material/package.json
 
+      - name: 📦 @uiw/codemirror-theme-noctis-lilac publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./themes/noctis-lilac/package.json
+
       - name: 📦 @uiw/codemirror-theme-nord publish to NPM
         uses: JS-DevTools/npm-publish@v1
         with:
@@ -201,6 +213,18 @@ jobs:
         with:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./themes/sublime/package.json
+
+      - name: 📦 @uiw/codemirror-theme-tokyo-night publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./themes/tokyo-night/package.json
+
+      - name: 📦 @uiw/codemirror-theme-tokyo-night-storm publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./themes/tokyo-night-storm/package.json
 
       - name: 📦 @uiw/codemirror-theme-vscode publish to NPM
         uses: JS-DevTools/npm-publish@v1
@@ -356,6 +380,19 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
 
+      - name: Modify @uiw/codemirror-theme-aura => @uiwjs/codemirror-theme-aura
+        uses: jaywcjlove/github-action-package@main
+        with:
+          path: themes/aura/package.json
+          rename: "@uiwjs/codemirror-theme-aura"
+
+      - run: npm publish
+        working-directory: themes/aura
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+
       - name: Modify @uiw/codemirror-theme-bbedit => @uiwjs/codemirror-theme-bbedit
         uses: jaywcjlove/github-action-package@main
         with:
@@ -468,6 +505,18 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
+      - name: Modify @uiw/codemirror-theme-noctis-lilac => @uiwjs/codemirror-theme-noctis-lilac
+        uses: jaywcjlove/github-action-package@main
+        with:
+          path: themes/noctis-lilac/package.json
+          rename: '@uiwjs/codemirror-theme-noctis-lilac'
+
+      - run: npm publish
+        working-directory: themes/noctis-lilac
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
       - name: Modify @uiw/codemirror-theme-nord => @uiwjs/codemirror-theme-nord
         uses: jaywcjlove/github-action-package@main
         with:
@@ -512,6 +561,30 @@ jobs:
 
       - run: npm publish
         working-directory: themes/sublime
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Modify @uiw/codemirror-theme-tokyo-night => @uiwjs/codemirror-theme-tokyo-night
+        uses: jaywcjlove/github-action-package@main
+        with:
+          path: themes/tokyo-night/package.json
+          rename: "@uiwjs/codemirror-theme-tokyo-night"
+
+      - run: npm publish
+        working-directory: themes/tokyo-night
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Modify @uiw/codemirror-theme-tokyo-night-storm => @uiwjs/codemirror-theme-tokyo-night-storm
+        uses: jaywcjlove/github-action-package@main
+        with:
+          path: themes/tokyo-night-storm/package.json
+          rename: "@uiwjs/codemirror-theme-tokyo-night-storm"
+
+      - run: npm publish
+        working-directory: themes/tokyo-night-storm
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
