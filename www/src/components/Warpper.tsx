@@ -15,7 +15,7 @@ export const Warpper: FC<PropsWithChildren<{}>> = (props) => {
   const [element, setElement] = useState<HTMLDivElement>();
   useEffect(() => setElement($dom.current!), []);
   return (
-    <Container ref={$dom}>
+    <Container ref={$dom} {...props}>
       {props.children}
       <BackToUp element={element} style={{ position: 'fixed' }}>
         Top

@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren } from 'react';
-import { Warpper } from '../theme/themes/Warpper';
+import { Warpper } from '../../components/Warpper';
 import { Content } from '../theme/themes/Document';
 
 interface DocumentProps {

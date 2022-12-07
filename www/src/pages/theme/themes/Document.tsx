@@ -3,7 +3,7 @@ import MarkdownPreview from '@uiw/react-markdown-preview';
 import styled from 'styled-components';
 import { PreCode } from './PreCode';
 import { mdSource } from './Datas';
-import { Warpper } from './Warpper';
+import { Warpper } from '../../../components/Warpper';
 
 export const toSnakeCase = (str: string = '') =>
   str

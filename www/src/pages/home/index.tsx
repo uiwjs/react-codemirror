@@ -141,10 +141,10 @@ export default function App() {
         </AppTitle>
         <Describe>CodeMirror component for React. </Describe>
         <Buttons>
-          <Link to="/theme/editor" className="special">
+          <Link to="/editor/theme" className="special">
             Theme Editor
           </Link>
-          <Link to="/theme/data" className="themes">
+          <Link to="/theme/" className="themes">
             Themes
           </Link>
           <Link to="/extensions" className="extensions">

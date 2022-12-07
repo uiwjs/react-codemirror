@@ -1,12 +1,11 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import styled from 'styled-components';
-import { Warpper, Header, Title, Tools, Link } from '../theme';
+import { Header, Warpper } from '../../components/Header';
 import { Document } from './Document';
-import logo from '../../logo.png';
 import { Sider } from '../theme/editor';
 import { Content } from '../theme';
-import { MenuItem } from '../theme/themes';
+import { MenuItem } from '../theme/themes/SiderMenus';
 import { mdSource } from './datas';
 
 export const PageWarpper = styled.div`
@@ -26,18 +25,7 @@ export const ExtensionsLayout = () => {
 
   return (
     <Warpper>
-      <Header>
-        <Title to="/">
-          <img src={logo} alt="Logo" />
-          <span>CodeMirror Extensions</span>
-        </Title>
-        <Tools>
-          <Link to="/">Home</Link>
-          <Link to="/extensions">Extensions</Link>
-          <Link to="/theme/data">Themes</Link>
-          <dark-mode permanent />
-        </Tools>
-      </Header>
+      <Header />
       <Content>
         <Sider>
           {Object.keys(mdSource).map((name, key) => {

@@ -5,6 +5,7 @@ import { createGlobalStyle } from 'styled-components';
 import Home from './pages/home';
 import { ThemeEditor } from './pages/theme/editor';
 import { ThemeLayout } from './pages/theme';
+import { ThemesHome } from './pages/theme/home';
 import { ThemeDoc } from './pages/theme/docs';
 import { ThemeOkaidia } from './pages/theme/themes';
 import { ExtensionsLayout } from './pages/extensions';
@@ -66,7 +67,12 @@ root.render(
     <Routes>
       <Route index element={<Home />} />
       <Route path="/" element={<Home />} />
+      <Route path="/editor/theme/" element={<ThemeLayout />}>
+        <Route index element={<Navigate to="single" replace />} />
+        <Route path=":type" element={<ThemeEditor />} />
+      </Route>
       <Route path="/theme/" element={<ThemeLayout />}>
+        <Route index element={<ThemesHome />} />
         <Route path="data" element={<Navigate to="sublime" replace />} />
         <Route path="data/:name" element={<ThemeOkaidia />} />
         <Route path="data/:name/:lightOrDark" element={<ThemeOkaidia />} />
