@@ -16,6 +16,32 @@
 npm install @uiw/codemirror-theme-atomone --save
 ```
 
+```jsx
+import { tags as t } from '@lezer/highlight';
+import { atomone, atomoneInit } from '@uiw/codemirror-theme-atomone';
+
+<CodeMirror theme={atomone} />
+<CodeMirror
+  theme={atomoneInit({
+    settings: {
+      caret: '#c6c6c6',
+      fontFamily: 'monospace',
+    },
+    styles: [
+      { tag: t.comment, color: '#6272a4' },
+    ]
+  })}
+/>
+```
+
+## API
+
+```tsx
+import { CreateThemeOptions } from '@uiw/codemirror-themes';
+export declare const atomoneInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const atomone: import('@codemirror/state').Extension;
+```
+
 ## Usage
 
 ```jsx
