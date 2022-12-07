@@ -16,6 +16,32 @@
 npm install @uiw/codemirror-theme-darcula --save
 ```
 
+```jsx
+import { tags as t } from '@lezer/highlight';
+import { darcula, darculaInit } from '@uiw/codemirror-theme-darcula';
+
+<CodeMirror theme={darcula} />
+<CodeMirror
+  theme={darculaInit({
+    settings: {
+      caret: '#c6c6c6',
+      fontFamily: 'monospace',
+    },
+    styles: [
+      { tag: t.comment, color: '#6272a4' },
+    ]
+  })}
+/>
+```
+
+## API
+
+```tsx
+import { CreateThemeOptions } from '@uiw/codemirror-themes';
+export declare const darculaInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const darcula: import('@codemirror/state').Extension;
+```
+
 ## Usage
 
 ```jsx
