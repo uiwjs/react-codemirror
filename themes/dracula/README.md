@@ -16,6 +16,32 @@
 npm install @uiw/codemirror-theme-dracula --save
 ```
 
+```jsx
+import { tags as t } from '@lezer/highlight';
+import { dracula, draculaInit } from '@uiw/codemirror-theme-dracula';
+
+<CodeMirror theme={dracula} />
+<CodeMirror
+  theme={draculaInit({
+    settings: {
+      caret: '#c6c6c6',
+      fontFamily: 'monospace',
+    },
+    styles: [
+      { tag: t.comment, color: '#6272a4' },
+    ]
+  })}
+/>
+```
+
+## API
+
+```tsx
+import { CreateThemeOptions } from '@uiw/codemirror-themes';
+export declare const draculaInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const dracula: import('@codemirror/state').Extension;
+```
+
 ## Usage
 
 ```jsx
