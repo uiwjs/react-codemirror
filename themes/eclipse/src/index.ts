@@ -14,6 +14,7 @@ export const eclipseInit = (options?: CreateThemeOptions) => {
       gutterBackground: '#f7f7f7',
       gutterForeground: '#999',
       lineHighlight: '#e8f2ff',
+      gutterBorder: 'transparent',
       ...settings,
     },
     styles: [

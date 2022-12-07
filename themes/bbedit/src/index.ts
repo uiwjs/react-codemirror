@@ -14,6 +14,7 @@ export const bbeditInit = (options?: CreateThemeOptions) => {
       gutterBackground: '#f5f5f5',
       gutterForeground: '#4D4D4C',
       lineHighlight: '#00000012',
+      gutterBorder: 'transparent',
       ...settings,
     },
     styles: [
