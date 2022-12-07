@@ -16,6 +16,32 @@
 npm install @uiw/codemirror-theme-androidstudio --save
 ```
 
+```jsx
+import { tags as t } from '@lezer/highlight';
+import { androidstudio, androidstudioInit } from '@uiw/codemirror-theme-androidstudio';
+
+<CodeMirror theme={androidstudio} />
+<CodeMirror
+  theme={androidstudioInit({
+    settings: {
+      caret: '#c6c6c6',
+      fontFamily: 'monospace',
+    },
+    styles: [
+      { tag: t.comment, color: '#6272a4' },
+    ]
+  })}
+/>
+```
+
+## API
+
+```tsx
+import { CreateThemeOptions } from '@uiw/codemirror-themes';
+export declare const androidstudioInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const androidstudio: import('@codemirror/state').Extension;
+```
+
 ## Usage
 
 ```jsx
