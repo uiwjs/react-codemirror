@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-theme-nord",
-  "version": "4.18.2",
+  "version": "4.19.0",
   "description": "Theme nord for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/nord",
   "author": "kenny wong <wowohoo@qq.com>",
@@ -21,7 +21,7 @@
     "cjs"
   ],
   "dependencies": {
-    "@uiw/codemirror-themes": "4.18.2"
+    "@uiw/codemirror-themes": "4.19.0"
   },
   "keywords": [
     "codemirror",
