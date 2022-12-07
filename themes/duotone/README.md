@@ -20,6 +20,30 @@
 npm install @uiw/codemirror-theme-duotone --save
 ```
 
+```jsx
+import { duotoneLight, duotoneLightInit, duotoneDark, duotoneDarkInit } from '@uiw/codemirror-theme-duotone';
+
+<CodeMirror theme={duotoneLight} />
+<CodeMirror
+  theme={duotoneLightInit({
+    settings: {
+      caret: '#c6c6c6',
+      fontFamily: 'monospace',
+    }
+  })}
+/>
+```
+
+## API
+
+```tsx
+import { CreateThemeOptions } from '@uiw/codemirror-themes';
+export declare const duotoneLightInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const duotoneLight: import('@codemirror/state').Extension;
+export declare const duotoneDarkInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const duotoneDark: import('@codemirror/state').Extension;
+```
+
 ## Usage
 
 ```jsx
