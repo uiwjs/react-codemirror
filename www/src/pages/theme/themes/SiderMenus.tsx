@@ -32,11 +32,9 @@ export function SiderMenus() {
           .filter(Boolean)
           .map((item) => item?.slice(0, 1).toUpperCase() + item?.slice(1).toLowerCase())
           .join(' ');
+        const href = `/theme/data/${_name}${_theme ? `/${_theme}` : ''}${other ? `/${other.join('/')}` : ''}`;
         return (
-          <MenuItem
-            key={key}
-            to={`/theme/data/${_name}${_theme ? `/${_theme}` : ''}${other ? `/${other.join('/')}` : ''}`}
-          >
+          <MenuItem key={key} to={href.replace(/\/$/gi, '')}>
             {title}
           </MenuItem>
         );
