@@ -19,6 +19,7 @@ export const draculaInit = (options?: CreateThemeOptions) => {
       selectionMatch: 'rgba(255, 255, 255, 0.2)',
       gutterBackground: '#282a36',
       gutterForeground: '#6D8A88',
+      gutterBorder: 'transparent',
       lineHighlight: 'rgba(255, 255, 255, 0.1)',
       ...settings,
     },

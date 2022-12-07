@@ -1,6 +1,7 @@
 export * from '@uiw/codemirror-theme-abcdef';
 export * from '@uiw/codemirror-theme-androidstudio';
 export * from '@uiw/codemirror-theme-atomone';
+export * from '@uiw/codemirror-theme-aura';
 export * from '@uiw/codemirror-theme-bbedit';
 export * from '@uiw/codemirror-theme-bespin';
 export * from '@uiw/codemirror-theme-darcula';

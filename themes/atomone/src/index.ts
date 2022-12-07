@@ -19,6 +19,7 @@ export const atomoneInit = (options?: CreateThemeOptions) => {
       selectionMatch: '#2B323D',
       gutterBackground: '#272C35',
       gutterForeground: '#465063',
+      gutterBorder: 'transparent',
       lineHighlight: '#2B323D',
       ...settings,
     },

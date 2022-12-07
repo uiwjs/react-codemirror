@@ -18,8 +18,8 @@ export const duotoneLightInit = (options?: CreateThemeOptions) => {
       selectionMatch: '#e3dcce',
       gutterBackground: '#faf8f5',
       gutterForeground: '#cdc4b1',
-      lineHighlight: '#EFEFEF',
       gutterBorder: 'transparent',
+      lineHighlight: '#EFEFEF',
       ...settings,
     },
     styles: [

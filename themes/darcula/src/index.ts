@@ -19,6 +19,7 @@ export const darculaInit = (options?: CreateThemeOptions) => {
       selectionMatch: 'rgba(255, 255, 255, 0.2)',
       gutterBackground: 'rgba(255, 255, 255, 0.1)',
       gutterForeground: '#999',
+      gutterBorder: 'transparent',
       lineHighlight: 'rgba(255, 255, 255, 0.1)',
       ...settings,
     },

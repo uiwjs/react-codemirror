@@ -132,6 +132,12 @@ export default App;
   <img width="436" alt="codemirror-theme-androidstudio" src="https://user-images.githubusercontent.com/1680273/181795374-7a25cb90-5d77-4f86-9cbc-b1e12dc939d3.png">
 </a>
 
+**aura**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/aura">
+  <img width="436" alt="codemirror-theme-aura" src="https://user-images.githubusercontent.com/1680273/206092773-8140fc6b-119f-4271-a821-7dc6bcbc1c63.png">
+</a>
+
 **bbedit**
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/bbedit">

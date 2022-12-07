@@ -62,6 +62,7 @@ const view = new EditorView({
 export * from '@uiw/codemirror-theme-abcdef';
 export * from '@uiw/codemirror-theme-androidstudio';
 export * from '@uiw/codemirror-theme-atomone';
+export * from '@uiw/codemirror-theme-aura';
 export * from '@uiw/codemirror-theme-bbedit';
 export * from '@uiw/codemirror-theme-bespin';
 export * from '@uiw/codemirror-theme-darcula';
@@ -71,6 +72,7 @@ export * from '@uiw/codemirror-theme-eclipse';
 export * from '@uiw/codemirror-theme-github';
 export * from '@uiw/codemirror-theme-gruvbox-dark';
 export * from '@uiw/codemirror-theme-material';
+export * from '@uiw/codemirror-theme-noctis-lilac';
 export * from '@uiw/codemirror-theme-nord';
 export * from '@uiw/codemirror-theme-okaidia';
 export * from '@uiw/codemirror-theme-solarized';
