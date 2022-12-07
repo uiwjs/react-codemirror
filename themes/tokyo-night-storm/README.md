@@ -7,7 +7,7 @@
 [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-tokyo-night-storm.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-tokyo-night-storm)
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/tokyo-night-storm">
-  <img width="436" alt="codemirror-theme-tokyo-night-storm" src="https://user-images.githubusercontent.com/1680273/206097179-8a490b97-87da-4285-a9bc-b0c9f510e7ed.png">
+  <img width="436" alt="codemirror-theme-tokyo-night-storm" src="https://user-images.githubusercontent.com/1680273/206180525-c0e18a13-50ce-4d61-bd21-1bf25e81c3c0.png">
 </a>
 
 ## Install
