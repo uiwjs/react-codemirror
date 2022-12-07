@@ -16,6 +16,32 @@
 npm install @uiw/codemirror-theme-bespin --save
 ```
 
+```jsx
+import { tags as t } from '@lezer/highlight';
+import { bespin, bespinInit } from '@uiw/codemirror-theme-bespin';
+
+<CodeMirror theme={bespin} />
+<CodeMirror
+  theme={bespinInit({
+    settings: {
+      caret: '#c6c6c6',
+      fontFamily: 'monospace',
+    },
+    styles: [
+      { tag: t.comment, color: '#6272a4' },
+    ]
+  })}
+/>
+```
+
+## API
+
+```tsx
+import { CreateThemeOptions } from '@uiw/codemirror-themes';
+export declare const bespinInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const bespin: import('@codemirror/state').Extension;
+```
+
 ## Usage
 
 ```jsx
