@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-theme-darcula",
-  "version": "4.18.0",
+  "version": "4.18.1",
   "description": "Theme darcula for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/darcula",
   "author": "kenny wong <wowohoo@qq.com>",
@@ -21,7 +21,7 @@
     "cjs"
   ],
   "dependencies": {
-    "@uiw/codemirror-themes": "4.18.0"
+    "@uiw/codemirror-themes": "4.18.1"
   },
   "keywords": [
     "codemirror",

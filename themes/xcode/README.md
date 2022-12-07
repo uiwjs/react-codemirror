@@ -7,11 +7,11 @@
 [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-xcode.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-xcode)
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/xcode/dark">
-  <img width="436" alt="codemirror-theme-xcode dark" src="https://user-images.githubusercontent.com/1680273/177074703-4c5c6be0-e287-45ac-b6cc-db1568276e73.png">
+  <img width="436" alt="codemirror-theme-xcode dark" src="https://user-images.githubusercontent.com/1680273/206087681-537b9c1f-0dce-42a4-854d-036147935e82.png">
 </a>
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/xcode/light">
-  <img width="436" alt="codemirror-theme-xcode light" src="https://user-images.githubusercontent.com/1680273/177077462-2046096f-a31c-4dee-b9bb-2fcaaa87a844.png">
+  <img width="436" alt="codemirror-theme-xcode light" src="https://user-images.githubusercontent.com/1680273/206087526-9613a546-f129-4e01-9263-5a75f3f039a7.png">
 </a>
 
 ## Install

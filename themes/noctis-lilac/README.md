@@ -6,10 +6,10 @@
 
 [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-noctis-lilac.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-noctis-lilac)
 
-This package implements the [nord theme](https://www.nordtheme.com/) for the CodeMirror code editor.
+This package implements the noctis-lilac for the CodeMirror code editor.
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/noctis-lilac">
-  <img width="436" alt="codemirror-theme-nord" src="https://user-images.githubusercontent.com/1680273/206086882-b3525159-d987-4d7f-bad3-fdf3d4dbd06f.png">
+  <img width="436" alt="codemirror-theme-noctis-lilac" src="https://user-images.githubusercontent.com/1680273/206088068-55e9a25b-eb77-4e1a-91bb-f39cbba84981.png">
 </a>
 
 ## Install

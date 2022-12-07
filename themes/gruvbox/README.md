@@ -9,11 +9,11 @@
 This package implements the [gruvbox](https://github.com/morhetz/gruvbox) light theme for the CodeMirror code editor.
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/gruvbox/dark">
-  <img width="436" alt="codemirror-theme-eclipse" src="https://user-images.githubusercontent.com/1680273/201111051-c38a73ca-a449-4c01-a4ff-4a675886ca9d.png">
+  <img width="436" alt="codemirror-theme-gruvbox-dark" src="https://user-images.githubusercontent.com/1680273/206087857-d0a85219-34ad-4e79-9cdf-183f67e1085d.png">
 </a>
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/gruvbox/light">
-  <img width="436" alt="codemirror-theme-eclipse" src="https://user-images.githubusercontent.com/1680273/205499803-e1e2e214-dc3e-488a-9037-ba979e5ce199.png">
+  <img width="436" alt="codemirror-theme-eclipse" src="https://user-images.githubusercontent.com/1680273/206087911-49db6624-ab8c-434e-9b8a-84132fe206f9.png">
 </a>
 
 ## Install

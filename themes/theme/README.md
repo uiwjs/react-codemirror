@@ -185,11 +185,11 @@ export default App;
 **gruvbox**
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/gruvbox/dark">
-  <img width="436" alt="codemirror-theme-gruvbox-dark" src="https://user-images.githubusercontent.com/1680273/201111051-c38a73ca-a449-4c01-a4ff-4a675886ca9d.png">
+  <img width="436" alt="codemirror-theme-gruvbox-dark" src="https://user-images.githubusercontent.com/1680273/206087857-d0a85219-34ad-4e79-9cdf-183f67e1085d.png">
 </a>
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/gruvbox/light">
-  <img width="436" alt="codemirror-theme-eclipse" src="https://user-images.githubusercontent.com/1680273/205499803-e1e2e214-dc3e-488a-9037-ba979e5ce199.png">
+  <img width="436" alt="codemirror-theme-eclipse" src="https://user-images.githubusercontent.com/1680273/206087911-49db6624-ab8c-434e-9b8a-84132fe206f9.png">
 </a>
 
 **material**
@@ -201,7 +201,7 @@ export default App;
 **noctis-lilac**
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/noctis-lilac">
-  <img width="436" alt="codemirror-theme-material" src="https://user-images.githubusercontent.com/1680273/206086882-b3525159-d987-4d7f-bad3-fdf3d4dbd06f.png">
+  <img width="436" alt="codemirror-theme-noctis-lilac" src="https://user-images.githubusercontent.com/1680273/206088068-55e9a25b-eb77-4e1a-91bb-f39cbba84981.png">
 </a>
 
 **nord**
@@ -241,11 +241,11 @@ export default App;
 **xcode**
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/xcode/dark">
-  <img width="436" alt="codemirror-theme-xcode dark" src="https://user-images.githubusercontent.com/1680273/202441061-48b89163-04b9-47a1-9d2c-1608a2d21f51.png">
+  <img width="436" alt="codemirror-theme-xcode dark" src="https://user-images.githubusercontent.com/1680273/206087681-537b9c1f-0dce-42a4-854d-036147935e82.png">
 </a>
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/xcode/light">
-  <img width="436" alt="codemirror-theme-xcode light" src="https://user-images.githubusercontent.com/1680273/177077462-2046096f-a31c-4dee-b9bb-2fcaaa87a844.png">
+  <img width="436" alt="codemirror-theme-xcode light" src="https://user-images.githubusercontent.com/1680273/206087526-9613a546-f129-4e01-9263-5a75f3f039a7.png">
 </a>
 
 ## Props
