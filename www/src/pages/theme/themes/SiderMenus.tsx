@@ -27,10 +27,17 @@ export function SiderMenus() {
     <Sider>
       <MenuItem to={`/theme/`}>Home</MenuItem>
       {Object.keys(themeData).map((name, key) => {
-        const [_name, _theme] = toSnakeCase(name) || [];
+        const [_name, _theme, ...other] = toSnakeCase(name) || [];
+        const title = [_name, _theme, ...other]
+          .filter(Boolean)
+          .map((item) => item?.slice(0, 1).toUpperCase() + item?.slice(1).toLowerCase())
+          .join(' ');
         return (
-          <MenuItem key={key} to={`/theme/data/${_name}${_theme ? `/${_theme}` : ''}`}>
-            {_name} {_theme}
+          <MenuItem
+            key={key}
+            to={`/theme/data/${_name}${_theme ? `/${_theme}` : ''}${other ? `/${other.join('/')}` : ''}`}
+          >
+            {title}
           </MenuItem>
         );
       })}

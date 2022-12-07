@@ -48,12 +48,18 @@ export const Document: FC<PropsWithChildren<DocumentProps>> = ({ children, theme
     }
   }, [themeName]);
 
-  const [_name] = toSnakeCase(themeName) || [];
+  let pkgName: string | undefined = themeName;
+  if (/(gruvbox)/i.test(themeName || '')) {
+    pkgName = themeName?.replace(/\s+?(dark|light)/gi, ' dark');
+  } else {
+    pkgName = themeName?.replace(/\s+?(dark|light)/gi, '');
+  }
+  const _name = toSnakeCase(pkgName || '') || [];
   return (
     <Warpper>
       <Header>
         <Title>{themeName} Theme</Title>
-        <PreCode value={`npm install @uiw/codemirror-theme-${_name} --save`} />
+        <PreCode value={`npm install @uiw/codemirror-theme-${_name.join('-')} --save`} />
         <div>
           <Button onClick={() => setPreviewDoc(!previewDoc)}>
             {previewDoc ? 'Preview Theme' : 'Preview Document'}

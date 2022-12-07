@@ -244,6 +244,18 @@ export default App;
   <img width="436" alt="codemirror-theme-tokyo-night" src="https://user-images.githubusercontent.com/1680273/206094521-c3a51de1-8cb7-4f01-a9bd-6cfd04a3aa0d.png">
 </a>
 
+**tokyo-night-day**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/tokyo-night-day">
+  <img width="436" alt="codemirror-theme-tokyo-night-day" src="https://user-images.githubusercontent.com/1680273/206104544-ca4db2e0-caac-4804-9321-c269fe660245.png">
+</a>
+
+**tokyo-night-storm**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/tokyo-night-storm">
+  <img width="436" alt="codemirror-theme-tokyo-night-storm" src="https://user-images.githubusercontent.com/1680273/206097179-8a490b97-87da-4285-a9bc-b0c9f510e7ed.png">
+</a>
+
 **vscode**
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/vscode/dark">

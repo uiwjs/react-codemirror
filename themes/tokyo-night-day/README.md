@@ -1,28 +1,28 @@
 <!--rehype:ignore:start-->
 
-# TokyoNightStorm Theme
+# TokyoNightDay Theme
 
 <!--rehype:ignore:end-->
 
-[![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-tokyo-night-storm.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-tokyo-night-storm)
+[![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-tokyo-night-day.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-tokyo-night-day)
 
-<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/tokyo-night-storm">
-  <img width="436" alt="codemirror-theme-tokyo-night-storm" src="https://user-images.githubusercontent.com/1680273/206097179-8a490b97-87da-4285-a9bc-b0c9f510e7ed.png">
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/tokyo-night-day">
+  <img width="436" alt="codemirror-theme-tokyo-night-day" src="https://user-images.githubusercontent.com/1680273/206104544-ca4db2e0-caac-4804-9321-c269fe660245.png">
 </a>
 
 ## Install
 
 ```bash
-npm install @uiw/codemirror-theme-tokyo-night-storm --save
+npm install @uiw/codemirror-theme-tokyo-night-day --save
 ```
 
 ```jsx
 import { tags as t } from '@lezer/highlight';
-import { tokyoNightStorm, tokyoNightStormInit } from '@uiw/codemirror-theme-tokyo-night-storm';
+import { tokyoNightDay, tokyoNightDayInit } from '@uiw/codemirror-theme-tokyo-night-day';
 
-<CodeMirror theme={tokyoNightStorm} />
+<CodeMirror theme={tokyoNightDay} />
 <CodeMirror
-  theme={tokyoNightStormInit({
+  theme={tokyoNightDayInit({
     settings: {
       caret: '#c6c6c6',
       fontFamily: 'monospace',
@@ -38,15 +38,15 @@ import { tokyoNightStorm, tokyoNightStormInit } from '@uiw/codemirror-theme-toky
 
 ```tsx
 import { CreateThemeOptions } from '@uiw/codemirror-themes';
-export declare const tokyoNightStormInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
-export declare const tokyoNightStorm: import('@codemirror/state').Extension;
+export declare const tokyoNightDayInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const tokyoNightDay: import('@codemirror/state').Extension;
 ```
 
 ## Usage
 
 ```jsx
 import CodeMirror from '@uiw/react-codemirror';
-import { tokyoNightStorm } from '@uiw/codemirror-theme-tokyo-night-storm';
+import { tokyoNightDay } from '@uiw/codemirror-theme-tokyo-night-day';
 import { javascript } from '@codemirror/lang-javascript';
 
 function App() {
@@ -54,7 +54,7 @@ function App() {
     <CodeMirror
       value="console.log('hello world!');"
       height="200px"
-      theme={tokyoNightStorm}
+      theme={tokyoNightDay}
       extensions={[javascript({ jsx: true })]}
       onChange={(value, viewUpdate) => {
         console.log('value:', value);
@@ -69,11 +69,11 @@ export default App;
 import { EditorView } from '@codemirror/view';
 import { EditorState } from '@codemirror/state';
 import { javascript } from '@codemirror/lang-javascript';
-import { tokyoNightStorm } from '@uiw/codemirror-theme-tokyo-night-storm';
+import { tokyoNightDay } from '@uiw/codemirror-theme-tokyo-night-day';
 
 const state = EditorState.create({
   doc: 'my source code',
-  extensions: [tokyoNightStorm, javascript({ jsx: true })],
+  extensions: [tokyoNightDay, javascript({ jsx: true })],
 });
 
 const view = new EditorView({

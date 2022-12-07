@@ -17,6 +17,8 @@ import eclipseMd from '@uiw/codemirror-theme-eclipse/README.md';
 import bespinMd from '@uiw/codemirror-theme-bespin/README.md';
 import sublimeMd from '@uiw/codemirror-theme-sublime/README.md';
 import tokyoNightMd from '@uiw/codemirror-theme-tokyo-night/README.md';
+import tokyoNightStormMd from '@uiw/codemirror-theme-tokyo-night-storm/README.md';
+import tokyoNightDayMd from '@uiw/codemirror-theme-tokyo-night-day/README.md';
 import vscodeMd from '@uiw/codemirror-theme-vscode/README.md';
 import xcodeMd from '@uiw/codemirror-theme-xcode/README.md';
 
@@ -41,6 +43,7 @@ import { solarizedLight, solarizedDark } from '@uiw/codemirror-theme-solarized';
 import { sublime } from '@uiw/codemirror-theme-sublime';
 import { tokyoNight } from '@uiw/codemirror-theme-tokyo-night';
 import { tokyoNightStorm } from '@uiw/codemirror-theme-tokyo-night-storm';
+import { tokyoNightDay } from '@uiw/codemirror-theme-tokyo-night-day';
 import { xcodeLight, xcodeDark } from '@uiw/codemirror-theme-xcode';
 
 export const mdSource = {
@@ -67,6 +70,8 @@ export const mdSource = {
   solarizedDark: solarizedMd.source,
   sublime: sublimeMd.source,
   tokyoNight: tokyoNightMd.source,
+  tokyoNightStorm: tokyoNightStormMd.source,
+  tokyoNightDay: tokyoNightDayMd.source,
   vscodeDark: vscodeMd.source,
   xcodeLight: xcodeMd.source,
   xcodeDark: xcodeMd.source,
@@ -97,6 +102,7 @@ export const themeData = {
   sublime,
   tokyoNight,
   tokyoNightStorm,
+  tokyoNightDay,
   vscodeDark,
   xcodeLight,
   xcodeDark,
