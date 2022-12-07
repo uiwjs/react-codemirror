@@ -4,13 +4,7 @@ import styled from 'styled-components';
 import { PreCode } from './PreCode';
 import { mdSource } from './Datas';
 import { Warpper } from '../../../components/Warpper';
-
-export const toSnakeCase = (str: string = '') =>
-  str
-    .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
-    ?.map((x) => x.toLowerCase())
-    .join(',')
-    .split(',');
+import { toSnakeCase, toCamelCase } from '../../../utils/utils';
 
 export const Button = styled.button``;
 
@@ -42,11 +36,6 @@ interface DocumentProps {
 export const Document: FC<PropsWithChildren<DocumentProps>> = ({ children, themeName }) => {
   const [previewDoc, setPreviewDoc] = useState(false);
   const [source, setSource] = useState(mdSource.okaidia);
-  useEffect(() => {
-    if (themeName) {
-      setSource(mdSource[themeName as keyof typeof mdSource]);
-    }
-  }, [themeName]);
 
   let pkgName: string | undefined = themeName;
   if (/(gruvbox)/i.test(themeName || '')) {
@@ -55,6 +44,11 @@ export const Document: FC<PropsWithChildren<DocumentProps>> = ({ children, theme
     pkgName = themeName?.replace(/\s+?(dark|light)/gi, '');
   }
   const _name = toSnakeCase(pkgName || '') || [];
+  useEffect(() => {
+    if (themeName) {
+      setSource(mdSource[toCamelCase(themeName) as keyof typeof mdSource]);
+    }
+  }, [themeName]);
   return (
     <Warpper>
       <Header>

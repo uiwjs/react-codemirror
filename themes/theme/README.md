@@ -200,8 +200,12 @@ export default App;
 
 **material**
 
-<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/material">
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/material/dark">
   <img width="436" alt="codemirror-theme-material" src="https://user-images.githubusercontent.com/1680273/205537793-79f9c99c-831a-4ce3-8189-78b42896656f.png">
+</a>
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/material/light">
+  <img width="436" alt="codemirror-theme-material" src="https://user-images.githubusercontent.com/1680273/206124615-b3896e2c-d299-4609-b1d9-523ea1cf9f5b.png">
 </a>
 
 **noctis-lilac**

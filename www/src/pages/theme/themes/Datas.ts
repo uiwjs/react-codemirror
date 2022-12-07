@@ -31,7 +31,7 @@ import { dracula } from '@uiw/codemirror-theme-dracula';
 import { darcula } from '@uiw/codemirror-theme-darcula';
 import { eclipse } from '@uiw/codemirror-theme-eclipse';
 import { bespin } from '@uiw/codemirror-theme-bespin';
-import { material } from '@uiw/codemirror-theme-material';
+import { materialLight, materialDark } from '@uiw/codemirror-theme-material';
 import { noctisLilac } from '@uiw/codemirror-theme-noctis-lilac';
 import { vscodeDark } from '@uiw/codemirror-theme-vscode';
 import { duotoneLight, duotoneDark } from '@uiw/codemirror-theme-duotone';
@@ -62,7 +62,8 @@ export const mdSource = {
   githubDark: githubMd.source,
   gruvboxDark: gruvboxDarkMd.source,
   gruvboxLight: gruvboxDarkMd.source,
-  material: materialMd.source,
+  materialDark: materialMd.source,
+  materialLight: materialMd.source,
   noctisLilac: noctisLilacMd.source,
   nord: nordMd.source,
   okaidia: okaidiaMd.source,
@@ -93,7 +94,8 @@ export const themeData = {
   githubDark,
   gruvboxDark,
   gruvboxLight,
-  material,
+  materialLight,
+  materialDark,
   noctisLilac,
   nord,
   okaidia,

@@ -8,8 +8,12 @@
 
 This package implements the [Material](https://material.io/tools/color/) Dark theme for the CodeMirror code editor.
 
-<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/material">
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/material/dark">
   <img width="436" alt="codemirror-theme-material" src="https://user-images.githubusercontent.com/1680273/205537793-79f9c99c-831a-4ce3-8189-78b42896656f.png">
+</a>
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/material/light">
+  <img width="436" alt="codemirror-theme-material" src="https://user-images.githubusercontent.com/1680273/206124615-b3896e2c-d299-4609-b1d9-523ea1cf9f5b.png">
 </a>
 
 ## Install
@@ -19,7 +23,10 @@ npm install @uiw/codemirror-theme-material --save
 ```
 
 ```jsx
-import { material, materialInit } from '@uiw/codemirror-theme-material';
+import { materialDark, materialDarkInit, materialLight, materialLightInit } from '@uiw/codemirror-theme-material';
+
+// materialInit === materialDarkInit
+// material === materialDark
 
 <CodeMirror theme={material} />
 <CodeMirror
@@ -37,7 +44,11 @@ import { material, materialInit } from '@uiw/codemirror-theme-material';
 ```tsx
 import { CreateThemeOptions } from '@uiw/codemirror-themes';
 export declare const materialInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const materialDarkInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const materialDark: import('@codemirror/state').Extension;
 export declare const material: import('@codemirror/state').Extension;
+export declare const materialLightInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const materialLight: import('@codemirror/state').Extension;
 ```
 
 ## Usage

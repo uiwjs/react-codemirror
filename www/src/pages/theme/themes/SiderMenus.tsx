@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { toSnakeCase } from './Document';
 import { Sider } from '../editor';
 import { themeData } from './Datas';
+import { toSnakeCase } from '../../../utils/utils';
 
 export const MenuItem = styled(NavLink)`
   cursor: pointer;

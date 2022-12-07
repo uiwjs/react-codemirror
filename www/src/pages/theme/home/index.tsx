@@ -7,13 +7,7 @@ import { langs } from '@uiw/codemirror-extensions-langs';
 import { SiderMenus } from '../themes/SiderMenus';
 import { Warpper } from '../../../components/Warpper';
 import { themeData } from '../themes/Datas';
-import { toSnakeCase } from '../themes/Document';
-
-export const toTitleCase = (str: string = '') =>
-  str
-    .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
-    ?.map((x) => x.charAt(0).toUpperCase() + x.slice(1))
-    .join(' ');
+import { toSnakeCase, toTitleCase } from '../../../utils/utils';
 
 const ThemesWarpper = styled.div`
   grid-template-columns: repeat(3, minmax(0, 1fr));
