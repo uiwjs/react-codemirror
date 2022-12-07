@@ -16,6 +16,32 @@
 npm install @uiw/codemirror-theme-bbedit --save
 ```
 
+```jsx
+import { tags as t } from '@lezer/highlight';
+import { bbedit, bbeditInit } from '@uiw/codemirror-theme-bbedit';
+
+<CodeMirror theme={bbedit} />
+<CodeMirror
+  theme={bbeditInit({
+    settings: {
+      caret: '#c6c6c6',
+      fontFamily: 'monospace',
+    },
+    styles: [
+      { tag: t.comment, color: '#6272a4' },
+    ]
+  })}
+/>
+```
+
+## API
+
+```tsx
+import { CreateThemeOptions } from '@uiw/codemirror-themes';
+export declare const bbeditInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const bbedit: import('@codemirror/state').Extension;
+```
+
 ## Usage
 
 ```jsx
