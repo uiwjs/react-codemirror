@@ -5,7 +5,7 @@ import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
 export const androidstudioInit = (options?: CreateThemeOptions) => {
-  const { theme = 'light', settings = {}, styles = [] } = options || {};
+  const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
