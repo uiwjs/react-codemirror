@@ -144,7 +144,7 @@ export default function App() {
           <Link to="/editor/theme" className="special">
             Theme Editor
           </Link>
-          <Link to="/theme/" className="themes">
+          <Link to="/theme" className="themes">
             Themes
           </Link>
           <Link to="/extensions" className="extensions">

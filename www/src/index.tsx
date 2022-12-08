@@ -72,7 +72,8 @@ root.render(
         <Route path=":type" element={<ThemeEditor />} />
       </Route>
       <Route path="/theme/" element={<ThemeLayout />}>
-        <Route index element={<ThemesHome />} />
+        <Route index element={<Navigate to="home" replace />} />
+        <Route path="home" element={<ThemesHome />} />
         <Route path="data" element={<Navigate to="sublime" replace />} />
         <Route path="data/:name" element={<ThemeOkaidia />} />
         <Route path="data/:name/*" element={<ThemeOkaidia />} />

@@ -25,7 +25,7 @@ export const MenuItem = styled(NavLink)`
 export function SiderMenus() {
   return (
     <Sider>
-      <MenuItem to={`/theme/`}>Home</MenuItem>
+      <MenuItem to="/theme/home">Home</MenuItem>
       {Object.keys(themeData).map((name, key) => {
         const [_name, _theme, ...other] = toSnakeCase(name) || [];
         const title = [_name, _theme, ...other]

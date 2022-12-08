@@ -36,7 +36,7 @@ export const NavMenus = () => {
     <Tools>
       <Link to="/">Home</Link>
       <Link to="/extensions">Extensions</Link>
-      <Link to="/theme/">Themes</Link>
+      <Link to="/theme">Themes</Link>
       <Link to="/editor/theme">Themes Editor</Link>
       <Link to="/theme/doc">Theme Doc</Link>
       <Hyperlink href="https://github.com/uiwjs/react-codemirror" target="__blank">
