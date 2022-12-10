@@ -23,7 +23,7 @@ export function vscodeDarkInit(options?: CreateThemeOptions) {
     },
     styles: [
       {
-        tag: [t.keyword, t.operatorKeyword, t.modifier, t.color, t.constant(t.name), t.standard(t.name), t.tagName, t.special(t.brace), t.atom, t.bool, t.special(t.variableName)],
+        tag: [t.keyword, t.operatorKeyword, t.modifier, t.color, t.constant(t.name), t.standard(t.name), t.standard(t.tagName), t.special(t.brace), t.atom, t.bool, t.special(t.variableName)],
         color: '#569cd6',
       },
       {
@@ -36,7 +36,7 @@ export function vscodeDarkInit(options?: CreateThemeOptions) {
       },
       { tag: t.heading, fontWeight: 'bold', color: '#9cdcfe' },
       {
-        tag: [t.typeName, t.className, t.number, t.changed, t.annotation, t.self, t.namespace],
+        tag: [t.typeName, t.className, t.tagName, t.number, t.changed, t.annotation, t.self, t.namespace],
         color: '#4ec9b0',
       },
       {
