@@ -63,6 +63,7 @@ export type Style = Partial<
   propertyNameSpecial: string;
   classNameConstant: string;
   stringSpecial: string;
+  tagNameStandard: string;
 };
 
 export function ThemeEditor() {
@@ -99,6 +100,7 @@ export function ThemeEditor() {
       getStyle(styles.typeDefinition, { tag: t.definition(t.typeName) }),
       getStyle(styles.typeStandard, { tag: t.standard(t.typeName) }),
       getStyle(styles.typeName, { tag: t.typeName }),
+      getStyle(styles.tagNameStandard, { tag: t.standard(t.tagName) }),
       getStyle(styles.tagName, { tag: t.tagName }),
       getStyle(styles.variableName, { tag: t.variableName }),
       getStyle(styles.variableNameDefinition, { tag: t.definition(t.variableName) }),

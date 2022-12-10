@@ -11,6 +11,7 @@ export const defalutStyle: Style = {
   typeName: '#194a7b',
   typeStandard: '',
   tagName: '#008a02',
+  tagNameStandard: '',
   variableName: '#1a00db',
   variableNameDefinition: '',
   variableNameFunction: '',
@@ -106,6 +107,7 @@ export const themeCode = (styles: Partial<ThmeCodeStyle> = {}) => {
   if (styles.typeName) data.push(`{ tag: t.typeName, color: '${styles.typeName}' },`);
   if (styles.typeStandard) data.push(`{ tag:  t.standard(t.typeName), color: '${styles.typeName}' },`);
   if (styles.tagName) data.push(`{ tag: t.tagName, color: '${styles.tagName}' },`);
+  if (styles.tagNameStandard) data.push(`{ tag: t.standard(t.tagName), color: '${styles.tagNameStandard}' },`);
   if (styles.variableName) data.push(`{ tag: t.variableName, color: '${styles.variableName}' },`);
   if (styles.variableNameDefinition)
     data.push(`{ tag: t.definition(t.variableName), color: '${styles.variableNameDefinition}' },`);
