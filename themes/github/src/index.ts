@@ -18,6 +18,7 @@ export const githubLightInit = (options?: CreateThemeOptions) => {
       ...settings,
     },
     styles: [
+      { tag: [t.standard(t.tagName), t.tagName], color: '#116329' },
       { tag: [t.comment, t.bracket], color: '#6a737d' },
       { tag: [t.className, t.propertyName], color: '#6f42c1' },
       { tag: [t.variableName, t.attributeName, t.number, t.operator], color: '#005cc5' },
@@ -53,6 +54,7 @@ export const githubDarkInit = (options?: CreateThemeOptions) => {
       ...settings,
     },
     styles: [
+      { tag: [t.standard(t.tagName), t.tagName], color: '#7ee787' },
       { tag: [t.comment, t.bracket], color: '#8b949e' },
       { tag: [t.className, t.propertyName], color: '#d2a8ff' },
       { tag: [t.variableName, t.attributeName, t.number, t.operator], color: '#79c0ff' },
