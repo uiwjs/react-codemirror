@@ -18,6 +18,7 @@ import { ColorDoc } from './pages/extensions/color';
 import { MentionsDoc } from './pages/extensions/mentions';
 import { ThemesAllDoc } from './pages/extensions/themes';
 import { ZebraStripesDoc } from './pages/extensions/zebra-stripes';
+import { PageExample431 } from './pages/examples/Example431';
 
 export const GlobalStyle = createGlobalStyle`
   [data-color-mode*='dark'], [data-color-mode*='dark'] body {
@@ -92,6 +93,9 @@ root.render(
         <Route path="hyper-link" element={<HyperLinkDoc />} />
         <Route path="mentions" element={<MentionsDoc />} />
         <Route path="zebra-stripes" element={<ZebraStripesDoc />} />
+      </Route>
+      <Route path="/examples/" element={<ExtensionsLayout />}>
+        <Route path="431" element={<PageExample431 />} />
       </Route>
     </Routes>
   </HashRouter>,

@@ -28,7 +28,7 @@ export interface ReactCodeMirrorProps
    * `light` / `dark` / `Extension` Defaults to `light`.
    * @default light
    */
-  theme?: 'light' | 'dark' | Extension;
+  theme?: 'light' | 'dark' | 'none' | Extension;
   /**
    * Whether to optional basicSetup by default
    * @default true

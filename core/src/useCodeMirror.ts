@@ -91,6 +91,8 @@ export function useCodeMirror(props: UseCodeMirror) {
     case 'dark':
       getExtensions.push(oneDark);
       break;
+    case 'none':
+      break;
     default:
       getExtensions.push(theme);
       break;
