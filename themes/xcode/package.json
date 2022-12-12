@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-theme-xcode",
-  "version": "4.19.2",
+  "version": "4.19.3",
   "description": "Theme xcode for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/xcode/light",
   "author": "kenny wong <wowohoo@qq.com>",
@@ -21,7 +21,7 @@
     "cjs"
   ],
   "dependencies": {
-    "@uiw/codemirror-themes": "4.19.2"
+    "@uiw/codemirror-themes": "4.19.3"
   },
   "keywords": [
     "codemirror",
