@@ -38,6 +38,7 @@
     "@codemirror/language-data": "^6.1.0",
     "@codemirror/legacy-modes": "~6.3.0",
     "@uiw/codemirror-extensions-color": "4.19.3",
+    "@uiw/codemirror-extensions-classname": "4.19.3",
     "@uiw/codemirror-extensions-events": "4.19.3",
     "@uiw/codemirror-extensions-hyper-link": "4.19.3",
     "@uiw/codemirror-extensions-langs": "4.19.3",

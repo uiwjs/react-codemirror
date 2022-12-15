@@ -53,7 +53,7 @@ export default App;
 ```js
 import { EditorView } from '@codemirror/view';
 import { EditorState } from '@codemirror/state';
-import { mentions } from '@uiw/codemirror-zebra-stripes';
+import { zebraStripes } from '@uiw/codemirror-zebra-stripes';
 
 const state = EditorState.create({
   doc: 'my source code',

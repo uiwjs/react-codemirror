@@ -15,6 +15,7 @@ import { LangsDoc } from './pages/extensions/langs';
 import { HyperLinkDoc } from './pages/extensions/hyper-link';
 import { BasicSetupDoc } from './pages/extensions/basic-setup';
 import { ColorDoc } from './pages/extensions/color';
+import { ClassNameDoc } from './pages/extensions/classname';
 import { MentionsDoc } from './pages/extensions/mentions';
 import { ThemesAllDoc } from './pages/extensions/themes';
 import { ZebraStripesDoc } from './pages/extensions/zebra-stripes';
@@ -87,6 +88,7 @@ root.render(
         <Route path="themes-all" element={<ThemesAllDoc />} />
         <Route path="basic-setup" element={<BasicSetupDoc />} />
         <Route path="color" element={<ColorDoc />} />
+        <Route path="classname" element={<ClassNameDoc />} />
         <Route path="events" element={<EventsDoc />} />
         <Route path="line-numbers-relative" element={<LineNumbersRelativeDoc />} />
         <Route path="languages" element={<LangsDoc />} />

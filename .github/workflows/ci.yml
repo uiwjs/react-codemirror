@@ -250,6 +250,12 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./extensions/basic-setup/package.json
 
+      - name: 📦 @uiw/codemirror-extensions-classname to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./extensions/classname/package.json
+
       - name: 📦 @uiw/codemirror-extensions-events to NPM
         uses: JS-DevTools/npm-publish@v1
         with:
@@ -651,6 +657,18 @@ jobs:
 
       - run: npm publish
         working-directory: extensions/basic-setup
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Modify @uiw/codemirror-extensions-classname => @uiwjs/codemirror-extensions-classname
+        uses: jaywcjlove/github-action-package@main
+        with:
+          path: extensions/classname/package.json
+          rename: "@uiwjs/codemirror-extensions-classname"
+
+      - run: npm publish
+        working-directory: extensions/classname
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

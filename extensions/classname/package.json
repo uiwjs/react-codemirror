@@ -1,0 +1,45 @@
+{
+  "name": "@uiw/codemirror-extensions-classname",
+  "version": "4.19.3",
+  "description": "Adding a class for a specific line for CodeMirror6.",
+  "homepage": "https://uiwjs.github.io/react-codemirror/#/extensions/classname",
+  "author": "kenny wong <wowohoo@qq.com>",
+  "license": "MIT",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "scripts": {
+    "watch": "tsbb watch",
+    "build": "tsbb build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uiwjs/react-codemirror.git"
+  },
+  "files": [
+    "src",
+    "esm",
+    "cjs"
+  ],
+  "peerDependencies": {
+    "@codemirror/state": ">=6.0.0",
+    "@codemirror/view": ">=6.0.0"
+  },
+  "devDependencies": {
+    "@codemirror/state": "^6.1.0",
+    "@codemirror/view": "^6.0.0"
+  },
+  "keywords": [
+    "codemirror",
+    "codemirror6",
+    "classname",
+    "extensions",
+    "ide",
+    "code"
+  ],
+  "jest": {
+    "coverageReporters": [
+      "lcov",
+      "json-summary"
+    ]
+  }
+}
