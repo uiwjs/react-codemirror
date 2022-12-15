@@ -1,18 +1,11 @@
 import data from '@uiw/codemirror-extensions-zebra-stripes/README.md';
 import { zebraStripes } from '@uiw/codemirror-extensions-zebra-stripes';
-import CodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
-import { useEffect, useState } from 'react';
+import CodeMirror from '@uiw/react-codemirror';
 import { langs } from '@uiw/codemirror-extensions-langs';
+import { useTheme } from '../../../utils/useTheme';
 
 export const LineNumberDemo = () => {
-  const dark = document.documentElement.getAttribute('data-color-mode');
-  const [theme, setTheme] = useState<ReactCodeMirrorProps['theme']>(dark === 'dark' ? 'dark' : 'light');
-  useEffect(() => {
-    setTheme(document.documentElement.getAttribute('data-color-mode') === 'dark' ? 'dark' : 'light');
-    document.addEventListener('colorschemechange', (e) => {
-      setTheme(e.detail.colorScheme as ReactCodeMirrorProps['theme']);
-    });
-  }, []);
+  const { theme } = useTheme();
 
   return (
     <CodeMirror

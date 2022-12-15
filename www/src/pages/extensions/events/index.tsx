@@ -1,10 +1,11 @@
 import MarkdownPreview from '@uiw/react-markdown-preview';
 import data from '@uiw/codemirror-extensions-events/README.md';
 import * as events from '@uiw/codemirror-extensions-events';
-import CodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
+import CodeMirror from '@uiw/react-codemirror';
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { langs } from '@uiw/codemirror-extensions-langs';
+import { useTheme } from '../../../utils/useTheme';
 import { PageWarpper } from '../';
 
 const Info = styled.div`
@@ -14,14 +15,7 @@ const Info = styled.div`
 export const EventsDoc = () => {
   const [scrollTop, setScrollTop] = useState(0);
   const [eventType, setEventType] = useState('');
-  const dark = document.documentElement.getAttribute('data-color-mode');
-  const [theme, setTheme] = useState<ReactCodeMirrorProps['theme']>(dark === 'dark' ? 'dark' : 'light');
-  useEffect(() => {
-    setTheme(document.documentElement.getAttribute('data-color-mode') === 'dark' ? 'dark' : 'light');
-    document.addEventListener('colorschemechange', (e) => {
-      setTheme(e.detail.colorScheme as ReactCodeMirrorProps['theme']);
-    });
-  }, []);
+  const { theme } = useTheme();
 
   return (
     <PageWarpper>

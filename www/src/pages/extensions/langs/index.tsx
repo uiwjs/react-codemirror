@@ -1,24 +1,18 @@
 import MarkdownPreview from '@uiw/react-markdown-preview';
 import data from '@uiw/codemirror-extensions-langs/README.md';
 import { langNames, LanguageName, loadLanguage } from '@uiw/codemirror-extensions-langs';
-import CodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
+import CodeMirror from '@uiw/react-codemirror';
 import { useEffect, useState } from 'react';
-import { PageWarpper } from '../';
 import styled from 'styled-components';
+import { useTheme } from '../../../utils/useTheme';
+import { PageWarpper } from '../';
 
 const Toolbar = styled.div`
   padding-bottom: 32px;
 `;
 
 export const LangsDoc = () => {
-  const dark = document.documentElement.getAttribute('data-color-mode');
-  const [theme, setTheme] = useState<ReactCodeMirrorProps['theme']>(dark === 'dark' ? 'dark' : 'light');
-  useEffect(() => {
-    setTheme(document.documentElement.getAttribute('data-color-mode') === 'dark' ? 'dark' : 'light');
-    document.addEventListener('colorschemechange', (e) => {
-      setTheme(e.detail.colorScheme as ReactCodeMirrorProps['theme']);
-    });
-  }, []);
+  const { theme } = useTheme();
 
   const [language, setLanguage] = useState<LanguageName>('markdown');
   const [source, setSource] = useState<string>(data.source);

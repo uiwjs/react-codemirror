@@ -9,6 +9,7 @@ import * as alls from '@uiw/codemirror-themes-all';
 import { langs } from '@uiw/codemirror-extensions-langs';
 import { Select } from '../../Select';
 import { Options } from '../extensions/basic-setup';
+import { useTheme } from '../../utils/useTheme';
 
 const themeOptions = ['dark', 'light']
   .concat(Object.keys(alls))
@@ -48,12 +49,11 @@ const Warpper = styled.div`
 `;
 
 export default function Example() {
-  const dark = document.documentElement.getAttribute('data-color-mode');
   const [mode, setMode] = useState('javascript');
   const [placeholder, setPlaceholder] = useState('Please enter the code.');
   const [autofocus, setAutofocus] = useState(false);
   const [editable, setEditable] = useState(true);
-  const [theme, setTheme] = useState<ReactCodeMirrorProps['theme']>(dark === 'dark' ? 'dark' : 'light');
+  const { theme, setTheme } = useTheme();
   const [code, setCode] = useState('');
   const [extensions, setExtensions] = useState<Extension[]>();
   const [height, setHeight] = useState('500px');
@@ -84,10 +84,6 @@ export default function Example() {
   }
   useEffect(() => {
     handleLangChange('javascript');
-    setTheme(document.documentElement.getAttribute('data-color-mode') === 'dark' ? 'dark' : 'light');
-    document.addEventListener('colorschemechange', (e) => {
-      setTheme(e.detail.colorScheme as ReactCodeMirrorProps['theme']);
-    });
   }, []);
   return (
     <Warpper className="wmde-markdown-var">

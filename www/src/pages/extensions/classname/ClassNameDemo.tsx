@@ -6,7 +6,7 @@ import { EditorView } from '@codemirror/view';
 import { useTheme } from '../../../utils/useTheme';
 
 export const ClassNameDemo = () => {
-  const theme = useTheme();
+  const { theme } = useTheme();
 
   const themeDemo = EditorView.baseTheme({
     '&dark .first-line': { backgroundColor: 'red' },

@@ -10,5 +10,5 @@ export function useTheme() {
       setTheme(e.detail.colorScheme as ReactCodeMirrorProps['theme']);
     });
   }, []);
-  return theme;
+  return { theme, setTheme };
 }

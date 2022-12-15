@@ -2,22 +2,16 @@ import MarkdownPreview from '@uiw/react-markdown-preview';
 import data from '@uiw/codemirror-extensions-color/README.md';
 import { color } from '@uiw/codemirror-extensions-color';
 import CodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { langs } from '@uiw/codemirror-extensions-langs';
+import { useTheme } from '../../../utils/useTheme';
 import { codeSample } from './code';
 import { PageWarpper } from '../';
 
 export const ColorDoc = () => {
   const [modeType, setModeType] = useState<'readOnly' | 'editable'>('readOnly');
   const [readOnly, setReadOnly] = useState(false);
-  const dark = document.documentElement.getAttribute('data-color-mode');
-  const [theme, setTheme] = useState<ReactCodeMirrorProps['theme']>(dark === 'dark' ? 'dark' : 'light');
-  useEffect(() => {
-    setTheme(document.documentElement.getAttribute('data-color-mode') === 'dark' ? 'dark' : 'light');
-    document.addEventListener('colorschemechange', (e) => {
-      setTheme(e.detail.colorScheme as ReactCodeMirrorProps['theme']);
-    });
-  }, []);
+  const { theme } = useTheme();
   const porps: ReactCodeMirrorProps = {};
   if (modeType === 'editable') {
     porps.editable = readOnly;

@@ -1,18 +1,18 @@
 import MarkdownPreview from '@uiw/react-markdown-preview';
 import data from '@uiw/codemirror-themes-all/README.md';
 import CodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import * as themes from '@uiw/codemirror-themes-all';
 import { langs } from '@uiw/codemirror-extensions-langs';
-import { PageWarpper } from '../';
 import styled from 'styled-components';
+import { useTheme } from '../../../utils/useTheme';
+import { PageWarpper } from '../';
 
 const ToolsWapper = styled.div`
   padding: 0 0 23px 0;
 `;
 
 export const ThemesAllDoc = () => {
-  const dark = document.documentElement.getAttribute('data-color-mode');
   const themesData: Record<string, Omit<ReactCodeMirrorProps['theme'], 'dark' | 'light'>> = {};
   Object.keys(themes)
     .filter((item) => typeof themes[item as keyof typeof themes] !== 'function')
@@ -20,13 +20,7 @@ export const ThemesAllDoc = () => {
       themesData[item] = themes[item as keyof typeof themes];
     });
   const [selectTheme, setSelectTheme] = useState<keyof typeof themesData>();
-  const [theme, setTheme] = useState<ReactCodeMirrorProps['theme']>(dark === 'dark' ? 'dark' : 'light');
-  useEffect(() => {
-    setTheme(document.documentElement.getAttribute('data-color-mode') === 'dark' ? 'dark' : 'light');
-    document.addEventListener('colorschemechange', (e) => {
-      setTheme(e.detail.colorScheme as ReactCodeMirrorProps['theme']);
-    });
-  }, []);
+  const theme = useTheme();
   const themeCurrent = themesData[selectTheme!] ? themesData[selectTheme!] : theme;
   const changeHandle = (ev: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectTheme(ev.target.value as keyof typeof themesData);

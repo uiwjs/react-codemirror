@@ -1,9 +1,10 @@
-import { FC, PropsWithChildren, useEffect, useState } from 'react';
+import { FC, PropsWithChildren, useState } from 'react';
 import MarkdownPreview from '@uiw/react-markdown-preview';
-import CodeMirror, { ReactCodeMirrorProps, BasicSetupOptions } from '@uiw/react-codemirror';
+import CodeMirror, { BasicSetupOptions } from '@uiw/react-codemirror';
 import data from '@uiw/codemirror-extensions-basic-setup/README.md';
 import { langs } from '@uiw/codemirror-extensions-langs';
 import styled from 'styled-components';
+import { useTheme } from '../../../utils/useTheme';
 import { PageWarpper } from '../';
 
 const Label = styled.label`
@@ -27,15 +28,7 @@ const Warpper = styled.div`
 `;
 
 export const BasicSetupDoc = () => {
-  const dark = document.documentElement.getAttribute('data-color-mode');
-  const [theme, setTheme] = useState<ReactCodeMirrorProps['theme']>(dark === 'dark' ? 'dark' : 'light');
-  useEffect(() => {
-    setTheme(document.documentElement.getAttribute('data-color-mode') === 'dark' ? 'dark' : 'light');
-    document.addEventListener('colorschemechange', (e) => {
-      setTheme(e.detail.colorScheme as ReactCodeMirrorProps['theme']);
-    });
-  }, []);
-
+  const { theme } = useTheme();
   const [basicSetup, setBasicSetup] = useState<BasicSetupOptions>({});
   return (
     <PageWarpper>

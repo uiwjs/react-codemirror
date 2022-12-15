@@ -1,9 +1,9 @@
 import MarkdownPreview from '@uiw/react-markdown-preview';
 import data from '@uiw/codemirror-extensions-mentions/README.md';
 import { mentions } from '@uiw/codemirror-extensions-mentions';
-import CodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
-import { useEffect, useState } from 'react';
+import CodeMirror from '@uiw/react-codemirror';
 import { langs } from '@uiw/codemirror-extensions-langs';
+import { useTheme } from '../../../utils/useTheme';
 import { PageWarpper } from '../';
 
 const users = [
@@ -52,14 +52,7 @@ const users = [
 ];
 
 export const MentionsDoc = () => {
-  const dark = document.documentElement.getAttribute('data-color-mode');
-  const [theme, setTheme] = useState<ReactCodeMirrorProps['theme']>(dark === 'dark' ? 'dark' : 'light');
-  useEffect(() => {
-    setTheme(document.documentElement.getAttribute('data-color-mode') === 'dark' ? 'dark' : 'light');
-    document.addEventListener('colorschemechange', (e) => {
-      setTheme(e.detail.colorScheme as ReactCodeMirrorProps['theme']);
-    });
-  }, []);
+  const { theme } = useTheme();
 
   return (
     <PageWarpper>
