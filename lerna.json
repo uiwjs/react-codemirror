@@ -1,5 +1,5 @@
 {
-  "version": "4.19.3",
+  "version": "4.19.4",
   "packages": ["themes/**", "core", "www"],
   "useWorkspaces": true
 }
