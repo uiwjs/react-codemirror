@@ -14,7 +14,7 @@ const stepSize = Facet.define({
   },
 });
 
-const stripe = Decoration.line({
+let stripe = Decoration.line({
   attributes: { class: 'cm-zebra-stripe' },
 });
 
@@ -57,10 +57,10 @@ const showStripes = ViewPlugin.fromClass(
   },
 );
 
-const baseTheme = (opt: Pick<Partial<ZebraStripesOptions>, 'lightColor' | 'darkColor'> = {}) => {
+const baseTheme = (opt: Pick<Partial<ZebraStripesOptions>, 'lightColor' | 'darkColor' | 'className'> = {}) => {
   return EditorView.baseTheme({
-    '&light .cm-zebra-stripe': { backgroundColor: opt.lightColor || '#eef6ff' },
-    '&dark .cm-zebra-stripe': { backgroundColor: opt.darkColor || '#3a404d' },
+    [`&light .${opt.className}`]: { backgroundColor: opt.lightColor || '#eef6ff' },
+    [`&dark .${opt.className}`]: { backgroundColor: opt.darkColor || '#3a404d' },
   });
 };
 
@@ -72,13 +72,18 @@ export type ZebraStripesOptions = {
    * @example `[1,[2,6], 10]`
    */
   lineNumber?: (number | number[])[] | null;
+  /** @default `cm-zebra-stripe` */
+  className?: string;
 };
 
 const range = (start: number, stop: number, step: number) =>
   Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + i * step);
 
 export function zebraStripes(options: ZebraStripesOptions = {}): Extension {
-  const zebraStripeTheme = baseTheme({ lightColor: options.lightColor, darkColor: options.darkColor });
+  const { className = 'cm-zebra-stripe' } = options;
+  stripe = Decoration.line({
+    attributes: { class: className },
+  });
   if (options.lineNumber && Array.isArray(options.lineNumber)) {
     options.step = null;
     options.lineNumber = options.lineNumber.map((item) => {
@@ -90,10 +95,14 @@ export function zebraStripes(options: ZebraStripesOptions = {}): Extension {
   } else {
     options.lineNumber = null;
   }
-  return [
+  const extensions = [
     options.lineNumber === null ? [] : lineNumber.of(options.lineNumber || []),
     options.step === null ? [] : stepSize.of(options.step || 2),
     showStripes,
-    zebraStripeTheme,
   ];
+  if (className) {
+    const zebraStripeTheme = baseTheme({ lightColor: options.lightColor, darkColor: options.darkColor, className });
+    extensions.push(zebraStripeTheme);
+  }
+  return extensions;
 }

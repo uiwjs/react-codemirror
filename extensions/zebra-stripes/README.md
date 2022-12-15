@@ -78,6 +78,8 @@ export declare type ZebraStripesOptions = {
    * @example `[1,[2,6], 10]`
    */
   lineNumber?: (number | number[])[] | null;
+  /** @default `cm-zebra-stripe` */
+  className?: string;
 };
 export declare function zebraStripes(options?: ZebraStripesOptions): Extension;
 ```
