@@ -21,7 +21,7 @@ export const ThemesAllDoc = () => {
     });
   const [selectTheme, setSelectTheme] = useState<keyof typeof themesData>();
   const theme = useTheme();
-  const themeCurrent = themesData[selectTheme!] ? themesData[selectTheme!] : theme;
+  const themeCurrent = themesData[selectTheme!] ? themesData[selectTheme!] : theme.theme;
   const changeHandle = (ev: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectTheme(ev.target.value as keyof typeof themesData);
   };
