@@ -181,6 +181,9 @@ export function useCodeMirror(props: UseCodeMirror) {
   ]);
 
   useEffect(() => {
+    if (value === undefined) {
+      return;
+    }
     const currentValue = view ? view.state.doc.toString() : '';
     if (view && value !== currentValue) {
       view.dispatch({
