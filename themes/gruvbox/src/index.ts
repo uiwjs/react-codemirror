@@ -7,7 +7,7 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
-export const gruvboxDarkInit = (options?: CreateThemeOptions) => {
+export const gruvboxDarkInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
@@ -122,7 +122,7 @@ export const gruvboxDarkInit = (options?: CreateThemeOptions) => {
 
 export const gruvboxDark = gruvboxDarkInit();
 
-export const gruvboxLightInit = (options?: CreateThemeOptions) => {
+export const gruvboxLightInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,

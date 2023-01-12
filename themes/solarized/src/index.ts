@@ -1,7 +1,7 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
-export const solarizedLightInit = (options?: CreateThemeOptions) => {
+export const solarizedLightInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'light', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
@@ -115,7 +115,7 @@ export const solarizedLightInit = (options?: CreateThemeOptions) => {
 
 export const solarizedLight = solarizedLightInit();
 
-export const solarizedDarkInit = (options?: CreateThemeOptions) => {
+export const solarizedDarkInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,

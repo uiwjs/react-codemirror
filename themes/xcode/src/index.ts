@@ -4,7 +4,7 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
-export function xcodeLightInit(options?: CreateThemeOptions) {
+export function xcodeLightInit(options?: Partial<CreateThemeOptions>) {
   const { theme = 'light', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
@@ -35,7 +35,7 @@ export function xcodeLightInit(options?: CreateThemeOptions) {
 
 export const xcodeLight = xcodeLightInit();
 
-export const xcodeDarkInit = (options?: CreateThemeOptions) => {
+export const xcodeDarkInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,

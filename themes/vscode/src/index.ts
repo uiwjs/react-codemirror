@@ -4,7 +4,7 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
-export function vscodeDarkInit(options?: CreateThemeOptions) {
+export function vscodeDarkInit(options?: Partial<CreateThemeOptions>) {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
@@ -23,7 +23,19 @@ export function vscodeDarkInit(options?: CreateThemeOptions) {
     },
     styles: [
       {
-        tag: [t.keyword, t.operatorKeyword, t.modifier, t.color, t.constant(t.name), t.standard(t.name), t.standard(t.tagName), t.special(t.brace), t.atom, t.bool, t.special(t.variableName)],
+        tag: [
+          t.keyword,
+          t.operatorKeyword,
+          t.modifier,
+          t.color,
+          t.constant(t.name),
+          t.standard(t.name),
+          t.standard(t.tagName),
+          t.special(t.brace),
+          t.atom,
+          t.bool,
+          t.special(t.variableName),
+        ],
         color: '#569cd6',
       },
       {
@@ -31,7 +43,16 @@ export function vscodeDarkInit(options?: CreateThemeOptions) {
         color: '#c586c0',
       },
       {
-        tag: [t.name, t.deleted, t.character, t.macroName, t.propertyName, t.variableName, t.labelName, t.definition(t.name)],
+        tag: [
+          t.name,
+          t.deleted,
+          t.character,
+          t.macroName,
+          t.propertyName,
+          t.variableName,
+          t.labelName,
+          t.definition(t.name),
+        ],
         color: '#9cdcfe',
       },
       { tag: t.heading, fontWeight: 'bold', color: '#9cdcfe' },

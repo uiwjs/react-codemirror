@@ -4,7 +4,7 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
-export const githubLightInit = (options?: CreateThemeOptions) => {
+export const githubLightInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'light', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
@@ -40,7 +40,7 @@ export const githubLightInit = (options?: CreateThemeOptions) => {
 
 export const githubLight = githubLightInit();
 
-export const githubDarkInit = (options?: CreateThemeOptions) => {
+export const githubDarkInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,

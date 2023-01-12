@@ -6,7 +6,7 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
-export const duotoneLightInit = (options?: CreateThemeOptions) => {
+export const duotoneLightInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'light', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
@@ -37,7 +37,7 @@ export const duotoneLightInit = (options?: CreateThemeOptions) => {
 
 export const duotoneLight = duotoneLightInit();
 
-export const duotoneDarkInit = (options?: CreateThemeOptions) => {
+export const duotoneDarkInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'light', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,

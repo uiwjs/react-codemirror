@@ -2,7 +2,7 @@ import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
 // Colors from https://www.nordtheme.com/docs/colors-and-palettes
-export const nordInit = (options?: CreateThemeOptions) => {
+export const nordInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,

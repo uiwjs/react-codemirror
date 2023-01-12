@@ -1,7 +1,7 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
-export const materialInit = (options?: CreateThemeOptions) => {
+export const materialInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
@@ -120,7 +120,7 @@ export const materialDarkInit = materialInit;
 export const materialDark = materialInit();
 export const material = materialInit();
 
-export const materialLightInit = (options?: CreateThemeOptions) => {
+export const materialLightInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'light', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
