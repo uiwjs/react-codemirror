@@ -16,8 +16,6 @@
 
 CodeMirror component for React. Demo Preview: [@uiwjs.github.io/react-codemirror](https://uiwjs.github.io/react-codemirror/)
 
-> ⚠️ The [`v3`](https://raw.githack.com/uiwjs/react-codemirror/doc3/index.html) version document preview is [here](https://raw.githack.com/uiwjs/react-codemirror/doc3/index.html).
-
 <!--rehype:style=border-left: 8px solid #ffe564;background-color: #ffe56440;padding: 12px 16px;-->
 
 **Features:**
