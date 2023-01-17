@@ -20,9 +20,9 @@ type Theme = 'light' | 'dark';
 
 export interface Settings {
   /** Editor background. */
-  background: string;
+  background?: string;
   /** Default text color. */
-  foreground: string;
+  foreground?: string;
   /** Caret color. */
   caret?: string;
   /** Selection background. */
@@ -43,14 +43,20 @@ export interface Settings {
   fontFamily?: string;
 }
 
-export const createTheme = ({ theme, settings, styles }: CreateThemeOptions): Extension => {
+export const createTheme = ({ theme, settings = {}, styles = [] }: CreateThemeOptions): Extension => {
   const themeOptions: Record<string, StyleSpec> = {
-    '&': {
-      backgroundColor: settings.background,
-      color: settings.foreground,
-    },
     '.cm-gutters': {},
   };
+  const baseStyle: StyleSpec = {};
+  if (settings.background) {
+    baseStyle.backgroundColor = settings.background;
+  }
+  if (settings.foreground) {
+    baseStyle.color = settings.foreground;
+  }
+  if (settings.background || settings.foreground) {
+    themeOptions['&'] = baseStyle;
+  }
 
   if (settings.fontFamily) {
     themeOptions['&.cm-editor .cm-scroller'] = {
