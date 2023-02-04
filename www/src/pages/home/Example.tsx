@@ -96,7 +96,10 @@ export default function Example() {
         autoFocus={autofocus}
         basicSetup={basicSetup}
         placeholder={placeholder}
-        onChange={(value) => setCode(value)}
+        onChange={(val) => {
+          // https://github.com/uiwjs/react-codemirror/issues/449
+          // setCode(val)
+        }}
         style={{
           maxWidth: '995px',
           margin: '-18px auto 0 auto',
