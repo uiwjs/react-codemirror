@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-extensions-hyper-link",
-  "version": "4.19.7",
+  "version": "4.19.8",
   "description": "Hyper link Extensions for CodeMirror6.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/extensions/hyper-link",
   "author": "kenny wong <wowohoo@qq.com>",
