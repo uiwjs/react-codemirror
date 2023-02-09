@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
-import { EditorState, StateEffect } from '@codemirror/state';
+import { Annotation, EditorState, StateEffect } from '@codemirror/state';
 import { indentWithTab } from '@codemirror/commands';
 import { EditorView, keymap, ViewUpdate, placeholder } from '@codemirror/view';
 import { basicSetup } from '@uiw/codemirror-extensions-basic-setup';
 import { oneDark } from '@codemirror/theme-one-dark';
 import { getStatistics } from './utils';
 import { ReactCodeMirrorProps } from '.';
+
+const External = Annotation.define<boolean>();
 
 export interface UseCodeMirror extends ReactCodeMirrorProps {
   container?: HTMLDivElement | null;
@@ -60,7 +62,13 @@ export function useCodeMirror(props: UseCodeMirror) {
     },
   });
   const updateListener = EditorView.updateListener.of((vu: ViewUpdate) => {
-    if (vu.docChanged && typeof onChange === 'function') {
+    if (
+      vu.docChanged &&
+      typeof onChange === 'function' &&
+      // Fix echoing of the remote changes:
+      // If transaction is market as remote we don't have to call `onChange` handler again
+      !vu.transactions.some((tr) => tr.annotation(External))
+    ) {
       const doc = vu.state.doc;
       const value = doc.toString();
       onChange(value, vu);
@@ -188,6 +196,7 @@ export function useCodeMirror(props: UseCodeMirror) {
     if (view && value !== currentValue) {
       view.dispatch({
         changes: { from: 0, to: currentValue.length, insert: value || '' },
+        annotations: [External.of(true)],
       });
     }
   }, [value, view]);

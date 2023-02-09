@@ -85,3 +85,10 @@ it('CodeMirror editable', async () => {
   expect(text.className).toEqual('cm-content');
   expect(text.tagName).toEqual('DIV');
 });
+
+it("CodeMirror doesn't echo changes", async () => {
+  const handleChange = jest.fn();
+  const { rerender } = render(<CodeMirror value="value a" onChange={handleChange} />);
+  rerender(<CodeMirror value="value b" onChange={handleChange} />);
+  expect(handleChange).not.toHaveBeenCalled();
+});
