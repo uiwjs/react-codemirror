@@ -7,20 +7,24 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
+export const defaultSettingsDarcula: CreateThemeOptions['settings'] = {
+  background: '#2B2B2B',
+  foreground: '#f8f8f2',
+  caret: '#FFFFFF',
+  selection: 'rgba(255, 255, 255, 0.1)',
+  selectionMatch: 'rgba(255, 255, 255, 0.2)',
+  gutterBackground: 'rgba(255, 255, 255, 0.1)',
+  gutterForeground: '#999',
+  gutterBorder: 'transparent',
+  lineHighlight: 'rgba(255, 255, 255, 0.1)',
+};
+
 export const darculaInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'light', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#2B2B2B',
-      foreground: '#f8f8f2',
-      caret: '#FFFFFF',
-      selection: 'rgba(255, 255, 255, 0.1)',
-      selectionMatch: 'rgba(255, 255, 255, 0.2)',
-      gutterBackground: 'rgba(255, 255, 255, 0.1)',
-      gutterForeground: '#999',
-      gutterBorder: 'transparent',
-      lineHighlight: 'rgba(255, 255, 255, 0.1)',
+      ...defaultSettingsDarcula,
       ...settings,
     },
     styles: [

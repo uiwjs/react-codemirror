@@ -4,17 +4,21 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
+export const defaultSettingsAndroidstudio: CreateThemeOptions['settings'] = {
+  background: '#282b2e',
+  foreground: '#a9b7c6',
+  caret: '#00FF00',
+  selection: '#343739',
+  selectionMatch: '#343739',
+  lineHighlight: '#343739',
+};
+
 export const androidstudioInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#282b2e',
-      foreground: '#a9b7c6',
-      caret: '#00FF00',
-      selection: '#343739',
-      selectionMatch: '#343739',
-      lineHighlight: '#343739',
+      ...defaultSettingsAndroidstudio,
       ...settings,
     },
     styles: [

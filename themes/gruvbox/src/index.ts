@@ -7,19 +7,23 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
+export const defaultSettingsGruvboxDark: CreateThemeOptions['settings'] = {
+  background: '#282828',
+  foreground: '#ebdbb2',
+  caret: '#ebdbb2',
+  selection: '#bdae93',
+  selectionMatch: '#bdae93',
+  lineHighlight: '#3c3836',
+  gutterBackground: '#282828',
+  gutterForeground: '#7c6f64',
+};
+
 export const gruvboxDarkInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#282828',
-      foreground: '#ebdbb2',
-      caret: '#ebdbb2',
-      selection: '#bdae93',
-      selectionMatch: '#bdae93',
-      lineHighlight: '#3c3836',
-      gutterBackground: '#282828',
-      gutterForeground: '#7c6f64',
+      ...defaultSettingsGruvboxDark,
       ...settings,
     },
     styles: [
@@ -122,20 +126,24 @@ export const gruvboxDarkInit = (options?: Partial<CreateThemeOptions>) => {
 
 export const gruvboxDark = gruvboxDarkInit();
 
+export const defaultSettingsGruvboxLight: CreateThemeOptions['settings'] = {
+  background: '#fbf1c7',
+  foreground: '#3c3836',
+  caret: '#af3a03',
+  selection: '#ebdbb2',
+  selectionMatch: '#bdae93',
+  lineHighlight: '#ebdbb2',
+  gutterBackground: '#ebdbb2',
+  gutterForeground: '#665c54',
+  gutterBorder: 'transparent',
+};
+
 export const gruvboxLightInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#fbf1c7',
-      foreground: '#3c3836',
-      caret: '#af3a03',
-      selection: '#ebdbb2',
-      selectionMatch: '#bdae93',
-      lineHighlight: '#ebdbb2',
-      gutterBackground: '#ebdbb2',
-      gutterForeground: '#665c54',
-      gutterBorder: 'transparent',
+      ...defaultSettingsGruvboxLight,
       ...settings,
     },
     styles: [

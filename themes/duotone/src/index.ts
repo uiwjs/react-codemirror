@@ -6,20 +6,24 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
+export const defaultSettingsDuotoneLight: CreateThemeOptions['settings'] = {
+  background: '#faf8f5',
+  foreground: '#b29762',
+  caret: '#93abdc',
+  selection: '#e3dcce',
+  selectionMatch: '#e3dcce',
+  gutterBackground: '#faf8f5',
+  gutterForeground: '#cdc4b1',
+  gutterBorder: 'transparent',
+  lineHighlight: '#EFEFEF',
+};
+
 export const duotoneLightInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'light', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#faf8f5',
-      foreground: '#b29762',
-      caret: '#93abdc',
-      selection: '#e3dcce',
-      selectionMatch: '#e3dcce',
-      gutterBackground: '#faf8f5',
-      gutterForeground: '#cdc4b1',
-      gutterBorder: 'transparent',
-      lineHighlight: '#EFEFEF',
+      ...defaultSettingsDuotoneLight,
       ...settings,
     },
     styles: [
@@ -37,18 +41,22 @@ export const duotoneLightInit = (options?: Partial<CreateThemeOptions>) => {
 
 export const duotoneLight = duotoneLightInit();
 
+export const defaultSettingsDuotoneDark: CreateThemeOptions['settings'] = {
+  background: '#2a2734',
+  foreground: '#6c6783',
+  caret: '#ffad5c',
+  selection: 'rgba(255, 255, 255, 0.1)',
+  gutterBackground: '#2a2734',
+  gutterForeground: '#545167',
+  lineHighlight: '#36334280',
+};
+
 export const duotoneDarkInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'light', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#2a2734',
-      foreground: '#6c6783',
-      caret: '#ffad5c',
-      selection: 'rgba(255, 255, 255, 0.1)',
-      gutterBackground: '#2a2734',
-      gutterForeground: '#545167',
-      lineHighlight: '#36334280',
+      ...defaultSettingsDuotoneDark,
       ...settings,
     },
     styles: [

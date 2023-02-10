@@ -1,20 +1,24 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
+export const defaultSettingsBbedit: CreateThemeOptions['settings'] = {
+  background: '#FFFFFF',
+  foreground: '#000000',
+  caret: '#FBAC52',
+  selection: '#FFD420',
+  selectionMatch: '#FFD420',
+  gutterBackground: '#f5f5f5',
+  gutterForeground: '#4D4D4C',
+  gutterBorder: 'transparent',
+  lineHighlight: '#00000012',
+};
+
 export const bbeditInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'light', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#FFFFFF',
-      foreground: '#000000',
-      caret: '#FBAC52',
-      selection: '#FFD420',
-      selectionMatch: '#FFD420',
-      gutterBackground: '#f5f5f5',
-      gutterForeground: '#4D4D4C',
-      gutterBorder: 'transparent',
-      lineHighlight: '#00000012',
+      ...defaultSettingsBbedit,
       ...settings,
     },
     styles: [

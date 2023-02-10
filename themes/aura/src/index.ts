@@ -1,20 +1,24 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
+export const defaultSettingsAura: CreateThemeOptions['settings'] = {
+  background: '#21202e',
+  foreground: '#edecee',
+  caret: '#a277ff',
+  selection: '#3d375e7f',
+  selectionMatch: '#3d375e7f',
+  gutterBackground: '#21202e',
+  gutterForeground: '#edecee',
+  gutterBorder: 'transparent',
+  lineHighlight: '#a394f033',
+};
+
 export const auraInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#21202e',
-      foreground: '#edecee',
-      caret: '#a277ff',
-      selection: '#3d375e7f',
-      selectionMatch: '#3d375e7f',
-      gutterBackground: '#21202e',
-      gutterForeground: '#edecee',
-      gutterBorder: 'transparent',
-      lineHighlight: '#a394f033',
+      ...defaultSettingsAura,
       ...settings,
     },
     styles: [

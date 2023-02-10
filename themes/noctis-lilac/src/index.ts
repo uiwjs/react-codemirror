@@ -1,19 +1,23 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
+export const defaultSettingsNoctisLilac: CreateThemeOptions['settings'] = {
+  background: '#f2f1f8',
+  foreground: '#0c006b',
+  caret: '#5c49e9',
+  selection: '#d5d1f2',
+  selectionMatch: '#d5d1f2',
+  gutterBackground: '#f2f1f8',
+  gutterForeground: '#0c006b70',
+  lineHighlight: '#e1def3',
+};
+
 export const noctisLilacInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'light', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#f2f1f8',
-      foreground: '#0c006b',
-      caret: '#5c49e9',
-      selection: '#d5d1f2',
-      selectionMatch: '#d5d1f2',
-      gutterBackground: '#f2f1f8',
-      gutterForeground: '#0c006b70',
-      lineHighlight: '#e1def3',
+      ...defaultSettingsNoctisLilac,
       ...settings,
     },
     styles: [

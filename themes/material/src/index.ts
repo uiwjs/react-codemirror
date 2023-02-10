@@ -1,20 +1,26 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
+export const defaultSettingsMaterial: CreateThemeOptions['settings'] = {
+  background: '#2e3235',
+  foreground: '#bdbdbd',
+  caret: '#a0a4ae',
+  selection: '#d7d4f0',
+  selectionMatch: '#d7d4f0',
+  gutterBackground: '#2e3235',
+  gutterForeground: '#999',
+  gutterActiveForeground: '#4f5b66',
+  lineHighlight: '#545b61',
+};
+
+export const defaultSettingsMaterialDark = defaultSettingsMaterial;
+
 export const materialInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#2e3235',
-      foreground: '#bdbdbd',
-      caret: '#a0a4ae',
-      selection: '#d7d4f0',
-      selectionMatch: '#d7d4f0',
-      gutterBackground: '#2e3235',
-      gutterForeground: '#999',
-      gutterActiveForeground: '#4f5b66',
-      lineHighlight: '#545b61',
+      ...defaultSettingsMaterial,
       ...settings,
     },
     styles: [
@@ -120,20 +126,24 @@ export const materialDarkInit = materialInit;
 export const materialDark = materialInit();
 export const material = materialInit();
 
+export const defaultSettingsMaterialLight: CreateThemeOptions['settings'] = {
+  background: '#FAFAFA',
+  foreground: '#90A4AE',
+  caret: '#272727',
+  selection: '#80CBC440',
+  selectionMatch: '#FAFAFA',
+  gutterBackground: '#FAFAFA',
+  gutterForeground: '#90A4AE',
+  gutterBorder: 'transparent',
+  lineHighlight: '#CCD7DA50',
+};
+
 export const materialLightInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'light', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#FAFAFA',
-      foreground: '#90A4AE',
-      caret: '#272727',
-      selection: '#80CBC440',
-      selectionMatch: '#FAFAFA',
-      gutterBackground: '#FAFAFA',
-      gutterForeground: '#90A4AE',
-      gutterBorder: 'transparent',
-      lineHighlight: '#CCD7DA50',
+      ...defaultSettingsMaterialLight,
       ...settings,
     },
     styles: [

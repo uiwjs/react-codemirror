@@ -1,19 +1,23 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
+export const defaultSettingsSolarizedLight: CreateThemeOptions['settings'] = {
+  background: '#fdf6e3',
+  foreground: '#657b83',
+  caret: '#586e75',
+  selection: '#dfd9c8',
+  selectionMatch: '#dfd9c8',
+  gutterBackground: '#00000010',
+  gutterForeground: '#657b83',
+  lineHighlight: '#dfd9c8',
+};
+
 export const solarizedLightInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'light', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#fdf6e3',
-      foreground: '#657b83',
-      caret: '#586e75',
-      selection: '#dfd9c8',
-      selectionMatch: '#dfd9c8',
-      gutterBackground: '#00000010',
-      gutterForeground: '#657b83',
-      lineHighlight: '#dfd9c8',
+      ...defaultSettingsSolarizedLight,
       ...settings,
     },
     styles: [
@@ -115,19 +119,23 @@ export const solarizedLightInit = (options?: Partial<CreateThemeOptions>) => {
 
 export const solarizedLight = solarizedLightInit();
 
+export const defaultSettingsSolarizedDark: CreateThemeOptions['settings'] = {
+  background: '#002b36',
+  foreground: '#93a1a1',
+  caret: '#839496',
+  selection: '#173541',
+  selectionMatch: '#aafe661a',
+  gutterBackground: '#00252f',
+  gutterForeground: '#839496',
+  lineHighlight: '#173541',
+};
+
 export const solarizedDarkInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#002b36',
-      foreground: '#93a1a1',
-      caret: '#839496',
-      selection: '#173541',
-      selectionMatch: '#aafe661a',
-      gutterBackground: '#00252f',
-      gutterForeground: '#839496',
-      lineHighlight: '#173541',
+      ...defaultSettingsSolarizedDark,
       ...settings,
     },
     styles: [

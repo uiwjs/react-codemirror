@@ -7,20 +7,24 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
+export const defaultSettingsAtomone: CreateThemeOptions['settings'] = {
+  background: '#272C35',
+  foreground: '#9d9b97',
+  caret: '#797977',
+  selection: '#ffffff30',
+  selectionMatch: '#2B323D',
+  gutterBackground: '#272C35',
+  gutterForeground: '#465063',
+  gutterBorder: 'transparent',
+  lineHighlight: '#2B323D',
+};
+
 export const atomoneInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'light', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#272C35',
-      foreground: '#9d9b97',
-      caret: '#797977',
-      selection: '#ffffff30',
-      selectionMatch: '#2B323D',
-      gutterBackground: '#272C35',
-      gutterForeground: '#465063',
-      gutterBorder: 'transparent',
-      lineHighlight: '#2B323D',
+      ...defaultSettingsAtomone,
       ...settings,
     },
     styles: [

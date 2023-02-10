@@ -4,17 +4,21 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
+export const defaultSettingsGithubLight: CreateThemeOptions['settings'] = {
+  background: '#fff',
+  foreground: '#24292e',
+  selection: '#BBDFFF',
+  selectionMatch: '#BBDFFF',
+  gutterBackground: '#fff',
+  gutterForeground: '#6e7781',
+};
+
 export const githubLightInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'light', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#fff',
-      foreground: '#24292e',
-      selection: '#BBDFFF',
-      selectionMatch: '#BBDFFF',
-      gutterBackground: '#fff',
-      gutterForeground: '#6e7781',
+      ...defaultSettingsGithubLight,
       ...settings,
     },
     styles: [
@@ -40,17 +44,21 @@ export const githubLightInit = (options?: Partial<CreateThemeOptions>) => {
 
 export const githubLight = githubLightInit();
 
+export const defaultSettingsGithubDark: CreateThemeOptions['settings'] = {
+  background: '#0d1117',
+  foreground: '#c9d1d9',
+  caret: '#c9d1d9',
+  selection: '#003d73',
+  selectionMatch: '#003d73',
+  lineHighlight: '#36334280',
+};
+
 export const githubDarkInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#0d1117',
-      foreground: '#c9d1d9',
-      caret: '#c9d1d9',
-      selection: '#003d73',
-      selectionMatch: '#003d73',
-      lineHighlight: '#36334280',
+      ...defaultSettingsGithubDark,
       ...settings,
     },
     styles: [

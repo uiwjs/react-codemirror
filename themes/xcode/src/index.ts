@@ -1,21 +1,25 @@
 /**
- * @name github
+ * @name Xcode
  */
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
+
+export const defaultSettingsXcodeLight: CreateThemeOptions['settings'] = {
+  background: '#fff',
+  foreground: '#3D3D3D',
+  selection: '#BBDFFF',
+  selectionMatch: '#BBDFFF',
+  gutterBackground: '#fff',
+  gutterForeground: '#AFAFAF',
+  lineHighlight: '#EDF4FF',
+};
 
 export function xcodeLightInit(options?: Partial<CreateThemeOptions>) {
   const { theme = 'light', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#fff',
-      foreground: '#3D3D3D',
-      selection: '#BBDFFF',
-      selectionMatch: '#BBDFFF',
-      gutterBackground: '#fff',
-      gutterForeground: '#AFAFAF',
-      lineHighlight: '#EDF4FF',
+      ...defaultSettingsXcodeLight,
       ...settings,
     },
     styles: [
@@ -35,17 +39,21 @@ export function xcodeLightInit(options?: Partial<CreateThemeOptions>) {
 
 export const xcodeLight = xcodeLightInit();
 
+export const defaultSettingsXcodeDark: CreateThemeOptions['settings'] = {
+  background: '#292A30',
+  foreground: '#CECFD0',
+  caret: '#fff',
+  selection: '#727377',
+  selectionMatch: '#727377',
+  lineHighlight: '#2F3239',
+};
+
 export const xcodeDarkInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#292A30',
-      foreground: '#CECFD0',
-      caret: '#fff',
-      selection: '#727377',
-      selectionMatch: '#727377',
-      lineHighlight: '#2F3239',
+      ...defaultSettingsXcodeDark,
       ...settings,
     },
     styles: [

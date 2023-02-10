@@ -16,6 +16,7 @@ export const ThemesAllDoc = () => {
   const themesData: Record<string, Omit<ReactCodeMirrorProps['theme'], 'dark' | 'light'>> = {};
   Object.keys(themes)
     .filter((item) => typeof themes[item as keyof typeof themes] !== 'function')
+    .filter((item) => !/^(defaultSettings)/.test(item as keyof typeof themes))
     .forEach((item) => {
       themesData[item] = themes[item as keyof typeof themes];
     });

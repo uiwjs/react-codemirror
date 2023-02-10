@@ -7,20 +7,24 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
+export const defaultSettingsDracula: CreateThemeOptions['settings'] = {
+  background: '#282a36',
+  foreground: '#f8f8f2',
+  caret: '#f8f8f0',
+  selection: 'rgba(255, 255, 255, 0.1)',
+  selectionMatch: 'rgba(255, 255, 255, 0.2)',
+  gutterBackground: '#282a36',
+  gutterForeground: '#6D8A88',
+  gutterBorder: 'transparent',
+  lineHighlight: 'rgba(255, 255, 255, 0.1)',
+};
+
 export const draculaInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'light', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#282a36',
-      foreground: '#f8f8f2',
-      caret: '#f8f8f0',
-      selection: 'rgba(255, 255, 255, 0.1)',
-      selectionMatch: 'rgba(255, 255, 255, 0.2)',
-      gutterBackground: '#282a36',
-      gutterForeground: '#6D8A88',
-      gutterBorder: 'transparent',
-      lineHighlight: 'rgba(255, 255, 255, 0.1)',
+      ...defaultSettingsDracula,
       ...settings,
     },
     styles: [

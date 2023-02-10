@@ -4,21 +4,25 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
+export const defaultSettingsVscodeDark: CreateThemeOptions['settings'] = {
+  background: '#1e1e1e',
+  foreground: '#9cdcfe',
+  caret: '#c6c6c6',
+  selection: '#6199ff2f',
+  selectionMatch: '#72a1ff59',
+  lineHighlight: '#ffffff0f',
+  gutterBackground: '#1e1e1e',
+  gutterForeground: '#838383',
+  gutterActiveForeground: '#fff',
+  fontFamily: 'Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono", "Courier New", monospace',
+};
+
 export function vscodeDarkInit(options?: Partial<CreateThemeOptions>) {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#1e1e1e',
-      foreground: '#9cdcfe',
-      caret: '#c6c6c6',
-      selection: '#6199ff2f',
-      selectionMatch: '#72a1ff59',
-      lineHighlight: '#ffffff0f',
-      gutterBackground: '#1e1e1e',
-      gutterForeground: '#838383',
-      gutterActiveForeground: '#fff',
-      fontFamily: 'Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono", "Courier New", monospace',
+      ...defaultSettingsVscodeDark,
       ...settings,
     },
     styles: [

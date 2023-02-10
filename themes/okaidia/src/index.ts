@@ -1,19 +1,23 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
+export const defaultSettingsOkaidia: CreateThemeOptions['settings'] = {
+  background: '#272822',
+  foreground: '#FFFFFF',
+  caret: '#FFFFFF',
+  selection: '#49483E',
+  selectionMatch: '#49483E',
+  gutterBackground: '#272822',
+  gutterForeground: '#FFFFFF70',
+  lineHighlight: '#00000059',
+};
+
 export const okaidiaInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#272822',
-      foreground: '#FFFFFF',
-      caret: '#FFFFFF',
-      selection: '#49483E',
-      selectionMatch: '#49483E',
-      gutterBackground: '#272822',
-      gutterForeground: '#FFFFFF70',
-      lineHighlight: '#00000059',
+      ...defaultSettingsOkaidia,
       ...settings,
     },
     styles: [

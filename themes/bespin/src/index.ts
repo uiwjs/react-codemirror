@@ -8,19 +8,23 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
+export const defaultSettingsBespin: CreateThemeOptions['settings'] = {
+  background: '#28211c',
+  foreground: '#9d9b97',
+  caret: '#797977',
+  selection: '#36312e',
+  selectionMatch: '#4f382b',
+  gutterBackground: '#28211c',
+  gutterForeground: '#666666',
+  lineHighlight: 'rgba(255, 255, 255, 0.1)',
+};
+
 export const bespinInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#28211c',
-      foreground: '#9d9b97',
-      caret: '#797977',
-      selection: '#36312e',
-      selectionMatch: '#4f382b',
-      gutterBackground: '#28211c',
-      gutterForeground: '#666666',
-      lineHighlight: 'rgba(255, 255, 255, 0.1)',
+      ...defaultSettingsBespin,
       ...settings,
     },
     styles: [

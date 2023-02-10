@@ -1,19 +1,23 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
+export const defaultSettingsSublime: CreateThemeOptions['settings'] = {
+  background: '#303841',
+  foreground: '#FFFFFF',
+  caret: '#FBAC52',
+  selection: '#4C5964',
+  selectionMatch: '#3A546E',
+  gutterBackground: '#303841',
+  gutterForeground: '#FFFFFF70',
+  lineHighlight: '#00000059',
+};
+
 export function sublimeInit(options?: Partial<CreateThemeOptions>) {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#303841',
-      foreground: '#FFFFFF',
-      caret: '#FBAC52',
-      selection: '#4C5964',
-      selectionMatch: '#3A546E',
-      gutterBackground: '#303841',
-      gutterForeground: '#FFFFFF70',
-      lineHighlight: '#00000059',
+      ...defaultSettingsSublime,
       ...settings,
     },
     styles: [

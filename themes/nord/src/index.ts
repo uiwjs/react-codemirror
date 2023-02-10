@@ -1,21 +1,25 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
+export const defaultSettingsNord: CreateThemeOptions['settings'] = {
+  background: '#2e3440',
+  foreground: '#FFFFFF',
+  caret: '#FFFFFF',
+  selection: '#3b4252',
+  selectionMatch: '#e5e9f0',
+  gutterBackground: '#2e3440',
+  gutterForeground: '#4c566a',
+  gutterActiveForeground: '#d8dee9',
+  lineHighlight: '#4c566a',
+};
+
 // Colors from https://www.nordtheme.com/docs/colors-and-palettes
 export const nordInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#2e3440',
-      foreground: '#FFFFFF',
-      caret: '#FFFFFF',
-      selection: '#3b4252',
-      selectionMatch: '#e5e9f0',
-      gutterBackground: '#2e3440',
-      gutterForeground: '#4c566a',
-      gutterActiveForeground: '#d8dee9',
-      lineHighlight: '#4c566a',
+      ...defaultSettingsNord,
       ...settings,
     },
     styles: [

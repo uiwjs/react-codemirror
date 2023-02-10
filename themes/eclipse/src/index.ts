@@ -1,20 +1,24 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
+export const defaultSettingsEclipse: CreateThemeOptions['settings'] = {
+  background: '#fff',
+  foreground: '#000',
+  caret: '#FFFFFF',
+  selection: '#d7d4f0',
+  selectionMatch: '#d7d4f0',
+  gutterBackground: '#f7f7f7',
+  gutterForeground: '#999',
+  lineHighlight: '#e8f2ff',
+  gutterBorder: 'transparent',
+};
+
 export const eclipseInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'light', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#fff',
-      foreground: '#000',
-      caret: '#FFFFFF',
-      selection: '#d7d4f0',
-      selectionMatch: '#d7d4f0',
-      gutterBackground: '#f7f7f7',
-      gutterForeground: '#999',
-      lineHighlight: '#e8f2ff',
-      gutterBorder: 'transparent',
+      ...defaultSettingsEclipse,
       ...settings,
     },
     styles: [

@@ -6,19 +6,23 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
+export const defaultSettingsAbcdef: CreateThemeOptions['settings'] = {
+  background: '#0f0f0f',
+  foreground: '#defdef',
+  caret: '#00FF00',
+  selection: '#515151',
+  selectionMatch: '#515151',
+  gutterBackground: '#555',
+  gutterForeground: '#FFFFFF',
+  lineHighlight: '#314151',
+};
+
 export const abcdefInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#0f0f0f',
-      foreground: '#defdef',
-      caret: '#00FF00',
-      selection: '#515151',
-      selectionMatch: '#515151',
-      gutterBackground: '#555',
-      gutterForeground: '#FFFFFF',
-      lineHighlight: '#314151',
+      ...defaultSettingsAbcdef,
       ...settings,
     },
     styles: [

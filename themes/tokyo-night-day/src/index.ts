@@ -1,20 +1,24 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 
+export const defaultSettingsTokyoNightDay: CreateThemeOptions['settings'] = {
+  background: '#e1e2e7',
+  foreground: '#3760bf',
+  caret: '#3760bf',
+  selection: '#99a7df',
+  selectionMatch: '#99a7df',
+  gutterBackground: '#e1e2e7',
+  gutterForeground: '#3760bf',
+  gutterBorder: 'transparent',
+  lineHighlight: '#5f5faf11',
+};
+
 export const tokyoNightDayInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'light', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      background: '#e1e2e7',
-      foreground: '#3760bf',
-      caret: '#3760bf',
-      selection: '#99a7df',
-      selectionMatch: '#99a7df',
-      gutterBackground: '#e1e2e7',
-      gutterForeground: '#3760bf',
-      gutterBorder: 'transparent',
-      lineHighlight: '#5f5faf11',
+      ...defaultSettingsTokyoNightDay,
       ...settings,
     },
     styles: [

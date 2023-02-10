@@ -13,7 +13,8 @@ import { useTheme } from '../../utils/useTheme';
 
 const themeOptions = ['dark', 'light']
   .concat(Object.keys(alls))
-  .filter((item) => typeof alls[item as keyof typeof alls] !== 'function');
+  .filter((item) => typeof alls[item as keyof typeof alls] !== 'function')
+  .filter((item) => !/^(defaultSettings)/.test(item as keyof typeof alls));
 const heightOptions = ['auto', '200px', '300px', '500px'];
 let count = 0;
 
