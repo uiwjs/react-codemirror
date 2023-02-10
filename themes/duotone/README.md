@@ -38,9 +38,11 @@ import { duotoneLight, duotoneLightInit, duotoneDark, duotoneDarkInit } from '@u
 
 ```tsx
 import { CreateThemeOptions } from '@uiw/codemirror-themes';
-export declare const duotoneLightInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const defaultSettingsDuotoneLight: CreateThemeOptions['settings'];
+export declare const duotoneLightInit: (options?: Partial<CreateThemeOptions>) => import('@codemirror/state').Extension;
 export declare const duotoneLight: import('@codemirror/state').Extension;
-export declare const duotoneDarkInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const defaultSettingsDuotoneDark: CreateThemeOptions['settings'];
+export declare const duotoneDarkInit: (options?: Partial<CreateThemeOptions>) => import('@codemirror/state').Extension;
 export declare const duotoneDark: import('@codemirror/state').Extension;
 ```
 

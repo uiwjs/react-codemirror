@@ -34,7 +34,8 @@ import { okaidia, okaidiaInit } from '@uiw/codemirror-theme-okaidia';
 
 ```tsx
 import { CreateThemeOptions } from '@uiw/codemirror-themes';
-export declare const okaidiaInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const defaultSettingsOkaidia: CreateThemeOptions['settings'];
+export declare const okaidiaInit: (options?: Partial<CreateThemeOptions>) => import('@codemirror/state').Extension;
 export declare const okaidia: import('@codemirror/state').Extension;
 ```
 

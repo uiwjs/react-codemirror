@@ -36,7 +36,8 @@ import { noctisLilac, noctisLilacInit } from '@uiw/codemirror-theme-noctis-lilac
 
 ```tsx
 import { CreateThemeOptions } from '@uiw/codemirror-themes';
-export declare const noctisLilacInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const defaultSettingsNoctisLilac: CreateThemeOptions['settings'];
+export declare const noctisLilacInit: (options?: Partial<CreateThemeOptions>) => import('@codemirror/state').Extension;
 export declare const noctisLilac: import('@codemirror/state').Extension;
 ```
 

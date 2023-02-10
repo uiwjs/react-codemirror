@@ -38,7 +38,10 @@ import { androidstudio, androidstudioInit } from '@uiw/codemirror-theme-androids
 
 ```tsx
 import { CreateThemeOptions } from '@uiw/codemirror-themes';
-export declare const androidstudioInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const defaultSettingsAndroidstudio: CreateThemeOptions['settings'];
+export declare const androidstudioInit: (
+  options?: Partial<CreateThemeOptions>,
+) => import('@codemirror/state').Extension;
 export declare const androidstudio: import('@codemirror/state').Extension;
 ```
 

@@ -34,7 +34,8 @@ import { sublime, sublimeInit } from '@uiw/codemirror-theme-sublime';
 
 ```tsx
 import { CreateThemeOptions } from '@uiw/codemirror-themes';
-export declare function sublimeInit(options?: CreateThemeOptions): import('@codemirror/state').Extension;
+export declare const defaultSettingsSublime: CreateThemeOptions['settings'];
+export declare function sublimeInit(options?: Partial<CreateThemeOptions>): import('@codemirror/state').Extension;
 export declare const sublime: import('@codemirror/state').Extension;
 ```
 

@@ -38,7 +38,8 @@ import { dracula, draculaInit } from '@uiw/codemirror-theme-dracula';
 
 ```tsx
 import { CreateThemeOptions } from '@uiw/codemirror-themes';
-export declare const draculaInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const defaultSettingsDracula: CreateThemeOptions['settings'];
+export declare const draculaInit: (options?: Partial<CreateThemeOptions>) => import('@codemirror/state').Extension;
 export declare const dracula: import('@codemirror/state').Extension;
 ```
 

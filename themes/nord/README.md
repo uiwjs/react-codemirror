@@ -36,7 +36,8 @@ import { nord, nordInit } from '@uiw/codemirror-theme-nord';
 
 ```tsx
 import { CreateThemeOptions } from '@uiw/codemirror-themes';
-export declare const nordInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const defaultSettingsNord: CreateThemeOptions['settings'];
+export declare const nordInit: (options?: Partial<CreateThemeOptions>) => import('@codemirror/state').Extension;
 export declare const nord: import('@codemirror/state').Extension;
 ```
 

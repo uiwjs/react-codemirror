@@ -40,9 +40,15 @@ import { solarizedLight, solarizedLightInit, solarizedDark, solarizedDarkInit } 
 
 ```tsx
 import { CreateThemeOptions } from '@uiw/codemirror-themes';
-export declare const solarizedLightInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const defaultSettingsSolarizedLight: CreateThemeOptions['settings'];
+export declare const solarizedLightInit: (
+  options?: Partial<CreateThemeOptions>,
+) => import('@codemirror/state').Extension;
 export declare const solarizedLight: import('@codemirror/state').Extension;
-export declare const solarizedDarkInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const defaultSettingsSolarizedDark: CreateThemeOptions['settings'];
+export declare const solarizedDarkInit: (
+  options?: Partial<CreateThemeOptions>,
+) => import('@codemirror/state').Extension;
 export declare const solarizedDark: import('@codemirror/state').Extension;
 ```
 

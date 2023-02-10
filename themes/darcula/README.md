@@ -38,7 +38,8 @@ import { darcula, darculaInit } from '@uiw/codemirror-theme-darcula';
 
 ```tsx
 import { CreateThemeOptions } from '@uiw/codemirror-themes';
-export declare const darculaInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const defaultSettingsDarcula: CreateThemeOptions['settings'];
+export declare const darculaInit: (options?: Partial<CreateThemeOptions>) => import('@codemirror/state').Extension;
 export declare const darcula: import('@codemirror/state').Extension;
 ```
 

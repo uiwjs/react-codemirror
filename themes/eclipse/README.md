@@ -34,7 +34,8 @@ import { eclipse, eclipseInit } from '@uiw/codemirror-theme-eclipse';
 
 ```tsx
 import { CreateThemeOptions } from '@uiw/codemirror-themes';
-export declare const eclipseInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const defaultSettingsEclipse: CreateThemeOptions['settings'];
+export declare const eclipseInit: (options?: Partial<CreateThemeOptions>) => import('@codemirror/state').Extension;
 export declare const eclipse: import('@codemirror/state').Extension;
 ```
 

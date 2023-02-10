@@ -38,7 +38,8 @@ import { tokyoNight, tokyoNightInit } from '@uiw/codemirror-theme-tokyo-night';
 
 ```tsx
 import { CreateThemeOptions } from '@uiw/codemirror-themes';
-export declare const tokyoNightInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const defaultSettingsTokyoNight: CreateThemeOptions['settings'];
+export declare const tokyoNightInit: (options?: Partial<CreateThemeOptions>) => import('@codemirror/state').Extension;
 export declare const tokyoNight: import('@codemirror/state').Extension;
 ```
 

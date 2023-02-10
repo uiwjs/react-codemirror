@@ -38,7 +38,8 @@ import { aura, auraInit } from '@uiw/codemirror-theme-aura';
 
 ```tsx
 import { CreateThemeOptions } from '@uiw/codemirror-themes';
-export declare const auraInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const defaultSettingsAura: CreateThemeOptions['settings'];
+export declare const auraInit: (options?: Partial<CreateThemeOptions>) => import('@codemirror/state').Extension;
 export declare const aura: import('@codemirror/state').Extension;
 ```
 

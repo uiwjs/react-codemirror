@@ -40,9 +40,11 @@ import { gruvboxDark, gruvboxDarkInit, gruvboxLight, gruvboxLightInit } from '@u
 
 ```tsx
 import { CreateThemeOptions } from '@uiw/codemirror-themes';
-export declare const gruvboxDarkInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const defaultSettingsGruvboxDark: CreateThemeOptions['settings'];
+export declare const gruvboxDarkInit: (options?: Partial<CreateThemeOptions>) => import('@codemirror/state').Extension;
 export declare const gruvboxDark: import('@codemirror/state').Extension;
-export declare const gruvboxLightInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const defaultSettingsGruvboxLight: CreateThemeOptions['settings'];
+export declare const gruvboxLightInit: (options?: Partial<CreateThemeOptions>) => import('@codemirror/state').Extension;
 export declare const gruvboxLight: import('@codemirror/state').Extension;
 ```
 

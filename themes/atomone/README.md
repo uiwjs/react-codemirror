@@ -38,7 +38,8 @@ import { atomone, atomoneInit } from '@uiw/codemirror-theme-atomone';
 
 ```tsx
 import { CreateThemeOptions } from '@uiw/codemirror-themes';
-export declare const atomoneInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const defaultSettingsAtomone: CreateThemeOptions['settings'];
+export declare const atomoneInit: (options?: Partial<CreateThemeOptions>) => import('@codemirror/state').Extension;
 export declare const atomone: import('@codemirror/state').Extension;
 ```
 

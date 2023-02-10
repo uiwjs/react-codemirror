@@ -38,9 +38,11 @@ import { xcodeLight, xcodeLightInit, xcodeDark, xcodeDarkInit } from '@uiw/codem
 
 ```ts
 import { CreateThemeOptions } from '@uiw/codemirror-themes';
-export declare function xcodeLightInit(options?: CreateThemeOptions): import('@codemirror/state').Extension;
+export declare const defaultSettingsXcodeLight: CreateThemeOptions['settings'];
+export declare function xcodeLightInit(options?: Partial<CreateThemeOptions>): import('@codemirror/state').Extension;
 export declare const xcodeLight: import('@codemirror/state').Extension;
-export declare const xcodeDarkInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const defaultSettingsXcodeDark: CreateThemeOptions['settings'];
+export declare const xcodeDarkInit: (options?: Partial<CreateThemeOptions>) => import('@codemirror/state').Extension;
 export declare const xcodeDark: import('@codemirror/state').Extension;
 ```
 

@@ -38,7 +38,8 @@ import { abcdef, abcdefInit } from '@uiw/codemirror-theme-abcdef';
 
 ```tsx
 import { CreateThemeOptions } from '@uiw/codemirror-themes';
-export declare const abcdefInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const defaultSettingsAbcdef: CreateThemeOptions['settings'];
+export declare const abcdefInit: (options?: Partial<CreateThemeOptions>) => import('@codemirror/state').Extension;
 export declare const abcdef: import('@codemirror/state').Extension;
 ```
 

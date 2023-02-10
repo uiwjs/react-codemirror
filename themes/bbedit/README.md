@@ -38,7 +38,8 @@ import { bbedit, bbeditInit } from '@uiw/codemirror-theme-bbedit';
 
 ```tsx
 import { CreateThemeOptions } from '@uiw/codemirror-themes';
-export declare const bbeditInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const defaultSettingsBbedit: CreateThemeOptions['settings'];
+export declare const bbeditInit: (options?: Partial<CreateThemeOptions>) => import('@codemirror/state').Extension;
 export declare const bbedit: import('@codemirror/state').Extension;
 ```
 

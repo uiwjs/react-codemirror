@@ -34,7 +34,8 @@ import { vscodeDark, vscodeDarkInit } from '@uiw/codemirror-theme-vscode';
 
 ```tsx
 import { CreateThemeOptions } from '@uiw/codemirror-themes';
-export declare function vscodeDarkInit(options?: CreateThemeOptions): import('@codemirror/state').Extension;
+export declare const defaultSettingsVscodeDark: CreateThemeOptions['settings'];
+export declare function vscodeDarkInit(options?: Partial<CreateThemeOptions>): import('@codemirror/state').Extension;
 export declare const vscodeDark: import('@codemirror/state').Extension;
 ```
 

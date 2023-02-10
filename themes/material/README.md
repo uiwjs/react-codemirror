@@ -43,11 +43,16 @@ import { materialDark, materialDarkInit, materialLight, materialLightInit } from
 
 ```tsx
 import { CreateThemeOptions } from '@uiw/codemirror-themes';
-export declare const materialInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
-export declare const materialDarkInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const defaultSettingsMaterial: CreateThemeOptions['settings'];
+export declare const defaultSettingsMaterialDark: import('@uiw/codemirror-themes').Settings;
+export declare const materialInit: (options?: Partial<CreateThemeOptions>) => import('@codemirror/state').Extension;
+export declare const materialDarkInit: (options?: Partial<CreateThemeOptions>) => import('@codemirror/state').Extension;
 export declare const materialDark: import('@codemirror/state').Extension;
 export declare const material: import('@codemirror/state').Extension;
-export declare const materialLightInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const defaultSettingsMaterialLight: CreateThemeOptions['settings'];
+export declare const materialLightInit: (
+  options?: Partial<CreateThemeOptions>,
+) => import('@codemirror/state').Extension;
 export declare const materialLight: import('@codemirror/state').Extension;
 ```
 

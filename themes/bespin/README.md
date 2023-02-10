@@ -38,7 +38,8 @@ import { bespin, bespinInit } from '@uiw/codemirror-theme-bespin';
 
 ```tsx
 import { CreateThemeOptions } from '@uiw/codemirror-themes';
-export declare const bespinInit: (options?: CreateThemeOptions) => import('@codemirror/state').Extension;
+export declare const defaultSettingsBespin: CreateThemeOptions['settings'];
+export declare const bespinInit: (options?: Partial<CreateThemeOptions>) => import('@codemirror/state').Extension;
 export declare const bespin: import('@codemirror/state').Extension;
 ```
 
