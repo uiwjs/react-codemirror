@@ -20,7 +20,7 @@ export const defaultSettingsDracula: CreateThemeOptions['settings'] = {
 };
 
 export const draculaInit = (options?: Partial<CreateThemeOptions>) => {
-  const { theme = 'light', settings = {}, styles = [] } = options || {};
+  const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
