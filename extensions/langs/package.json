@@ -31,7 +31,7 @@
     "@codemirror/lang-javascript": "~6.1.0",
     "@codemirror/lang-json": "~6.0.0",
     "@codemirror/lang-lezer": "~6.0.0",
-    "@codemirror/lang-markdown": "~6.0.0",
+    "@codemirror/lang-markdown": "~6.1.0",
     "@codemirror/lang-php": "~6.0.0",
     "@codemirror/lang-python": "~6.1.0",
     "@codemirror/lang-rust": "~6.0.0",
