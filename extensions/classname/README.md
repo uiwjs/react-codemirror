@@ -8,7 +8,7 @@
 
 Adding a class for a specific line for CodeMirror6.
 
-[![Zebra Stripes Extensions](https://user-images.githubusercontent.com/1680273/205496628-e7e6f83f-18e9-4bff-8bc8-71a913c60687.png)](https://uiwjs.github.io/react-codemirror/#/extensions/classname)
+[![Add className Extensions](https://user-images.githubusercontent.com/1680273/224198360-99bd605f-9845-440b-9dfc-f5d4f4d58396.png)](https://uiwjs.github.io/react-codemirror/#/extensions/classname)
 
 ## Install
 
