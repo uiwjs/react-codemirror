@@ -113,7 +113,7 @@ const ReactCodeMirror = forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProps>((pr
   } = props;
   const editor = useRef<HTMLDivElement>(null);
   const { state, view, container } = useCodeMirror({
-    container: editor.current ? editor.current : undefined,
+    container: editor.current,
     root,
     value,
     autoFocus,
