@@ -10,7 +10,7 @@ import { ReactCodeMirrorProps } from '.';
 const External = Annotation.define<boolean>();
 
 export interface UseCodeMirror extends ReactCodeMirrorProps {
-  container?: HTMLDivElement | null;
+  container?: HTMLDivElement;
 }
 
 export function useCodeMirror(props: UseCodeMirror) {
@@ -147,7 +147,7 @@ export function useCodeMirror(props: UseCodeMirror) {
     };
   }, [container, state]);
 
-  useEffect(() => setContainer(props.container!), [props.container]);
+  useEffect(() => setContainer(props.container), [props.container]);
 
   useEffect(
     () => () => {
