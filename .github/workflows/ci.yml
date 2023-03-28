@@ -12,6 +12,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+          registry-url: 'https://registry.npmjs.org'
 
       - run: npm install
       - run: npm run build
@@ -41,13 +42,13 @@ jobs:
 
       - name: Create Tag
         id: create_tag
-        uses: jaywcjlove/create-tag-action@v1.3.7
+        uses: jaywcjlove/create-tag-action@main
         with:
           package-path: ./core/package.json
 
       - name: get tag version
         id: tag_version
-        uses: jaywcjlove/changelog-generator@v1.5.7
+        uses: jaywcjlove/changelog-generator@main
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
@@ -58,7 +59,7 @@ jobs:
 
       - name: Generate Changelog
         id: changelog
-        uses: jaywcjlove/changelog-generator@v1.5.7
+        uses: jaywcjlove/changelog-generator@main
         with:
           head-ref: ${{steps.create_tag.outputs.version}}
           filter-author: (renovate-bot|Renovate Bot)
@@ -85,224 +86,259 @@ jobs:
 
 
       - name: 📦 @uiw/react-codemirror publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./core/package.json
+        run: npm publish --access public
+        working-directory: ./core/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 
       - name: 📦 @uiw/codemirror-themes publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/theme/package.json
+        run: npm publish --access public
+        working-directory: ./themes/theme/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 
       - name: 📦 @uiw/codemirror-themes-all publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/all/package.json
+        run: npm publish --access public
+        working-directory: ./themes/all/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 
       - name: 📦 @uiw/codemirror-theme-okaidia publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/okaidia/package.json
+        run: npm publish --access public
+        working-directory: ./themes/okaidia/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 
       - name: 📦 @uiw/codemirror-theme-solarized publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/solarized/package.json
+        run: npm publish --access public
+        working-directory: ./themes/solarized/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-abcdef publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/abcdef/package.json
+        run: npm publish --access public
+        working-directory: ./themes/abcdef/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-androidstudio publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/androidstudio/package.json
+        run: npm publish --access public
+        working-directory: ./themes/androidstudio/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-atomone publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/atomone/package.json
+        run: npm publish --access public
+        working-directory: ./themes/atomone/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-aura publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/aura/package.json
+        run: npm publish --access public
+        working-directory: ./themes/aura/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-bbedit publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/bbedit/package.json
+        run: npm publish --access public
+        working-directory: ./themes/bbedit/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-dracula publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/dracula/package.json
+        run: npm publish --access public
+        working-directory: ./themes/dracula/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-duotone publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/duotone/package.json
+        run: npm publish --access public
+        working-directory: ./themes/duotone/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-eclipse publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/eclipse/package.json
+        run: npm publish --access public
+        working-directory: ./themes/eclipse/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-github publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/github/package.json
+        run: npm publish --access public
+        working-directory: ./themes/github/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-gruvbox-dark publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/gruvbox/package.json
+        run: npm publish --access public
+        working-directory: ./themes/gruvbox/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-material publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/material/package.json
+        run: npm publish --access public
+        working-directory: ./themes/material/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-noctis-lilac publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/noctis-lilac/package.json
+        run: npm publish --access public
+        working-directory: ./themes/noctis-lilac/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-nord publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/nord/package.json
+        run: npm publish --access public
+        working-directory: ./themes/nord/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-darcula publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/darcula/package.json
+        run: npm publish --access public
+        working-directory: ./themes/darcula/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-bespin publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/bespin/package.json
+        run: npm publish --access public
+        working-directory: ./themes/bespin/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-sublime publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/sublime/package.json
+        run: npm publish --access public
+        working-directory: ./themes/sublime/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-tokyo-night publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/tokyo-night/package.json
+        run: npm publish --access public
+        working-directory: ./themes/tokyo-night/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-tokyo-night-storm publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/tokyo-night-storm/package.json
+        run: npm publish --access public
+        working-directory: ./themes/tokyo-night-storm/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-tokyo-night-day publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/tokyo-night-day/package.json
+        run: npm publish --access public
+        working-directory: ./themes/tokyo-night-day/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-vscode publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/vscode/package.json
+        run: npm publish --access public
+        working-directory: ./themes/vscode/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-xcode publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./themes/xcode/package.json
+        run: npm publish --access public
+        working-directory: ./themes/xcode/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-extensions-basic-setup to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./extensions/basic-setup/package.json
+        run: npm publish --access public
+        working-directory: ./extensions/basic-setup/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-extensions-classname to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./extensions/classname/package.json
+        run: npm publish --access public
+        working-directory: ./extensions/classname/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-extensions-events to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./extensions/events/package.json
+        run: npm publish --access public
+        working-directory: ./extensions/events/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-extensions-color to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./extensions/color/package.json
+        run: npm publish --access public
+        working-directory: ./extensions/color/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-extensions-hyper-link to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./extensions/hyper-link/package.json
+        run: npm publish --access public
+        working-directory: ./extensions/hyper-link/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-extensions-line-numbers-relative to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./extensions/line-numbers-relative/package.json
+        run: npm publish --access public
+        working-directory: ./extensions/line-numbers-relative/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-extensions-langs to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./extensions/langs/package.json
+        run: npm publish --access public
+        working-directory: ./extensions/langs/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-extensions-mentions to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./extensions/mentions/package.json
+        run: npm publish --access public
+        working-directory: ./extensions/mentions/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-extensions-zebra-stripes to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./extensions/zebra-stripes/package.json
+        run: npm publish --access public
+        working-directory: ./extensions/zebra-stripes/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
     outputs:
       successful: ${{steps.create_tag.outputs.successful }}
 
   github-package:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     needs: build-deploy
     steps:
       - uses: actions/checkout@v3
