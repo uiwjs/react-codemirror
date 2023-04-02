@@ -45,7 +45,8 @@ export interface ReactCodeMirrorProps
    */
   readOnly?: boolean;
   /**
-   * Whether to optional basicSetup by default
+   * Controls whether pressing the `Tab` key inserts a tab character and indents the text (`true`) 
+   * or behaves according to the browser's default behavior (`false`).
    * @default true
    */
   indentWithTab?: boolean;
