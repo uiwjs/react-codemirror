@@ -8,8 +8,8 @@
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "scripts": {
-    "watch": "tsbb watch",
-    "build": "tsbb build"
+    "watch": "tsbb watch src/*.ts --use-babel",
+    "build": "tsbb build src/*.ts --use-babel"
   },
   "repository": {
     "type": "git",
