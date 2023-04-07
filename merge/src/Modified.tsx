@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { EditorStateConfig, Extension } from '@codemirror/state';
+import { EditorStateConfig, Extension, StateEffect } from '@codemirror/state';
 import { getDefaultExtensions } from '@uiw/react-codemirror';
 import { useStore } from './store';
 
@@ -29,6 +29,12 @@ export const Modified = (props: ModifiedProps): JSX.Element | null => {
       dispatch!({ modified: { ...modified, ...data } });
     }
   }, [props.value, props.selection, view]);
+
+  useEffect(() => {
+    if (view) {
+      view.b.dispatch({ effects: StateEffect.appendConfig.of([...defaultExtensions, ...extensions]) });
+    }
+  }, [extensions, view]);
 
   return null;
 };
