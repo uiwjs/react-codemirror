@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-theme-noctis-lilac",
-  "version": "4.19.11",
+  "version": "4.19.12",
   "description": "Theme noctis-lilac for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/noctis-lilac",
   "author": "kenny wong <wowohoo@qq.com>",
@@ -21,7 +21,7 @@
     "cjs"
   ],
   "dependencies": {
-    "@uiw/codemirror-themes": "4.19.11"
+    "@uiw/codemirror-themes": "4.19.12"
   },
   "keywords": [
     "codemirror",
