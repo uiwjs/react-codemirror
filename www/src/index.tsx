@@ -7,6 +7,7 @@ import { ThemeEditor } from './pages/theme/editor';
 import { ThemeLayout } from './pages/theme';
 import { ThemesHome } from './pages/theme/home';
 import { ThemeDoc } from './pages/theme/docs';
+import { MergeDoc, MergeLayout } from './pages/merge';
 import { ThemeOkaidia } from './pages/theme/themes';
 import { ExtensionsLayout } from './pages/extensions';
 import { EventsDoc } from './pages/extensions/events';
@@ -72,6 +73,9 @@ root.render(
       <Route path="/editor/theme/" element={<ThemeLayout />}>
         <Route index element={<Navigate to="single" replace />} />
         <Route path=":type" element={<ThemeEditor />} />
+      </Route>
+      <Route path="/merge/" element={<MergeLayout />}>
+        <Route index path="document" element={<MergeDoc />} />
       </Route>
       <Route path="/theme/" element={<ThemeLayout />}>
         <Route index element={<Navigate to="home" replace />} />

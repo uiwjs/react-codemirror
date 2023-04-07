@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "lerna exec --scope @uiw/* --ignore www -- npm run build",
+    "build": "lerna exec --scope @uiw/* --scope react-codemirror-merge --ignore www -- npm run build",
     "⬇️⬇️⬇️⬇️⬇️ package ⬇️⬇️⬇️⬇️⬇️": "▼▼▼▼▼ package ▼▼▼▼▼",
     "watch": "npm run-script watch --workspace @uiw/react-codemirror",
     "bundle": "npm run-script bundle --workspace @uiw/react-codemirror",
@@ -18,6 +18,7 @@
     "themes/**",
     "extensions/**",
     "core",
+    "merge",
     "www"
   ],
   "engines": {

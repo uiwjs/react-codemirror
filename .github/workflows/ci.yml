@@ -92,6 +92,12 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: 📦 react-codemirror-merge publish to NPM
+        run: npm publish --access public
+        working-directory: ./merge/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-themes publish to NPM
         run: npm publish --access public
@@ -360,6 +366,20 @@ jobs:
       - run: npm publish
         name: 📦 @uiwjs/react-codemirror publish to NPM
         working-directory: core
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: "Modify react-codemirror-merge => @uiwjs/react-codemirror-merge"
+        uses: jaywcjlove/github-action-package@main
+        continue-on-error: true
+        with:
+          path: merge/package.json
+          rename: "@uiwjs/react-codemirror-merge"
+
+      - run: npm publish
+        name: 📦 @uiwjs/react-codemirror-merge publish to NPM
+        working-directory: merge
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

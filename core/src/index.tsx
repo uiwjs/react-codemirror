@@ -7,6 +7,7 @@ import { Statistics } from './utils';
 
 export * from '@uiw/codemirror-extensions-basic-setup';
 export * from './useCodeMirror';
+export * from './getDefaultExtensions';
 export * from './utils';
 
 export interface ReactCodeMirrorProps
@@ -45,7 +46,7 @@ export interface ReactCodeMirrorProps
    */
   readOnly?: boolean;
   /**
-   * Controls whether pressing the `Tab` key inserts a tab character and indents the text (`true`) 
+   * Controls whether pressing the `Tab` key inserts a tab character and indents the text (`true`)
    * or behaves according to the browser's default behavior (`false`).
    * @default true
    */

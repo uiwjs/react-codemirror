@@ -79,6 +79,7 @@
     "code-example": "^3.3.6",
     "markdown-react-code-preview-loader": "^2.1.2",
     "react": "~18.2.0",
+    "react-codemirror-merge": "0.0.1",
     "react-code-preview-layout": "^2.0.5",
     "react-dom": "~18.2.0",
     "react-router-dom": "^6.3.0",

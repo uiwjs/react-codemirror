@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Annotation, EditorState, StateEffect } from '@codemirror/state';
-import { indentWithTab } from '@codemirror/commands';
-import { EditorView, keymap, ViewUpdate, placeholder } from '@codemirror/view';
-import { basicSetup } from '@uiw/codemirror-extensions-basic-setup';
-import { oneDark } from '@codemirror/theme-one-dark';
+import { EditorView, ViewUpdate } from '@codemirror/view';
+import { getDefaultExtensions } from './getDefaultExtensions';
 import { getStatistics } from './utils';
 import { ReactCodeMirrorProps } from '.';
 
@@ -41,16 +39,6 @@ export function useCodeMirror(props: UseCodeMirror) {
   const [container, setContainer] = useState<HTMLDivElement>();
   const [view, setView] = useState<EditorView>();
   const [state, setState] = useState<EditorState>();
-  const defaultLightThemeOption = EditorView.theme(
-    {
-      '&': {
-        backgroundColor: '#fff',
-      },
-    },
-    {
-      dark: false,
-    },
-  );
   const defaultThemeOption = EditorView.theme({
     '&': {
       height,
@@ -76,42 +64,16 @@ export function useCodeMirror(props: UseCodeMirror) {
     onStatistics && onStatistics(getStatistics(vu));
   });
 
-  let getExtensions = [updateListener, defaultThemeOption];
-  if (defaultIndentWithTab) {
-    getExtensions.unshift(keymap.of([indentWithTab]));
-  }
-  if (defaultBasicSetup) {
-    if (typeof defaultBasicSetup === 'boolean') {
-      getExtensions.unshift(basicSetup());
-    } else {
-      getExtensions.unshift(basicSetup(defaultBasicSetup));
-    }
-  }
+  const defaultExtensions = getDefaultExtensions({
+    theme,
+    editable: true,
+    readOnly: false,
+    placeholder: placeholderStr,
+    indentWithTab: defaultIndentWithTab,
+    basicSetup: defaultBasicSetup,
+  });
 
-  if (placeholderStr) {
-    getExtensions.unshift(placeholder(placeholderStr));
-  }
-
-  switch (theme) {
-    case 'light':
-      getExtensions.push(defaultLightThemeOption);
-      break;
-    case 'dark':
-      getExtensions.push(oneDark);
-      break;
-    case 'none':
-      break;
-    default:
-      getExtensions.push(theme);
-      break;
-  }
-
-  if (editable === false) {
-    getExtensions.push(EditorView.editable.of(false));
-  }
-  if (readOnly) {
-    getExtensions.push(EditorState.readOnly.of(true));
-  }
+  let getExtensions = [updateListener, defaultThemeOption, ...defaultExtensions];
 
   if (onUpdate && typeof onUpdate === 'function') {
     getExtensions.push(EditorView.updateListener.of(onUpdate));

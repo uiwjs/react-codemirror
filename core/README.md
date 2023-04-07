@@ -183,6 +183,34 @@ export default function App() {
 }
 ```
 
+## Codemirror Merge
+
+```jsx
+import CodeMirrorMerge from 'react-codemirror-merge';
+import { EditorView } from 'codemirror';
+import { EditorState } from '@codemirror/state';
+
+const Original = CodeMirrorMerge.Original;
+const Modified = CodeMirrorMerge.Modified;
+let doc = `one
+two
+three
+four
+five`;
+
+export const Example = () => {
+  return (
+    <CodeMirrorMerge>
+      <Original value={doc} />
+      <Modified
+        value={doc.replace(/t/g, 'T') + 'Six'}
+        extensions={[EditorView.editable.of(false), EditorState.readOnly.of(true)]}
+      />
+    </CodeMirrorMerge>
+  );
+};
+```
+
 ## Support Hook
 
 [![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?logo=codesandbox)](https://codesandbox.io/embed/react-codemirror-example-codemirror-6-hook-yr4vg?fontsize=14&hidenavigation=1&theme=dark)
@@ -397,7 +425,7 @@ export interface ReactCodeMirrorProps
    */
   readOnly?: boolean;
   /**
-   * Controls whether pressing the `Tab` key inserts a tab character and indents the text (`true`) 
+   * Controls whether pressing the `Tab` key inserts a tab character and indents the text (`true`)
    * or behaves according to the browser's default behavior (`false`).
    * @default true
    */
