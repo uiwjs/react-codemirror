@@ -8,6 +8,10 @@
 
 CodeMirror merge view for React.
 
+<a href="https://uiwjs.github.io/react-codemirror/#/merge/document">
+  <img width="436" alt="codemirror-theme-androidstudio" src="https://user-images.githubusercontent.com/1680273/230655848-821b9390-9bed-4f28-b52e-f96b59228bfa.png">
+</a>
+
 ## Install
 
 ```bash
