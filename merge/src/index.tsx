@@ -1,12 +1,13 @@
 import React from 'react';
 import { Original } from './Original';
 import { Modified } from './Modified';
-import { Internal } from './Internal';
+import { Internal, InternalRef } from './Internal';
 import { Provider } from './store';
 
+export interface ReactCodeMirrorMergeRef extends InternalRef {}
 export interface ReactCodeMirrorMergeProps extends React.LiHTMLAttributes<HTMLDivElement> {}
 
-const InternalCodeMirror = (props: ReactCodeMirrorMergeProps, ref?: React.ForwardedRef<HTMLDivElement>) => {
+const InternalCodeMirror = (props: ReactCodeMirrorMergeProps, ref?: React.ForwardedRef<InternalRef>) => {
   return (
     <Provider>
       <Internal {...props} ref={ref} />
@@ -19,7 +20,7 @@ type CodeMirrorComponent = React.FC<React.PropsWithRef<ReactCodeMirrorMergeProps
   Modified: typeof Modified;
 };
 
-const ReactCodeMirrorMerge: CodeMirrorComponent = React.forwardRef<HTMLDivElement>(
+const ReactCodeMirrorMerge: CodeMirrorComponent = React.forwardRef<InternalRef>(
   InternalCodeMirror,
 ) as unknown as CodeMirrorComponent;
 

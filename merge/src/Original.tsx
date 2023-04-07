@@ -38,3 +38,5 @@ export const Original = (props: OriginalProps): JSX.Element | null => {
 
   return null;
 };
+
+Original.displayName = 'CodeMirrorMerge.Original';
