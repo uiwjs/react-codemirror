@@ -15,10 +15,7 @@ export const MergeDoc = () => {
   return (
     <PageWarpper>
       <Example />
-      <MarkdownPreview
-        source={mdSource.document}
-        style={{ width: 980, margin: '0 auto', padding: '50px 20px 150px 20px' }}
-      />
+      <MarkdownPreview source={mdSource.document} style={{ width: 980, margin: '0 auto', padding: '50px 0 150px 0' }} />
       <BackToUp>Top</BackToUp>
     </PageWarpper>
   );

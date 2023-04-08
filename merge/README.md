@@ -35,7 +35,7 @@ five`;
 
 export const Example = () => {
   return (
-    <CodeMirrorMerge>
+    <CodeMirrorMerge orientation="b-a">
       <Original value={doc} />
       <Modified
         value={doc.replace(/t/g, 'T') + 'Six'}
@@ -44,6 +44,109 @@ export const Example = () => {
     </CodeMirrorMerge>
   );
 };
+```
+
+## Props
+
+```ts
+export interface CodeMirrorMergeProps extends React.HTMLAttributes<HTMLDivElement>, MergeConfig {}
+
+interface MergeConfig {
+  /**
+  Controls whether editor A or editor B is shown first. Defaults
+  to `"a-b"`.
+  */
+  orientation?: 'a-b' | 'b-a';
+  /**
+  Controls whether revert controls are shown between changed
+  chunks.
+  */
+  revertControls?: 'a-to-b' | 'b-to-a';
+  /**
+  When given, this function is called to render the button to
+  revert a chunk.
+  */
+  renderRevertControl?: () => HTMLElement;
+  /**
+  By default, the merge view will mark inserted and deleted text
+  in changed chunks. Set this to false to turn that off.
+  */
+  highlightChanges?: boolean;
+  /**
+  Controls whether a gutter marker is shown next to changed lines.
+  */
+  gutter?: boolean;
+  /**
+  When given, long stretches of unchanged text are collapsed.
+  `margin` gives the number of lines to leave visible after/before
+  a change (default is 3), and `minSize` gives the minimum amount
+  of collapsible lines that need to be present (defaults to 4).
+  */
+  collapseUnchanged?: {
+    margin?: number;
+    minSize?: number;
+  };
+}
+```
+
+## Modified Props
+
+```ts
+interface ModifiedProps {
+  /**
+  The initial document. Defaults to an empty document. Can be
+  provided either as a plain string (which will be split into
+  lines according to the value of the [`lineSeparator`
+  facet](https://codemirror.net/6/docs/ref/#state.EditorState^lineSeparator)), or an instance of
+  the [`Text`](https://codemirror.net/6/docs/ref/#state.Text) class (which is what the state will use
+  to represent the document).
+  */
+  value?: string | Text;
+  /**
+  The starting selection. Defaults to a cursor at the very start
+  of the document.
+  */
+  selection?:
+    | EditorSelection
+    | {
+        anchor: number;
+        head?: number;
+      };
+  /**
+  [Extension(s)](https://codemirror.net/6/docs/ref/#state.Extension) to associate with this state.
+  */
+  extensions?: Extension;
+}
+```
+
+## Original Props
+
+```ts
+interface OriginalProps {
+  /**
+  The initial document. Defaults to an empty document. Can be
+  provided either as a plain string (which will be split into
+  lines according to the value of the [`lineSeparator`
+  facet](https://codemirror.net/6/docs/ref/#state.EditorState^lineSeparator)), or an instance of
+  the [`Text`](https://codemirror.net/6/docs/ref/#state.Text) class (which is what the state will use
+  to represent the document).
+  */
+  value?: string | Text;
+  /**
+  The starting selection. Defaults to a cursor at the very start
+  of the document.
+  */
+  selection?:
+    | EditorSelection
+    | {
+        anchor: number;
+        head?: number;
+      };
+  /**
+  [Extension(s)](https://codemirror.net/6/docs/ref/#state.Extension) to associate with this state.
+  */
+  extensions?: Extension;
+}
 ```
 
 ## Contributors

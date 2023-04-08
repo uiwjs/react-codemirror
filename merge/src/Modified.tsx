@@ -3,7 +3,7 @@ import { EditorStateConfig, Extension, StateEffect } from '@codemirror/state';
 import { getDefaultExtensions } from '@uiw/react-codemirror';
 import { useStore } from './store';
 
-export interface ModifiedProps extends EditorStateConfig {
+export interface ModifiedProps extends Omit<EditorStateConfig, 'doc'> {
   value?: EditorStateConfig['doc'];
   extensions?: Extension[];
 }
@@ -21,6 +21,7 @@ export const Modified = (props: ModifiedProps): JSX.Element | null => {
       if (modifiedDoc !== props.value) {
         view.b.dispatch({
           changes: { from: 0, to: (modifiedDoc || '').length, insert: props.value || '' },
+          effects: StateEffect.appendConfig.of([...defaultExtensions, ...extensions]),
         });
       }
     }
@@ -28,13 +29,7 @@ export const Modified = (props: ModifiedProps): JSX.Element | null => {
       data.selection = props.selection;
       dispatch!({ modified: { ...modified, ...data } });
     }
-  }, [props.value, props.selection, view]);
-
-  useEffect(() => {
-    if (view) {
-      view.b.dispatch({ effects: StateEffect.appendConfig.of([...defaultExtensions, ...extensions]) });
-    }
-  }, [extensions, view]);
+  }, [props.value, extensions, props.selection, view]);
 
   return null;
 };

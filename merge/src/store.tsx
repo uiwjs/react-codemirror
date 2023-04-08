@@ -1,12 +1,12 @@
 import React, { PropsWithChildren, createContext, useContext, useReducer } from 'react';
 import { EditorStateConfig } from '@codemirror/state';
-import { MergeView } from '@codemirror/merge';
+import { MergeView, MergeConfig } from '@codemirror/merge';
 
 export interface StoreContextValue extends InitialState {
   dispatch?: React.Dispatch<InitialState>;
 }
 
-export interface InitialState {
+export interface InitialState extends MergeConfig {
   modified?: EditorStateConfig;
   original?: EditorStateConfig;
   view?: MergeView;
