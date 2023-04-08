@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-extensions-zebra-stripes",
-  "version": "4.19.14",
+  "version": "4.19.15",
   "description": "Styles alternating lines for CodeMirror6.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/extensions/zebra-stripes",
   "author": "kenny wong <wowohoo@qq.com>",
