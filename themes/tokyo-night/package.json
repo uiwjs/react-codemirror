@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-theme-tokyo-night",
-  "version": "4.19.15",
+  "version": "4.19.16",
   "description": "Theme tokyo-night for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/tokyo-night",
   "author": "kenny wong <wowohoo@qq.com>",
@@ -21,7 +21,7 @@
     "cjs"
   ],
   "dependencies": {
-    "@uiw/codemirror-themes": "4.19.15"
+    "@uiw/codemirror-themes": "4.19.16"
   },
   "keywords": [
     "codemirror",
