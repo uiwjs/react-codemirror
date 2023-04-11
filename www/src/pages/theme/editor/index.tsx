@@ -224,7 +224,7 @@ export function ThemeEditor() {
             style={{ minHeight: '100%' }}
           />
         )}
-        <Select value={type} onChange={(evn) => navigate(`/theme/editor/${evn.target.value}`)}>
+        <Select value={type} onChange={(evn) => navigate(`/editor/theme/${evn.target.value}`)}>
           <option value="single">Single language</option>
           <option value="multiple">Multiple languages</option>
         </Select>

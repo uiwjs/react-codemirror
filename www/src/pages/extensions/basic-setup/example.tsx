@@ -1,11 +1,9 @@
 import { FC, PropsWithChildren, useState } from 'react';
-import MarkdownPreview from '@uiw/react-markdown-preview';
 import CodeMirror, { BasicSetupOptions } from '@uiw/react-codemirror';
-import data from '@uiw/codemirror-extensions-basic-setup/README.md';
 import { langs } from '@uiw/codemirror-extensions-langs';
 import styled from 'styled-components';
 import { useTheme } from '../../../utils/useTheme';
-import { PageWarpper } from '../';
+import { PageWarpper } from '..';
 
 const Label = styled.label`
   user-select: none;
@@ -27,13 +25,17 @@ const Warpper = styled.div`
   padding-bottom: 32px;
 `;
 
-export const BasicSetupDoc = () => {
+interface BasicSetupExampleProps {
+  source?: string;
+}
+
+export const BasicSetupExample = (props: BasicSetupExampleProps) => {
   const { theme } = useTheme();
   const [basicSetup, setBasicSetup] = useState<BasicSetupOptions>({});
   return (
     <PageWarpper>
       <CodeMirror
-        value={data.source}
+        value={props.source}
         theme={theme}
         basicSetup={basicSetup}
         height="300px"
@@ -195,7 +197,6 @@ export const BasicSetupDoc = () => {
           lintKeymap
         </Options>
       </Warpper>
-      <MarkdownPreview source={data.source} />
     </PageWarpper>
   );
 };

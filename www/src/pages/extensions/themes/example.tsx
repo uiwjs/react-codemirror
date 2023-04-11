@@ -1,18 +1,17 @@
-import MarkdownPreview from '@uiw/react-markdown-preview';
-import data from '@uiw/codemirror-themes-all/README.md';
+import { FC, PropsWithChildren } from 'react';
 import CodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
 import { useState } from 'react';
 import * as themes from '@uiw/codemirror-themes-all';
 import { langs } from '@uiw/codemirror-extensions-langs';
 import styled from 'styled-components';
 import { useTheme } from '../../../utils/useTheme';
-import { PageWarpper } from '../';
+import { PageWarpper } from '..';
 
 const ToolsWapper = styled.div`
   padding: 0 0 23px 0;
 `;
 
-export const ThemesAllDoc = () => {
+export const ThemesAllExample: FC<PropsWithChildren<{ source?: string }>> = ({ source }) => {
   const themesData: Record<string, Omit<ReactCodeMirrorProps['theme'], 'dark' | 'light'>> = {};
   Object.keys(themes)
     .filter((item) => typeof themes[item as keyof typeof themes] !== 'function')
@@ -29,7 +28,7 @@ export const ThemesAllDoc = () => {
   return (
     <PageWarpper>
       <CodeMirror
-        value={data.source}
+        value={source}
         theme={themeCurrent as ReactCodeMirrorProps['theme']}
         height="300px"
         style={{ margin: '0 0 23px 0' }}
@@ -44,7 +43,6 @@ export const ThemesAllDoc = () => {
           })}
         </select>
       </ToolsWapper>
-      <MarkdownPreview source={data.source} />
     </PageWarpper>
   );
 };

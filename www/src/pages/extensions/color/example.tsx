@@ -1,14 +1,12 @@
-import MarkdownPreview from '@uiw/react-markdown-preview';
-import data from '@uiw/codemirror-extensions-color/README.md';
 import { color } from '@uiw/codemirror-extensions-color';
 import CodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
 import { useState } from 'react';
 import { langs } from '@uiw/codemirror-extensions-langs';
 import { useTheme } from '../../../utils/useTheme';
 import { codeSample } from './code';
-import { PageWarpper } from '../';
+import { PageWarpper } from '..';
 
-export const ColorDoc = () => {
+export const ColorExample = () => {
   const [modeType, setModeType] = useState<'readOnly' | 'editable'>('readOnly');
   const [readOnly, setReadOnly] = useState(false);
   const { theme } = useTheme();
@@ -57,7 +55,6 @@ export const ColorDoc = () => {
           editable
         </label>
       </div>
-      <MarkdownPreview source={data.source} />
     </PageWarpper>
   );
 };

@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { FC, PropsWithChildren } from 'react';
 
 export const Tools = styled.div`
   display: flex;
@@ -31,15 +32,10 @@ export const Hyperlink = styled.a`
   ${style}
 `;
 
-export const NavMenus = () => {
+export const NavMenus: FC<PropsWithChildren> = ({ children }) => {
   return (
     <Tools>
-      <Link to="/">Home</Link>
-      <Link to="/extensions">Extensions</Link>
-      <Link to="/merge/document">Merge</Link>
-      <Link to="/theme">Themes</Link>
-      <Link to="/editor/theme">Themes Editor</Link>
-      <Link to="/theme/doc">Theme Doc</Link>
+      {children}
       <Hyperlink href="https://github.com/uiwjs/react-codemirror" target="__blank">
         Github
       </Hyperlink>

@@ -1,10 +1,9 @@
-import MarkdownPreview from '@uiw/react-markdown-preview';
-import data from '@uiw/codemirror-extensions-mentions/README.md';
+import { FC, PropsWithChildren } from 'react';
 import { mentions } from '@uiw/codemirror-extensions-mentions';
 import CodeMirror from '@uiw/react-codemirror';
 import { langs } from '@uiw/codemirror-extensions-langs';
 import { useTheme } from '../../../utils/useTheme';
-import { PageWarpper } from '../';
+import { PageWarpper } from '..';
 
 const users = [
   {
@@ -51,19 +50,18 @@ const users = [
   },
 ];
 
-export const MentionsDoc = () => {
+export const MentionsExample: FC<PropsWithChildren<{ source?: string }>> = ({ source }) => {
   const { theme } = useTheme();
 
   return (
     <PageWarpper>
       <CodeMirror
-        value={data.source}
+        value={source}
         theme={theme}
         height="300px"
         style={{ margin: '0 0 23px 0' }}
         extensions={[langs.markdown(), mentions(users)]}
       />
-      <MarkdownPreview source={data.source} />
     </PageWarpper>
   );
 };

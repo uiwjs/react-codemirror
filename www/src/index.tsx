@@ -1,26 +1,10 @@
 import { createRoot } from 'react-dom/client';
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { RouterProvider, createHashRouter } from 'react-router-dom';
+import { routes } from './router';
+import { Fallback } from './components/Fallback';
 import '@wcj/dark-mode';
 import { createGlobalStyle } from 'styled-components';
-import Home from './pages/home';
-import { ThemeEditor } from './pages/theme/editor';
-import { ThemeLayout } from './pages/theme';
-import { ThemesHome } from './pages/theme/home';
-import { ThemeDoc } from './pages/theme/docs';
-import { MergeDoc, MergeLayout } from './pages/merge';
-import { ThemeOkaidia } from './pages/theme/themes';
-import { ExtensionsLayout } from './pages/extensions';
-import { EventsDoc } from './pages/extensions/events';
-import { LineNumbersRelativeDoc } from './pages/extensions/line-numbers-relative';
-import { LangsDoc } from './pages/extensions/langs';
-import { HyperLinkDoc } from './pages/extensions/hyper-link';
-import { BasicSetupDoc } from './pages/extensions/basic-setup';
-import { ColorDoc } from './pages/extensions/color';
-import { ClassNameDoc } from './pages/extensions/classname';
-import { MentionsDoc } from './pages/extensions/mentions';
-import { ThemesAllDoc } from './pages/extensions/themes';
-import { ZebraStripesDoc } from './pages/extensions/zebra-stripes';
-import { PageExample431 } from './pages/examples/Example431';
+import { Fragment } from 'react';
 
 export const GlobalStyle = createGlobalStyle`
   [data-color-mode*='dark'], [data-color-mode*='dark'] body {
@@ -65,44 +49,8 @@ export const GlobalStyle = createGlobalStyle`
 const container = document.getElementById('root');
 const root = createRoot(container!);
 root.render(
-  <HashRouter>
+  <Fragment>
     <GlobalStyle />
-    <Routes>
-      <Route index element={<Home />} />
-      <Route path="/" element={<Home />} />
-      <Route path="/editor/theme/" element={<ThemeLayout />}>
-        <Route index element={<Navigate to="single" replace />} />
-        <Route path=":type" element={<ThemeEditor />} />
-      </Route>
-      <Route path="/merge/" element={<MergeLayout />}>
-        <Route index path="document" element={<MergeDoc />} />
-      </Route>
-      <Route path="/theme/" element={<ThemeLayout />}>
-        <Route index element={<Navigate to="home" replace />} />
-        <Route path="home" element={<ThemesHome />} />
-        <Route path="data" element={<Navigate to="sublime" replace />} />
-        <Route path="data/:name" element={<ThemeOkaidia />} />
-        <Route path="data/:name/*" element={<ThemeOkaidia />} />
-        <Route path="editor" element={<Navigate to="single" replace />} />
-        <Route path="editor/:type" element={<ThemeEditor />} />
-        <Route path="doc" element={<ThemeDoc />} />
-      </Route>
-      <Route path="/extensions/" element={<ExtensionsLayout />}>
-        <Route index element={<Navigate to="color" replace />} />
-        <Route path="themes-all" element={<ThemesAllDoc />} />
-        <Route path="basic-setup" element={<BasicSetupDoc />} />
-        <Route path="color" element={<ColorDoc />} />
-        <Route path="classname" element={<ClassNameDoc />} />
-        <Route path="events" element={<EventsDoc />} />
-        <Route path="line-numbers-relative" element={<LineNumbersRelativeDoc />} />
-        <Route path="languages" element={<LangsDoc />} />
-        <Route path="hyper-link" element={<HyperLinkDoc />} />
-        <Route path="mentions" element={<MentionsDoc />} />
-        <Route path="zebra-stripes" element={<ZebraStripesDoc />} />
-      </Route>
-      <Route path="/examples/" element={<ExtensionsLayout />}>
-        <Route path="431" element={<PageExample431 />} />
-      </Route>
-    </Routes>
-  </HashRouter>,
+    <RouterProvider router={createHashRouter(routes as any)} fallbackElement={<Fallback />} />
+  </Fragment>,
 );

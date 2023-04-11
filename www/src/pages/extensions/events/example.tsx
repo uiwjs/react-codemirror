@@ -1,18 +1,17 @@
-import MarkdownPreview from '@uiw/react-markdown-preview';
-import data from '@uiw/codemirror-extensions-events/README.md';
+import { FC, PropsWithChildren } from 'react';
 import * as events from '@uiw/codemirror-extensions-events';
 import CodeMirror from '@uiw/react-codemirror';
 import styled from 'styled-components';
 import { useState } from 'react';
 import { langs } from '@uiw/codemirror-extensions-langs';
 import { useTheme } from '../../../utils/useTheme';
-import { PageWarpper } from '../';
+import { PageWarpper } from '..';
 
 const Info = styled.div`
   padding-bottom: 30px;
 `;
 
-export const EventsDoc = () => {
+export const EventsExample: FC<PropsWithChildren<{ source?: string }>> = ({ source }) => {
   const [scrollTop, setScrollTop] = useState(0);
   const [eventType, setEventType] = useState('');
   const { theme } = useTheme();
@@ -20,7 +19,7 @@ export const EventsDoc = () => {
   return (
     <PageWarpper>
       <CodeMirror
-        value={data.source}
+        value={source}
         theme={theme}
         height="200px"
         style={{ margin: '0 0 23px 0' }}
@@ -46,7 +45,6 @@ export const EventsDoc = () => {
       <Info>
         {scrollTop} {eventType}
       </Info>
-      <MarkdownPreview source={data.source} />
     </PageWarpper>
   );
 };

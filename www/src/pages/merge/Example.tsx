@@ -9,7 +9,7 @@ import { originalCode, modifiedCode } from './code';
 const Original = CodeMirrorMerge.Original;
 const Modified = CodeMirrorMerge.Modified;
 
-export const Example = () => {
+export const MergeExample = () => {
   const [orientation, setOrientation] = useState<CodeMirrorMergeProps['orientation']>('a-b');
   const [revertControls, setRevertControls] = useState<CodeMirrorMergeProps['revertControls']>();
   const [highlightChanges, setHighlightChanges] = useState<CodeMirrorMergeProps['highlightChanges']>(true);

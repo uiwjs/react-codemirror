@@ -1,10 +1,8 @@
-import { Fragment } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import CodeMirror from '@uiw/react-codemirror';
 import { color } from '@uiw/codemirror-extensions-color';
 import { langs } from '@uiw/codemirror-extensions-langs';
-import { SiderMenus } from '../themes/SiderMenus';
 import { Warpper } from '../../../components/Warpper';
 import { themeData } from '../themes/Datas';
 import { toSnakeCase, toTitleCase } from '../../../utils/utils';
@@ -59,32 +57,39 @@ const Counter = () => {
 const CodeEditor = styled(CodeMirror)`
   border-radius: 0.375rem;
   overflow: hidden;
+  position: relative;
+  &::before {
+    content: '';
+    display: block;
+    height: 100%;
+    background: transparent;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+  }
 `;
 
 export function ThemesHome() {
   return (
-    <Fragment>
-      <SiderMenus />
-      <Warpper>
-        <ThemesWarpper>
-          {Object.keys(themeData).map((name, idx) => {
-            const [_name, _theme] = toSnakeCase(name) || [];
-            return (
-              <Link key={idx} to={`/theme/data/${_name}${_theme ? `/${_theme}` : ''}`}>
-                <ThemeCard>
-                  <Title>{toTitleCase(name)}</Title>
-                  <CodeEditor
-                    value={codeString}
-                    height="165px"
-                    theme={themeData[name as keyof typeof themeData]}
-                    extensions={[color, langs.jsx()]}
-                  />
-                </ThemeCard>
-              </Link>
-            );
-          })}
-        </ThemesWarpper>
-      </Warpper>
-    </Fragment>
+    <Warpper>
+      <ThemesWarpper>
+        {Object.keys(themeData).map((name, idx) => {
+          const [_name, _theme] = toSnakeCase(name) || [];
+          return (
+            <Link key={idx} to={`/theme/data/${_name}${_theme ? `/${_theme}` : ''}`}>
+              <ThemeCard>
+                <Title>{toTitleCase(name)}</Title>
+                <CodeEditor
+                  value={codeString}
+                  height="165px"
+                  theme={themeData[name as keyof typeof themeData]}
+                  extensions={[color, langs.jsx()]}
+                />
+              </ThemeCard>
+            </Link>
+          );
+        })}
+      </ThemesWarpper>
+    </Warpper>
   );
 }

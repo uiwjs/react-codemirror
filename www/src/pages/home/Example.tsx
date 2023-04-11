@@ -7,8 +7,8 @@ import CodeMirror, { ReactCodeMirrorProps, BasicSetupOptions } from '@uiw/react-
 import styled from 'styled-components';
 import * as alls from '@uiw/codemirror-themes-all';
 import { langs } from '@uiw/codemirror-extensions-langs';
-import { Select } from '../../Select';
-import { Options } from '../extensions/basic-setup';
+import { Select } from './Select';
+import { Options } from '../extensions/basic-setup/example';
 import { useTheme } from '../../utils/useTheme';
 
 const themeOptions = ['dark', 'light']

@@ -2,13 +2,14 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import logo from '../logo.png';
 import { NavMenus } from './NavMenus';
+import { FC, PropsWithChildren } from 'react';
 
-export const Warpper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const HeaderWarpper = styled.div`
+const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,14 +36,14 @@ const Title = styled(NavLink)`
   }
 `;
 
-export const Header = () => {
+export const Header: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <HeaderWarpper>
+    <HeaderWrapper>
       <Title to="/">
         <img src={logo} alt="Logo" />
-        <span>CodeMirror Theme</span>
+        <span>React CodeMirror</span>
       </Title>
-      <NavMenus />
-    </HeaderWarpper>
+      <NavMenus>{children}</NavMenus>
+    </HeaderWrapper>
   );
 };

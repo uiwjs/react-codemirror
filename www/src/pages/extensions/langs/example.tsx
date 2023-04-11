@@ -1,21 +1,20 @@
-import MarkdownPreview from '@uiw/react-markdown-preview';
-import data from '@uiw/codemirror-extensions-langs/README.md';
+import { FC, PropsWithChildren } from 'react';
 import { langNames, LanguageName, loadLanguage } from '@uiw/codemirror-extensions-langs';
 import CodeMirror from '@uiw/react-codemirror';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useTheme } from '../../../utils/useTheme';
-import { PageWarpper } from '../';
+import { PageWarpper } from '..';
 
 const Toolbar = styled.div`
   padding-bottom: 32px;
 `;
 
-export const LangsDoc = () => {
+export const LangsExample: FC<PropsWithChildren<{ source?: string }>> = (props) => {
   const { theme } = useTheme();
 
   const [language, setLanguage] = useState<LanguageName>('markdown');
-  const [source, setSource] = useState<string>(data.source);
+  const [source, setSource] = useState<string>(props.source || '');
 
   useEffect(() => {
     if (language) {
@@ -51,7 +50,6 @@ export const LangsDoc = () => {
         </select>
         <span>&nbsp; Total: {langNames.length}</span>
       </Toolbar>
-      <MarkdownPreview source={data.source} />
     </PageWarpper>
   );
 };

@@ -1,12 +1,10 @@
-import MarkdownPreview from '@uiw/react-markdown-preview';
-import data from '@uiw/codemirror-extensions-zebra-stripes/README.md';
+import { FC, PropsWithChildren } from 'react';
 import { zebraStripes } from '@uiw/codemirror-extensions-zebra-stripes';
 import CodeMirror from '@uiw/react-codemirror';
 import { useState } from 'react';
 import { langs } from '@uiw/codemirror-extensions-langs';
 import styled from 'styled-components';
 import { PageWarpper } from '../';
-import { LineNumberDemo } from './LineNumberDemo';
 import { useTheme } from '../../../utils/useTheme';
 
 const OptionsView = styled.div`
@@ -15,14 +13,14 @@ const OptionsView = styled.div`
   gap: 18px;
 `;
 
-export const ZebraStripesDoc = () => {
+export const ZebraStripesExample: FC<PropsWithChildren<{ source?: string }>> = ({ source }) => {
   const { theme } = useTheme();
   const [step, setStep] = useState(2);
   const zebra = zebraStripes({ step: step });
   return (
     <PageWarpper>
       <CodeMirror
-        value={data.source}
+        value={source}
         theme={theme}
         height="300px"
         style={{ margin: '0 0 23px 0' }}
@@ -38,8 +36,16 @@ export const ZebraStripesDoc = () => {
           <option value={6}>6</option>
         </select>
       </OptionsView>
-      <LineNumberDemo />
-      <MarkdownPreview source={data.source} />
+      <CodeMirror
+        value={source}
+        theme={theme}
+        height="300px"
+        style={{ margin: '0 0 23px 0' }}
+        extensions={[
+          langs.markdown(),
+          zebraStripes({ lineNumber: [1, [3, 6], 10], lightColor: '#aca2ff33', darkColor: '#aca2ff40' }),
+        ]}
+      />
     </PageWarpper>
   );
 };
