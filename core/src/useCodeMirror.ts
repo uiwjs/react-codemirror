@@ -66,8 +66,8 @@ export function useCodeMirror(props: UseCodeMirror) {
 
   const defaultExtensions = getDefaultExtensions({
     theme,
-    editable: true,
-    readOnly: false,
+    editable,
+    readOnly,
     placeholder: placeholderStr,
     indentWithTab: defaultIndentWithTab,
     basicSetup: defaultBasicSetup,
