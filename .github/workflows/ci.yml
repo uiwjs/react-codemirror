@@ -12,6 +12,7 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
+        registry-url: 'https://registry.npmjs.org'
 
     - run: npm install
     - run: npm run build
@@ -64,3 +65,10 @@ jobs:
           ${{ steps.changelog.outputs.compareurl }}
           
           ${{ steps.changelog.outputs.changelog }}
+
+    - name: 📦 @uiw/react-codemirror v3 publish to NPM
+      run: npm publish --access public --tag previous
+      working-directory: ./core/
+      continue-on-error: true
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
