@@ -103,7 +103,7 @@ function ReactCodeMirror(props = {}, ref) {
   }, [editor, options]);
   
   return (
-    <textarea ref={textareaRef} />
+    <textarea ref={textareaRef}>{value}</textarea>
   );
 }
 
