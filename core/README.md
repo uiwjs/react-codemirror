@@ -26,7 +26,7 @@ CodeMirror component for React. Demo Preview: [@uiwjs.github.io/react-codemirror
 📚 Use Typescript to write, better code hints.  
 🌐 The bundled version supports use directly in the browser [#267](https://github.com/uiwjs/react-codemirror/issues/267#issuecomment-1041227592).  
 🌎 There are better [sample previews](https://uiwjs.github.io/react-codemirror).  
-🎨 Support [theme](https://uiwjs.github.io/react-codemirror/#/theme/data/dracula) customization, provide theme [editor](https://uiwjs.github.io/react-codemirror/#/theme/editor).
+🎨 Support [theme](https://uiwjs.github.io/react-codemirror/#/theme/data/dracula) customization, provide theme [editor](https://uiwjs.github.io/react-codemirror/#/editor/theme).
 
 ## Install
 
@@ -247,7 +247,7 @@ export default function App() {
 
 ## Using Theme
 
-We have created a [`theme editor`](https://uiwjs.github.io/react-codemirror/#/theme/editor) where you can define your own theme. We have also defined [some themes](https://uiwjs.github.io/react-codemirror/#/theme/data/okaidia) ourselves, which can be installed and used directly. Below is a usage example:
+We have created a [`theme editor`](https://uiwjs.github.io/react-codemirror/#/editor/theme) where you can define your own theme. We have also defined [some themes](https://uiwjs.github.io/react-codemirror/#/theme/data/okaidia) ourselves, which can be installed and used directly. Below is a usage example:
 
 ```jsx
 import CodeMirror from '@uiw/react-codemirror';
