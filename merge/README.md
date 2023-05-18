@@ -116,6 +116,8 @@ interface ModifiedProps {
   [Extension(s)](https://codemirror.net/6/docs/ref/#state.Extension) to associate with this state.
   */
   extensions?: Extension;
+  /** Fired whenever a change occurs to the document. */
+  onChange?(value: string, viewUpdate: ViewUpdate): void;
 }
 ```
 
@@ -146,6 +148,8 @@ interface OriginalProps {
   [Extension(s)](https://codemirror.net/6/docs/ref/#state.Extension) to associate with this state.
   */
   extensions?: Extension;
+  /** Fired whenever a change occurs to the document. */
+  onChange?(value: string, viewUpdate: ViewUpdate): void;
 }
 ```
 

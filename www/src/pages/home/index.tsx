@@ -106,7 +106,7 @@ const hyperlink: {
 }[] = [
   {
     href: 'https://www.npmjs.com/package/@uiw/react-codemirror',
-    label: 'View On NPM',
+    label: 'On NPM',
   },
   {
     href: 'https://codemirror.net/docs/',
@@ -150,6 +150,7 @@ export default function App() {
           <Link to="/extensions" className="extensions">
             Extensions
           </Link>
+          <Link to="/merge/document">Merge</Link>
           {hyperlink.map(({ href, label, style }, idx) => {
             return (
               <a key={idx} target="_blank" rel="noopener noreferrer" href={href} style={style}>
