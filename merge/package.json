@@ -1,6 +1,6 @@
 {
   "name": "react-codemirror-merge",
-  "version": "4.19.16",
+  "version": "4.20.0",
   "description": "CodeMirror merge view for React.",
   "homepage": "https://uiwjs.github.io/react-codemirror",
   "author": "kenny wong <wowohoo@qq.com>",
@@ -35,7 +35,7 @@
   "dependencies": {
     "@babel/runtime": "^7.18.6",
     "@codemirror/merge": "^6.0.1",
-    "@uiw/react-codemirror": "4.19.16"
+    "@uiw/react-codemirror": "4.20.0"
   },
   "keywords": [
     "react",
