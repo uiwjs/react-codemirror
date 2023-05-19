@@ -6,6 +6,7 @@ import { Warpper } from '../../components/Warpper';
 import { PreCode } from './themes/PreCode';
 import { themeData } from './themes/Datas';
 import { Sample } from './themes/Sample';
+import Markdown from '../../components/Markdown';
 
 interface PreviewProps {
   path?: any;
@@ -76,7 +77,7 @@ export const Preview: FC<PropsWithChildren<PreviewProps>> = (props) => {
         {childs.map((child, key) => {
           return cloneElement(child as any, { key, source: mdData?.source });
         })}
-        {mdData && (previewDoc || !themePkg) && <MarkdownPreview source={mdData.source} />}
+        {mdData && (previewDoc || !themePkg) && <Markdown source={mdData.source} mdData={mdData} />}
         {!previewDoc && themePkg && themeExtensionName && <Sample theme={extension} />}
       </Content>
     </Warpper>

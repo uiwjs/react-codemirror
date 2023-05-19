@@ -60,20 +60,29 @@ export const Internal = React.forwardRef((props: CodeMirrorMergeProps, ref?: Rea
       if (otherStore.collapseUnchanged !== collapseUnchanged) {
         opts.collapseUnchanged = collapseUnchanged;
       }
-      if (Object.keys(opts).length && dispatch) {
-        dispatch({ ...opts });
-      }
-      if (original && modified && editor.current) {
+      if (Object.keys(opts).length && dispatch && original && modified && editor.current) {
         view.destroy();
-        new MergeView({
-          a: { ...original },
-          b: { ...modified },
+        const viewDefault = new MergeView({
+          a: original,
+          b: modified,
           parent: editor.current,
           ...opts,
         });
+        dispatch({ ...opts, renderRevertControl, view: viewDefault });
       }
     }
-  }, [view, original, modified, editor, orientation, revertControls, highlightChanges, gutter, collapseUnchanged]);
+  }, [
+    view,
+    original,
+    modified,
+    editor,
+    orientation,
+    revertControls,
+    highlightChanges,
+    gutter,
+    collapseUnchanged,
+    renderRevertControl,
+  ]);
 
   const defaultClassNames = 'cm-merge-theme';
   return (

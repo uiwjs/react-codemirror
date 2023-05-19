@@ -17,21 +17,22 @@ export const Original = (props: OriginalProps): JSX.Element | null => {
   const { extensions = [], onChange } = props;
   const { original, view, dispatch } = useStore();
   const defaultExtensions = getDefaultExtensions();
+  const updateListener = EditorView.updateListener.of((vu: ViewUpdate) => {
+    if (
+      vu.docChanged &&
+      typeof onChange === 'function' &&
+      // Fix echoing of the remote changes:
+      // If transaction is market as remote we don't have to call `onChange` handler again
+      !vu.transactions.some((tr) => tr.annotation(External))
+    ) {
+      const doc = vu.state.doc;
+      const value = doc.toString();
+      onChange(value, vu);
+    }
+  });
+  const extensionsData = [updateListener, ...defaultExtensions, ...extensions];
+  const data: EditorStateConfig = { extensions: [...extensionsData] };
   useEffect(() => {
-    const updateListener = EditorView.updateListener.of((vu: ViewUpdate) => {
-      if (
-        vu.docChanged &&
-        typeof onChange === 'function' &&
-        // Fix echoing of the remote changes:
-        // If transaction is market as remote we don't have to call `onChange` handler again
-        !vu.transactions.some((tr) => tr.annotation(External))
-      ) {
-        const doc = vu.state.doc;
-        const value = doc.toString();
-        onChange(value, vu);
-      }
-    });
-    const data: EditorStateConfig = { extensions: [updateListener, ...defaultExtensions, ...extensions] };
     if (original?.doc !== props.value && view) {
       data.doc = props.value;
       dispatch!({ original: { ...original, ...data } });
@@ -39,7 +40,7 @@ export const Original = (props: OriginalProps): JSX.Element | null => {
       if (originalDoc !== props.value) {
         view?.a.dispatch({
           changes: { from: 0, to: (originalDoc || '').length, insert: props.value || '' },
-          effects: StateEffect.appendConfig.of([...defaultExtensions, ...extensions]),
+          effects: StateEffect.appendConfig.of([...extensionsData]),
         });
       }
     }

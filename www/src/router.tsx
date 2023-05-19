@@ -509,6 +509,11 @@ export const routes: MenuRouteObject[] = [
               </Preview>
             ),
           },
+          {
+            path: 'onchange',
+            label: 'onChange Example',
+            element: <Preview path={() => import('./pages/merge/examples/Example.md')} />,
+          },
         ],
       },
       {
