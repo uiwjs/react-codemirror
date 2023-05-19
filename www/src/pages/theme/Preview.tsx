@@ -1,6 +1,5 @@
 import { FC, Children, PropsWithChildren, cloneElement, useState } from 'react';
 import styled from 'styled-components';
-import MarkdownPreview from '@uiw/react-markdown-preview';
 import { useMdData } from '../../components/useMdData';
 import { Warpper } from '../../components/Warpper';
 import { PreCode } from './themes/PreCode';

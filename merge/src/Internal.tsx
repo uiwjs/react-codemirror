@@ -36,11 +36,7 @@ export const Internal = React.forwardRef((props: CodeMirrorMergeProps, ref?: Rea
     }
   }, [editor.current, original, modified, view]);
 
-  useEffect(() => {
-    return () => {
-      view && view.destroy();
-    };
-  }, []);
+  useEffect(() => () => view && view.destroy(), []);
 
   useEffect(() => {
     if (view) {

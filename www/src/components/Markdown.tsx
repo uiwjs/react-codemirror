@@ -1,9 +1,10 @@
-import { FC, PropsWithChildren, useEffect, useRef } from 'react';
+import { FC, PropsWithChildren, useRef } from 'react';
 import CodeLayout from 'react-code-preview-layout';
 import { getMetaId, isMeta, getURLParameters, CodeBlockData } from 'markdown-react-code-preview-loader';
 import MarkdownPreview, { MarkdownPreviewProps } from '@uiw/react-markdown-preview';
 import rehypeIgnore from 'rehype-ignore';
 import { CodeProps } from 'react-markdown/lib/ast-to-react';
+import styled from 'styled-components';
 
 const Preview = CodeLayout.Preview;
 const Code = CodeLayout.Code;
@@ -12,6 +13,12 @@ const Toolbar = CodeLayout.Toolbar;
 interface CodePreviewProps extends CodeProps {
   mdData?: CodeBlockData;
 }
+
+const CodeLayoutView = styled(CodeLayout)`
+  & + div.copied {
+    display: none !important;
+  }
+`;
 
 const CodePreview: FC<PropsWithChildren<CodePreviewProps>> = ({ inline, node, ...props }) => {
   const $dom = useRef<HTMLDivElement>(null);
@@ -35,15 +42,15 @@ const CodePreview: FC<PropsWithChildren<CodePreviewProps>> = ({ inline, node, ..
     const code = mdData?.data[metaId].value || '';
     const param = getURLParameters(meta);
     return (
-      <CodeLayout ref={$dom}>
+      <CodeLayoutView ref={$dom}>
         <Preview>
           <Child />
         </Preview>
-        <Toolbar>{param.title || 'Example'}</Toolbar>
+        <Toolbar text={code}>{param.title || 'Example'}</Toolbar>
         <Code>
           <pre {...rest} />
         </Code>
-      </CodeLayout>
+      </CodeLayoutView>
     );
   }
   return <code {...rest} />;
@@ -59,7 +66,7 @@ export default function Markdown(props: MarkdownProps) {
     <MarkdownPreview
       {...rest}
       style={{ paddingTop: 30 }}
-      disableCopy={true}
+      // disableCopy={true}
       rehypePlugins={[rehypeIgnore]}
       source={props.source || ''}
       components={{
