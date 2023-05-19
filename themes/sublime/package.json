@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-theme-sublime",
-  "version": "4.20.0",
+  "version": "4.20.1",
   "description": "Theme sublime for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/sublime",
   "author": "kenny wong <wowohoo@qq.com>",
@@ -21,7 +21,7 @@
     "cjs"
   ],
   "dependencies": {
-    "@uiw/codemirror-themes": "4.20.0"
+    "@uiw/codemirror-themes": "4.20.1"
   },
   "keywords": [
     "codemirror",
