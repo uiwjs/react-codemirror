@@ -525,6 +525,11 @@ export const routes: MenuRouteObject[] = [
             label: 'How to remove all syntax highlighting?',
             Component: PageExample431,
           },
+          {
+            path: 'refs',
+            label: 'Refs Example',
+            lazy: () => import('./pages/examples/ExampleRef'),
+          },
         ],
       },
     ],
