@@ -1,5 +1,5 @@
 {
-  "version": "4.20.2",
+  "version": "4.20.3",
   "packages": ["themes/**", "core", "merge", "www"],
   "useWorkspaces": true
 }

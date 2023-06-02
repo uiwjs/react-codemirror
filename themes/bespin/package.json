@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-theme-bespin",
-  "version": "4.20.2",
+  "version": "4.20.3",
   "description": "Theme bespin for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/bespin",
   "author": "kenny wong <wowohoo@qq.com>",
@@ -21,7 +21,7 @@
     "cjs"
   ],
   "dependencies": {
-    "@uiw/codemirror-themes": "4.20.2"
+    "@uiw/codemirror-themes": "4.20.3"
   },
   "keywords": [
     "codemirror",
