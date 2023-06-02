@@ -1,4 +1,5 @@
 import React, { useEffect, useImperativeHandle, useMemo, useRef, memo } from 'react';
+import { EditorStateConfig, Extension, StateEffect, Annotation } from '@codemirror/state';
 import { MergeView, MergeConfig } from '@codemirror/merge';
 import { useStore } from './store';
 import { CodeMirrorMergeProps } from './';
@@ -24,7 +25,7 @@ export const Internal = React.forwardRef((props: CodeMirrorMergeProps, ref?: Rea
   const editor = useRef<HTMLDivElement>(null);
   useImperativeHandle(ref, () => ({ container: editor.current, view }), [editor, view]);
   useEffect(() => {
-    if (!view && editor.current && original && modified) {
+    if (!view && editor.current && original?.extensions && modified?.extensions) {
       const opts = { orientation, revertControls, highlightChanges, gutter, collapseUnchanged, renderRevertControl };
       const viewDefault = new MergeView({
         a: original,

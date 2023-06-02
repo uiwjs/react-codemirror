@@ -32,6 +32,11 @@ export const Original = (props: OriginalProps): JSX.Element | null => {
   });
   const extensionsData = [updateListener, ...defaultExtensions, ...extensions];
   const data: EditorStateConfig = { extensions: [...extensionsData] };
+
+  useEffect(() => {
+    dispatch!({ original: { doc: props.value, selection: props.selection, ...data } });
+  }, []);
+
   useEffect(() => {
     if (original?.doc !== props.value && view) {
       data.doc = props.value;
@@ -41,6 +46,7 @@ export const Original = (props: OriginalProps): JSX.Element | null => {
         view?.a.dispatch({
           changes: { from: 0, to: (originalDoc || '').length, insert: props.value || '' },
           effects: StateEffect.appendConfig.of([...extensionsData]),
+          annotations: [External.of(true)],
         });
       }
     }

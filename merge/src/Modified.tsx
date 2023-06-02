@@ -32,6 +32,11 @@ export const Modified = (props: ModifiedProps): JSX.Element | null => {
   });
   const extensionsData = [updateListener, ...defaultExtensions, ...extensions];
   const data: EditorStateConfig = { extensions: [...extensionsData] };
+
+  useEffect(() => {
+    dispatch!({ modified: { doc: props.value, selection: props.selection, ...data } });
+  }, []);
+
   useEffect(() => {
     if (modified?.doc !== props.value && view) {
       data.doc = props.value;
