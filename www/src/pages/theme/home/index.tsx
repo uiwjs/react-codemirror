@@ -74,9 +74,9 @@ export function ThemesHome() {
     <Warpper>
       <ThemesWarpper>
         {Object.keys(themeData).map((name, idx) => {
-          const [_name, _theme] = toSnakeCase(name) || [];
+          const linkName = (toSnakeCase(name) || []).join('/');
           return (
-            <Link key={idx} to={`/theme/data/${_name}${_theme ? `/${_theme}` : ''}`}>
+            <Link key={idx} to={`/theme/data/${linkName}`}>
               <ThemeCard>
                 <Title>{toTitleCase(name)}</Title>
                 <CodeEditor

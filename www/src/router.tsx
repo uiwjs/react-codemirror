@@ -454,11 +454,12 @@ export const routes: MenuRouteObject[] = [
             ),
           },
           {
-            path: 'data/vscode',
+            path: 'data/vscode/dark',
             label: 'VS Code',
             element: (
               <Preview
                 themePkg="@uiw/codemirror-theme-vscode"
+                mode="dark"
                 path={() => import('@uiw/codemirror-theme-vscode/README.md')}
               />
             ),
