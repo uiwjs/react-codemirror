@@ -129,7 +129,6 @@ export default function App() {
 ```
 
 - ~~`@codemirror/legacy-modes/mode/cpp`~~ => [`@codemirror/lang-cpp`](https://www.npmjs.com/package/@codemirror/lang-cpp)
-- ~~`@codemirror/legacy-modes/mode/css`~~ => [`@codemirror/lang-css`](https://www.npmjs.com/package/@codemirror/lang-css)
 - ~~`@codemirror/legacy-modes/mode/html`~~ => [`@codemirror/lang-html`](https://www.npmjs.com/package/@codemirror/lang-html)
 - ~~`@codemirror/legacy-modes/mode/java`~~ => [`@codemirror/lang-java`](https://www.npmjs.com/package/@codemirror/lang-java)
 - ~~`@codemirror/legacy-modes/mode/javascript`~~ => [`@codemirror/lang-javascript`](https://www.npmjs.com/package/@codemirror/lang-javascript)
@@ -141,7 +140,10 @@ export default function App() {
 - ~~`@codemirror/legacy-modes/mode/rust`~~ => [`@codemirror/lang-rust`](https://www.npmjs.com/package/@codemirror/lang-rust)
 - ~~`@codemirror/legacy-modes/mode/sql`~~ => [`@codemirror/lang-sql`](https://www.npmjs.com/package/@codemirror/lang-sql)
 - ~~`@codemirror/legacy-modes/mode/xml`~~ => [`@codemirror/lang-xml`](https://www.npmjs.com/package/@codemirror/lang-xml)
-- ~~`@codemirror/legacy-modes/mode/wast`~~ => [`@codemirror/lang-wast`](https://www.npmjs.com/package/@codemirror/lang-wast)
+- ~~`@codemirror/legacy-modes/mode/css`~~ => [`@codemirror/lang-less`](https://www.npmjs.com/package/@codemirror/lang-less)
+- ~~`@codemirror/legacy-modes/mode/sass`~~ => [`@codemirror/lang-sass`](https://www.npmjs.com/package/@codemirror/lang-sass)
+- ~~`@codemirror/legacy-modes/mode/clojure`~~ => [`@nextjournal/lang-clojure`](https://www.npmjs.com/package/@nextjournal/lang-clojure)
+- ~~`@codemirror/legacy-modes/mode/clike`~~ => [`@replit/codemirror-lang-csharp`](https://www.npmjs.com/package/@replit/codemirror-lang-csharp)
 
 ### Markdown Example
 

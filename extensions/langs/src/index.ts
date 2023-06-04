@@ -4,7 +4,10 @@ import { markdown, markdownLanguage } from '@codemirror/lang-markdown';
 import { javascript } from '@codemirror/lang-javascript';
 import { html } from '@codemirror/lang-html';
 import { css } from '@codemirror/lang-css';
+import { less } from '@codemirror/lang-less';
+import { sass } from '@codemirror/lang-sass';
 import { json } from '@codemirror/lang-json';
+import { mermaid } from 'codemirror-lang-mermaid';
 import { python } from '@codemirror/lang-python';
 import { xml } from '@codemirror/lang-xml';
 import { sql, MySQL, PostgreSQL } from '@codemirror/lang-sql';
@@ -14,6 +17,12 @@ import { cpp } from '@codemirror/lang-cpp';
 import { lezer } from '@codemirror/lang-lezer';
 import { php } from '@codemirror/lang-php';
 import { wast } from '@codemirror/lang-wast';
+import { vue } from '@codemirror/lang-vue';
+import { angular } from '@codemirror/lang-angular';
+import { nix } from '@replit/codemirror-lang-nix';
+import { svelte } from '@replit/codemirror-lang-svelte';
+import { csharp } from '@replit/codemirror-lang-csharp';
+import { solidity } from '@replit/codemirror-lang-solidity';
 
 import { apl } from '@codemirror/legacy-modes/mode/apl';
 import { asciiArmor } from '@codemirror/legacy-modes/mode/asciiarmor';
@@ -23,7 +32,6 @@ import { brainfuck } from '@codemirror/legacy-modes/mode/brainfuck';
 import {
   clike,
   c,
-  csharp,
   scala,
   kotlin,
   shader,
@@ -34,8 +42,7 @@ import {
   ceylon,
   dart,
 } from '@codemirror/legacy-modes/mode/clike';
-import { clojure } from '@codemirror/legacy-modes/mode/clojure';
-import { less } from '@codemirror/legacy-modes/mode/css';
+import { clojure } from '@nextjournal/lang-clojure';
 import { cmake } from '@codemirror/legacy-modes/mode/cmake';
 import { cobol } from '@codemirror/legacy-modes/mode/cobol';
 import { coffeeScript } from '@codemirror/legacy-modes/mode/coffeescript';
@@ -92,7 +99,6 @@ import { r } from '@codemirror/legacy-modes/mode/r';
 // import { rpm } from '@codemirror/legacy-modes/mode/rpm';
 import { ruby } from '@codemirror/legacy-modes/mode/ruby';
 import { sas } from '@codemirror/legacy-modes/mode/sas';
-import { sass } from '@codemirror/legacy-modes/mode/sass';
 import { scheme } from '@codemirror/legacy-modes/mode/scheme';
 import { shell } from '@codemirror/legacy-modes/mode/shell';
 import { sieve } from '@codemirror/legacy-modes/mode/sieve';
@@ -131,8 +137,9 @@ export const langs = {
   asterisk: () => StreamLanguage.define(asterisk),
   // clike: () => StreamLanguage.define(clike),
   c: () => StreamLanguage.define(c),
-  csharp: () => StreamLanguage.define(csharp),
+  csharp: () => csharp(),
   scala: () => StreamLanguage.define(scala),
+  solidity: () => solidity,
   kotlin: () => StreamLanguage.define(kotlin),
   shader: () => StreamLanguage.define(shader),
   nesC: () => StreamLanguage.define(nesC),
@@ -182,7 +189,10 @@ export const langs = {
   puppet: () => StreamLanguage.define(puppet),
   q: () => StreamLanguage.define(q),
   sas: () => StreamLanguage.define(sas),
-  sass: () => StreamLanguage.define(sass),
+  sass: () => sass(),
+  mermaid: () => mermaid(),
+  nix: () => nix(),
+  svelte: () => svelte(),
   sieve: () => StreamLanguage.define(sieve),
   smalltalk: () => StreamLanguage.define(smalltalk),
   solr: () => StreamLanguage.define(solr),
@@ -208,6 +218,8 @@ export const langs = {
   jsx: () => javascript({ jsx: true }),
   typescript: () => javascript({ typescript: true }),
   tsx: () => javascript({ jsx: true, typescript: true }),
+  vue: () => vue(),
+  angular: () => angular(),
   json,
   html,
   css,
@@ -240,11 +252,11 @@ export const langs = {
   ruby: () => StreamLanguage.define(ruby),
   pascal: () => StreamLanguage.define(pascal),
   livescript: () => StreamLanguage.define(liveScript),
-  less: () => StreamLanguage.define(less),
+  less: () => less(),
   scheme: () => StreamLanguage.define(scheme),
   toml: () => StreamLanguage.define(toml),
   vbscript: () => StreamLanguage.define(vbScript),
-  clojure: () => StreamLanguage.define(clojure),
+  clojure: () => clojure(),
   coffeescript: () => StreamLanguage.define(coffeeScript),
   julia: () => StreamLanguage.define(julia),
   dockerfile: () => StreamLanguage.define(dockerFile),

@@ -95,6 +95,10 @@ export default function App() {
 - ~~`@codemirror/legacy-modes/mode/rust`~~ => [`@codemirror/lang-rust`](https://www.npmjs.com/package/@codemirror/lang-rust)
 - ~~`@codemirror/legacy-modes/mode/sql`~~ => [`@codemirror/lang-sql`](https://www.npmjs.com/package/@codemirror/lang-sql)
 - ~~`@codemirror/legacy-modes/mode/xml`~~ => [`@codemirror/lang-xml`](https://www.npmjs.com/package/@codemirror/lang-xml)
+- ~~`@codemirror/legacy-modes/mode/css`~~ => [`@codemirror/lang-less`](https://www.npmjs.com/package/@codemirror/lang-less)
+- ~~`@codemirror/legacy-modes/mode/sass`~~ => [`@codemirror/lang-sass`](https://www.npmjs.com/package/@codemirror/lang-sass)
+- ~~`@codemirror/legacy-modes/mode/clojure`~~ => [`@nextjournal/lang-clojure`](https://www.npmjs.com/package/@nextjournal/lang-clojure)
+- ~~`@codemirror/legacy-modes/mode/clike`~~ => [`@replit/codemirror-lang-csharp`](https://www.npmjs.com/package/@replit/codemirror-lang-csharp)
 
 ## Contributors
 
