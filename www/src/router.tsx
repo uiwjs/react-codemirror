@@ -318,6 +318,10 @@ export const routes: MenuRouteObject[] = [
             ),
           },
           {
+            path: 'data/gruvbox-dark',
+            element: <Navigate to="/theme/data/gruvbox/dark" replace />,
+          },
+          {
             path: 'data/gruvbox/dark',
             label: 'Gruvbox Dark',
             element: (
@@ -362,7 +366,7 @@ export const routes: MenuRouteObject[] = [
             ),
           },
           {
-            path: 'data/noctis/lilac',
+            path: 'data/noctis-lilac',
             label: 'noctis lilac',
             element: (
               <Preview
@@ -424,7 +428,7 @@ export const routes: MenuRouteObject[] = [
             ),
           },
           {
-            path: 'data/tokyo/night',
+            path: 'data/tokyo-night',
             label: 'tokyo night',
             element: (
               <Preview
@@ -434,7 +438,7 @@ export const routes: MenuRouteObject[] = [
             ),
           },
           {
-            path: 'data/tokyo/night/storm',
+            path: 'data/tokyo-night-storm',
             label: 'tokyo night storm',
             element: (
               <Preview
@@ -444,7 +448,7 @@ export const routes: MenuRouteObject[] = [
             ),
           },
           {
-            path: 'data/tokyo/night/day',
+            path: 'data/tokyo-night-day',
             label: 'tokyo night day',
             element: (
               <Preview
@@ -452,6 +456,10 @@ export const routes: MenuRouteObject[] = [
                 path={() => import('@uiw/codemirror-theme-tokyo-night-day/README.md')}
               />
             ),
+          },
+          {
+            path: 'data/vscode',
+            element: <Navigate to="dark" replace />,
           },
           {
             path: 'data/vscode/dark',

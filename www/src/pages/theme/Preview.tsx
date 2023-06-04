@@ -56,8 +56,9 @@ export const Preview: FC<PropsWithChildren<PreviewProps>> = (props) => {
   const { mdData } = useMdData(props.path);
   const childs = Children.toArray(props.children);
   const [previewDoc, setPreviewDoc] = useState(false);
-  const themeName = themePkg?.replace('@uiw/codemirror-theme-', '').replace('-', ' ');
-  const themeExtensionName = themePkg?.replace('@uiw/codemirror-theme-', '') + (!!mode ? `-${mode}` : '');
+  const themePkgNmae = !!mode ? themePkg?.replace(/-(light|dark)$/, '') : themePkg;
+  const themeName = themePkgNmae?.replace('@uiw/codemirror-theme-', '').replace('-', ' ');
+  const themeExtensionName = themePkgNmae?.replace('@uiw/codemirror-theme-', '') + (!!mode ? `-${mode}` : '');
   const extension = themeData[toCamelCase(themeExtensionName) as keyof typeof themeData];
   return (
     <Warpper>

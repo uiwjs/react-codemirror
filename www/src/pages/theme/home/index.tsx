@@ -74,7 +74,10 @@ export function ThemesHome() {
     <Warpper>
       <ThemesWarpper>
         {Object.keys(themeData).map((name, idx) => {
-          const linkName = (toSnakeCase(name) || []).join('/');
+          const linkName = (toSnakeCase(name) || [])
+            .join('-')
+            .replace(/-light$/, '/light')
+            .replace(/-dark$/, '/dark');
           return (
             <Link key={idx} to={`/theme/data/${linkName}`}>
               <ThemeCard>
