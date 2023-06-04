@@ -1,6 +1,6 @@
-import { FC, PropsWithChildren } from 'react';
+import { FC, PropsWithChildren, useState } from 'react';
+import { Link } from 'react-router-dom';
 import CodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
-import { useState } from 'react';
 import * as themes from '@uiw/codemirror-themes-all';
 import { langs } from '@uiw/codemirror-extensions-langs';
 import styled from 'styled-components';
@@ -42,6 +42,8 @@ export const ThemesAllExample: FC<PropsWithChildren<{ source?: string }>> = ({ s
             return <option key={index}>{keyname}</option>;
           })}
         </select>
+        <br />
+        <Link to="/theme/home">All Theme Example</Link>
       </ToolsWapper>
     </PageWarpper>
   );

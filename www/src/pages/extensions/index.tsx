@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const PageWarpper = styled.div`
   flex: 1;
   max-width: 980px;
-  padding: 20px 20px 100px 20px;
+  padding: 20px 20px 30px 20px;
 `;
 
 export const Content = styled.div`

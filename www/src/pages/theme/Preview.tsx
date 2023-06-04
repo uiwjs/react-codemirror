@@ -11,6 +11,7 @@ interface PreviewProps {
   path?: any;
   themePkg?: string;
   mode?: 'light' | 'dark';
+  preview?: 'document' | 'example';
 }
 
 export const Content = styled.div`
@@ -55,7 +56,7 @@ export const Preview: FC<PropsWithChildren<PreviewProps>> = (props) => {
   const { themePkg, mode } = props;
   const { mdData } = useMdData(props.path);
   const childs = Children.toArray(props.children);
-  const [previewDoc, setPreviewDoc] = useState(false);
+  const [previewDoc, setPreviewDoc] = useState<PreviewProps['preview']>(props.preview || 'example');
   const themePkgNmae = !!mode ? themePkg?.replace(/-(light|dark)$/, '') : themePkg;
   const themeName = themePkgNmae?.replace('@uiw/codemirror-theme-', '').replace('-', ' ');
   const themeExtensionName = themePkgNmae?.replace('@uiw/codemirror-theme-', '') + (!!mode ? `-${mode}` : '');
@@ -67,8 +68,8 @@ export const Preview: FC<PropsWithChildren<PreviewProps>> = (props) => {
           <Header>
             <Title>{themeName} Theme</Title>
             <div>
-              <Button onClick={() => setPreviewDoc(!previewDoc)}>
-                {previewDoc ? 'Preview Theme Example' : 'Preview Document'}
+              <Button onClick={() => setPreviewDoc(previewDoc === 'document' ? 'example' : 'document')}>
+                {previewDoc === 'document' ? 'Preview Theme Example' : 'Preview Document'}
               </Button>
             </div>
             <PreCode value={`npm install ${themePkg} --save`} />
@@ -77,8 +78,8 @@ export const Preview: FC<PropsWithChildren<PreviewProps>> = (props) => {
         {childs.map((child, key) => {
           return cloneElement(child as any, { key, source: mdData?.source });
         })}
-        {mdData && (previewDoc || !themePkg) && <Markdown source={mdData.source} mdData={mdData} />}
-        {!previewDoc && themePkg && themeExtensionName && <Sample theme={extension} />}
+        {mdData && (previewDoc === 'document' || !themePkg) && <Markdown source={mdData.source} mdData={mdData} />}
+        {previewDoc === 'example' && themePkg && themeExtensionName && <Sample theme={extension} />}
       </Content>
     </Warpper>
   );

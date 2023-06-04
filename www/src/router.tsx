@@ -168,6 +168,10 @@ export const routes: MenuRouteObject[] = [
             element: <Navigate to="home" replace />,
           },
           {
+            path: 'all',
+            element: <Navigate to="/theme/home" replace />,
+          },
+          {
             path: 'home',
             label: 'Home',
             Component: ThemesHome,
@@ -180,7 +184,11 @@ export const routes: MenuRouteObject[] = [
             path: 'doc',
             label: 'Document',
             element: (
-              <Preview themePkg="@uiw/codemirror-themes" path={() => import('@uiw/codemirror-themes/README.md')} />
+              <Preview
+                preview="document"
+                themePkg="@uiw/codemirror-themes"
+                path={() => import('@uiw/codemirror-themes/README.md')}
+              />
             ),
           },
           {
