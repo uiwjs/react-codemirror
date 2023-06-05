@@ -17,6 +17,7 @@ npm install @uiw/codemirror-theme-eclipse --save
 ```
 
 ```jsx
+import { defaultSettingsEclipse } from '@uiw/codemirror-theme-eclipse';
 import { eclipse, eclipseInit } from '@uiw/codemirror-theme-eclipse';
 
 <CodeMirror theme={eclipse} />

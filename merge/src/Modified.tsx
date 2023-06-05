@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import { EditorStateConfig, Extension, StateEffect, Annotation } from '@codemirror/state';
-import { getDefaultExtensions } from '@uiw/react-codemirror';
+import { getDefaultExtensions, DefaultExtensionsOptions } from '@uiw/react-codemirror';
 import { EditorView, ViewUpdate } from '@codemirror/view';
 import { useStore } from './store';
 
 const External = Annotation.define<boolean>();
 
-export interface ModifiedProps extends Omit<EditorStateConfig, 'doc'> {
+export interface ModifiedProps extends Omit<DefaultExtensionsOptions, 'theme'>, Omit<EditorStateConfig, 'doc'> {
   value?: EditorStateConfig['doc'];
   extensions?: Extension[];
   /** Fired whenever a change occurs to the document. */
@@ -14,9 +14,9 @@ export interface ModifiedProps extends Omit<EditorStateConfig, 'doc'> {
 }
 
 export const Modified = (props: ModifiedProps): JSX.Element | null => {
-  const { extensions = [], onChange } = props;
-  const { modified, view, dispatch } = useStore();
-  const defaultExtensions = getDefaultExtensions();
+  const { extensions = [], selection, onChange, ...otherOption } = props;
+  const { modified, view, theme, dispatch } = useStore();
+  const defaultExtensions = getDefaultExtensions({ ...otherOption, theme });
   const updateListener = EditorView.updateListener.of((vu: ViewUpdate) => {
     if (
       vu.docChanged &&
@@ -34,8 +34,13 @@ export const Modified = (props: ModifiedProps): JSX.Element | null => {
   const data: EditorStateConfig = { extensions: [...extensionsData] };
 
   useEffect(() => {
-    dispatch!({ modified: { doc: props.value, selection: props.selection, ...data } });
+    dispatch!({
+      modified: { doc: props.value, selection: selection, ...data },
+      modifiedExtension: [updateListener, extensions],
+    });
   }, []);
+
+  useEffect(() => dispatch!({ modifiedExtension: [updateListener, extensions] }), [extensions]);
 
   useEffect(() => {
     if (modified?.doc !== props.value && view) {
@@ -45,16 +50,16 @@ export const Modified = (props: ModifiedProps): JSX.Element | null => {
       if (modifiedDoc !== props.value) {
         view.b.dispatch({
           changes: { from: 0, to: (modifiedDoc || '').length, insert: props.value || '' },
-          effects: StateEffect.appendConfig.of([...extensionsData]),
+          effects: StateEffect.reconfigure.of([...extensionsData]),
           annotations: [External.of(true)],
         });
       }
     }
-    if (modified?.selection !== props.selection) {
-      data.selection = props.selection;
+    if (modified?.selection !== selection) {
+      data.selection = selection;
       dispatch!({ modified: { ...modified, ...data } });
     }
-  }, [props.value, extensions, props.selection, view]);
+  }, [props.value, extensions, selection, view]);
 
   return null;
 };

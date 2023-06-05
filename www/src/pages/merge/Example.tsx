@@ -3,8 +3,8 @@ import CodeMirrorMerge, { CodeMirrorMergeProps } from 'react-codemirror-merge';
 import { EditorView } from 'codemirror';
 import { EditorState } from '@codemirror/state';
 import { langs } from '@uiw/codemirror-extensions-langs';
-
 import { originalCode, modifiedCode } from './code';
+import { useTheme } from '../../utils/useTheme';
 
 const Original = CodeMirrorMerge.Original;
 const Modified = CodeMirrorMerge.Modified;
@@ -15,6 +15,7 @@ export const MergeExample = () => {
   const [highlightChanges, setHighlightChanges] = useState<CodeMirrorMergeProps['highlightChanges']>(true);
   const [gutter, setGutter] = useState<CodeMirrorMergeProps['gutter']>(true);
   const [collapseUnchanged, setCollapseUnchanged] = useState<CodeMirrorMergeProps['collapseUnchanged']>({});
+  const { theme } = useTheme();
   const handleOrientation = (evn: React.ChangeEvent<HTMLSelectElement>) => {
     setOrientation(evn.target.value as CodeMirrorMergeProps['orientation']);
   };
@@ -27,6 +28,7 @@ export const MergeExample = () => {
         highlightChanges={highlightChanges}
         gutter={gutter}
         style={{ height: 300, overflow: 'auto' }}
+        theme={theme}
       >
         <Original value={originalCode} extensions={[langs.javascript()]} />
         <Modified

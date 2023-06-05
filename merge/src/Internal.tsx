@@ -1,15 +1,19 @@
-import React, { useEffect, useImperativeHandle, useMemo, useRef, memo } from 'react';
-import { EditorStateConfig, Extension, StateEffect, Annotation } from '@codemirror/state';
-import { MergeView, MergeConfig } from '@codemirror/merge';
+import React, { useEffect, useImperativeHandle, useRef } from 'react';
+import { EditorStateConfig } from '@codemirror/state';
+import { getDefaultExtensions } from '@uiw/react-codemirror';
+import { MergeView, MergeConfig, DirectMergeConfig } from '@codemirror/merge';
 import { useStore } from './store';
 import { CodeMirrorMergeProps } from './';
 
 export interface InternalRef {
   container?: HTMLDivElement | null;
   view?: MergeView;
+  original?: EditorStateConfig;
+  modified?: EditorStateConfig;
+  config?: DirectMergeConfig;
 }
 
-export const Internal = React.forwardRef((props: CodeMirrorMergeProps, ref?: React.ForwardedRef<InternalRef>) => {
+export const Internal = React.forwardRef<InternalRef, CodeMirrorMergeProps>((props, ref) => {
   const {
     className,
     children,
@@ -21,19 +25,48 @@ export const Internal = React.forwardRef((props: CodeMirrorMergeProps, ref?: Rea
     renderRevertControl,
     ...elmProps
   } = props;
-  const { modified, original, view, dispatch, ...otherStore } = useStore();
+  const { modified, modifiedExtension, original, originalExtension, theme, view, dispatch, ...otherStore } = useStore();
   const editor = useRef<HTMLDivElement>(null);
-  useImperativeHandle(ref, () => ({ container: editor.current, view }), [editor, view]);
+  const opts = { orientation, revertControls, highlightChanges, gutter, collapseUnchanged, renderRevertControl };
+
+  useImperativeHandle(
+    ref,
+    () => ({
+      container: editor.current,
+      view,
+      modified,
+      original,
+      config: {
+        a: original!,
+        b: modified!,
+        parent: editor.current!,
+        ...opts,
+      },
+    }),
+    [editor, view, modified, original, opts],
+  );
+
+  useEffect(() => {
+    if (view && original && modified && theme && editor.current && dispatch) {
+      editor.current.innerHTML = '';
+      new MergeView({
+        a: { ...original, extensions: [...(originalExtension || []), ...getDefaultExtensions({ theme: theme })] },
+        b: { ...modified, extensions: [...(modifiedExtension || []), ...getDefaultExtensions({ theme: theme })] },
+        parent: editor.current,
+        ...opts,
+      });
+    }
+  }, [theme, editor.current, original, modified, originalExtension, modifiedExtension]);
+
   useEffect(() => {
     if (!view && editor.current && original?.extensions && modified?.extensions) {
-      const opts = { orientation, revertControls, highlightChanges, gutter, collapseUnchanged, renderRevertControl };
       const viewDefault = new MergeView({
         a: original,
         b: modified,
         parent: editor.current,
         ...opts,
       });
-      dispatch && dispatch({ view: viewDefault, ...opts });
+      dispatch && dispatch({ view: viewDefault, container: editor.current, ...opts });
     }
   }, [editor.current, original, modified, view]);
 

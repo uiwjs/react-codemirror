@@ -4,15 +4,19 @@ import { basicSetup, BasicSetupOptions } from '@uiw/codemirror-extensions-basic-
 import { EditorView, keymap, placeholder } from '@codemirror/view';
 import { oneDark } from '@codemirror/theme-one-dark';
 import { EditorState } from '@codemirror/state';
+import { defaultLightThemeOption } from './theme/light';
 
-export type DefaultExtensionsOptions = {
+export * from '@codemirror/theme-one-dark';
+export * from './theme/light';
+
+export interface DefaultExtensionsOptions {
   indentWithTab?: boolean;
   basicSetup?: boolean | BasicSetupOptions;
   placeholder?: string | HTMLElement;
   theme?: 'light' | 'dark' | 'none' | Extension;
   readOnly?: boolean;
   editable?: boolean;
-};
+}
 
 export const getDefaultExtensions = (optios: DefaultExtensionsOptions = {}): Extension[] => {
   const {
@@ -24,16 +28,6 @@ export const getDefaultExtensions = (optios: DefaultExtensionsOptions = {}): Ext
     basicSetup: defaultBasicSetup = true,
   } = optios;
   const getExtensions: Extension[] = [];
-  const defaultLightThemeOption = EditorView.theme(
-    {
-      '&': {
-        backgroundColor: '#fff',
-      },
-    },
-    {
-      dark: false,
-    },
-  );
   if (defaultIndentWithTab) {
     getExtensions.unshift(keymap.of([indentWithTab]));
   }

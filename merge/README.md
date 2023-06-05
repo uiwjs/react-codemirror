@@ -46,10 +46,44 @@ export const Example = () => {
 };
 ```
 
+## Theme
+
+```jsx
+import { useState } from 'react';
+import CodeMirrorMerge from 'react-codemirror-merge';
+import { EditorView } from 'codemirror';
+import { EditorState } from '@codemirror/state';
+
+const Original = CodeMirrorMerge.Original;
+const Modified = CodeMirrorMerge.Modified;
+let doc = `one
+two
+three
+four
+five`;
+
+export const Example = () => {
+  const [theme, setTheme] = useState('light');
+  return (
+    <CodeMirrorMerge orientation="b-a" theme={theme}>
+      <Original value={doc} />
+      <Modified
+        value={doc.replace(/t/g, 'T') + 'Six'}
+        extensions={[EditorView.editable.of(false), EditorState.readOnly.of(true)]}
+      />
+    </CodeMirrorMerge>
+  );
+};
+```
+
 ## Props
 
 ```ts
-export interface CodeMirrorMergeProps extends React.HTMLAttributes<HTMLDivElement>, MergeConfig {}
+import { Extension } from '@codemirror/state';
+export interface CodeMirrorMergeRef extends InternalRef {}
+export interface CodeMirrorMergeProps extends React.HTMLAttributes<HTMLDivElement>, MergeConfig {
+  theme?: 'light' | 'dark' | 'none' | Extension;
+}
 
 interface MergeConfig {
   /**
@@ -92,7 +126,7 @@ interface MergeConfig {
 ## Modified Props
 
 ```ts
-interface ModifiedProps {
+interface ModifiedProps extends Omit<DefaultExtensionsOptions, 'theme'> {
   /**
   The initial document. Defaults to an empty document. Can be
   provided either as a plain string (which will be split into
@@ -119,12 +153,25 @@ interface ModifiedProps {
   /** Fired whenever a change occurs to the document. */
   onChange?(value: string, viewUpdate: ViewUpdate): void;
 }
+
+import { Extension } from '@codemirror/state';
+import { BasicSetupOptions } from '@uiw/codemirror-extensions-basic-setup';
+import { DefaultExtensionsOptions } from '@uiw/react-codemirror';
+
+export interface DefaultExtensionsOptions {
+  indentWithTab?: boolean;
+  basicSetup?: boolean | BasicSetupOptions;
+  placeholder?: string | HTMLElement;
+  theme?: 'light' | 'dark' | 'none' | Extension;
+  readOnly?: boolean;
+  editable?: boolean;
+}
 ```
 
 ## Original Props
 
 ```ts
-interface OriginalProps {
+interface OriginalProps extends Omit<DefaultExtensionsOptions, 'theme'> {
   /**
   The initial document. Defaults to an empty document. Can be
   provided either as a plain string (which will be split into
@@ -150,6 +197,19 @@ interface OriginalProps {
   extensions?: Extension;
   /** Fired whenever a change occurs to the document. */
   onChange?(value: string, viewUpdate: ViewUpdate): void;
+}
+
+import { Extension } from '@codemirror/state';
+import { BasicSetupOptions } from '@uiw/codemirror-extensions-basic-setup';
+import { DefaultExtensionsOptions } from '@uiw/react-codemirror';
+
+export interface DefaultExtensionsOptions {
+  indentWithTab?: boolean;
+  basicSetup?: boolean | BasicSetupOptions;
+  placeholder?: string | HTMLElement;
+  theme?: 'light' | 'dark' | 'none' | Extension;
+  readOnly?: boolean;
+  editable?: boolean;
 }
 ```
 
