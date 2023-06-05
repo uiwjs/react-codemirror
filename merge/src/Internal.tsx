@@ -50,8 +50,20 @@ export const Internal = React.forwardRef<InternalRef, CodeMirrorMergeProps>((pro
     if (view && original && modified && theme && editor.current && dispatch) {
       editor.current.innerHTML = '';
       new MergeView({
-        a: { ...original, extensions: [...(originalExtension || []), ...getDefaultExtensions({ theme: theme })] },
-        b: { ...modified, extensions: [...(modifiedExtension || []), ...getDefaultExtensions({ theme: theme })] },
+        a: {
+          ...original,
+          extensions: [
+            ...(originalExtension?.extension || []),
+            ...getDefaultExtensions({ ...originalExtension?.option, theme }),
+          ],
+        },
+        b: {
+          ...modified,
+          extensions: [
+            ...(modifiedExtension?.extension || []),
+            ...getDefaultExtensions({ ...modifiedExtension?.option, theme }),
+          ],
+        },
         parent: editor.current,
         ...opts,
       });

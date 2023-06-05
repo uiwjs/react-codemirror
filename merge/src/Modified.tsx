@@ -14,9 +14,10 @@ export interface ModifiedProps extends Omit<DefaultExtensionsOptions, 'theme'>, 
 }
 
 export const Modified = (props: ModifiedProps): JSX.Element | null => {
-  const { extensions = [], selection, onChange, ...otherOption } = props;
+  const { extensions = [], value, selection, onChange, ...otherOption } = props;
   const { modified, view, theme, dispatch } = useStore();
-  const defaultExtensions = getDefaultExtensions({ ...otherOption, theme });
+  const defaultExtensionsOptions = { ...otherOption };
+  const defaultExtensions = getDefaultExtensions({ ...defaultExtensionsOptions, theme });
   const updateListener = EditorView.updateListener.of((vu: ViewUpdate) => {
     if (
       vu.docChanged &&
@@ -26,8 +27,8 @@ export const Modified = (props: ModifiedProps): JSX.Element | null => {
       !vu.transactions.some((tr) => tr.annotation(External))
     ) {
       const doc = vu.state.doc;
-      const value = doc.toString();
-      onChange(value, vu);
+      const val = doc.toString();
+      onChange(val, vu);
     }
   });
   const extensionsData = [updateListener, ...defaultExtensions, ...extensions];
@@ -35,31 +36,40 @@ export const Modified = (props: ModifiedProps): JSX.Element | null => {
 
   useEffect(() => {
     dispatch!({
-      modified: { doc: props.value, selection: selection, ...data },
-      modifiedExtension: [updateListener, extensions],
+      modified: { doc: value, selection: selection, ...data },
+      modifiedExtension: {
+        option: defaultExtensionsOptions,
+        extension: [updateListener, extensions],
+      },
     });
   }, []);
 
-  useEffect(() => dispatch!({ modifiedExtension: [updateListener, extensions] }), [extensions]);
+  useEffect(
+    () =>
+      dispatch!({
+        modifiedExtension: { option: otherOption, extension: [updateListener, extensions] },
+      }),
+    [props],
+  );
 
   useEffect(() => {
-    if (modified?.doc !== props.value && view) {
-      data.doc = props.value;
-      dispatch!({ modified: { ...modified, ...data } });
+    if (modified?.doc !== value && view) {
+      data.doc = value;
       const modifiedDoc = view?.b.state.doc.toString();
-      if (modifiedDoc !== props.value) {
+      if (modifiedDoc !== value) {
         view.b.dispatch({
-          changes: { from: 0, to: (modifiedDoc || '').length, insert: props.value || '' },
+          changes: { from: 0, to: (modifiedDoc || '').length, insert: value || '' },
           effects: StateEffect.reconfigure.of([...extensionsData]),
           annotations: [External.of(true)],
         });
       }
+      dispatch!({ modified: { ...modified, ...data } });
     }
     if (modified?.selection !== selection) {
       data.selection = selection;
       dispatch!({ modified: { ...modified, ...data } });
     }
-  }, [props.value, extensions, selection, view]);
+  }, [value, extensions, selection, view]);
 
   return null;
 };

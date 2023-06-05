@@ -76,6 +76,33 @@ export const Example = () => {
 };
 ```
 
+```jsx
+import React, { useState } from 'react';
+import CodeMirrorMerge from 'react-codemirror-merge';
+import { EditorView } from '@codemirror/view';
+import { javascript } from '@codemirror/lang-javascript';
+import { githubLight, githubDark } from '@uiw/codemirror-theme-github';
+
+const Original = CodeMirrorMerge.Original;
+const Modified = CodeMirrorMerge.Modified;
+let doc = `function examle() {
+
+}`;
+
+function Example() {
+  const [theme, setTheme] = useState('light');
+  return (
+    <div>
+      <CodeMirrorMerge theme={theme === 'light' ? githubLight : githubDark} orientation="a-b">
+        <Original extensions={[javascript({ jsx: true }), EditorView.lineWrapping]} value={doc} />
+        <Modified extensions={[EditorView.lineWrapping, javascript({ jsx: true })]} value={doc.replace(/e/g, 'T')} />
+      </CodeMirrorMerge>
+      <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>Change Theme {theme}</button>
+    </div>
+  );
+}
+```
+
 ## Props
 
 ```ts

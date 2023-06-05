@@ -2,15 +2,22 @@ import React, { PropsWithChildren, createContext, useContext, useEffect, useRedu
 import { EditorStateConfig } from '@codemirror/state';
 import { MergeView, MergeConfig } from '@codemirror/merge';
 import { Extension } from '@codemirror/state';
+import { DefaultExtensionsOptions } from '@uiw/react-codemirror';
 
 export interface StoreContextValue extends InitialState {
   dispatch?: React.Dispatch<InitialState>;
 }
 
 export interface InitialState extends MergeConfig {
-  modifiedExtension?: Extension[];
+  modifiedExtension?: {
+    option: Omit<DefaultExtensionsOptions, 'theme'>;
+    extension: Extension[];
+  };
   modified?: EditorStateConfig;
-  originalExtension?: Extension[];
+  originalExtension?: {
+    option: Omit<DefaultExtensionsOptions, 'theme'>;
+    extension: Extension[];
+  };
   original?: EditorStateConfig;
   view?: MergeView;
   theme?: 'light' | 'dark' | 'none' | Extension;
