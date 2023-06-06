@@ -39,37 +39,42 @@ export const Sample: FC<PropsWithoutRef<SampleProps>> = ({ theme, ...props }) =>
   return (
     <Warpper {...props}>
       <Title>JavaScript</Title>
-      <CodeMirror value={jsStr} height="300px" theme={theme} extensions={[color, langs.javascript()]} />
+      <CodeMirror value={jsStr} height="300px !important" theme={theme} extensions={[color, langs.javascript()]} />
       <Title>JSX</Title>
-      <CodeMirror value={jsxStr} height="300px" theme={theme} extensions={[color, langs.jsx()]} />
+      <CodeMirror value={jsxStr} height="300px !important" theme={theme} extensions={[color, langs.jsx()]} />
       <Title>TypeScript</Title>
-      <CodeMirror value={typescriptStr} height="300px" theme={theme} extensions={[color, langs.typescript()]} />
+      <CodeMirror
+        value={typescriptStr}
+        height="300px !important"
+        theme={theme}
+        extensions={[color, langs.typescript()]}
+      />
       <Title>TSX</Title>
-      <CodeMirror value={tsxStr} height="300px" theme={theme} extensions={[color, langs.tsx()]} />
+      <CodeMirror value={tsxStr} height="300px !important" theme={theme} extensions={[color, langs.tsx()]} />
       <Title>JSON</Title>
-      <CodeMirror value={jsonStr} height="300px" theme={theme} extensions={[color, langs.json()]} />
+      <CodeMirror value={jsonStr} height="300px !important" theme={theme} extensions={[color, langs.json()]} />
       <Title>HTML</Title>
-      <CodeMirror value={htmlStr} height="300px" theme={theme} extensions={[color, langs.html()]} />
+      <CodeMirror value={htmlStr} height="300px !important" theme={theme} extensions={[color, langs.html()]} />
       <Title>Markdown</Title>
-      <CodeMirror value={markdownStr} height="300px" theme={theme} extensions={[color, langs.markdown()]} />
+      <CodeMirror value={markdownStr} height="300px !important" theme={theme} extensions={[color, langs.markdown()]} />
       <Title>CSS</Title>
-      <CodeMirror value={cssStr} height="300px" theme={theme} extensions={[color, langs.css()]} />
+      <CodeMirror value={cssStr} height="300px !important" theme={theme} extensions={[color, langs.css()]} />
       <Title>PHP</Title>
-      <CodeMirror value={phpStr} height="300px" theme={theme} extensions={[color, langs.php()]} />
+      <CodeMirror value={phpStr} height="300px !important" theme={theme} extensions={[color, langs.php()]} />
       <Title>JAVA</Title>
-      <CodeMirror value={javaStr} height="300px" theme={theme} extensions={[color, langs.java()]} />
+      <CodeMirror value={javaStr} height="300px !important" theme={theme} extensions={[color, langs.java()]} />
       <Title>Rust</Title>
-      <CodeMirror value={rustStr} height="300px" theme={theme} extensions={[color, langs.rust()]} />
+      <CodeMirror value={rustStr} height="300px !important" theme={theme} extensions={[color, langs.rust()]} />
       <Title>Go</Title>
-      <CodeMirror value={goStr} height="300px" theme={theme} extensions={[color, langs.go()]} />
+      <CodeMirror value={goStr} height="300px !important" theme={theme} extensions={[color, langs.go()]} />
       <Title>MySQL</Title>
-      <CodeMirror value={mysqlStr} height="300px" theme={theme} extensions={[color, langs.mysql()]} />
+      <CodeMirror value={mysqlStr} height="300px !important" theme={theme} extensions={[color, langs.mysql()]} />
       <Title>Python</Title>
-      <CodeMirror value={pythonStr} height="300px" theme={theme} extensions={[color, langs.python()]} />
+      <CodeMirror value={pythonStr} height="300px !important" theme={theme} extensions={[color, langs.python()]} />
       <Title>Shell</Title>
-      <CodeMirror value={shellStr} height="300px" theme={theme} extensions={[color, langs.shell()]} />
+      <CodeMirror value={shellStr} height="300px !important" theme={theme} extensions={[color, langs.shell()]} />
       <Title>Swift</Title>
-      <CodeMirror value={swiftStr} height="300px" theme={theme} extensions={[color, langs.swift()]} />
+      <CodeMirror value={swiftStr} height="300px !important" theme={theme} extensions={[color, langs.swift()]} />
     </Warpper>
   );
 };

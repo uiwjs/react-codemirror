@@ -22,7 +22,7 @@ export const ZebraStripesExample: FC<PropsWithChildren<{ source?: string }>> = (
       <CodeMirror
         value={source}
         theme={theme}
-        height="300px"
+        height="300px !important"
         style={{ margin: '0 0 23px 0' }}
         extensions={[langs.markdown(), zebra]}
       />
@@ -39,7 +39,7 @@ export const ZebraStripesExample: FC<PropsWithChildren<{ source?: string }>> = (
       <CodeMirror
         value={source}
         theme={theme}
-        height="300px"
+        height="300px !important"
         style={{ margin: '0 0 23px 0' }}
         extensions={[
           langs.markdown(),

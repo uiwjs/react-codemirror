@@ -81,7 +81,7 @@ export function ThemeEditor() {
     selectionMatch: '#D6D6D6',
     gutterBackground: '#FFFFFF',
     gutterForeground: '#4D4D4C',
-    gutterBorder: '#ddd',
+    gutterBorder: '#dddddd',
     gutterActiveForeground: '',
     lineHighlight: '#EFEFEF',
   });
@@ -220,7 +220,7 @@ export function ThemeEditor() {
             theme={myTheme}
             extensions={[extension, color]}
             value={lang === 'code' ? themeCode({ ...settings, ...styles, dark: theme }) : code}
-            height="100%"
+            height="100% !important"
             style={{ minHeight: '100%' }}
           />
         )}

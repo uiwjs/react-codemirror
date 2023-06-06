@@ -38,7 +38,7 @@ export const BasicSetupExample = (props: BasicSetupExampleProps) => {
         value={props.source}
         theme={theme}
         basicSetup={basicSetup}
-        height="300px"
+        height="300px !important"
         style={{ margin: '0 0 23px 0' }}
         extensions={[langs.markdown()]}
       />

@@ -58,7 +58,7 @@ export const MentionsExample: FC<PropsWithChildren<{ source?: string }>> = ({ so
       <CodeMirror
         value={source}
         theme={theme}
-        height="300px"
+        height="300px !important"
         style={{ margin: '0 0 23px 0' }}
         extensions={[langs.markdown(), mentions(users)]}
       />

@@ -21,7 +21,7 @@ export const EventsExample: FC<PropsWithChildren<{ source?: string }>> = ({ sour
       <CodeMirror
         value={source}
         theme={theme}
-        height="200px"
+        height="200px !important"
         style={{ margin: '0 0 23px 0' }}
         extensions={[
           langs.markdown(),

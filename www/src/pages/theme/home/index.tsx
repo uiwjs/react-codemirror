@@ -84,7 +84,7 @@ export function ThemesHome() {
                 <Title>{toTitleCase(name)}</Title>
                 <CodeEditor
                   value={codeString}
-                  height="165px"
+                  height="165px !important"
                   theme={themeData[name as keyof typeof themeData]}
                   extensions={[color, langs.jsx()]}
                 />

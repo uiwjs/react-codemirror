@@ -33,7 +33,7 @@ export const LangsExample: FC<PropsWithChildren<{ source?: string }>> = (props) 
       <CodeMirror
         value={source}
         theme={theme}
-        height="300px"
+        height="300px !important"
         style={{ margin: '0 0 23px 0' }}
         extensions={[loadLanguage(language)!].filter(Boolean)}
       />

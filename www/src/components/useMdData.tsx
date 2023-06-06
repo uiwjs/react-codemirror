@@ -12,11 +12,6 @@ export const useMdData = (path: MdDataHandle) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const $main = document.getElementsByTagName('main') as HTMLCollectionOf<HTMLDivElement>;
-    $main[0] && $main[0].scrollTo(0, 0);
-  }, [path]);
-
-  useEffect(() => {
     setLoading(() => true);
     const getMd = async () => {
       try {

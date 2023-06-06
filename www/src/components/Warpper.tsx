@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import BackToUp from '@uiw/react-back-to-top';
 import { useRef, useState, useEffect, FC, PropsWithChildren } from 'react';
+import { ScrollRestoration } from 'react-router-dom';
 
 const Container = styled.div`
   width: 100%;
@@ -20,6 +21,7 @@ export const Warpper: FC<PropsWithChildren<{}>> = (props) => {
       <BackToUp element={element} style={{ position: 'fixed' }}>
         Top
       </BackToUp>
+      <ScrollRestoration />
     </Container>
   );
 };

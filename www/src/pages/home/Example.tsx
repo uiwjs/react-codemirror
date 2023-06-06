@@ -90,7 +90,7 @@ export default function Example() {
     <Warpper className="wmde-markdown-var">
       <CodemirrorWarpper
         value={code}
-        height={height}
+        height={`${height} !important`}
         theme={alls[theme as keyof typeof alls] || theme}
         editable={editable}
         extensions={extensions}

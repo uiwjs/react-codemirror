@@ -11,7 +11,7 @@ export const PageExample431 = () => {
       <CodeMirror
         value={`console.log('hello')`}
         theme="none"
-        height="400px"
+        height="400px !important"
         width="100%"
         style={{ margin: '0 0 23px 0', flex: 1 }}
         extensions={[langs.markdown()]}

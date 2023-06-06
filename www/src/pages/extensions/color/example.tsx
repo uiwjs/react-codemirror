@@ -23,7 +23,7 @@ export const ColorExample = () => {
       <CodeMirror
         value={codeSample}
         theme={theme}
-        height="400px"
+        height="400px !important"
         // editable={readOnly}
         // readOnly={readOnly}
         {...porps}
