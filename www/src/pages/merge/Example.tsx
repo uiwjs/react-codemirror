@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useRef, useState } from 'react';
 import CodeMirrorMerge, { CodeMirrorMergeProps } from 'react-codemirror-merge';
 import { EditorView } from 'codemirror';
 import { EditorState } from '@codemirror/state';
@@ -19,8 +19,16 @@ export const MergeExample = () => {
   const handleOrientation = (evn: React.ChangeEvent<HTMLSelectElement>) => {
     setOrientation(evn.target.value as CodeMirrorMergeProps['orientation']);
   };
+  const [originalValue, setOriginalValue] = useState(originalCode);
+  const random = useRef<number>();
+  const click = () => {
+    random.current = Math.floor(Math.random() * 101);
+    const code = '// hello world' + random.current + '\n' + originalCode;
+    setOriginalValue(code);
+  };
   return (
     <Fragment>
+      <button onClick={click}>Change Original Value {random.current}</button>
       <CodeMirrorMerge
         orientation={orientation}
         revertControls={revertControls}
@@ -30,7 +38,13 @@ export const MergeExample = () => {
         style={{ height: 300, overflow: 'auto' }}
         theme={theme}
       >
-        <Original value={originalCode} extensions={[langs.javascript()]} />
+        <Original
+          value={originalValue}
+          extensions={[langs.javascript()]}
+          onChange={(val) => {
+            // console.log('::::::::::', val)
+          }}
+        />
         <Modified
           value={modifiedCode}
           extensions={[langs.javascript(), EditorView.editable.of(false), EditorState.readOnly.of(true)]}

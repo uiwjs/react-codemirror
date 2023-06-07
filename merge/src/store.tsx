@@ -1,7 +1,7 @@
 import React, { PropsWithChildren, createContext, useContext, useEffect, useReducer } from 'react';
-import { EditorStateConfig } from '@codemirror/state';
+import { EditorStateConfig, Extension } from '@codemirror/state';
+import { ViewUpdate } from '@codemirror/view';
 import { MergeView, MergeConfig } from '@codemirror/merge';
-import { Extension } from '@codemirror/state';
 import { DefaultExtensionsOptions } from '@uiw/react-codemirror';
 
 export interface StoreContextValue extends InitialState {
@@ -12,11 +12,15 @@ export interface InitialState extends MergeConfig {
   modifiedExtension?: {
     option: Omit<DefaultExtensionsOptions, 'theme'>;
     extension: Extension[];
+    /** Fired whenever a change occurs to the document. */
+    onChange?(value: string, viewUpdate: ViewUpdate): void;
   };
   modified?: EditorStateConfig;
   originalExtension?: {
     option: Omit<DefaultExtensionsOptions, 'theme'>;
     extension: Extension[];
+    /** Fired whenever a change occurs to the document. */
+    onChange?(value: string, viewUpdate: ViewUpdate): void;
   };
   original?: EditorStateConfig;
   view?: MergeView;
