@@ -48,6 +48,9 @@ export function useCodeMirror(props: UseCodeMirror) {
       minWidth,
       maxWidth,
     },
+    '& .cm-scroller': {
+      height: '100% !important',
+    },
   });
   const updateListener = EditorView.updateListener.of((vu: ViewUpdate) => {
     if (
