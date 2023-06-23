@@ -14,6 +14,10 @@ Hyper link Extensions for CodeMirror6.
 npm install @uiw/codemirror-extensions-hyper-link --save
 ```
 
+```jsx
+import { hyperLink, hyperLinkExtension, hyperLinkStyle } from '@uiw/codemirror-extensions-hyper-link';
+```
+
 ## Usage
 
 ```jsx
@@ -34,6 +38,38 @@ import { EditorState } from '@codemirror/state';
 import { hyperLink } from '@uiw/codemirror-extensions-hyper-link';
 
 const code = `https://uiwjs.github.io/react-codemirror`;
+
+const state = EditorState.create({
+  doc: code,
+  extensions: [hyperLink],
+});
+
+const view = new EditorView({
+  parent: document.querySelector('#editor'),
+  state,
+});
+```
+
+Custom match content
+
+```tsx
+import { EditorView } from '@codemirror/view';
+import { EditorState } from '@codemirror/state';
+import { hyperLinkExtension, hyperLinkStyle } from '@uiw/codemirror-extensions-hyper-link';
+
+const code = `Hyper Link\n====`;
+
+export const hyperLink: Extension = [
+  hyperLinkExtension({
+    regexp: /Hyper/gi,
+    match: { Hyper: 'https://google.com' },
+    handle: (value) => {
+      if (value === 'Hyper') return 'https://google.com';
+      return value;
+    },
+  }),
+  hyperLinkStyle,
+];
 
 const state = EditorState.create({
   doc: code,
