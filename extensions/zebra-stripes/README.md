@@ -4,23 +4,23 @@
 
 <!--rehype:ignore:end-->
 
-[![npm version](https://img.shields.io/npm/v/@uiw/codemirror-extensions-mentions.svg)](https://www.npmjs.com/package/@uiw/codemirror-extensions-mentions)
+[![npm version](https://img.shields.io/npm/v/@uiw/codemirror-extensions-zebra-stripes.svg)](https://www.npmjs.com/package/@uiw/codemirror-extensions-zebra-stripes)
 
 Styles alternating lines for CodeMirror6.
 
-[![Zebra Stripes Extensions](https://user-images.githubusercontent.com/1680273/205496628-e7e6f83f-18e9-4bff-8bc8-71a913c60687.png)](https://uiwjs.github.io/react-codemirror/#/extensions/mentions)
+[![Zebra Stripes Extensions](https://user-images.githubusercontent.com/1680273/205496628-e7e6f83f-18e9-4bff-8bc8-71a913c60687.png)](https://uiwjs.github.io/react-codemirror/#/extensions/zebra-stripes)
 
 ## Install
 
 ```bash
-npm install @uiw/codemirror-zebra-stripes --save
+npm install @uiw/codemirror-extensions-zebra-stripes --save
 ```
 
 ## Usage
 
 ```jsx
 import CodeMirror from '@uiw/react-codemirror';
-import { zebraStripes } from '@uiw/codemirror-zebra-stripes';
+import { zebraStripes } from '@uiw/codemirror-extensions-zebra-stripes';
 
 function App() {
   return <CodeMirror value="" height="200px" extensions={[zebraStripes({ step: 2 })]} />;
@@ -30,7 +30,7 @@ export default App;
 
 ```jsx
 import CodeMirror from '@uiw/react-codemirror';
-import { zebraStripes } from '@uiw/codemirror-zebra-stripes';
+import { zebraStripes } from '@uiw/codemirror-extensions-zebra-stripes';
 
 function App() {
   return (
@@ -53,7 +53,7 @@ export default App;
 ```js
 import { EditorView } from '@codemirror/view';
 import { EditorState } from '@codemirror/state';
-import { zebraStripes } from '@uiw/codemirror-zebra-stripes';
+import { zebraStripes } from '@uiw/codemirror-extensions-zebra-stripes';
 
 const state = EditorState.create({
   doc: 'my source code',
