@@ -15,6 +15,7 @@ const pathStr = `<svg viewBox="0 0 1024 1024" width="16" height="16" fill="curre
 export interface HyperLinkState {
   at: number;
   url: string;
+  anchor: HyperLinkExtensionOptions['anchor'];
 }
 
 class HyperLinkIcon extends WidgetType {
@@ -33,11 +34,12 @@ class HyperLinkIcon extends WidgetType {
     wrapper.innerHTML = pathStr;
     wrapper.className = 'cm-hyper-link-icon';
     wrapper.rel = 'nofollow';
-    return wrapper;
+    const anchor = this.state.anchor && this.state.anchor(wrapper);
+    return anchor || wrapper;
   }
 }
 
-function hyperLinkDecorations(view: EditorView) {
+function hyperLinkDecorations(view: EditorView, anchor?: HyperLinkExtensionOptions['anchor']) {
   const widgets: Array<Range<Decoration>> = [];
   for (const range of view.visibleRanges) {
     syntaxTree(view.state).iterate({
@@ -50,6 +52,7 @@ function hyperLinkDecorations(view: EditorView) {
             widget: new HyperLinkIcon({
               at: to,
               url: callExp,
+              anchor,
             }),
             side: 1,
           });
@@ -61,7 +64,12 @@ function hyperLinkDecorations(view: EditorView) {
   return Decoration.set(widgets);
 }
 
-const linkDecorator = (regexp?: RegExp, matchData?: Record<string, string>, matchFn?: (str: string) => string) =>
+const linkDecorator = (
+  regexp?: RegExp,
+  matchData?: Record<string, string>,
+  matchFn?: (str: string) => string,
+  anchor?: HyperLinkExtensionOptions['anchor'],
+) =>
   new MatchDecorator({
     regexp: regexp || /\b((?:https?|ftp):\/\/[^\s/$.?#].[^\s]*)\b/gi,
     decorate: (add, from, to, match, view) => {
@@ -72,28 +80,29 @@ const linkDecorator = (regexp?: RegExp, matchData?: Record<string, string>, matc
       }
       const start = to,
         end = to;
-      const linkIcon = new HyperLinkIcon({ at: start, url: urlStr });
+      const linkIcon = new HyperLinkIcon({ at: start, url: urlStr, anchor });
       add(start, end, Decoration.widget({ widget: linkIcon, side: 1 }));
     },
   });
 
-export type hyperLinkExtensionOptions = {
+export type HyperLinkExtensionOptions = {
   regexp?: RegExp;
   match?: Record<string, string>;
   handle?: (value: string) => string;
+  anchor?: (dom: HTMLAnchorElement) => HTMLAnchorElement;
 };
 
-export function hyperLinkExtension({ regexp, match, handle }: hyperLinkExtensionOptions = {}) {
+export function hyperLinkExtension({ regexp, match, handle, anchor }: HyperLinkExtensionOptions = {}) {
   return ViewPlugin.fromClass(
     class HyperLinkView {
       decorator?: MatchDecorator;
       decorations: DecorationSet;
       constructor(view: EditorView) {
         if (regexp) {
-          this.decorator = linkDecorator(regexp, match, handle);
+          this.decorator = linkDecorator(regexp, match, handle, anchor);
           this.decorations = this.decorator.createDeco(view);
         } else {
-          this.decorations = hyperLinkDecorations(view);
+          this.decorations = hyperLinkDecorations(view, anchor);
         }
       }
       update(update: ViewUpdate) {
@@ -101,7 +110,7 @@ export function hyperLinkExtension({ regexp, match, handle }: hyperLinkExtension
           if (regexp && this.decorator) {
             this.decorations = this.decorator.updateDeco(update, this.decorations);
           } else {
-            this.decorations = hyperLinkDecorations(update.view);
+            this.decorations = hyperLinkDecorations(update.view, anchor);
           }
         }
       }
