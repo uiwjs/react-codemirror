@@ -547,6 +547,11 @@ export const routes: MenuRouteObject[] = [
             label: 'Refs Example',
             lazy: () => import('./pages/examples/ExampleRef'),
           },
+          {
+            path: 'mark-decoration',
+            label: 'Mark Decoration Example',
+            lazy: () => import('./pages/examples/MarkDecoration'),
+          },
         ],
       },
     ],
