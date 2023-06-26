@@ -81,6 +81,7 @@ const linkDecorator = (
       const start = to,
         end = to;
       const linkIcon = new HyperLinkIcon({ at: start, url: urlStr, anchor });
+      add(from, to, Decoration.mark({ class: 'cm-hyper-link-underline' }));
       add(start, end, Decoration.widget({ widget: linkIcon, side: 1 }));
     },
   });
@@ -129,6 +130,9 @@ export const hyperLinkStyle = EditorView.baseTheme({
   },
   '.cm-hyper-link-icon svg': {
     display: 'block',
+  },
+  '.cm-hyper-link-underline': {
+    textDecoration: 'underline',
   },
 });
 

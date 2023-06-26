@@ -11,7 +11,7 @@ import { PageWarpper } from '..';
 //     regexp: /codemirror/gi,
 //     match: { codemirror: 'https://google.com' },
 //     handle: (value, input, from, to) => {
-//       if (value === 'Hyper') return 'https://google.com';
+//       if (value === 'codemirror') return 'https://google.com';
 //       return value;
 //     },
 //   }),
@@ -20,7 +20,6 @@ import { PageWarpper } from '..';
 
 export const HyperLinkExample = () => {
   const { theme } = useTheme();
-
   return (
     <PageWarpper>
       <CodeMirror
