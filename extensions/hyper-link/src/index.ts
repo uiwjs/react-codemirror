@@ -67,14 +67,14 @@ function hyperLinkDecorations(view: EditorView, anchor?: HyperLinkExtensionOptio
 const linkDecorator = (
   regexp?: RegExp,
   matchData?: Record<string, string>,
-  matchFn?: (str: string) => string,
+  matchFn?: (str: string, input: string, from: number, to: number) => string,
   anchor?: HyperLinkExtensionOptions['anchor'],
 ) =>
   new MatchDecorator({
     regexp: regexp || /\b((?:https?|ftp):\/\/[^\s/$.?#].[^\s]*)\b/gi,
     decorate: (add, from, to, match, view) => {
       const url = match[0];
-      let urlStr = matchFn && typeof matchFn === 'function' ? matchFn(url) : url;
+      let urlStr = matchFn && typeof matchFn === 'function' ? matchFn(url, match.input, from, to) : url;
       if (matchData && matchData[url]) {
         urlStr = matchData[url];
       }
@@ -88,7 +88,7 @@ const linkDecorator = (
 export type HyperLinkExtensionOptions = {
   regexp?: RegExp;
   match?: Record<string, string>;
-  handle?: (value: string) => string;
+  handle?: (value: string, input: string, from: number, to: number) => string;
   anchor?: (dom: HTMLAnchorElement) => HTMLAnchorElement;
 };
 
