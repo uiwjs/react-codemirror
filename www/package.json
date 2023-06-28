@@ -84,7 +84,7 @@
     "react-dom": "~18.2.0",
     "react-router-dom": "^6.3.0",
     "rehype-ignore": "^1.0.1",
-    "styled-components": "^5.3.5"
+    "styled-components": "^6.0.0"
   },
   "eslintConfig": {
     "extends": [
