@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Annotation, EditorState, StateEffect } from '@codemirror/state';
+import { Annotation, EditorState, StateEffect, type Extension } from '@codemirror/state';
 import { EditorView, ViewUpdate } from '@codemirror/view';
 import { getDefaultExtensions } from './getDefaultExtensions';
 import { getStatistics } from './utils';
@@ -11,6 +11,8 @@ export interface UseCodeMirror extends ReactCodeMirrorProps {
   container?: HTMLDivElement | null;
 }
 
+const emptyExtensions: Extension[] = [];
+
 export function useCodeMirror(props: UseCodeMirror) {
   const {
     value,
@@ -19,7 +21,7 @@ export function useCodeMirror(props: UseCodeMirror) {
     onStatistics,
     onCreateEditor,
     onUpdate,
-    extensions = [],
+    extensions = emptyExtensions,
     autoFocus,
     theme = 'light',
     height = '',
