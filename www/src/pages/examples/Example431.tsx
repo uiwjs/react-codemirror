@@ -5,7 +5,7 @@ import { Fragment } from 'react';
 /**
  * https://github.com/uiwjs/react-codemirror/issues/431
  */
-export const PageExample431 = () => {
+export function Component() {
   return (
     <Fragment>
       <CodeMirror
@@ -18,4 +18,4 @@ export const PageExample431 = () => {
       />
     </Fragment>
   );
-};
+}

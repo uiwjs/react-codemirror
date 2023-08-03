@@ -69,7 +69,7 @@ const CodeEditor = styled(CodeMirror)`
   }
 `;
 
-export function ThemesHome() {
+export function Component() {
   return (
     <Warpper>
       <ThemesWarpper>

@@ -127,7 +127,7 @@ const hyperlink: {
   },
 ];
 
-export default function App() {
+export function Component() {
   const version = VERSION;
   return (
     <div className="wmde-markdown-var">

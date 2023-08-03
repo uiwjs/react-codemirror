@@ -26,4 +26,4 @@ export function Component() {
   );
 }
 
-Component.displayName = 'HomePage';
+Component.displayName = 'PageExampleRef';

@@ -2,11 +2,7 @@ import React from 'react';
 import { Navigate, IndexRouteObject, NonIndexRouteObject, Outlet } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { ErrorPage } from './components/ErrorPage';
-import { ThemesHome } from './pages/theme/home';
 import { ThemeEditor } from './pages/theme/editor';
-import { PageExample431 } from './pages/examples/Example431';
-
-import Home from './pages/home';
 
 import { BasicSetupExample } from './pages/extensions/basic-setup/example';
 import { ClassNameExample } from './pages/extensions/classname/example';
@@ -40,7 +36,7 @@ export const routes: MenuRouteObject[] = [
       {
         index: true,
         label: 'Home',
-        Component: Home,
+        lazy: () => import('./pages/home'),
       },
       {
         path: 'extensions',
@@ -174,7 +170,7 @@ export const routes: MenuRouteObject[] = [
           {
             path: 'home',
             label: 'Home',
-            Component: ThemesHome,
+            lazy: () => import('./pages/theme/home'),
           },
           {
             path: 'data',
@@ -540,7 +536,12 @@ export const routes: MenuRouteObject[] = [
           {
             path: '431',
             label: 'How to remove all syntax highlighting?',
-            Component: PageExample431,
+            lazy: () => import('./pages/examples/Example431'),
+          },
+          {
+            path: '455',
+            label: 'CodeMirrorMerge use theme',
+            lazy: () => import('./pages/examples/Example455'),
           },
           {
             path: 'refs',
