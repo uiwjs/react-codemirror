@@ -24,6 +24,9 @@ npm install @uiw/codemirror-theme-solarized --save
 
 ```jsx
 import { solarizedLight, solarizedLightInit, solarizedDark, solarizedDarkInit } from '@uiw/codemirror-theme-solarized';
+// Or
+import { solarizedDark, solarizedDarkInit } from '@uiw/codemirror-theme-solarized/dark';
+import { solarizedLight, solarizedLightInit } from '@uiw/codemirror-theme-solarized/light';
 
 <CodeMirror theme={solarizedLight} />
 <CodeMirror

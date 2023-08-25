@@ -7,6 +7,24 @@
   "license": "MIT",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
+  "exports": {
+    "./README.md": "./README.md",
+    ".": {
+      "import": "./esm/index.js",
+      "types": "./cjs/index.d.ts",
+      "require": "./cjs/index.js"
+    },
+    "./light": {
+      "import": "./esm/light.js",
+      "types": "./cjs/light.d.ts",
+      "require": "./cjs/light.js"
+    },
+    "./dark": {
+      "import": "./esm/dark.js",
+      "types": "./cjs/dark.d.ts",
+      "require": "./cjs/dark.js"
+    }
+  },
   "scripts": {
     "watch": "tsbb watch src/*.ts --use-babel",
     "build": "tsbb build src/*.ts --use-babel"
@@ -16,6 +34,8 @@
     "url": "https://github.com/uiwjs/react-codemirror.git"
   },
   "files": [
+    "dark.d.ts",
+    "light.d.ts",
     "src",
     "esm",
     "cjs"
