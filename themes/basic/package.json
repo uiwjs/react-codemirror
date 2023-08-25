@@ -34,6 +34,8 @@
     "url": "https://github.com/uiwjs/react-codemirror.git"
   },
   "files": [
+    "dark.d.ts",
+    "light.d.ts",
     "src",
     "esm",
     "cjs"
