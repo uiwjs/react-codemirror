@@ -300,6 +300,10 @@ export const routes: MenuRouteObject[] = [
             ),
           },
           {
+            path: 'data/github',
+            element: <Navigate to="light" replace />,
+          },
+          {
             path: 'data/github/light',
             label: 'Github Light',
             element: (
