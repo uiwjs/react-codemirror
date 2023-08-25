@@ -16,6 +16,7 @@ import { githubLight, githubDark } from '@uiw/codemirror-theme-github';
 import { gruvboxDark, gruvboxLight } from '@uiw/codemirror-theme-gruvbox-dark';
 import { nord } from '@uiw/codemirror-theme-nord';
 import { okaidia } from '@uiw/codemirror-theme-okaidia';
+import { quietlight } from '@uiw/codemirror-theme-quietlight';
 import { solarizedLight, solarizedDark } from '@uiw/codemirror-theme-solarized';
 import { sublime } from '@uiw/codemirror-theme-sublime';
 import { tokyoNight } from '@uiw/codemirror-theme-tokyo-night';
@@ -46,6 +47,7 @@ export const themeData = {
   noctisLilac,
   nord,
   okaidia,
+  quietlight,
   solarizedLight,
   solarizedDark,
   sublime,

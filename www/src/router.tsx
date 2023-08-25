@@ -430,6 +430,16 @@ export const routes: MenuRouteObject[] = [
             ),
           },
           {
+            path: 'data/quietlight',
+            label: 'quietlight',
+            element: (
+              <Preview
+                themePkg="@uiw/codemirror-theme-quietlight"
+                path={() => import('@uiw/codemirror-theme-quietlight/README.md')}
+              />
+            ),
+          },
+          {
             path: 'data/solarized/light',
             label: 'solarized light',
             element: (
