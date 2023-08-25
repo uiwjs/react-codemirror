@@ -63,6 +63,7 @@ export * from '@uiw/codemirror-theme-abcdef';
 export * from '@uiw/codemirror-theme-androidstudio';
 export * from '@uiw/codemirror-theme-atomone';
 export * from '@uiw/codemirror-theme-aura';
+export * from '@uiw/codemirror-theme-basic';
 export * from '@uiw/codemirror-theme-bbedit';
 export * from '@uiw/codemirror-theme-bespin';
 export * from '@uiw/codemirror-theme-darcula';
@@ -108,6 +109,16 @@ export * from '@uiw/codemirror-theme-xcode';
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/aura">
   <img width="436" alt="codemirror-theme-aura" src="https://user-images.githubusercontent.com/1680273/206092773-8140fc6b-119f-4271-a821-7dc6bcbc1c63.png">
+</a>
+
+**basic**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/basic/dark">
+  <img width="436" alt="codemirror-theme-basic dark" src="https://github.com/uiwjs/react-codemirror/assets/1680273/977c1271-eca1-4f61-ad90-3a89f4ea4871">
+</a>
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/basic/light">
+  <img width="436" alt="codemirror-theme-basic light" src="https://github.com/uiwjs/react-codemirror/assets/1680273/e5b43612-5190-4d5b-ab7a-0f5d369ad7e4">
 </a>
 
 **bbedit**

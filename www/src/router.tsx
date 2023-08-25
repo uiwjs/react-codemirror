@@ -238,6 +238,32 @@ export const routes: MenuRouteObject[] = [
             ),
           },
           {
+            path: 'data/basic',
+            element: <Navigate to="light" replace />,
+          },
+          {
+            path: 'data/basic/light',
+            label: 'Basic Light',
+            element: (
+              <Preview
+                mode="light"
+                themePkg="@uiw/codemirror-theme-basic"
+                path={() => import('@uiw/codemirror-theme-basic/README.md')}
+              />
+            ),
+          },
+          {
+            path: 'data/basic/dark',
+            label: 'Basic Dark',
+            element: (
+              <Preview
+                mode="dark"
+                themePkg="@uiw/codemirror-theme-basic"
+                path={() => import('@uiw/codemirror-theme-basic/README.md')}
+              />
+            ),
+          },
+          {
             path: 'data/bespin',
             label: 'bespin',
             element: (

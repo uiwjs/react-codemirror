@@ -2,6 +2,7 @@ import { abcdef } from '@uiw/codemirror-theme-abcdef';
 import { androidstudio } from '@uiw/codemirror-theme-androidstudio';
 import { atomone } from '@uiw/codemirror-theme-atomone';
 import { aura } from '@uiw/codemirror-theme-aura';
+import { basicLight, basicDark } from '@uiw/codemirror-theme-basic';
 import { bbedit } from '@uiw/codemirror-theme-bbedit';
 import { dracula } from '@uiw/codemirror-theme-dracula';
 import { darcula } from '@uiw/codemirror-theme-darcula';
@@ -27,6 +28,8 @@ export const themeData = {
   androidstudio,
   atomone,
   aura,
+  basicLight,
+  basicDark,
   bbedit,
   bespin,
   darcula,
