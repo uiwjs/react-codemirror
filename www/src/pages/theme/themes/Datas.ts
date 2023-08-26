@@ -1,4 +1,5 @@
 import { abcdef } from '@uiw/codemirror-theme-abcdef';
+import { abyss } from '@uiw/codemirror-theme-abyss';
 import { androidstudio } from '@uiw/codemirror-theme-androidstudio';
 import { atomone } from '@uiw/codemirror-theme-atomone';
 import { aura } from '@uiw/codemirror-theme-aura';
@@ -27,6 +28,7 @@ import { xcodeLight, xcodeDark } from '@uiw/codemirror-theme-xcode';
 
 export const themeData = {
   abcdef,
+  abyss,
   androidstudio,
   atomone,
   aura,

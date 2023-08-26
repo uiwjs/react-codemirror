@@ -198,6 +198,16 @@ export const routes: MenuRouteObject[] = [
             ),
           },
           {
+            path: 'data/abyss',
+            label: 'Abyss',
+            element: (
+              <Preview
+                themePkg="@uiw/codemirror-theme-abyss"
+                path={() => import('@uiw/codemirror-theme-abyss/README.md')}
+              />
+            ),
+          },
+          {
             path: 'data/androidstudio',
             label: 'Android Studio',
             element: (

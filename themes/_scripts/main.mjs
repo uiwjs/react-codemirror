@@ -103,6 +103,11 @@ const getString = (obj) => `export const config = ${JSON.stringify(obj, null, 2)
   await FS.writeFile(themePath, getString(themeRed));
   console.log(`🎉 File \x1b[32;1m${themePath}\x1b[0m created.`);
 
+  const themeAbyss = format(require('./data/abyss.json'));
+  themePath = '../abyss/src/color.ts';
+  await FS.writeFile(themePath, getString(themeAbyss));
+  console.log(`🎉 File \x1b[32;1m${themePath}\x1b[0m created.`);
+
 
   const themeSolarizedDark = format(require('./data/solarized.dark.json'), true)
   console.log('~~~::', themeSolarizedDark);

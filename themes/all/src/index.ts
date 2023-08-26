@@ -1,4 +1,5 @@
 export * from '@uiw/codemirror-theme-abcdef';
+export * from '@uiw/codemirror-theme-abyss';
 export * from '@uiw/codemirror-theme-androidstudio';
 export * from '@uiw/codemirror-theme-atomone';
 export * from '@uiw/codemirror-theme-aura';

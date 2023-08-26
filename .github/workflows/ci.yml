@@ -106,6 +106,22 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+          
+      - name: 📦 @uiw/codemirror-theme-abcdef publish to NPM
+        run: npm publish --access public
+        working-directory: ./themes/abcdef/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  
+
+      - name: 📦 @uiw/codemirror-themes-abyss publish to NPM
+        run: npm publish --access public
+        working-directory: ./themes/abyss/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  
 
       - name: 📦 @uiw/codemirror-themes-all publish to NPM
         run: npm publish --access public
@@ -142,13 +158,6 @@ jobs:
       - name: 📦 @uiw/codemirror-theme-solarized publish to NPM
         run: npm publish --access public
         working-directory: ./themes/solarized/
-        continue-on-error: true
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: 📦 @uiw/codemirror-theme-abcdef publish to NPM
-        run: npm publish --access public
-        working-directory: ./themes/abcdef/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
