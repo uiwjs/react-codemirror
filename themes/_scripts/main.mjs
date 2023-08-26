@@ -4,7 +4,8 @@ import FS from 'node:fs/promises';
 const require = createRequire(import.meta.url);
 
 const includes = (data, ...arg) => {
-  const isInclude = !![data.scope||[]].flat().find(elm => arg.includes(elm));
+  const scope = typeof data.scope === 'string' ? data.scope.split(' ').filter(Boolean) : data.scope || [];
+  const isInclude = !![scope||[]].flat().find(elm => arg.includes(elm));
   return isInclude ? getForeground(data.settings.foreground) : undefined;
 }
 const getForeground = (str) => typeof str === 'string' ? str : null;
@@ -37,6 +38,7 @@ function format(data = {}, dark = false) {
     heading: null,
     invalid: null,
     regexp: null,
+    tag: null,
   };
   tokenColors.forEach((item) => {
     const keys = Object.keys(item).length;
@@ -46,6 +48,9 @@ function format(data = {}, dark = false) {
 
     if (includes(item, "keyword")) {
       conf.keyword = getForeground(item.settings.foreground);
+    }
+    if (includes(item, "entity.name.tag")) {
+      conf.tag = getForeground(item.settings.foreground);
     }
     if (includes(item, "storage", "keyword")) {
       conf.storage = getForeground(item.settings.foreground);
@@ -111,6 +116,11 @@ const getString = (obj) => `export const config = ${JSON.stringify(obj, null, 2)
   const themeKimbie = format(require('./data/kimbie.json'));
   themePath = '../kimbie/src/color.ts';
   await FS.writeFile(themePath, getString(themeKimbie));
+  console.log(`🎉 File \x1b[32;1m${themePath}\x1b[0m created.`);
+  
+  const monokai = format(require('./data/monokai.json'));
+  themePath = '../monokai/src/color.ts';
+  await FS.writeFile(themePath, getString(monokai));
   console.log(`🎉 File \x1b[32;1m${themePath}\x1b[0m created.`);
 
   // const themeSolarizedDark = format(require('./data/solarized.dark.json'), true)

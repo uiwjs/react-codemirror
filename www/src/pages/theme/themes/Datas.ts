@@ -10,6 +10,7 @@ import { darcula } from '@uiw/codemirror-theme-darcula';
 import { eclipse } from '@uiw/codemirror-theme-eclipse';
 import { bespin } from '@uiw/codemirror-theme-bespin';
 import { materialLight, materialDark } from '@uiw/codemirror-theme-material';
+import { monokai } from '@uiw/codemirror-theme-monokai';
 import { noctisLilac } from '@uiw/codemirror-theme-noctis-lilac';
 import { vscodeDark } from '@uiw/codemirror-theme-vscode';
 import { duotoneLight, duotoneDark } from '@uiw/codemirror-theme-duotone';
@@ -49,6 +50,7 @@ export const themeData = {
   kimbie,
   materialLight,
   materialDark,
+  monokai,
   noctisLilac,
   nord,
   okaidia,

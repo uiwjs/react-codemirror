@@ -36,6 +36,7 @@ export const quietlightInit = (options?: Partial<CreateThemeOptions>) => {
       { tag: [t.operator, t.operatorKeyword], color: config.keyword },
       { tag: [t.url, t.escape, t.regexp, t.link], color: config.regexp },
       { tag: [t.meta, t.comment], color: config.comment },
+      { tag: t.tagName, color: config.tag },
       { tag: t.strong, fontWeight: 'bold' },
       { tag: t.emphasis, fontStyle: 'italic' },
       { tag: t.link, textDecoration: 'underline' },

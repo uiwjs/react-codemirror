@@ -410,6 +410,16 @@ export const routes: MenuRouteObject[] = [
             ),
           },
           {
+            path: 'data/monokai',
+            label: 'Monokai',
+            element: (
+              <Preview
+                themePkg="@uiw/codemirror-theme-monokai"
+                path={() => import('@uiw/codemirror-theme-monokai/README.md')}
+              />
+            ),
+          },
+          {
             path: 'data/kimbie',
             element: <Navigate to="dark" replace />,
           },

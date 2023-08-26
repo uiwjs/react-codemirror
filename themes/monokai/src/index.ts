@@ -2,7 +2,7 @@ import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 import { config } from './color';
 
-export const defaultSettingsKimbie: CreateThemeOptions['settings'] = {
+export const defaultSettingsMonokai: CreateThemeOptions['settings'] = {
   background: config.background,
   foreground: config.foreground,
   caret: config.cursor,
@@ -13,12 +13,12 @@ export const defaultSettingsKimbie: CreateThemeOptions['settings'] = {
   lineHighlight: config.activeLine,
 };
 
-export const kimbieInit = (options?: Partial<CreateThemeOptions>) => {
+export const monokaiInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      ...defaultSettingsKimbie,
+      ...defaultSettingsMonokai,
       ...settings,
     },
     styles: [
@@ -48,4 +48,4 @@ export const kimbieInit = (options?: Partial<CreateThemeOptions>) => {
   });
 };
 
-export const kimbie = kimbieInit();
+export const monokai = monokaiInit();

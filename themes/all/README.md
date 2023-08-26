@@ -205,6 +205,12 @@ export * from '@uiw/codemirror-theme-xcode';
   <img width="436" alt="codemirror-theme-material" src="https://user-images.githubusercontent.com/1680273/206124615-b3896e2c-d299-4609-b1d9-523ea1cf9f5b.png">
 </a>
 
+**monokai**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/monokai">
+  <img width="436" alt="codemirror-theme-monokai" src="https://github.com/uiwjs/react-codemirror/assets/1680273/07df9125-6d96-413b-b863-1eef945b99e3">
+</a>
+
 **noctis-lilac**
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/noctis-lilac">

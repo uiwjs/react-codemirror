@@ -20,4 +20,5 @@ export const config = {
   heading: '#AA3731',
   invalid: '#cd3131',
   regexp: '#4B69C6',
+  tag: '#4B69C6',
 };
