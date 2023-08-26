@@ -95,6 +95,12 @@ export * from '@uiw/codemirror-theme-xcode';
   <img width="436" alt="codemirror-theme-abcdef" src="https://user-images.githubusercontent.com/1680273/176573508-705562ad-16ec-4b16-994e-f235a9331a3f.png">
 </a>
 
+**abyss**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/abyss">
+  <img width="436" alt="codemirror-theme-abyss" src="https://github.com/uiwjs/react-codemirror/assets/1680273/b1b59053-d370-485e-9dcc-2987b39197a1">
+</a>
+
 **android studio**
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/xcode/light">
@@ -181,6 +187,12 @@ export * from '@uiw/codemirror-theme-xcode';
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/gruvbox/light">
   <img width="436" alt="codemirror-theme-eclipse" src="https://user-images.githubusercontent.com/1680273/206087911-49db6624-ab8c-434e-9b8a-84132fe206f9.png">
+</a>
+
+**kimbie**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/kimbie">
+  <img width="436" alt="codemirror-theme-kimbie" src="https://github.com/uiwjs/react-codemirror/assets/1680273/859e75f6-cc7c-4182-ac92-dbf3168784b0">
 </a>
 
 **material**

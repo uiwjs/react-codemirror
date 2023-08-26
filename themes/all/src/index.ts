@@ -11,6 +11,7 @@ export * from '@uiw/codemirror-theme-duotone';
 export * from '@uiw/codemirror-theme-eclipse';
 export * from '@uiw/codemirror-theme-github';
 export * from '@uiw/codemirror-theme-gruvbox-dark';
+export * from '@uiw/codemirror-theme-kimbie';
 export * from '@uiw/codemirror-theme-material';
 export * from '@uiw/codemirror-theme-noctis-lilac';
 export * from '@uiw/codemirror-theme-nord';

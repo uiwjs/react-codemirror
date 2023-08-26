@@ -15,6 +15,7 @@ import { vscodeDark } from '@uiw/codemirror-theme-vscode';
 import { duotoneLight, duotoneDark } from '@uiw/codemirror-theme-duotone';
 import { githubLight, githubDark } from '@uiw/codemirror-theme-github';
 import { gruvboxDark, gruvboxLight } from '@uiw/codemirror-theme-gruvbox-dark';
+import { kimbie } from '@uiw/codemirror-theme-kimbie';
 import { nord } from '@uiw/codemirror-theme-nord';
 import { okaidia } from '@uiw/codemirror-theme-okaidia';
 import { red } from '@uiw/codemirror-theme-red';
@@ -45,6 +46,7 @@ export const themeData = {
   githubDark,
   gruvboxDark,
   gruvboxLight,
+  kimbie,
   materialLight,
   materialDark,
   noctisLilac,

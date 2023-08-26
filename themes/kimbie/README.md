@@ -1,29 +1,29 @@
 <!--rehype:ignore:start-->
 
-# Abyss Theme
+# Kimbie Theme
 
 <!--rehype:ignore:end-->
 
-[![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-abyss.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-abyss)
+[![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-kimbie.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-kimbie)
 
-Abyss theme for cm6, generated from [vscode themes](https://github.com/microsoft/vscode/blob/main/extensions/theme-abyss/themes/abyss-color-theme.json).
+Kimbie theme for cm6, generated from [vscode themes](https://github.com/microsoft/vscode/blob/main/extensions/theme-kimbie-dark/themes/kimbie-dark-color-theme.json).
 
-<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/abyss">
-  <img width="436" alt="codemirror-theme-abyss" src="https://github.com/uiwjs/react-codemirror/assets/1680273/b1b59053-d370-485e-9dcc-2987b39197a1">
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/kimbie">
+  <img width="436" alt="codemirror-theme-kimbie" src="https://github.com/uiwjs/react-codemirror/assets/1680273/859e75f6-cc7c-4182-ac92-dbf3168784b0">
 </a>
 
 ## Install
 
 ```bash
-npm install @uiw/codemirror-theme-abyss --save
+npm install @uiw/codemirror-theme-kimbie --save
 ```
 
 ```jsx
-import { abyss, abyssInit } from '@uiw/codemirror-theme-abyss';
+import { kimbie, kimbieInit } from '@uiw/codemirror-theme-kimbie';
 
-<CodeMirror theme={abyss} />
+<CodeMirror theme={kimbie} />
 <CodeMirror
-  theme={abyssInit({
+  theme={kimbieInit({
     settings: {
       caret: '#c6c6c6',
       fontFamily: 'monospace',
@@ -37,15 +37,15 @@ import { abyss, abyssInit } from '@uiw/codemirror-theme-abyss';
 ```tsx
 import { CreateThemeOptions } from '@uiw/codemirror-themes';
 export declare const defaultSettingsQuietlight: CreateThemeOptions['settings'];
-export declare const abyssInit: (options?: Partial<CreateThemeOptions>) => import('@codemirror/state').Extension;
-export declare const abyss: import('@codemirror/state').Extension;
+export declare const kimbieInit: (options?: Partial<CreateThemeOptions>) => import('@codemirror/state').Extension;
+export declare const kimbie: import('@codemirror/state').Extension;
 ```
 
 ## Usage
 
 ```jsx
 import CodeMirror from '@uiw/react-codemirror';
-import { abyss } from '@uiw/codemirror-theme-abyss';
+import { kimbie } from '@uiw/codemirror-theme-kimbie';
 import { javascript } from '@codemirror/lang-javascript';
 
 function App() {
@@ -53,7 +53,7 @@ function App() {
     <CodeMirror
       value="console.log('hello world!');"
       height="200px"
-      theme={abyss}
+      theme={kimbie}
       extensions={[javascript({ jsx: true })]}
       onChange={(value, viewUpdate) => {
         console.log('value:', value);
@@ -68,11 +68,11 @@ export default App;
 import { EditorView } from '@codemirror/view';
 import { EditorState } from '@codemirror/state';
 import { javascript } from '@codemirror/lang-javascript';
-import { abyss } from '@uiw/codemirror-theme-abyss';
+import { kimbie } from '@uiw/codemirror-theme-kimbie';
 
 const state = EditorState.create({
   doc: 'my source code',
-  extensions: [abyss, javascript({ jsx: true })],
+  extensions: [kimbie, javascript({ jsx: true })],
 });
 
 const view = new EditorView({

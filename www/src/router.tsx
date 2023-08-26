@@ -410,6 +410,20 @@ export const routes: MenuRouteObject[] = [
             ),
           },
           {
+            path: 'data/kimbie',
+            element: <Navigate to="dark" replace />,
+          },
+          {
+            path: 'data/kimbie/dark',
+            label: 'Kimbie Dark',
+            element: (
+              <Preview
+                themePkg="@uiw/codemirror-theme-kimbie"
+                path={() => import('@uiw/codemirror-theme-kimbie/README.md')}
+              />
+            ),
+          },
+          {
             path: 'data/noctis-lilac',
             label: 'noctis lilac',
             element: (
