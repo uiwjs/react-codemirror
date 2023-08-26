@@ -6,6 +6,8 @@
 
 [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-themes-all.svg)](https://www.npmjs.com/package/@uiw/codemirror-themes-all)
 
+Preview all the themes we have created [here](https://uiwjs.github.io/react-codemirror/#/theme), just need to install and import them.
+
 ## Install
 
 ```bash
