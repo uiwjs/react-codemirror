@@ -440,6 +440,16 @@ export const routes: MenuRouteObject[] = [
             ),
           },
           {
+            path: 'data/red',
+            label: 'red',
+            element: (
+              <Preview
+                themePkg="@uiw/codemirror-theme-red"
+                path={() => import('@uiw/codemirror-theme-red/README.md')}
+              />
+            ),
+          },
+          {
             path: 'data/solarized/light',
             label: 'solarized light',
             element: (

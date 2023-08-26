@@ -2,7 +2,7 @@ import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
 import { config } from './color';
 
-export const defaultSettingsQuietlight: CreateThemeOptions['settings'] = {
+export const defaultSettingsRed: CreateThemeOptions['settings'] = {
   background: config.background,
   foreground: config.foreground,
   caret: config.cursor,
@@ -10,16 +10,15 @@ export const defaultSettingsQuietlight: CreateThemeOptions['settings'] = {
   selectionMatch: config.selection,
   gutterBackground: config.background,
   gutterForeground: config.foreground,
-  gutterBorder: 'transparent',
   lineHighlight: config.activeLine,
 };
 
-export const quietlightInit = (options?: Partial<CreateThemeOptions>) => {
-  const { theme = 'light', settings = {}, styles = [] } = options || {};
+export const redInit = (options?: Partial<CreateThemeOptions>) => {
+  const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      ...defaultSettingsQuietlight,
+      ...defaultSettingsRed,
       ...settings,
     },
     styles: [
@@ -48,4 +47,4 @@ export const quietlightInit = (options?: Partial<CreateThemeOptions>) => {
   });
 };
 
-export const quietlight = quietlightInit();
+export const red = redInit();

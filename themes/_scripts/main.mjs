@@ -93,14 +93,17 @@ function format(data = {}, dark = false) {
 const getString = (obj) => `export const config = ${JSON.stringify(obj, null, 2)};`;
 
 ;(async () => {
-  const themeQuietlight = format(require('./data/quietlight.json'))
+  const themeQuietlight = format(require('./data/quietlight.json'));
   let themePath = '../quietlight/src/color.ts';
   await FS.writeFile(themePath, getString(themeQuietlight));
   console.log(`🎉 File \x1b[32;1m${themePath}\x1b[0m created.`);
 
+  const themeRed = format(require('./data/red.json'));
+  themePath = '../red/src/color.ts';
+  await FS.writeFile(themePath, getString(themeRed));
+  console.log(`🎉 File \x1b[32;1m${themePath}\x1b[0m created.`);
 
-  const themeRed = format(require('./data/red.json'), true)
-  console.log('~~~::', themeRed);
+
   const themeSolarizedDark = format(require('./data/solarized.dark.json'), true)
   console.log('~~~::', themeSolarizedDark);
   const themeSolarizedLight = format(require('./data/solarized.light.json'))

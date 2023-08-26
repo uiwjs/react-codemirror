@@ -1,8 +1,8 @@
 {
-  "name": "@uiw/codemirror-theme-quietlight",
+  "name": "@uiw/codemirror-theme-red",
   "version": "4.21.10",
-  "description": "Theme quietlight for CodeMirror.",
-  "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/quietlight",
+  "description": "Theme red for CodeMirror.",
+  "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/red",
   "author": "kenny wong <wowohoo@qq.com>",
   "license": "MIT",
   "main": "./cjs/index.js",
@@ -28,7 +28,7 @@
     "codemirror-theme",
     "codemirror6",
     "theme",
-    "quietlight",
+    "red",
     "syntax",
     "ide",
     "code"

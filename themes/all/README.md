@@ -77,6 +77,7 @@ export * from '@uiw/codemirror-theme-noctis-lilac';
 export * from '@uiw/codemirror-theme-nord';
 export * from '@uiw/codemirror-theme-okaidia';
 export * from '@uiw/codemirror-theme-quietlight';
+export * from '@uiw/codemirror-theme-red';
 export * from '@uiw/codemirror-theme-solarized';
 export * from '@uiw/codemirror-theme-sublime';
 export * from '@uiw/codemirror-theme-tokyo-night';
@@ -214,6 +215,12 @@ export * from '@uiw/codemirror-theme-xcode';
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/quietlight">
   <img width="436" alt="codemirror-theme-okaidia" src="https://github.com/uiwjs/react-codemirror/assets/1680273/3137facb-8db7-4805-bd5c-9818d5ff49ae">
+</a>
+
+**red**
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/red">
+  <img width="436" alt="codemirror-theme-red" src="https://github.com/uiwjs/react-codemirror/assets/1680273/aef0a618-8c74-4466-9a04-35e368f582a7">
 </a>
 
 **solarized**

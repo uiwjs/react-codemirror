@@ -131,6 +131,14 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 
+      - name: 📦 @uiw/codemirror-theme-red publish to NPM
+        run: npm publish --access public
+        working-directory: ./themes/red/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+
       - name: 📦 @uiw/codemirror-theme-solarized publish to NPM
         run: npm publish --access public
         working-directory: ./themes/solarized/
