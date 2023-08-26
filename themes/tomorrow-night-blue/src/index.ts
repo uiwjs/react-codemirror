@@ -1,25 +1,24 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
-import { config as c } from './light-color';
+import { config as c } from './color';
 
-export const defaultSettingsSolarizedLight: CreateThemeOptions['settings'] = {
+export const defaultSettingsTomorrowNightBlue: CreateThemeOptions['settings'] = {
   background: c.background,
   foreground: c.foreground,
   caret: c.cursor,
   selection: c.selection,
-  selectionMatch: c.selectionMatch,
+  selectionMatch: c.selection,
   gutterBackground: c.background,
   gutterForeground: c.foreground,
-  gutterBorder: 'transparent',
   lineHighlight: c.activeLine,
 };
 
-export const solarizedLightInit = (options?: Partial<CreateThemeOptions>) => {
-  const { theme = 'light', settings = {}, styles = [] } = options || {};
+export const tomorrowNightBlueInit = (options?: Partial<CreateThemeOptions>) => {
+  const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
-      ...defaultSettingsSolarizedLight,
+      ...defaultSettingsTomorrowNightBlue,
       ...settings,
     },
     styles: [
@@ -49,4 +48,4 @@ export const solarizedLightInit = (options?: Partial<CreateThemeOptions>) => {
   });
 };
 
-export const solarizedLight = solarizedLightInit();
+export const tomorrowNightBlue = tomorrowNightBlueInit();

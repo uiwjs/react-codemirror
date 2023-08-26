@@ -281,6 +281,12 @@ export * from '@uiw/codemirror-theme-xcode';
   <img width="436" alt="codemirror-theme-tokyo-night-storm" src="https://user-images.githubusercontent.com/1680273/206097179-8a490b97-87da-4285-a9bc-b0c9f510e7ed.png">
 </a>
 
+### tomorrow-night-blue
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/tomorrow-night-blue">
+  <img width="436" alt="codemirror-theme-tomorrow-night-blue" src="https://github.com/uiwjs/react-codemirror/assets/1680273/dcc31c7a-70d7-4c4d-bf9f-a7e8212030d8">
+</a>
+
 ### vscode
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/vscode/dark">

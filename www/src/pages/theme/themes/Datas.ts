@@ -27,6 +27,7 @@ import { sublime } from '@uiw/codemirror-theme-sublime';
 import { tokyoNight } from '@uiw/codemirror-theme-tokyo-night';
 import { tokyoNightStorm } from '@uiw/codemirror-theme-tokyo-night-storm';
 import { tokyoNightDay } from '@uiw/codemirror-theme-tokyo-night-day';
+import { tomorrowNightBlue } from '@uiw/codemirror-theme-tomorrow-night-blue';
 import { xcodeLight, xcodeDark } from '@uiw/codemirror-theme-xcode';
 
 export const themeData = {
@@ -64,6 +65,7 @@ export const themeData = {
   tokyoNight,
   tokyoNightStorm,
   tokyoNightDay,
+  tomorrowNightBlue,
   vscodeDark,
   xcodeLight,
   xcodeDark,

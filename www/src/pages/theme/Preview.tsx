@@ -61,7 +61,6 @@ export const Preview: FC<PropsWithChildren<PreviewProps>> = (props) => {
   const themeName = themePkgNmae?.replace('@uiw/codemirror-theme-', '').replace('-', ' ');
   const themeExtensionName = themePkgNmae?.replace('@uiw/codemirror-theme-', '') + (!!mode ? `-${mode}` : '');
   const extension = themeData[toCamelCase(themeExtensionName) as keyof typeof themeData];
-  console.log('extension', themeExtensionName);
   return (
     <Warpper>
       <Content>

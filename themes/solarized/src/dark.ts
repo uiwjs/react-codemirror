@@ -1,15 +1,17 @@
 import { tags as t } from '@lezer/highlight';
 import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
+import { config as c } from './dark-color';
 
 export const defaultSettingsSolarizedDark: CreateThemeOptions['settings'] = {
-  background: '#002b36',
-  foreground: '#93a1a1',
-  caret: '#839496',
-  selection: '#173541',
-  selectionMatch: '#aafe661a',
-  gutterBackground: '#00252f',
-  gutterForeground: '#839496',
-  lineHighlight: '#173541',
+  background: c.background,
+  foreground: c.foreground,
+  caret: c.cursor,
+  selection: c.selection,
+  selectionMatch: c.selection,
+  gutterBackground: c.background,
+  gutterForeground: c.foreground,
+  gutterBorder: 'transparent',
+  lineHighlight: c.activeLine,
 };
 
 export const solarizedDarkInit = (options?: Partial<CreateThemeOptions>) => {
@@ -21,97 +23,27 @@ export const solarizedDarkInit = (options?: Partial<CreateThemeOptions>) => {
       ...settings,
     },
     styles: [
-      { tag: t.keyword, color: '#859900' },
-      {
-        tag: [t.name, t.deleted, t.character, t.propertyName, t.macroName],
-        color: '#2aa198',
-      },
-      { tag: [t.variableName], color: '#93a1a1' },
-      { tag: [t.function(t.variableName)], color: '#268bd2' },
-      { tag: [t.labelName], color: '#d33682' },
-      {
-        tag: [t.color, t.constant(t.name), t.standard(t.name)],
-        color: '#b58900',
-      },
-      { tag: [t.definition(t.name), t.separator], color: '#2aa198' },
-      { tag: [t.brace], color: '#d33682' },
-      {
-        tag: [t.annotation],
-        color: '#d30102',
-      },
-      {
-        tag: [t.number, t.changed, t.annotation, t.modifier, t.self, t.namespace],
-        color: '#d33682',
-      },
-      {
-        tag: [t.typeName, t.className],
-        color: '#cb4b16',
-      },
-      {
-        tag: [t.operator, t.operatorKeyword],
-        color: '#6c71c4',
-      },
-      {
-        tag: [t.tagName],
-        color: '#268bd2',
-      },
-      {
-        tag: [t.squareBracket],
-        color: '#dc322f',
-      },
-      {
-        tag: [t.angleBracket],
-        color: '#586e75',
-      },
-      {
-        tag: [t.attributeName],
-        color: '#93a1a1',
-      },
-      {
-        tag: [t.regexp],
-        color: '#d30102',
-      },
-      {
-        tag: [t.quote],
-        color: '#859900',
-      },
-      { tag: [t.string], color: '#b58900' },
-      {
-        tag: t.link,
-        color: '#2aa198',
-        textDecoration: 'underline',
-        textUnderlinePosition: 'under',
-      },
-      {
-        tag: [t.url, t.escape, t.special(t.string)],
-        color: '#b58900',
-      },
-      { tag: [t.meta], color: '#dc322f' },
-      { tag: [t.comment], color: '#586e75', fontStyle: 'italic' },
-      { tag: t.strong, fontWeight: 'bold', color: '#eee8d5' },
-      { tag: t.emphasis, fontStyle: 'italic', color: '#859900' },
+      { tag: t.keyword, color: c.keyword },
+      { tag: [t.name, t.deleted, t.character, t.macroName], color: c.variable },
+      { tag: [t.propertyName], color: c.function },
+      { tag: [t.processingInstruction, t.string, t.inserted, t.special(t.string)], color: c.string },
+      { tag: [t.function(t.variableName), t.labelName], color: c.function },
+      { tag: [t.color, t.constant(t.name), t.standard(t.name)], color: c.constant },
+      { tag: [t.definition(t.name), t.separator], color: c.variable },
+      { tag: [t.className], color: c.class },
+      { tag: [t.number, t.changed, t.annotation, t.modifier, t.self, t.namespace], color: c.number },
+      { tag: [t.typeName], color: c.type, fontStyle: c.type },
+      { tag: [t.operator, t.operatorKeyword], color: c.keyword },
+      { tag: [t.url, t.escape, t.regexp, t.link], color: c.regexp },
+      { tag: [t.meta, t.comment], color: c.comment },
+      { tag: t.tagName, color: c.tag },
+      { tag: t.strong, fontWeight: 'bold' },
+      { tag: t.emphasis, fontStyle: 'italic' },
+      { tag: t.link, textDecoration: 'underline' },
+      { tag: t.heading, fontWeight: 'bold', color: c.heading },
+      { tag: [t.atom, t.bool, t.special(t.variableName)], color: c.variable },
+      { tag: t.invalid, color: c.invalid },
       { tag: t.strikethrough, textDecoration: 'line-through' },
-      { tag: t.heading, fontWeight: 'bold', color: '#b58900' },
-      { tag: t.heading1, fontWeight: 'bold', color: '#fdf6e3' },
-      {
-        tag: [t.heading2, t.heading3, t.heading4],
-        fontWeight: 'bold',
-        color: '#eee8d5',
-      },
-      {
-        tag: [t.heading5, t.heading6],
-        color: '#eee8d5',
-      },
-      { tag: [t.atom, t.bool, t.special(t.variableName)], color: '#d33682' },
-      {
-        tag: [t.processingInstruction, t.inserted, t.contentSeparator],
-        color: '#dc322f',
-      },
-      {
-        tag: [t.contentSeparator],
-        color: '#b58900',
-      },
-      { tag: t.invalid, color: '#586e75', borderBottom: `1px dotted #dc322f` },
       ...styles,
     ],
   });

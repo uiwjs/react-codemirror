@@ -2,6 +2,7 @@ export const config = {
   background: '#000c18',
   foreground: '#6688cc',
   selection: '#770811',
+  selectionMatch: '#770811',
   cursor: '#ddbb88',
   dropdownBackground: '#181f2f',
   activeLine: '#082050',

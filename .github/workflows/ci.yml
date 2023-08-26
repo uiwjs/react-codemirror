@@ -316,6 +316,13 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: 📦 @uiw/codemirror-theme-tomorrow-night-blue publish to NPM
+        run: npm publish --access public
+        working-directory: ./themes/tomorrow-night-blue/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: 📦 @uiw/codemirror-theme-vscode publish to NPM
         run: npm publish --access public
         working-directory: ./themes/vscode/

@@ -556,6 +556,16 @@ export const routes: MenuRouteObject[] = [
             ),
           },
           {
+            path: 'data/tomorrow-night-blue',
+            label: 'tomorrow night blue',
+            element: (
+              <Preview
+                themePkg="@uiw/codemirror-theme-tomorrow-night-blue"
+                path={() => import('@uiw/codemirror-theme-tomorrow-night-blue/README.md')}
+              />
+            ),
+          },
+          {
             path: 'data/vscode',
             element: <Navigate to="dark" replace />,
           },

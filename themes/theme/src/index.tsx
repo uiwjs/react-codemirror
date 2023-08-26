@@ -97,7 +97,7 @@ export const createTheme = ({ theme, settings = {}, styles = [] }: CreateThemeOp
     themeOptions[
       '&.cm-focused .cm-selectionBackground, &.cm-focused .cm-line::selection, & .cm-selectionLayer .cm-selectionBackground, .cm-content ::selection'
     ] = {
-      backgroundColor: settings.selection + ' !important',
+      background: settings.selection + ' !important',
     };
   }
   if (settings.selectionMatch) {

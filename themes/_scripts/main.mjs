@@ -4,7 +4,8 @@ import FS from 'node:fs/promises';
 const require = createRequire(import.meta.url);
 
 const includes = (data, ...arg) => {
-  const scope = typeof data.scope === 'string' ? data.scope.split(' ').filter(Boolean) : data.scope || [];
+  const isComma = typeof data.scope === 'string' && data.scope.includes(',');
+  const scope = typeof data.scope === 'string' ? data.scope.split(isComma ? ',' : ' ').filter(Boolean).map(t => t.trim()) : data.scope || [];
   const isInclude = !![scope||[]].flat().find(elm => arg.includes(elm));
   return isInclude ? getForeground(data.settings.foreground) : undefined;
 }
@@ -17,7 +18,8 @@ function format(data = {}, dark = false) {
     // Layout
     background: colors['editor.background'],
     foreground: colors['editor.foreground'] || colors['input.foreground'],
-    selection: colors['editor.selectionBackground'],
+    selection: colors['editor.wordHighlightBackground'] || colors['editor.selectionBackground'],
+    selectionMatch: colors['editor.wordHighlightStrongBackground'] || colors['editor.selectionBackground'],
     cursor: colors['editorCursor.foreground'] || colors['foreground'],
     dropdownBackground: colors['dropdown.background'],
     dropdownBorder: colors['dropdown.border'] || colors['foreground'],
@@ -127,6 +129,22 @@ const getString = (obj) => `export const config = ${JSON.stringify(obj, null, 2)
   themePath = '../monokai-dimmed/src/color.ts';
   await FS.writeFile(themePath, getString(monokaiDimmed));
   console.log(`🎉 File \x1b[32;1m${themePath}\x1b[0m created.`);
+
+  const solarizedDark = format(require('./data/solarized.dark.json'));
+  themePath = '../solarized/src/dark-color.ts';
+  await FS.writeFile(themePath, getString(solarizedDark));
+  console.log(`🎉 File \x1b[32;1m${themePath}\x1b[0m created.`);
+
+  const solarizedLight = format(require('./data/solarized.light.json'));
+  themePath = '../solarized/src/light-color.ts';
+  await FS.writeFile(themePath, getString(solarizedLight));
+  console.log(`🎉 File \x1b[32;1m${themePath}\x1b[0m created.`);
+
+  const tomorrowNightBlue = format(require('./data/tomorrow-night-blue.json'));
+  themePath = '../tomorrow-night-blue/src/color.ts';
+  await FS.writeFile(themePath, getString(tomorrowNightBlue));
+  console.log(`🎉 File \x1b[32;1m${themePath}\x1b[0m created.`);
+
   // const themeSolarizedDark = format(require('./data/solarized.dark.json'), true)
   // console.log('~~~::', themeSolarizedDark);
   // const themeSolarizedLight = format(require('./data/solarized.light.json'))

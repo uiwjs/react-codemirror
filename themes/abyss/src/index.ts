@@ -7,7 +7,7 @@ export const defaultSettingsAbyss: CreateThemeOptions['settings'] = {
   foreground: config.foreground,
   caret: config.cursor,
   selection: config.selection,
-  selectionMatch: config.selection,
+  selectionMatch: config.selectionMatch,
   gutterBackground: config.background,
   gutterForeground: config.foreground,
   lineHighlight: config.activeLine,
