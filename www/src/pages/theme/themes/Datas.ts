@@ -11,6 +11,7 @@ import { eclipse } from '@uiw/codemirror-theme-eclipse';
 import { bespin } from '@uiw/codemirror-theme-bespin';
 import { materialLight, materialDark } from '@uiw/codemirror-theme-material';
 import { monokai } from '@uiw/codemirror-theme-monokai';
+import { monokaiDimmed } from '@uiw/codemirror-theme-monokai-dimmed';
 import { noctisLilac } from '@uiw/codemirror-theme-noctis-lilac';
 import { vscodeDark } from '@uiw/codemirror-theme-vscode';
 import { duotoneLight, duotoneDark } from '@uiw/codemirror-theme-duotone';
@@ -51,6 +52,7 @@ export const themeData = {
   materialLight,
   materialDark,
   monokai,
+  monokaiDimmed,
   noctisLilac,
   nord,
   okaidia,

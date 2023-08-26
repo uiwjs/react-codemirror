@@ -14,6 +14,7 @@ export * from '@uiw/codemirror-theme-gruvbox-dark';
 export * from '@uiw/codemirror-theme-kimbie';
 export * from '@uiw/codemirror-theme-material';
 export * from '@uiw/codemirror-theme-monokai';
+export * from '@uiw/codemirror-theme-monokai-dimmed';
 export * from '@uiw/codemirror-theme-noctis-lilac';
 export * from '@uiw/codemirror-theme-nord';
 export * from '@uiw/codemirror-theme-okaidia';

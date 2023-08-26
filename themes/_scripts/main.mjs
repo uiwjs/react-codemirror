@@ -123,6 +123,10 @@ const getString = (obj) => `export const config = ${JSON.stringify(obj, null, 2)
   await FS.writeFile(themePath, getString(monokai));
   console.log(`🎉 File \x1b[32;1m${themePath}\x1b[0m created.`);
 
+  const monokaiDimmed = format(require('./data/monokai-dimmed.json'));
+  themePath = '../monokai-dimmed/src/color.ts';
+  await FS.writeFile(themePath, getString(monokaiDimmed));
+  console.log(`🎉 File \x1b[32;1m${themePath}\x1b[0m created.`);
   // const themeSolarizedDark = format(require('./data/solarized.dark.json'), true)
   // console.log('~~~::', themeSolarizedDark);
   // const themeSolarizedLight = format(require('./data/solarized.light.json'))

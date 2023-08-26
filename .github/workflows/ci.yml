@@ -253,6 +253,13 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: 📦 @uiw/codemirror-theme-monokai-dimmed publish to NPM
+        run: npm publish --access public
+        working-directory: ./themes/monokai-dimmed/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: 📦 @uiw/codemirror-theme-noctis-lilac publish to NPM
         run: npm publish --access public
         working-directory: ./themes/noctis-lilac/
