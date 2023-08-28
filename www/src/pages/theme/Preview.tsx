@@ -1,5 +1,6 @@
 import { FC, Children, PropsWithChildren, cloneElement, useState } from 'react';
 import styled from 'styled-components';
+import Npm from '@uiw/react-shields/npm';
 import { useMdData } from '../../components/useMdData';
 import { Warpper } from '../../components/Warpper';
 import { PreCode } from './themes/PreCode';
@@ -19,10 +20,7 @@ export const Content = styled.div`
   flex: 1;
 `;
 
-export const Button = styled.button`
-  position: absolute;
-  right: 0;
-`;
+export const Button = styled.button``;
 
 export const Title = styled.div`
   font-size: 24px;
@@ -52,6 +50,13 @@ export const Header = styled.div`
   }
 `;
 
+const ButtonGroup = styled.div`
+  float: right;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
 export const Preview: FC<PropsWithChildren<PreviewProps>> = (props) => {
   const { themePkg, mode } = props;
   const { mdData } = useMdData(props.path);
@@ -61,17 +66,28 @@ export const Preview: FC<PropsWithChildren<PreviewProps>> = (props) => {
   const themeName = themePkgNmae?.replace('@uiw/codemirror-theme-', '').replace('-', ' ');
   const themeExtensionName = themePkgNmae?.replace('@uiw/codemirror-theme-', '') + (!!mode ? `-${mode}` : '');
   const extension = themeData[toCamelCase(themeExtensionName) as keyof typeof themeData];
+  const repoName = themePkgNmae?.replace(/@uiw\//, '');
   return (
     <Warpper>
       <Content>
         {props.themePkg && (
           <Header>
             <Title>{themeName} Theme</Title>
-            <div>
+            <ButtonGroup>
+              <Npm.Downloads
+                scope="@uiw"
+                packageName={repoName}
+                href={`https://www.npmjs.com/package/@uiw/${repoName}`}
+              />
+              <Npm.Version
+                scope="@uiw"
+                packageName={repoName}
+                href={`https://www.npmjs.com/package/@uiw/${repoName}`}
+              />
               <Button onClick={() => setPreviewDoc(previewDoc === 'document' ? 'example' : 'document')}>
                 {previewDoc === 'document' ? 'Preview Theme Example' : 'Preview Document'}
               </Button>
-            </div>
+            </ButtonGroup>
             <PreCode value={`npm install ${themePkg} --save`} />
           </Header>
         )}

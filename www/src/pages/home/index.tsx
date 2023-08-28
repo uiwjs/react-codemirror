@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import GitHubCorners from '@uiw/react-github-corners';
-import Github from '@uiw/react-shields/esm/github';
-import Npm from '@uiw/react-shields/esm/npm';
+import Github from '@uiw/react-shields/github';
+import Npm from '@uiw/react-shields/npm';
 import BackToUp from '@uiw/react-back-to-top';
 import logo from '../../logo.png';
 import Example from './Example';
@@ -71,8 +71,13 @@ const Buttons = styled.div`
     &:hover {
       background-color: var(--color-fg-muted);
       color: var(--color-theme-bg);
-      transition: background-color 0.25s linear, color 0.05s linear, opacity 0.25s linear, filter 0.25s linear,
-        visibility 0.25s linear, transform 0.25s linear;
+      transition:
+        background-color 0.25s linear,
+        color 0.05s linear,
+        opacity 0.25s linear,
+        filter 0.25s linear,
+        visibility 0.25s linear,
+        transform 0.25s linear;
     }
     &:last-child {
       color: var(--color-prettylights-syntax-keyword);
@@ -91,7 +96,9 @@ const Footer = styled.div`
 
 const AppHeader = styled.div`
   background-color: var(--color-canvas-subtle);
-  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1), 0 1px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0px 2px 10px 0px rgba(0, 0, 0, 0.1),
+    0 1px rgba(0, 0, 0, 0.1);
   padding: 120px 20px 40px 20px;
   border-bottom: 1px solid var(--color-canvas-default);
   position: relative;
