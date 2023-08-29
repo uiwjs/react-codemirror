@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-theme-eclipse",
-  "version": "4.21.11",
+  "version": "4.21.12",
   "description": "Theme eclipse for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/eclipse",
   "author": "kenny wong <wowohoo@qq.com>",
@@ -21,7 +21,7 @@
     "cjs"
   ],
   "dependencies": {
-    "@uiw/codemirror-themes": "4.21.11"
+    "@uiw/codemirror-themes": "4.21.12"
   },
   "keywords": [
     "codemirror",
