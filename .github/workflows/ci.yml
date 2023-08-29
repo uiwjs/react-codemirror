@@ -15,7 +15,12 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - run: npm install
-      - run: npm run build
+
+      - name: Generate a static website
+        run: npm run build
+        env:
+          GENERATE_SOURCEMAP: false
+
       - working-directory: core
         run: |
           npm run bundle
