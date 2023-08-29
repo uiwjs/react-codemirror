@@ -109,6 +109,12 @@ export * from '@uiw/codemirror-theme-xcode';
   <img width="436" alt="codemirror-theme-androidstudio" src="https://user-images.githubusercontent.com/1680273/177484354-0a4fa43e-de96-409f-83e2-61808f2347e6.png">
 </a>
 
+### andromeda
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/andromeda">
+  <img width="436" alt="codemirror-theme-andromeda" src="https://github.com/uiwjs/react-codemirror/assets/1680273/8dabf62f-6258-4d42-8768-113c9f089c79">
+</a>
+
 ### atom one
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/xcode/light">

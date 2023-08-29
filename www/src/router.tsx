@@ -218,6 +218,16 @@ export const routes: MenuRouteObject[] = [
             ),
           },
           {
+            path: 'data/andromeda',
+            label: 'Andromeda',
+            element: (
+              <Preview
+                themePkg="@uiw/codemirror-theme-andromeda"
+                path={() => import('@uiw/codemirror-theme-andromeda/README.md')}
+              />
+            ),
+          },
+          {
             path: 'data/atomone',
             label: 'Atomone',
             element: (

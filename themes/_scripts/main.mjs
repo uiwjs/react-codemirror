@@ -16,7 +16,7 @@ function format(data = {}, dark = false) {
   const conf = {
     // name: data.name,
     // Layout
-    background: colors['editor.background'],
+    background: colors['activeBackground'] || colors['editor.background'],
     foreground: colors['editor.foreground'] || colors['input.foreground'],
     selection: colors['editor.wordHighlightBackground'] || colors['editor.selectionBackground'],
     selectionMatch: colors['editor.wordHighlightStrongBackground'] || colors['editor.selectionBackground'],
@@ -145,8 +145,9 @@ const getString = (obj) => `export const config = ${JSON.stringify(obj, null, 2)
   await FS.writeFile(themePath, getString(tomorrowNightBlue));
   console.log(`🎉 File \x1b[32;1m${themePath}\x1b[0m created.`);
 
-  // const themeSolarizedDark = format(require('./data/solarized.dark.json'), true)
-  // console.log('~~~::', themeSolarizedDark);
-  // const themeSolarizedLight = format(require('./data/solarized.light.json'))
-  // console.log('~~~::', themeSolarizedLight);
+  const andromeda = format(require('./data/andromeda.json'));
+  themePath = '../andromeda/src/color.ts';
+  await FS.writeFile(themePath, getString(andromeda));
+  console.log(`🎉 File \x1b[32;1m${themePath}\x1b[0m created.`);
+
 })()

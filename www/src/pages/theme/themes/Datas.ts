@@ -1,6 +1,7 @@
 import { abcdef } from '@uiw/codemirror-theme-abcdef';
 import { abyss } from '@uiw/codemirror-theme-abyss';
 import { androidstudio } from '@uiw/codemirror-theme-androidstudio';
+import { andromeda } from '@uiw/codemirror-theme-andromeda';
 import { atomone } from '@uiw/codemirror-theme-atomone';
 import { aura } from '@uiw/codemirror-theme-aura';
 import { basicLight, basicDark } from '@uiw/codemirror-theme-basic';
@@ -34,6 +35,7 @@ export const themeData = {
   abcdef,
   abyss,
   androidstudio,
+  andromeda,
   atomone,
   aura,
   basicLight,
