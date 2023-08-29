@@ -154,5 +154,15 @@ const getString = (obj) => `export const config = ${JSON.stringify(obj, null, 2)
   themePath = '../copilot/src/color.ts';
   await FS.writeFile(themePath, getString(copilot));
   console.log(`🎉 File \x1b[32;1m${themePath}\x1b[0m created.`);
+  
+  const whiteDark = format(require('./data/white.dark.json'));
+  themePath = '../white/src/dark-color.ts';
+  await FS.writeFile(themePath, getString(whiteDark));
+  console.log(`🎉 File \x1b[32;1m${themePath}\x1b[0m created.`);
+
+  const whiteLight = format(require('./data/white.light.json'));
+  themePath = '../white/src/light-color.ts';
+  await FS.writeFile(themePath, getString(whiteLight));
+  console.log(`🎉 File \x1b[32;1m${themePath}\x1b[0m created.`);
 
 })()

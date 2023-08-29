@@ -299,6 +299,13 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: 📦 @uiw/codemirror-theme-copilot publish to NPM
+        run: npm publish --access public
+        working-directory: ./themes/copilot/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: 📦 @uiw/codemirror-theme-sublime publish to NPM
         run: npm publish --access public
         working-directory: ./themes/sublime/
@@ -337,6 +344,13 @@ jobs:
       - name: 📦 @uiw/codemirror-theme-vscode publish to NPM
         run: npm publish --access public
         working-directory: ./themes/vscode/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: 📦 @uiw/codemirror-theme-white publish to NPM
+        run: npm publish --access public
+        working-directory: ./themes/white/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

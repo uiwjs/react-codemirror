@@ -586,6 +586,28 @@ export const routes: MenuRouteObject[] = [
             ),
           },
           {
+            path: 'data/white/light',
+            label: 'white light',
+            element: (
+              <Preview
+                themePkg="@uiw/codemirror-theme-white"
+                mode="light"
+                path={() => import('@uiw/codemirror-theme-white/README.md')}
+              />
+            ),
+          },
+          {
+            path: 'data/white/dark',
+            label: 'white dark',
+            element: (
+              <Preview
+                themePkg="@uiw/codemirror-theme-white"
+                mode="dark"
+                path={() => import('@uiw/codemirror-theme-white/README.md')}
+              />
+            ),
+          },
+          {
             path: 'data/vscode',
             element: <Navigate to="dark" replace />,
           },

@@ -64,10 +64,13 @@ const view = new EditorView({
 export * from '@uiw/codemirror-theme-abcdef';
 export * from '@uiw/codemirror-theme-abyss';
 export * from '@uiw/codemirror-theme-androidstudio';
+export * from '@uiw/codemirror-theme-andromeda';
 export * from '@uiw/codemirror-theme-atomone';
 export * from '@uiw/codemirror-theme-aura';
+export * from '@uiw/codemirror-theme-basic';
 export * from '@uiw/codemirror-theme-bbedit';
 export * from '@uiw/codemirror-theme-bespin';
+export * from '@uiw/codemirror-theme-copilot';
 export * from '@uiw/codemirror-theme-darcula';
 export * from '@uiw/codemirror-theme-dracula';
 export * from '@uiw/codemirror-theme-duotone';
@@ -90,6 +93,7 @@ export * from '@uiw/codemirror-theme-tokyo-night-storm';
 export * from '@uiw/codemirror-theme-tokyo-night-day';
 export * from '@uiw/codemirror-theme-tomorrow-night-blue';
 export * from '@uiw/codemirror-theme-vscode';
+export * from '@uiw/codemirror-theme-white';
 export * from '@uiw/codemirror-theme-xcode';
 ```
 
@@ -309,6 +313,16 @@ export * from '@uiw/codemirror-theme-xcode';
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/vscode/dark">
   <img width="436" alt="codemirror-theme-vscode dark" src="https://user-images.githubusercontent.com/1680273/202690670-385808e2-6346-4e36-a3d6-6d9fc1f216dc.png">
+</a>
+
+### white
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/white/dark">
+  <img width="436" alt="codemirror-theme-white" src="https://github.com/uiwjs/react-codemirror/assets/1680273/dc3227c3-66c8-4df2-bc6b-efb7849fbaf2">
+</a>
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/white/light">
+  <img width="436" alt="codemirror-theme-white" src="https://github.com/uiwjs/react-codemirror/assets/1680273/c3954eba-b7ca-4293-b6f3-853ab988b38e">
 </a>
 
 ### xcode

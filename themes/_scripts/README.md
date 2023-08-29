@@ -14,3 +14,5 @@ Not perfect themes for [cm6](https://github.com/codemirror/dev/), generated from
 - [theme-solarized-light](https://github.com/microsoft/vscode/tree/main/extensions/theme-solarized-light)
 - [theme-tomorrow-night-blue](https://github.com/microsoft/vscode/tree/main/extensions/theme-tomorrow-night-blue)
 - [Andromeda](https://github.com/EliverLara/Andromeda/blob/master/themes/Andromeda-color-theme.json)
+- [Copilot](https://github.com/benjaminbenais/copilot-theme/blob/main/themes/Copilot%20Theme-color-theme.json)
+- [White](https://github.com/xthezealot/white-theme-vscode/tree/master/themes)

@@ -30,4 +30,5 @@ export * from '@uiw/codemirror-theme-tokyo-night-storm';
 export * from '@uiw/codemirror-theme-tokyo-night-day';
 export * from '@uiw/codemirror-theme-tomorrow-night-blue';
 export * from '@uiw/codemirror-theme-vscode';
+export * from '@uiw/codemirror-theme-white';
 export * from '@uiw/codemirror-theme-xcode';

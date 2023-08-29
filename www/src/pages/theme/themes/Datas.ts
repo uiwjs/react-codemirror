@@ -31,6 +31,7 @@ import { tokyoNightStorm } from '@uiw/codemirror-theme-tokyo-night-storm';
 import { tokyoNightDay } from '@uiw/codemirror-theme-tokyo-night-day';
 import { tomorrowNightBlue } from '@uiw/codemirror-theme-tomorrow-night-blue';
 import { xcodeLight, xcodeDark } from '@uiw/codemirror-theme-xcode';
+import { whiteLight, whiteDark } from '@uiw/codemirror-theme-white';
 
 export const themeData = {
   abcdef,
@@ -71,6 +72,8 @@ export const themeData = {
   tokyoNightDay,
   tomorrowNightBlue,
   vscodeDark,
+  whiteLight,
+  whiteDark,
   xcodeLight,
   xcodeDark,
 };

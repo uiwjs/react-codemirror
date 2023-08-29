@@ -1,0 +1,54 @@
+{
+  "name": "@uiw/codemirror-theme-white",
+  "version": "4.21.11",
+  "description": "Theme white for CodeMirror.",
+  "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/white/dark",
+  "author": "kenny wong <wowohoo@qq.com>",
+  "license": "MIT",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "exports": {
+    "./README.md": "./README.md",
+    ".": {
+      "import": "./esm/index.js",
+      "types": "./cjs/index.d.ts",
+      "require": "./cjs/index.js"
+    },
+    "./light": {
+      "import": "./esm/light.js",
+      "types": "./cjs/light.d.ts",
+      "require": "./cjs/light.js"
+    },
+    "./dark": {
+      "import": "./esm/dark.js",
+      "types": "./cjs/dark.d.ts",
+      "require": "./cjs/dark.js"
+    }
+  },
+  "scripts": {
+    "watch": "tsbb watch src/*.ts --use-babel",
+    "build": "tsbb build src/*.ts --use-babel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uiwjs/react-codemirror.git"
+  },
+  "files": [
+    "src",
+    "esm",
+    "cjs"
+  ],
+  "dependencies": {
+    "@uiw/codemirror-themes": "4.21.11"
+  },
+  "keywords": [
+    "codemirror",
+    "codemirror-theme",
+    "codemirror6",
+    "theme",
+    "white",
+    "syntax",
+    "ide",
+    "code"
+  ]
+}
