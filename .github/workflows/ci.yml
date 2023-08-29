@@ -17,9 +17,7 @@ jobs:
       - run: npm install
 
       - name: Generate a static website
-        run: npm run build
-        env:
-          GENERATE_SOURCEMAP: false
+        run: GENERATE_SOURCEMAP=false npm run build
 
       - working-directory: core
         run: |
