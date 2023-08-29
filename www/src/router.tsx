@@ -294,6 +294,16 @@ export const routes: MenuRouteObject[] = [
             ),
           },
           {
+            path: 'data/copilot',
+            label: 'copilot',
+            element: (
+              <Preview
+                themePkg="@uiw/codemirror-theme-copilot"
+                path={() => import('@uiw/codemirror-theme-copilot/README.md')}
+              />
+            ),
+          },
+          {
             path: 'data/dracula',
             label: 'dracula',
             element: (

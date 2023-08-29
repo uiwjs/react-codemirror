@@ -7,7 +7,7 @@
   "author": "kenny wong <wowohoo@qq.com>",
   "license": "MIT",
   "scripts": {
-    "build": "kkt build",
+    "build": "cross-env GENERATE_SOURCEMAP=false kkt build",
     "start": "kkt start",
     "map": "source-map-explorer build/static/js/*.js --html build/website-result.html"
   },
@@ -19,6 +19,7 @@
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "@types/styled-components": "^5.1.25",
+    "cross-env": "^7.0.3",
     "kkt": "^7.2.0",
     "source-map-explorer": "~2.5.2"
   },
@@ -53,6 +54,7 @@
     "@uiw/codemirror-theme-basic": "4.21.11",
     "@uiw/codemirror-theme-bbedit": "4.21.11",
     "@uiw/codemirror-theme-bespin": "4.21.11",
+    "@uiw/codemirror-theme-copilot": "4.21.11",
     "@uiw/codemirror-theme-darcula": "4.21.11",
     "@uiw/codemirror-theme-dracula": "4.21.11",
     "@uiw/codemirror-theme-duotone": "4.21.11",

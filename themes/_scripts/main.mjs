@@ -149,5 +149,10 @@ const getString = (obj) => `export const config = ${JSON.stringify(obj, null, 2)
   themePath = '../andromeda/src/color.ts';
   await FS.writeFile(themePath, getString(andromeda));
   console.log(`🎉 File \x1b[32;1m${themePath}\x1b[0m created.`);
+  
+  const copilot = format(require('./data/copilot.json'));
+  themePath = '../copilot/src/color.ts';
+  await FS.writeFile(themePath, getString(copilot));
+  console.log(`🎉 File \x1b[32;1m${themePath}\x1b[0m created.`);
 
 })()

@@ -30,6 +30,7 @@
     "@uiw/codemirror-theme-basic": "4.21.11",
     "@uiw/codemirror-theme-bbedit": "4.21.11",
     "@uiw/codemirror-theme-bespin": "4.21.11",
+    "@uiw/codemirror-theme-copilot": "4.21.11",
     "@uiw/codemirror-theme-darcula": "4.21.11",
     "@uiw/codemirror-theme-dracula": "4.21.11",
     "@uiw/codemirror-theme-duotone": "4.21.11",

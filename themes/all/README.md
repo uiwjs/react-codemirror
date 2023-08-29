@@ -153,6 +153,12 @@ export * from '@uiw/codemirror-theme-xcode';
   <img width="436" alt="codemirror-theme-bespin" src="https://user-images.githubusercontent.com/1680273/176573408-0fd54981-471a-4ef8-91d4-8ad4b159c1e0.png">
 </a>
 
+### copilot
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/copilot">
+  <img width="436" alt="codemirror-theme-copilot" src="https://github.com/uiwjs/react-codemirror/assets/1680273/4018a332-6cfb-4586-b3dc-86a60f12a3f7">
+</a>
+
 ### darcula
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/darcula">

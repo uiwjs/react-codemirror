@@ -9,26 +9,22 @@ import { toSnakeCase, toTitleCase } from '../../../utils/utils';
 
 const ThemesWarpper = styled.div`
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2.5rem;
   display: grid;
   padding: 2.6rem;
   a {
     text-decoration: none;
   }
-  @media (max-width: 1280px) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  @media (max-width: 860px) {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
 `;
 
 const ThemeCard = styled.div`
   padding: 1rem;
-  box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow:
+    0 0 #0000,
+    0 0 #0000,
+    0 0 #0000,
+    0 1px 2px 0 rgba(0, 0, 0, 0.05);
   border-radius: 0.5rem;
   border: 1px solid var(--color-neutral-muted);
   background-color: var(--color-canvas-subtle);
@@ -45,13 +41,14 @@ const Title = styled.div`
   padding-bottom: 0.68rem;
 `;
 
-const codeString = `import React, {useState} from 'react';
+const codeString = `import React, { useState } from 'react';
 
 // My favorite component
 const Counter = () => {
   const [value, setValue] = useState(0);
-
-  return <span>{value}</span>;
+  return (
+    <span>{value}</span>
+  );
 };`;
 
 const CodeEditor = styled(CodeMirror)`
@@ -84,7 +81,7 @@ export function Component() {
                 <Title>{toTitleCase(name)}</Title>
                 <CodeEditor
                   value={codeString}
-                  height="165px !important"
+                  height="185px !important"
                   theme={themeData[name as keyof typeof themeData]}
                   extensions={[color, langs.jsx()]}
                 />

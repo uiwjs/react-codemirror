@@ -1,6 +1,6 @@
-import { FC, PropsWithoutRef } from 'react';
+import { FC, PropsWithChildren, PropsWithoutRef } from 'react';
 import styled from 'styled-components';
-import CodeMirror from '@uiw/react-codemirror';
+import CodeMirror, { type ReactCodeMirrorProps } from '@uiw/react-codemirror';
 import { color } from '@uiw/codemirror-extensions-color';
 import { Extension } from '@codemirror/state';
 import jsStr from 'code-example/txt/sample.javascript.txt';
@@ -28,53 +28,53 @@ const Title = styled.div`
 `;
 
 const Warpper = styled.div`
-  max-width: 980px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 10px;
 `;
+
+const ExampleWarpper = styled.div``;
+
+interface ExampleProps extends ReactCodeMirrorProps {
+  title: string;
+}
+
+const Example: FC<PropsWithChildren<ExampleProps>> = ({ title, ...other }) => {
+  return (
+    <ExampleWarpper>
+      <Title>{title}</Title>
+      <CodeMirror {...other} />
+    </ExampleWarpper>
+  );
+};
 
 interface SampleProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   theme?: Extension;
 }
 
 export const Sample: FC<PropsWithoutRef<SampleProps>> = ({ theme, ...props }) => {
+  const editProps = {
+    height: '300px !important',
+    theme,
+  };
   return (
     <Warpper {...props}>
-      <Title>JavaScript</Title>
-      <CodeMirror value={jsStr} height="300px !important" theme={theme} extensions={[color, langs.javascript()]} />
-      <Title>JSX</Title>
-      <CodeMirror value={jsxStr} height="300px !important" theme={theme} extensions={[color, langs.jsx()]} />
-      <Title>TypeScript</Title>
-      <CodeMirror
-        value={typescriptStr}
-        height="300px !important"
-        theme={theme}
-        extensions={[color, langs.typescript()]}
-      />
-      <Title>TSX</Title>
-      <CodeMirror value={tsxStr} height="300px !important" theme={theme} extensions={[color, langs.tsx()]} />
-      <Title>JSON</Title>
-      <CodeMirror value={jsonStr} height="300px !important" theme={theme} extensions={[color, langs.json()]} />
-      <Title>HTML</Title>
-      <CodeMirror value={htmlStr} height="300px !important" theme={theme} extensions={[color, langs.html()]} />
-      <Title>Markdown</Title>
-      <CodeMirror value={markdownStr} height="300px !important" theme={theme} extensions={[color, langs.markdown()]} />
-      <Title>CSS</Title>
-      <CodeMirror value={cssStr} height="300px !important" theme={theme} extensions={[color, langs.css()]} />
-      <Title>PHP</Title>
-      <CodeMirror value={phpStr} height="300px !important" theme={theme} extensions={[color, langs.php()]} />
-      <Title>JAVA</Title>
-      <CodeMirror value={javaStr} height="300px !important" theme={theme} extensions={[color, langs.java()]} />
-      <Title>Rust</Title>
-      <CodeMirror value={rustStr} height="300px !important" theme={theme} extensions={[color, langs.rust()]} />
-      <Title>Go</Title>
-      <CodeMirror value={goStr} height="300px !important" theme={theme} extensions={[color, langs.go()]} />
-      <Title>MySQL</Title>
-      <CodeMirror value={mysqlStr} height="300px !important" theme={theme} extensions={[color, langs.mysql()]} />
-      <Title>Python</Title>
-      <CodeMirror value={pythonStr} height="300px !important" theme={theme} extensions={[color, langs.python()]} />
-      <Title>Shell</Title>
-      <CodeMirror value={shellStr} height="300px !important" theme={theme} extensions={[color, langs.shell()]} />
-      <Title>Swift</Title>
-      <CodeMirror value={swiftStr} height="300px !important" theme={theme} extensions={[color, langs.swift()]} />
+      <Example title="JavaScript" value={jsStr} extensions={[color, langs.javascript()]} {...editProps} />
+      <Example title="JSX" value={jsxStr} extensions={[color, langs.jsx()]} {...editProps} />
+      <Example title="TypeScript" value={typescriptStr} extensions={[color, langs.typescript()]} {...editProps} />
+      <Example title="TSX" value={tsxStr} extensions={[color, langs.tsx()]} {...editProps} />
+      <Example title="JSON" value={jsonStr} extensions={[color, langs.json()]} {...editProps} />
+      <Example title="HTML" value={htmlStr} extensions={[color, langs.html()]} {...editProps} />
+      <Example title="Markdown" value={markdownStr} extensions={[color, langs.markdown()]} {...editProps} />
+      <Example title="CSS" value={cssStr} extensions={[color, langs.css()]} {...editProps} />
+      <Example title="PHP" value={phpStr} extensions={[color, langs.php()]} {...editProps} />
+      <Example title="JAVA" value={javaStr} extensions={[color, langs.java()]} {...editProps} />
+      <Example title="Rust" value={rustStr} extensions={[color, langs.rust()]} {...editProps} />
+      <Example title="Go" value={goStr} extensions={[color, langs.go()]} {...editProps} />
+      <Example title="MySQL" value={mysqlStr} extensions={[color, langs.mysql()]} {...editProps} />
+      <Example title="Python" value={pythonStr} extensions={[color, langs.python()]} {...editProps} />
+      <Example title="Shell" value={shellStr} extensions={[color, langs.shell()]} {...editProps} />
+      <Example title="Swift" value={swiftStr} extensions={[color, langs.swift()]} {...editProps} />
     </Warpper>
   );
 };
