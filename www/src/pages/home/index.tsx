@@ -89,6 +89,9 @@ const Footer = styled.div`
   text-align: center;
   padding-top: 30px;
   padding-bottom: 160px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
   a {
     text-decoration: none;
   }
