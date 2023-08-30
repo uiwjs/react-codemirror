@@ -36,13 +36,19 @@ const Tools = styled.div`
   }
 `;
 
-const CodemirrorWarpper = styled(CodeMirror)`
-  box-shadow: 0 0 0 1px rgb(16 22 26 / 10%), 0 0 0 rgb(16 22 26 / 0%), 0 1px 1px rgb(16 22 26 / 20%);
+const CodemirrorWarpper = styled.div`
+  box-shadow:
+    0 0 0 1px rgb(16 22 26 / 10%),
+    0 0 0 rgb(16 22 26 / 0%),
+    0 1px 1px rgb(16 22 26 / 20%);
   margin: 0 auto;
   text-align: left;
   max-width: 995px;
   overflow: auto;
   border-radius: 5px;
+  margin-top: -30px;
+  z-index: 10;
+  position: relative;
 `;
 
 const Warpper = styled.div`
@@ -88,26 +94,29 @@ export default function Example() {
   }, []);
   return (
     <Warpper className="wmde-markdown-var">
-      <CodemirrorWarpper
-        value={code}
-        height={`${height} !important`}
-        theme={alls[theme as keyof typeof alls] || theme}
-        editable={editable}
-        extensions={extensions}
-        autoFocus={autofocus}
-        basicSetup={basicSetup}
-        placeholder={placeholder}
-        onChange={(val) => {
-          // https://github.com/uiwjs/react-codemirror/issues/449
-          // setCode(val)
-        }}
-        style={{
-          maxWidth: '995px',
-          margin: '-18px auto 0 auto',
-          position: 'relative',
-          zIndex: 999,
-        }}
-      />
+      <CodemirrorWarpper>
+        <CodeMirror
+          value={code}
+          height={`${height} !important`}
+          // @ts-ignore
+          theme={alls[theme as keyof typeof alls] || theme}
+          editable={editable}
+          extensions={extensions}
+          autoFocus={autofocus}
+          basicSetup={basicSetup}
+          placeholder={placeholder}
+          onChange={(val) => {
+            // https://github.com/uiwjs/react-codemirror/issues/449
+            // setCode(val)
+          }}
+          style={{
+            maxWidth: '995px',
+            margin: '-18px auto 0 auto',
+            position: 'relative',
+            zIndex: 999,
+          }}
+        />
+      </CodemirrorWarpper>
       <MarkdownDocument>
         <Tools>
           <Select
