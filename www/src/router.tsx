@@ -2,21 +2,6 @@ import React from 'react';
 import { Navigate, IndexRouteObject, NonIndexRouteObject, Outlet } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { ErrorPage } from './components/ErrorPage';
-import { ThemeEditor } from './pages/theme/editor';
-
-import { BasicSetupExample } from './pages/extensions/basic-setup/example';
-import { ClassNameExample } from './pages/extensions/classname/example';
-
-import { EventsExample } from './pages/extensions/events/example';
-import { LineNumbersRelativeExample } from './pages/extensions/line-numbers-relative/example';
-import { LangsExample } from './pages/extensions/langs/example';
-import { HyperLinkExample } from './pages/extensions/hyper-link/example';
-import { ColorExample } from './pages/extensions/color/example';
-import { MentionsExample } from './pages/extensions/mentions/example';
-import { ThemesAllExample } from './pages/extensions/themes/example';
-import { ZebraStripesExample } from './pages/extensions/zebra-stripes';
-
-import { MergeExample } from './pages/merge/Example';
 import { Preview } from './pages/theme/Preview';
 
 export interface MenuRouteObject
@@ -50,92 +35,52 @@ export const routes: MenuRouteObject[] = [
           {
             path: 'basic-setup',
             label: 'basic setup',
-            element: (
-              <Preview path={() => import('@uiw/codemirror-extensions-basic-setup/README.md')}>
-                <BasicSetupExample />
-              </Preview>
-            ),
+            lazy: () => import('./pages/extensions/basic-setup'),
           },
           {
             path: 'color',
             label: 'color',
-            element: (
-              <Preview path={() => import('@uiw/codemirror-extensions-basic-setup/README.md')}>
-                <ColorExample />
-              </Preview>
-            ),
+            lazy: () => import('./pages/extensions/color'),
           },
           {
             path: 'classname',
             label: 'classname',
-            element: (
-              <Preview path={() => import('@uiw/codemirror-extensions-classname/README.md')}>
-                <ClassNameExample />
-              </Preview>
-            ),
+            lazy: () => import('./pages/extensions/classname'),
           },
           {
             path: 'events',
             label: 'events',
-            element: (
-              <Preview path={() => import('@uiw/codemirror-extensions-events/README.md')}>
-                <EventsExample />
-              </Preview>
-            ),
+            lazy: () => import('./pages/extensions/events'),
           },
           {
             path: 'hyper-link',
             label: 'hyper link',
-            element: (
-              <Preview path={() => import('@uiw/codemirror-extensions-hyper-link/README.md')}>
-                <HyperLinkExample />
-              </Preview>
-            ),
+            lazy: () => import('./pages/extensions/hyper-link'),
           },
           {
             path: 'line-numbers-relative',
             label: 'line numbers relative',
-            element: (
-              <Preview path={() => import('@uiw/codemirror-extensions-line-numbers-relative/README.md')}>
-                <LineNumbersRelativeExample />
-              </Preview>
-            ),
+            lazy: () => import('./pages/extensions/line-numbers-relative'),
           },
           {
             path: 'languages',
             label: 'languages',
-            element: (
-              <Preview path={() => import('@uiw/codemirror-extensions-langs/README.md')}>
-                <LangsExample />
-              </Preview>
-            ),
+            lazy: () => import('./pages/extensions/langs'),
           },
           {
             path: 'mentions',
             label: 'mentions',
-            element: (
-              <Preview path={() => import('@uiw/codemirror-extensions-mentions/README.md')}>
-                <MentionsExample />
-              </Preview>
-            ),
+            lazy: () => import('./pages/extensions/mentions'),
           },
           {
             path: 'themes-all',
             label: 'themes all',
-            element: (
-              <Preview path={() => import('@uiw/codemirror-themes-all/README.md')}>
-                <ThemesAllExample />
-              </Preview>
-            ),
+            lazy: () => import('./pages/extensions/themes'),
           },
           {
             path: 'zebra-stripes',
             label: 'zebra stripes',
-            element: (
-              <Preview path={() => import('@uiw/codemirror-extensions-zebra-stripes/README.md')}>
-                <ZebraStripesExample />
-              </Preview>
-            ),
+            lazy: () => import('./pages/extensions/zebra-stripes'),
           },
         ],
       },
@@ -150,7 +95,7 @@ export const routes: MenuRouteObject[] = [
           },
           {
             path: ':type',
-            Component: ThemeEditor,
+            lazy: () => import('./pages/theme/editor'),
           },
         ],
       },
@@ -662,16 +607,12 @@ export const routes: MenuRouteObject[] = [
           {
             path: 'document',
             label: 'Document',
-            element: (
-              <Preview path={() => import('react-codemirror-merge/README.md')}>
-                <MergeExample />
-              </Preview>
-            ),
+            lazy: () => import('./pages/merge'),
           },
           {
             path: 'onchange',
             label: 'onChange Example',
-            element: <Preview path={() => import('./pages/merge/examples/Example.md')} />,
+            lazy: () => import('./pages/merge/examples/onchange'),
           },
         ],
       },

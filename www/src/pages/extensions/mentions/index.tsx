@@ -1,8 +1,9 @@
-import { FC, PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 import { mentions } from '@uiw/codemirror-extensions-mentions';
 import CodeMirror from '@uiw/react-codemirror';
 import { langs } from '@uiw/codemirror-extensions-langs';
 import { useTheme } from '../../../utils/useTheme';
+import { Preview } from '../../theme/Preview';
 import { PageWarpper } from '..';
 
 const users = [
@@ -63,5 +64,13 @@ export const MentionsExample: FC<PropsWithChildren<{ source?: string }>> = ({ so
         extensions={[langs.markdown(), mentions(users)]}
       />
     </PageWarpper>
+  );
+};
+
+export const Component = () => {
+  return (
+    <Preview path={() => import('@uiw/codemirror-extensions-mentions/README.md')}>
+      <MentionsExample />
+    </Preview>
   );
 };

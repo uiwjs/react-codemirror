@@ -3,6 +3,7 @@ import { classname } from '@uiw/codemirror-extensions-classname';
 import CodeMirror from '@uiw/react-codemirror';
 import { langs } from '@uiw/codemirror-extensions-langs';
 import { EditorView } from '@codemirror/view';
+import { Preview } from '../../theme/Preview';
 import { useTheme } from '../../../utils/useTheme';
 import { PageWarpper } from '..';
 
@@ -39,5 +40,13 @@ export const ClassNameExample: FC<PropsWithChildren<{ source?: string }>> = ({ s
         ]}
       />
     </PageWarpper>
+  );
+};
+
+export const Component = () => {
+  return (
+    <Preview path={() => import('@uiw/codemirror-extensions-classname/README.md')}>
+      <ClassNameExample />
+    </Preview>
   );
 };

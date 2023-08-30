@@ -4,6 +4,7 @@ import CodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
 import * as themes from '@uiw/codemirror-themes-all';
 import { langs } from '@uiw/codemirror-extensions-langs';
 import styled from 'styled-components';
+import { Preview } from '../../theme/Preview';
 import { useTheme } from '../../../utils/useTheme';
 import { PageWarpper } from '..';
 
@@ -46,5 +47,13 @@ export const ThemesAllExample: FC<PropsWithChildren<{ source?: string }>> = ({ s
         <Link to="/theme/home">All Theme Example</Link>
       </ToolsWapper>
     </PageWarpper>
+  );
+};
+
+export const Component = () => {
+  return (
+    <Preview path={() => import('@uiw/codemirror-themes-all/README.md')}>
+      <ThemesAllExample />
+    </Preview>
   );
 };

@@ -1,4 +1,5 @@
 import { FC, PropsWithChildren } from 'react';
+import { Preview } from '../../theme/Preview';
 import { zebraStripes } from '@uiw/codemirror-extensions-zebra-stripes';
 import CodeMirror from '@uiw/react-codemirror';
 import { useState } from 'react';
@@ -47,5 +48,13 @@ export const ZebraStripesExample: FC<PropsWithChildren<{ source?: string }>> = (
         ]}
       />
     </PageWarpper>
+  );
+};
+
+export const Component = () => {
+  return (
+    <Preview path={() => import('@uiw/codemirror-extensions-zebra-stripes/README.md')}>
+      <ZebraStripesExample />
+    </Preview>
   );
 };

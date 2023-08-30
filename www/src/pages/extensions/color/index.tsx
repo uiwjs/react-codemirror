@@ -2,6 +2,7 @@ import { color } from '@uiw/codemirror-extensions-color';
 import CodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
 import { useState } from 'react';
 import { langs } from '@uiw/codemirror-extensions-langs';
+import { Preview } from '../../theme/Preview';
 import { useTheme } from '../../../utils/useTheme';
 import { codeSample } from './code';
 import { PageWarpper } from '..';
@@ -56,5 +57,13 @@ export const ColorExample = () => {
         </label>
       </div>
     </PageWarpper>
+  );
+};
+
+export const Component = () => {
+  return (
+    <Preview path={() => import('@uiw/codemirror-extensions-color/README.md')}>
+      <ColorExample />
+    </Preview>
   );
 };

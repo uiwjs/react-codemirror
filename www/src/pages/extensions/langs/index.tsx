@@ -1,7 +1,8 @@
-import { FC, PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
+import { useEffect, useState } from 'react';
 import { langNames, LanguageName, loadLanguage } from '@uiw/codemirror-extensions-langs';
 import CodeMirror from '@uiw/react-codemirror';
-import { useEffect, useState } from 'react';
+import { Preview } from '../../theme/Preview';
 import styled from 'styled-components';
 import { useTheme } from '../../../utils/useTheme';
 import { PageWarpper } from '..';
@@ -51,5 +52,13 @@ export const LangsExample: FC<PropsWithChildren<{ source?: string }>> = (props) 
         <span>&nbsp; Total: {langNames.length}</span>
       </Toolbar>
     </PageWarpper>
+  );
+};
+
+export const Component = () => {
+  return (
+    <Preview path={() => import('@uiw/codemirror-extensions-langs/README.md')}>
+      <LangsExample />
+    </Preview>
   );
 };

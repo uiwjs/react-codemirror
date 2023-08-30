@@ -68,7 +68,7 @@ export type Style = Partial<
 
 export function ThemeEditor() {
   const navigate = useNavigate();
-  const { type = 'light' } = useParams();
+  const { type = 'multiple' } = useParams();
   const [extension, setExtension] = useState<Extension>(javascript({ jsx: true }));
   const [code, setCode] = useState('');
   const [lang, setLang] = useState('jsx');
@@ -239,8 +239,12 @@ export function ThemeEditor() {
             }}
           />
         )}
-        {type === 'multiple' && <Sample theme={myTheme} style={{ padding: '30px 30px', maxWidth: 860 }} />}
+        {type === 'multiple' && <Sample theme={myTheme} style={{ padding: '30px 30px' }} />}
       </EditorView>
     </Fragment>
   );
 }
+
+export const Component = () => {
+  return <ThemeEditor />;
+};

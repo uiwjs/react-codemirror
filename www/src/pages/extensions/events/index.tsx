@@ -1,4 +1,5 @@
-import { FC, PropsWithChildren } from 'react';
+import { Preview } from '../../theme/Preview';
+import type { FC, PropsWithChildren } from 'react';
 import * as events from '@uiw/codemirror-extensions-events';
 import CodeMirror from '@uiw/react-codemirror';
 import styled from 'styled-components';
@@ -46,5 +47,13 @@ export const EventsExample: FC<PropsWithChildren<{ source?: string }>> = ({ sour
         {scrollTop} {eventType}
       </Info>
     </PageWarpper>
+  );
+};
+
+export const Component = () => {
+  return (
+    <Preview path={() => import('@uiw/codemirror-extensions-events/README.md')}>
+      <EventsExample />
+    </Preview>
   );
 };

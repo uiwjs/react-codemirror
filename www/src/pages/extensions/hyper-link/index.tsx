@@ -2,6 +2,7 @@ import { hyperLink } from '@uiw/codemirror-extensions-hyper-link';
 // import { hyperLinkExtension, hyperLinkStyle } from '@uiw/codemirror-extensions-hyper-link';
 import CodeMirror from '@uiw/react-codemirror';
 import { langs } from '@uiw/codemirror-extensions-langs';
+import { Preview } from '../../theme/Preview';
 import { useTheme } from '../../../utils/useTheme';
 import { markdownString } from './codeSample';
 import { PageWarpper } from '..';
@@ -30,5 +31,13 @@ export const HyperLinkExample = () => {
         extensions={[langs.markdown(), hyperLink]}
       />
     </PageWarpper>
+  );
+};
+
+export const Component = () => {
+  return (
+    <Preview path={() => import('@uiw/codemirror-extensions-hyper-link/README.md')}>
+      <HyperLinkExample />
+    </Preview>
   );
 };
