@@ -51,7 +51,7 @@ const Counter = () => {
   );
 };`;
 
-const CodeEditor = styled(CodeMirror)`
+const CodeEditor = styled.div`
   border-radius: 0.375rem;
   overflow: hidden;
   position: relative;
@@ -75,16 +75,19 @@ export function Component() {
             .join('-')
             .replace(/-light$/, '/light')
             .replace(/-dark$/, '/dark');
+          const themeExtension = themeData[name as keyof typeof themeData];
           return (
             <Link key={idx} to={`/theme/data/${linkName}`}>
               <ThemeCard>
                 <Title>{toTitleCase(name)}</Title>
-                <CodeEditor
-                  value={codeString}
-                  height="185px !important"
-                  theme={themeData[name as keyof typeof themeData]}
-                  extensions={[color, langs.jsx()]}
-                />
+                <CodeEditor>
+                  <CodeMirror
+                    theme={themeExtension}
+                    value={codeString}
+                    height="185px !important"
+                    extensions={[color, langs.jsx()]}
+                  />
+                </CodeEditor>
               </ThemeCard>
             </Link>
           );
