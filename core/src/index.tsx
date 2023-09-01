@@ -5,6 +5,9 @@ import { BasicSetupOptions } from '@uiw/codemirror-extensions-basic-setup';
 import { useCodeMirror } from './useCodeMirror';
 import { Statistics } from './utils';
 
+export * from '@codemirror/view';
+export * from '@codemirror/state';
+
 export * from '@uiw/codemirror-extensions-basic-setup';
 export * from './useCodeMirror';
 export * from './getDefaultExtensions';

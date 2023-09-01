@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-theme-material",
-  "version": "4.21.12",
+  "version": "4.21.13",
   "description": "Theme material for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/material",
   "author": "kenny wong <wowohoo@qq.com>",
@@ -21,7 +21,7 @@
     "cjs"
   ],
   "dependencies": {
-    "@uiw/codemirror-themes": "4.21.12"
+    "@uiw/codemirror-themes": "4.21.13"
   },
   "keywords": [
     "codemirror",
