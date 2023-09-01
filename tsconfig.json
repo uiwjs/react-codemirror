@@ -16,7 +16,6 @@
     "baseUrl": ".",
     "jsx": "react-jsx",
     "noFallthroughCasesInSwitch": true,
-    "noEmit": true,
     "types": ["jest", "node"]
   }
 }
