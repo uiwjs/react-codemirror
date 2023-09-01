@@ -30,7 +30,6 @@ import { asciiArmor } from '@codemirror/legacy-modes/mode/asciiarmor';
 import { asterisk } from '@codemirror/legacy-modes/mode/asterisk';
 import { brainfuck } from '@codemirror/legacy-modes/mode/brainfuck';
 import {
-  clike,
   c,
   scala,
   kotlin,
