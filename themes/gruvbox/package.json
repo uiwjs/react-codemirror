@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-theme-gruvbox-dark",
-  "version": "4.21.16",
+  "version": "4.21.17",
   "description": "Theme gruvbox-dark for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/gruvbox/dark",
   "author": "kenny wong <wowohoo@qq.com>",
@@ -21,7 +21,7 @@
     "cjs"
   ],
   "dependencies": {
-    "@uiw/codemirror-themes": "4.21.16"
+    "@uiw/codemirror-themes": "4.21.17"
   },
   "keywords": [
     "codemirror",
