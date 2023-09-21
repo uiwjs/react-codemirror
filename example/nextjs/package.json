@@ -23,6 +23,6 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
-    "@uiw/react-codemirror": "4.21.13"
+    "@uiw/react-codemirror": "4.21.16"
   }
 }
