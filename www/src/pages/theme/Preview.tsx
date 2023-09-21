@@ -60,7 +60,6 @@ const ButtonGroup = styled.div`
 export const Preview: FC<PropsWithChildren<PreviewProps>> = (props) => {
   const { themePkg, mode } = props;
   const { mdData } = useMdData(props.path);
-  const childs = Children.toArray(props.children);
   const [previewDoc, setPreviewDoc] = useState<PreviewProps['preview']>(props.preview || 'example');
   const themePkgNmae = !!mode ? themePkg?.replace(/-(light|dark)$/, '') : themePkg;
   const themeName = themePkgNmae?.replace('@uiw/codemirror-theme-', '').replace('-', ' ');
@@ -91,9 +90,6 @@ export const Preview: FC<PropsWithChildren<PreviewProps>> = (props) => {
             <PreCode value={`npm install ${themePkg} --save`} />
           </Header>
         )}
-        {childs.map((child, key) => {
-          return cloneElement(child as any, { key, source: mdData?.source });
-        })}
         {mdData && (previewDoc === 'document' || !themePkg) && <Markdown source={mdData.source} mdData={mdData} />}
         {previewDoc === 'example' && themePkg && themeExtensionName && <Sample theme={extension} />}
       </Content>

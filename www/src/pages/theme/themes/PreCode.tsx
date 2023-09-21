@@ -9,14 +9,14 @@ const Pre = styled.pre`
   border-radius: 5px;
 `;
 
-const Span = styled.span<{ number: number }>`
+const Span = styled.span<{ $number: number }>`
   ${(props) =>
-    props.number === 0 &&
+    props.$number === 0 &&
     css`
       color: var(--color-accent-emphasis);
     `}
   ${(props) =>
-    props.number === 2 &&
+    props.$number === 2 &&
     css`
       color: var(--color-danger-fg);
     `}
@@ -27,7 +27,7 @@ export const PreCode: FC<PropsWithoutRef<{ value?: string }>> = ({ value = '' })
     <Pre>
       {value.split(' ').map((str, idx) => {
         return (
-          <Span key={idx} number={idx}>
+          <Span key={idx} $number={idx}>
             {str}{' '}
           </Span>
         );
