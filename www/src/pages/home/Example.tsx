@@ -64,7 +64,9 @@ export default function Example() {
   const [code, setCode] = useState('');
   const [extensions, setExtensions] = useState<Extension[]>();
   const [height, setHeight] = useState('500px');
-  const [basicSetup, setBasicSetup] = useState<BasicSetupOptions>({});
+  const [basicSetup, setBasicSetup] = useState<BasicSetupOptions>({
+    crosshairCursor: false,
+  });
 
   function handleLangChange(lang: keyof typeof langs) {
     try {
