@@ -22,7 +22,7 @@ export const Internal = React.forwardRef<InternalRef, CodeMirrorMergeProps>((pro
     highlightChanges,
     gutter,
     collapseUnchanged,
-    destroyRerender,
+    destroyRerender = true,
     renderRevertControl,
     ...elmProps
   } = props;
@@ -96,8 +96,10 @@ export const Internal = React.forwardRef<InternalRef, CodeMirrorMergeProps>((pro
         });
       }
     }
-    if (destroyRerender) {
-      view.current?.destroy();
+    if (destroyRerender && view.current) {
+      const originalFrom = view.current.a.state.selection.ranges[0].from;
+      const modifiedFrom = view.current.b.state.selection.ranges[0].from;
+      view.current.destroy();
       view.current = new MergeView({
         a: {
           ...original,
@@ -116,6 +118,24 @@ export const Internal = React.forwardRef<InternalRef, CodeMirrorMergeProps>((pro
         parent: editor.current!,
         ...opts,
       });
+      if (originalFrom) {
+        view.current.a.focus();
+        view.current.a.dispatch({
+          selection: {
+            anchor: originalFrom,
+            head: originalFrom,
+          },
+        });
+      }
+      if (modifiedFrom) {
+        view.current.b.focus();
+        view.current.b.dispatch({
+          selection: {
+            anchor: modifiedFrom,
+            head: modifiedFrom,
+          },
+        });
+      }
     }
   }, [view, theme, editor.current, original, modified, originalExtension, modifiedExtension, destroyRerender]);
 
