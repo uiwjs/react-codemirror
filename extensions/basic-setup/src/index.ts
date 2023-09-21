@@ -92,6 +92,8 @@ and an array literal), copy it into your own code, and adjust it
 as desired.
 */
 export const basicSetup = (options: BasicSetupOptions = {}): Extension[] => {
+  const { crosshairCursor: initCrosshairCursor = false } = options;
+
   let keymaps: KeyBinding[] = [];
   if (options.closeBracketsKeymap !== false) {
     keymaps = keymaps.concat(closeBracketsKeymap);
@@ -130,7 +132,7 @@ export const basicSetup = (options: BasicSetupOptions = {}): Extension[] => {
   if (options.closeBrackets !== false) extensions.push(closeBrackets());
   if (options.autocompletion !== false) extensions.push(autocompletion());
   if (options.rectangularSelection !== false) extensions.push(rectangularSelection());
-  if (options.crosshairCursor !== false) extensions.push(crosshairCursor());
+  if (initCrosshairCursor !== false) extensions.push(crosshairCursor());
   if (options.highlightActiveLine !== false) extensions.push(highlightActiveLine());
   if (options.highlightSelectionMatches !== false) extensions.push(highlightSelectionMatches());
   if (options.tabSize && typeof options.tabSize === 'number')
