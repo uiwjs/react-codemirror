@@ -7,6 +7,9 @@ on:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -90,21 +93,21 @@ jobs:
 
 
       - name: 📦 @uiw/react-codemirror publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./core/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 react-codemirror-merge publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./merge/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-themes publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/theme/
         continue-on-error: true
         env:
@@ -112,7 +115,7 @@ jobs:
 
 
       - name: 📦 @uiw/codemirror-theme-abcdef publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/abcdef/
         continue-on-error: true
         env:
@@ -120,7 +123,7 @@ jobs:
   
 
       - name: 📦 @uiw/codemirror-themes-abyss publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/abyss/
         continue-on-error: true
         env:
@@ -128,7 +131,7 @@ jobs:
   
 
       - name: 📦 @uiw/codemirror-themes-all publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/all/
         continue-on-error: true
         env:
@@ -136,7 +139,7 @@ jobs:
 
 
       - name: 📦 @uiw/codemirror-theme-okaidia publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/okaidia/
         continue-on-error: true
         env:
@@ -144,7 +147,7 @@ jobs:
 
 
       - name: 📦 @uiw/codemirror-theme-quietlight publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/quietlight/
         continue-on-error: true
         env:
@@ -152,7 +155,7 @@ jobs:
 
 
       - name: 📦 @uiw/codemirror-theme-red publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/red/
         continue-on-error: true
         env:
@@ -160,266 +163,266 @@ jobs:
 
 
       - name: 📦 @uiw/codemirror-theme-solarized publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/solarized/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-androidstudio publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/androidstudio/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-andromeda publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/andromeda/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-atomone publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/atomone/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-aura publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/aura/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-basic publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/basic/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-bbedit publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/bbedit/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-dracula publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/dracula/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-duotone publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/duotone/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-eclipse publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/eclipse/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-github publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/github/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-gruvbox-dark publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/gruvbox/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-kimbie publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/kimbie/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-material publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/material/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-monokai publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/monokai/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-monokai-dimmed publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/monokai-dimmed/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-noctis-lilac publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/noctis-lilac/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-nord publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/nord/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-darcula publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/darcula/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-bespin publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/bespin/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-copilot publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/copilot/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-sublime publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/sublime/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-tokyo-night publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/tokyo-night/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-tokyo-night-storm publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/tokyo-night-storm/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-tokyo-night-day publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/tokyo-night-day/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-tomorrow-night-blue publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/tomorrow-night-blue/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-vscode publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/vscode/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-white publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/white/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-theme-xcode publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./themes/xcode/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-extensions-basic-setup to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./extensions/basic-setup/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-extensions-classname to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./extensions/classname/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-extensions-events to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./extensions/events/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-extensions-color to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./extensions/color/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-extensions-hyper-link to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./extensions/hyper-link/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-extensions-line-numbers-relative to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./extensions/line-numbers-relative/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-extensions-langs to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./extensions/langs/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-extensions-mentions to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./extensions/mentions/
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 📦 @uiw/codemirror-extensions-zebra-stripes to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         working-directory: ./extensions/zebra-stripes/
         continue-on-error: true
         env:
