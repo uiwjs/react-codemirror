@@ -31,7 +31,7 @@ export default function App() {
           value={doc.replace(/t/g, 'T') + 'Six'}
         />
       </CodeMirrorMerge>
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex', marginTop: 10 }}>
         <pre style={{ flex: 1 }}>{value} </pre>
         <pre style={{ backgroundColor: '#fff', flex: 1 }}>{valueModified} </pre>
       </div>

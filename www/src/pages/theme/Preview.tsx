@@ -58,7 +58,7 @@ const ButtonGroup = styled.div`
 `;
 
 export const Preview: FC<PropsWithChildren<PreviewProps>> = (props) => {
-  const { themePkg, mode } = props;
+  const { themePkg, mode, children } = props;
   const { mdData } = useMdData(props.path);
   const [previewDoc, setPreviewDoc] = useState<PreviewProps['preview']>(props.preview || 'example');
   const themePkgNmae = !!mode ? themePkg?.replace(/-(light|dark)$/, '') : themePkg;
@@ -90,6 +90,7 @@ export const Preview: FC<PropsWithChildren<PreviewProps>> = (props) => {
             <PreCode value={`npm install ${themePkg} --save`} />
           </Header>
         )}
+        {children}
         {mdData && (previewDoc === 'document' || !themePkg) && <Markdown source={mdData.source} mdData={mdData} />}
         {previewDoc === 'example' && themePkg && themeExtensionName && <Sample theme={extension} />}
       </Content>

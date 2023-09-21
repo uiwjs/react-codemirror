@@ -22,6 +22,7 @@ export const Internal = React.forwardRef<InternalRef, CodeMirrorMergeProps>((pro
     highlightChanges,
     gutter,
     collapseUnchanged,
+    destroyRerender,
     renderRevertControl,
     ...elmProps
   } = props;
@@ -95,26 +96,28 @@ export const Internal = React.forwardRef<InternalRef, CodeMirrorMergeProps>((pro
         });
       }
     }
-    view.current?.destroy();
-    view.current = new MergeView({
-      a: {
-        ...original,
-        extensions: [
-          ...(originalExtension?.extension || []),
-          ...getDefaultExtensions({ ...originalExtension?.option, theme }),
-        ],
-      },
-      b: {
-        ...modified,
-        extensions: [
-          ...(modifiedExtension?.extension || []),
-          ...getDefaultExtensions({ ...modifiedExtension?.option, theme }),
-        ],
-      },
-      parent: editor.current!,
-      ...opts,
-    });
-  }, [view, theme, editor.current, original, modified, originalExtension, modifiedExtension]);
+    if (destroyRerender) {
+      view.current?.destroy();
+      view.current = new MergeView({
+        a: {
+          ...original,
+          extensions: [
+            ...(originalExtension?.extension || []),
+            ...getDefaultExtensions({ ...originalExtension?.option, theme }),
+          ],
+        },
+        b: {
+          ...modified,
+          extensions: [
+            ...(modifiedExtension?.extension || []),
+            ...getDefaultExtensions({ ...modifiedExtension?.option, theme }),
+          ],
+        },
+        parent: editor.current!,
+        ...opts,
+      });
+    }
+  }, [view, theme, editor.current, original, modified, originalExtension, modifiedExtension, destroyRerender]);
 
   useEffect(() => () => view.current && view.current.destroy(), []);
 
