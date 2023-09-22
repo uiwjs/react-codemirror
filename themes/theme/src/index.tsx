@@ -19,8 +19,10 @@ export interface CreateThemeOptions {
 type Theme = 'light' | 'dark';
 
 export interface Settings {
-  /** Editor background. */
+  /** Editor background color. */
   background?: string;
+  /** Editor background image. */
+  backgroundImage?: string;
   /** Default text color. */
   foreground?: string;
   /** Caret color. */
@@ -50,6 +52,9 @@ export const createTheme = ({ theme, settings = {}, styles = [] }: CreateThemeOp
   const baseStyle: StyleSpec = {};
   if (settings.background) {
     baseStyle.backgroundColor = settings.background;
+  }
+  if (settings.backgroundImage) {
+    baseStyle.backgroundImage = settings.backgroundImage;
   }
   if (settings.foreground) {
     baseStyle.color = settings.foreground;

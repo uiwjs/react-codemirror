@@ -23,6 +23,7 @@ const myTheme = createTheme({
   theme: 'light',
   settings: {
     background: '#ffffff',
+    backgroundImage: '',
     foreground: '#75baff',
     caret: '#5d00ff',
     selection: '#036dd626',
@@ -70,6 +71,7 @@ const myTheme = createTheme({
   theme: 'light',
   settings: {
     background: '#ffffff',
+    backgroundImage: '',
     foreground: '#75baff',
     caret: '#5d00ff',
     selection: '#036dd626',
@@ -297,8 +299,10 @@ export interface CreateThemeOptions {
 }
 declare type Theme = 'light' | 'dark';
 export interface Settings {
-  /** Editor background. */
+  /** Editor background color. */
   background: string;
+  /** Editor background image. */
+  backgroundImage?: string;
   /** Default text color. */
   foreground: string;
   /** Caret color. */

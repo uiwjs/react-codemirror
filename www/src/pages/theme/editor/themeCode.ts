@@ -202,6 +202,7 @@ const myTheme = createTheme({
   dark: '${styles.dark}',
   settings: {
     background: '${styles.background}',
+    backgroundImage: '',
     foreground: '${styles.foreground}',
     caret: '${styles.caret}',
     selection: '${styles.selection}',
