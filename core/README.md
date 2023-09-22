@@ -288,6 +288,7 @@ const myTheme = createTheme({
   theme: 'light',
   settings: {
     background: '#ffffff',
+    backgroundImage: '',
     foreground: '#75baff',
     caret: '#5d00ff',
     selection: '#036dd626',
