@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-extensions-mentions",
-  "version": "4.21.17",
+  "version": "4.21.18",
   "description": "Relative line numbers Extensions for CodeMirror6.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/extensions/mentions",
   "author": "kenny wong <wowohoo@qq.com>",

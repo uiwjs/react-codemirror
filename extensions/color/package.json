@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-extensions-color",
-  "version": "4.21.17",
+  "version": "4.21.18",
   "description": "Color Extensions for CodeMirror6.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/extensions/color",
   "author": "kenny wong <wowohoo@qq.com>",
