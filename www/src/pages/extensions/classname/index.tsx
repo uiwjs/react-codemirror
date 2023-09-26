@@ -1,14 +1,15 @@
-import { FC, PropsWithChildren } from 'react';
+import { FC, PropsWithChildren, useContext } from 'react';
 import { classname } from '@uiw/codemirror-extensions-classname';
 import CodeMirror from '@uiw/react-codemirror';
 import { langs } from '@uiw/codemirror-extensions-langs';
 import { EditorView } from '@codemirror/view';
-import { Preview } from '../../theme/Preview';
+import { Preview, MdContext } from '../../theme/Preview';
 import { useTheme } from '../../../utils/useTheme';
 import { PageWarpper } from '..';
 
-export const ClassNameExample: FC<PropsWithChildren<{ source?: string }>> = ({ source }) => {
+export const ClassNameExample: FC<PropsWithChildren> = () => {
   const { theme } = useTheme();
+  const mdData = useContext(MdContext);
 
   const themeDemo = EditorView.baseTheme({
     '&dark .first-line': { backgroundColor: 'red' },
@@ -20,7 +21,7 @@ export const ClassNameExample: FC<PropsWithChildren<{ source?: string }>> = ({ s
   return (
     <PageWarpper>
       <CodeMirror
-        value={source}
+        value={mdData.mdstr}
         theme={theme}
         height="300px !important"
         style={{ margin: '0 0 23px 0' }}

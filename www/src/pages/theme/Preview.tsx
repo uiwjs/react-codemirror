@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, useState } from 'react';
+import { FC, PropsWithChildren, createContext, useState } from 'react';
 import styled from 'styled-components';
 import Npm from '@uiw/react-shields/npm';
 import { useMdData } from '../../components/useMdData';
@@ -57,6 +57,10 @@ const ButtonGroup = styled.div`
   gap: 10px;
 `;
 
+export const MdContext = createContext({
+  mdstr: '',
+});
+
 export const Preview: FC<PropsWithChildren<PreviewProps>> = (props) => {
   const { themePkg, mode, children } = props;
   const { mdData } = useMdData(props.path);
@@ -66,6 +70,7 @@ export const Preview: FC<PropsWithChildren<PreviewProps>> = (props) => {
   const themeExtensionName = themePkgNmae?.replace('@uiw/codemirror-theme-', '') + (!!mode ? `-${mode}` : '');
   const extension = themeData[toCamelCase(themeExtensionName) as keyof typeof themeData];
   const repoName = themePkgNmae?.replace(/@uiw\//, '');
+  console.log('mdData:', mdData);
   return (
     <Warpper>
       <Content>
@@ -90,7 +95,7 @@ export const Preview: FC<PropsWithChildren<PreviewProps>> = (props) => {
             <PreCode value={`npm install ${themePkg} --save`} />
           </Header>
         )}
-        {children}
+        <MdContext.Provider value={{ mdstr: mdData.source }}>{children}</MdContext.Provider>
         {mdData && (previewDoc === 'document' || !themePkg) && <Markdown source={mdData.source} mdData={mdData} />}
         {previewDoc === 'example' && themePkg && themeExtensionName && <Sample theme={extension} />}
       </Content>

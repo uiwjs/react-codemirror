@@ -1,5 +1,5 @@
-import { FC, PropsWithChildren } from 'react';
-import { Preview } from '../../theme/Preview';
+import { FC, PropsWithChildren, useContext } from 'react';
+import { Preview, MdContext } from '../../theme/Preview';
 import { zebraStripes } from '@uiw/codemirror-extensions-zebra-stripes';
 import CodeMirror from '@uiw/react-codemirror';
 import { useState } from 'react';
@@ -14,14 +14,15 @@ const OptionsView = styled.div`
   gap: 18px;
 `;
 
-export const ZebraStripesExample: FC<PropsWithChildren<{ source?: string }>> = ({ source }) => {
+export const ZebraStripesExample: FC<PropsWithChildren> = () => {
   const { theme } = useTheme();
   const [step, setStep] = useState(2);
   const zebra = zebraStripes({ step: step });
+  const mdData = useContext(MdContext);
   return (
     <PageWarpper>
       <CodeMirror
-        value={source}
+        value={mdData.mdstr}
         theme={theme}
         height="300px !important"
         style={{ margin: '0 0 23px 0' }}
@@ -38,7 +39,7 @@ export const ZebraStripesExample: FC<PropsWithChildren<{ source?: string }>> = (
         </select>
       </OptionsView>
       <CodeMirror
-        value={source}
+        value={mdData.mdstr}
         theme={theme}
         height="300px !important"
         style={{ margin: '0 0 23px 0' }}

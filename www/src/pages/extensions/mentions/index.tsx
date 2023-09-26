@@ -1,9 +1,9 @@
-import type { FC, PropsWithChildren } from 'react';
+import { useContext, type FC, type PropsWithChildren } from 'react';
 import { mentions } from '@uiw/codemirror-extensions-mentions';
 import CodeMirror from '@uiw/react-codemirror';
 import { langs } from '@uiw/codemirror-extensions-langs';
 import { useTheme } from '../../../utils/useTheme';
-import { Preview } from '../../theme/Preview';
+import { Preview, MdContext } from '../../theme/Preview';
 import { PageWarpper } from '..';
 
 const users = [
@@ -51,13 +51,14 @@ const users = [
   },
 ];
 
-export const MentionsExample: FC<PropsWithChildren<{ source?: string }>> = ({ source }) => {
+export const MentionsExample: FC<PropsWithChildren> = () => {
   const { theme } = useTheme();
+  const mdData = useContext(MdContext);
 
   return (
     <PageWarpper>
       <CodeMirror
-        value={source}
+        value={mdData.mdstr}
         theme={theme}
         height="300px !important"
         style={{ margin: '0 0 23px 0' }}

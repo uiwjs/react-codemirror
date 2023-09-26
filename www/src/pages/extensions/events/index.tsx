@@ -1,10 +1,9 @@
-import { Preview } from '../../theme/Preview';
-import type { FC, PropsWithChildren } from 'react';
 import * as events from '@uiw/codemirror-extensions-events';
 import CodeMirror from '@uiw/react-codemirror';
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { langs } from '@uiw/codemirror-extensions-langs';
+import { Preview, MdContext } from '../../theme/Preview';
 import { useTheme } from '../../../utils/useTheme';
 import { PageWarpper } from '..';
 
@@ -12,15 +11,15 @@ const Info = styled.div`
   padding-bottom: 30px;
 `;
 
-export const EventsExample: FC<PropsWithChildren<{ source?: string }>> = ({ source }) => {
+export const EventsExample = () => {
   const [scrollTop, setScrollTop] = useState(0);
   const [eventType, setEventType] = useState('');
   const { theme } = useTheme();
-
+  const mdData = useContext(MdContext);
   return (
     <PageWarpper>
       <CodeMirror
-        value={source}
+        value={mdData.mdstr}
         theme={theme}
         height="200px !important"
         style={{ margin: '0 0 23px 0' }}

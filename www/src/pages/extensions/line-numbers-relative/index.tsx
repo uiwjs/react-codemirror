@@ -1,17 +1,18 @@
-import type { FC, PropsWithChildren } from 'react';
+import { useContext, type FC, type PropsWithChildren } from 'react';
 import { lineNumbersRelative } from '@uiw/codemirror-extensions-line-numbers-relative';
 import CodeMirror from '@uiw/react-codemirror';
 import { langs } from '@uiw/codemirror-extensions-langs';
-import { Preview } from '../../theme/Preview';
+import { Preview, MdContext } from '../../theme/Preview';
 import { useTheme } from '../../../utils/useTheme';
 import { PageWarpper } from '..';
 
-export const LineNumbersRelativeExample: FC<PropsWithChildren<{ source?: string }>> = ({ source }) => {
+export const LineNumbersRelativeExample: FC<PropsWithChildren> = () => {
   const { theme } = useTheme();
+  const mdData = useContext(MdContext);
   return (
     <PageWarpper>
       <CodeMirror
-        value={source}
+        value={mdData.mdstr}
         theme={theme}
         height="300px !important"
         style={{ margin: '0 0 23px 0' }}

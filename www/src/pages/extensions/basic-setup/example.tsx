@@ -1,9 +1,10 @@
-import { FC, PropsWithChildren, useState } from 'react';
+import { FC, PropsWithChildren, useContext, useState } from 'react';
 import CodeMirror, { BasicSetupOptions } from '@uiw/react-codemirror';
 import { langs } from '@uiw/codemirror-extensions-langs';
 import styled from 'styled-components';
 import { useTheme } from '../../../utils/useTheme';
 import { PageWarpper } from '..';
+import { MdContext } from '../../theme/Preview';
 
 const Label = styled.label`
   user-select: none;
@@ -25,17 +26,14 @@ const Warpper = styled.div`
   padding-bottom: 32px;
 `;
 
-interface BasicSetupExampleProps {
-  source?: string;
-}
-
-export const BasicSetupExample = (props: BasicSetupExampleProps) => {
+export const BasicSetupExample = () => {
   const { theme } = useTheme();
   const [basicSetup, setBasicSetup] = useState<BasicSetupOptions>({});
+  const mdData = useContext(MdContext);
   return (
     <PageWarpper>
       <CodeMirror
-        value={props.source}
+        value={mdData.mdstr}
         theme={theme}
         basicSetup={basicSetup}
         height="300px !important"
