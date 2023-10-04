@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 /* eslint-disable jest/no-conditional-expect */
 import React, { useEffect, useRef } from 'react';
 import renderer from 'react-test-renderer';
