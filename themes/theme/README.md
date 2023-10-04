@@ -29,6 +29,7 @@ const myTheme = createTheme({
     selection: '#036dd626',
     selectionMatch: '#036dd626',
     lineHighlight: '#8a91991a',
+    gutterBorder: '1px solid #ffffff10',
     gutterBackground: '#fff',
     gutterForeground: '#8a919966',
   },
@@ -292,19 +293,17 @@ export interface CreateThemeOptions {
    * Settings to customize the look of the editor, like background, gutter, selection and others.
    */
   settings: Settings;
-  /**
-   * Syntax highlighting styles.
-   */
+  /** Syntax highlighting styles. */
   styles: TagStyle[];
 }
-declare type Theme = 'light' | 'dark';
+type Theme = 'light' | 'dark';
 export interface Settings {
   /** Editor background color. */
-  background: string;
+  background?: string;
   /** Editor background image. */
   backgroundImage?: string;
   /** Default text color. */
-  foreground: string;
+  foreground?: string;
   /** Caret color. */
   caret?: string;
   /** Selection background. */
@@ -324,7 +323,7 @@ export interface Settings {
   /** set editor font */
   fontFamily?: string;
 }
-declare const createTheme: ({ dark, settings, styles }: CreateThemeOptions) => Extension;
+export declare const createTheme: ({ theme, settings, styles }: CreateThemeOptions) => Extension;
 export default createTheme;
 ```
 
