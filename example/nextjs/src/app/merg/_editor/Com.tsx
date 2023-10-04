@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import CodeMirrorMerge, { CodeMirrorMergeProps } from 'react-codemirror-merge';
 import { langs } from '@uiw/codemirror-extensions-langs';
 import { originalCode, modifiedCode } from './code';
@@ -26,7 +26,7 @@ export const MergeExample = () => {
     setOriginalValue(code);
   };
   return (
-    <Fragment>
+    <div>
       <button onClick={click}>Change Original Value {random.current}</button>
       <CodeMirrorMerge
         orientation={orientation}
@@ -100,6 +100,6 @@ export const MergeExample = () => {
           onChange={(evn) => setCollapseUnchanged(evn.target.checked ? {} : undefined)}
         />
       </label>
-    </Fragment>
+    </div>
   );
 };
