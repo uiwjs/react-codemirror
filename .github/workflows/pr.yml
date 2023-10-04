@@ -17,6 +17,6 @@ jobs:
         run: |
           npm run bundle
           npm run bundle:min
-          npm run coverage
 
+      - run: npm run coverage
       - run: npm run doc

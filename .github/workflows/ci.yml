@@ -26,8 +26,8 @@ jobs:
         run: |
           npm run bundle
           npm run bundle:min
-          npm run coverage
 
+      - run: npm run coverage
       - working-directory: example/nextjs
         run: npm run build
 
