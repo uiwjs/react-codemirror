@@ -28,6 +28,9 @@ jobs:
           npm run bundle:min
           npm run coverage
 
+      - working-directory: example/nextjs
+        run: npm run build
+
       - run: npm run doc
 
       - run: cp -rp www/build ./
