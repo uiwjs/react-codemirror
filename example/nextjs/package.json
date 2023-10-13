@@ -1,6 +1,6 @@
 {
   "name": "nextjs",
-  "version": "4.21.19",
+  "version": "4.21.20",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -23,7 +23,7 @@
     "typescript": "~5.2.2"
   },
   "devDependencies": {
-    "@uiw/react-codemirror": "4.21.19",
-    "react-codemirror-merge": "4.21.19"
+    "@uiw/react-codemirror": "4.21.20",
+    "react-codemirror-merge": "4.21.20"
   }
 }
