@@ -19,8 +19,8 @@ let stripe = Decoration.line({
 });
 
 function stripeDeco(view: EditorView) {
-  const step = view.state.facet(stepSize);
-  const num = view.state.facet(lineNumber);
+  const step = view.state.facet(stepSize) as number;
+  const num = view.state.facet<Array<number>>(lineNumber);
   const builder = new RangeSetBuilder<Decoration>();
   for (let { from, to } of view.visibleRanges) {
     for (let pos = from; pos <= to; ) {
