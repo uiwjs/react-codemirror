@@ -93,7 +93,7 @@
     "react-codemirror-merge": "4.21.19",
     "react-dom": "~18.2.0",
     "react-router-dom": "^6.14.2",
-    "rehype-ignore": "^1.0.1",
+    "rehype-ignore": "^2.0.0",
     "styled-components": "6.0.7"
   },
   "eslintConfig": {
