@@ -538,7 +538,31 @@ export interface Statistics {
 export declare const getStatistics: (view: ViewUpdate) => Statistics;
 ```
 
-### Related
+## Development
+
+1. Install dependencies
+
+```bash
+$ npm install       # Installation dependencies
+$ npm run build     # Compile all package
+```
+
+2. Development `@uiw/react-codemirror` package:
+
+```bash
+$ cd core
+# listen to the component compile and output the .js file
+# listen for compilation output type .d.ts file
+$ npm run watch # Monitor the compiled package `@uiw/react-codemirror`
+```
+
+3. Launch documentation site
+
+```bash
+npm run start
+```
+
+## Related
 
 - [@uiw/react-textarea-code-editor](https://github.com/uiwjs/react-textarea-code-editor): A simple code editor with syntax highlighting.
 - [@uiw/react-md-editor](https://github.com/uiwjs/react-md-editor): A simple markdown editor with preview, implemented with React.js and TypeScript.
@@ -555,7 +579,7 @@ As always, thanks to our amazing contributors!
   <img src="https://uiwjs.github.io/react-codemirror/CONTRIBUTORS.svg" />
 </a>
 
-Made with [github-action-contributors](https://github.com/jaywcjlove/github-action-contributors).
+Made with [contributors](https://github.com/jaywcjlove/github-action-contributors).
 
 ## License
 
