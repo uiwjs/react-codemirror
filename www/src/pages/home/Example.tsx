@@ -113,7 +113,6 @@ export default function Example() {
           }}
           style={{
             maxWidth: '995px',
-            margin: '-18px auto 0 auto',
             position: 'relative',
             zIndex: 999,
           }}
