@@ -16,6 +16,7 @@ import { rust } from '@codemirror/lang-rust';
 import { cpp } from '@codemirror/lang-cpp';
 import { lezer } from '@codemirror/lang-lezer';
 import { php } from '@codemirror/lang-php';
+import { liquid } from '@codemirror/lang-liquid';
 import { wast } from '@codemirror/lang-wast';
 import { vue } from '@codemirror/lang-vue';
 import { angular } from '@codemirror/lang-angular';
@@ -189,6 +190,7 @@ export const langs = {
   q: () => StreamLanguage.define(q),
   sas: () => StreamLanguage.define(sas),
   sass: () => sass(),
+  liquid: () => liquid(),
   mermaid: () => mermaid(),
   nix: () => nix(),
   svelte: () => svelte(),
