@@ -9,7 +9,7 @@ export const defaultSettingsEclipse: CreateThemeOptions['settings'] = {
   selectionMatch: '#d7d4f0',
   gutterBackground: '#f7f7f7',
   gutterForeground: '#999',
-  lineHighlight: '#e8f2ff',
+  lineHighlight: '#006fff1c',
   gutterBorder: 'transparent',
 };
 
