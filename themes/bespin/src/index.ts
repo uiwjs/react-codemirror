@@ -12,11 +12,11 @@ export const defaultSettingsBespin: CreateThemeOptions['settings'] = {
   background: '#28211c',
   foreground: '#9d9b97',
   caret: '#797977',
-  selection: '#36312e',
+  selection: '#4f382b',
   selectionMatch: '#4f382b',
   gutterBackground: '#28211c',
   gutterForeground: '#666666',
-  lineHighlight: 'rgba(255, 255, 255, 0.1)',
+  lineHighlight: '#ffffff1a',
 };
 
 export const bespinInit = (options?: Partial<CreateThemeOptions>) => {

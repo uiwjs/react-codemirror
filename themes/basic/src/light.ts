@@ -10,7 +10,7 @@ export const defaultSettingsBasicLight: CreateThemeOptions['settings'] = {
   gutterBackground: '#eceff4',
   gutterForeground: '#2e3440',
   gutterBorder: 'none',
-  lineHighlight: '#eceff4',
+  lineHighlight: '#02255f11',
 };
 
 export const basicLightInit = (options?: Partial<CreateThemeOptions>) => {

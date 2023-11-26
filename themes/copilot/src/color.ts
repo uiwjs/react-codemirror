@@ -1,11 +1,11 @@
 export const config = {
   background: '#232a2f',
   foreground: '#939da5',
-  selection: '#939da530',
+  selection: '#204062',
   selectionMatch: '#204062',
   cursor: '#939da5',
   dropdownBackground: '#1a2023',
-  activeLine: '#232a2f',
+  activeLine: '#4469832b',
   matchingBracket: '#204062',
   keyword: '#ba8ef7',
   storage: '#ba8ef7',

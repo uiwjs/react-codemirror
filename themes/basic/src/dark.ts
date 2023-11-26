@@ -6,7 +6,7 @@ export const defaultSettingsBasicDark: CreateThemeOptions['settings'] = {
   foreground: '#DDDDDD',
   caret: '#DDDDDD',
   selection: '#202325',
-  selectionMatch: '#B9D2FF30',
+  selectionMatch: '#202325',
   gutterBackground: '#292d30',
   gutterForeground: '#808080',
   gutterBorder: '1px solid #ffffff10',

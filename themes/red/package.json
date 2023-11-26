@@ -3,6 +3,7 @@
   "version": "4.21.20",
   "description": "Theme red for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/red",
+  "funding": "https://jaywcjlove.github.io/#/sponsor",
   "author": "kenny wong <wowohoo@qq.com>",
   "license": "MIT",
   "main": "./cjs/index.js",
