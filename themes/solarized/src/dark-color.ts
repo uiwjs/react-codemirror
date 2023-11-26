@@ -6,7 +6,7 @@ export const config = {
   cursor: '#D30102',
   dropdownBackground: '#00212B',
   dropdownBorder: '#2AA19899',
-  activeLine: '#073642',
+  activeLine: '#00cafe11',
   matchingBracket: '#073642',
   keyword: '#859900',
   storage: '#93A1A1',

@@ -9,7 +9,7 @@ export const defaultSettingsOkaidia: CreateThemeOptions['settings'] = {
   selectionMatch: '#49483E',
   gutterBackground: '#272822',
   gutterForeground: '#FFFFFF70',
-  lineHighlight: '#00000059',
+  lineHighlight: '#0000003b',
 };
 
 export const okaidiaInit = (options?: Partial<CreateThemeOptions>) => {
