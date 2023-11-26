@@ -11,7 +11,7 @@ export const defaultSettingsXcodeLight: CreateThemeOptions['settings'] = {
   selectionMatch: '#BBDFFF',
   gutterBackground: '#fff',
   gutterForeground: '#AFAFAF',
-  lineHighlight: '#EDF4FF',
+  lineHighlight: '#d5e6ff69',
 };
 
 export function xcodeLightInit(options?: Partial<CreateThemeOptions>) {
@@ -45,7 +45,7 @@ export const defaultSettingsXcodeDark: CreateThemeOptions['settings'] = {
   caret: '#fff',
   selection: '#727377',
   selectionMatch: '#727377',
-  lineHighlight: '#2F3239',
+  lineHighlight: '#ffffff0f',
 };
 
 export const xcodeDarkInit = (options?: Partial<CreateThemeOptions>) => {
