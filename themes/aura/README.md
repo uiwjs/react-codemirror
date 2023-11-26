@@ -4,6 +4,7 @@
 
 <!--rehype:ignore:end-->
 
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor)
 [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-aura.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-aura)
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/aura">

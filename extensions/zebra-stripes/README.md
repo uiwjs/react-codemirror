@@ -4,6 +4,7 @@
 
 <!--rehype:ignore:end-->
 
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor)
 [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-extensions-zebra-stripes.svg)](https://www.npmjs.com/package/@uiw/codemirror-extensions-zebra-stripes)
 
 Styles alternating lines for CodeMirror6.

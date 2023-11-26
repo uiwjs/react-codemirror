@@ -4,6 +4,7 @@
 
 <!--rehype:ignore:end-->
 
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor)
 [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-extensions-basic-setup.svg)](https://www.npmjs.com/package/@uiw/codemirror-extensions-basic-setup)
 
 Basic configuration for the CodeMirror6 code editor. This is the official [basic-setup](https://github.com/codemirror/basic-setup) package fork, making configuration optional.

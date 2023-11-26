@@ -4,6 +4,7 @@
 
 <!--rehype:ignore:end-->
 
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor)
 [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-tomorrow-night-blue.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-tomorrow-night-blue)
 
 TomorrowNightBlue theme for cm6, generated from [vscode themes](https://github.com/microsoft/vscode/blob/main/extensions/theme-tomorrow-night-blue/themes/tomorrow-night-blue-color-theme.json).
