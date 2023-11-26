@@ -70,7 +70,6 @@ export const Preview: FC<PropsWithChildren<PreviewProps>> = (props) => {
   const themeExtensionName = themePkgNmae?.replace('@uiw/codemirror-theme-', '') + (!!mode ? `-${mode}` : '');
   const extension = themeData[toCamelCase(themeExtensionName) as keyof typeof themeData];
   const repoName = themePkgNmae?.replace(/@uiw\//, '');
-  console.log('mdData:', mdData);
   return (
     <Warpper>
       <Content>

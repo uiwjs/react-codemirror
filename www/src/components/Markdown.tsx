@@ -1,18 +1,14 @@
 import { FC, PropsWithChildren, useRef } from 'react';
 import CodeLayout from 'react-code-preview-layout';
-import { getMetaId, isMeta, getURLParameters, CodeBlockData } from 'markdown-react-code-preview-loader';
+import { getMetaId, getURLParameters, CodeBlockData } from 'markdown-react-code-preview-loader';
 import MarkdownPreview, { MarkdownPreviewProps } from '@uiw/react-markdown-preview';
 import rehypeIgnore from 'rehype-ignore';
-import { CodeProps } from 'react-markdown/lib/ast-to-react';
+import { type Node } from 'unist';
 import styled from 'styled-components';
 
 const Preview = CodeLayout.Preview;
 const Code = CodeLayout.Code;
 const Toolbar = CodeLayout.Toolbar;
-
-interface CodePreviewProps extends CodeProps {
-  mdData?: CodeBlockData;
-}
 
 const CodeLayoutView = styled(CodeLayout)`
   & + div.copied {
@@ -20,27 +16,21 @@ const CodeLayoutView = styled(CodeLayout)`
   }
 `;
 
-const CodePreview: FC<PropsWithChildren<CodePreviewProps>> = ({ inline, node, ...props }) => {
+interface CodePreviewProps {
+  mdData?: CodeBlockData;
+  'data-meta'?: string;
+  node?: Node;
+}
+
+const CodePreview: FC<PropsWithChildren<CodePreviewProps>> = (props) => {
   const $dom = useRef<HTMLDivElement>(null);
-  const { mdData, ...rest } = props;
-  // useEffect(() => {
-  //   if ($dom.current) {
-  //     const parentElement = $dom.current.parentElement;
-  //     if (parentElement && parentElement.parentElement) {
-  //       parentElement.parentElement.replaceChild($dom.current, parentElement);
-  //     }
-  //   }
-  // }, [$dom]);
-  const { 'data-meta': meta } = props as any;
-  if (inline || !isMeta(meta)) {
-    return <code {...rest} />;
-  }
-  const line = node.position?.start.line;
+  const { mdData, node, 'data-meta': meta, ...rest } = props;
+  const line = node?.position?.start.line;
   const metaId = getMetaId(meta) || String(line);
   const Child = mdData?.components[`${metaId}`];
   if (metaId && typeof Child === 'function') {
     const code = mdData?.data[metaId].value || '';
-    const param = getURLParameters(meta);
+    const param = getURLParameters(meta || '');
     return (
       <CodeLayoutView ref={$dom}>
         <Preview>
