@@ -10,7 +10,7 @@ export const defaultSettingsTokyoNight: CreateThemeOptions['settings'] = {
   gutterBackground: '#1a1b26',
   gutterForeground: '#787c99',
   gutterBorder: 'transparent',
-  lineHighlight: '#1e202e',
+  lineHighlight: '#474b6611',
 };
 
 export const tokyoNightInit = (options?: Partial<CreateThemeOptions>) => {

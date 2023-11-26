@@ -6,11 +6,11 @@ export const defaultSettingsTokyoNightStorm: CreateThemeOptions['settings'] = {
   foreground: '#7982a9',
   caret: '#c0caf5',
   selection: '#6f7bb630',
-  selectionMatch: '#1f2335',
+  selectionMatch: '#343b5f',
   gutterBackground: '#24283b',
   gutterForeground: '#7982a9',
   gutterBorder: 'transparent',
-  lineHighlight: '#292e42',
+  lineHighlight: '#292e427a',
 };
 
 export const tokyoNightStormInit = (options?: Partial<CreateThemeOptions>) => {
