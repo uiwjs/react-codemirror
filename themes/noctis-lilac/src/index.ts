@@ -9,7 +9,7 @@ export const defaultSettingsNoctisLilac: CreateThemeOptions['settings'] = {
   selectionMatch: '#d5d1f2',
   gutterBackground: '#f2f1f8',
   gutterForeground: '#0c006b70',
-  lineHighlight: '#e1def3',
+  lineHighlight: '#16067911',
 };
 
 export const noctisLilacInit = (options?: Partial<CreateThemeOptions>) => {

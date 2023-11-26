@@ -5,12 +5,12 @@ export const defaultSettingsMaterial: CreateThemeOptions['settings'] = {
   background: '#2e3235',
   foreground: '#bdbdbd',
   caret: '#a0a4ae',
-  selection: '#d7d4f0',
-  selectionMatch: '#d7d4f0',
+  selection: '#d7d4f063',
+  selectionMatch: '#d7d4f063',
   gutterBackground: '#2e3235',
   gutterForeground: '#999',
   gutterActiveForeground: '#4f5b66',
-  lineHighlight: '#545b61',
+  lineHighlight: '#545b6130',
 };
 
 export const defaultSettingsMaterialDark = defaultSettingsMaterial;
@@ -131,7 +131,7 @@ export const defaultSettingsMaterialLight: CreateThemeOptions['settings'] = {
   foreground: '#90A4AE',
   caret: '#272727',
   selection: '#80CBC440',
-  selectionMatch: '#FAFAFA',
+  selectionMatch: '#80CBC440',
   gutterBackground: '#FAFAFA',
   gutterForeground: '#90A4AE',
   gutterBorder: 'transparent',

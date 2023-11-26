@@ -5,12 +5,12 @@ export const defaultSettingsNord: CreateThemeOptions['settings'] = {
   background: '#2e3440',
   foreground: '#FFFFFF',
   caret: '#FFFFFF',
-  selection: '#3b4252',
-  selectionMatch: '#e5e9f0',
+  selection: '#4b556a',
+  selectionMatch: '#4b556a',
   gutterBackground: '#2e3440',
   gutterForeground: '#4c566a',
   gutterActiveForeground: '#d8dee9',
-  lineHighlight: '#4c566a',
+  lineHighlight: '#4c566a29',
 };
 
 // Colors from https://www.nordtheme.com/docs/colors-and-palettes
