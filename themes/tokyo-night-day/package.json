@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-theme-tokyo-night-day",
-  "version": "4.21.20",
+  "version": "4.21.21",
   "description": "Theme tokyo-night-day for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/tokyo-night-day",
   "funding": "https://jaywcjlove.github.io/#/sponsor",
@@ -22,7 +22,7 @@
     "cjs"
   ],
   "dependencies": {
-    "@uiw/codemirror-themes": "4.21.20"
+    "@uiw/codemirror-themes": "4.21.21"
   },
   "keywords": [
     "codemirror",

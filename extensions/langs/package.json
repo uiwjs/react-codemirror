@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-extensions-langs",
-  "version": "4.21.20",
+  "version": "4.21.21",
   "description": "Load languages Extensions for CodeMirror6.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/extensions/languages",
   "funding": "https://jaywcjlove.github.io/#/sponsor",

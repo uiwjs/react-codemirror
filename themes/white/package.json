@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-theme-white",
-  "version": "4.21.20",
+  "version": "4.21.21",
   "description": "Theme white for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/white/dark",
   "funding": "https://jaywcjlove.github.io/#/sponsor",
@@ -40,7 +40,7 @@
     "cjs"
   ],
   "dependencies": {
-    "@uiw/codemirror-themes": "4.21.20"
+    "@uiw/codemirror-themes": "4.21.21"
   },
   "keywords": [
     "codemirror",
