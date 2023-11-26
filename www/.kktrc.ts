@@ -18,6 +18,9 @@ export default (conf: Configuration, env: 'production' | 'development', options:
     }),
   );
   conf.module!.exprContextCritical = false;
+  /** https://github.com/kktjs/kkt/issues/446 */
+  conf.ignoreWarnings = [{ module: /node_modules[\\/]parse5[\\/]/ }];
+
   if (env === 'production') {
     conf.optimization = {
       ...conf.optimization,
