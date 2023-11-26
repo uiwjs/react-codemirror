@@ -123,8 +123,9 @@ const hyperlink: {
     label: 'CM Documentation',
   },
   {
-    href: 'https://github.com/uiwjs/react-codemirror',
-    label: 'Github',
+    href: 'https://jaywcjlove.github.io/#/sponsor',
+    label: 'Sponsor',
+    style: { backgroundColor: '#0f7c4e' },
   },
   // {
   //   href: 'https://github.com/codemirror/dev',

@@ -21,6 +21,10 @@ const HeaderWrapper = styled.div`
   top: 0;
   z-index: 9999;
   background-color: var(--color-canvas-subtle);
+  a.sponsor {
+    color: var(--color-danger-fg);
+    text-decoration: none;
+  }
 `;
 
 const Title = styled(NavLink)`

@@ -3,6 +3,7 @@
   "version": "4.21.20",
   "description": "Themes all for CodeMirror 6.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/abcdef",
+  "funding": "https://jaywcjlove.github.io/#/sponsor",
   "author": "kenny wong <wowohoo@qq.com>",
   "license": "MIT",
   "main": "./cjs/index.js",

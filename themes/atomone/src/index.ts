@@ -11,12 +11,12 @@ export const defaultSettingsAtomone: CreateThemeOptions['settings'] = {
   background: '#272C35',
   foreground: '#9d9b97',
   caret: '#797977',
-  selection: '#ffffff30',
-  selectionMatch: '#2B323D',
+  selection: '#3d4c64',
+  selectionMatch: '#3d4c64',
   gutterBackground: '#272C35',
   gutterForeground: '#465063',
   gutterBorder: 'transparent',
-  lineHighlight: '#2B323D',
+  lineHighlight: '#2e3f5940',
 };
 
 export const atomoneInit = (options?: Partial<CreateThemeOptions>) => {

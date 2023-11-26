@@ -5,7 +5,7 @@ export const config = {
   selectionMatch: '#770811',
   cursor: '#ddbb88',
   dropdownBackground: '#181f2f',
-  activeLine: '#082050',
+  activeLine: '#0055ff30',
   matchingBracket: '#082050',
   keyword: '#225588',
   storage: '#225588',

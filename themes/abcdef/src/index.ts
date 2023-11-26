@@ -14,7 +14,7 @@ export const defaultSettingsAbcdef: CreateThemeOptions['settings'] = {
   selectionMatch: '#515151',
   gutterBackground: '#555',
   gutterForeground: '#FFFFFF',
-  lineHighlight: '#314151',
+  lineHighlight: '#0a6bcb3d',
 };
 
 export const abcdefInit = (options?: Partial<CreateThemeOptions>) => {

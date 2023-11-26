@@ -48,6 +48,9 @@ export const Layout = () => {
   return (
     <Wrapper>
       <Header>
+        <a href="https://jaywcjlove.github.io/#/sponsor" rel="noopener noreferrer" className="sponsor" target="_blank">
+          Sponsor
+        </a>
         {routes[0].children?.map((item, key) => {
           if (!item.label) return null;
           return (

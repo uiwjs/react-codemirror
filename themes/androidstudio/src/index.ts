@@ -8,9 +8,9 @@ export const defaultSettingsAndroidstudio: CreateThemeOptions['settings'] = {
   background: '#282b2e',
   foreground: '#a9b7c6',
   caret: '#00FF00',
-  selection: '#343739',
-  selectionMatch: '#343739',
-  lineHighlight: '#343739',
+  selection: '#4e5254',
+  selectionMatch: '#4e5254',
+  lineHighlight: '#7f85891f',
 };
 
 export const androidstudioInit = (options?: Partial<CreateThemeOptions>) => {
