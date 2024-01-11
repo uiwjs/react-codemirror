@@ -142,7 +142,6 @@ export function Component() {
   const version = VERSION;
   return (
     <div className="wmde-markdown-var">
-      <BackToUp>Top</BackToUp>
       <dark-mode permanent dark="Dark" light="Light" style={{ position: 'fixed', top: 8, left: 8, zIndex: 99 }} />
       <GitHubCorners fixed target="__blank" zIndex={10} href="https://github.com/uiwjs/react-codemirror" />
       <AppHeader>
@@ -187,6 +186,7 @@ export function Component() {
           href="https://www.npmjs.com/package/@uiw/react-codemirror"
         />
       </Footer>
+      <BackToUp>Top</BackToUp>
     </div>
   );
 }
