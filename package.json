@@ -31,7 +31,7 @@
     "@kkt/less-modules": "^7.5.4",
     "@kkt/ncc": "^1.0.13",
     "@types/react-test-renderer": "~18.0.0",
-    "husky": "~8.0.0",
+    "husky": "~9.0.0",
     "kkt": "^7.5.4",
     "lerna": "^8.0.0",
     "lint-staged": "^15.1.0",
