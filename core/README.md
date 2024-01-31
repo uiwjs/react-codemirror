@@ -193,6 +193,12 @@ export default function App() {
 ```
 
 ## Codemirror Merge
+A component that highlights the changes between two versions of a file in a side-by-side view, highlighting added, modified, or deleted lines of code.
+
+```bash
+npm install react-codemirror-merge  --save
+```
+
 
 ```jsx
 import CodeMirrorMerge from 'react-codemirror-merge';
