@@ -11,6 +11,7 @@ import { darcula } from '@uiw/codemirror-theme-darcula';
 import { eclipse } from '@uiw/codemirror-theme-eclipse';
 import { bespin } from '@uiw/codemirror-theme-bespin';
 import { copilot } from '@uiw/codemirror-theme-copilot';
+import { consoleDark, consoleLight } from '@uiw/codemirror-theme-console';
 import { materialLight, materialDark } from '@uiw/codemirror-theme-material';
 import { monokai } from '@uiw/codemirror-theme-monokai';
 import { monokaiDimmed } from '@uiw/codemirror-theme-monokai-dimmed';
@@ -44,6 +45,8 @@ export const themeData = {
   basicDark,
   bbedit,
   bespin,
+  consoleDark,
+  consoleLight,
   copilot,
   darcula,
   dracula,
