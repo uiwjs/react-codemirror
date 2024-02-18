@@ -8,11 +8,11 @@
 [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-console.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-console)
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/console/light">
-  <img width="436" alt="codemirror-theme-bespin" src="https://github.com/uiwjs/react-codemirror/assets/1680273/fa508c19-a037-4bd3-a319-89626f2bc5e8">
+  <img width="436" alt="codemirror-theme-console light" src="https://github.com/uiwjs/react-codemirror/assets/1680273/e45284f3-97bf-4ddc-8796-319db788df6d">
 </a>
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/console/dark">
-  <img width="436" alt="codemirror-theme-github light" src="https://github.com/uiwjs/react-codemirror/assets/1680273/adc349ad-0d05-4858-96c2-a831fac1d7ac">
+  <img width="436" alt="codemirror-theme-console dark" src="https://github.com/uiwjs/react-codemirror/assets/1680273/25bae31d-1428-481a-bc04-7c3b49ae38c0">
 </a>
 
 ## Motivation

@@ -4,12 +4,12 @@ export const defaultSettingsConsoleLight: CreateThemeOptions['settings'] = {
   background: '#fff',
   foreground: '#000',
   caret: '#000',
-  selection: '#d6ddf2',
-  selectionMatch: '#6d85cf',
+  selection: '#c2d2ff',
+  selectionMatch: '#b1c1ef',
   gutterBackground: '#fff',
   gutterForeground: '#ada9a9',
   gutterActiveForeground: '#000',
-  lineHighlight: '#c7c5c5',
+  lineHighlight: '#c7c5c575',
 };
 
 export const consoleLightInit = (options?: Partial<CreateThemeOptions>) => {

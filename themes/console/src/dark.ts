@@ -4,12 +4,12 @@ export const defaultSettingsConsoleDark: CreateThemeOptions['settings'] = {
   background: '#000',
   foreground: '#fff',
   caret: '#fff',
-  selection: '#3e4865',
+  selection: '#5c6c9b',
   selectionMatch: '#2a3967',
   gutterBackground: '#000',
   gutterForeground: '#ada9a9',
-  gutterActiveForeground: '#000',
-  lineHighlight: '#828282',
+  gutterActiveForeground: '#fff',
+  lineHighlight: '#82828275',
 };
 
 export const consoleDarkInit = (options?: Partial<CreateThemeOptions>) => {
