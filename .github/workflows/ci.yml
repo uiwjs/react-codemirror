@@ -186,6 +186,13 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: 📦 @uiw/codemirror-theme-console publish to NPM
+        run: npm publish --access public --provenance
+        working-directory: ./themes/console/
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: 📦 @uiw/codemirror-theme-atomone publish to NPM
         run: npm publish --access public --provenance
         working-directory: ./themes/atomone/
