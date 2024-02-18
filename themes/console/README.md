@@ -7,7 +7,13 @@
 [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor)
 [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-console.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-console)
 
-<!--missing images-->
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/console/light">
+  <img width="436" alt="codemirror-theme-bespin" src="https://github.com/uiwjs/react-codemirror/assets/1680273/fa508c19-a037-4bd3-a319-89626f2bc5e8">
+</a>
+
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/console/dark">
+  <img width="436" alt="codemirror-theme-github light" src="https://github.com/uiwjs/react-codemirror/assets/1680273/adc349ad-0d05-4858-96c2-a831fac1d7ac">
+</a>
 
 ## Motivation
 

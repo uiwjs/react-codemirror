@@ -7,6 +7,7 @@ export * from '@uiw/codemirror-theme-aura';
 export * from '@uiw/codemirror-theme-basic';
 export * from '@uiw/codemirror-theme-bbedit';
 export * from '@uiw/codemirror-theme-bespin';
+export * from '@uiw/codemirror-theme-console';
 export * from '@uiw/codemirror-theme-copilot';
 export * from '@uiw/codemirror-theme-darcula';
 export * from '@uiw/codemirror-theme-dracula';
