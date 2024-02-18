@@ -52,6 +52,7 @@
     "@uiw/codemirror-theme-aura": "4.21.22",
     "@uiw/codemirror-theme-basic": "4.21.22",
     "@uiw/codemirror-theme-bbedit": "4.21.22",
+    "@uiw/codemirror-theme-bespin": "4.21.22",
     "@uiw/codemirror-theme-console": "4.21.22",
     "@uiw/codemirror-theme-copilot": "4.21.22",
     "@uiw/codemirror-theme-darcula": "4.21.22",
