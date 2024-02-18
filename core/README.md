@@ -65,6 +65,7 @@ npm install @uiw/react-codemirror --save
 | [`@uiw/codemirror-theme-basic`](https://uiwjs.github.io/react-codemirror/#/theme/data/bbedit)                            | [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-basic.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-basic) [![NPM Downloads](https://img.shields.io/npm/dm/@uiw/codemirror-theme-basic.svg?style=flat)](https://www.npmjs.com/package/@uiw/codemirror-theme-basic)                                                         |
 | [`@uiw/codemirror-theme-bbedit`](https://uiwjs.github.io/react-codemirror/#/theme/data/bbedit)                           | [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-bbedit.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-bbedit) [![NPM Downloads](https://img.shields.io/npm/dm/@uiw/codemirror-theme-bbedit.svg?style=flat)](https://www.npmjs.com/package/@uiw/codemirror-theme-bbedit)                                                     |
 | [`@uiw/codemirror-theme-bespin`](https://uiwjs.github.io/react-codemirror/#/theme/data/bespin)                           | [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-bespin.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-bespin) [![NPM Downloads](https://img.shields.io/npm/dm/@uiw/codemirror-theme-bespin.svg?style=flat)](https://www.npmjs.com/package/@uiw/codemirror-theme-bespin)                                                     |
+| [`@uiw/codemirror-theme-console`](https://uiwjs.github.io/react-codemirror/#/theme/data/console)                         | [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-console.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-console) [![NPM Downloads](https://img.shields.io/npm/dm/@uiw/codemirror-theme-console.svg?style=flat)](https://www.npmjs.com/package/@uiw/codemirror-theme-console)                                                 |
 | [`@uiw/codemirror-theme-copilot`](https://uiwjs.github.io/react-codemirror/#/theme/data/copilot)                         | [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-copilot.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-copilot) [![NPM Downloads](https://img.shields.io/npm/dm/@uiw/codemirror-theme-copilot.svg?style=flat)](https://www.npmjs.com/package/@uiw/codemirror-theme-copilot)                                                 |
 | [`@uiw/codemirror-theme-duotone`](https://uiwjs.github.io/react-codemirror/#/theme/data/duotone/light)                   | [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-duotone.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-duotone) [![NPM Downloads](https://img.shields.io/npm/dm/@uiw/codemirror-theme-duotone.svg?style=flat)](https://www.npmjs.com/package/@uiw/codemirror-theme-duotone)                                                 |
 | [`@uiw/codemirror-theme-dracula`](https://uiwjs.github.io/react-codemirror/#/theme/data/dracula)                         | [![npm version](https://img.shields.io/npm/v/@uiw/codemirror-theme-dracula.svg)](https://www.npmjs.com/package/@uiw/codemirror-theme-dracula) [![NPM Downloads](https://img.shields.io/npm/dm/@uiw/codemirror-theme-dracula.svg?style=flat)](https://www.npmjs.com/package/@uiw/codemirror-theme-dracula)                                                 |
@@ -193,12 +194,12 @@ export default function App() {
 ```
 
 ## Codemirror Merge
+
 A component that highlights the changes between two versions of a file in a side-by-side view, highlighting added, modified, or deleted lines of code.
 
 ```bash
 npm install react-codemirror-merge  --save
 ```
-
 
 ```jsx
 import CodeMirrorMerge from 'react-codemirror-merge';

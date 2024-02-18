@@ -249,6 +249,28 @@ export const routes: MenuRouteObject[] = [
             ),
           },
           {
+            path: 'data/console/light',
+            label: 'Console Light',
+            element: (
+              <Preview
+                mode="light"
+                themePkg="@uiw/codemirror-theme-console"
+                path={() => import('@uiw/codemirror-theme-console/README.md')}
+              />
+            ),
+          },
+          {
+            path: 'data/console/dark',
+            label: 'Console Dark',
+            element: (
+              <Preview
+                mode="dark"
+                themePkg="@uiw/codemirror-theme-console"
+                path={() => import('@uiw/codemirror-theme-console/README.md')}
+              />
+            ),
+          },
+          {
             path: 'data/dracula',
             label: 'dracula',
             element: (
