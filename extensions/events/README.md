@@ -17,19 +17,33 @@ npm install @uiw/codemirror-extensions-events --save
 
 ```js
 import * as events from '@uiw/codemirror-extensions-events';
+import { element } from '@uiw/codemirror-extensions-events';
 
 const extension1 = events.scroll({
   scroll: (evn) => {
-    console.log(evn.target.scrollTop);
+    /* ... */
+  },
+});
+
+const extension1 = events.dom({
+  click: (evn) => {
+    /* ... */
   },
 });
 
 const extension2 = events.content({
   focus: (evn) => {
-    console.log('focus');
+    /* ... */
   },
   blur: (evn) => {
-    console.log('blur');
+    /* ... */
+  },
+});
+
+const extension3 = element({
+  type: 'content',
+  props: {
+    inputMode: 'none',
   },
 });
 ```
@@ -38,7 +52,8 @@ const extension2 = events.content({
 
 ```jsx
 import CodeMirror from '@uiw/react-codemirror';
-import { events } from '@uiw/codemirror-extensions-events';
+import * as events from '@uiw/codemirror-extensions-events';
+import { element } from '@uiw/codemirror-extensions-events';
 
 function App() {
   const [scrollTop, setScrollTop] = useState(0);
@@ -58,7 +73,22 @@ function App() {
     },
   });
 
-  return <CodeMirror value="console.log('hello world!');" height="200px" extensions={[eventExt, eventExt2]} />;
+  return (
+    <CodeMirror
+      value="console.log('hello world!');"
+      height="200px"
+      extensions={[
+        element({
+          type: 'content',
+          props: {
+            inputMode: 'none',
+          },
+        }),
+        eventExt,
+        eventExt2,
+      ]}
+    />
+  );
 }
 export default App;
 ```
@@ -66,7 +96,7 @@ export default App;
 ```js
 import { EditorView } from '@codemirror/view';
 import { EditorState } from '@codemirror/state';
-import { events } from '@uiw/codemirror-extensions-events';
+import * as events from '@uiw/codemirror-extensions-events';
 
 const eventExt = events.content({
   focus: (evn) => {

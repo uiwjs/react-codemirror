@@ -4,6 +4,7 @@ export type Events<K extends keyof HTMLElementEventMap> = Record<
   (this: HTMLElement, event: HTMLElementEventMap[K]) => void
 >;
 
+interface DOMElementProps extends Partial<HTMLElement> {}
 type Options<T extends keyof HTMLElementEventMap> = {
   /**
    * Bind events on different dom nodes.
@@ -13,10 +14,11 @@ type Options<T extends keyof HTMLElementEventMap> = {
    */
   type?: 'scroll' | 'dom' | 'content';
   events?: Events<T>;
+  props?: DOMElementProps;
 };
 
-function events<T extends keyof HTMLElementEventMap>(opts: Options<T>) {
-  const { type = 'scroll', events } = opts;
+export function element<T extends keyof HTMLElementEventMap>(opts: Options<T>) {
+  const { type = 'scroll', events, props } = opts;
   return ViewPlugin.fromClass(
     class {
       dom?: HTMLElement;
@@ -30,6 +32,15 @@ function events<T extends keyof HTMLElementEventMap>(opts: Options<T>) {
         } else {
           this.dom = view.scrollDOM;
         }
+
+        // Apply props to the DOM element
+        if (this.dom && props) {
+          const keys = Object.keys(props) as (keyof typeof props)[];
+          keys.forEach((key) => {
+            (this.dom as any)[key] = props[key];
+          });
+        }
+
         (Object.keys(events || {}) as Array<keyof typeof events>).forEach((keyname) => {
           if (events && events[keyname] && this.dom) {
             this.dom.addEventListener(keyname, events[keyname]);
@@ -51,13 +62,13 @@ function events<T extends keyof HTMLElementEventMap>(opts: Options<T>) {
  * (Note that it may not have been, so you can't assume this is scrollable.)
  */
 export function dom<T extends keyof HTMLElementEventMap>(opts: Events<T>) {
-  return events({ type: 'dom', events: opts });
+  return element({ type: 'dom', events: opts });
 }
 /**
  * The DOM element that wraps the entire editor view.
  */
 export function scroll<T extends keyof HTMLElementEventMap>(opts: Events<T>) {
-  return events({ type: 'scroll', events: opts });
+  return element({ type: 'scroll', events: opts });
 }
 /**
  * The editable DOM element holding the editor content.
@@ -65,5 +76,5 @@ export function scroll<T extends keyof HTMLElementEventMap>(opts: Events<T>) {
  * since the editor will immediately undo most of the changes you make.
  */
 export function content<T extends keyof HTMLElementEventMap>(opts: Events<T>) {
-  return events({ type: 'content', events: opts });
+  return element({ type: 'content', events: opts });
 }
