@@ -1,5 +1,5 @@
-import { EditorSelection, SelectionRange, Line } from '@codemirror/state';
-import { ViewUpdate } from '@codemirror/view';
+import type { EditorSelection, SelectionRange, Line } from '@codemirror/state';
+import type { ViewUpdate } from '@codemirror/view';
 
 export interface Statistics {
   /** total length of the document */

@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Annotation, EditorState, StateEffect, type Extension } from '@codemirror/state';
-import { EditorView, ViewUpdate } from '@codemirror/view';
+import { EditorView, type ViewUpdate } from '@codemirror/view';
 import { getDefaultExtensions } from './getDefaultExtensions';
 import { getStatistics } from './utils';
-import { ReactCodeMirrorProps } from '.';
+import { type ReactCodeMirrorProps } from '.';
 
 const External = Annotation.define<boolean>();
 
