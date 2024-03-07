@@ -38,7 +38,7 @@ export function useCodeMirror(props: UseCodeMirror) {
     root,
     initialState,
   } = props;
-  const [container, setContainer] = useState<HTMLDivElement>();
+  const [container, setContainer] = useState<HTMLDivElement | null>();
   const [view, setView] = useState<EditorView>();
   const [state, setState] = useState<EditorState>();
   const defaultThemeOption = EditorView.theme({
@@ -114,7 +114,7 @@ export function useCodeMirror(props: UseCodeMirror) {
     };
   }, [container, state]);
 
-  useEffect(() => setContainer(props.container!), [props.container]);
+  useEffect(() => setContainer(props.container), [props.container]);
 
   useEffect(
     () => () => {
