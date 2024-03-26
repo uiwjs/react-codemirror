@@ -17,6 +17,19 @@
 npm install @uiw/codemirror-theme-sublime --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { sublime } from '@uiw/codemirror-theme-sublime';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [sublime, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { sublime, sublimeInit } from '@uiw/codemirror-theme-sublime';
 

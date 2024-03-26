@@ -19,6 +19,19 @@ Red theme for cm6, generated from [vscode themes](https://github.com/microsoft/v
 npm install @uiw/codemirror-theme-red --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { red } from '@uiw/codemirror-theme-red';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [red, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { red, redInit } from '@uiw/codemirror-theme-red';
 

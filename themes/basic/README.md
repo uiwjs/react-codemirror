@@ -21,6 +21,19 @@
 npm install @uiw/codemirror-theme-basic --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { basicLight, basicDark } from '@uiw/codemirror-theme-basic';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [basicDark, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { basicLight, basicLightInit, basicDark, basicDarkInit } from '@uiw/codemirror-theme-basic';
 // Or

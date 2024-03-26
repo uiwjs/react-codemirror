@@ -19,6 +19,19 @@ Copilot theme for cm6, generated from [copilot-theme](https://github.com/benjami
 npm install @uiw/codemirror-theme-copilot --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { copilot } from '@uiw/codemirror-theme-copilot';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [copilot, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { copilot, copilotInit } from '@uiw/codemirror-theme-copilot';
 

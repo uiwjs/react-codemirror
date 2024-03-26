@@ -23,6 +23,19 @@ This package implements the [Solarized](https://ethanschoonover.com/solarized/) 
 npm install @uiw/codemirror-theme-solarized --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { solarizedLight, solarizedDark } from '@uiw/codemirror-theme-solarized';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [solarizedLight, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { solarizedLight, solarizedLightInit, solarizedDark, solarizedDarkInit } from '@uiw/codemirror-theme-solarized';
 // Or

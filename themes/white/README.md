@@ -23,6 +23,19 @@ White theme for cm6, generated from [white-theme](https://github.com/xthezealot/
 npm install @uiw/codemirror-theme-white --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { whiteDark, whiteDarkInit } from '@uiw/codemirror-theme-white/dark';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [whiteDark, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { whiteLight, whiteLightInit, whiteDark, whiteDarkInit } from '@uiw/codemirror-theme-white';
 // Or

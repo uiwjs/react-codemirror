@@ -19,6 +19,19 @@ This package implements the noctis-lilac for the CodeMirror code editor.
 npm install @uiw/codemirror-theme-noctis-lilac --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { noctisLilac } from '@uiw/codemirror-theme-noctis-lilac';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [noctisLilac, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { noctisLilac, noctisLilacInit } from '@uiw/codemirror-theme-noctis-lilac';
 

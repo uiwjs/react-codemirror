@@ -17,6 +17,19 @@
 npm install @uiw/codemirror-theme-eclipse --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { eclipse } from '@uiw/codemirror-theme-eclipse';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [eclipse, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { defaultSettingsEclipse } from '@uiw/codemirror-theme-eclipse';
 import { eclipse, eclipseInit } from '@uiw/codemirror-theme-eclipse';

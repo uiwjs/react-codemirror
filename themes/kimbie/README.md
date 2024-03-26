@@ -19,6 +19,19 @@ Kimbie theme for cm6, generated from [vscode themes](https://github.com/microsof
 npm install @uiw/codemirror-theme-kimbie --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { kimbie } from '@uiw/codemirror-theme-kimbie';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [kimbie, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { kimbie, kimbieInit } from '@uiw/codemirror-theme-kimbie';
 

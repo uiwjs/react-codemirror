@@ -19,6 +19,19 @@ Andromeda theme for cm6, generated from [vscode themes](https://github.com/Elive
 npm install @uiw/codemirror-theme-andromeda --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { andromeda } from '@uiw/codemirror-theme-andromeda';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [andromeda, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { andromeda, andromedaInit } from '@uiw/codemirror-theme-andromeda';
 

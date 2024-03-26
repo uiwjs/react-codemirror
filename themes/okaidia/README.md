@@ -17,6 +17,19 @@
 npm install @uiw/codemirror-theme-okaidia --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { okaidia } from '@uiw/codemirror-theme-okaidia';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [okaidia, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { okaidia, okaidiaInit } from '@uiw/codemirror-theme-okaidia';
 

@@ -21,6 +21,25 @@ import * as themes from '@uiw/codemirror-themes-all';
 
 ## Usage
 
+```js
+import { EditorView } from '@codemirror/view';
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { abcdef } from '@uiw/codemirror-themes-all';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [abcdef, javascript({ jsx: true })],
+});
+
+const view = new EditorView({
+  parent: document.querySelector('#editor'),
+  state,
+});
+```
+
+Using in React:
+
 ```jsx
 import CodeMirror from '@uiw/react-codemirror';
 import { abcdef } from '@uiw/codemirror-themes-all';
@@ -40,23 +59,6 @@ function App() {
   );
 }
 export default App;
-```
-
-```js
-import { EditorView } from '@codemirror/view';
-import { EditorState } from '@codemirror/state';
-import { javascript } from '@codemirror/lang-javascript';
-import { abcdef } from '@uiw/codemirror-themes-all';
-
-const state = EditorState.create({
-  doc: 'my source code',
-  extensions: [abcdef, javascript({ jsx: true })],
-});
-
-const view = new EditorView({
-  parent: document.querySelector('#editor'),
-  state,
-});
 ```
 
 ## API

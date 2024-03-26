@@ -23,6 +23,19 @@ This package implements the [Material](https://material.io/tools/color/) Dark th
 npm install @uiw/codemirror-theme-material --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { material } from '@uiw/codemirror-theme-material';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [material, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { materialDark, materialDarkInit, materialLight, materialLightInit } from '@uiw/codemirror-theme-material';
 

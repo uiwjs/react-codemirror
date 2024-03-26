@@ -19,6 +19,19 @@ This package implements the [nord theme](https://www.nordtheme.com/) for the Cod
 npm install @uiw/codemirror-theme-nord --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { nord } from '@uiw/codemirror-theme-nord';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [nord, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { nord, nordInit } from '@uiw/codemirror-theme-nord';
 

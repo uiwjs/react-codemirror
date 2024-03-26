@@ -21,6 +21,19 @@
 npm install @uiw/codemirror-theme-duotone --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { duotoneLight, duotoneDark } from '@uiw/codemirror-theme-duotone';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [duotoneDark, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { duotoneLight, duotoneLightInit, duotoneDark, duotoneDarkInit } from '@uiw/codemirror-theme-duotone';
 

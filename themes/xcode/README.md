@@ -21,6 +21,19 @@
 npm install @uiw/codemirror-theme-xcode --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { xcodeLight, xcodeDark } from '@uiw/codemirror-theme-xcode';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [xcodeDark, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { xcodeLight, xcodeLightInit, xcodeDark, xcodeDarkInit } from '@uiw/codemirror-theme-xcode';
 

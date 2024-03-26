@@ -17,6 +17,19 @@
 npm install @uiw/codemirror-theme-aura --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { aura } from '@uiw/codemirror-theme-aura';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [aura, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { tags as t } from '@lezer/highlight';
 import { aura, auraInit } from '@uiw/codemirror-theme-aura';

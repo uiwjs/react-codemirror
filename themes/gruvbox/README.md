@@ -23,6 +23,19 @@ This package implements the [gruvbox](https://github.com/morhetz/gruvbox) light 
 npm install @uiw/codemirror-theme-gruvbox-dark --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { gruvboxDark } from '@uiw/codemirror-theme-gruvbox-dark';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [gruvboxDark, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { gruvboxDark, gruvboxDarkInit, gruvboxLight, gruvboxLightInit } from '@uiw/codemirror-theme-nord';
 

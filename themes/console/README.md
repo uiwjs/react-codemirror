@@ -25,6 +25,19 @@ One of the usages for react-codemirror is a logger component, but there is no th
 npm install @uiw/codemirror-theme-console --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { consoleLight, consoleDark } from '@uiw/codemirror-theme-console';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [consoleDark],
+});
+```
+
+Using in React:
+
 ```jsx
 import { consoleLight, consoleLightInit, consoleDark, consoleDarkInit } from '@uiw/codemirror-theme-console';
 // Or

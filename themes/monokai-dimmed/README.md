@@ -19,6 +19,19 @@ MonokaiDimmed theme for cm6, generated from [vscode themes](https://github.com/m
 npm install @uiw/codemirror-theme-monokai-dimmed --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { monokaiDimmed } from '@uiw/codemirror-theme-monokai-dimmed';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [monokaiDimmed, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { monokaiDimmed, monokaiDimmedInit } from '@uiw/codemirror-theme-monokai-dimmed';
 

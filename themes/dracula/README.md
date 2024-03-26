@@ -17,6 +17,19 @@
 npm install @uiw/codemirror-theme-dracula --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { dracula } from '@uiw/codemirror-theme-dracula';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [dracula, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { tags as t } from '@lezer/highlight';
 import { dracula, draculaInit } from '@uiw/codemirror-theme-dracula';

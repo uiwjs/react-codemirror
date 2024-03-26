@@ -17,6 +17,19 @@
 npm install @uiw/codemirror-theme-atomone --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { atomone } from '@uiw/codemirror-theme-atomone';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [atomone, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { tags as t } from '@lezer/highlight';
 import { atomone, atomoneInit } from '@uiw/codemirror-theme-atomone';

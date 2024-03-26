@@ -17,6 +17,19 @@
 npm install @uiw/codemirror-theme-tokyo-night --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { tokyoNight } from '@uiw/codemirror-theme-tokyo-night';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [tokyoNight, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { tags as t } from '@lezer/highlight';
 import { tokyoNight, tokyoNightInit } from '@uiw/codemirror-theme-tokyo-night';

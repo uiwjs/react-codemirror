@@ -17,6 +17,19 @@
 npm install @uiw/codemirror-theme-darcula --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { darcula } from '@uiw/codemirror-theme-darcula';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [darcula, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { tags as t } from '@lezer/highlight';
 import { darcula, darculaInit } from '@uiw/codemirror-theme-darcula';

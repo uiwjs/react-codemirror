@@ -19,6 +19,19 @@ TomorrowNightBlue theme for cm6, generated from [vscode themes](https://github.c
 npm install @uiw/codemirror-theme-tomorrow-night-blue --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { tomorrowNightBlue } from '@uiw/codemirror-theme-tomorrow-night-blue';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [tomorrowNightBlue, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { tomorrowNightBlue, tomorrowNightBlueInit } from '@uiw/codemirror-theme-tomorrow-night-blue';
 

@@ -19,6 +19,19 @@ Quietlight theme for cm6, generated from [vscode themes](https://github.com/micr
 npm install @uiw/codemirror-theme-quietlight --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { quietlight } from '@uiw/codemirror-theme-quietlight';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [quietlight, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { quietlight, quietlightInit } from '@uiw/codemirror-theme-quietlight';
 

@@ -19,7 +19,21 @@ Abyss theme for cm6, generated from [vscode themes](https://github.com/microsoft
 npm install @uiw/codemirror-theme-abyss --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { abyss } from '@uiw/codemirror-theme-abyss';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [abyss, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
+import CodeMirror from '@uiw/react-codemirror';
 import { abyss, abyssInit } from '@uiw/codemirror-theme-abyss';
 
 <CodeMirror theme={abyss} />

@@ -19,6 +19,19 @@ Monokai theme for cm6, generated from [vscode themes](https://github.com/microso
 npm install @uiw/codemirror-theme-monokai --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { monokai } from '@uiw/codemirror-theme-monokai';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [monokai, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { monokai, monokaiInit } from '@uiw/codemirror-theme-monokai';
 

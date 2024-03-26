@@ -17,6 +17,19 @@
 npm install @uiw/codemirror-theme-vscode --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { vscodeDark } from '@uiw/codemirror-theme-vscode';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [vscodeDark, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { vscodeDark, vscodeDarkInit } from '@uiw/codemirror-theme-vscode';
 

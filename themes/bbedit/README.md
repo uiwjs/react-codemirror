@@ -17,6 +17,19 @@
 npm install @uiw/codemirror-theme-bbedit --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { bbedit } from '@uiw/codemirror-theme-bbedit';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [bbedit, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
 import { tags as t } from '@lezer/highlight';
 import { bbedit, bbeditInit } from '@uiw/codemirror-theme-bbedit';

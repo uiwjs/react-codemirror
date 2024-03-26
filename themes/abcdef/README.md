@@ -17,7 +17,21 @@
 npm install @uiw/codemirror-theme-abcdef --save
 ```
 
+```js
+import { EditorState } from '@codemirror/state';
+import { javascript } from '@codemirror/lang-javascript';
+import { abcdef } from '@uiw/codemirror-theme-abcdef';
+
+const state = EditorState.create({
+  doc: 'my source code',
+  extensions: [abcdef, javascript({ jsx: true })],
+});
+```
+
+Using in React:
+
 ```jsx
+import CodeMirror from '@uiw/react-codemirror';
 import { tags as t } from '@lezer/highlight';
 import { abcdef, abcdefInit } from '@uiw/codemirror-theme-abcdef';
 
