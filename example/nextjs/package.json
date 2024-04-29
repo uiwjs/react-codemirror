@@ -1,6 +1,6 @@
 {
   "name": "nextjs",
-  "version": "4.21.25",
+  "version": "4.22.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,10 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@uiw/react-codemirror": "4.21.25",
+    "@uiw/react-codemirror": "4.22.0",
     "next": "14.0.3",
     "react": "^18",
-    "react-codemirror-merge": "4.21.25",
+    "react-codemirror-merge": "4.22.0",
     "react-dom": "^18"
   },
   "devDependencies": {

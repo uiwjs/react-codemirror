@@ -44,7 +44,7 @@ export interface Settings {
   /** set editor font */
   fontFamily?: string;
   /** set editor font size */
-  fontSize?: StyleSpec;
+  fontSize?: StyleSpec['fontSize'];
 }
 
 export const createTheme = ({ theme, settings = {}, styles = [] }: CreateThemeOptions): Extension => {
