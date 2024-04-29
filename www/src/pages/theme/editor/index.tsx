@@ -193,7 +193,7 @@ export function ThemeEditor() {
           return (
             <ColorMenu
               key={idx}
-              color={settings[keyName]}
+              color={settings[keyName] as keyof typeof settings}
               onChange={(evn) => setSettings({ ...settings, [keyName]: evn.target.value })}
             >
               {keyName}
