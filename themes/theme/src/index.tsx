@@ -43,6 +43,8 @@ export interface Settings {
   gutterBorder?: string;
   /** set editor font */
   fontFamily?: string;
+  /** set editor font size */
+  fontSize?: StyleSpec;
 }
 
 export const createTheme = ({ theme, settings = {}, styles = [] }: CreateThemeOptions): Extension => {
@@ -58,6 +60,9 @@ export const createTheme = ({ theme, settings = {}, styles = [] }: CreateThemeOp
   }
   if (settings.foreground) {
     baseStyle.color = settings.foreground;
+  }
+  if (settings.fontSize) {
+    baseStyle.fontSize = settings.fontSize;
   }
   if (settings.background || settings.foreground) {
     themeOptions['&'] = baseStyle;
