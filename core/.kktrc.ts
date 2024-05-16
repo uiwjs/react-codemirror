@@ -65,6 +65,18 @@ export default (conf: WebpackConfiguration, env: 'production' | 'development', o
         commonjs: 'react-dom',
         amd: 'react-dom',
       },
+      'react/jsx-runtime': {
+        root: 'ReactJSXRuntime',
+        commonjs2: 'react/jsx-runtime',
+        commonjs: 'react/jsx-runtime',
+        amd: 'react/jsx-runtime',
+      },
+      'react/jsx-dev-runtime': {
+        root: 'ReactJSXDevRuntime',
+        commonjs2: 'react/jsx-dev-runtime',
+        commonjs: 'react/jsx-dev-runtime',
+        amd: 'react/jsx-dev-runtime',
+      },
     };
   }
   return conf;
