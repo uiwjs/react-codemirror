@@ -16,7 +16,7 @@ import { materialLight, materialDark } from '@uiw/codemirror-theme-material';
 import { monokai } from '@uiw/codemirror-theme-monokai';
 import { monokaiDimmed } from '@uiw/codemirror-theme-monokai-dimmed';
 import { noctisLilac } from '@uiw/codemirror-theme-noctis-lilac';
-import { vscodeDark } from '@uiw/codemirror-theme-vscode';
+import { vscodeDark, vscodeLight } from '@uiw/codemirror-theme-vscode';
 import { duotoneLight, duotoneDark } from '@uiw/codemirror-theme-duotone';
 import { githubLight, githubDark } from '@uiw/codemirror-theme-github';
 import { gruvboxDark, gruvboxLight } from '@uiw/codemirror-theme-gruvbox-dark';
@@ -75,6 +75,7 @@ export const themeData = {
   tokyoNightDay,
   tomorrowNightBlue,
   vscodeDark,
+  vscodeLight,
   whiteLight,
   whiteDark,
   xcodeLight,
