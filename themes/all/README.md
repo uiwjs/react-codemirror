@@ -349,7 +349,7 @@ export * from '@uiw/codemirror-theme-xcode';
 </a>
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/xcode/light">
-  <img width="436" alt="codemirror-theme-xcode light" src="https://user-images.githubusercontent.com/1680273/206087526-9613a546-f129-4e01-9263-5a75f3f039a7.png">
+  <img width="436" alt="codemirror-theme-xcode light" src="https://github.com/uiwjs/react-codemirror/assets/1680273/81b870f6-36b9-46ee-9ded-1650ba8eebc8">
 </a>
 
 ## Contributors

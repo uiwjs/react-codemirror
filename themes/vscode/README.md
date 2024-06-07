@@ -12,7 +12,7 @@
 </a>
 
 <a href="https://uiwjs.github.io/react-codemirror/#/theme/data/vscode/light">
-  <img width="436" alt="codemirror-theme-vscode light" src="https://github.com/uiwjs/react-codemirror/assets/1680273/e22d099e-7e88-4711-bb07-7330047adfe1">
+  <img width="436" alt="codemirror-theme-vscode light" src="https://github.com/uiwjs/react-codemirror/assets/1680273/81b870f6-36b9-46ee-9ded-1650ba8eebc8">
 </a>
 
 ## Install
