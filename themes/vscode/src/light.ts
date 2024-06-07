@@ -22,7 +22,7 @@ export function vscodeLightInit(options?: Partial<CreateThemeOptions>) {
   return createTheme({
     theme: theme,
     settings: {
-      ...defaultSettingsVscodeDark,
+      ...defaultSettingsVscodeLight,
       ...settings,
     },
     styles: [
