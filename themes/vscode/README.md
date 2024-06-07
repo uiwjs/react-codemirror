@@ -11,16 +11,25 @@
   <img width="436" alt="codemirror-theme-vscode dark" src="https://user-images.githubusercontent.com/1680273/202690670-385808e2-6346-4e36-a3d6-6d9fc1f216dc.png">
 </a>
 
+<a href="https://uiwjs.github.io/react-codemirror/#/theme/data/vscode/light">
+  <img width="436" alt="codemirror-theme-vscode light" src="https://github.com/uiwjs/react-codemirror/assets/1680273/e22d099e-7e88-4711-bb07-7330047adfe1">
+</a>
+
 ## Install
 
 ```bash
 npm install @uiw/codemirror-theme-vscode --save
 ```
 
+```jsx
+import { vscodeDark, vscodeDarkInit } from '@uiw/codemirror-theme-vscode';
+import { vscodeLight, vscodeLightInit } from '@uiw/codemirror-theme-vscode';
+```
+
 ```js
 import { EditorState } from '@codemirror/state';
 import { javascript } from '@codemirror/lang-javascript';
-import { vscodeDark } from '@uiw/codemirror-theme-vscode';
+import { vscodeDark, vscodeLight } from '@uiw/codemirror-theme-vscode';
 
 const state = EditorState.create({
   doc: 'my source code',
@@ -48,9 +57,14 @@ import { vscodeDark, vscodeDarkInit } from '@uiw/codemirror-theme-vscode';
 
 ```tsx
 import { CreateThemeOptions } from '@uiw/codemirror-themes';
+// Dark
 export declare const defaultSettingsVscodeDark: CreateThemeOptions['settings'];
 export declare function vscodeDarkInit(options?: Partial<CreateThemeOptions>): import('@codemirror/state').Extension;
 export declare const vscodeDark: import('@codemirror/state').Extension;
+// Light
+export declare const defaultSettingsVscodeLight: CreateThemeOptions['settings'];
+export declare function vscodeLightInit(options?: Partial<CreateThemeOptions>): import('@codemirror/state').Extension;
+export declare const vscodeLight: import('@codemirror/state').Extension;
 ```
 
 ## Usage
