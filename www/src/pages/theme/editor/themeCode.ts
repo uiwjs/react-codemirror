@@ -199,7 +199,7 @@ import { javascript } from '@codemirror/lang-javascript';
 import { tags as t } from '@lezer/highlight';
 
 const myTheme = createTheme({
-  dark: '${styles.dark}',
+  theme: '${styles.dark}',
   settings: {
     background: '${styles.background}',
     backgroundImage: '',
