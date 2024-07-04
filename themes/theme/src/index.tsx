@@ -1,7 +1,7 @@
 import { EditorView } from '@codemirror/view';
 import { Extension } from '@codemirror/state';
-import { HighlightStyle, TagStyle, syntaxHighlighting } from '@codemirror/language';
-import { StyleSpec } from 'style-mod';
+import { HighlightStyle, type TagStyle, syntaxHighlighting } from '@codemirror/language';
+import type { StyleSpec } from 'style-mod';
 
 export interface CreateThemeOptions {
   /**

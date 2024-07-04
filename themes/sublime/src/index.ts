@@ -1,5 +1,5 @@
 import { tags as t } from '@lezer/highlight';
-import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
+import { createTheme, type CreateThemeOptions } from '@uiw/codemirror-themes';
 
 export const defaultSettingsSublime: CreateThemeOptions['settings'] = {
   background: '#303841',
@@ -12,6 +12,21 @@ export const defaultSettingsSublime: CreateThemeOptions['settings'] = {
   lineHighlight: '#00000059',
 };
 
+export const sublimeDarkStyle: CreateThemeOptions['styles'] = [
+  { tag: [t.meta, t.comment], color: '#A2A9B5' },
+  { tag: [t.attributeName, t.keyword], color: '#B78FBA' },
+  { tag: t.function(t.variableName), color: '#5AB0B0' },
+  { tag: [t.string, t.regexp, t.attributeValue], color: '#99C592' },
+  { tag: t.operator, color: '#f47954' },
+  // { tag: t.moduleKeyword, color: 'red' },
+  { tag: [t.tagName, t.modifier], color: '#E35F63' },
+  { tag: [t.number, t.definition(t.tagName), t.className, t.definition(t.variableName)], color: '#fbac52' },
+  { tag: [t.atom, t.bool, t.special(t.variableName)], color: '#E35F63' },
+  { tag: t.variableName, color: '#539ac4' },
+  { tag: [t.propertyName, t.typeName], color: '#629ccd' },
+  { tag: t.propertyName, color: '#36b7b5' },
+];
+
 export function sublimeInit(options?: Partial<CreateThemeOptions>) {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
@@ -20,21 +35,7 @@ export function sublimeInit(options?: Partial<CreateThemeOptions>) {
       ...defaultSettingsSublime,
       ...settings,
     },
-    styles: [
-      { tag: [t.meta, t.comment], color: '#A2A9B5' },
-      { tag: [t.attributeName, t.keyword], color: '#B78FBA' },
-      { tag: t.function(t.variableName), color: '#5AB0B0' },
-      { tag: [t.string, t.regexp, t.attributeValue], color: '#99C592' },
-      { tag: t.operator, color: '#f47954' },
-      // { tag: t.moduleKeyword, color: 'red' },
-      { tag: [t.tagName, t.modifier], color: '#E35F63' },
-      { tag: [t.number, t.definition(t.tagName), t.className, t.definition(t.variableName)], color: '#fbac52' },
-      { tag: [t.atom, t.bool, t.special(t.variableName)], color: '#E35F63' },
-      { tag: t.variableName, color: '#539ac4' },
-      { tag: [t.propertyName, t.typeName], color: '#629ccd' },
-      { tag: t.propertyName, color: '#36b7b5' },
-      ...styles,
-    ],
+    styles: [...sublimeDarkStyle, ...styles],
   });
 }
 

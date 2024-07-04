@@ -6,7 +6,7 @@
  * Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
  */
 import { tags as t } from '@lezer/highlight';
-import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
+import { createTheme, type CreateThemeOptions } from '@uiw/codemirror-themes';
 
 export const defaultSettingsBespin: CreateThemeOptions['settings'] = {
   background: '#28211c',
@@ -19,6 +19,18 @@ export const defaultSettingsBespin: CreateThemeOptions['settings'] = {
   lineHighlight: '#ffffff1a',
 };
 
+export const bespinDarkStyle: CreateThemeOptions['styles'] = [
+  { tag: [t.atom, t.number, t.link, t.bool], color: '#9b859d' },
+  { tag: t.comment, color: '#937121' },
+  { tag: [t.keyword, t.tagName], color: '#cf6a4c' },
+  { tag: t.string, color: '#f9ee98' },
+  { tag: t.bracket, color: '#9d9b97' },
+  { tag: [t.variableName], color: '#5ea6ea' },
+  { tag: t.definition(t.variableName), color: '#cf7d34' },
+  { tag: [t.function(t.variableName), t.className], color: '#cf7d34' },
+  { tag: [t.propertyName, t.attributeName], color: '#54be0d' },
+];
+
 export const bespinInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
@@ -27,18 +39,7 @@ export const bespinInit = (options?: Partial<CreateThemeOptions>) => {
       ...defaultSettingsBespin,
       ...settings,
     },
-    styles: [
-      { tag: [t.atom, t.number, t.link, t.bool], color: '#9b859d' },
-      { tag: t.comment, color: '#937121' },
-      { tag: [t.keyword, t.tagName], color: '#cf6a4c' },
-      { tag: t.string, color: '#f9ee98' },
-      { tag: t.bracket, color: '#9d9b97' },
-      { tag: [t.variableName], color: '#5ea6ea' },
-      { tag: t.definition(t.variableName), color: '#cf7d34' },
-      { tag: [t.function(t.variableName), t.className], color: '#cf7d34' },
-      { tag: [t.propertyName, t.attributeName], color: '#54be0d' },
-      ...styles,
-    ],
+    styles: [...bespinDarkStyle, ...styles],
   });
 };
 

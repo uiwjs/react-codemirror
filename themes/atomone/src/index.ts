@@ -19,6 +19,20 @@ export const defaultSettingsAtomone: CreateThemeOptions['settings'] = {
   lineHighlight: '#2e3f5940',
 };
 
+export const atomoneDarkStyle: CreateThemeOptions['styles'] = [
+  {
+    tag: [t.function(t.variableName), t.function(t.propertyName), t.url, t.processingInstruction],
+    color: 'hsl(207, 82%, 66%)',
+  },
+  { tag: [t.tagName, t.heading], color: '#e06c75' },
+  { tag: t.comment, color: '#54636D' },
+  { tag: [t.propertyName], color: 'hsl(220, 14%, 71%)' },
+  { tag: [t.attributeName, t.number], color: 'hsl( 29, 54%, 61%)' },
+  { tag: t.className, color: 'hsl( 39, 67%, 69%)' },
+  { tag: t.keyword, color: 'hsl(286, 60%, 67%)' },
+  { tag: [t.string, t.regexp, t.special(t.propertyName)], color: '#98c379' },
+];
+
 export const atomoneInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
@@ -27,20 +41,7 @@ export const atomoneInit = (options?: Partial<CreateThemeOptions>) => {
       ...defaultSettingsAtomone,
       ...settings,
     },
-    styles: [
-      {
-        tag: [t.function(t.variableName), t.function(t.propertyName), t.url, t.processingInstruction],
-        color: 'hsl(207, 82%, 66%)',
-      },
-      { tag: [t.tagName, t.heading], color: '#e06c75' },
-      { tag: t.comment, color: '#54636D' },
-      { tag: [t.propertyName], color: 'hsl(220, 14%, 71%)' },
-      { tag: [t.attributeName, t.number], color: 'hsl( 29, 54%, 61%)' },
-      { tag: t.className, color: 'hsl( 39, 67%, 69%)' },
-      { tag: t.keyword, color: 'hsl(286, 60%, 67%)' },
-      { tag: [t.string, t.regexp, t.special(t.propertyName)], color: '#98c379' },
-      ...styles,
-    ],
+    styles: [...atomoneDarkStyle, ...styles],
   });
 };
 

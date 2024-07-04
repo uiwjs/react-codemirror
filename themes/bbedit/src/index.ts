@@ -1,5 +1,5 @@
 import { tags as t } from '@lezer/highlight';
-import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
+import { createTheme, type CreateThemeOptions } from '@uiw/codemirror-themes';
 
 export const defaultSettingsBbedit: CreateThemeOptions['settings'] = {
   background: '#FFFFFF',
@@ -13,6 +13,22 @@ export const defaultSettingsBbedit: CreateThemeOptions['settings'] = {
   lineHighlight: '#00000012',
 };
 
+export const bbeditLightStyle: CreateThemeOptions['styles'] = [
+  { tag: [t.meta, t.comment], color: '#804000' },
+  { tag: [t.keyword, t.strong], color: '#0000FF' },
+  { tag: [t.number], color: '#FF0080' },
+  { tag: [t.string], color: '#FF0080' },
+  { tag: [t.variableName], color: '#006600' },
+  { tag: [t.escape], color: '#33CC33' },
+  { tag: [t.tagName], color: '#1C02FF' },
+  { tag: [t.heading], color: '#0C07FF' },
+  { tag: [t.quote], color: '#000000' },
+  { tag: [t.list], color: '#B90690' },
+  { tag: [t.documentMeta], color: '#888888' },
+  { tag: [t.function(t.variableName)], color: '#0000A2' },
+  { tag: [t.definition(t.typeName), t.typeName], color: '#6D79DE' },
+];
+
 export const bbeditInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'light', settings = {}, styles = [] } = options || {};
   return createTheme({
@@ -21,22 +37,7 @@ export const bbeditInit = (options?: Partial<CreateThemeOptions>) => {
       ...defaultSettingsBbedit,
       ...settings,
     },
-    styles: [
-      { tag: [t.meta, t.comment], color: '#804000' },
-      { tag: [t.keyword, t.strong], color: '#0000FF' },
-      { tag: [t.number], color: '#FF0080' },
-      { tag: [t.string], color: '#FF0080' },
-      { tag: [t.variableName], color: '#006600' },
-      { tag: [t.escape], color: '#33CC33' },
-      { tag: [t.tagName], color: '#1C02FF' },
-      { tag: [t.heading], color: '#0C07FF' },
-      { tag: [t.quote], color: '#000000' },
-      { tag: [t.list], color: '#B90690' },
-      { tag: [t.documentMeta], color: '#888888' },
-      { tag: [t.function(t.variableName)], color: '#0000A2' },
-      { tag: [t.definition(t.typeName), t.typeName], color: '#6D79DE' },
-      ...styles,
-    ],
+    styles: [...bbeditLightStyle, ...styles],
   });
 };
 

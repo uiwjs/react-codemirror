@@ -5,7 +5,7 @@
  * From IntelliJ IDEA by JetBrains
  */
 import { tags as t } from '@lezer/highlight';
-import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
+import { createTheme, type CreateThemeOptions } from '@uiw/codemirror-themes';
 
 export const defaultSettingsDarcula: CreateThemeOptions['settings'] = {
   background: '#2B2B2B',
@@ -19,6 +19,18 @@ export const defaultSettingsDarcula: CreateThemeOptions['settings'] = {
   lineHighlight: 'rgba(255, 255, 255, 0.1)',
 };
 
+export const darculaDarkStyle: CreateThemeOptions['styles'] = [
+  { tag: [t.atom, t.number], color: '#bd93f9' },
+  { tag: [t.comment], color: '#61A151' },
+  { tag: [t.string], color: '#6A8759' },
+  { tag: [t.variableName, t.operator], color: '#A9B7C6' },
+  { tag: [t.meta, t.className], color: '#A9B7C6' },
+  { tag: [t.propertyName], color: '#FFC66D' },
+  { tag: [t.keyword], color: '#CC7832' },
+  { tag: [t.tagName], color: '#ff79c6' },
+  { tag: [t.typeName], color: '#ffb86c' },
+];
+
 export const darculaInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
@@ -27,18 +39,7 @@ export const darculaInit = (options?: Partial<CreateThemeOptions>) => {
       ...defaultSettingsDarcula,
       ...settings,
     },
-    styles: [
-      { tag: [t.atom, t.number], color: '#bd93f9' },
-      { tag: [t.comment], color: '#61A151' },
-      { tag: [t.string], color: '#6A8759' },
-      { tag: [t.variableName, t.operator], color: '#A9B7C6' },
-      { tag: [t.meta, t.className], color: '#A9B7C6' },
-      { tag: [t.propertyName], color: '#FFC66D' },
-      { tag: [t.keyword], color: '#CC7832' },
-      { tag: [t.tagName], color: '#ff79c6' },
-      { tag: [t.typeName], color: '#ffb86c' },
-      ...styles,
-    ],
+    styles: [...darculaDarkStyle, ...styles],
   });
 };
 

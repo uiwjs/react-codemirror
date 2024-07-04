@@ -4,7 +4,7 @@
  * by Bram de Haan, adapted from DuoTone themes by Simurai (http://simurai.com/projects/2016/01/01/duotone-themes)
  */
 import { tags as t } from '@lezer/highlight';
-import { createTheme, CreateThemeOptions } from '@uiw/codemirror-themes';
+import { createTheme, type CreateThemeOptions } from '@uiw/codemirror-themes';
 
 export const defaultSettingsDuotoneLight: CreateThemeOptions['settings'] = {
   background: '#faf8f5',
@@ -18,6 +18,16 @@ export const defaultSettingsDuotoneLight: CreateThemeOptions['settings'] = {
   lineHighlight: '#ddceb154',
 };
 
+export const douToneLightStyle: CreateThemeOptions['styles'] = [
+  { tag: [t.comment, t.bracket], color: '#b6ad9a' },
+  { tag: [t.atom, t.number, t.keyword, t.link, t.attributeName, t.quote], color: '#063289' },
+  { tag: [t.emphasis, t.heading, t.tagName, t.propertyName, t.variableName], color: '#2d2006' },
+  { tag: [t.typeName, t.url, t.string], color: '#896724' },
+  { tag: [t.operator, t.string], color: '#1659df' },
+  { tag: [t.propertyName], color: '#b29762' },
+  { tag: [t.unit, t.punctuation], color: '#063289' },
+];
+
 export const duotoneLightInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'light', settings = {}, styles = [] } = options || {};
   return createTheme({
@@ -26,16 +36,7 @@ export const duotoneLightInit = (options?: Partial<CreateThemeOptions>) => {
       ...defaultSettingsDuotoneLight,
       ...settings,
     },
-    styles: [
-      { tag: [t.comment, t.bracket], color: '#b6ad9a' },
-      { tag: [t.atom, t.number, t.keyword, t.link, t.attributeName, t.quote], color: '#063289' },
-      { tag: [t.emphasis, t.heading, t.tagName, t.propertyName, t.variableName], color: '#2d2006' },
-      { tag: [t.typeName, t.url, t.string], color: '#896724' },
-      { tag: [t.operator, t.string], color: '#1659df' },
-      { tag: [t.propertyName], color: '#b29762' },
-      { tag: [t.unit, t.punctuation], color: '#063289' },
-      ...styles,
-    ],
+    styles: [...douToneLightStyle, ...styles],
   });
 };
 
@@ -52,6 +53,17 @@ export const defaultSettingsDuotoneDark: CreateThemeOptions['settings'] = {
   lineHighlight: '#36334280',
 };
 
+export const duotoneDarkStyle: CreateThemeOptions['styles'] = [
+  { tag: [t.comment, t.bracket], color: '#6c6783' },
+  { tag: [t.atom, t.number, t.keyword, t.link, t.attributeName, t.quote], color: '#ffcc99' },
+  { tag: [t.emphasis, t.heading, t.tagName, t.propertyName, t.className, t.variableName], color: '#eeebff' },
+  { tag: [t.typeName, t.url], color: '#7a63ee' },
+  { tag: t.operator, color: '#ffad5c' },
+  { tag: t.string, color: '#ffb870' },
+  { tag: [t.propertyName], color: '#9a86fd' },
+  { tag: [t.unit, t.punctuation], color: '#e09142' },
+];
+
 export const duotoneDarkInit = (options?: Partial<CreateThemeOptions>) => {
   const { theme = 'dark', settings = {}, styles = [] } = options || {};
   return createTheme({
@@ -60,17 +72,7 @@ export const duotoneDarkInit = (options?: Partial<CreateThemeOptions>) => {
       ...defaultSettingsDuotoneDark,
       ...settings,
     },
-    styles: [
-      { tag: [t.comment, t.bracket], color: '#6c6783' },
-      { tag: [t.atom, t.number, t.keyword, t.link, t.attributeName, t.quote], color: '#ffcc99' },
-      { tag: [t.emphasis, t.heading, t.tagName, t.propertyName, t.className, t.variableName], color: '#eeebff' },
-      { tag: [t.typeName, t.url], color: '#7a63ee' },
-      { tag: t.operator, color: '#ffad5c' },
-      { tag: t.string, color: '#ffb870' },
-      { tag: [t.propertyName], color: '#9a86fd' },
-      { tag: [t.unit, t.punctuation], color: '#e09142' },
-      ...styles,
-    ],
+    styles: [...duotoneDarkStyle, ...styles],
   });
 };
 
