@@ -277,7 +277,7 @@ export default function App() {
       value="console.log('hello world!');"
       height="200px"
       theme={okaidia}
-      extensions={[javascript({ jsx: true })]}
+      extensions={extensions}
     />
   );
 }
