@@ -659,6 +659,11 @@ export const routes: MenuRouteObject[] = [
             lazy: () => import('./pages/examples/Example431'),
           },
           {
+            path: '674',
+            label: 'Browser spell checking',
+            lazy: () => import('./pages/examples/Example674'),
+          },
+          {
             path: '455',
             label: 'CodeMirrorMerge use theme',
             lazy: () => import('./pages/examples/Example455'),
