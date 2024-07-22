@@ -45,7 +45,12 @@ export const ZebraStripesExample: FC<PropsWithChildren> = () => {
         style={{ margin: '0 0 23px 0' }}
         extensions={[
           langs.markdown(),
-          zebraStripes({ lineNumber: [1, [3, 6], 10], lightColor: '#aca2ff33', darkColor: '#aca2ff40' }),
+          zebraStripes({
+            lineNumber: [1, [3, 6], 10],
+            lightColor: '#aca2ff33',
+            darkColor: '#aca2ff40',
+            className: 'xxx-text-wrapper',
+          }),
         ]}
       />
     </PageWarpper>
