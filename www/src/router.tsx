@@ -659,6 +659,11 @@ export const routes: MenuRouteObject[] = [
             lazy: () => import('./pages/examples/Example431'),
           },
           {
+            path: '650',
+            label: 'How To Disable Copy Paste in Editor?',
+            lazy: () => import('./pages/examples/Example650'),
+          },
+          {
             path: '674',
             label: 'Browser spell checking',
             lazy: () => import('./pages/examples/Example674'),
