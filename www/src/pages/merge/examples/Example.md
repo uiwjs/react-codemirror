@@ -13,22 +13,24 @@ four
 five`;
 
 export default function App() {
-  const [value, setValue] = useState('');
-  const [valueModified, setValueModified] = useState('');
+  const [value, setValue] = useState(doc);
+  const [valueModified, setValueModified] = useState(doc);
   return (
     <div>
-      <CodeMirrorMerge>
+      <CodeMirrorMerge destroyRerender={false}>
         <Original
-          onChange={(value) => {
-            setValue(value);
+          onChange={(val) => {
+            console.log('~~:1', val);
+            setValue(val);
           }}
-          value={doc}
+          value={value}
         />
         <Modified
-          onChange={(value) => {
-            setValueModified(value);
+          onChange={(val) => {
+            console.log('~~:2', val);
+            setValueModified(val);
           }}
-          value={doc.replace(/t/g, 'T') + 'Six'}
+          value={valueModified}
         />
       </CodeMirrorMerge>
       <div style={{ display: 'flex', marginTop: 10 }}>
