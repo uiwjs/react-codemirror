@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-extensions-color",
-  "version": "4.23.0",
+  "version": "4.23.1",
   "description": "Color Extensions for CodeMirror6.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/extensions/color",
   "funding": "https://jaywcjlove.github.io/#/sponsor",
