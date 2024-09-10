@@ -674,6 +674,11 @@ export const routes: MenuRouteObject[] = [
             lazy: () => import('./pages/examples/Example455'),
           },
           {
+            path: '681',
+            label: 'CodeMirrorMerge Update Extensions',
+            lazy: () => import('./pages/examples/Example681'),
+          },
+          {
             path: 'refs',
             label: 'Refs Example',
             lazy: () => import('./pages/examples/ExampleRef'),

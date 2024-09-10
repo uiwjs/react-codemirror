@@ -1,5 +1,5 @@
 import React, { useEffect, useImperativeHandle, useRef } from 'react';
-import { EditorStateConfig } from '@codemirror/state';
+import { EditorStateConfig, StateEffect } from '@codemirror/state';
 import { getDefaultExtensions } from '@uiw/react-codemirror';
 import { MergeView, MergeConfig, DirectMergeConfig } from '@codemirror/merge';
 import { useStore } from './store';
@@ -86,6 +86,7 @@ export const Internal = React.forwardRef<InternalRef, CodeMirrorMergeProps>((pro
         parent: editor.current,
         ...opts,
       });
+      dispatch!({ view: view.current });
     }
   }, [view, editor, originalExtension, modifiedExtension]);
 
