@@ -10,7 +10,7 @@ export const defaultSettingsVscodeLight: CreateThemeOptions['settings'] = {
   caret: '#000',
   selection: '#add6ff',
   selectionMatch: '#a8ac94',
-  lineHighlight: '#f0f0f0',
+  lineHighlight: '#99999926',
   gutterBackground: '#fff',
   gutterForeground: '#237893',
   gutterActiveForeground: '#0b216f',
