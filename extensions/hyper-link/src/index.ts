@@ -41,10 +41,10 @@ class HyperLinkIcon extends WidgetType {
 
 function hyperLinkDecorations(view: EditorView, anchor?: HyperLinkExtensionOptions['anchor']) {
     const widgets: Array<Range<Decoration>> = [];
-    const doc = view.state.doc;
+    const doc = view.state.doc.toString();
     let match;
 
-    while ((match = defaultRegexp.exec(doc.toString())) !== null) {
+    while ((match = defaultRegexp.exec(doc)) !== null) {
         const from = match.index;
         const to = from + match[0].length;
         const widget = Decoration.widget({
