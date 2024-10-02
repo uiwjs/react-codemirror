@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-theme-darcula",
-  "version": "4.23.3",
+  "version": "4.23.4",
   "description": "Theme darcula for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/darcula",
   "funding": "https://jaywcjlove.github.io/#/sponsor",
@@ -22,7 +22,7 @@
     "cjs"
   ],
   "dependencies": {
-    "@uiw/codemirror-themes": "4.23.3"
+    "@uiw/codemirror-themes": "4.23.4"
   },
   "keywords": [
     "codemirror",

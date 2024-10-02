@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-theme-okaidia",
-  "version": "4.23.3",
+  "version": "4.23.4",
   "description": "Theme okaidia for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/okaidia",
   "funding": "https://jaywcjlove.github.io/#/sponsor",
@@ -22,7 +22,7 @@
     "cjs"
   ],
   "dependencies": {
-    "@uiw/codemirror-themes": "4.23.3"
+    "@uiw/codemirror-themes": "4.23.4"
   },
   "keywords": [
     "codemirror",
