@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-theme-androidstudio",
-  "version": "4.23.4",
+  "version": "4.23.5",
   "description": "Theme androidstudio for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/androidstudio",
   "funding": "https://jaywcjlove.github.io/#/sponsor",
@@ -22,7 +22,7 @@
     "cjs"
   ],
   "dependencies": {
-    "@uiw/codemirror-themes": "4.23.4"
+    "@uiw/codemirror-themes": "4.23.5"
   },
   "keywords": [
     "codemirror",
