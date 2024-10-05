@@ -68,7 +68,7 @@ export const vscodeLightStyle: CreateThemeOptions['styles'] = [
 ];
 
 export function vscodeLightInit(options?: Partial<CreateThemeOptions>) {
-  const { theme = 'dark', settings = {}, styles = [] } = options || {};
+  const { theme = 'light', settings = {}, styles = [] } = options || {};
   return createTheme({
     theme: theme,
     settings: {
