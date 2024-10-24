@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/9674.0fdffb45.chunk.js","mappings":"yHAAA,sH","sources":["../../node_modules/code-example/txt/sample.m3.txt"],"sourcesContent":["export default \" MODULE HelloWorld EXPORTS Main;\\n FROM IO IMPORT Put;\\n BEGIN\\n   Put(\\\"Hello World\\\\n\\\")\\n END HelloWorld.\\n\";"],"names":[],"sourceRoot":""}

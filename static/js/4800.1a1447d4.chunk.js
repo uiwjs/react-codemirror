@@ -1,0 +1,11 @@
+"use strict";(self.webpackChunkwww=self.webpackChunkwww||[]).push([[4800],{74800:(e,t,o)=>{o.r(t),o.d(t,{Component:()=>p,EventsExample:()=>u});var s=o(13803),n=o(73562),r=o(17234),d=o(80905),c=o(69332),i=o(98846),a=o(94458),l=o(55864),m=o(98557);const h=r.Ay.div`
+  padding-bottom: 30px;
+`,u=()=>{const[e,t]=(0,d.useState)(0),[o,r]=(0,d.useState)(""),{theme:u}=(0,a.D)(),p=(0,d.useContext)(i.pX);return(0,m.jsxs)(l.zu,{children:[(0,m.jsx)(n.Ay,{value:p.mdstr,theme:u,height:"200px !important",style:{margin:"0 0 23px 0"},extensions:[c.cg.markdown(),s.W2({scroll:e=>{e.target instanceof HTMLElement&&t(e.target.scrollTop)}}),s.Qs({focus:e=>{r("focus")},blur:e=>{r("blur")}})]}),(0,m.jsxs)(h,{children:[e," ",o]})]})},p=()=>(0,m.jsx)(i.lN,{path:()=>o.e(4861).then(o.bind(o,44861)),children:(0,m.jsx)(u,{})})},55864:(e,t,o)=>{o.d(t,{zu:()=>n});var s=o(17234);const n=s.Ay.div`
+  flex: 1;
+  max-width: 980px;
+  padding: 20px 20px 30px 20px;
+`;s.Ay.div`
+  display: flex;
+  flex: 1;
+`},94458:(e,t,o)=>{o.d(t,{D:()=>n});var s=o(80905);function n(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"light";const t=document.documentElement.getAttribute("data-color-mode"),[o,n]=(0,s.useState)("dark"===t?"dark":e);return(0,s.useEffect)((()=>{n("dark"===document.documentElement.getAttribute("data-color-mode")?"dark":"light"),document.addEventListener("colorschemechange",(e=>{n(e.detail.colorScheme)}))}),[]),{theme:o,setTheme:n}}},13803:(e,t,o)=>{o.d(t,{Qs:()=>d,W2:()=>r});var s=o(67538);function n(e){var{type:t="scroll",events:o,props:n}=e;return s.Z9.fromClass(class{constructor(e){(this.dom=void 0,this.view=void 0,this.view=e,this.dom="dom"===t?e.dom:"content"===t?e.contentDOM:e.scrollDOM,this.dom&&n)&&Object.keys(n).forEach((e=>{this.dom[e]=n[e]}));Object.keys(o||{}).forEach((e=>{o&&o[e]&&this.dom&&this.dom.addEventListener(e,o[e])}))}destroy(){Object.keys(o||{}).forEach((e=>{o&&o[e]&&this.dom&&this.dom.removeEventListener(e,o[e])}))}})}function r(e){return n({type:"scroll",events:e})}function d(e){return n({type:"content",events:e})}}}]);
+//# sourceMappingURL=4800.1a1447d4.chunk.js.map
