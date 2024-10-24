@@ -8,6 +8,10 @@
   "license": "MIT",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
+  "exports": {
+    "require": "./cjs/index.js",
+    "import": "./esm/index.js"
+  },
   "scripts": {
     "watch": "tsbb watch src/*.ts --use-babel",
     "build": "tsbb build src/*.ts --use-babel"
