@@ -1,17 +1,16 @@
-import webpack, { Configuration } from 'webpack';
-import { LoaderConfOptions } from 'kkt';
+import webpack from 'webpack';
+import { LoaderConfOptions, WebpackConfiguration } from 'kkt';
 import lessModules from '@kkt/less-modules';
 import rawModules from '@kkt/raw-modules';
 import { disableScopePlugin } from '@kkt/scope-plugin-options';
 import { mdCodeModulesLoader } from 'markdown-react-code-preview-loader';
 import pkg from './package.json';
 
-export default (conf: Configuration, env: 'production' | 'development', options: LoaderConfOptions) => {
+export default (conf: WebpackConfiguration, env: 'production' | 'development', options: LoaderConfOptions) => {
   conf = lessModules(conf, env, options);
   conf = rawModules(conf, env, { ...options, test: /\.(txt)$/i });
   conf = mdCodeModulesLoader(conf);
   conf = disableScopePlugin(conf);
-  // Get the project version.
   conf.plugins!.push(
     new webpack.DefinePlugin({
       VERSION: JSON.stringify(pkg.version),

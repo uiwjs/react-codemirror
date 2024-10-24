@@ -9,8 +9,11 @@
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "exports": {
-    "require": "./cjs/index.js",
-    "import": "./esm/index.js"
+    ".": {
+      "require": "./cjs/index.js",
+      "import": "./esm/index.js"
+    },
+    "./*": "./*"
   },
   "scripts": {
     "watch": "tsbb watch src/*.ts --use-babel",

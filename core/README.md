@@ -98,7 +98,7 @@ npm install @uiw/react-codemirror --save
 
 [![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?logo=codesandbox)](https://codesandbox.io/embed/react-codemirror-example-codemirror-6-slvju?fontsize=14&hidenavigation=1&theme=dark)
 
-```jsx mdx:preview
+```jsx
 import React from 'react';
 import CodeMirror from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
@@ -272,14 +272,7 @@ import { okaidia } from '@uiw/codemirror-theme-okaidia';
 const extensions = [javascript({ jsx: true })];
 
 export default function App() {
-  return (
-    <CodeMirror
-      value="console.log('hello world!');"
-      height="200px"
-      theme={okaidia}
-      extensions={extensions}
-    />
-  );
+  return <CodeMirror value="console.log('hello world!');" height="200px" theme={okaidia} extensions={extensions} />;
 }
 ```
 
