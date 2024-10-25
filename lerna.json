@@ -1,4 +1,4 @@
 {
-  "version": "4.23.5",
+  "version": "4.23.6",
   "packages": ["themes/**", "extensions/**", "core", "merge", "example/**", "www"]
 }
