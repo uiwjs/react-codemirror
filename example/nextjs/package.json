@@ -11,9 +11,9 @@
   "dependencies": {
     "@uiw/react-codemirror": "4.23.6",
     "next": "14.0.3",
-    "react": "~18.2.0",
+    "react": "~18.3.0",
     "react-codemirror-merge": "4.23.6",
-    "react-dom": "~18.2.0"
+    "react-dom": "~18.3.0"
   },
   "devDependencies": {
     "@types/node": "^20",

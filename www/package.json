@@ -89,10 +89,10 @@
     "@wcj/dark-mode": "~1.0.12",
     "code-example": "^3.3.6",
     "markdown-react-code-preview-loader": "^2.1.2",
-    "react": "~18.2.0",
+    "react": "~18.3.0",
     "react-code-preview-layout": "^3.1.4",
     "react-codemirror-merge": "4.23.6",
-    "react-dom": "~18.2.0",
+    "react-dom": "~18.3.0",
     "react-router-dom": "^6.20.0",
     "rehype-ignore": "^2.0.1",
     "styled-components": "^6.1.1"
