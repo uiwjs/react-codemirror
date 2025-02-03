@@ -24,12 +24,21 @@ export const Internal = React.forwardRef<InternalRef, CodeMirrorMergeProps>((pro
     collapseUnchanged,
     destroyRerender = true,
     renderRevertControl,
+    diffConfig,
     ...elmProps
   } = props;
   const { modified, modifiedExtension, original, originalExtension, theme, dispatch, ...otherStore } = useStore();
   const editor = useRef<HTMLDivElement>(null);
   const view = useRef<MergeView>();
-  const opts = { orientation, revertControls, highlightChanges, gutter, collapseUnchanged, renderRevertControl };
+  const opts = {
+    orientation,
+    revertControls,
+    highlightChanges,
+    gutter,
+    collapseUnchanged,
+    renderRevertControl,
+    diffConfig,
+  };
 
   useImperativeHandle(
     ref,
