@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-theme-solarized",
-  "version": "4.23.8",
+  "version": "4.23.9",
   "description": "Theme solarized for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/solarized",
   "funding": "https://jaywcjlove.github.io/#/sponsor",
@@ -42,7 +42,7 @@
     "cjs"
   ],
   "dependencies": {
-    "@uiw/codemirror-themes": "4.23.8"
+    "@uiw/codemirror-themes": "4.23.9"
   },
   "keywords": [
     "codemirror",
