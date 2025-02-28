@@ -74,7 +74,7 @@ export const basicLightInit = (options?: Partial<CreateThemeOptions>) => {
       ...defaultSettingsBasicLight,
       ...settings,
     },
-    styles: [...styles],
+    styles: [...basicLightStyle, ...styles],
   });
 };
 
