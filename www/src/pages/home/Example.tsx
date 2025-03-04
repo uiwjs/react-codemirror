@@ -63,7 +63,7 @@ export default function Example() {
   const [editable, setEditable] = useState(true);
   const { theme, setTheme } = useTheme();
   const [code, setCode] = useState(javascriptExample);
-  const [extensions, setExtensions] = useState<Extension[]>();
+  const [extensions, setExtensions] = useState<Extension[]>([color, langs.javascript()]);
   const [height, setHeight] = useState('500px');
   const [basicSetup, setBasicSetup] = useState<BasicSetupOptions>({
     crosshairCursor: false,
