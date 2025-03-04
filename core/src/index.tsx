@@ -1,4 +1,4 @@
-import React, { useRef, forwardRef, useImperativeHandle } from 'react';
+import React, { useRef, forwardRef, useImperativeHandle, useCallback } from 'react';
 import type { EditorState, EditorStateConfig, Extension, StateField } from '@codemirror/state';
 import type { EditorView, ViewUpdate } from '@codemirror/view';
 import { type BasicSetupOptions } from '@uiw/codemirror-extensions-basic-setup';
@@ -116,9 +116,8 @@ const ReactCodeMirror = forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProps>((pr
     initialState,
     ...other
   } = props;
-  const editor = useRef<HTMLDivElement>(null);
-  const { state, view, container } = useCodeMirror({
-    container: editor.current,
+  const editor = useRef<HTMLDivElement | null>(null);
+  const { state, view, container, setContainer } = useCodeMirror({
     root,
     value,
     autoFocus,
@@ -150,13 +149,23 @@ const ReactCodeMirror = forwardRef<ReactCodeMirrorRef, ReactCodeMirrorProps>((pr
     view,
   ]);
 
+  const setEditorRef = useCallback(
+    (el: HTMLDivElement) => {
+      editor.current = el;
+      setContainer(el);
+    },
+    [setContainer],
+  );
+
   // check type of value
   if (typeof value !== 'string') {
     throw new Error(`value must be typeof string but got ${typeof value}`);
   }
 
   const defaultClassNames = typeof theme === 'string' ? `cm-theme-${theme}` : 'cm-theme';
-  return <div ref={editor} className={`${defaultClassNames}${className ? ` ${className}` : ''}`} {...other}></div>;
+  return (
+    <div ref={setEditorRef} className={`${defaultClassNames}${className ? ` ${className}` : ''}`} {...other}></div>
+  );
 });
 
 ReactCodeMirror.displayName = 'CodeMirror';
