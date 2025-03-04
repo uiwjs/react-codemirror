@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@uiw/react-codemirror": "4.23.10",
-    "next": "14.0.3",
+    "next": "14.2.21",
     "react": "~18.2.0",
     "react-codemirror-merge": "4.23.10",
     "react-dom": "~18.2.0"
