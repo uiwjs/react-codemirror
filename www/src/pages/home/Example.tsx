@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import MarkdownPreview from '@uiw/react-markdown-preview';
 import { color } from '@uiw/codemirror-extensions-color';
 import DocumentStr from '@uiw/react-codemirror/README.md';
@@ -10,6 +10,7 @@ import { langs } from '@uiw/codemirror-extensions-langs';
 import { Select } from './Select';
 import { Options } from '../extensions/basic-setup/example';
 import { useTheme } from '../../utils/useTheme';
+import javascriptExample from 'code-example/txt/sample.javascript.txt';
 
 const themeOptions = ['dark', 'light']
   .concat(Object.keys(alls))
@@ -61,7 +62,7 @@ export default function Example() {
   const [autofocus, setAutofocus] = useState(false);
   const [editable, setEditable] = useState(true);
   const { theme, setTheme } = useTheme();
-  const [code, setCode] = useState('');
+  const [code, setCode] = useState(javascriptExample);
   const [extensions, setExtensions] = useState<Extension[]>();
   const [height, setHeight] = useState('500px');
   const [basicSetup, setBasicSetup] = useState<BasicSetupOptions>({
@@ -91,9 +92,7 @@ export default function Example() {
       }
     } catch (error) {}
   }
-  useEffect(() => {
-    handleLangChange('javascript');
-  }, []);
+
   return (
     <Warpper className="wmde-markdown-var">
       <CodemirrorWarpper>

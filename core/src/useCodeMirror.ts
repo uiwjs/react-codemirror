@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { Annotation, EditorState, StateEffect, type Extension } from '@codemirror/state';
 import { EditorView, type ViewUpdate } from '@codemirror/view';
 import { getDefaultExtensions } from './getDefaultExtensions';
@@ -85,7 +85,7 @@ export function useCodeMirror(props: UseCodeMirror) {
   }
   getExtensions = getExtensions.concat(extensions);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (container && !state) {
       const config = {
         doc: value,
@@ -114,7 +114,11 @@ export function useCodeMirror(props: UseCodeMirror) {
     };
   }, [container, state]);
 
-  useEffect(() => setContainer(props.container), [props.container]);
+  useEffect(() => {
+    if (props.container) {
+      setContainer(props.container);
+    }
+  }, [props.container]);
 
   useEffect(
     () => () => {
