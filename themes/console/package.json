@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-theme-console",
-  "version": "4.23.9",
+  "version": "4.23.10",
   "description": "Theme console for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/console/light",
   "author": "David Villamarin <dalejo_1996@hotmail.com>",
@@ -41,7 +41,7 @@
     "cjs"
   ],
   "dependencies": {
-    "@uiw/codemirror-themes": "4.23.9"
+    "@uiw/codemirror-themes": "4.23.10"
   },
   "keywords": [
     "codemirror",
