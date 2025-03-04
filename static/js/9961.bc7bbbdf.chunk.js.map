@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/9961.bc7bbbdf.chunk.js","mappings":"yHAAA,kK","sources":["../../node_modules/code-example/txt/sample.sparql.txt"],"sourcesContent":["export default \"  SELECT ?x ?name\\n  {\\n    ?x  foaf:mbox <mailto:alice@example> .\\n    ?x  foaf:knows ?a1 .\\n    ?a1 foaf:knows ?a2 .\\n    ?a2 foaf:name ?name .\\n  }\\n\";"],"names":[],"sourceRoot":""}
