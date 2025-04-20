@@ -18,7 +18,8 @@
   },
   "scripts": {
     "watch": "tsbb watch src/*.ts --use-babel",
-    "build": "tsbb build src/*.ts --use-babel"
+    "build": "tsbb build src/*.ts --use-babel && npm run setmodule",
+    "setmodule": "echo '{\"type\":\"module\"}' > esm/package.json && echo '{\"type\":\"commonjs\"}' > cjs/package.json"
   },
   "repository": {
     "type": "git",
