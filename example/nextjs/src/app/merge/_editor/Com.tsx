@@ -19,7 +19,7 @@ export const MergeExample = () => {
   };
   const [originalValue, setOriginalValue] = useState(originalCode);
   const [modifiedValue, setModifiedValue] = useState(modifiedCode);
-  const random = useRef<number>();
+  const random = useRef<number>(1);
   const click = () => {
     random.current = Math.floor(Math.random() * 101);
     const code = '// hello world' + random.current + '\n' + originalCode;
