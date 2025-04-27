@@ -16,8 +16,8 @@
     "@kkt/raw-modules": "^7.5.4",
     "@kkt/scope-plugin-options": "^7.5.4",
     "@types/katex": "^0.16.0",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "cross-env": "^7.0.3",
     "kkt": "^7.5.4",
     "source-map-explorer": "~2.5.3"
@@ -89,10 +89,10 @@
     "@wcj/dark-mode": "~1.0.12",
     "code-example": "^3.3.6",
     "markdown-react-code-preview-loader": "^2.1.2",
-    "react": "~18.2.0",
+    "react": "~19.1.0",
     "react-code-preview-layout": "^3.1.4",
     "react-codemirror-merge": "4.23.11",
-    "react-dom": "~18.2.0",
+    "react-dom": "~19.1.0",
     "react-router-dom": "^6.20.0",
     "rehype-ignore": "^2.0.1",
     "styled-components": "^6.1.1"
