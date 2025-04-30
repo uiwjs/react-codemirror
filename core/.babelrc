@@ -1,0 +1,22 @@
+{
+    "env": {
+        "cjs": {
+            "presets": [
+                "@babel/preset-typescript"
+            ]
+        },
+        "esm": {
+            "presets": [
+                "@babel/preset-env"
+            ],
+            "plugins": [
+                [
+                    "babel-plugin-add-import-extension",
+                    {
+                        "extension": "js"
+                    }
+                ]
+            ]
+        }
+    }
+}
