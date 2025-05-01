@@ -65,8 +65,5 @@
       "lcov",
       "json-summary"
     ]
-  },
-  "devDependencies": {
-    "babel-plugin-add-import-extension": "^1.6.0"
   }
 }
