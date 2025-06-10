@@ -25,6 +25,7 @@ export const Internal = React.forwardRef<InternalRef, CodeMirrorMergeProps>((pro
     destroyRerender = true,
     renderRevertControl,
     diffConfig,
+    root,
     ...elmProps
   } = props;
   const { modified, modifiedExtension, original, originalExtension, theme, dispatch, ...otherStore } = useStore();
@@ -38,6 +39,7 @@ export const Internal = React.forwardRef<InternalRef, CodeMirrorMergeProps>((pro
     collapseUnchanged,
     renderRevertControl,
     diffConfig,
+    root,
   };
 
   useImperativeHandle(
