@@ -1,5 +1,5 @@
 import React from 'react';
-import { MergeConfig } from '@codemirror/merge';
+import { MergeConfig, DirectMergeConfig } from '@codemirror/merge';
 import { Original } from './Original';
 import { Modified } from './Modified';
 import { Internal, InternalRef } from './Internal';
@@ -12,6 +12,10 @@ export interface CodeMirrorMergeProps extends React.HTMLAttributes<HTMLDivElemen
    * Default is `false`. If true, the editor will be destroyed and re-rendered every time the editor is updated.
    */
   destroyRerender?: boolean;
+  /**
+   * An optional root. Only necessary if the view is mounted in a shadow root or a document other than the global `document` object.
+   */
+  root?: DirectMergeConfig['root'];
 }
 
 const InternalCodeMirror = React.forwardRef<CodeMirrorMergeRef, CodeMirrorMergeProps>(({ theme, ...props }, ref) => {
