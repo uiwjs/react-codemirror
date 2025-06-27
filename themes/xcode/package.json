@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-theme-xcode",
-  "version": "4.23.13",
+  "version": "4.23.14",
   "description": "Theme xcode for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/xcode/light",
   "funding": "https://jaywcjlove.github.io/#/sponsor",
@@ -29,7 +29,7 @@
     "cjs"
   ],
   "dependencies": {
-    "@uiw/codemirror-themes": "4.23.13"
+    "@uiw/codemirror-themes": "4.23.14"
   },
   "keywords": [
     "codemirror",
