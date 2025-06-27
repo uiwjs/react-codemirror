@@ -4,8 +4,10 @@ import { EditorView, type ViewUpdate } from '@codemirror/view';
 import { getDefaultExtensions } from './getDefaultExtensions';
 import { getStatistics } from './utils';
 import { type ReactCodeMirrorProps } from '.';
+import { TimeoutLatch, getScheduler } from './timeoutLatch';
 
 const External = Annotation.define<boolean>();
+const TYPING_TIMOUT = 200; // ms
 
 export interface UseCodeMirror extends ReactCodeMirrorProps {
   container?: HTMLDivElement | null;
@@ -41,6 +43,8 @@ export function useCodeMirror(props: UseCodeMirror) {
   const [container, setContainer] = useState<HTMLDivElement | null>();
   const [view, setView] = useState<EditorView>();
   const [state, setState] = useState<EditorState>();
+  const typingLatch = useState<{ current: TimeoutLatch | null }>(() => ({ current: null }))[0];
+  const pendingUpdate = useState<{ current: (() => void) | null }>(() => ({ current: null }))[0];
   const defaultThemeOption = EditorView.theme({
     '&': {
       height,
@@ -62,6 +66,20 @@ export function useCodeMirror(props: UseCodeMirror) {
       // If transaction is market as remote we don't have to call `onChange` handler again
       !vu.transactions.some((tr) => tr.annotation(External))
     ) {
+      if (typingLatch.current) {
+        typingLatch.current.reset();
+      } else {
+        typingLatch.current = new TimeoutLatch(() => {
+          if (pendingUpdate.current) {
+            const forceUpdate = pendingUpdate.current;
+            pendingUpdate.current = null;
+            forceUpdate();
+          }
+          typingLatch.current = null;
+        }, TYPING_TIMOUT);
+        getScheduler().add(typingLatch.current);
+      }
+
       const doc = vu.state.doc;
       const value = doc.toString();
       onChange(value, vu);
@@ -126,6 +144,10 @@ export function useCodeMirror(props: UseCodeMirror) {
         view.destroy();
         setView(undefined);
       }
+      if (typingLatch.current) {
+        typingLatch.current.cancel();
+        typingLatch.current = null;
+      }
     },
     [view],
   );
@@ -165,10 +187,22 @@ export function useCodeMirror(props: UseCodeMirror) {
     }
     const currentValue = view ? view.state.doc.toString() : '';
     if (view && value !== currentValue) {
-      view.dispatch({
-        changes: { from: 0, to: currentValue.length, insert: value || '' },
-        annotations: [External.of(true)],
-      });
+      const isTyping = typingLatch.current && !typingLatch.current.isDone;
+
+      const forceUpdate = () => {
+        if (view && value !== view.state.doc.toString()) {
+          view.dispatch({
+            changes: { from: 0, to: view.state.doc.toString().length, insert: value || '' },
+            annotations: [External.of(true)],
+          });
+        }
+      };
+
+      if (!isTyping) {
+        forceUpdate();
+      } else {
+        pendingUpdate.current = forceUpdate;
+      }
     }
   }, [value, view]);
 
