@@ -6,7 +6,7 @@ import { getStatistics } from './utils';
 import { type ReactCodeMirrorProps } from '.';
 import { TimeoutLatch, getScheduler } from './timeoutLatch';
 
-const External = Annotation.define<boolean>();
+export const ExternalChange = Annotation.define<boolean>();
 const TYPING_TIMOUT = 200; // ms
 
 export interface UseCodeMirror extends ReactCodeMirrorProps {
@@ -64,7 +64,7 @@ export function useCodeMirror(props: UseCodeMirror) {
       typeof onChange === 'function' &&
       // Fix echoing of the remote changes:
       // If transaction is market as remote we don't have to call `onChange` handler again
-      !vu.transactions.some((tr) => tr.annotation(External))
+      !vu.transactions.some((tr) => tr.annotation(ExternalChange))
     ) {
       if (typingLatch.current) {
         typingLatch.current.reset();
@@ -193,7 +193,7 @@ export function useCodeMirror(props: UseCodeMirror) {
         if (view && value !== view.state.doc.toString()) {
           view.dispatch({
             changes: { from: 0, to: view.state.doc.toString().length, insert: value || '' },
-            annotations: [External.of(true)],
+            annotations: [ExternalChange.of(true)],
           });
         }
       };
