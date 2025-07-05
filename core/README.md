@@ -388,6 +388,7 @@ import { EditorView, ViewUpdate } from '@codemirror/view';
 export * from '@codemirror/view';
 export * from '@codemirror/basic-setup';
 export * from '@codemirror/state';
+export declare const ExternalChange: import('@codemirror/state').AnnotationType<boolean>;
 export interface UseCodeMirror extends ReactCodeMirrorProps {
   container?: HTMLDivElement | null;
 }

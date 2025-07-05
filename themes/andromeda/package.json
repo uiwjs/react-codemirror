@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-theme-andromeda",
-  "version": "4.23.14",
+  "version": "4.24.0",
   "description": "Theme andromeda for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/andromeda",
   "funding": "https://jaywcjlove.github.io/#/sponsor",
@@ -29,7 +29,7 @@
     "cjs"
   ],
   "dependencies": {
-    "@uiw/codemirror-themes": "4.23.14"
+    "@uiw/codemirror-themes": "4.24.0"
   },
   "keywords": [
     "codemirror",
