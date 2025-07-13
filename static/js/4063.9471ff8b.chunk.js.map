@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/4063.9471ff8b.chunk.js","mappings":"wHAAA,8I","sources":["../../node_modules/code-example/txt/sample.pla.txt"],"sourcesContent":["export default \".ob out1 out2 out3\\n--1--     -        wait     110000\\n.ilb in1 in0 wait ack nack\\n.symbolic state<3> state<2>;aaa bbb; # comment\\n\";"],"names":[],"sourceRoot":""}
