@@ -318,6 +318,7 @@ export default function Example() {
             lintKeymap
           </Options>
         </Tools>
+        <br />
         <MarkdownPreview source={DocumentStr.source} />
       </MarkdownDocument>
     </Warpper>
