@@ -59,21 +59,21 @@ export const Sample: FC<PropsWithoutRef<SampleProps>> = ({ theme, ...props }) =>
   };
   return (
     <Warpper {...props}>
-      <Example title="JavaScript" value={jsStr} extensions={[color, langs.javascript()]} {...editProps} />
+      <Example title="JavaScript" value={jsStr} extensions={[color, langs.js()]} {...editProps} />
       <Example title="JSX" value={jsxStr} extensions={[color, langs.jsx()]} {...editProps} />
-      <Example title="TypeScript" value={typescriptStr} extensions={[color, langs.typescript()]} {...editProps} />
+      <Example title="TypeScript" value={typescriptStr} extensions={[color, langs.ts()]} {...editProps} />
       <Example title="TSX" value={tsxStr} extensions={[color, langs.tsx()]} {...editProps} />
       <Example title="JSON" value={jsonStr} extensions={[color, langs.json()]} {...editProps} />
       <Example title="HTML" value={htmlStr} extensions={[color, langs.html()]} {...editProps} />
-      <Example title="Markdown" value={markdownStr} extensions={[color, langs.markdown()]} {...editProps} />
+      <Example title="Markdown" value={markdownStr} extensions={[color, langs.md()]} {...editProps} />
       <Example title="CSS" value={cssStr} extensions={[color, langs.css()]} {...editProps} />
       <Example title="PHP" value={phpStr} extensions={[color, langs.php()]} {...editProps} />
       <Example title="JAVA" value={javaStr} extensions={[color, langs.java()]} {...editProps} />
-      <Example title="Rust" value={rustStr} extensions={[color, langs.rust()]} {...editProps} />
+      <Example title="Rust" value={rustStr} extensions={[color, langs.rs()]} {...editProps} />
       <Example title="Go" value={goStr} extensions={[color, langs.go()]} {...editProps} />
-      <Example title="MySQL" value={mysqlStr} extensions={[color, langs.mysql()]} {...editProps} />
-      <Example title="Python" value={pythonStr} extensions={[color, langs.python()]} {...editProps} />
-      <Example title="Shell" value={shellStr} extensions={[color, langs.shell()]} {...editProps} />
+      <Example title="MySQL" value={mysqlStr} extensions={[color, langs.sql()]} {...editProps} />
+      <Example title="Python" value={pythonStr} extensions={[color, langs.py()]} {...editProps} />
+      <Example title="Shell" value={shellStr} extensions={[color, langs.sh()]} {...editProps} />
       <Example title="Swift" value={swiftStr} extensions={[color, langs.swift()]} {...editProps} />
     </Warpper>
   );

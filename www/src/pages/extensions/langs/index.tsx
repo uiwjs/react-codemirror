@@ -2,6 +2,7 @@ import type { FC, PropsWithChildren } from 'react';
 import { useEffect, useState } from 'react';
 import { langNames, LanguageName, loadLanguage } from '@uiw/codemirror-extensions-langs';
 import CodeMirror from '@uiw/react-codemirror';
+import { type Extension } from '@codemirror/state';
 import { Preview } from '../../theme/Preview';
 import styled from 'styled-components';
 import { useTheme } from '../../../utils/useTheme';
@@ -36,7 +37,7 @@ export const LangsExample: FC<PropsWithChildren<{ source?: string }>> = (props) 
         theme={theme}
         height="300px !important"
         style={{ margin: '0 0 23px 0' }}
-        extensions={[loadLanguage(language)!].filter(Boolean)}
+        extensions={[loadLanguage(language)! as Extension].filter(Boolean)}
       />
       <Toolbar>
         <select value={language} onChange={(evn) => setLanguage(evn.target.value as LanguageName)}>

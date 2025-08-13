@@ -2,7 +2,7 @@ import { useState } from 'react';
 import MarkdownPreview from '@uiw/react-markdown-preview';
 import { color } from '@uiw/codemirror-extensions-color';
 import DocumentStr from '@uiw/react-codemirror/README.md';
-import { Extension } from '@codemirror/state';
+import { type Extension } from '@codemirror/state';
 import CodeMirror, { ReactCodeMirrorProps, BasicSetupOptions } from '@uiw/react-codemirror';
 import styled from 'styled-components';
 import * as alls from '@uiw/codemirror-themes-all';
@@ -57,13 +57,13 @@ const Warpper = styled.div`
 `;
 
 export default function Example() {
-  const [mode, setMode] = useState('javascript');
+  const [mode, setMode] = useState('js');
   const [placeholder, setPlaceholder] = useState('Please enter the code.');
   const [autofocus, setAutofocus] = useState(false);
   const [editable, setEditable] = useState(true);
   const { theme, setTheme } = useTheme();
   const [code, setCode] = useState(javascriptExample);
-  const [extensions, setExtensions] = useState<Extension[]>([color, langs.javascript()]);
+  const [extensions, setExtensions] = useState<Extension[]>([color, langs.js()]);
   const [height, setHeight] = useState('500px');
   const [basicSetup, setBasicSetup] = useState<BasicSetupOptions>({
     crosshairCursor: false,
@@ -74,14 +74,16 @@ export default function Example() {
       import(`code-example/txt/sample.${lang.toLocaleLowerCase()}.txt`)
         .then((data) => {
           setCode(data.default);
-          if (langs[lang]) {
-            setExtensions([color, langs[lang]()]);
+          let langFn = langs[lang];
+          if (langFn && typeof langFn === 'function') {
+            setExtensions([color, langFn() as Extension]);
           }
           setMode(lang);
         })
         .catch((err) => {
-          if (langs[lang]) {
-            setExtensions([color, langs[lang]()]);
+          let langFn = langs[lang];
+          if (langFn && typeof langFn === 'function') {
+            setExtensions([color, langFn() as Extension]);
           } else {
             setExtensions([color]);
           }

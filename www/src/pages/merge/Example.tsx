@@ -40,14 +40,14 @@ export const MergeExample = () => {
       >
         <Original
           value={originalValue}
-          extensions={[langs.javascript()]}
+          extensions={[langs.js()]}
           onChange={(val) => {
             // console.log('::::::::::', val)
           }}
         />
         <Modified
           value={modifiedCode}
-          extensions={[langs.javascript(), EditorView.editable.of(false), EditorState.readOnly.of(true)]}
+          extensions={[langs.js(), EditorView.editable.of(false), EditorState.readOnly.of(true)]}
         />
       </CodeMirrorMerge>
       <label>

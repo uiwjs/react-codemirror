@@ -14,7 +14,7 @@ export function Component() {
         height="400px !important"
         width="100%"
         style={{ margin: '0 0 23px 0', flex: 1 }}
-        extensions={[langs.markdown()]}
+        extensions={[langs.md()]}
       />
     </Fragment>
   );

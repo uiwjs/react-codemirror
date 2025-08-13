@@ -1,6 +1,6 @@
-import { FC, PropsWithoutRef, useEffect, useState } from 'react';
+import { type FC, type PropsWithoutRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { Extension } from '@codemirror/state';
+import { type Extension } from '@codemirror/state';
 import { langs } from '@uiw/codemirror-extensions-langs';
 import { ThmeCodeStyle } from './themeCode';
 import { themeCode } from './themeCode';
@@ -34,7 +34,12 @@ export const SampleCode: FC<PropsWithoutRef<SampleCodeProps>> = ({ onChange, sty
       import(`code-example/txt/sample.${langStr.toLocaleLowerCase()}.txt`)
         .then((data) => {
           const extension = langs[langStr as keyof typeof langs];
-          onChange && onChange(data.default as string, langStr, extension ? extension() : undefined);
+          onChange &&
+            onChange(
+              data.default as string,
+              langStr,
+              extension && typeof extension === 'function' ? (extension() as Extension) : undefined,
+            );
         })
         .catch((err) => {
           onChange && onChange('', '', undefined);
