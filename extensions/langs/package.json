@@ -31,10 +31,10 @@
   ],
   "peerDependencies": {
     "@codemirror/language": ">=6.0.0",
-    "@codemirror/legacy-modes": ">=6.0.0"
+    "@codemirror/language-data": ">=6.0.0"
   },
   "dependencies": {
-    "@codemirror/language": ">=6.0.0",
+    "@codemirror/language": "^6.0.0",
     "@codemirror/language-data": "^6.5.1",
     "@replit/codemirror-lang-nix": "^6.0.1",
     "@replit/codemirror-lang-solidity": "^6.0.1",
