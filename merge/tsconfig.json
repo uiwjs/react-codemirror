@@ -1,8 +1,0 @@
-{
-  "extends": "../tsconfig",
-  "include": ["src"],
-  "compilerOptions": {
-    "outDir": "cjs",
-    "baseUrl": "."
-  }
-}

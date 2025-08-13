@@ -1,43 +1,25 @@
 {
+  "name": "my-app",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "lerna exec --scope @uiw/* --scope react-codemirror-merge --ignore www -- npm run build",
-    "⬇️⬇️⬇️⬇️⬇️ package ⬇️⬇️⬇️⬇️⬇️": "▼▼▼▼▼ package ▼▼▼▼▼",
-    "watch": "npm run-script watch --workspace @uiw/react-codemirror",
-    "bundle": "npm run-script bundle --workspace @uiw/react-codemirror",
-    "doc": "npm run-script build --workspace www",
-    "start": "npm run-script start --workspace www",
-    "⬆️⬆️⬆️⬆️⬆️ package ⬆️⬆️⬆️⬆️⬆️": "▲▲▲▲▲ package ▲▲▲▲▲",
-    "test": "lerna exec \"tsbb test\" --scope @uiw/react-codemirror",
-    "coverage": "lerna exec \"tsbb test --coverage --bail\" --scope @uiw/react-codemirror",
-    "prepare": "husky",
-    "version": "lerna version --exact --force-publish --no-push --no-git-tag-version",
-    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,json}'",
-    "remove": "npm run clean && lerna exec \"rm -rf package-lock.json cjs esm lib\" --scope @uiw/* --scope website --scope react-codemirror-merge",
-    "clean": "lerna clean --yes"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "workspaces": [
-    "themes/**",
-    "extensions/**",
-    "core",
-    "merge",
-    "www"
-  ],
-  "engines": {
-    "node": ">=16.0.0"
+  "dependencies": {
+    "@uiw/codemirror-extensions-langs": "^4.24.2",
+    "@uiw/react-codemirror": "^4.24.2",
+    "next": "15.4.6",
+    "react": "19.1.0",
+    "react-codemirror-merge": "^4.24.2",
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "@kkt/less-modules": "^7.5.4",
-    "@kkt/ncc": "^1.0.13",
-    "@types/react-test-renderer": "~18.0.0",
-    "react": "~18.2.0",
-    "react-dom": "~18.2.0",
-    "husky": "^9.0.11",
-    "kkt": "^7.5.4",
-    "lerna": "8.0.0",
-    "lint-staged": "^15.1.0",
-    "prettier": "^3.0.2",
-    "react-test-renderer": "~18.2.0",
-    "tsbb": "^4.5.1"
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5"
   }
 }
