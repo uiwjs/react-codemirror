@@ -19,7 +19,6 @@
   "workspaces": [
     "themes/**",
     "extensions/**",
-    "example/**",
     "core",
     "merge",
     "www"

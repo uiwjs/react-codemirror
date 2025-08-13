@@ -17,7 +17,7 @@
   },
   "scripts": {
     "watch": "tsbb watch src/*.ts --use-babel",
-    "build": "tsbb build src/*.ts --use-babel",
+    "build": "npm run gen && tsbb build src/*.ts --use-babel",
     "gen": "node gen-langs-map.cjs ../../node_modules/@codemirror/language-data/dist/index.cjs > src/index.ts"
   },
   "repository": {

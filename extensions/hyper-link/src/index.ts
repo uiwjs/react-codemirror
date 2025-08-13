@@ -40,25 +40,25 @@ class HyperLinkIcon extends WidgetType {
 }
 
 function hyperLinkDecorations(view: EditorView, anchor?: HyperLinkExtensionOptions['anchor']) {
-    const widgets: Array<Range<Decoration>> = [];
-    const doc = view.state.doc.toString();
-    let match;
+  const widgets: Array<Range<Decoration>> = [];
+  const doc = view.state.doc.toString();
+  let match;
 
-    while ((match = defaultRegexp.exec(doc)) !== null) {
-        const from = match.index;
-        const to = from + match[0].length;
-        const widget = Decoration.widget({
-            widget: new HyperLinkIcon({
-                at: to,
-                url: match[0],
-                anchor,
-            }),
-            side: 1,
-        });
-        widgets.push(widget.range(to));
-    }
+  while ((match = defaultRegexp.exec(doc)) !== null) {
+    const from = match.index;
+    const to = from + match[0].length;
+    const widget = Decoration.widget({
+      widget: new HyperLinkIcon({
+        at: to,
+        url: match[0],
+        anchor,
+      }),
+      side: 1,
+    });
+    widgets.push(widget.range(to));
+  }
 
-    return Decoration.set(widgets);
+  return Decoration.set(widgets);
 }
 
 const linkDecorator = (
