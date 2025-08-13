@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-extensions-classname",
-  "version": "4.25.0",
+  "version": "4.25.1",
   "description": "Adding a class for a specific line for CodeMirror6.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/extensions/classname",
   "funding": "https://jaywcjlove.github.io/#/sponsor",
