@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-theme-atomone",
-  "version": "4.24.2",
+  "version": "4.25.0",
   "description": "Theme atomone for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/atomone",
   "funding": "https://jaywcjlove.github.io/#/sponsor",
@@ -29,7 +29,7 @@
     "cjs"
   ],
   "dependencies": {
-    "@uiw/codemirror-themes": "4.24.2"
+    "@uiw/codemirror-themes": "4.25.0"
   },
   "keywords": [
     "codemirror",
