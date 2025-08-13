@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkwww=self.webpackChunkwww||[]).push([[1548],{41548:(n,e,t)=>{t.r(e),t.d(e,{default:()=>a});const a='    -- defines a factorial function\n    function fact (n)\n      if n == 0 then\n        return 1\n      else\n        return n * fact(n-1)\n      end\n    end\n    \n    print("enter a number:")\n    a = io.read("*number")        -- read a number\n    print(fact(a))'}}]);
+//# sourceMappingURL=1548.f393ecf6.chunk.js.map
