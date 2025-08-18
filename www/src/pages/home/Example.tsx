@@ -69,7 +69,7 @@ export default function Example() {
     crosshairCursor: false,
   });
 
-  function handleLangChange(lang: keyof typeof langs) {
+  function handleLangChange(lang: string) {
     try {
       import(`code-example/txt/sample.${lang.toLocaleLowerCase()}.txt`)
         .then((data) => {
@@ -108,7 +108,7 @@ export default function Example() {
           autoFocus={autofocus}
           basicSetup={basicSetup}
           placeholder={placeholder}
-          onChange={(val) => {
+          onChange={(val: string) => {
             // https://github.com/uiwjs/react-codemirror/issues/449
             // setCode(val)
           }}
@@ -125,7 +125,7 @@ export default function Example() {
             label="Lang"
             options={Object.keys(langs).sort()}
             value={mode}
-            onChange={(evn) => handleLangChange(evn.target.value as keyof typeof langs)}
+            onChange={(evn) => handleLangChange(evn.target.value)}
           />
           <Select
             label="Website Theme"
