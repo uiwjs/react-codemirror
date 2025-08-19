@@ -5,6 +5,7 @@ import GitHubCorners from '@uiw/react-github-corners';
 import Github from '@uiw/react-shields/github';
 import Npm from '@uiw/react-shields/npm';
 import BackToUp from '@uiw/react-back-to-top';
+import type * as CSS from 'csstype';
 import logo from '../../logo.png';
 import Example from './Example';
 
@@ -112,7 +113,7 @@ const AppHeader = styled.div`
 const hyperlink: {
   href: string;
   label: string;
-  style?: React.CSSProperties;
+  style?: CSS.Properties<string | number>;
 }[] = [
   {
     href: 'https://www.npmjs.com/package/@uiw/react-codemirror',

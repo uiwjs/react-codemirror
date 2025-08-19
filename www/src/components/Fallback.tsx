@@ -1,7 +1,8 @@
 import React from 'react';
+import type * as CSS from 'csstype';
 
 export interface FallbackProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
-const defaultStyle: React.CSSProperties = {
+const defaultStyle: CSS.Properties<string | number> = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
