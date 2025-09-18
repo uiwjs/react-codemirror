@@ -1,6 +1,6 @@
 {
   "name": "@uiw/react-codemirror",
-  "version": "4.25.1",
+  "version": "4.25.2",
   "description": "CodeMirror component for React.",
   "homepage": "https://uiwjs.github.io/react-codemirror",
   "funding": "https://jaywcjlove.github.io/#/sponsor",
@@ -47,7 +47,7 @@
     "@codemirror/commands": "^6.1.0",
     "@codemirror/state": "^6.1.1",
     "@codemirror/theme-one-dark": "^6.0.0",
-    "@uiw/codemirror-extensions-basic-setup": "4.25.1",
+    "@uiw/codemirror-extensions-basic-setup": "4.25.2",
     "codemirror": "^6.0.0"
   },
   "keywords": [
