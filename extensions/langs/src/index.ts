@@ -107,7 +107,7 @@ import { nix } from '@replit/codemirror-lang-nix';
 import { svelte } from '@replit/codemirror-lang-svelte';
 import { solidity } from '@replit/codemirror-lang-solidity';
 
-export const langs: Record<string, () => LanguageSupport | StreamLanguage<unknown>> = {
+export const langs = {
   '1': () => StreamLanguage.define(troff),
   '2': () => StreamLanguage.define(troff),
   '3': () => StreamLanguage.define(troff),
@@ -332,7 +332,7 @@ export const langs: Record<string, () => LanguageSupport | StreamLanguage<unknow
   yml: () => yaml(),
   ys: () => StreamLanguage.define(yacas),
   z80: () => StreamLanguage.define(z80),
-};
+} satisfies Record<string, () => LanguageSupport | StreamLanguage<unknown>>;
 
 export const langNames = Object.keys(langs) as LanguageName[];
 
