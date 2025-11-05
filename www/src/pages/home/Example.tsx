@@ -6,7 +6,7 @@ import { type Extension } from '@codemirror/state';
 import CodeMirror, { ReactCodeMirrorProps, BasicSetupOptions } from '@uiw/react-codemirror';
 import styled from 'styled-components';
 import * as alls from '@uiw/codemirror-themes-all';
-import { langs } from '@uiw/codemirror-extensions-langs';
+import { langs, LanguageName } from '@uiw/codemirror-extensions-langs';
 import { Select } from './Select';
 import { Options } from '../extensions/basic-setup/example';
 import { useTheme } from '../../utils/useTheme';
@@ -69,7 +69,7 @@ export default function Example() {
     crosshairCursor: false,
   });
 
-  function handleLangChange(lang: string) {
+  function handleLangChange(lang: LanguageName) {
     try {
       import(`code-example/txt/sample.${lang.toLocaleLowerCase()}.txt`)
         .then((data) => {
@@ -125,7 +125,7 @@ export default function Example() {
             label="Lang"
             options={Object.keys(langs).sort()}
             value={mode}
-            onChange={(evn) => handleLangChange(evn.target.value)}
+            onChange={(evn) => handleLangChange(evn.target.value as LanguageName)}
           />
           <Select
             label="Website Theme"
