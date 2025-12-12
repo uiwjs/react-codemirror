@@ -24,7 +24,7 @@ it('CodeMirror onChange', async () => {
   const input = await screen.findByRole<HTMLInputElement>('textbox'); // findByRole('textbox');
   fireEvent.change(input, { target: { textContent: '# title' } });
   const elm = screen.queryByText('# title');
-  expect((elm as any).cmView.dom.innerHTML).toEqual('# title');
+  expect(elm?.innerHTML).toEqual('# title');
 });
 
 it('CodeMirror onUpdate', async () => {
