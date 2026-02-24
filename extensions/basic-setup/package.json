@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-extensions-basic-setup",
-  "version": "4.25.4",
+  "version": "4.25.5",
   "description": "Basic configuration for the CodeMirror6 code editor.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/extensions/basic-setup",
   "funding": "https://jaywcjlove.github.io/#/sponsor",
