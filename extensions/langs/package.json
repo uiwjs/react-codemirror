@@ -30,12 +30,31 @@
     "cjs"
   ],
   "peerDependencies": {
-    "@codemirror/language": ">=6.0.0",
-    "@codemirror/language-data": ">=6.0.0"
+    "@codemirror/language": ">=6.0.0"
   },
   "dependencies": {
+    "@codemirror/lang-cpp": "^6.0.0",
+    "@codemirror/lang-css": "^6.0.0",
+    "@codemirror/lang-go": "^6.0.0",
+    "@codemirror/lang-html": "^6.0.0",
+    "@codemirror/lang-java": "^6.0.0",
+    "@codemirror/lang-javascript": "^6.0.0",
+    "@codemirror/lang-jinja": "^6.0.0",
+    "@codemirror/lang-json": "^6.0.0",
+    "@codemirror/lang-less": "^6.0.0",
+    "@codemirror/lang-liquid": "^6.0.0",
+    "@codemirror/lang-markdown": "^6.0.0",
+    "@codemirror/lang-php": "^6.0.0",
+    "@codemirror/lang-python": "^6.0.0",
+    "@codemirror/lang-rust": "^6.0.0",
+    "@codemirror/lang-sass": "^6.0.0",
+    "@codemirror/lang-sql": "^6.0.0",
+    "@codemirror/lang-vue": "^0.1.0",
+    "@codemirror/lang-wast": "^6.0.0",
+    "@codemirror/lang-xml": "^6.0.0",
+    "@codemirror/lang-yaml": "^6.0.0",
     "@codemirror/language": "^6.0.0",
-    "@codemirror/language-data": "^6.5.1",
+    "@codemirror/legacy-modes": "^6.0.0",
     "@replit/codemirror-lang-nix": "^6.0.1",
     "@replit/codemirror-lang-solidity": "^6.0.1",
     "@replit/codemirror-lang-svelte": "^6.0.0",
@@ -58,6 +77,7 @@
   "devDependencies": {
     "@babel/generator": "^7.28.0",
     "@babel/parser": "^7.28.0",
-    "@babel/traverse": "^7.28.0"
+    "@babel/traverse": "^7.28.0",
+    "@codemirror/language-data": "6.5.2"
   }
 }
