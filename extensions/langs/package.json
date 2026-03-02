@@ -78,6 +78,6 @@
     "@babel/generator": "^7.28.0",
     "@babel/parser": "^7.28.0",
     "@babel/traverse": "^7.28.0",
-    "@codemirror/language-data": "^6.5.1"
+    "@codemirror/language-data": "6.5.2"
   }
 }
