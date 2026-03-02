@@ -6,6 +6,7 @@ import { go } from '@codemirror/lang-go';
 import { html } from '@codemirror/lang-html';
 import { java } from '@codemirror/lang-java';
 import { javascript } from '@codemirror/lang-javascript';
+import { jinja } from '@codemirror/lang-jinja';
 import { json } from '@codemirror/lang-json';
 import { less } from '@codemirror/lang-less';
 import { liquid } from '@codemirror/lang-liquid';
@@ -50,7 +51,6 @@ import { haskell } from '@codemirror/legacy-modes/mode/haskell';
 import { haxe, hxml } from '@codemirror/legacy-modes/mode/haxe';
 import { idl } from '@codemirror/legacy-modes/mode/idl';
 import { jsonld } from '@codemirror/legacy-modes/mode/javascript';
-import { jinja2 } from '@codemirror/legacy-modes/mode/jinja2';
 import { julia } from '@codemirror/legacy-modes/mode/julia';
 import { liveScript } from '@codemirror/legacy-modes/mode/livescript';
 import { lua } from '@codemirror/legacy-modes/mode/lua';
@@ -195,11 +195,11 @@ export const langs = {
   ini: () => StreamLanguage.define(properties),
   ino: () => cpp(),
   intr: () => StreamLanguage.define(dylan),
-  j2: () => StreamLanguage.define(jinja2),
+  j2: () => jinja(),
   jade: () => StreamLanguage.define(pug),
   java: () => java(),
-  jinja: () => StreamLanguage.define(jinja2),
-  jinja2: () => StreamLanguage.define(jinja2),
+  jinja: () => jinja(),
+  jinja2: () => jinja(),
   jl: () => StreamLanguage.define(julia),
   js: () => javascript(),
   json: () => json(),
@@ -323,7 +323,10 @@ export const langs = {
   wl: () => StreamLanguage.define(mathematica),
   wls: () => StreamLanguage.define(mathematica),
   xml: () => xml(),
+  xq: () => StreamLanguage.define(xQuery),
+  xqm: () => StreamLanguage.define(xQuery),
   xquery: () => StreamLanguage.define(xQuery),
+  xqy: () => StreamLanguage.define(xQuery),
   xsd: () => xml(),
   xsl: () => xml(),
   xu: () => StreamLanguage.define(xu),
