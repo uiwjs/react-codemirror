@@ -66,6 +66,7 @@ function findReturnArg(fn) {
 // 记录导入：按模块聚合命名导入；以及通配(* as)导入
 const namedImports = new Map(); // module -> Set(symbol)
 const starImports = new Map();  // module -> alias
+const usedSymbols = new Set();  // 记录实际被使用的符号
 let needsStreamLanguage = false;
 
 function addNamed(module, sym) {
@@ -120,12 +121,14 @@ function parseLoadSpec(loadNode) {
         if (inner?.type === 'MemberExpression') {
           const symbol = inner.property.name || inner.property.value;
           addNamed(modulePath, symbol);
+          usedSymbols.add(symbol);
           return { kind: 'legacy', modulePath, symbol, call: false, args: [] };
         }
         if (inner?.type === 'CallExpression' && inner.callee.type === 'MemberExpression') {
           const symbol = inner.callee.property.name || inner.callee.property.value;
           const args = inner.arguments.map(a => codeFrom(a));
           addNamed(modulePath, symbol);
+          usedSymbols.add(symbol);
           return { kind: 'legacy', modulePath, symbol, call: true, args };
         }
         return null;
@@ -136,11 +139,13 @@ function parseLoadSpec(loadNode) {
         const symbol = body.callee.property.name || body.callee.property.value;
         const args = body.arguments.map(a => codeFrom(a));
         addNamed(modulePath, symbol);
+        usedSymbols.add(symbol);
         return { kind: 'modern', modulePath, symbol, args };
       }
       if (body.type === 'MemberExpression') {
         const symbol = body.property.name || body.property.value;
         addNamed(modulePath, symbol);
+        usedSymbols.add(symbol);
         return { kind: 'modern', modulePath, symbol, args: [] };
       }
     }
@@ -216,6 +221,7 @@ for (const el of languagesArray.elements) {
       expr = `() => StreamLanguage.define(${inner})`;
       if (spec.modulePath) {
         addNamed(spec.modulePath, spec.symbol);
+        usedSymbols.add(spec.symbol);
       }
     } else {
       continue;
@@ -237,8 +243,11 @@ if (needsStreamLanguage) {
 
 for (const [mod, set] of namedImports) {
   if (mod === '@codemirror/lang-sql') continue; // 由星号导入覆盖
-  const names = Array.from(set).sort();
-  importLines.push(`import { ${names.join(', ')} } from '${mod}';`);
+  // 只导入实际被使用的符号
+  const usedNames = Array.from(set).filter(name => usedSymbols.has(name)).sort();
+  if (usedNames.length > 0) {
+    importLines.push(`import { ${usedNames.join(', ')} } from '${mod}';`);
+  }
 }
 for (const [mod, alias] of starImports) {
   importLines.push(`import * as ${alias} from '${mod}';`);
@@ -268,6 +277,22 @@ out += `export type LanguageName = keyof typeof langs;\n`;
 out += `export function loadLanguage(name: LanguageName) {\n`;
 out += `  return langs[name] ? langs[name]() : null;\n`;
 out += `}\n`;
+
+// 后处理：移除未使用的 objectiveC 导入
+if (out.includes('objectiveC') && !out.includes('StreamLanguage.define(objectiveC)')) {
+  // objectiveC 被导入但未使用，从 clike 导入中移除
+  out = out.replace(
+    /import { ([^}]*objectiveC[^}]*) } from '@codemirror\/legacy-modes\/mode\/clike';/,
+    (match, imports) => {
+      const cleanImports = imports
+        .split(',')
+        .map(s => s.trim())
+        .filter(s => s !== 'objectiveC')
+        .join(', ');
+      return `import { ${cleanImports} } from '@codemirror/legacy-modes/mode/clike';`;
+    }
+  );
+}
 
 process.stdout.write(out);
 

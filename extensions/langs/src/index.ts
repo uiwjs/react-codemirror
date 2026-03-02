@@ -23,7 +23,7 @@ import { asciiArmor } from '@codemirror/legacy-modes/mode/asciiarmor';
 import { asn1 } from '@codemirror/legacy-modes/mode/asn1';
 import { brainfuck } from '@codemirror/legacy-modes/mode/brainfuck';
 import { cobol } from '@codemirror/legacy-modes/mode/cobol';
-import { csharp, dart, kotlin, objectiveC, objectiveCpp, scala, squirrel } from '@codemirror/legacy-modes/mode/clike';
+import { csharp, dart, kotlin, objectiveCpp, scala, squirrel } from '@codemirror/legacy-modes/mode/clike';
 import { clojure } from '@codemirror/legacy-modes/mode/clojure';
 import { gss } from '@codemirror/legacy-modes/mode/css';
 import { cmake } from '@codemirror/legacy-modes/mode/cmake';
