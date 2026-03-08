@@ -17,7 +17,8 @@
   },
   "scripts": {
     "watch": "tsbb watch src/*.tsx --use-babel",
-    "build": "tsbb build src/*.tsx --use-babel"
+    "build": "tsbb build src/*.tsx --use-babel && npm run setmodule",
+    "setmodule": "echo '{\"type\":\"module\"}' > esm/package.json && echo '{\"type\":\"commonjs\"}' > cjs/package.json"
   },
   "repository": {
     "type": "git",
