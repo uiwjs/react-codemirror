@@ -17,8 +17,8 @@
     "clean": "lerna clean --yes"
   },
   "workspaces": [
-    "themes/**",
-    "extensions/**",
+    "themes/*",
+    "extensions/*",
     "core",
     "merge",
     "www"
