@@ -1,0 +1,2 @@
+"use strict";(globalThis.webpackChunkwww=globalThis.webpackChunkwww||[]).push([[807],{30807(e,n,E){E.d(n,{default:()=>N});const N="BEGIN\n    SELECT * INTO STRICT myrec FROM emp WHERE empname = myname;\n    EXCEPTION\n        WHEN NO_DATA_FOUND THEN\n            RAISE EXCEPTION 'employee % not found', myname;\n        WHEN TOO_MANY_ROWS THEN\n            RAISE EXCEPTION 'employee % not unique', myname;\nEND;"}}]);
+//# sourceMappingURL=807.57f68cf1.chunk.js.map

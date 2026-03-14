@@ -1,0 +1,2 @@
+"use strict";(globalThis.webpackChunkwww=globalThis.webpackChunkwww||[]).push([[1421],{81421(l,e,n){n.d(e,{default:()=>t});const t='<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset="UTF-8">\n        <title>{% block title %}Welcome!{% endblock %}</title>\n        {% block stylesheets %}{% endblock %}\n    </head>\n    <body>\n        {% block body %}{% endblock %}\n        {% block javascripts %}{% endblock %}\n    </body>\n</html>\n'}}]);
+//# sourceMappingURL=1421.5092e283.chunk.js.map
