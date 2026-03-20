@@ -1,0 +1,2 @@
+"use strict";(globalThis.webpackChunkwww=globalThis.webpackChunkwww||[]).push([[8950],{78950(n,o,s){s.d(o,{default:()=>t});const t="F0 := IMDB.File_actors;\nCountActors := RECORD\nF0.ActorName;\nUNSIGNED C := COUNT(GROUP);\nEND;\nMoviesIn := TABLE(F0,CountActors,ActorName);\nOUTPUT(TOPN(MoviesIn,100,-C));\n"}}]);
+//# sourceMappingURL=8950.720b8e39.chunk.js.map

@@ -1,0 +1,2 @@
+"use strict";(globalThis.webpackChunkwww=globalThis.webpackChunkwww||[]).push([[9674],{59674(l,n,o){o.d(n,{default:()=>w});const w=' MODULE HelloWorld EXPORTS Main;\n FROM IO IMPORT Put;\n BEGIN\n   Put("Hello World\\n")\n END HelloWorld.\n'}}]);
+//# sourceMappingURL=9674.3f1d5f8d.chunk.js.map
