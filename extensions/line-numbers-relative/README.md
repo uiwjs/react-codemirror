@@ -1,5 +1,4 @@
 <div align="center" markdown="1">
-  <br>
   <sup>Special thanks to:</sup>
   <br>
   <br>
