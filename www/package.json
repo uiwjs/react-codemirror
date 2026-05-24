@@ -86,7 +86,7 @@
     "@uiw/react-github-corners": "~1.5.14",
     "@uiw/react-markdown-preview": "^5.0.2",
     "@uiw/react-shields": "^2.0.1",
-    "@wcj/dark-mode": "~1.0.12",
+    "@wcj/dark-mode": "~1.1.0",
     "code-example": "^3.3.6",
     "markdown-react-code-preview-loader": "^2.1.2",
     "react": "~18.2.0",
