@@ -5,6 +5,7 @@ import { getDefaultExtensions } from './getDefaultExtensions';
 import { getStatistics } from './utils';
 import { type ReactCodeMirrorProps } from '.';
 import { TimeoutLatch, getScheduler } from './timeoutLatch';
+import { scrollerTheme, getDimensionTheme } from './theme/dimensionTheme';
 
 export const ExternalChange = Annotation.define<boolean>();
 const TYPING_TIMOUT = 200; // ms
@@ -45,19 +46,7 @@ export function useCodeMirror(props: UseCodeMirror) {
   const [state, setState] = useState<EditorState>();
   const typingLatch = useState<{ current: TimeoutLatch | null }>(() => ({ current: null }))[0];
   const pendingUpdate = useState<{ current: (() => void) | null }>(() => ({ current: null }))[0];
-  const defaultThemeOption = EditorView.theme({
-    '&': {
-      height,
-      minHeight,
-      maxHeight,
-      width,
-      minWidth,
-      maxWidth,
-    },
-    '& .cm-scroller': {
-      height: '100% !important',
-    },
-  });
+  const defaultThemeOption = getDimensionTheme(height, minHeight, maxHeight, width, minWidth, maxWidth);
   const updateListener = EditorView.updateListener.of((vu: ViewUpdate) => {
     if (
       vu.docChanged &&
@@ -96,7 +85,12 @@ export function useCodeMirror(props: UseCodeMirror) {
     basicSetup: defaultBasicSetup,
   });
 
-  let getExtensions = [updateListener, defaultThemeOption, ...defaultExtensions];
+  let getExtensions = [
+    updateListener,
+    ...(defaultThemeOption ? [defaultThemeOption] : []),
+    scrollerTheme,
+    ...defaultExtensions,
+  ];
 
   if (onUpdate && typeof onUpdate === 'function') {
     getExtensions.push(EditorView.updateListener.of(onUpdate));
