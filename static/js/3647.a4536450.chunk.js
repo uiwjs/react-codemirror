@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkwww=self.webpackChunkwww||[]).push([[3647],{53647(e,r,a){a.d(r,["default",0,"# Create a resource group.\naz group create --name myResourceGroup --location westeurope\n\n# Create a new virtual machine, this creates SSH keys if not present.\naz vm create --resource-group myResourceGroup --name myVM --image UbuntuLTS --generate-ssh-keys"])}}]);
+//# sourceMappingURL=3647.a4536450.chunk.js.map
