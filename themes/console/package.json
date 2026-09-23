@@ -42,6 +42,7 @@
     "cjs"
   ],
   "dependencies": {
+    "@babel/runtime": "^7.18.6",
     "@uiw/codemirror-themes": "4.25.11"
   },
   "keywords": [

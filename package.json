@@ -10,6 +10,7 @@
     "⬆️⬆️⬆️⬆️⬆️ package ⬆️⬆️⬆️⬆️⬆️": "▲▲▲▲▲ package ▲▲▲▲▲",
     "test": "lerna exec \"tsbb test --no-watchman\" --scope @uiw/react-codemirror",
     "coverage": "lerna exec \"tsbb test --coverage --bail --no-watchman\" --scope @uiw/react-codemirror --scope @uiw/codemirror-extensions-langs",
+    "check:theme-dependencies": "node themes/_scripts/check-runtime-dependencies.cjs",
     "prepare": "husky",
     "version": "lerna version --exact --force-publish --no-push --no-git-tag-version",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,json}'",
