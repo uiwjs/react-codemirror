@@ -16,7 +16,6 @@ function runtimeImports(source) {
     /\bimport\s+(?:[^'";]+?\s+from\s+)?['"]([^'"]+)['"]/g,
     /\bexport\s+[^'";]+?\s+from\s+['"]([^'"]+)['"]/g,
     /\b(?:import|require)\s*\(\s*['"]([^'"]+)['"]\s*\)/g,
-    /\brequire\s*\(\s*['"]([^'"]+)['"]\s*\)/g,
   ];
 
   for (const pattern of patterns) {
