@@ -1,0 +1,11 @@
+"use strict";(globalThis.webpackChunkwww||=[]).push([[4800],{74800(t,e,o){o.r(e);var s=o(51446),n=o(1190),r=o(19232),d=o(80905),c=o(9632),i=o(71704),a=o(94458),l=o(55864),m=o(98557);const h=r.Ay.div`
+  padding-bottom: 30px;
+`,u=()=>{const[t,e]=(0,d.useState)(0),[o,r]=(0,d.useState)(""),{theme:u}=(0,a.D)(),p=(0,d.useContext)(i.pX);return(0,m.jsxs)(l.zu,{children:[(0,m.jsx)(n.Ay,{value:p.mdstr,theme:u,height:"200px !important",style:{margin:"0 0 23px 0"},extensions:[c.cg.markdown(),s.W2({scroll:t=>{t.target instanceof HTMLElement&&e(t.target.scrollTop)}}),s.Qs({focus:t=>{r("focus")},blur:t=>{r("blur")}})]}),(0,m.jsxs)(h,{children:[t," ",o]})]})};o.d(e,["Component",0,()=>(0,m.jsx)(i.lN,{path:()=>o.e(4861).then(()=>o(44861)),children:(0,m.jsx)(u,{})}),"EventsExample",0,u])},55864(t,e,o){var s=o(19232);const n=s.Ay.div`
+  flex: 1;
+  max-width: 980px;
+  padding: 20px 20px 30px 20px;
+`;s.Ay.div`
+  display: flex;
+  flex: 1;
+`;o.d(e,["zu",0,n])},94458(t,e,o){o.d(e,{D:()=>n});var s=o(80905);function n(){let t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"light";const e=document.documentElement.getAttribute("data-color-mode"),[o,n]=(0,s.useState)("dark"===e?"dark":t);return(0,s.useEffect)(()=>{n("dark"===document.documentElement.getAttribute("data-color-mode")?"dark":"light"),document.addEventListener("colorschemechange",t=>{n(t.detail.colorScheme)})},[]),{theme:o,setTheme:n}}},51446(t,e,o){o.d(e,{Qs:()=>d,W2:()=>r});var s=o(67538);function n(t){var e=t.type,o=void 0===e?"scroll":e,n=t.events,r=t.props;return s.Z9.fromClass(class{constructor(t){(this.dom=void 0,this.view=void 0,this.view=t,this.dom="dom"===o?t.dom:"content"===o?t.contentDOM:t.scrollDOM,this.dom&&r)&&Object.keys(r).forEach(t=>{this.dom[t]=r[t]});Object.keys(n||{}).forEach(t=>{n&&n[t]&&this.dom&&this.dom.addEventListener(t,n[t])})}destroy(){Object.keys(n||{}).forEach(t=>{n&&n[t]&&this.dom&&this.dom.removeEventListener(t,n[t])})}})}function r(t){return n({type:"scroll",events:t})}function d(t){return n({type:"content",events:t})}}}]);
+//# sourceMappingURL=4800.3ace6383.chunk.js.map

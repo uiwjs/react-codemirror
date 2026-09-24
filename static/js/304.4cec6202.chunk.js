@@ -1,0 +1,2 @@
+"use strict";(globalThis.webpackChunkwww||=[]).push([[304],{80304(e,n,r){r.d(n,["default",0,'# Example of a .gitconfig file\n\n[core]\n  repositoryformatversion = 0\n  filemode = false\n  bare = false\n  logallrefupdates = true\n  symlinks = false\n  ignorecase = true\n  hideDotFiles = dotGitOnly\n\n# Defines the master branch\n[branch "master"]\n  remote = origin\n  merge = refs/heads/master\n'])}}]);
+//# sourceMappingURL=304.4cec6202.chunk.js.map

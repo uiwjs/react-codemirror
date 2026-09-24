@@ -1,0 +1,2 @@
+"use strict";(globalThis.webpackChunkwww||=[]).push([[1952],{91952(c,e,s){s.d(e,["default",0,"Content-Security-Policy: default-src 'self'; img-src *; media-src media1.com media2.com; script-src userscripts.example.com"])}}]);
+//# sourceMappingURL=1952.31b0e921.chunk.js.map
