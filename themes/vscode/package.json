@@ -1,6 +1,6 @@
 {
   "name": "@uiw/codemirror-theme-vscode",
-  "version": "4.25.11",
+  "version": "4.25.12",
   "description": "Theme vscode for CodeMirror.",
   "homepage": "https://uiwjs.github.io/react-codemirror/#/theme/data/vscode",
   "funding": "https://jaywcjlove.github.io/#/sponsor",
@@ -32,7 +32,7 @@
   "dependencies": {
     "@babel/runtime": "^7.18.6",
     "@lezer/highlight": "^1.0.0",
-    "@uiw/codemirror-themes": "4.25.11"
+    "@uiw/codemirror-themes": "4.25.12"
   },
   "keywords": [
     "codemirror",
