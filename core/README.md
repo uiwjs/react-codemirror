@@ -436,7 +436,7 @@ export function EditorWithInitialState() {
 
 <!--rehype:style=background-color: #ffe564; display: inline-block; border-bottom: 0; padding: 3px 12px;-->
 
-- `value?: string` value of the auto created model in the editor.
+- `value?: string` value of the auto created model in the editor. Use `value` to initialize or update the editor content; `defaultValue` is not supported.
 - `width?: string` width of editor. Defaults to `auto`.
 - `height?: string` height of editor. Defaults to `auto`.
 - `theme?`: `'light'` / `'dark'` / `Extension` Defaults to `'light'`.
@@ -463,7 +463,7 @@ export declare function useCodeMirror(props: UseCodeMirror): {
 export interface ReactCodeMirrorProps
   extends
     Omit<EditorStateConfig, 'doc' | 'extensions'>,
-    Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange' | 'placeholder'> {
+    Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange' | 'placeholder' | 'defaultValue'> {
   /** value of the auto created model in the editor. */
   value?: string;
   height?: string;
