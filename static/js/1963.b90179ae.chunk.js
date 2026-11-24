@@ -1,0 +1,2 @@
+"use strict";(Array.isArray(globalThis.webpackChunkwww)?globalThis.webpackChunkwww:globalThis.webpackChunkwww=[]).push([[1963],{31963(e,l,n){n.d(l,["default",0,'import material/material;\n\nexport {\n  demoMakeHelloWorld(onClose : () -> void) -> Material;\n}\n\ndemoMakeHelloWorld(onClose : () -> void) -> Material {\n  MCenter(\n    MLines2(\n      MText("Hello, world!", []),\n      MTextButton("CLOSE", onClose, [], [])\n    )\n  );\n}\n'])}}]);
+//# sourceMappingURL=1963.b90179ae.chunk.js.map

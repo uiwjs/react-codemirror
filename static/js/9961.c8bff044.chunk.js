@@ -1,0 +1,2 @@
+"use strict";(Array.isArray(globalThis.webpackChunkwww)?globalThis.webpackChunkwww:globalThis.webpackChunkwww=[]).push([[9961],{59961(a,n,w){w.d(n,["default",0,"  SELECT ?x ?name\n  {\n    ?x  foaf:mbox <mailto:alice@example> .\n    ?x  foaf:knows ?a1 .\n    ?a1 foaf:knows ?a2 .\n    ?a2 foaf:name ?name .\n  }\n"])}}]);
+//# sourceMappingURL=9961.c8bff044.chunk.js.map

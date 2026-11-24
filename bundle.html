@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/@babel/standalone@7.17.5/babel.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react@16.x/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16.x/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://codemirror.net/6/codemirror.js"></script>
+    <script src="https://unpkg.com/@uiw/react-codemirror/dist/codemirror.min.js"></script>
+  </head>
+  <body>
+    <div id="container" style="padding: 24px"></div>
+    <script>
+      window.require = function (module) {
+        if (!module) {
+          throw new Error('this is a fake require only use for import fusion next');
+        }
+        if (window.CM && window.CM[module]) {
+          return window.CM[module];
+        }
+        return window[module];
+      };
+    </script>
+    <script type="text/babel">
+      import CodeMirror from '@uiw/codemirror';
+      import { javascript } from '@codemirror/lang-javascript';
+
+      const Demo = () => {
+        return (
+          <div>
+            <CodeMirror
+              value="console.log('hello world!')"
+              height="200px"
+              extensions={[javascript({ jsx: true })]}
+              onChange={(value, viewUpdate) => {
+                console.log('value:', value);
+              }}
+            />
+          </div>
+        );
+      };
+
+      ReactDOM.render(<Demo />, document.getElementById('container'));
+    </script>
+  </body>
+</html>

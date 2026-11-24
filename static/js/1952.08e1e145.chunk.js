@@ -1,0 +1,2 @@
+"use strict";(Array.isArray(globalThis.webpackChunkwww)?globalThis.webpackChunkwww:globalThis.webpackChunkwww=[]).push([[1952],{91952(s,c,e){e.d(c,["default",0,"Content-Security-Policy: default-src 'self'; img-src *; media-src media1.com media2.com; script-src userscripts.example.com"])}}]);
+//# sourceMappingURL=1952.08e1e145.chunk.js.map
