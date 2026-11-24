@@ -14,8 +14,9 @@ export * from './getDefaultExtensions';
 export * from './utils';
 
 export interface ReactCodeMirrorProps
-  extends Omit<EditorStateConfig, 'doc' | 'extensions'>,
-    Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange' | 'placeholder'> {
+  extends
+    Omit<EditorStateConfig, 'doc' | 'extensions'>,
+    Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange' | 'placeholder' | 'defaultValue'> {
   /** value of the auto created model in the editor. */
   value?: string;
   height?: string;
